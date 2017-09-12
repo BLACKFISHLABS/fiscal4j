@@ -186,20 +186,11 @@ $F{protocolo.protocoloInfo.dataRecebimento}.toString("dd/MM/yyyy HH:mm:ss")]]></
 				<subreportExpression><![CDATA[$P{SUBREL_PAGAMENTOS}]]></subreportExpression>
 			</subreport>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement key="textField" positionType="Float" x="146" y="38" width="63" height="10" uuid="52a05c6a-73e3-438d-aefb-38413c998dae"/>
+				<reportElement key="textField" positionType="Float" x="135" y="38" width="74" height="10" uuid="52a05c6a-73e3-438d-aefb-38413c998dae"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Arial Narrow" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new BigDecimal($F{nota.info.total.icmsTotal.valorTotalNFe})]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="146" y="28" width="63" height="10" isRemoveLineWhenBlank="true" uuid="96e065a7-d841-4794-afe8-661bc6024992">
-					<printWhenExpression><![CDATA[$V{ACRESCIMOS}.signum() != 0]]></printWhenExpression>
-				</reportElement>
-				<textElement textAlignment="Right">
-					<font fontName="Arial Narrow" size="8" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{ACRESCIMOS}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement key="textField" positionType="Float" x="8" y="18" width="110" height="10" uuid="c7129f1b-3655-410c-95fb-0e4bb0a94fdb"/>
@@ -209,7 +200,7 @@ $F{protocolo.protocoloInfo.dataRecebimento}.toString("dd/MM/yyyy HH:mm:ss")]]></
 				<text><![CDATA[QTD. TOTAL DE ITENS]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement key="textField" positionType="Float" x="146" y="18" width="63" height="10" uuid="3ab24ac5-b9a8-4cfc-abc3-c7a8b84c9cc8"/>
+				<reportElement key="textField" positionType="Float" x="135" y="18" width="74" height="10" uuid="3ab24ac5-b9a8-4cfc-abc3-c7a8b84c9cc8"/>
 				<textElement textAlignment="Right" markup="none">
 					<font fontName="Arial Narrow" size="8" isBold="false"/>
 				</textElement>
@@ -242,7 +233,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTOS R$" : "ACRÉSCIMOS R$"]]></textFieldExp
 					<printWhenExpression><![CDATA[$F{nota.info.identificacao.ambiente.codigo}.equals("2")]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" markup="none">
-					<font fontName="Arial Narrow" size="8" isBold="false" isItalic="false"/>
+					<font fontName="Arial Narrow" size="8" isBold="true" isItalic="false"/>
 					<paragraph tabStopWidth="40"/>
 				</textElement>
 				<text><![CDATA[EMITIDA EM AMBIENTE DE HOMOLOGAÇÃO–SEM VALOR FISCAL]]></text>
@@ -252,7 +243,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTOS R$" : "ACRÉSCIMOS R$"]]></textFieldExp
 					<printWhenExpression><![CDATA[(!$F{nota.info.identificacao.tipoEmissao.codigo}.equals("1"))]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" markup="none">
-					<font fontName="Arial Narrow" size="8" isBold="false" isItalic="false"/>
+					<font fontName="Arial Narrow" size="8" isBold="true" isItalic="false"/>
 					<paragraph tabStopWidth="40"/>
 				</textElement>
 				<text><![CDATA[EMITIDA EM CONTINGÊNCIA]]></text>
@@ -327,6 +318,14 @@ $F{nota.info.emitente.endereco.descricaoMunicipio} + " - " + $F{nota.info.emiten
 					<pen lineWidth="1.0" lineStyle="Dotted"/>
 				</graphicElement>
 			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" positionType="Float" x="135" y="28" width="74" height="10" uuid="1747243a-4ba1-4bf0-9986-ff768bd1509b"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="Arial Narrow" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{ACRESCIMOS}.signum() == 0 ? null :
+$V{ACRESCIMOS}.signum() < 0 ? $F{nota.info.total.icmsTotal.valorTotalDesconto} : $F{nota.info.total.icmsTotal.outrasDespesasAcessorias}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<pageFooter>

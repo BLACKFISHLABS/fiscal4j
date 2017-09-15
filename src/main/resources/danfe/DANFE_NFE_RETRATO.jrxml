@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nfe_danfe_retrato" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="25" bottomMargin="20" uuid="e21b08e1-6159-4fbb-98e9-6837ade5c1f3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -1482,14 +1483,14 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
 				<reportElement x="269" y="82" width="13" height="16" uuid="a9178c5e-92a5-49f4-a955-43f591202b45"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="197" y="101" width="39" height="12" isPrintWhenDetailOverflows="true" uuid="5c21920c-372b-400b-9c2f-795b83161066"/>
+				<reportElement x="197" y="101" width="26" height="12" isPrintWhenDetailOverflows="true" uuid="5c21920c-372b-400b-9c2f-795b83161066"/>
 				<textElement>
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nº]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="197" y="113" width="39" height="12" isPrintWhenDetailOverflows="true" uuid="bc53ce66-70c5-4e9e-853e-55524559a3b0"/>
+				<reportElement x="197" y="113" width="41" height="12" isPrintWhenDetailOverflows="true" uuid="bc53ce66-70c5-4e9e-853e-55524559a3b0"/>
 				<textElement>
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
@@ -1655,14 +1656,14 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
 				<textFieldExpression><![CDATA[Double.parseDouble($F{NFeNumero})]]></textFieldExpression>
 			</textField>
 			<textField pattern="000,000,000">
-				<reportElement x="235" y="101" width="55" height="12" uuid="8c0f9f1a-43e5-493c-8790-99792018adef"/>
+				<reportElement x="224" y="101" width="66" height="12" uuid="8c0f9f1a-43e5-493c-8790-99792018adef"/>
 				<textElement>
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[Double.parseDouble($F{NFeNumero})]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
-				<reportElement x="235" y="113" width="55" height="12" uuid="0631bd42-9c47-4a5e-9834-3e37e2962cda"/>
+				<reportElement x="238" y="113" width="52" height="12" uuid="0631bd42-9c47-4a5e-9834-3e37e2962cda"/>
 				<textElement>
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>

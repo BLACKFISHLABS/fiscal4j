@@ -68,6 +68,14 @@ public class WSFacade {
         return this.wsLoteEnvio.enviaLote(lote);
     }
 
+    public String assinarLoteParaContingencia(final NFLoteEnvio lote) throws Exception {
+        if (lote.getIndicadorProcessamento().equals(NFLoteIndicadorProcessamento.PROCESSAMENTO_SINCRONO)
+                && lote.getNotas().size() > 1) {
+            throw new IllegalArgumentException("Apenas uma nota permitida no modo sincrono!");
+        }
+        return this.wsLoteEnvio.assinarLoteParaContingencia(lote);
+    }
+
     /**
      * Faz o envio assinado para a Sefaz de NF-e e NFC-e
      * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3

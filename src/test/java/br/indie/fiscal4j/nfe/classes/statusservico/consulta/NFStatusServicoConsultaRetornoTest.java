@@ -1,0 +1,91 @@
+package br.indie.fiscal4j.nfe.classes.statusservico.consulta;
+
+import br.indie.fiscal4j.common.DFAmbiente;
+import br.indie.fiscal4j.common.DFUnidadeFederativa;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class NFStatusServicoConsultaRetornoTest {
+
+    @Test
+    public void deveObterVersaoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String versao = "4.00";
+        consultaRetorno.setVersao(versao);
+        Assert.assertEquals(versao, consultaRetorno.getVersao());
+    }
+
+    @Test
+    public void deveObterAmbienteComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final DFAmbiente ambiente = DFAmbiente.HOMOLOGACAO;
+        consultaRetorno.setAmbiente(ambiente);
+        Assert.assertEquals(ambiente, consultaRetorno.getAmbiente());
+    }
+
+    @Test
+    public void deveObterVersaoAplicacaoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String versaoAplicacao = "1.01";
+        consultaRetorno.setVersaoAplicacao(versaoAplicacao);
+        Assert.assertEquals(versaoAplicacao, consultaRetorno.getVersaoAplicacao());
+    }
+
+    @Test
+    public void deveObterStatusComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String status = "107";
+        consultaRetorno.setStatus(status);
+        Assert.assertEquals(status, consultaRetorno.getStatus());
+    }
+
+    @Test
+    public void deveObterMotivoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String motivo = "Servico em operacao";
+        consultaRetorno.setMotivo(motivo);
+        Assert.assertEquals(motivo, consultaRetorno.getMotivo());
+    }
+
+    @Test
+    public void deveObterUFComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final DFUnidadeFederativa unidadeFederativa = DFUnidadeFederativa.AC;
+        consultaRetorno.setUf(unidadeFederativa);
+        Assert.assertEquals(unidadeFederativa, consultaRetorno.getUf());
+    }
+
+    @Test
+    public void deveObterDataRecebimentoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final LocalDateTime dataRecebimento = DateTimeFormat.forPattern("yyyy/MM/dd HH:mm:ss").parseLocalDateTime("2013/12/10 15:10:59");
+        consultaRetorno.setDataRecebimento(dataRecebimento);
+        Assert.assertEquals(dataRecebimento, consultaRetorno.getDataRecebimento());
+    }
+
+    @Test
+    public void deveObterDataRetornoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final LocalDateTime dataRetorno = LocalDateTime.parse("2015/11/13", DateTimeFormat.forPattern("yyyy/MM/dd"));
+        consultaRetorno.setDataRetorno(dataRetorno);
+        Assert.assertEquals(dataRetorno, consultaRetorno.getDataRetorno());
+    }
+
+    @Test
+    public void deveObterObservacaoComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String observacao = "Sem informacao";
+        consultaRetorno.setObservacao(observacao);
+        Assert.assertEquals(observacao, consultaRetorno.getObservacao());
+    }
+
+    @Test
+    public void deveObterTempoMedioComoFoiSetado() {
+        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final String tempoMedio = "10";
+        consultaRetorno.setTempoMedio(tempoMedio);
+        Assert.assertEquals(tempoMedio, consultaRetorno.getTempoMedio());
+    }
+}

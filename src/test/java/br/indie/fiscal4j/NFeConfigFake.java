@@ -1,6 +1,7 @@
 package br.indie.fiscal4j;
 
-import br.indie.fiscal4j.classes.NFUnidadeFederativa;
+import br.indie.fiscal4j.common.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe.NFeConfig;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,8 +16,8 @@ public class NFeConfigFake extends NFeConfig {
     private KeyStore keyStoreCadeia = null;
 
     @Override
-    public NFUnidadeFederativa getCUF() {
-        return NFUnidadeFederativa.SC;
+    public DFUnidadeFederativa getCUF() {
+        return DFUnidadeFederativa.SC;
     }
 
     @Override

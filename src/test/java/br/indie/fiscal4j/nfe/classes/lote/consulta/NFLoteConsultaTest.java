@@ -10,7 +10,7 @@ public class NFLoteConsultaTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFLoteConsulta consulta = new DFLoteConsulta();
+        final NFLoteConsulta consulta = new NFLoteConsulta();
         consulta.setAmbiente(DFAmbiente.HOMOLOGACAO);
         consulta.setRecibo("ItbDxsHiXUqeCEM");
         consulta.setVersao(new BigDecimal("2.00"));

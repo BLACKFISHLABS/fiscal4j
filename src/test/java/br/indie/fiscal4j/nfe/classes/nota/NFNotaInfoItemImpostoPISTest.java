@@ -8,7 +8,7 @@ public class NFNotaInfoItemImpostoPISTest {
 
     @Test
     public void devePermitirApenasUmAliquota() {
-        final DFNotaInfoItemImpostoPIS pis = new DFNotaInfoItemImpostoPIS();
+        final NFNotaInfoItemImpostoPIS pis = new NFNotaInfoItemImpostoPIS();
         pis.setAliquota(FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISAliquota());
 
         try {
@@ -30,7 +30,7 @@ public class NFNotaInfoItemImpostoPISTest {
 
     @Test
     public void devePermitirApenasUmNaoTributado() {
-        final DFNotaInfoItemImpostoPIS pis = new DFNotaInfoItemImpostoPIS();
+        final NFNotaInfoItemImpostoPIS pis = new NFNotaInfoItemImpostoPIS();
         pis.setNaoTributado(FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISNaoTributado());
 
         try {
@@ -52,7 +52,7 @@ public class NFNotaInfoItemImpostoPISTest {
 
     @Test
     public void devePermitirApenasUmOutrasOperacoes() {
-        final DFNotaInfoItemImpostoPIS pis = new DFNotaInfoItemImpostoPIS();
+        final NFNotaInfoItemImpostoPIS pis = new NFNotaInfoItemImpostoPIS();
         pis.setOutrasOperacoes(FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISOutrasOperacoes());
 
         try {
@@ -74,7 +74,7 @@ public class NFNotaInfoItemImpostoPISTest {
 
     @Test
     public void devePermitirApenasUmQuantidade() {
-        final DFNotaInfoItemImpostoPIS pis = new DFNotaInfoItemImpostoPIS();
+        final NFNotaInfoItemImpostoPIS pis = new NFNotaInfoItemImpostoPIS();
         pis.setQuantidade(FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISQuantidade());
 
         try {
@@ -96,7 +96,7 @@ public class NFNotaInfoItemImpostoPISTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoPIS><PISAliq><CST>01</CST><vBC>999999999999.99</vBC><pPIS>99.99</pPIS><vPIS>999999999999.99</vPIS></PISAliq></DFNotaInfoItemImpostoPIS>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoPIS><PISAliq><CST>01</CST><vBC>999999999999.99</vBC><pPIS>99.99</pPIS><vPIS>999999999999.99</vPIS></PISAliq></NFNotaInfoItemImpostoPIS>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoPIS().toString());
     }
 }

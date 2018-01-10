@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe.classes.evento.downloadnf;
 
 import br.indie.fiscal4j.common.DFBase;
 import br.indie.fiscal4j.nfe.classes.NFProtocolo;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -16,7 +16,7 @@ public class Any extends DFBase {
     private String versao;
 
     @Element(name = "NFe", required = false)
-    private DFNota nota;
+    private NFNota nota;
 
     @Element(name = "protNFe", required = false)
     private NFProtocolo protocolo;
@@ -35,11 +35,11 @@ public class Any extends DFBase {
         this.versao = versao;
     }
 
-    public DFNota getNota() {
+    public NFNota getNota() {
         return nota;
     }
 
-    public void setNota(DFNota nota) {
+    public void setNota(NFNota nota) {
         this.nota = nota;
     }
 

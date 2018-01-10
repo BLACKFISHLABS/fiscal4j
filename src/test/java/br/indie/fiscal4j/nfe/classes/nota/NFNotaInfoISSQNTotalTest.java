@@ -11,32 +11,32 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorTotalServicosSobNaoIncidenciaNaoTributadosICMSComValorInvalido() {
-        new DFNotaInfoISSQNTotal().setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("1000000000000000"));
+        new NFNotaInfoISSQNTotal().setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorTotalISSComValorInvalido() {
-        new DFNotaInfoISSQNTotal().setValorTotalISS(new BigDecimal("1000000000000000"));
+        new NFNotaInfoISSQNTotal().setValorTotalISS(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorPISsobreServicosInvalido() {
-        new DFNotaInfoISSQNTotal().setValorPISsobreServicos(new BigDecimal("1000000000000000"));
+        new NFNotaInfoISSQNTotal().setValorPISsobreServicos(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorCOFINSsobreServicosInvalido() {
-        new DFNotaInfoISSQNTotal().setValorCOFINSsobreServicos(new BigDecimal("1000000000000000"));
+        new NFNotaInfoISSQNTotal().setValorCOFINSsobreServicos(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirCalculoINSSComValorInvalido() {
-        new DFNotaInfoISSQNTotal().setValorTotalISS(new BigDecimal("1000000000000000"));
+        new NFNotaInfoISSQNTotal().setValorTotalISS(new BigDecimal("1000000000000000"));
     }
 
     @Test
     public void devePermitirValoresMonetarioValidos() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorPISsobreServicos(new BigDecimal("999999999999.99"));
@@ -52,7 +52,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirTributacaoNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -70,7 +70,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirValorTotalRetencaoISSNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -88,7 +88,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirValorTotalDescontoCondicionadoNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -106,7 +106,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirValorTotalDescontoIncondicionadoNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -124,7 +124,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirValorOutrosNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -142,7 +142,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirValorDeducaoNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -160,7 +160,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDeverPermitirDataPrestacaoServicoNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(new BigDecimal("999999999999.99"));
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
@@ -178,7 +178,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void deverPermitirTotalServicosSobNaoIncidenciaNaoTributadosICMSNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorPISsobreServicos(new BigDecimal("999999999999.99"));
@@ -196,7 +196,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirISSNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorPISsobreServicos(new BigDecimal("999999999999.99"));
@@ -213,7 +213,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirPISNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorTotalISS(new BigDecimal("999999999999.99"));
@@ -230,7 +230,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirCOFINSSobreServicosNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setBaseCalculoISS(new BigDecimal("999999999999.99"));
         issqnTotal.setValorPISsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorTotalISS(new BigDecimal("999999999999.99"));
@@ -247,7 +247,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void devePermitirBaseCalculoISSNulo() {
-        final DFNotaInfoISSQNTotal issqnTotal = new DFNotaInfoISSQNTotal();
+        final NFNotaInfoISSQNTotal issqnTotal = new NFNotaInfoISSQNTotal();
         issqnTotal.setValorCOFINSsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorPISsobreServicos(new BigDecimal("999999999999.99"));
         issqnTotal.setValorTotalISS(new BigDecimal("999999999999.99"));
@@ -264,7 +264,7 @@ public class NFNotaInfoISSQNTotalTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoComVagao() {
-        final String xmlEsperado = "<DFNotaInfoISSQNTotal><vServ>999999999999.99</vServ><vBC>999999999999.99</vBC><vISS>999999999999.99</vISS><vPIS>999999999999.99</vPIS><vCOFINS>999999999999.99</vCOFINS><dCompet>2014-01-01</dCompet><vDeducao>999999999999.99</vDeducao><vOutro>999999999999.99</vOutro><vDescIncond>999999999999.99</vDescIncond><vDescCond>999999999999.99</vDescCond><vISSRet>999999999999.99</vISSRet><cRegTrib>3</cRegTrib></DFNotaInfoISSQNTotal>";
+        final String xmlEsperado = "<NFNotaInfoISSQNTotal><vServ>999999999999.99</vServ><vBC>999999999999.99</vBC><vISS>999999999999.99</vISS><vPIS>999999999999.99</vPIS><vCOFINS>999999999999.99</vCOFINS><dCompet>2014-01-01</dCompet><vDeducao>999999999999.99</vDeducao><vOutro>999999999999.99</vOutro><vDescIncond>999999999999.99</vDescIncond><vDescCond>999999999999.99</vDescCond><vISSRet>999999999999.99</vISSRet><cRegTrib>3</cRegTrib></NFNotaInfoISSQNTotal>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoISSQNTotal().toString());
     }
 }

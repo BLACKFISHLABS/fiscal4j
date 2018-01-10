@@ -8,7 +8,7 @@ public class NFNotaInfoItemImpostoIPINTTest {
 
     @Test
     public void deveObterNFNotaInfoSituacaoTributariaIPIComoFoiSetado() {
-        final DFNotaInfoItemImpostoIPINT itemImpostoIPINT = new DFNotaInfoItemImpostoIPINT();
+        final NFNotaInfoItemImpostoIPINT itemImpostoIPINT = new NFNotaInfoItemImpostoIPINT();
         final NFNotaInfoSituacaoTributariaIPI entradaIsenta = NFNotaInfoSituacaoTributariaIPI.ENTRADA_ISENTA;
         itemImpostoIPINT.setSituacaoTributariaIPI(entradaIsenta);
         Assert.assertEquals(entradaIsenta, itemImpostoIPINT.getSituacaoTributariaIPI());
@@ -16,10 +16,10 @@ public class NFNotaInfoItemImpostoIPINTTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFNotaInfoItemImpostoIPINT itemImpostoIPINT = new DFNotaInfoItemImpostoIPINT();
+        final NFNotaInfoItemImpostoIPINT itemImpostoIPINT = new NFNotaInfoItemImpostoIPINT();
         itemImpostoIPINT.setSituacaoTributariaIPI(NFNotaInfoSituacaoTributariaIPI.ENTRADA_ISENTA);
 
-        final String xmlEsperado = "<DFNotaInfoItemImpostoIPINT><IPINT>02</IPINT></DFNotaInfoItemImpostoIPINT>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoIPINT><IPINT>02</IPINT></NFNotaInfoItemImpostoIPINT>";
         Assert.assertEquals(xmlEsperado, itemImpostoIPINT.toString());
     }
 }

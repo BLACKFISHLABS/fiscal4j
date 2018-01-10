@@ -10,41 +10,41 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirClasseEnquadramentoTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPI().setClasseEnquadramento("NEFiL1");
+        new NFNotaInfoItemImpostoIPI().setClasseEnquadramento("NEFiL1");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoEnquadramentoTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPI().setCodigoEnquadramento("iNEF");
+        new NFNotaInfoItemImpostoIPI().setCodigoEnquadramento("iNEF");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoSeloTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPI().setCodigoSelo("iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc51");
+        new NFNotaInfoItemImpostoIPI().setCodigoSelo("iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc51");
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirQuantidadeSeloTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPI().setQuantidadeSelo(new BigInteger("1000000000000"));
+        new NFNotaInfoItemImpostoIPI().setQuantidadeSelo(new BigInteger("1000000000000"));
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSetarNaoTributadoCasoTributadoEstejaSetado() {
-        final DFNotaInfoItemImpostoIPI impostoIPI = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI impostoIPI = new NFNotaInfoItemImpostoIPI();
         impostoIPI.setTributado(FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPITributado());
         impostoIPI.setNaoTributado(FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPINaoTributado());
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSetarTributadoCasoNaoTributadoEstejaSetado() {
-        final DFNotaInfoItemImpostoIPI impostoIPI = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI impostoIPI = new NFNotaInfoItemImpostoIPI();
         impostoIPI.setNaoTributado(FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPINaoTributado());
         impostoIPI.setTributado(FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPITributado());
     }
 
     @Test
     public void devePermitirClasseEnquadramentoNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoEnquadramento("aT2");
         ipi.setCodigoSelo("iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc5");
@@ -55,7 +55,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void devePermitirCnojProdutorNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCodigoEnquadramento("aT2");
         ipi.setCodigoSelo("iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc5");
@@ -66,7 +66,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoEnquadramentoNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoSelo("iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc5");
@@ -78,7 +78,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void devePermitirCodigoSeloNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoEnquadramento("aT2");
@@ -89,7 +89,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void devePermitirNaoTributadoNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoEnquadramento("aT2");
@@ -101,7 +101,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void devePermitirQuantidadeSeloNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoEnquadramento("aT2");
@@ -112,7 +112,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void devePermitirTributadoNulo() {
-        final DFNotaInfoItemImpostoIPI ipi = new DFNotaInfoItemImpostoIPI();
+        final NFNotaInfoItemImpostoIPI ipi = new NFNotaInfoItemImpostoIPI();
         ipi.setClasseEnquadramento("157br");
         ipi.setCnpjProdutor("12345678901234");
         ipi.setCodigoEnquadramento("aT2");
@@ -124,7 +124,7 @@ public class NFNotaInfoItemImpostoIPITest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoIPI><clEnq>157br</clEnq><CNPJProd>12345678901234</CNPJProd><cSelo>iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc5</cSelo><qSelo>999999999999</qSelo><cEnq>aT2</cEnq><IPITrib><CST>49</CST><vBC>999999999999.99</vBC><pIPI>99.99</pIPI><vIPI>999999999999.99</vIPI></IPITrib></DFNotaInfoItemImpostoIPI>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoIPI><clEnq>157br</clEnq><CNPJProd>12345678901234</CNPJProd><cSelo>iNEFifS1jexTxcCvgjlQ186nR6JAwM2koyjbWKA1DJSLmZy432GoSwoygXc5</cSelo><qSelo>999999999999</qSelo><cEnq>aT2</cEnq><IPITrib><CST>49</CST><vBC>999999999999.99</vBC><pIPI>99.99</pIPI><vIPI>999999999999.99</vIPI></IPITrib></NFNotaInfoItemImpostoIPI>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPI().toString());
     }
 }

@@ -10,32 +10,32 @@ public class NFNotaInfoItemImpostoPISSTTest {
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorlTributoComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoPISST().setValorTributo(new BigDecimal("99999999999999"));
+        new NFNotaInfoItemImpostoPISST().setValorTributo(new BigDecimal("99999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorlAliquotaComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoPISST().setValorAliquota(new BigDecimal("999999999999"));
+        new NFNotaInfoItemImpostoPISST().setValorAliquota(new BigDecimal("999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirPercentualAliquotaComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoPISST().setPercentualAliquota(new BigDecimal("1000"));
+        new NFNotaInfoItemImpostoPISST().setPercentualAliquota(new BigDecimal("1000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorBaseCalculoComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoPISST().setValorBaseCalculo(new BigDecimal("99999999999999"));
+        new NFNotaInfoItemImpostoPISST().setValorBaseCalculo(new BigDecimal("99999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirQuantidadeVendidaComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoPISST().setQuantidadeVendida(new BigDecimal("9999999999999"));
+        new NFNotaInfoItemImpostoPISST().setQuantidadeVendida(new BigDecimal("9999999999999"));
     }
 
     @Test
     public void naoDevePermitirSetarQuantidadeVendidaCasoPercentualAliquotaOuValorBaseCalculoEstejaSetado() {
-        final DFNotaInfoItemImpostoPISST impostoPISST1 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST1 = new NFNotaInfoItemImpostoPISST();
         impostoPISST1.setValorBaseCalculo(BigDecimal.ONE);
         try {
             impostoPISST1.setQuantidadeVendida(BigDecimal.ONE);
@@ -43,7 +43,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoPISST impostoPISST2 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST2 = new NFNotaInfoItemImpostoPISST();
         impostoPISST2.setPercentualAliquota(BigDecimal.ONE);
         try {
             impostoPISST2.setQuantidadeVendida(BigDecimal.ONE);
@@ -54,7 +54,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
 
     @Test
     public void naoDevePermitirSetarValorBaseCalculoCasoValorAliquotaOuQuantidadeVendidaEstejaSetado() {
-        final DFNotaInfoItemImpostoPISST impostoPISST1 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST1 = new NFNotaInfoItemImpostoPISST();
         impostoPISST1.setQuantidadeVendida(BigDecimal.ONE);
         try {
             impostoPISST1.setValorBaseCalculo(BigDecimal.ONE);
@@ -62,7 +62,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoPISST impostoPISST2 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST2 = new NFNotaInfoItemImpostoPISST();
         impostoPISST2.setValorAliquota(BigDecimal.ONE);
         try {
             impostoPISST2.setValorBaseCalculo(BigDecimal.ONE);
@@ -73,7 +73,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
 
     @Test
     public void naoDevePermitirSetarValorAliquotaCasoPercentualAliquotaOuValorBaseCalculoEstejaSetado() {
-        final DFNotaInfoItemImpostoPISST impostoPISST1 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST1 = new NFNotaInfoItemImpostoPISST();
         impostoPISST1.setPercentualAliquota(BigDecimal.ONE);
         try {
             impostoPISST1.setValorAliquota(BigDecimal.ONE);
@@ -81,7 +81,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoPISST impostoPISST2 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST2 = new NFNotaInfoItemImpostoPISST();
         impostoPISST2.setValorBaseCalculo(BigDecimal.ONE);
         try {
             impostoPISST2.setValorAliquota(BigDecimal.ONE);
@@ -92,7 +92,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
 
     @Test
     public void naoDevePermitirSetarPercentualAliquotaCasoValorAliquotaOuQuantidadeVendidaEstejaSetado() {
-        final DFNotaInfoItemImpostoPISST impostoPISST1 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST1 = new NFNotaInfoItemImpostoPISST();
         impostoPISST1.setValorAliquota(BigDecimal.ONE);
         try {
             impostoPISST1.setPercentualAliquota(BigDecimal.ONE);
@@ -100,7 +100,7 @@ public class NFNotaInfoItemImpostoPISSTTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoPISST impostoPISST2 = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST2 = new NFNotaInfoItemImpostoPISST();
         impostoPISST2.setQuantidadeVendida(BigDecimal.ONE);
         try {
             impostoPISST2.setPercentualAliquota(BigDecimal.ONE);
@@ -111,18 +111,18 @@ public class NFNotaInfoItemImpostoPISSTTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoBCAliquotaPercentual() {
-        final DFNotaInfoItemImpostoPISST impostoPISST = new DFNotaInfoItemImpostoPISST();
+        final NFNotaInfoItemImpostoPISST impostoPISST = new NFNotaInfoItemImpostoPISST();
         impostoPISST.setPercentualAliquota(new BigDecimal("99.99"));
         impostoPISST.setValorBaseCalculo(new BigDecimal("999999999999.99"));
         impostoPISST.setValorTributo(new BigDecimal("999999999999.99"));
 
-        final String xmlEsperado = "<DFNotaInfoItemImpostoPISST><vBC>999999999999.99</vBC><pPIS>99.99</pPIS><vPIS>999999999999.99</vPIS></DFNotaInfoItemImpostoPISST>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoPISST><vBC>999999999999.99</vBC><pPIS>99.99</pPIS><vPIS>999999999999.99</vPIS></NFNotaInfoItemImpostoPISST>";
         Assert.assertEquals(xmlEsperado, impostoPISST.toString());
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoQuantidadeVendaAliquota() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoPISST><qBCProd>99999999999.9999</qBCProd><vAliqProd>9999999999.9999</vAliqProd><vPIS>999999999999.99</vPIS></DFNotaInfoItemImpostoPISST>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoPISST><qBCProd>99999999999.9999</qBCProd><vAliqProd>9999999999.9999</vAliqProd><vPIS>999999999999.99</vPIS></NFNotaInfoItemImpostoPISST>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISST().toString());
     }
 }

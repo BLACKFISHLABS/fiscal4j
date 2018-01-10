@@ -9,9 +9,9 @@ import br.indie.fiscal4j.nfe.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe.classes.evento.downloadnf.NFDownloadNFeRetorno;
 import br.indie.fiscal4j.nfe.classes.evento.inutilizacao.NFRetornoEventoInutilizacao;
 import br.indie.fiscal4j.nfe.classes.evento.manifestacaodestinatario.NFTipoEventoManifestacaoDestinatario;
-import br.indie.fiscal4j.nfe.classes.lote.consulta.DFLoteConsultaRetorno;
-import br.indie.fiscal4j.nfe.classes.lote.envio.DFLoteEnvio;
-import br.indie.fiscal4j.nfe.classes.lote.envio.DFLoteEnvioRetorno;
+import br.indie.fiscal4j.nfe.classes.lote.consulta.NFLoteConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvio;
+import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetorno;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetornoDados;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteIndicadorProcessamento;
 import br.indie.fiscal4j.nfe.classes.nota.consulta.DFNotaConsultaRetorno;
@@ -61,7 +61,7 @@ public class WSFacade {
      * @return dados do lote retornado pelo webservice, alem do lote assinado
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public NFLoteEnvioRetornoDados enviaLote(final DFLoteEnvio lote) throws Exception {
+    public NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote) throws Exception {
         if (lote.getIndicadorProcessamento().equals(NFLoteIndicadorProcessamento.PROCESSAMENTO_SINCRONO)
                 && lote.getNotas().size() > 1) {
             throw new IllegalArgumentException("Apenas uma nota permitida no modo sincrono!");
@@ -69,7 +69,7 @@ public class WSFacade {
         return this.wsLoteEnvio.enviaLote(lote);
     }
 
-    public String assinarLoteParaContingencia(final DFLoteEnvio lote) throws Exception {
+    public String assinarLoteParaContingencia(final NFLoteEnvio lote) throws Exception {
         if (lote.getIndicadorProcessamento().equals(NFLoteIndicadorProcessamento.PROCESSAMENTO_SINCRONO)
                 && lote.getNotas().size() > 1) {
             throw new IllegalArgumentException("Apenas uma nota permitida no modo sincrono!");
@@ -86,7 +86,7 @@ public class WSFacade {
      * @return dados do lote retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public DFLoteEnvioRetorno enviaLoteAssinado(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
+    public NFLoteEnvioRetorno enviaLoteAssinado(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
         return this.wsLoteEnvio.enviaLoteAssinado(loteAssinadoXml, modelo);
     }
 
@@ -98,7 +98,7 @@ public class WSFacade {
      * @return dados de consulta de lote retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public DFLoteConsultaRetorno consultaLote(final String numeroRecibo, final DFModelo modelo) throws Exception {
+    public NFLoteConsultaRetorno consultaLote(final String numeroRecibo, final DFModelo modelo) throws Exception {
         return this.wsLoteConsulta.consultaLote(numeroRecibo, modelo);
     }
 

@@ -10,42 +10,42 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorRetidoPISInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setValorRetidoPIS(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setValorRetidoPIS(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorRetidoIRRFInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setValorRetidoIRRF(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setValorRetidoIRRF(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorRetidoCSLLInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setValorRetidoCSLL(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setValorRetidoCSLL(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorRetidoCOFINSInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setValorRetidoCOFINS(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setValorRetidoCOFINS(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorRetencaoPrevidenciaSocialInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setValorRetencaoPrevidenciaSocial(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setValorRetencaoPrevidenciaSocial(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirCalculoRetencaoPrevidenciaSocialInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("1000000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirCalculoIRRFInvalidosMonetarios() {
-        new DFNotaInfoRetencoesTributos().setBaseCalculoIRRF(new BigDecimal("1000000000000000"));
+        new NFNotaInfoRetencoesTributos().setBaseCalculoIRRF(new BigDecimal("1000000000000000"));
     }
 
     @Test
     public void devePermitirValoresValidosMonetarios() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
@@ -65,7 +65,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirBaseCalculoIRRFNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetidoCOFINS(new BigDecimal("999999999999.99"));
@@ -77,7 +77,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirValorRetencaoPrevidenciaSocialNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetidoCOFINS(new BigDecimal("999999999999.99"));
@@ -89,7 +89,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirValorRetidoCOFINSNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
@@ -101,7 +101,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirValorRetidoCSLLNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
@@ -113,7 +113,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirValorRetidoIRRFNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
@@ -125,7 +125,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void devePermitirValorRetidoPISNulo() {
-        final DFNotaInfoRetencoesTributos retencoesTributos = new DFNotaInfoRetencoesTributos();
+        final NFNotaInfoRetencoesTributos retencoesTributos = new NFNotaInfoRetencoesTributos();
         retencoesTributos.setBaseCalculoIRRF(new BigDecimal("999999999999.99"));
         retencoesTributos.setBaseCalculoRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
         retencoesTributos.setValorRetencaoPrevidenciaSocial(new BigDecimal("999999999999.99"));
@@ -137,7 +137,7 @@ public class NFNotaInfoRetencoesTributosTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoComVagao() {
-        final String xmlEsperado = "<DFNotaInfoRetencoesTributos><vRetPIS>999999999999.99</vRetPIS><vRetCOFINS>999999999999.99</vRetCOFINS><vRetCSLL>999999999999.99</vRetCSLL><vBCIRRF>999999999999.99</vBCIRRF><vIRRF>999999999999.99</vIRRF><vBCRetPrev>999999999999.99</vBCRetPrev><vRetPrev>999999999999.99</vRetPrev></DFNotaInfoRetencoesTributos>";
+        final String xmlEsperado = "<NFNotaInfoRetencoesTributos><vRetPIS>999999999999.99</vRetPIS><vRetCOFINS>999999999999.99</vRetCOFINS><vRetCSLL>999999999999.99</vRetCSLL><vBCIRRF>999999999999.99</vBCIRRF><vIRRF>999999999999.99</vIRRF><vBCRetPrev>999999999999.99</vBCRetPrev><vRetPrev>999999999999.99</vRetPrev></NFNotaInfoRetencoesTributos>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoRetencoesTributos().toString());
     }
 }

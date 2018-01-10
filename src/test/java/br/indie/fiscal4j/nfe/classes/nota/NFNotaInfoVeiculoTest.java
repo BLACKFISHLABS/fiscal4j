@@ -10,10 +10,10 @@ public class NFNotaInfoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPlacaFormatoInvalido() {
         try {
-            new DFNotaInfoVeiculo().setPlacaVeiculo("MK881");
+            new NFNotaInfoVeiculo().setPlacaVeiculo("MK881");
             Assert.fail("Validacao nao funfou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoVeiculo().setPlacaVeiculo("MKZT8859");
+            new NFNotaInfoVeiculo().setPlacaVeiculo("MKZT8859");
         }
         Assert.fail("Validacao nao funfou");
     }
@@ -21,17 +21,17 @@ public class NFNotaInfoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirRNCTComTamanhoInvalido() {
         try {
-            new DFNotaInfoVeiculo().setRegistroNacionalTransportadorCarga("");
+            new NFNotaInfoVeiculo().setRegistroNacionalTransportadorCarga("");
             Assert.fail("Validacao nao funcionou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoVeiculo().setRegistroNacionalTransportadorCarga("8Io5YKSKW1qy3v7zGwLx1");
+            new NFNotaInfoVeiculo().setRegistroNacionalTransportadorCarga("8Io5YKSKW1qy3v7zGwLx1");
         }
         Assert.fail("Validacao nao funcionou");
     }
 
     @Test
     public void devePermitirRNCTNulo() {
-        final DFNotaInfoVeiculo veiculo = new DFNotaInfoVeiculo();
+        final NFNotaInfoVeiculo veiculo = new NFNotaInfoVeiculo();
         veiculo.setPlacaVeiculo("MKZ8159");
         veiculo.setUf(DFUnidadeFederativa.SP);
         veiculo.toString();
@@ -39,7 +39,7 @@ public class NFNotaInfoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirUFNulo() {
-        final DFNotaInfoVeiculo veiculo = new DFNotaInfoVeiculo();
+        final NFNotaInfoVeiculo veiculo = new NFNotaInfoVeiculo();
         veiculo.setPlacaVeiculo("MKZ8159");
         veiculo.setRegistroNacionalTransportadorCarga("8Io5YKSKW1qy3v7zGwLx");
         veiculo.toString();
@@ -47,7 +47,7 @@ public class NFNotaInfoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPlacaNulo() {
-        final DFNotaInfoVeiculo veiculo = new DFNotaInfoVeiculo();
+        final NFNotaInfoVeiculo veiculo = new NFNotaInfoVeiculo();
         veiculo.setRegistroNacionalTransportadorCarga("8Io5YKSKW1qy3v7zGwLx");
         veiculo.setUf(DFUnidadeFederativa.SP);
         veiculo.toString();
@@ -55,7 +55,7 @@ public class NFNotaInfoVeiculoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEspeardo = "<DFNotaInfoVeiculo><placa>MKZ8159</placa><UF>SP</UF><RNTC>8Io5YKSKW1qy3v7zGwLx</RNTC></DFNotaInfoVeiculo>";
+        final String xmlEspeardo = "<NFNotaInfoVeiculo><placa>MKZ8159</placa><UF>SP</UF><RNTC>8Io5YKSKW1qy3v7zGwLx</RNTC></NFNotaInfoVeiculo>";
         Assert.assertEquals(xmlEspeardo, FabricaDeObjetosFake.getNFNotaInfoVeiculo().toString());
     }
 }

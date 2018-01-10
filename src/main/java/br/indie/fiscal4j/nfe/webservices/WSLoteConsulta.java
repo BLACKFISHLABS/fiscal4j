@@ -3,8 +3,8 @@ package br.indie.fiscal4j.nfe.webservices;
 import br.indie.fiscal4j.common.DFModelo;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.NFAutorizador4;
-import br.indie.fiscal4j.nfe.classes.lote.consulta.DFLoteConsulta;
-import br.indie.fiscal4j.nfe.classes.lote.consulta.DFLoteConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.lote.consulta.NFLoteConsulta;
+import br.indie.fiscal4j.nfe.classes.lote.consulta.NFLoteConsultaRetorno;
 import br.indie.fiscal4j.nfe.transformers.NFRegistryMatcher;
 import br.indie.fiscal4j.nfe.webservices.gerado.NfeRetAutorizacaoStub;
 import br.indie.fiscal4j.nfe.webservices.gerado.NfeRetAutorizacaoStub.NfeRetAutorizacaoLoteResult;
@@ -27,14 +27,14 @@ class WSLoteConsulta {
         this.config = config;
     }
 
-    DFLoteConsultaRetorno consultaLote(final String numeroRecibo, final DFModelo modelo) throws Exception {
+    NFLoteConsultaRetorno consultaLote(final String numeroRecibo, final DFModelo modelo) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(numeroRecibo).toString());
         WSLoteConsulta.LOGGER.debug(omElementConsulta.toString());
 
         final OMElement omElementResult = this.efetuaConsulta(omElementConsulta, modelo);
         WSLoteConsulta.LOGGER.debug(omElementResult.toString());
 
-        return new Persister(new NFRegistryMatcher(), new Format(0)).read(DFLoteConsultaRetorno.class, omElementResult.toString());
+        return new Persister(new NFRegistryMatcher(), new Format(0)).read(NFLoteConsultaRetorno.class, omElementResult.toString());
     }
 
     private OMElement efetuaConsulta(final OMElement omElement, final DFModelo modelo) throws RemoteException {
@@ -58,8 +58,8 @@ class WSLoteConsulta {
         return autorizacaoLoteResult.getExtraElement();
     }
 
-    private DFLoteConsulta gerarDadosConsulta(final String numeroRecibo) {
-        final DFLoteConsulta consulta = new DFLoteConsulta();
+    private NFLoteConsulta gerarDadosConsulta(final String numeroRecibo) {
+        final NFLoteConsulta consulta = new NFLoteConsulta();
         consulta.setRecibo(numeroRecibo);
         consulta.setAmbiente(this.config.getAmbiente());
         consulta.setVersao(new BigDecimal(NFeConfig.VERSAO_NFE));

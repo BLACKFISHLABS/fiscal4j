@@ -1,15 +1,15 @@
 package br.indie.fiscal4j.nfe.utils;
 
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Random;
 
 public class NFGeraChave {
 
-    private final DFNota nota;
+    private final NFNota nota;
 
-    public NFGeraChave(final DFNota nota) {
+    public NFGeraChave(final NFNota nota) {
         this.nota = nota;
     }
 

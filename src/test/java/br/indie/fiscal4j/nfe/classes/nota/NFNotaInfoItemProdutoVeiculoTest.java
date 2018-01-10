@@ -12,134 +12,134 @@ public class NFNotaInfoItemProdutoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPotenciaComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setPotencia("ABC");
+            new NFNotaInfoItemProdutoVeiculo().setPotencia("ABC");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setTipoPintura("ABCDE");
+            new NFNotaInfoItemProdutoVeiculo().setTipoPintura("ABCDE");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoPenturaComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setTipoPintura("");
+            new NFNotaInfoItemProdutoVeiculo().setTipoPintura("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setTipoPintura("A1");
+            new NFNotaInfoItemProdutoVeiculo().setTipoPintura("A1");
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirPesoLiquidoComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoVeiculo().setPesoLiquido(new BigDecimal("100000"));
+        new NFNotaInfoItemProdutoVeiculo().setPesoLiquido(new BigDecimal("100000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirPesoBrutoComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoVeiculo().setPesoBruto(new BigDecimal("100000"));
+        new NFNotaInfoItemProdutoVeiculo().setPesoBruto(new BigDecimal("100000"));
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVV");
+            new NFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVV");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVVD1");
+            new NFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVVD1");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroMotorComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setNumeroMotor("XBxVyiVV");
+            new NFNotaInfoItemProdutoVeiculo().setNumeroMotor("XBxVyiVV");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setNumeroMotor("XBxVyiVVD1");
+            new NFNotaInfoItemProdutoVeiculo().setNumeroMotor("XBxVyiVVD1");
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirLotacaoComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoVeiculo().setLotacao(1000);
+        new NFNotaInfoItemProdutoVeiculo().setLotacao(1000);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDistanciaEntreEixosComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABC");
+            new NFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABC");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABCDE");
+            new NFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABCDE");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDescricaoCorComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setDescricaoCor("");
+            new NFNotaInfoItemProdutoVeiculo().setDescricaoCor("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setDescricaoCor("tjRQlvBqVsFLDWUCaOeaXRbV1ipOZH3W5H7Ic2p91");
+            new NFNotaInfoItemProdutoVeiculo().setDescricaoCor("tjRQlvBqVsFLDWUCaOeaXRbV1ipOZH3W5H7Ic2p91");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoMarcaModeloComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setCodigoMarcaModelo("");
+            new NFNotaInfoItemProdutoVeiculo().setCodigoMarcaModelo("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setCodigoMarcaModelo("5425621");
+            new NFNotaInfoItemProdutoVeiculo().setCodigoMarcaModelo("5425621");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoCorComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setCodigoCor("");
+            new NFNotaInfoItemProdutoVeiculo().setCodigoCor("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setCodigoCor("123A1");
+            new NFNotaInfoItemProdutoVeiculo().setCodigoCor("123A1");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCilindradaComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setCilindrada("");
+            new NFNotaInfoItemProdutoVeiculo().setCilindrada("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setCilindrada("ohNx1");
+            new NFNotaInfoItemProdutoVeiculo().setCilindrada("ohNx1");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirChassiComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setChassi("");
+            new NFNotaInfoItemProdutoVeiculo().setChassi("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoVeiculo().setChassi("B31YTE9INXEYDMO4C1");
+            new NFNotaInfoItemProdutoVeiculo().setChassi("B31YTE9INXEYDMO4C1");
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirCapacidadeMaximaTracaoComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoVeiculo().setCapacidadeMaximaTracao(new BigDecimal("100000"));
+        new NFNotaInfoItemProdutoVeiculo().setCapacidadeMaximaTracao(new BigDecimal("100000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirAnoModeloFabricacaoComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setAnoModeloFabricacao(999);
+            new NFNotaInfoItemProdutoVeiculo().setAnoModeloFabricacao(999);
         } catch (final NumberFormatException e) {
-            new DFNotaInfoItemProdutoVeiculo().setAnoModeloFabricacao(10000);
+            new NFNotaInfoItemProdutoVeiculo().setAnoModeloFabricacao(10000);
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirAnoFabricacaoComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoVeiculo().setAnoFabricacao(999);
+            new NFNotaInfoItemProdutoVeiculo().setAnoFabricacao(999);
         } catch (final NumberFormatException e) {
-            new DFNotaInfoItemProdutoVeiculo().setAnoFabricacao(10000);
+            new NFNotaInfoItemProdutoVeiculo().setAnoFabricacao(10000);
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirAnoFabricacaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
         produtoVeiculo.setChassi("B31YTE9INXEYDMO4C");
@@ -168,7 +168,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirAnoModeloFabricacaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
         produtoVeiculo.setChassi("B31YTE9INXEYDMO4C");
@@ -197,7 +197,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCapacidadeMaximaTracaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setChassi("B31YTE9INXEYDMO4C");
@@ -226,7 +226,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirChassiNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -255,7 +255,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCilindradaNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -284,7 +284,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoCorNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -313,7 +313,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoCorDENATRANNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -342,7 +342,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCodigoMarcaModeloNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -371,7 +371,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCondicaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -400,7 +400,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCondicaoChassiNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -429,7 +429,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDescricaoCorNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -458,7 +458,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDistanciaEntreEixosNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -487,7 +487,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirEspecieVeiculoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -516,7 +516,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLotacaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -545,7 +545,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroMotorNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -574,7 +574,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -603,7 +603,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPesoBrutoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -632,7 +632,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPesoLiquidoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -661,7 +661,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPotenciaNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -690,7 +690,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirRestricaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -719,7 +719,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoCombustivelNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -748,7 +748,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoOperacaoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -777,7 +777,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoPinturaNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -806,7 +806,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoVeiculoNulo() {
-        final DFNotaInfoItemProdutoVeiculo produtoVeiculo = new DFNotaInfoItemProdutoVeiculo();
+        final NFNotaInfoItemProdutoVeiculo produtoVeiculo = new NFNotaInfoItemProdutoVeiculo();
         produtoVeiculo.setAnoFabricacao(2014);
         produtoVeiculo.setAnoModeloFabricacao(2014);
         produtoVeiculo.setCapacidadeMaximaTracao(new BigDecimal("9999.9999"));
@@ -835,7 +835,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemProdutoVeiculo><tpOp>0</tpOp><chassi>B31YTE9INXEYDMO4C</chassi><cCor>123A</cCor><xCor>tjRQlvBqVsFLDWUCaOeaXRbV1ipOZH3W5H7Ic2p9</xCor><pot>GZRz</pot><cilin>ohNx</cilin><pesoL>9999.9999</pesoL><pesoB>9999.9999</pesoB><nSerie>XBxVyiVVD</nSerie><tpComb>02</tpComb><nMotor>u1DU8GZRzJZzevuY49IB9</nMotor><CMT>9999.9999</CMT><dist>9999</dist><anoMod>2014</anoMod><anoFab>2014</anoFab><tpPint>A</tpPint><tpVeic>06</tpVeic><espVeic>4</espVeic><VIN>N</VIN><condVeic>1</condVeic><cMod>542562</cMod><cCorDENATRAN>16</cCorDENATRAN><lota>999</lota><tpRest>4</tpRest></DFNotaInfoItemProdutoVeiculo>";
+        final String xmlEsperado = "<NFNotaInfoItemProdutoVeiculo><tpOp>0</tpOp><chassi>B31YTE9INXEYDMO4C</chassi><cCor>123A</cCor><xCor>tjRQlvBqVsFLDWUCaOeaXRbV1ipOZH3W5H7Ic2p9</xCor><pot>GZRz</pot><cilin>ohNx</cilin><pesoL>9999.9999</pesoL><pesoB>9999.9999</pesoB><nSerie>XBxVyiVVD</nSerie><tpComb>02</tpComb><nMotor>u1DU8GZRzJZzevuY49IB9</nMotor><CMT>9999.9999</CMT><dist>9999</dist><anoMod>2014</anoMod><anoFab>2014</anoFab><tpPint>A</tpPint><tpVeic>06</tpVeic><espVeic>4</espVeic><VIN>N</VIN><condVeic>1</condVeic><cMod>542562</cMod><cCorDENATRAN>16</cCorDENATRAN><lota>999</lota><tpRest>4</tpRest></NFNotaInfoItemProdutoVeiculo>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemProdutoVeiculo().toString());
     }
 }

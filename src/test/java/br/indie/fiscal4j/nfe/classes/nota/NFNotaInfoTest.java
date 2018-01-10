@@ -12,7 +12,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void deveObterIdentificadorComPrefixo() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
         final String identificador = "89172658591754401086218048846976493475937081";
         notaInfo.setIdentificador(identificador);
         Assert.assertEquals("NFe" + identificador, notaInfo.getIdentificador());
@@ -20,135 +20,135 @@ public class NFNotaInfoTest {
 
     @Test
     public void deveObterIdentificacaoComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoIdentificacao identificacao = FabricaDeObjetosFake.getInfoIdentificacaoDeTeste();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoIdentificacao identificacao = FabricaDeObjetosFake.getInfoIdentificacaoDeTeste();
         notaInfo.setIdentificacao(identificacao);
         Assert.assertEquals(identificacao, notaInfo.getIdentificacao());
     }
 
     @Test
     public void deveObterVersaoComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
         notaInfo.setVersao(new BigDecimal("4"));
         Assert.assertEquals("4.00", notaInfo.getVersao());
     }
 
     @Test
     public void deveObterEmitenteComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoEmitente emitente = FabricaDeObjetosFake.getNFNotaInfoEmitente();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoEmitente emitente = FabricaDeObjetosFake.getNFNotaInfoEmitente();
         notaInfo.setEmitente(emitente);
         Assert.assertEquals(emitente, notaInfo.getEmitente());
     }
 
     @Test
     public void deveObterAvulsaComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoAvulsa avulsa = FabricaDeObjetosFake.getNFNotaInfoAvulsa();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoAvulsa avulsa = FabricaDeObjetosFake.getNFNotaInfoAvulsa();
         notaInfo.setAvulsa(avulsa);
         Assert.assertEquals(avulsa, notaInfo.getAvulsa());
     }
 
     @Test
     public void deveObterDestinatarioComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoDestinatario destinatario = FabricaDeObjetosFake.getNFNotaInfoDestinatario();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoDestinatario destinatario = FabricaDeObjetosFake.getNFNotaInfoDestinatario();
         notaInfo.setDestinatario(destinatario);
         Assert.assertEquals(destinatario, notaInfo.getDestinatario());
     }
 
     @Test
     public void deveObterRetiradaComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoLocal retirada = FabricaDeObjetosFake.getNFNotaInfoLocal();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoLocal retirada = FabricaDeObjetosFake.getNFNotaInfoLocal();
         notaInfo.setRetirada(retirada);
         Assert.assertEquals(retirada, notaInfo.getRetirada());
     }
 
     @Test
     public void deveObterEntregaComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoLocal entrega = FabricaDeObjetosFake.getNFNotaInfoLocal();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoLocal entrega = FabricaDeObjetosFake.getNFNotaInfoLocal();
         notaInfo.setEntrega(entrega);
         Assert.assertEquals(entrega, notaInfo.getEntrega());
     }
 
     @Test
     public void deveObterPessoasAutorizadasDownloadNFeComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final List<DFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe = Collections.singletonList(FabricaDeObjetosFake.getPessoaAutorizadaDownloadNFe());
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final List<NFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe = Collections.singletonList(FabricaDeObjetosFake.getPessoaAutorizadaDownloadNFe());
         notaInfo.setPessoasAutorizadasDownloadNFe(pessoasAutorizadasDownloadNFe);
         Assert.assertEquals(pessoasAutorizadasDownloadNFe, notaInfo.getPessoasAutorizadasDownloadNFe());
     }
 
     @Test
     public void deveObterItensComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final List<DFNotaInfoItem> itens = Collections.singletonList(FabricaDeObjetosFake.getNFNotaInfoItem());
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final List<NFNotaInfoItem> itens = Collections.singletonList(FabricaDeObjetosFake.getNFNotaInfoItem());
         notaInfo.setItens(itens);
         Assert.assertEquals(itens, notaInfo.getItens());
     }
 
     @Test
     public void deveObterTotalComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoTotal total = FabricaDeObjetosFake.getNFNotaInfoTotal();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoTotal total = FabricaDeObjetosFake.getNFNotaInfoTotal();
         notaInfo.setTotal(total);
         Assert.assertEquals(total, notaInfo.getTotal());
     }
 
     @Test
     public void deveObterTransporteComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoTransporte transporte = FabricaDeObjetosFake.getNFNotaInfoTransporte();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoTransporte transporte = FabricaDeObjetosFake.getNFNotaInfoTransporte();
         notaInfo.setTransporte(transporte);
         Assert.assertEquals(transporte, notaInfo.getTransporte());
     }
 
     @Test
     public void deveObterCobrancaComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoCobranca cobranca = FabricaDeObjetosFake.getNFNotaInfoCobranca();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoCobranca cobranca = FabricaDeObjetosFake.getNFNotaInfoCobranca();
         notaInfo.setCobranca(cobranca);
         Assert.assertEquals(cobranca, notaInfo.getCobranca());
     }
 
     @Test
     public void deveObterPagamentosComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final List<DFNotaInfoPagamento> pagamentos = Collections.singletonList(FabricaDeObjetosFake.getNFNotaInfoPagamento());
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final List<NFNotaInfoPagamento> pagamentos = Collections.singletonList(FabricaDeObjetosFake.getNFNotaInfoPagamento());
         notaInfo.setPagamentos(pagamentos);
         Assert.assertEquals(pagamentos, notaInfo.getPagamentos());
     }
 
     @Test
     public void deveObterInformacoesAdicionaisComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoInformacoesAdicionais informacoesAdicionais = FabricaDeObjetosFake.getNFNotaInfoInformacoesAdicionais();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoInformacoesAdicionais informacoesAdicionais = FabricaDeObjetosFake.getNFNotaInfoInformacoesAdicionais();
         notaInfo.setInformacoesAdicionais(informacoesAdicionais);
         Assert.assertEquals(informacoesAdicionais, notaInfo.getInformacoesAdicionais());
     }
 
     @Test
     public void deveObterExportacaoComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoExportacao exportacao = FabricaDeObjetosFake.getNFNotaInfoExportacao();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoExportacao exportacao = FabricaDeObjetosFake.getNFNotaInfoExportacao();
         notaInfo.setExportacao(exportacao);
         Assert.assertEquals(exportacao, notaInfo.getExportacao());
     }
 
     @Test
     public void deveObterCompraComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoCompra compra = FabricaDeObjetosFake.getNFNotaInfoCompra();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoCompra compra = FabricaDeObjetosFake.getNFNotaInfoCompra();
         notaInfo.setCompra(compra);
         Assert.assertEquals(compra, notaInfo.getCompra());
     }
 
     @Test
     public void deveObterCanaComoFoiSetado() {
-        final DFNotaInfo notaInfo = new DFNotaInfo();
-        final DFNotaInfoCana cana = FabricaDeObjetosFake.getNFNotaInfoCana();
+        final NFNotaInfo notaInfo = new NFNotaInfo();
+        final NFNotaInfoCana cana = FabricaDeObjetosFake.getNFNotaInfoCana();
         notaInfo.setCana(cana);
         Assert.assertEquals(cana, notaInfo.getCana());
     }
@@ -156,20 +156,20 @@ public class NFNotaInfoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIdentificadorComTamanhoInvalido() {
         try {
-            new DFNotaInfo().setIdentificador("ChZ9G0aubajFyQkslfhicTyzggacyZlAtWJrlrvS4JIskg");
+            new NFNotaInfo().setIdentificador("ChZ9G0aubajFyQkslfhicTyzggacyZlAtWJrlrvS4JIskg");
         } catch (final IllegalStateException e) {
-            new DFNotaInfo().setIdentificador("891726585917544010862180488469764934759370811");
+            new NFNotaInfo().setIdentificador("891726585917544010862180488469764934759370811");
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirVersaoComTamanhoInvalido() {
-        new DFNotaInfo().setVersao(new BigDecimal("100"));
+        new NFNotaInfo().setVersao(new BigDecimal("100"));
     }
 
     @Test
     public void devePermitirPessoasAutorizadasDownloadNFeNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -193,7 +193,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirAvulsaNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
         info.setCompra(FabricaDeObjetosFake.getNFNotaInfoCompra());
@@ -217,7 +217,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirCanaNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
         info.setCompra(FabricaDeObjetosFake.getNFNotaInfoCompra());
@@ -241,7 +241,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirCobrancaNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCompra(FabricaDeObjetosFake.getNFNotaInfoCompra());
@@ -265,7 +265,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirCompraNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -289,7 +289,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirDestinatarioNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -313,7 +313,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirEmitenteNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -337,7 +337,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirEntregaNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -361,7 +361,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirExportacaoNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -385,7 +385,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIdentificacaoNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -409,7 +409,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIdentificadorNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -433,7 +433,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirInformacoesAdicionaisNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -457,7 +457,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirItensNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -481,7 +481,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirRetiradaNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -505,7 +505,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTotalNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -529,7 +529,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTransporteNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -553,7 +553,7 @@ public class NFNotaInfoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirVersaoNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());
@@ -576,7 +576,7 @@ public class NFNotaInfoTest {
 
     @Test
     public void devePermitirPagamentosNulo() {
-        final DFNotaInfo info = new DFNotaInfo();
+        final NFNotaInfo info = new NFNotaInfo();
         info.setAvulsa(FabricaDeObjetosFake.getNFNotaInfoAvulsa());
         info.setCana(FabricaDeObjetosFake.getNFNotaInfoCana());
         info.setCobranca(FabricaDeObjetosFake.getNFNotaInfoCobranca());

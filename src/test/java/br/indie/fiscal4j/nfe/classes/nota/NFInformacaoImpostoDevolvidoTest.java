@@ -9,21 +9,21 @@ public class NFInformacaoImpostoDevolvidoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirValorIPINulo() {
-        new DFInformacaoImpostoDevolvido().toString();
+        new NFInformacaoImpostoDevolvido().toString();
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorIPIInvalido() {
-        final DFInformacaoImpostoDevolvido informacaoImpostoDevolvido = new DFInformacaoImpostoDevolvido();
+        final NFInformacaoImpostoDevolvido informacaoImpostoDevolvido = new NFInformacaoImpostoDevolvido();
         informacaoImpostoDevolvido.setValorIPIDevolvido(new BigDecimal("10000000000000.00"));
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFInformacaoImpostoDevolvido informacaoImpostoDevolvido = new DFInformacaoImpostoDevolvido();
+        final NFInformacaoImpostoDevolvido informacaoImpostoDevolvido = new NFInformacaoImpostoDevolvido();
         informacaoImpostoDevolvido.setValorIPIDevolvido(new BigDecimal("9999999999999.99"));
 
-        final String xmlEsperado = "<DFInformacaoImpostoDevolvido><vIPIDevol>9999999999999.99</vIPIDevol></DFInformacaoImpostoDevolvido>";
+        final String xmlEsperado = "<NFInformacaoImpostoDevolvido><vIPIDevol>9999999999999.99</vIPIDevol></NFInformacaoImpostoDevolvido>";
         Assert.assertEquals(xmlEsperado, informacaoImpostoDevolvido.toString());
     }
 }

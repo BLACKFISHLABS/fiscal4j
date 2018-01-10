@@ -1075,7 +1075,7 @@ public enum NFAutorizador4 {
 
         @Override
         public String getRecepcaoEvento(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "	https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl";
         }
 
         @Override

@@ -11,25 +11,25 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLoteComTamanhoInvalido() {
         try {
-            new DFNotaInfoItemProdutoMedicamento().setLote("");
+            new NFNotaInfoItemProdutoMedicamento().setLote("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoItemProdutoMedicamento().setLote("yq50jVDZsvQVNuWoS45U1");
+            new NFNotaInfoItemProdutoMedicamento().setLote("yq50jVDZsvQVNuWoS45U1");
         }
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirPrecoMaximoConsumidorComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoMedicamento().setPrecoMaximoConsumidor(new BigDecimal("10000000000000"));
+        new NFNotaInfoItemProdutoMedicamento().setPrecoMaximoConsumidor(new BigDecimal("10000000000000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirQuantidadeComTamanhoInvalido() {
-        new DFNotaInfoItemProdutoMedicamento().setQuantidade(new BigDecimal("100000000"));
+        new NFNotaInfoItemProdutoMedicamento().setQuantidade(new BigDecimal("100000000"));
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDataFabricacaoNulo() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataValidade(new LocalDate(2015, 1, 1));
         medicamento.setLote("yq50jVDZsvQVNuWoS45U");
         medicamento.setPrecoMaximoConsumidor(new BigDecimal("999999999999.99"));
@@ -39,7 +39,7 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDataValidadeNulo() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataFabricacao(new LocalDate(2014, 1, 1));
         medicamento.setLote("yq50jVDZsvQVNuWoS45U");
         medicamento.setPrecoMaximoConsumidor(new BigDecimal("999999999999.99"));
@@ -49,7 +49,7 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLoteNulo() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataFabricacao(new LocalDate(2014, 1, 1));
         medicamento.setDataValidade(new LocalDate(2015, 1, 1));
         medicamento.setPrecoMaximoConsumidor(new BigDecimal("999999999999.99"));
@@ -59,7 +59,7 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPrecoMaximoConsumidorNulo() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataFabricacao(new LocalDate(2014, 1, 1));
         medicamento.setDataValidade(new LocalDate(2015, 1, 1));
         medicamento.setLote("yq50jVDZsvQVNuWoS45U");
@@ -69,7 +69,7 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQuantidadeNulo() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataFabricacao(new LocalDate(2014, 1, 1));
         medicamento.setDataValidade(new LocalDate(2015, 1, 1));
         medicamento.setLote("yq50jVDZsvQVNuWoS45U");
@@ -79,14 +79,14 @@ public class NFNotaInfoItemProdutoMedicamentoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFNotaInfoItemProdutoMedicamento medicamento = new DFNotaInfoItemProdutoMedicamento();
+        final NFNotaInfoItemProdutoMedicamento medicamento = new NFNotaInfoItemProdutoMedicamento();
         medicamento.setDataFabricacao(new LocalDate(2014, 1, 1));
         medicamento.setDataValidade(new LocalDate(2015, 1, 1));
         medicamento.setLote("yq50jVDZsvQVNuWoS45U");
         medicamento.setPrecoMaximoConsumidor(new BigDecimal("999999999999.99"));
         medicamento.setQuantidade(new BigDecimal("9999999.999"));
 
-        final String xmlEsperado = "<DFNotaInfoItemProdutoMedicamento><nLote>yq50jVDZsvQVNuWoS45U</nLote><qLote>9999999.999</qLote><dFab>2014-01-01</dFab><dVal>2015-01-01</dVal><vPMC>999999999999.99</vPMC></DFNotaInfoItemProdutoMedicamento>";
+        final String xmlEsperado = "<NFNotaInfoItemProdutoMedicamento><nLote>yq50jVDZsvQVNuWoS45U</nLote><qLote>9999999.999</qLote><dFab>2014-01-01</dFab><dVal>2015-01-01</dVal><vPMC>999999999999.99</vPMC></NFNotaInfoItemProdutoMedicamento>";
         Assert.assertEquals(xmlEsperado, medicamento.toString());
     }
 }

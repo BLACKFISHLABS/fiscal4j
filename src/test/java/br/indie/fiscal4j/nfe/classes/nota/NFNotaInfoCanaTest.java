@@ -12,9 +12,9 @@ public class NFNotaInfoCanaTest {
 
     @Test
     public void devePermitirListaDeducoesVazia() {
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2014");
         infoCana.setReferencia("06/2013");
@@ -29,8 +29,8 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirListaFornecimentoDiarioVazio() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
         infoCana.setSafra("2014");
         infoCana.setReferencia("06/2013");
         infoCana.setValorFornecimento(new BigDecimal("900"));
@@ -44,9 +44,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSafraNulo() throws ParseException {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setReferencia("06/2013");
@@ -61,9 +61,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirReferenciaNulo() throws ParseException {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -78,9 +78,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTotalDeducaoNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -94,9 +94,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLiquidoFornecimentoNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -110,9 +110,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirFornecimentoNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -126,9 +126,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQtdTotalAnteriorNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -142,9 +142,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQtdTotalGeralNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -159,9 +159,9 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQtdTotalMesNulo() {
-        final DFNotaInfoCana infoCana = new DFNotaInfoCana();
-        infoCana.setDeducoes(new ArrayList<DFNotaInfoCanaDeducao>());
-        final ArrayList<DFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
+        final NFNotaInfoCana infoCana = new NFNotaInfoCana();
+        infoCana.setDeducoes(new ArrayList<NFNotaInfoCanaDeducao>());
+        final ArrayList<NFNotaInfoCanaFornecimentoDiario> infosCanaFornecimentoDario = new ArrayList<>();
         infosCanaFornecimentoDario.add(FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario());
         infoCana.setFornecimentosDiario(infosCanaFornecimentoDario);
         infoCana.setSafra("2013/2014");
@@ -175,16 +175,16 @@ public class NFNotaInfoCanaTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSafraDeFormatoDiferente() {
-        new DFNotaInfoCana().setSafra("2014-2015");
+        new NFNotaInfoCana().setSafra("2014-2015");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSafraComTamanhoDiferenteQue9() {
         try {
-            new DFNotaInfoCana().setSafra("2013/201");
+            new NFNotaInfoCana().setSafra("2013/201");
             Assert.fail("Validacao da safra falhou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoCana().setSafra("2013/20140");
+            new NFNotaInfoCana().setSafra("2013/20140");
         }
         Assert.fail("Validacao da safra falhou");
     }
@@ -192,17 +192,17 @@ public class NFNotaInfoCanaTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSafraComTamanhoDiferenteQue4() {
         try {
-            new DFNotaInfoCana().setSafra("201");
+            new NFNotaInfoCana().setSafra("201");
             Assert.fail("Validacao da safra falhou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoCana().setSafra("2014/");
+            new NFNotaInfoCana().setSafra("2014/");
         }
         Assert.fail("Validacao da safra falhou");
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoCana><safra>2013/2014</safra><ref>06/2013</ref><forDia dia=\"15\"><qtde>3</qtde></forDia><qTotMes>30.0000001</qTotMes><qTotAnt>10</qTotAnt><qTotGer>80</qTotGer><vFor>900.00</vFor><vTotDed>2000.70</vTotDed><vLiqFor>980.00</vLiqFor></DFNotaInfoCana>";
+        final String xmlEsperado = "<NFNotaInfoCana><safra>2013/2014</safra><ref>06/2013</ref><forDia dia=\"15\"><qtde>3</qtde></forDia><qTotMes>30.0000001</qTotMes><qTotAnt>10</qTotAnt><qTotGer>80</qTotGer><vFor>900.00</vFor><vTotDed>2000.70</vTotDed><vLiqFor>980.00</vLiqFor></NFNotaInfoCana>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoCana().toString());
     }
 

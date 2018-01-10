@@ -14,29 +14,29 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirLacresComTamanhoInvalido() {
-        final List<DFNotaInfoLacre> lacres = new ArrayList<>();
+        final List<NFNotaInfoLacre> lacres = new ArrayList<>();
         for (int i = 0; i < 5000; i++) {
-            lacres.add(new DFNotaInfoLacre());
+            lacres.add(new NFNotaInfoLacre());
         }
-        new DFNotaInfoVolume().setLacres(lacres);
+        new NFNotaInfoVolume().setLacres(lacres);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLacresComTamanhoInvalido() {
-        final List<DFNotaInfoLacre> lacres = new ArrayList<>();
+        final List<NFNotaInfoLacre> lacres = new ArrayList<>();
         for (int i = 0; i < 5001; i++) {
-            lacres.add(new DFNotaInfoLacre());
+            lacres.add(new NFNotaInfoLacre());
         }
-        new DFNotaInfoVolume().setLacres(lacres);
+        new NFNotaInfoVolume().setLacres(lacres);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumerocaoVolumesComTamanhoInvalido() {
         try {
-            new DFNotaInfoVolume().setNumeracaoVolumesTransportados("");
+            new NFNotaInfoVolume().setNumeracaoVolumesTransportados("");
             Assert.fail("Validacao nao funcionou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoVolume().setNumeracaoVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
+            new NFNotaInfoVolume().setNumeracaoVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
         }
         Assert.fail("Validacao nao funcionou");
     }
@@ -44,10 +44,10 @@ public class NFNotaInfoVolumeTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirMarcaComTaamnhoInvalido() {
         try {
-            new DFNotaInfoVolume().setMarca("");
+            new NFNotaInfoVolume().setMarca("");
             Assert.fail("Validacao nao funcionou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoVolume().setMarca("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
+            new NFNotaInfoVolume().setMarca("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
         }
         Assert.fail("Validacao nao funcionou");
     }
@@ -55,17 +55,17 @@ public class NFNotaInfoVolumeTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirEspecieVolumesTransportadosComTamanhoInvalido() {
         try {
-            new DFNotaInfoVolume().setEspecieVolumesTransportados("");
+            new NFNotaInfoVolume().setEspecieVolumesTransportados("");
             Assert.fail("Validacao nao funcionou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoVolume().setEspecieVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
+            new NFNotaInfoVolume().setEspecieVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb1");
         }
         Assert.fail("Validacao nao funcionou");
     }
 
     @Test
     public void devePermitirLacresNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
         volume.setNumeracaoVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb");
@@ -77,9 +77,9 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirQuantidadeVolumesTransportadosNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
@@ -91,9 +91,9 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirPesoLiquidoNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
@@ -105,9 +105,9 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirPesoBrutoNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
@@ -119,9 +119,9 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirNumeracaoVolumesTransportadosNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
@@ -133,9 +133,9 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirMarcaNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
         volume.setEspecieVolumesTransportados("3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb");
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setNumeracaoVolumesTransportados("mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb");
@@ -147,8 +147,8 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void devePermitirEspecieVolumesTransportadosNulo() {
-        final DFNotaInfoVolume volume = new DFNotaInfoVolume();
-        final DFNotaInfoLacre notaInfoLacre = new DFNotaInfoLacre();
+        final NFNotaInfoVolume volume = new NFNotaInfoVolume();
+        final NFNotaInfoLacre notaInfoLacre = new NFNotaInfoLacre();
         notaInfoLacre.setNumeroLacre("gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2");
         volume.setLacres(Collections.singletonList(notaInfoLacre));
         volume.setMarca("lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo");
@@ -161,7 +161,7 @@ public class NFNotaInfoVolumeTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoVolume><qVol>99999999999</qVol><esp>3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb</esp><marca>lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo</marca><nVol>mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb</nVol><pesoL>1.000</pesoL><pesoB>1.358</pesoB><lacres><nLacre>gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2</nLacre></lacres></DFNotaInfoVolume>";
+        final String xmlEsperado = "<NFNotaInfoVolume><qVol>99999999999</qVol><esp>3Qf46HFs7FcWlhuQqLJ96vsrgJHu6B5ZXmmwMZ1RtvQVOV4Yp6M9VNqn5Ecb</esp><marca>lc0w13Xw2PxsSD4u4q3N6Qix9ZuCFm0HXo6BxBmKnjVbh9Xwy3k9UwBNfuYo</marca><nVol>mcBUtZwnI5DKj2YZNAcLP7W9h6j1xKmF5SX1BTKmsvyg0H5xSrfVw8HGn8eb</nVol><pesoL>1.000</pesoL><pesoB>1.358</pesoB><lacres><nLacre>gvmjb9BB2cmwsLbzeR3Bsk8QbA7b1XEgXUhKeS9QZGiwhFnqDtEzS3377MP2</nLacre></lacres></NFNotaInfoVolume>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoVolume().toString());
     }
 }

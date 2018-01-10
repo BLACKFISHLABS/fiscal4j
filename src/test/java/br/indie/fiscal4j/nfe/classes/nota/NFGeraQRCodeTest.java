@@ -18,8 +18,8 @@ public class NFGeraQRCodeTest {
 
     @Test
     public void geraQRCodeConformeEsperado() throws NoSuchAlgorithmException {
-        final DFNota nota = FabricaDeObjetosFake.getNotaQRCode();
-        nota.setInfoSuplementar(new DFNotaInfoSuplementar());
+        final NFNota nota = FabricaDeObjetosFake.getNotaQRCode();
+        nota.setInfoSuplementar(new NFNotaInfoSuplementar());
         nota.getInfoSuplementar().setQrCode(new NFGeraQRCode(nota, this.createConfigTest()).getQRCode());
 
         final String urlEsperada = nota.getInfo().getIdentificacao().getUf().getQrCodeHomologacao() + NFGeraQRCodeTest.URL_TEST;

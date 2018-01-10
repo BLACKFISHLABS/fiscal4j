@@ -8,7 +8,7 @@ public class NFInfoReferenciadaTest {
 
     @Test(expected = IllegalStateException.class)
     public void devePermitirSetarApenasUmChaveAcessoCTReferenciada() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setChaveAcessoCTReferenciada("976491545426199562046180593530960051134629091");
         try {
             referenciada.setCupomFiscalReferenciado(FabricaDeObjetosFake.getNFInfoCupomFiscalReferenciado());
@@ -34,7 +34,7 @@ public class NFInfoReferenciadaTest {
 
     @Test
     public void devePermitirSetarApenasUmChaveAcesso() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setChaveAcesso("97649154542619956204618059353096005113462909");
         try {
             referenciada.setCupomFiscalReferenciado(FabricaDeObjetosFake.getNFInfoCupomFiscalReferenciado());
@@ -60,7 +60,7 @@ public class NFInfoReferenciadaTest {
 
     @Test
     public void devePermitirSetarApenasUmInfoNFProdutorRuralReferenciada() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setInfoNFProdutorRuralReferenciada(FabricaDeObjetosFake.getNFInfoProdutorRuralReferenciada());
         try {
             referenciada.setCupomFiscalReferenciado(FabricaDeObjetosFake.getNFInfoCupomFiscalReferenciado());
@@ -86,7 +86,7 @@ public class NFInfoReferenciadaTest {
 
     @Test
     public void devePermitirSetarApenasUmModelo1Por1Referenciada() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setModelo1por1Referenciada(FabricaDeObjetosFake.getNFInfoModelo1Por1AReferenciada());
         try {
             referenciada.setCupomFiscalReferenciado(FabricaDeObjetosFake.getNFInfoCupomFiscalReferenciado());
@@ -112,7 +112,7 @@ public class NFInfoReferenciadaTest {
 
     @Test
     public void devePermitirSetarApenasUmCupomFiscalReferenciadoSetado() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setCupomFiscalReferenciado(FabricaDeObjetosFake.getNFInfoCupomFiscalReferenciado());
         try {
             referenciada.setModelo1por1Referenciada(FabricaDeObjetosFake.getNFInfoModelo1Por1AReferenciada());
@@ -139,31 +139,31 @@ public class NFInfoReferenciadaTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirChaveAcessoComTamanhoInvalido() {
         try {
-            new DFInfoReferenciada().setChaveAcesso("9764915454261995620461805935309600511346290");
+            new NFInfoReferenciada().setChaveAcesso("9764915454261995620461805935309600511346290");
         } catch (final IllegalStateException e) {
-            new DFInfoReferenciada().setChaveAcesso("976491545426199562046180593530960051134629091");
+            new NFInfoReferenciada().setChaveAcesso("976491545426199562046180593530960051134629091");
         }
     }
 
     @Test
     public void devePermitirModelo1por1ReferenciadaNulo() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setChaveAcesso("97649154542619956204618059353096005113462909");
         referenciada.toString();
     }
 
     @Test
     public void devePermitirChaveAcessoNulo() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setModelo1por1Referenciada(FabricaDeObjetosFake.getNFInfoModelo1Por1AReferenciada());
         referenciada.toString();
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFInfoReferenciada referenciada = new DFInfoReferenciada();
+        final NFInfoReferenciada referenciada = new NFInfoReferenciada();
         referenciada.setModelo1por1Referenciada(FabricaDeObjetosFake.getNFInfoModelo1Por1AReferenciada());
-        final String xmlEsperado = "<DFInfoReferenciada><refNF><cUF>43</cUF><AAMM>1408</AAMM><CNPJ>12345678901234</CNPJ><mod>01</mod><serie>999</serie><nNF>999999999</nNF></refNF></DFInfoReferenciada>";
+        final String xmlEsperado = "<NFInfoReferenciada><refNF><cUF>43</cUF><AAMM>1408</AAMM><CNPJ>12345678901234</CNPJ><mod>01</mod><serie>999</serie><nNF>999999999</nNF></refNF></NFInfoReferenciada>";
         Assert.assertEquals(xmlEsperado, referenciada.toString());
     }
 }

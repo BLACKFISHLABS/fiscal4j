@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.lote.envio;
 
 import br.indie.fiscal4j.FabricaDeObjetosFake;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,35 +13,35 @@ public class NFLoteEnvioTest {
 
     @Test
     public void devePermitirNotasComTamanho50() {
-        final List<DFNota> notas = new ArrayList<>();
+        final List<NFNota> notas = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            notas.add(new DFNota());
+            notas.add(new NFNota());
         }
-        new DFLoteEnvio().setNotas(notas);
+        new NFLoteEnvio().setNotas(notas);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNotasComTamanhoInvalido() {
-        final List<DFNota> notas = new ArrayList<>();
+        final List<NFNota> notas = new ArrayList<>();
         for (int i = 0; i < 51; i++) {
-            notas.add(new DFNota());
+            notas.add(new NFNota());
         }
-        new DFLoteEnvio().setNotas(notas);
+        new NFLoteEnvio().setNotas(notas);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIdLoteComTamanhoInvalido() {
-        new DFLoteEnvio().setIdLote("0309665812232211");
+        new NFLoteEnvio().setIdLote("0309665812232211");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirLetrasNoIdLote() {
-        new DFLoteEnvio().setIdLote("03096658122A221");
+        new NFLoteEnvio().setIdLote("03096658122A221");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIndicadorProcessamentoNulo() {
-        final DFLoteEnvio loteEnvio = new DFLoteEnvio();
+        final NFLoteEnvio loteEnvio = new NFLoteEnvio();
         loteEnvio.setVersao("4.00");
         loteEnvio.setIdLote("333972757970401");
         loteEnvio.setNotas(Collections.singletonList(FabricaDeObjetosFake.getNFNota()));
@@ -50,7 +50,7 @@ public class NFLoteEnvioTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirVersaoNulo() {
-        final DFLoteEnvio loteEnvio = new DFLoteEnvio();
+        final NFLoteEnvio loteEnvio = new NFLoteEnvio();
         loteEnvio.setIdLote("333972757970401");
         loteEnvio.setNotas(Collections.singletonList(FabricaDeObjetosFake.getNFNota()));
         loteEnvio.setIndicadorProcessamento(NFLoteIndicadorProcessamento.PROCESSAMENTO_ASSINCRONO);
@@ -59,7 +59,7 @@ public class NFLoteEnvioTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirIdLoteNulo() {
-        final DFLoteEnvio loteEnvio = new DFLoteEnvio();
+        final NFLoteEnvio loteEnvio = new NFLoteEnvio();
         loteEnvio.setVersao("4.00");
         loteEnvio.setNotas(Collections.singletonList(FabricaDeObjetosFake.getNFNota()));
         loteEnvio.setIndicadorProcessamento(NFLoteIndicadorProcessamento.PROCESSAMENTO_ASSINCRONO);
@@ -68,7 +68,7 @@ public class NFLoteEnvioTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNotasNulo() {
-        final DFLoteEnvio loteEnvio = new DFLoteEnvio();
+        final NFLoteEnvio loteEnvio = new NFLoteEnvio();
         loteEnvio.setIdLote("333972757970401");
         loteEnvio.setVersao("4.00");
         loteEnvio.setIndicadorProcessamento(NFLoteIndicadorProcessamento.PROCESSAMENTO_ASSINCRONO);
@@ -77,7 +77,7 @@ public class NFLoteEnvioTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFLoteEnvio loteEnvio = new DFLoteEnvio();
+        final NFLoteEnvio loteEnvio = new NFLoteEnvio();
         loteEnvio.setIdLote("333972757970401");
         loteEnvio.setVersao("4.00");
         loteEnvio.setIndicadorProcessamento(NFLoteIndicadorProcessamento.PROCESSAMENTO_ASSINCRONO);

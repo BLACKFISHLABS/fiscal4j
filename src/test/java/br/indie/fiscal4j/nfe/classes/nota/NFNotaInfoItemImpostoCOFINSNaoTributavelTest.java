@@ -8,12 +8,12 @@ public class NFNotaInfoItemImpostoCOFINSNaoTributavelTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSituacaoTributariaNulo() {
-        new DFNotaInfoItemImpostoCOFINSNaoTributavel().toString();
+        new NFNotaInfoItemImpostoCOFINSNaoTributavel().toString();
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoCOFINSNaoTributavel><CST>04</CST></DFNotaInfoItemImpostoCOFINSNaoTributavel>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoCOFINSNaoTributavel><CST>04</CST></NFNotaInfoItemImpostoCOFINSNaoTributavel>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSNaoTributavel().toString());
     }
 }

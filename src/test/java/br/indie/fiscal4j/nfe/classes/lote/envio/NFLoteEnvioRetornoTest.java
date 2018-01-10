@@ -11,7 +11,7 @@ public class NFLoteEnvioRetornoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFLoteEnvioRetorno retorno = new DFLoteEnvioRetorno();
+        final NFLoteEnvioRetorno retorno = new NFLoteEnvioRetorno();
         retorno.setAmbiente(DFAmbiente.HOMOLOGACAO);
         retorno.setDataRecebimento(new LocalDateTime(2014, 1, 1, 10, 10, 10));
         retorno.setInfoRecebimento(FabricaDeObjetosFake.getNFLoteEnvioRetornoRecebimentoInfo());

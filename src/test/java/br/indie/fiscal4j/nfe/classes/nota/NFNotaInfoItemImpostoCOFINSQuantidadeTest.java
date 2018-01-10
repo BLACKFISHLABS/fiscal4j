@@ -11,7 +11,7 @@ public class NFNotaInfoItemImpostoCOFINSQuantidadeTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQuantidadeVendidoNulo() {
-        final DFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new DFNotaInfoItemImpostoCOFINSQuantidade();
+        final NFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new NFNotaInfoItemImpostoCOFINSQuantidade();
         cofinsQuantidade.setSituacaoTributaria(NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_AQUISICAO_ALIQUOTA_ZERO);
         cofinsQuantidade.setValorAliquota(new BigDecimal("9999999999.0000"));
         cofinsQuantidade.setValorTributo(new BigDecimal("999999999999.00"));
@@ -20,7 +20,7 @@ public class NFNotaInfoItemImpostoCOFINSQuantidadeTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirValorAliquotaNulo() {
-        final DFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new DFNotaInfoItemImpostoCOFINSQuantidade();
+        final NFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new NFNotaInfoItemImpostoCOFINSQuantidade();
         cofinsQuantidade.setQuantidadeVendida(new BigDecimal("99999999999"));
         cofinsQuantidade.setSituacaoTributaria(NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_AQUISICAO_ALIQUOTA_ZERO);
         cofinsQuantidade.setValorTributo(new BigDecimal("999999999999.00"));
@@ -29,7 +29,7 @@ public class NFNotaInfoItemImpostoCOFINSQuantidadeTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirValorTributoNulo() {
-        final DFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new DFNotaInfoItemImpostoCOFINSQuantidade();
+        final NFNotaInfoItemImpostoCOFINSQuantidade cofinsQuantidade = new NFNotaInfoItemImpostoCOFINSQuantidade();
         cofinsQuantidade.setQuantidadeVendida(new BigDecimal("99999999999"));
         cofinsQuantidade.setSituacaoTributaria(NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_AQUISICAO_ALIQUOTA_ZERO);
         cofinsQuantidade.setValorAliquota(new BigDecimal("9999999999.0000"));
@@ -38,7 +38,7 @@ public class NFNotaInfoItemImpostoCOFINSQuantidadeTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoCOFINSQuantidade><CST>03</CST><qBCProd>99999999999.9999</qBCProd><vAliqProd>9999999999.0000</vAliqProd><vCOFINS>999999999999.00</vCOFINS></DFNotaInfoItemImpostoCOFINSQuantidade>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoCOFINSQuantidade><CST>03</CST><qBCProd>99999999999.9999</qBCProd><vAliqProd>9999999999.0000</vAliqProd><vCOFINS>999999999999.00</vCOFINS></NFNotaInfoItemImpostoCOFINSQuantidade>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSQuantidade().toString());
     }
 }

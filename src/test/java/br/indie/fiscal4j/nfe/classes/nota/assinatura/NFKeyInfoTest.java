@@ -7,7 +7,7 @@ public class NFKeyInfoTest {
 
     @Test
     public void deveObterComoFoiSetado() {
-        final DFKeyInfo keyInfo = new DFKeyInfo();
+        final NFKeyInfo keyInfo = new NFKeyInfo();
         final NFX509Data data = new NFX509Data();
         keyInfo.setData(data);
         Assert.assertEquals(data, keyInfo.getData());

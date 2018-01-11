@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe.classes.evento.cancelamento;
 import br.indie.fiscal4j.common.DFAmbiente;
 import br.indie.fiscal4j.common.DFBase;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.joda.time.LocalDateTime;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -38,7 +38,7 @@ public class NFRetornoInfoCancelamento extends DFBase {
     private String numeroProtocolo;
 
     @Element(name = "Signature", required = false)
-    private DFSignature assinatura;
+    private NFSignature assinatura;
 
     public String getIdentificador() {
         return this.identificador;
@@ -112,11 +112,11 @@ public class NFRetornoInfoCancelamento extends DFBase {
         this.numeroProtocolo = numeroProtocolo;
     }
 
-    public DFSignature getAssinatura() {
+    public NFSignature getAssinatura() {
         return this.assinatura;
     }
 
-    public void setAssinatura(final DFSignature assinatura) {
+    public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
     }
 }

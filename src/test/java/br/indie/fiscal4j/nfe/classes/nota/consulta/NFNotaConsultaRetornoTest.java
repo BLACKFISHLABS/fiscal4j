@@ -17,7 +17,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterVersaoComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final String versao = "4.00";
         consultaRetorno.setVersao(versao);
         Assert.assertEquals(versao, consultaRetorno.getVersao());
@@ -25,7 +25,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterAmbienteComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final DFAmbiente ambiente = DFAmbiente.HOMOLOGACAO;
         consultaRetorno.setAmbiente(ambiente);
         Assert.assertEquals(ambiente, consultaRetorno.getAmbiente());
@@ -33,7 +33,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterChaveComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final String chave = "70460574637515066066966657989989378421243260";
         consultaRetorno.setChave(chave);
         Assert.assertEquals(chave, consultaRetorno.getChave());
@@ -41,7 +41,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterDataHoraReciboComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final LocalDateTime dataHoraRecibo = LocalDateTime.parse("2010-10-10 10:10:10", DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
         consultaRetorno.setDataHoraRecibo(dataHoraRecibo);
         Assert.assertEquals(dataHoraRecibo, consultaRetorno.getDataHoraRecibo());
@@ -49,7 +49,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterMotivoComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final String motivo = "Motivo simples";
         consultaRetorno.setMotivo(motivo);
         Assert.assertEquals(motivo, consultaRetorno.getMotivo());
@@ -57,7 +57,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterProtocoloComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final NFProtocolo protocolo = FabricaDeObjetosFake.getNFProtocolo();
         consultaRetorno.setProtocolo(protocolo);
         Assert.assertEquals(protocolo, consultaRetorno.getProtocolo());
@@ -65,7 +65,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterStatusComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final String status = "190";
         consultaRetorno.setStatus(status);
         Assert.assertEquals(status, consultaRetorno.getStatus());
@@ -73,7 +73,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterUfComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final DFUnidadeFederativa unidadeFederativa = DFUnidadeFederativa.AL;
         consultaRetorno.setUf(unidadeFederativa);
         Assert.assertEquals(unidadeFederativa, consultaRetorno.getUf());
@@ -81,7 +81,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterVersaoAplicativoComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final String versaoAplicacao = "v10.0";
         consultaRetorno.setVersaoAplicacao(versaoAplicacao);
         Assert.assertEquals(versaoAplicacao, consultaRetorno.getVersaoAplicacao());
@@ -89,7 +89,7 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterProtocoloCancelamentoComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
         final NFRetornoCancelamento protocoloCancelamento = new NFRetornoCancelamento();
         consultaRetorno.setProtocoloCancelamento(protocoloCancelamento);
         Assert.assertEquals(protocoloCancelamento, consultaRetorno.getProtocoloCancelamento());
@@ -97,8 +97,8 @@ public class NFNotaConsultaRetornoTest {
 
     @Test
     public void deveObterProtocoloEventoComoFoiSetado() {
-        final DFNotaConsultaRetorno consultaRetorno = new DFNotaConsultaRetorno();
-        final List<DFProtocoloEvento> protocoloEvento = new ArrayList<>();
+        final NFNotaConsultaRetorno consultaRetorno = new NFNotaConsultaRetorno();
+        final List<NFProtocoloEvento> protocoloEvento = new ArrayList<>();
         consultaRetorno.setProtocoloEvento(protocoloEvento);
         Assert.assertEquals(protocoloEvento, consultaRetorno.getProtocoloEvento());
     }

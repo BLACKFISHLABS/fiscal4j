@@ -14,8 +14,8 @@ import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvio;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetorno;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetornoDados;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteIndicadorProcessamento;
-import br.indie.fiscal4j.nfe.classes.nota.consulta.DFNotaConsultaRetorno;
-import br.indie.fiscal4j.nfe.classes.statusservico.consulta.DFStatusServicoConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.nota.consulta.NFNotaConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.statusservico.consulta.NFStatusServicoConsultaRetorno;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
@@ -110,7 +110,7 @@ public class WSFacade {
      * @return dados da consulta de status retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public DFStatusServicoConsultaRetorno consultaStatus(final DFUnidadeFederativa uf, final DFModelo modelo) throws Exception {
+    public NFStatusServicoConsultaRetorno consultaStatus(final DFUnidadeFederativa uf, final DFModelo modelo) throws Exception {
         return this.wsStatusConsulta.consultaStatus(uf, modelo);
     }
 
@@ -121,7 +121,7 @@ public class WSFacade {
      * @return dados da consulta da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public DFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
+    public NFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
         return this.wsNotaConsulta.consultaNota(chaveDeAcesso);
     }
 

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.nota;
 
 import br.indie.fiscal4j.FabricaDeObjetosFake;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class NFNotaTest {
     @Test
     public void deveObterAssinaturaComoFoiObtida() {
         final NFNota nota = new NFNota();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         nota.setAssinatura(assinatura);
         Assert.assertEquals(assinatura, nota.getAssinatura());
     }

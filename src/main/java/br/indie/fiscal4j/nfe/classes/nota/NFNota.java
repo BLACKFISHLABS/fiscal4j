@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.nota;
 
 import br.indie.fiscal4j.common.DFBase;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -19,7 +19,7 @@ public class NFNota extends DFBase {
     private NFNotaInfoSuplementar infoSuplementar;
 
     @Element(name = "Signature", required = false)
-    private DFSignature assinatura;
+    private NFSignature assinatura;
 
     public void setInfo(final NFNotaInfo info) {
         this.info = info;
@@ -50,11 +50,11 @@ public class NFNota extends DFBase {
         return this.identificadorLocal;
     }
 
-    public void setAssinatura(final DFSignature assinatura) {
+    public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
     }
 
-    public DFSignature getAssinatura() {
+    public NFSignature getAssinatura() {
         return this.assinatura;
     }
 }

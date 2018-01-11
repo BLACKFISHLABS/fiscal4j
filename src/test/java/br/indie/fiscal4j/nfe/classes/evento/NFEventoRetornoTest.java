@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.nfe.classes.evento;
 
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ public class NFEventoRetornoTest {
     @Test
     public void deveObterAssinaturaComoFoiSetado() {
         final NFEventoRetorno retorno = new NFEventoRetorno();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         retorno.setAssinatura(assinatura);
         Assert.assertEquals(assinatura, retorno.getAssinatura());
     }

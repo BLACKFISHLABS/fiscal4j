@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe.classes.nota.assinatura;
 import br.indie.fiscal4j.common.DFBase;
 import org.simpleframework.xml.Element;
 
-public class DFKeyInfo extends DFBase {
+public class NFKeyInfo extends DFBase {
 
     @Element(name = "X509Data", required = false)
     private NFX509Data data;

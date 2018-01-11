@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 @Root(name = "consStatServ")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
-public class DFStatusServicoConsulta extends DFBase {
+public class NFStatusServicoConsulta extends DFBase {
 
     @Attribute(name = "versao", required = true)
     private String versao;
@@ -24,7 +24,7 @@ public class DFStatusServicoConsulta extends DFBase {
     @Element(name = "xServ", required = true)
     private String servico;
 
-    public DFStatusServicoConsulta() {
+    public NFStatusServicoConsulta() {
         this.versao = null;
         this.ambiente = null;
         this.uf = null;

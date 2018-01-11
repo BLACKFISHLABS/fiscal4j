@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 @Root(name = "consSitNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
-public class DFNotaConsulta extends DFBase {
+public class NFNotaConsulta extends DFBase {
 
     @Attribute(name = "versao", required = true)
     private String versao;

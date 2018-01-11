@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe.classes.nota.assinatura;
 import br.indie.fiscal4j.common.DFBase;
 import org.simpleframework.xml.Element;
 
-public class DFSignedInfo extends DFBase {
+public class NFSignedInfo extends DFBase {
 
     @Element(name = "CanonicalizationMethod", required = false)
     private NFCanonicalizationMethod canonicalizationMethod;
@@ -12,7 +12,7 @@ public class DFSignedInfo extends DFBase {
     private NFSignatureMethod signatureMethod;
 
     @Element(name = "Reference", required = false)
-    private DFReference reference;
+    private NFReference reference;
 
     public NFCanonicalizationMethod getCanonicalizationMethod() {
         return this.canonicalizationMethod;
@@ -30,11 +30,11 @@ public class DFSignedInfo extends DFBase {
         this.signatureMethod = signatureMethod;
     }
 
-    public DFReference getReference() {
+    public NFReference getReference() {
         return this.reference;
     }
 
-    public void setReference(final DFReference reference) {
+    public void setReference(final NFReference reference) {
         this.reference = reference;
     }
 }

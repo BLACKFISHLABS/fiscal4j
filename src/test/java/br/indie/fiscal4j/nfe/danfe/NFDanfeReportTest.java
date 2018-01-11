@@ -9,7 +9,7 @@ import br.indie.fiscal4j.nfe.classes.NFProtocolo;
 import br.indie.fiscal4j.nfe.classes.nota.NFNota;
 import br.indie.fiscal4j.nfe.classes.nota.NFNotaInfoSuplementar;
 import br.indie.fiscal4j.nfe.classes.nota.NFNotaProcessada;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import br.indie.fiscal4j.nfe.utils.NFGeraQRCode;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,7 +26,7 @@ public class NFDanfeReportTest {
         nfProtocolo.setProtocoloInfo(FabricaDeObjetosFake.getNFProtocoloInfo());
         nfProtocolo.setVersao("4.00");
 
-        final DFSignature signature = new DFSignature();
+        final NFSignature signature = new NFSignature();
         signature.setSignatureValue("NFe89172658591754401086218048846976493475937081");
 
         final NFNota nota = new NFNota();

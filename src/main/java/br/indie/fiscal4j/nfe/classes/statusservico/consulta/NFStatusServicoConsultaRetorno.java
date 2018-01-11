@@ -1,18 +1,17 @@
-package br.indie.fiscal4j.nfe.classes.nota.consulta;
+package br.indie.fiscal4j.nfe.classes.statusservico.consulta;
 
 import br.indie.fiscal4j.common.DFAmbiente;
 import br.indie.fiscal4j.common.DFBase;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe.classes.NFProtocolo;
-import br.indie.fiscal4j.nfe.classes.evento.cancelamento.NFRetornoCancelamento;
 import org.joda.time.LocalDateTime;
-import org.simpleframework.xml.*;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
-import java.util.List;
-
-@Root(name = "retConsSitNFe", strict = false)
+@Root(name = "retConsStatServ")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
-public class DFNotaConsultaRetorno extends DFBase {
+public class NFStatusServicoConsultaRetorno extends DFBase {
 
     @Attribute(name = "versao", required = true)
     private String versao;
@@ -33,29 +32,28 @@ public class DFNotaConsultaRetorno extends DFBase {
     private DFUnidadeFederativa uf;
 
     @Element(name = "dhRecbto", required = true)
-    private LocalDateTime dataHoraRecibo;
+    private LocalDateTime dataRecebimento;
 
-    @Element(name = "chNFe", required = true)
-    private String chave;
+    @Element(name = "dhRetorno", required = false)
+    private LocalDateTime dataRetorno;
 
-    @Element(name = "protNFe", required = false)
-    protected NFProtocolo protocolo;
+    @Element(name = "xObs", required = false)
+    private String observacao;
 
-    @Element(name = "retCancNFe", required = false)
-    private NFRetornoCancelamento protocoloCancelamento;
+    @Element(name = "tMed", required = false)
+    private String tempoMedio;
 
-    @ElementList(entry = "procEventoNFe", inline = true, required = false)
-    private List<DFProtocoloEvento> protocoloEvento;
-
-    public DFNotaConsultaRetorno() {
+    public NFStatusServicoConsultaRetorno() {
         this.versao = null;
         this.ambiente = null;
         this.versaoAplicacao = null;
         this.status = null;
         this.motivo = null;
         this.uf = null;
-        this.chave = null;
-        this.protocolo = null;
+        this.dataRecebimento = null;
+        this.dataRetorno = null;
+        this.observacao = null;
+        this.tempoMedio = null;
     }
 
     public String getVersao() {
@@ -106,43 +104,35 @@ public class DFNotaConsultaRetorno extends DFBase {
         this.uf = uf;
     }
 
-    public String getChave() {
-        return this.chave;
+    public LocalDateTime getDataRecebimento() {
+        return this.dataRecebimento;
     }
 
-    public List<DFProtocoloEvento> getProtocoloEvento() {
-        return this.protocoloEvento;
+    public void setDataRecebimento(final LocalDateTime dataRecebimento) {
+        this.dataRecebimento = dataRecebimento;
     }
 
-    public NFRetornoCancelamento getProtocoloCancelamento() {
-        return this.protocoloCancelamento;
+    public LocalDateTime getDataRetorno() {
+        return this.dataRetorno;
     }
 
-    public void setChave(final String chave) {
-        this.chave = chave;
+    public void setDataRetorno(final LocalDateTime dataRetorno) {
+        this.dataRetorno = dataRetorno;
     }
 
-    public NFProtocolo getProtocolo() {
-        return this.protocolo;
+    public String getObservacao() {
+        return this.observacao;
     }
 
-    public void setProtocolo(final NFProtocolo protocolo) {
-        this.protocolo = protocolo;
+    public void setObservacao(final String observacao) {
+        this.observacao = observacao;
     }
 
-    public LocalDateTime getDataHoraRecibo() {
-        return this.dataHoraRecibo;
+    public String getTempoMedio() {
+        return this.tempoMedio;
     }
 
-    public void setDataHoraRecibo(final LocalDateTime dataHoraRecibo) {
-        this.dataHoraRecibo = dataHoraRecibo;
-    }
-
-    public void setProtocoloEvento(final List<DFProtocoloEvento> protocoloEvento) {
-        this.protocoloEvento = protocoloEvento;
-    }
-
-    public void setProtocoloCancelamento(final NFRetornoCancelamento protocoloCancelamento) {
-        this.protocoloCancelamento = protocoloCancelamento;
+    public void setTempoMedio(final String tempoMedio) {
+        this.tempoMedio = tempoMedio;
     }
 }

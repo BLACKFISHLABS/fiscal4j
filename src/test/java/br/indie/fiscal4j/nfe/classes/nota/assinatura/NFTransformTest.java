@@ -7,7 +7,7 @@ public class NFTransformTest {
 
     @Test
     public void deveObterAlgorithmComoFoiSetado() {
-        final DFTransform transform = new DFTransform();
+        final NFTransform transform = new NFTransform();
         final String algorithm = "Algorithm";
         transform.setAlgorithm(algorithm);
         Assert.assertEquals(algorithm, transform.getAlgorithm());

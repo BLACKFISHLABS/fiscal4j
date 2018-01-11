@@ -2,42 +2,35 @@ package br.indie.fiscal4j.nfe.classes.nota;
 
 import br.indie.fiscal4j.common.DFBase;
 import br.indie.fiscal4j.nfe.validadores.BigDecimalParser;
+import br.indie.fiscal4j.nfe.validadores.ListValidador;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class NFNotaInfoPagamento extends DFBase {
 
-    @Element(name = "tPag", required = true)
-    private NFFormaPagamentoMoeda formaPagamentoMoeda;
+    @ElementList(entry = "detPag", inline = true, required = true)
+    private List<NFNotaInfoDetalhamentoPagamento> detalhamentoPagamento;
 
-    @Element(name = "vPag", required = true)
-    private String valorPagamento;
+    @Element(name = "vTroco", required = false)
+    private String valorTroco;
 
-    @Element(name = "card", required = false)
-    private NFNotaInfoCartao cartao;
-
-    public void setCartao(final NFNotaInfoCartao cartao) {
-        this.cartao = cartao;
+    public void setValorTroco(BigDecimal valorTroco) {
+        this.valorTroco = BigDecimalParser.tamanho15Com2CasasDecimais(valorTroco, "Valor do Troco");
     }
 
-    public void setFormaPagamentoMoeda(final NFFormaPagamentoMoeda formaPagamentoMoeda) {
-        this.formaPagamentoMoeda = formaPagamentoMoeda;
+    public void setDetalhamentoPagamento(final List<NFNotaInfoDetalhamentoPagamento> detalhamentoPagamento) {
+        ListValidador.tamanho100(detalhamentoPagamento, "Grupo de detalhamento da forma de pagamento");
+        this.detalhamentoPagamento = detalhamentoPagamento;
     }
 
-    public void setValorPagamento(final BigDecimal valorPagamento) {
-        this.valorPagamento = BigDecimalParser.tamanho15Com2CasasDecimais(valorPagamento, "Valor Pagamento");
+    public String getValorTroco() {
+        return valorTroco;
     }
 
-    public NFFormaPagamentoMoeda getFormaPagamentoMoeda() {
-        return this.formaPagamentoMoeda;
-    }
-
-    public String getValorPagamento() {
-        return this.valorPagamento;
-    }
-
-    public NFNotaInfoCartao getCartao() {
-        return this.cartao;
+    public List<NFNotaInfoDetalhamentoPagamento> getDetalhamentoPagamento() {
+        return detalhamentoPagamento;
     }
 }

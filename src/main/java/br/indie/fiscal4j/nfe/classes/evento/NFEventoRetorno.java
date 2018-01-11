@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.evento;
 
 import br.indie.fiscal4j.common.DFBase;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -14,7 +14,7 @@ public class NFEventoRetorno extends DFBase {
     private NFInfoEventoRetorno infoEventoRetorno;
 
     @Element(name = "Signature", required = false)
-    private DFSignature assinatura;
+    private NFSignature assinatura;
 
     public NFInfoEventoRetorno getInfoEventoRetorno() {
         return this.infoEventoRetorno;
@@ -32,11 +32,11 @@ public class NFEventoRetorno extends DFBase {
         this.versao = versao;
     }
 
-    public DFSignature getAssinatura() {
+    public NFSignature getAssinatura() {
         return this.assinatura;
     }
 
-    public void setAssinatura(final DFSignature assinatura) {
+    public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
     }
 }

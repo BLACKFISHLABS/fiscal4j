@@ -8,14 +8,14 @@ import org.simpleframework.xml.Path;
 
 import java.util.List;
 
-public class DFReference extends DFBase {
+public class NFReference extends DFBase {
 
     @Attribute(name = "URI", required = false)
     private String uri;
 
     @Path("Transforms")
     @ElementList(entry = "Transform", inline = true, required = false)
-    private List<DFTransform> transform;
+    private List<NFTransform> transform;
 
     @Element(name = "DigestMethod", required = false)
     private NFDigestMethod digestMethod;
@@ -31,11 +31,11 @@ public class DFReference extends DFBase {
         this.uri = uri;
     }
 
-    public List<DFTransform> getTransform() {
+    public List<NFTransform> getTransform() {
         return this.transform;
     }
 
-    public void setTransform(final List<DFTransform> transform) {
+    public void setTransform(final List<NFTransform> transform) {
         this.transform = transform;
     }
 

@@ -29,6 +29,12 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
     @Element(name = "vICMS", required = true)
     private String valorTributo;
 
+    @Element(name = "pFCP", required = false)
+    private String percentualFcp;
+
+    @Element(name = "vFCP", required = false)
+    private String valorFcp;
+
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
     }
@@ -56,6 +62,17 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo ICMS00 Item");
     }
 
+    public void setPercentualFcp(final BigDecimal percentualFcp) {
+        this.percentualFcp = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualFcp,
+                "Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP)");
+    }
+
+    public void setValorFcp(BigDecimal valorFcp) {
+        this.valorFcp = BigDecimalParser.tamanho15Com2CasasDecimais(valorFcp,
+                "Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP)");
+
+    }
+
     public NFOrigem getOrigem() {
         return this.origem;
     }
@@ -78,5 +95,13 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
 
     public String getValorTributo() {
         return this.valorTributo;
+    }
+
+    public String getPercentualFcp() {
+        return percentualFcp;
+    }
+
+    public String getValorFcp() {
+        return valorFcp;
     }
 }

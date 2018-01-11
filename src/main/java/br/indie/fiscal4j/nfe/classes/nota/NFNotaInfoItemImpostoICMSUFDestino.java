@@ -7,8 +7,13 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 public class NFNotaInfoItemImpostoICMSUFDestino extends DFBase {
+
+
     @Element(name = "vBCUFDest", required = true)
     private String valorBaseCalculoDestino;
+
+    @Element(name = "vBCFCPUFDest", required = false)
+    private String valorBaseCalculoFcpUfDestino;
 
     @Element(name = "pFCPUFDest", required = true)
     private String percentualRelativoFundoCombatePobrezaDestino;
@@ -37,6 +42,15 @@ public class NFNotaInfoItemImpostoICMSUFDestino extends DFBase {
 
     public void setValorBaseCalculoDestino(final BigDecimal valorBaseCalculoDestino) {
         this.valorBaseCalculoDestino = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculoDestino, "Valor BC Destino");
+    }
+
+    public String getValorBaseCalculoFcpUfDestino() {
+        return valorBaseCalculoFcpUfDestino;
+    }
+
+    public void setValorBaseCalculoFcpUfDestino(BigDecimal valorBaseCalculoFcpUfDestino) {
+        this.valorBaseCalculoFcpUfDestino = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculoFcpUfDestino,
+                "Valor da BC FCP na UF de destino");
     }
 
     public String getPercentualRelativoFundoCombatePobrezaDestino() {

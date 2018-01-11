@@ -11,7 +11,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterVersaoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String versao = "4.00";
         consultaRetorno.setVersao(versao);
         Assert.assertEquals(versao, consultaRetorno.getVersao());
@@ -19,7 +19,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterAmbienteComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final DFAmbiente ambiente = DFAmbiente.HOMOLOGACAO;
         consultaRetorno.setAmbiente(ambiente);
         Assert.assertEquals(ambiente, consultaRetorno.getAmbiente());
@@ -27,7 +27,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterVersaoAplicacaoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String versaoAplicacao = "1.01";
         consultaRetorno.setVersaoAplicacao(versaoAplicacao);
         Assert.assertEquals(versaoAplicacao, consultaRetorno.getVersaoAplicacao());
@@ -35,7 +35,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterStatusComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String status = "107";
         consultaRetorno.setStatus(status);
         Assert.assertEquals(status, consultaRetorno.getStatus());
@@ -43,7 +43,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterMotivoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String motivo = "Servico em operacao";
         consultaRetorno.setMotivo(motivo);
         Assert.assertEquals(motivo, consultaRetorno.getMotivo());
@@ -51,7 +51,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterUFComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final DFUnidadeFederativa unidadeFederativa = DFUnidadeFederativa.AC;
         consultaRetorno.setUf(unidadeFederativa);
         Assert.assertEquals(unidadeFederativa, consultaRetorno.getUf());
@@ -59,7 +59,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterDataRecebimentoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final LocalDateTime dataRecebimento = DateTimeFormat.forPattern("yyyy/MM/dd HH:mm:ss").parseLocalDateTime("2013/12/10 15:10:59");
         consultaRetorno.setDataRecebimento(dataRecebimento);
         Assert.assertEquals(dataRecebimento, consultaRetorno.getDataRecebimento());
@@ -67,7 +67,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterDataRetornoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final LocalDateTime dataRetorno = LocalDateTime.parse("2015/11/13", DateTimeFormat.forPattern("yyyy/MM/dd"));
         consultaRetorno.setDataRetorno(dataRetorno);
         Assert.assertEquals(dataRetorno, consultaRetorno.getDataRetorno());
@@ -75,7 +75,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterObservacaoComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String observacao = "Sem informacao";
         consultaRetorno.setObservacao(observacao);
         Assert.assertEquals(observacao, consultaRetorno.getObservacao());
@@ -83,7 +83,7 @@ public class NFStatusServicoConsultaRetornoTest {
 
     @Test
     public void deveObterTempoMedioComoFoiSetado() {
-        final DFStatusServicoConsultaRetorno consultaRetorno = new DFStatusServicoConsultaRetorno();
+        final NFStatusServicoConsultaRetorno consultaRetorno = new NFStatusServicoConsultaRetorno();
         final String tempoMedio = "10";
         consultaRetorno.setTempoMedio(tempoMedio);
         Assert.assertEquals(tempoMedio, consultaRetorno.getTempoMedio());

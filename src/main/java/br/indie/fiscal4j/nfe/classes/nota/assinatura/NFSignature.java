@@ -5,22 +5,22 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
-public class DFSignature extends DFBase {
+public class NFSignature extends DFBase {
 
     @Element(name = "SignedInfo", required = false)
-    private DFSignedInfo signedInfo;
+    private NFSignedInfo signedInfo;
 
     @Element(name = "SignatureValue", required = false)
     private String signatureValue;
 
     @Element(name = "KeyInfo", required = false)
-    private DFKeyInfo keyInfo;
+    private NFKeyInfo keyInfo;
 
-    public DFSignedInfo getSignedInfo() {
+    public NFSignedInfo getSignedInfo() {
         return this.signedInfo;
     }
 
-    public void setSignedInfo(final DFSignedInfo signedInfo) {
+    public void setSignedInfo(final NFSignedInfo signedInfo) {
         this.signedInfo = signedInfo;
     }
 
@@ -32,11 +32,11 @@ public class DFSignature extends DFBase {
         this.signatureValue = signatureValue;
     }
 
-    public DFKeyInfo getKeyInfo() {
+    public NFKeyInfo getKeyInfo() {
         return this.keyInfo;
     }
 
-    public void setKeyInfo(final DFKeyInfo keyInfo) {
+    public void setKeyInfo(final NFKeyInfo keyInfo) {
         this.keyInfo = keyInfo;
     }
 }

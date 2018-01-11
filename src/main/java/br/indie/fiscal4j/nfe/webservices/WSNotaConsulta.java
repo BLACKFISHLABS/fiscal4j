@@ -4,8 +4,8 @@ import br.indie.fiscal4j.common.DFModelo;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.NFAutorizador4;
-import br.indie.fiscal4j.nfe.classes.nota.consulta.DFNotaConsulta;
-import br.indie.fiscal4j.nfe.classes.nota.consulta.DFNotaConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.nota.consulta.NFNotaConsulta;
+import br.indie.fiscal4j.nfe.classes.nota.consulta.NFNotaConsultaRetorno;
 import br.indie.fiscal4j.nfe.parsers.NotaFiscalChaveParser;
 import br.indie.fiscal4j.nfe.transformers.NFRegistryMatcher;
 import br.indie.fiscal4j.nfe.webservices.gerado.NfeConsulta2Stub;
@@ -32,13 +32,13 @@ class WSNotaConsulta {
         this.config = config;
     }
 
-    DFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
+    NFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(chaveDeAcesso).toString());
         WSNotaConsulta.LOGGER.debug(omElementConsulta.toString());
 
         final OMElement omElementRetorno = this.efetuaConsulta(omElementConsulta, chaveDeAcesso);
         WSNotaConsulta.LOGGER.debug(omElementRetorno.toString());
-        return new Persister(new NFRegistryMatcher(), new Format(0)).read(DFNotaConsultaRetorno.class, omElementRetorno.toString());
+        return new Persister(new NFRegistryMatcher(), new Format(0)).read(NFNotaConsultaRetorno.class, omElementRetorno.toString());
     }
 
     private OMElement efetuaConsulta(final OMElement omElementConsulta, final String chaveDeAcesso) throws Exception {
@@ -99,8 +99,8 @@ class WSNotaConsulta {
         return consultaNFResult.getExtraElement();
     }
 
-    private DFNotaConsulta gerarDadosConsulta(final String chaveDeAcesso) {
-        final DFNotaConsulta notaConsulta = new DFNotaConsulta();
+    private NFNotaConsulta gerarDadosConsulta(final String chaveDeAcesso) {
+        final NFNotaConsulta notaConsulta = new NFNotaConsulta();
         notaConsulta.setAmbiente(this.config.getAmbiente());
         notaConsulta.setChave(chaveDeAcesso);
         notaConsulta.setServico(WSNotaConsulta.NOME_SERVICO);

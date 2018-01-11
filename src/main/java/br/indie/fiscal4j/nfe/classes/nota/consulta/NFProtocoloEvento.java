@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 @Root(name = "procEventoNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
-public class DFProtocoloEvento extends DFBase {
+public class NFProtocoloEvento extends DFBase {
 
     @Attribute(name = "versao", required = true)
     private String versao;

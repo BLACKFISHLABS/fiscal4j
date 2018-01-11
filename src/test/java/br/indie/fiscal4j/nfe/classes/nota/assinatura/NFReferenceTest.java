@@ -10,7 +10,7 @@ public class NFReferenceTest {
 
     @Test
     public void deveObterDigestValueComoFoiSetado() {
-        final DFReference reference = new DFReference();
+        final NFReference reference = new NFReference();
         final String digestValue = "digest value";
         reference.setDigestValue(digestValue);
         Assert.assertEquals(digestValue, reference.getDigestValue());
@@ -18,15 +18,15 @@ public class NFReferenceTest {
 
     @Test
     public void deveObterTransformComoFoiSetado() {
-        final DFReference reference = new DFReference();
-        final List<DFTransform> transform = new ArrayList<>();
+        final NFReference reference = new NFReference();
+        final List<NFTransform> transform = new ArrayList<>();
         reference.setTransform(transform);
         Assert.assertEquals(transform, reference.getTransform());
     }
 
     @Test
     public void deveObterUriComoFoiSetado() {
-        final DFReference reference = new DFReference();
+        final NFReference reference = new NFReference();
         final String uri = "uri";
         reference.setUri(uri);
         Assert.assertEquals(uri, reference.getUri());
@@ -34,7 +34,7 @@ public class NFReferenceTest {
 
     @Test
     public void deveObterDigestMethodComoFoiSetado() {
-        final DFReference reference = new DFReference();
+        final NFReference reference = new NFReference();
         final NFDigestMethod digestMethod = new NFDigestMethod();
         digestMethod.setAlgorithm("digest method");
         reference.setDigestMethod(digestMethod);

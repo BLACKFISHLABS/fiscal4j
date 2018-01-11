@@ -21,6 +21,9 @@ import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvio;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetornoRecebimentoInfo;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteIndicadorProcessamento;
 import br.indie.fiscal4j.nfe.classes.nota.*;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFReference;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignedInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
@@ -69,7 +72,7 @@ public class FabricaDeObjetosFake {
 
     public static NFEventoCancelamento getNFEventoCancelamento() {
         final NFEventoCancelamento eventoCancelamento = new NFEventoCancelamento();
-        eventoCancelamento.setVersao(new BigDecimal("3.10"));
+        eventoCancelamento.setVersao(new BigDecimal("4.00"));
         eventoCancelamento.setInfoEvento(FabricaDeObjetosFake.getNFInfoEventoCancelamento());
         return eventoCancelamento;
     }
@@ -94,7 +97,7 @@ public class FabricaDeObjetosFake {
         final NFInfoCancelamento infoCancelamento = new NFInfoCancelamento();
         infoCancelamento.setDescricaoEvento("Cancelamento");
         infoCancelamento.setProtocoloAutorizacao("123456789012345");
-        infoCancelamento.setVersao(new BigDecimal("3.10"));
+        infoCancelamento.setVersao(new BigDecimal("4.00"));
         infoCancelamento.setJustificativa("Justificativa qualquer coisa");
 
         return infoCancelamento;
@@ -155,7 +158,7 @@ public class FabricaDeObjetosFake {
 
     public static NFEventoManifestacaoDestinatario getNFEventoManifestacaoDestinatario() {
         final NFEventoManifestacaoDestinatario eventoManifestacaoDestinatario = new NFEventoManifestacaoDestinatario();
-        eventoManifestacaoDestinatario.setVersao(new BigDecimal("3.10"));
+        eventoManifestacaoDestinatario.setVersao(new BigDecimal("4.00"));
         eventoManifestacaoDestinatario.setInfoEvento(FabricaDeObjetosFake.getNFInfoEventoManifestacaoDestinatario());
         return eventoManifestacaoDestinatario;
     }
@@ -181,7 +184,7 @@ public class FabricaDeObjetosFake {
     public static NFInfoManifestacaoDestinatario getNFInfoManifestacaoDestinatario() {
         final NFInfoManifestacaoDestinatario infoManifestacaoDestinatario = new NFInfoManifestacaoDestinatario();
         infoManifestacaoDestinatario.setDescricaoEvento("Operacao nao Realizada");
-        infoManifestacaoDestinatario.setVersao(new BigDecimal("3.10"));
+        infoManifestacaoDestinatario.setVersao(new BigDecimal("4.00"));
         infoManifestacaoDestinatario.setJustificativa("Justificativa qualquer coisa");
         return infoManifestacaoDestinatario;
     }
@@ -434,7 +437,7 @@ public class FabricaDeObjetosFake {
     public static NFProtocolo getNFProtocolo() {
         final NFProtocolo protocolo = new NFProtocolo();
         protocolo.setProtocoloInfo(FabricaDeObjetosFake.getNFProtocoloInfo());
-        protocolo.setVersao("3.10");
+        protocolo.setVersao("4.00");
         return protocolo;
     }
 
@@ -447,7 +450,7 @@ public class FabricaDeObjetosFake {
         info.setNumeroProtocolo("490309504");
         info.setStatus("OK");
         info.setValidador("gfsfgsrg");
-        info.setVersaoAplicacao("3.10");
+        info.setVersaoAplicacao("4.00");
         info.setIdentificador("ID798456123");
         return info;
     }

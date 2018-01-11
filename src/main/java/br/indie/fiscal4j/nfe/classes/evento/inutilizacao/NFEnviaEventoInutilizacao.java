@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.evento.inutilizacao;
 
 import br.indie.fiscal4j.common.DFBase;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import br.indie.fiscal4j.nfe.validadores.BigDecimalParser;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -21,7 +21,7 @@ public class NFEnviaEventoInutilizacao extends DFBase {
     private NFEventoInutilizacaoDados dados;
 
     @Element(name = "Signature", required = false)
-    private DFSignature assinatura;
+    private NFSignature assinatura;
 
     public String getVersao() {
         return this.versao;
@@ -39,11 +39,11 @@ public class NFEnviaEventoInutilizacao extends DFBase {
         this.dados = dados;
     }
 
-    public DFSignature getAssinatura() {
+    public NFSignature getAssinatura() {
         return this.assinatura;
     }
 
-    public void setAssinatura(final DFSignature assinatura) {
+    public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
     }
 }

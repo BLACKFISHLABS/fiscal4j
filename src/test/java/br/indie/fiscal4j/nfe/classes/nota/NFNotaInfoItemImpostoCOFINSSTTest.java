@@ -10,32 +10,32 @@ public class NFNotaInfoItemImpostoCOFINSSTTest {
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorCOFINSForaoDoLimite() {
-        new DFNotaInfoItemImpostoCOFINSST().setValorCOFINS(new BigDecimal("99999999999999999"));
+        new NFNotaInfoItemImpostoCOFINSST().setValorCOFINS(new BigDecimal("99999999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorAliquotaCOFINSForaoDoLimite() {
-        new DFNotaInfoItemImpostoCOFINSST().setValorAliquotaCOFINS(new BigDecimal("99999999999999999"));
+        new NFNotaInfoItemImpostoCOFINSST().setValorAliquotaCOFINS(new BigDecimal("99999999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirQuantidadeVendidaForaDoLimite() {
-        new DFNotaInfoItemImpostoCOFINSST().setQuantidadeVendida(new BigDecimal("999999999999999999"));
+        new NFNotaInfoItemImpostoCOFINSST().setQuantidadeVendida(new BigDecimal("999999999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorPercentualAliquotaCOFINSForaDoLimite() {
-        new DFNotaInfoItemImpostoCOFINSST().setPercentualAliquota(new BigDecimal("1000.01"));
+        new NFNotaInfoItemImpostoCOFINSST().setPercentualAliquota(new BigDecimal("1000.01"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorBaseCalculoForaDoLimite() {
-        new DFNotaInfoItemImpostoCOFINSST().setValorBaseCalculo(new BigDecimal("99999999999999999"));
+        new NFNotaInfoItemImpostoCOFINSST().setValorBaseCalculo(new BigDecimal("99999999999999999"));
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoCOFINSST><vBC>999999999999.99</vBC><pCOFINS>99.99</pCOFINS><vCOFINS>999999999999.00</vCOFINS></DFNotaInfoItemImpostoCOFINSST>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoCOFINSST><vBC>999999999999.99</vBC><pCOFINS>99.99</pCOFINS><vCOFINS>999999999999.00</vCOFINS></NFNotaInfoItemImpostoCOFINSST>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSST().toString());
     }
 }

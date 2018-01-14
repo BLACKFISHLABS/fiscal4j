@@ -9,7 +9,7 @@ public class NFGeraChaveTest {
 
     @Test
     public void geraChaveDeAcessoComCPFConformeEsperado() {
-        final DFNota nota = new DFNota();
+        final NFNota nota = new NFNota();
         nota.setInfo(FabricaDeObjetosFake.getNFNotaInfo());
         nota.getInfo().getEmitente().setCpf("12345678901");
         nota.getInfo().getEmitente().setCnpj(null);
@@ -25,7 +25,7 @@ public class NFGeraChaveTest {
 
     @Test
     public void geraChaveDeAcessoComCNPJConformeEsperado() {
-        final DFNota nota = new DFNota();
+        final NFNota nota = new NFNota();
         nota.setInfo(FabricaDeObjetosFake.getNFNotaInfo());
         nota.getInfo().getEmitente().setCpf(null);
         nota.getInfo().getEmitente().setCnpj("12345678901234");
@@ -41,7 +41,7 @@ public class NFGeraChaveTest {
 
     @Test
     public void geraChaveDeAcessoRandomica() {
-        final DFNota nota = new DFNota();
+        final NFNota nota = new NFNota();
         nota.setInfo(FabricaDeObjetosFake.getNFNotaInfo());
         nota.getInfo().getEmitente().setCpf(null);
         nota.getInfo().getEmitente().setCnpj("12345678901234");
@@ -60,7 +60,7 @@ public class NFGeraChaveTest {
 
     @Test(expected = IllegalStateException.class)
     public void geraChaveDeAcessoSemCodigoRandomicoRetornaExcecao() {
-        final DFNota nota = new DFNota();
+        final NFNota nota = new NFNota();
         nota.setInfo(FabricaDeObjetosFake.getNFNotaInfo());
         nota.getInfo().getIdentificacao().setCodigoRandomico(null);
         new NFGeraChave(nota).getChaveAcesso();

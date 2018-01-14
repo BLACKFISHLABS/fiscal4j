@@ -13,7 +13,7 @@ public class NFLoteConsultaRetornoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFLoteConsultaRetorno retorno = new DFLoteConsultaRetorno();
+        final NFLoteConsultaRetorno retorno = new NFLoteConsultaRetorno();
         retorno.setAmbiente(DFAmbiente.HOMOLOGACAO);
         retorno.setMotivo("8CwtnC5gWwUncMBYAZl9p4fvVx8RkCH2EKx2mtUNVA5tLoJsjNWL5CJ6DXNUHTWKpPl6fMKKxA0aXBu6IfmJLIHlPxtF0oZkKrNsGyGpwKqWxvDZ9HQGqscmhtTrp5NbNzk9TOsCJaMU59tF8kOxu0EUZAMLF8bGJteg86T4hQ6ej5Zi0n1Tin0vFAtN1ue68NWrfQWM11VPpqvSXRlaa8qIw1Qal8tWCFGJA0wZpl7eV98bAYL18pt3e71yKcX");
         retorno.setNumeroRecibo("123456789012345");

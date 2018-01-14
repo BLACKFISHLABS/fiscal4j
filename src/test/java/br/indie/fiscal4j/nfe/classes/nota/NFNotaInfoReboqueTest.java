@@ -10,17 +10,17 @@ public class NFNotaInfoReboqueTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPlacaVeiculoInvalido() {
         try {
-            new DFNotaInfoReboque().setPlacaVeiculo("");
+            new NFNotaInfoReboque().setPlacaVeiculo("");
             Assert.fail("Validacao nao funcionou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoReboque().setPlacaVeiculo("MKZY0123");
+            new NFNotaInfoReboque().setPlacaVeiculo("MKZY0123");
         }
         Assert.fail("Validacao nao funcionou");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirUFNulo() {
-        final DFNotaInfoReboque reboque = new DFNotaInfoReboque();
+        final NFNotaInfoReboque reboque = new NFNotaInfoReboque();
         reboque.setPlacaVeiculo("MKZ4891");
         reboque.setRegistroNacionalTransportadorCarga("8fFAKefiBQIDTkCCSQk3");
         reboque.toString();
@@ -28,7 +28,7 @@ public class NFNotaInfoReboqueTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPlacaNulo() {
-        final DFNotaInfoReboque reboque = new DFNotaInfoReboque();
+        final NFNotaInfoReboque reboque = new NFNotaInfoReboque();
         reboque.setUf(DFUnidadeFederativa.SC);
         reboque.setRegistroNacionalTransportadorCarga("8fFAKefiBQIDTkCCSQk3");
         reboque.toString();
@@ -36,7 +36,7 @@ public class NFNotaInfoReboqueTest {
 
     @Test
     public void devePermitirRegistroNacionaltransportadorCargaNulo() {
-        final DFNotaInfoReboque reboque = new DFNotaInfoReboque();
+        final NFNotaInfoReboque reboque = new NFNotaInfoReboque();
         reboque.setPlacaVeiculo("MKZ4891");
         reboque.setUf(DFUnidadeFederativa.SC);
         reboque.toString();
@@ -44,18 +44,18 @@ public class NFNotaInfoReboqueTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoComRNTC() {
-        final DFNotaInfoReboque reboque = new DFNotaInfoReboque();
+        final NFNotaInfoReboque reboque = new NFNotaInfoReboque();
         reboque.setPlacaVeiculo("MKZ4891");
         reboque.setUf(DFUnidadeFederativa.SC);
         reboque.setRegistroNacionalTransportadorCarga("8fFAKefiBQIDTkCCSQk3");
 
-        final String xmlEsperado = "<DFNotaInfoReboque><placa>MKZ4891</placa><UF>SC</UF><RNTC>8fFAKefiBQIDTkCCSQk3</RNTC></DFNotaInfoReboque>";
+        final String xmlEsperado = "<NFNotaInfoReboque><placa>MKZ4891</placa><UF>SC</UF><RNTC>8fFAKefiBQIDTkCCSQk3</RNTC></NFNotaInfoReboque>";
         Assert.assertEquals(xmlEsperado, reboque.toString());
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoComVagao() {
-        final String xmlEsperado = "<DFNotaInfoReboque><placa>MKZ4891</placa><UF>SC</UF></DFNotaInfoReboque>";
+        final String xmlEsperado = "<NFNotaInfoReboque><placa>MKZ4891</placa><UF>SC</UF></NFNotaInfoReboque>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoReboque().toString());
     }
 }

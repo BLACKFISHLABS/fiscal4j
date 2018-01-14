@@ -8,30 +8,30 @@ public class NFNotaInfoCanaFornecimentoDiarioTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDiaAcima31() {
-        new DFNotaInfoCanaFornecimentoDiario().setDia(32);
+        new NFNotaInfoCanaFornecimentoDiario().setDia(32);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDiaMenor1() {
-        new DFNotaInfoCanaFornecimentoDiario().setDia(0);
+        new NFNotaInfoCanaFornecimentoDiario().setDia(0);
     }
 
     @Test
     public void devePermitirDiaValido() {
-        new DFNotaInfoCanaFornecimentoDiario().setDia(1);
-        new DFNotaInfoCanaFornecimentoDiario().setDia(30);
+        new NFNotaInfoCanaFornecimentoDiario().setDia(1);
+        new NFNotaInfoCanaFornecimentoDiario().setDia(30);
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirQuantidadeNulo() {
-        final DFNotaInfoCanaFornecimentoDiario canaFornecimentoDiario = new DFNotaInfoCanaFornecimentoDiario();
+        final NFNotaInfoCanaFornecimentoDiario canaFornecimentoDiario = new NFNotaInfoCanaFornecimentoDiario();
         canaFornecimentoDiario.setDia(15);
         canaFornecimentoDiario.toString();
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoCanaFornecimentoDiario dia=\"15\"><qtde>3</qtde></DFNotaInfoCanaFornecimentoDiario>";
+        final String xmlEsperado = "<NFNotaInfoCanaFornecimentoDiario dia=\"15\"><qtde>3</qtde></NFNotaInfoCanaFornecimentoDiario>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoCanaFornecimentoDiario().toString());
     }
 }

@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe.utils;
 
 import br.indie.fiscal4j.common.DFAmbiente;
 import br.indie.fiscal4j.nfe.NFeConfig;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
@@ -13,10 +13,10 @@ import java.security.NoSuchAlgorithmException;
 
 public class NFGeraQRCode {
 
-    private final DFNota nota;
+    private final NFNota nota;
     private final NFeConfig config;
 
-    public NFGeraQRCode(final DFNota nota, final NFeConfig config) {
+    public NFGeraQRCode(final NFNota nota, final NFeConfig config) {
         this.nota = nota;
         this.config = config;
     }

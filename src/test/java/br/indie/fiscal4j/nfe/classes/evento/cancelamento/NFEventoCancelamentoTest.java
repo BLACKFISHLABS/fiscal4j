@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.FabricaDeObjetosFake;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class NFEventoCancelamentoTest {
     @Test
     public void deveObterAssinaturaComoFoiSetado() {
         final NFEventoCancelamento eventoCancelamento = new NFEventoCancelamento();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         final String signatureValue = "signature";
         assinatura.setSignatureValue(signatureValue);
         eventoCancelamento.setAssinatura(assinatura);
@@ -45,7 +45,7 @@ public class NFEventoCancelamentoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirInfoEventoNulo() {
         final NFEventoCancelamento eventoCancelamento = new NFEventoCancelamento();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         final String signatureValue = "signature";
         assinatura.setSignatureValue(signatureValue);
         eventoCancelamento.setAssinatura(assinatura);
@@ -57,7 +57,7 @@ public class NFEventoCancelamentoTest {
     public void naoDevePermitirVersaoNulo() {
         final NFEventoCancelamento eventoCancelamento = new NFEventoCancelamento();
         eventoCancelamento.setInfoEvento(FabricaDeObjetosFake.getNFInfoEventoCancelamento());
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         final String signatureValue = "signature";
         assinatura.setSignatureValue(signatureValue);
         eventoCancelamento.setAssinatura(assinatura);

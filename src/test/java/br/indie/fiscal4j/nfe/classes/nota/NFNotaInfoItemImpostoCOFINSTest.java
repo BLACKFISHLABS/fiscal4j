@@ -8,7 +8,7 @@ public class NFNotaInfoItemImpostoCOFINSTest {
 
     @Test
     public void devePermitirApenasUmQuantidade() {
-        final DFNotaInfoItemImpostoCOFINS cofins = new DFNotaInfoItemImpostoCOFINS();
+        final NFNotaInfoItemImpostoCOFINS cofins = new NFNotaInfoItemImpostoCOFINS();
         cofins.setQuantidade(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSQuantidade());
         try {
             cofins.setAliquota(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSAliquota());
@@ -29,7 +29,7 @@ public class NFNotaInfoItemImpostoCOFINSTest {
 
     @Test
     public void devePermitirApenasUmAliquota() {
-        final DFNotaInfoItemImpostoCOFINS cofins = new DFNotaInfoItemImpostoCOFINS();
+        final NFNotaInfoItemImpostoCOFINS cofins = new NFNotaInfoItemImpostoCOFINS();
         cofins.setAliquota(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSAliquota());
         try {
             cofins.setQuantidade(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSQuantidade());
@@ -50,7 +50,7 @@ public class NFNotaInfoItemImpostoCOFINSTest {
 
     @Test
     public void devePermitirApenasUmNaoTributavel() {
-        final DFNotaInfoItemImpostoCOFINS cofins = new DFNotaInfoItemImpostoCOFINS();
+        final NFNotaInfoItemImpostoCOFINS cofins = new NFNotaInfoItemImpostoCOFINS();
         cofins.setNaoTributavel(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSNaoTributavel());
         try {
             cofins.setQuantidade(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSQuantidade());
@@ -71,7 +71,7 @@ public class NFNotaInfoItemImpostoCOFINSTest {
 
     @Test
     public void devePermitirApenasUmOutrasOperacoes() {
-        final DFNotaInfoItemImpostoCOFINS cofins = new DFNotaInfoItemImpostoCOFINS();
+        final NFNotaInfoItemImpostoCOFINS cofins = new NFNotaInfoItemImpostoCOFINS();
         cofins.setNaoTributavel(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSNaoTributavel());
         try {
             cofins.setQuantidade(FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINSQuantidade());
@@ -92,7 +92,7 @@ public class NFNotaInfoItemImpostoCOFINSTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoCOFINS><COFINSAliq><CST>01</CST><vBC>999999999999.99</vBC><pCOFINS>99.99</pCOFINS><vCOFINS>999999999999.99</vCOFINS></COFINSAliq></DFNotaInfoItemImpostoCOFINS>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoCOFINS><COFINSAliq><CST>01</CST><vBC>999999999999.99</vBC><pCOFINS>99.99</pCOFINS><vCOFINS>999999999999.99</vCOFINS></COFINSAliq></NFNotaInfoItemImpostoCOFINS>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoCOFINS().toString());
     }
 }

@@ -2,19 +2,19 @@ package br.indie.fiscal4j.nfe.classes.lote.envio;
 
 public class NFLoteEnvioRetornoDados {
 
-    private DFLoteEnvioRetorno retorno;
-    private DFLoteEnvio loteAssinado;
+    private NFLoteEnvioRetorno retorno;
+    private NFLoteEnvio loteAssinado;
 
-    public NFLoteEnvioRetornoDados(DFLoteEnvioRetorno retorno, DFLoteEnvio loteAssinado) {
+    public NFLoteEnvioRetornoDados(NFLoteEnvioRetorno retorno, NFLoteEnvio loteAssinado) {
         this.retorno = retorno;
         this.loteAssinado = loteAssinado;
     }
 
-    public DFLoteEnvioRetorno getRetorno() {
+    public NFLoteEnvioRetorno getRetorno() {
         return retorno;
     }
 
-    public DFLoteEnvio getLoteAssinado() {
+    public NFLoteEnvio getLoteAssinado() {
         return loteAssinado;
     }
 

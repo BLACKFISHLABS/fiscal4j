@@ -6,10 +6,10 @@ import br.indie.fiscal4j.common.DFModelo;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.NFProtocolo;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaInfoSuplementar;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaProcessada;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaInfoSuplementar;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaProcessada;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import br.indie.fiscal4j.nfe.utils.NFGeraQRCode;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,15 +26,15 @@ public class NFDanfeReportTest {
         nfProtocolo.setProtocoloInfo(FabricaDeObjetosFake.getNFProtocoloInfo());
         nfProtocolo.setVersao("4.00");
 
-        final DFSignature signature = new DFSignature();
+        final NFSignature signature = new NFSignature();
         signature.setSignatureValue("NFe89172658591754401086218048846976493475937081");
 
-        final DFNota nota = new DFNota();
+        final NFNota nota = new NFNota();
         nota.setInfo(FabricaDeObjetosFake.getNFNotaInfo());
         nota.setIdentificadorLocal(123456);
         nota.setAssinatura(signature);
 
-        final DFNotaProcessada notaProcessada = new DFNotaProcessada();
+        final NFNotaProcessada notaProcessada = new NFNotaProcessada();
         notaProcessada.setVersao(BigDecimal.TEN);
         notaProcessada.setProtocolo(nfProtocolo);
         notaProcessada.setNota(nota);
@@ -46,10 +46,10 @@ public class NFDanfeReportTest {
 
     @Test
     public void deveGerarDanfeNFCeAPartirDoXML() throws Exception {
-        final DFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
+        final NFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
         notaProcessada.setNota(FabricaDeObjetosFake.getNotaQRCode());
         notaProcessada.getNota().getInfo().getIdentificacao().setModelo(DFModelo.NFCE);
-        notaProcessada.getNota().setInfoSuplementar(new DFNotaInfoSuplementar());
+        notaProcessada.getNota().setInfoSuplementar(new NFNotaInfoSuplementar());
         notaProcessada.getNota().getInfoSuplementar().setQrCode(new NFGeraQRCode(notaProcessada.getNota(), createConfigTest()).getQRCode());
         notaProcessada.getNota().getInfo().getIdentificacao().setAmbiente(DFAmbiente.HOMOLOGACAO);
 
@@ -60,7 +60,7 @@ public class NFDanfeReportTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDeveGerarDanfeNFeDeUmaNFCe() throws Exception {
-        final DFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
+        final NFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
         notaProcessada.getNota().getInfo().getIdentificacao().setModelo(DFModelo.NFCE);
 
         NFDanfeReport danfe = new NFDanfeReport(notaProcessada);
@@ -69,7 +69,7 @@ public class NFDanfeReportTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDeveGerarDanfeNFCeDeUmaNFe() throws Exception {
-        final DFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
+        final NFNotaProcessada notaProcessada = FabricaDeObjetosFake.getNFNotaProcessada();
         notaProcessada.getNota().getInfo().getIdentificacao().setModelo(DFModelo.NFE);
 
         NFDanfeReport danfe = new NFDanfeReport(notaProcessada);

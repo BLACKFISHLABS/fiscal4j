@@ -7,7 +7,7 @@ public class NFSignedInfoTest {
 
     @Test
     public void deveObterCanonicalizationMethodComoFoiSetado() {
-        final DFSignedInfo info = new DFSignedInfo();
+        final NFSignedInfo info = new NFSignedInfo();
         final NFCanonicalizationMethod canonicalizationMethod = new NFCanonicalizationMethod();
         canonicalizationMethod.setAlgorithm("canonicalization method");
         info.setCanonicalizationMethod(canonicalizationMethod);
@@ -16,15 +16,15 @@ public class NFSignedInfoTest {
 
     @Test
     public void deveObterReferenceComoFoiSetado() {
-        final DFSignedInfo info = new DFSignedInfo();
-        final DFReference reference = new DFReference();
+        final NFSignedInfo info = new NFSignedInfo();
+        final NFReference reference = new NFReference();
         info.setReference(reference);
         Assert.assertEquals(reference, info.getReference());
     }
 
     @Test
     public void deveObterSignatureMethodComoFoiSetado() {
-        final DFSignedInfo info = new DFSignedInfo();
+        final NFSignedInfo info = new NFSignedInfo();
         final NFSignatureMethod signatureMethod = new NFSignatureMethod();
         signatureMethod.setAlgorithm("signature method");
         info.setSignatureMethod(signatureMethod);

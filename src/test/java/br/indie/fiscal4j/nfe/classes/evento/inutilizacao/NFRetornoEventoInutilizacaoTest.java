@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.nfe.classes.evento.inutilizacao;
 
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,7 +27,7 @@ public class NFRetornoEventoInutilizacaoTest {
     @Test
     public void deveObterAssinaturaComoFoiSetado() {
         final NFEnviaEventoInutilizacao eventoInutilizacao = new NFEnviaEventoInutilizacao();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         final String signatureValue = "signature";
         assinatura.setSignatureValue(signatureValue);
         eventoInutilizacao.setAssinatura(assinatura);

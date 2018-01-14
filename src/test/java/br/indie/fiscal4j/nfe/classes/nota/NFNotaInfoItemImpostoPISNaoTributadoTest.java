@@ -8,12 +8,12 @@ public class NFNotaInfoItemImpostoPISNaoTributadoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirSituacaoTributariaNulo() {
-        new DFNotaInfoItemImpostoPISNaoTributado().toString();
+        new NFNotaInfoItemImpostoPISNaoTributado().toString();
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoPISNaoTributado><CST>04</CST></DFNotaInfoItemImpostoPISNaoTributado>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoPISNaoTributado><CST>04</CST></NFNotaInfoItemImpostoPISNaoTributado>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoPISNaoTributado().toString());
     }
 }

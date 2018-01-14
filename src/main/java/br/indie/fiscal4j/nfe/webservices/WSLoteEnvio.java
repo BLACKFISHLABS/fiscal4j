@@ -4,11 +4,11 @@ import br.indie.fiscal4j.common.DFModelo;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.assinatura.AssinaturaDigital;
 import br.indie.fiscal4j.nfe.classes.NFAutorizador4;
-import br.indie.fiscal4j.nfe.classes.lote.envio.DFLoteEnvio;
-import br.indie.fiscal4j.nfe.classes.lote.envio.DFLoteEnvioRetorno;
+import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvio;
+import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetorno;
 import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvioRetornoDados;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaInfoSuplementar;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaInfoSuplementar;
 import br.indie.fiscal4j.nfe.parsers.NotaParser;
 import br.indie.fiscal4j.nfe.persister.NFPersister;
 import br.indie.fiscal4j.nfe.utils.NFGeraChave;
@@ -41,24 +41,24 @@ class WSLoteEnvio {
         this.config = config;
     }
 
-    DFLoteEnvioRetorno enviaLoteAssinado(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
+    NFLoteEnvioRetorno enviaLoteAssinado(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
         return this.comunicaLote(loteAssinadoXml, modelo);
     }
 
-    String assinarLoteParaContingencia(final DFLoteEnvio lote) throws Exception {
+    String assinarLoteParaContingencia(final NFLoteEnvio lote) throws Exception {
         // adiciona a chave e o dv antes de assinar
-        final DFLoteEnvio loteAssinado = assinarLote(lote);
+        final NFLoteEnvio loteAssinado = assinarLote(lote);
 
         // verifica se nao tem NFCe junto com NFe no lote e gera qrcode (apos assinar mesmo, eh assim)
         int qtdNF = 0, qtdNFC = 0;
-        for (final DFNota nota : loteAssinado.getNotas()) {
+        for (final NFNota nota : loteAssinado.getNotas()) {
             switch (nota.getInfo().getIdentificacao().getModelo()) {
                 case NFE:
                     qtdNF++;
                     break;
                 case NFCE:
                     final NFGeraQRCode geraQRCode = new NFGeraQRCode(nota, this.config);
-                    nota.setInfoSuplementar(new DFNotaInfoSuplementar());
+                    nota.setInfoSuplementar(new NFNotaInfoSuplementar());
                     nota.getInfoSuplementar().setQrCode(geraQRCode.getQRCode());
                     qtdNFC++;
                     break;
@@ -75,20 +75,20 @@ class WSLoteEnvio {
         return loteAssinado.toString();
     }
 
-    NFLoteEnvioRetornoDados enviaLote(final DFLoteEnvio lote) throws Exception {
+    NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote) throws Exception {
         // adiciona a chave e o dv antes de assinar
-        final DFLoteEnvio loteAssinado = assinarLote(lote);
+        final NFLoteEnvio loteAssinado = assinarLote(lote);
 
         // verifica se nao tem NFCe junto com NFe no lote e gera qrcode (apos assinar mesmo, eh assim)
         int qtdNF = 0, qtdNFC = 0;
-        for (final DFNota nota : loteAssinado.getNotas()) {
+        for (final NFNota nota : loteAssinado.getNotas()) {
             switch (nota.getInfo().getIdentificacao().getModelo()) {
                 case NFE:
                     qtdNF++;
                     break;
                 case NFCE:
                     final NFGeraQRCode geraQRCode = new NFGeraQRCode(nota, this.config);
-                    nota.setInfoSuplementar(new DFNotaInfoSuplementar());
+                    nota.setInfoSuplementar(new NFNotaInfoSuplementar());
                     nota.getInfoSuplementar().setQrCode(geraQRCode.getQRCode());
                     qtdNFC++;
                     break;
@@ -106,12 +106,12 @@ class WSLoteEnvio {
         final DFModelo modelo = qtdNFC > 0 ? DFModelo.NFCE : DFModelo.NFE;
 
         // comunica o lote
-        final DFLoteEnvioRetorno loteEnvioRetorno = this.comunicaLote(loteAssinado.toString(), modelo);
+        final NFLoteEnvioRetorno loteEnvioRetorno = this.comunicaLote(loteAssinado.toString(), modelo);
         return new NFLoteEnvioRetornoDados(loteEnvioRetorno, loteAssinado);
     }
 
-    private DFLoteEnvio assinarLote(DFLoteEnvio lote) throws Exception {
-        for (final DFNota nota : lote.getNotas()) {
+    private NFLoteEnvio assinarLote(NFLoteEnvio lote) throws Exception {
+        for (final NFNota nota : lote.getNotas()) {
             final NFGeraChave geraChave = new NFGeraChave(nota);
             nota.getInfo().getIdentificacao().setCodigoRandomico(StringUtils.defaultIfBlank(nota.getInfo().getIdentificacao().getCodigoRandomico(), geraChave.geraCodigoRandomico()));
             nota.getInfo().getIdentificacao().setDigitoVerificador(geraChave.getDV());
@@ -123,7 +123,7 @@ class WSLoteEnvio {
         return new NotaParser().loteParaObjeto(documentoAssinado);
     }
 
-    private DFLoteEnvioRetorno comunicaLote(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
+    private NFLoteEnvioRetorno comunicaLote(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
         //valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
         XMLValidador.validaLote(loteAssinadoXml);
 
@@ -145,7 +145,7 @@ class WSLoteEnvio {
         }
 
         final NfeAutorizacaoLoteResult autorizacaoLoteResult = new NfeAutorizacaoStub(endpoint).nfeAutorizacaoLote(dados, cabecalhoSOAP);
-        final DFLoteEnvioRetorno loteEnvioRetorno = new NFPersister().read(DFLoteEnvioRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
+        final NFLoteEnvioRetorno loteEnvioRetorno = new NFPersister().read(NFLoteEnvioRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
         WSLoteEnvio.LOGGER.info(loteEnvioRetorno.toString());
         return loteEnvioRetorno;
     }

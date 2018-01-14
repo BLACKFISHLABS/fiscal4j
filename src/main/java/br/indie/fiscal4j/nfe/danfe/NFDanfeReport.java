@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe.danfe;
 
 import br.indie.fiscal4j.common.DFAmbiente;
 import br.indie.fiscal4j.common.DFModelo;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaProcessada;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaProcessada;
 import br.indie.fiscal4j.nfe.parsers.NotaParser;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -32,13 +32,13 @@ import java.util.List;
 
 public class NFDanfeReport {
 
-    private final DFNotaProcessada nota;
+    private final NFNotaProcessada nota;
 
     public NFDanfeReport(String xml) {
         this(new NotaParser().notaProcessadaParaObjeto(xml));
     }
 
-    public NFDanfeReport(DFNotaProcessada nota) {
+    public NFDanfeReport(NFNotaProcessada nota) {
         this.nota = nota;
     }
 

@@ -4,8 +4,8 @@ import br.indie.fiscal4j.common.DFModelo;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.NFAutorizador4;
-import br.indie.fiscal4j.nfe.classes.statusservico.consulta.DFStatusServicoConsulta;
-import br.indie.fiscal4j.nfe.classes.statusservico.consulta.DFStatusServicoConsultaRetorno;
+import br.indie.fiscal4j.nfe.classes.statusservico.consulta.NFStatusServicoConsulta;
+import br.indie.fiscal4j.nfe.classes.statusservico.consulta.NFStatusServicoConsultaRetorno;
 import br.indie.fiscal4j.nfe.transformers.NFRegistryMatcher;
 import br.indie.fiscal4j.nfe.webservices.statusservico.consulta.NfeStatusServico2Stub;
 import br.indie.fiscal4j.nfe.webservices.statusservico.consulta.NfeStatusServicoStub;
@@ -28,7 +28,7 @@ class WSStatusConsulta {
         this.config = config;
     }
 
-    DFStatusServicoConsultaRetorno consultaStatus(final DFUnidadeFederativa uf, final DFModelo modelo) throws Exception {
+    NFStatusServicoConsultaRetorno consultaStatus(final DFUnidadeFederativa uf, final DFModelo modelo) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(uf).toString());
         WSStatusConsulta.LOGGER.debug(omElementConsulta.toString());
 
@@ -36,11 +36,11 @@ class WSStatusConsulta {
         final OMElement omElementResult = consultaNotaBahiaWorkaround ? this.efetuaConsultaStatusBahia(omElementConsulta) : this.efetuaConsultaStatus(omElementConsulta, uf, modelo);
         WSStatusConsulta.LOGGER.debug(omElementResult.toString());
 
-        return new Persister(new NFRegistryMatcher(), new Format(0)).read(DFStatusServicoConsultaRetorno.class, omElementResult.toString());
+        return new Persister(new NFRegistryMatcher(), new Format(0)).read(NFStatusServicoConsultaRetorno.class, omElementResult.toString());
     }
 
-    private DFStatusServicoConsulta gerarDadosConsulta(final DFUnidadeFederativa unidadeFederativa) {
-        final DFStatusServicoConsulta consStatServ = new DFStatusServicoConsulta();
+    private NFStatusServicoConsulta gerarDadosConsulta(final DFUnidadeFederativa unidadeFederativa) {
+        final NFStatusServicoConsulta consStatServ = new NFStatusServicoConsulta();
         consStatServ.setUf(unidadeFederativa);
         consStatServ.setAmbiente(this.config.getAmbiente());
         consStatServ.setVersao(NFeConfig.VERSAO_NFE);

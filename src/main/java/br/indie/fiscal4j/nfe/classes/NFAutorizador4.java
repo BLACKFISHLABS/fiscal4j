@@ -1055,37 +1055,37 @@ public enum NFAutorizador4 {
     PR {
         @Override
         public String getNfeAutorizacao(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4?wsdl";
         }
 
         @Override
         public String getNfeRetAutorizacao(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4?wsdl";
         }
 
         @Override
         public String getNfeConsultaProtocolo(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4?wsdl";
         }
 
         @Override
         public String getNfeStatusServico(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeStatusServico4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeStatusServico4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeStatusServico4?wsdl";
         }
 
         @Override
         public String getRecepcaoEvento(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl";
         }
 
         @Override
         public String getConsultaCadastro(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4?wsdl";
         }
 
         @Override
         public String getNfeInutilizacao(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4" : "";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4?wsdl" : "https://nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4?wsdl";
         }
 
         @Override

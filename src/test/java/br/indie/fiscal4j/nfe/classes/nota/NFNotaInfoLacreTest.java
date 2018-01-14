@@ -7,25 +7,25 @@ public class NFNotaInfoLacreTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroLacreNulo() {
-        new DFNotaInfoLacre().toString();
+        new NFNotaInfoLacre().toString();
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroLacreComTamanhoInvalido() {
         try {
-            new DFNotaInfoLacre().setNumeroLacre("");
+            new NFNotaInfoLacre().setNumeroLacre("");
             Assert.fail("Validacao falhou");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoLacre().setNumeroLacre("su0ue1tNrrSACxDPXEYVFAqtc2IsnlONmb5AIAv24XjKALlpJ8h5HpUviB3p1");
+            new NFNotaInfoLacre().setNumeroLacre("su0ue1tNrrSACxDPXEYVFAqtc2IsnlONmb5AIAv24XjKALlpJ8h5HpUviB3p1");
         }
         Assert.fail("Validacao falhou");
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFNotaInfoLacre lacre = new DFNotaInfoLacre();
+        final NFNotaInfoLacre lacre = new NFNotaInfoLacre();
         lacre.setNumeroLacre("su0ue1tNrrSACxDPXEYVFAqtc2IsnlONmb5AIAv24XjKALlpJ8h5HpUviB3p");
-        final String xmlEsperado = "<DFNotaInfoLacre><nLacre>su0ue1tNrrSACxDPXEYVFAqtc2IsnlONmb5AIAv24XjKALlpJ8h5HpUviB3p</nLacre></DFNotaInfoLacre>";
+        final String xmlEsperado = "<NFNotaInfoLacre><nLacre>su0ue1tNrrSACxDPXEYVFAqtc2IsnlONmb5AIAv24XjKALlpJ8h5HpUviB3p</nLacre></NFNotaInfoLacre>";
 
         Assert.assertEquals(xmlEsperado, lacre.toString());
     }

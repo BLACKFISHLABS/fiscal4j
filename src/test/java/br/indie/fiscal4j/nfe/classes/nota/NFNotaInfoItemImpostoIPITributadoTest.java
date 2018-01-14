@@ -11,27 +11,27 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorlTributoComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPITributado().setValorTributo(new BigDecimal("99999999999999"));
+        new NFNotaInfoItemImpostoIPITributado().setValorTributo(new BigDecimal("99999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirPercentualAliquotaComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPITributado().setPercentualAliquota(new BigDecimal("1000"));
+        new NFNotaInfoItemImpostoIPITributado().setPercentualAliquota(new BigDecimal("1000"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirValorBaseCalculoComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPITributado().setValorBaseCalculo(new BigDecimal("99999999999999"));
+        new NFNotaInfoItemImpostoIPITributado().setValorBaseCalculo(new BigDecimal("99999999999999"));
     }
 
     @Test(expected = NumberFormatException.class)
     public void naoDevePermitirQuantidadeComTamanhoInvalido() {
-        new DFNotaInfoItemImpostoIPITributado().setQuantidade(new BigDecimal("9999999999999"));
+        new NFNotaInfoItemImpostoIPITributado().setQuantidade(new BigDecimal("9999999999999"));
     }
 
     @Test
     public void naoDevePermitirSetarQuantidadeCasoPercentualAliquotaOuValorBaseCalculoEstejaSetado() {
-        final DFNotaInfoItemImpostoIPITributado impostoTributado1 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoTributado1 = new NFNotaInfoItemImpostoIPITributado();
         impostoTributado1.setPercentualAliquota(BigDecimal.ONE);
         try {
             impostoTributado1.setQuantidade(BigDecimal.ONE);
@@ -39,7 +39,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new NFNotaInfoItemImpostoIPITributado();
         impostoIPITributado2.setValorBaseCalculo(BigDecimal.ONE);
         try {
             impostoIPITributado2.setQuantidade(BigDecimal.ONE);
@@ -50,7 +50,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
 
     @Test
     public void naoDevePermitirSetarValorUnidadeTributavelCasoPercentualAliquotaOuValorBaseCalculoEstejaSetado() {
-        final DFNotaInfoItemImpostoIPITributado impostoTributado1 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoTributado1 = new NFNotaInfoItemImpostoIPITributado();
         impostoTributado1.setPercentualAliquota(BigDecimal.ONE);
         try {
             impostoTributado1.setValorUnidadeTributavel(BigDecimal.ONE);
@@ -58,7 +58,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new NFNotaInfoItemImpostoIPITributado();
         impostoIPITributado2.setValorBaseCalculo(BigDecimal.ONE);
         try {
             impostoIPITributado2.setValorUnidadeTributavel(BigDecimal.ONE);
@@ -69,7 +69,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
 
     @Test
     public void naoDevePermitirSetarPercentualAliquotaCasoQuantidadeOuValorUnidadeTributavelEstejaSetado() {
-        final DFNotaInfoItemImpostoIPITributado impostoTributado1 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoTributado1 = new NFNotaInfoItemImpostoIPITributado();
         impostoTributado1.setQuantidade(BigDecimal.ONE);
         try {
             impostoTributado1.setPercentualAliquota(BigDecimal.ONE);
@@ -77,7 +77,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new NFNotaInfoItemImpostoIPITributado();
         impostoIPITributado2.setValorUnidadeTributavel(BigDecimal.ONE);
         try {
             impostoIPITributado2.setPercentualAliquota(BigDecimal.ONE);
@@ -88,7 +88,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
 
     @Test
     public void naoDevePermitirSetarValorBaseCalculoCasoQuantidadeOuValorUnidadeTributavelEstejaSetado() {
-        final DFNotaInfoItemImpostoIPITributado impostoTributado1 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoTributado1 = new NFNotaInfoItemImpostoIPITributado();
         impostoTributado1.setQuantidade(BigDecimal.ONE);
         try {
             impostoTributado1.setValorBaseCalculo(BigDecimal.ONE);
@@ -96,7 +96,7 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
         } catch (final IllegalStateException e) {
         }
 
-        final DFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado impostoIPITributado2 = new NFNotaInfoItemImpostoIPITributado();
         impostoIPITributado2.setValorUnidadeTributavel(BigDecimal.ONE);
         try {
             impostoIPITributado2.setValorBaseCalculo(BigDecimal.ONE);
@@ -107,19 +107,19 @@ public class NFNotaInfoItemImpostoIPITributadoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoQuantidadeValorUnidadeTributavel() {
-        final DFNotaInfoItemImpostoIPITributado ipiTributado = new DFNotaInfoItemImpostoIPITributado();
+        final NFNotaInfoItemImpostoIPITributado ipiTributado = new NFNotaInfoItemImpostoIPITributado();
         ipiTributado.setSituacaoTributaria(NFNotaInfoSituacaoTributariaIPI.OUTRAS_ENTRADAS);
         ipiTributado.setQuantidade(new BigDecimal("99999999999.9999"));
         ipiTributado.setValorUnidadeTributavel(new BigDecimal("9999999999.9999"));
         ipiTributado.setValorTributo(new BigDecimal("999999999999.99"));
 
-        final String xmlEsperado = "<DFNotaInfoItemImpostoIPITributado><CST>49</CST><qUnid>99999999999.9999</qUnid><vUnid>9999999999.9999</vUnid><vIPI>999999999999.99</vIPI></DFNotaInfoItemImpostoIPITributado>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoIPITributado><CST>49</CST><qUnid>99999999999.9999</qUnid><vUnid>9999999999.9999</vUnid><vIPI>999999999999.99</vIPI></NFNotaInfoItemImpostoIPITributado>";
         Assert.assertEquals(xmlEsperado, ipiTributado.toString());
     }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecidoPercentualAliquotaBaseCalculo() {
-        final String xmlEsperado = "<DFNotaInfoItemImpostoIPITributado><CST>49</CST><vBC>999999999999.99</vBC><pIPI>99.99</pIPI><vIPI>999999999999.99</vIPI></DFNotaInfoItemImpostoIPITributado>";
+        final String xmlEsperado = "<NFNotaInfoItemImpostoIPITributado><CST>49</CST><vBC>999999999999.99</vBC><pIPI>99.99</pIPI><vIPI>999999999999.99</vIPI></NFNotaInfoItemImpostoIPITributado>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemImpostoIPITributado().toString());
     }
 }

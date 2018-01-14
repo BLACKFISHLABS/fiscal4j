@@ -9,7 +9,7 @@ public class NFProtocoloEventoTest {
 
     @Test
     public void deveObterVersaoComoFoiSetado() {
-        final DFProtocoloEvento evento = new DFProtocoloEvento();
+        final NFProtocoloEvento evento = new NFProtocoloEvento();
         final String versao = "4.00";
         evento.setVersao(versao);
         Assert.assertEquals(versao, evento.getVersao());
@@ -17,7 +17,7 @@ public class NFProtocoloEventoTest {
 
     @Test
     public void deveObterEventoComoFoiSetado() {
-        final DFProtocoloEvento protocoloEvento = new DFProtocoloEvento();
+        final NFProtocoloEvento protocoloEvento = new NFProtocoloEvento();
         final NFEvento evento = new NFEvento();
         protocoloEvento.setEvento(evento);
         Assert.assertEquals(evento, protocoloEvento.getEvento());
@@ -25,7 +25,7 @@ public class NFProtocoloEventoTest {
 
     @Test
     public void deveObterRetornoEventoComoFoiSetado() {
-        final DFProtocoloEvento protocoloEvento = new DFProtocoloEvento();
+        final NFProtocoloEvento protocoloEvento = new NFProtocoloEvento();
         final NFEventoRetorno infoEventoRetorno = new NFEventoRetorno();
         protocoloEvento.setEventoRetorno(infoEventoRetorno);
         Assert.assertEquals(infoEventoRetorno, protocoloEvento.getInfoEventoRetorno());

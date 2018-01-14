@@ -9,31 +9,31 @@ public class NFNotaInfoEmitenteTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCNPJComTamanhoInvalido() {
         try {
-            new DFNotaInfoEmitente().setCnpj("1234567890123");
+            new NFNotaInfoEmitente().setCnpj("1234567890123");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoEmitente().setCnpj("123456789012345");
+            new NFNotaInfoEmitente().setCnpj("123456789012345");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCPFComTamanhoInvalido() {
         try {
-            new DFNotaInfoEmitente().setCpf("1234567890");
+            new NFNotaInfoEmitente().setCpf("1234567890");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoEmitente().setCpf("123456789012");
+            new NFNotaInfoEmitente().setCpf("123456789012");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCNPJSetadoQuandoCPFEstaSetado() {
-        final DFNotaInfoEmitente entrega = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente entrega = new NFNotaInfoEmitente();
         entrega.setCpf("12345678901");
         entrega.setCnpj("12345678901234");
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCPFSetadoQuandoCNPJEstaSetado() {
-        final DFNotaInfoEmitente entrega = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente entrega = new NFNotaInfoEmitente();
         entrega.setCnpj("12345678901234");
         entrega.setCpf("12345678901");
     }
@@ -41,24 +41,24 @@ public class NFNotaInfoEmitenteTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirRazoaSocialTamanhoInvalido() {
         try {
-            new DFNotaInfoEmitente().setRazaoSocial("");
+            new NFNotaInfoEmitente().setRazaoSocial("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoEmitente().setRazaoSocial("F7HL85M9v7jW5lX4Z9V7sF3kshuj967gj4uACEmpmVQgM9yYeQAgaY5EcSfR1");
+            new NFNotaInfoEmitente().setRazaoSocial("F7HL85M9v7jW5lX4Z9V7sF3kshuj967gj4uACEmpmVQgM9yYeQAgaY5EcSfR1");
         }
     }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNomeFantasiaTamanhoInvalido() {
         try {
-            new DFNotaInfoEmitente().setNomeFantasia("");
+            new NFNotaInfoEmitente().setNomeFantasia("");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoEmitente().setNomeFantasia("F7HL85M9v7jW5lX4Z9V7sF3kshuj967gj4uACEmpmVQgM9yYeQAgaY5EcSfR1");
+            new NFNotaInfoEmitente().setNomeFantasia("F7HL85M9v7jW5lX4Z9V7sF3kshuj967gj4uACEmpmVQgM9yYeQAgaY5EcSfR1");
         }
     }
 
     @Test
     public void devePermitirClassificacaoNacionalAtividadesEconomicasNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
         emitente.setInscricaoEstadual("ISENTO");
@@ -72,7 +72,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void devePermitirCnpjNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -87,7 +87,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void devePermitirCpfNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCnpj("12345678901234");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -102,7 +102,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirEnderecoNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setInscricaoEstadual("ISENTO");
@@ -116,7 +116,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirInscricaoEstadualNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -130,7 +130,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void devePermitirInscricaoEstadualSubstituicaoTributariaNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -144,7 +144,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void devePermitirInscricaoMunicipalNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -158,7 +158,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void devePermitirNomeFantasiaNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -172,7 +172,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirRazaoSocialNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -186,7 +186,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirRegimeTributarioNulo() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -200,7 +200,7 @@ public class NFNotaInfoEmitenteTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final DFNotaInfoEmitente emitente = new DFNotaInfoEmitente();
+        final NFNotaInfoEmitente emitente = new NFNotaInfoEmitente();
         emitente.setClassificacaoNacionalAtividadesEconomicas("0111111");
         emitente.setCpf("12345678901");
         emitente.setEndereco(FabricaDeObjetosFake.getNFEndereco());
@@ -211,7 +211,7 @@ public class NFNotaInfoEmitenteTest {
         emitente.setRazaoSocial("Rhass3yMarv7W26gljGNMGXXyPZfSFDEiN472mTU7UWxokviyHMfeD7vCVg3");
         emitente.setRegimeTributario(NFRegimeTributario.NORMAL);
 
-        final String xmlEsperado = "<DFNotaInfoEmitente><CPF>12345678901</CPF><xNome>Rhass3yMarv7W26gljGNMGXXyPZfSFDEiN472mTU7UWxokviyHMfeD7vCVg3</xNome><xFant>TKuTABBqcwEOeMwQepTIAvhOPx8qDf8Q5C8fbGgjonxl1ML9NErg9yVk2bGn</xFant><enderEmit><xLgr>NKwaAJ5ZJ49aQYmqBvxMhBzkGUqvtXnqusGEtjDzKCXPGwrEZCS8LGKHyBbV</xLgr><nro>11mzXHR8rZTgfE35EqfGhiShiIwQfLCAziFDXVgs3EjLSPkZkCvfGNLMEf5y</nro><xCpl>Fr3gSvoAeKbGpQD3r98KFeB50P3Gq14XBVsv5fpiaBvJ3HTOpREiwYGs20Xw</xCpl><xBairro>67LQFlXOBK0JqAE1rFi2CEyUGW5Z8QmmHhzmZ9GABVLKa9AbV0uFR0onl7nU</xBairro><cMun>9999999</cMun><xMun>s1Cr2hWP6bptQ80A9vWBuTaODR1U82LtKQi1DEm3LsAXu9AbkSeCtfXJVTKG</xMun><UF>RS</UF><CEP>88095550</CEP><cPais>1058</cPais><fone>12345678901324</fone></enderEmit><IE>ISENTO</IE><IEST>84371964648860</IEST><IM>zjfBnFVG8TBq8iW</IM><CNAE>0111111</CNAE><CRT>3</CRT></DFNotaInfoEmitente>";
+        final String xmlEsperado = "<NFNotaInfoEmitente><CPF>12345678901</CPF><xNome>Rhass3yMarv7W26gljGNMGXXyPZfSFDEiN472mTU7UWxokviyHMfeD7vCVg3</xNome><xFant>TKuTABBqcwEOeMwQepTIAvhOPx8qDf8Q5C8fbGgjonxl1ML9NErg9yVk2bGn</xFant><enderEmit><xLgr>NKwaAJ5ZJ49aQYmqBvxMhBzkGUqvtXnqusGEtjDzKCXPGwrEZCS8LGKHyBbV</xLgr><nro>11mzXHR8rZTgfE35EqfGhiShiIwQfLCAziFDXVgs3EjLSPkZkCvfGNLMEf5y</nro><xCpl>Fr3gSvoAeKbGpQD3r98KFeB50P3Gq14XBVsv5fpiaBvJ3HTOpREiwYGs20Xw</xCpl><xBairro>67LQFlXOBK0JqAE1rFi2CEyUGW5Z8QmmHhzmZ9GABVLKa9AbV0uFR0onl7nU</xBairro><cMun>9999999</cMun><xMun>s1Cr2hWP6bptQ80A9vWBuTaODR1U82LtKQi1DEm3LsAXu9AbkSeCtfXJVTKG</xMun><UF>RS</UF><CEP>88095550</CEP><cPais>1058</cPais><fone>12345678901324</fone></enderEmit><IE>ISENTO</IE><IEST>84371964648860</IEST><IM>zjfBnFVG8TBq8iW</IM><CNAE>0111111</CNAE><CRT>3</CRT></NFNotaInfoEmitente>";
         Assert.assertEquals(xmlEsperado, emitente.toString());
     }
 }

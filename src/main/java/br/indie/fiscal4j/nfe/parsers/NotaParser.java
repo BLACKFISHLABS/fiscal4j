@@ -3,10 +3,10 @@ package br.indie.fiscal4j.nfe.parsers;
 import br.indie.fiscal4j.nfe.classes.evento.cancelamento.NFEnviaEventoCancelamento;
 import br.indie.fiscal4j.nfe.classes.evento.cartacorrecao.NFEnviaEventoCartaCorrecao;
 import br.indie.fiscal4j.nfe.classes.evento.inutilizacao.NFEnviaEventoInutilizacao;
-import br.indie.fiscal4j.nfe.classes.lote.envio.DFLoteEnvio;
-import br.indie.fiscal4j.nfe.classes.nota.DFNota;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaInfoItem;
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaProcessada;
+import br.indie.fiscal4j.nfe.classes.lote.envio.NFLoteEnvio;
+import br.indie.fiscal4j.nfe.classes.nota.NFNota;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaInfoItem;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaProcessada;
 import br.indie.fiscal4j.nfe.persister.NFPersister;
 import org.simpleframework.xml.core.Persister;
 
@@ -20,49 +20,49 @@ public class NotaParser {
         this.persister = new NFPersister();
     }
 
-    public DFNota notaParaObjeto(final File xml) {
+    public NFNota notaParaObjeto(final File xml) {
         try {
-            return this.persister.read(DFNota.class, xml);
+            return this.persister.read(NFNota.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 
-    public DFNota notaParaObjeto(final String xml) {
+    public NFNota notaParaObjeto(final String xml) {
         try {
-            return this.persister.read(DFNota.class, xml);
+            return this.persister.read(NFNota.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 
-    public DFLoteEnvio loteParaObjeto(final File xml) {
+    public NFLoteEnvio loteParaObjeto(final File xml) {
         try {
-            return this.persister.read(DFLoteEnvio.class, xml);
+            return this.persister.read(NFLoteEnvio.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 
-    public DFLoteEnvio loteParaObjeto(final String xml) {
+    public NFLoteEnvio loteParaObjeto(final String xml) {
         try {
-            return this.persister.read(DFLoteEnvio.class, xml);
+            return this.persister.read(NFLoteEnvio.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 
-    public DFNotaProcessada notaProcessadaParaObjeto(final String xml) {
+    public NFNotaProcessada notaProcessadaParaObjeto(final String xml) {
         try {
-            return this.persister.read(DFNotaProcessada.class, xml);
+            return this.persister.read(NFNotaProcessada.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 
-    public DFNotaProcessada notaProcessadaParaObjeto(final File xml) {
+    public NFNotaProcessada notaProcessadaParaObjeto(final File xml) {
         try {
-            return this.persister.read(DFNotaProcessada.class, xml);
+            return this.persister.read(NFNotaProcessada.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
@@ -116,9 +116,9 @@ public class NotaParser {
         }
     }
 
-    public DFNotaInfoItem notaInfoItemParaObjeto(final String xml) {
+    public NFNotaInfoItem notaInfoItemParaObjeto(final String xml) {
         try {
-            return this.persister.read(DFNotaInfoItem.class, xml);
+            return this.persister.read(NFNotaInfoItem.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }

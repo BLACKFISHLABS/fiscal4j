@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.common.DFAmbiente;
 import br.indie.fiscal4j.common.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe.classes.nota.assinatura.DFSignature;
+import br.indie.fiscal4j.nfe.classes.nota.assinatura.NFSignature;
 import org.joda.time.LocalDateTime;
 import org.junit.Assert;
 import org.junit.Test;
@@ -84,7 +84,7 @@ public class NFRetornoInfoCancelamentoTest {
     @Test
     public void deveObterAssinaturaComoFoiSetado() {
         final NFRetornoInfoCancelamento retornoInfoCancelamento = new NFRetornoInfoCancelamento();
-        final DFSignature assinatura = new DFSignature();
+        final NFSignature assinatura = new NFSignature();
         retornoInfoCancelamento.setAssinatura(assinatura);
         Assert.assertEquals(assinatura, retornoInfoCancelamento.getAssinatura());
     }

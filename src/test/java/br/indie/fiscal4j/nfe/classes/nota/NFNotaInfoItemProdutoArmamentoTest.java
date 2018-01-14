@@ -9,7 +9,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieCanoComTamanhoInvalido() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         try {
             armamento.setNumeroSerieCano("");
         } catch (final IllegalStateException e) {
@@ -19,7 +19,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieArmaComTamanhoInvalido() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         try {
             armamento.setNumeroSerieArma("");
         } catch (final IllegalStateException e) {
@@ -29,7 +29,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDescricaoComTamanhoInvalido() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         try {
             armamento.setDescricao("");
         } catch (final IllegalStateException e) {
@@ -39,7 +39,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDescricaoNulo() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         armamento.setNumeroSerieArma("G2LeQIr4F");
         armamento.setNumeroSerieCano("DCXuiWRlE");
         armamento.setTipo(NFNotaInfoItemProdutoArmamentoTipo.PERMITIDO);
@@ -48,7 +48,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieArmaNulo() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         armamento.setDescricao("lkVlEEeoLx8TnDSJ7ZfB0ohZacch9JMIT0lEOsXkSI1KDOWcOI3PjKe6QMAUeLitJ0aAi1LIGpKmN0sVZtp00qqzmgfySvraI98bmPN0RreMa1eDZwLQG2o46TT3vMHkZgBRZ6ofxUCLjUEgU7b2YZynsUuM3szCDup0TuUCjBULJEB8TTr4rCcLD1rCeVBljaFoclt16oQXio2UUEYXjgcCVpftSE0uamx3Ni2GCwlUQ4CCBAaVZv7VA79xWrMV");
         armamento.setNumeroSerieCano("DCXuiWRlE");
         armamento.setTipo(NFNotaInfoItemProdutoArmamentoTipo.PERMITIDO);
@@ -57,7 +57,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieCanoNulo() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         armamento.setDescricao("lkVlEEeoLx8TnDSJ7ZfB0ohZacch9JMIT0lEOsXkSI1KDOWcOI3PjKe6QMAUeLitJ0aAi1LIGpKmN0sVZtp00qqzmgfySvraI98bmPN0RreMa1eDZwLQG2o46TT3vMHkZgBRZ6ofxUCLjUEgU7b2YZynsUuM3szCDup0TuUCjBULJEB8TTr4rCcLD1rCeVBljaFoclt16oQXio2UUEYXjgcCVpftSE0uamx3Ni2GCwlUQ4CCBAaVZv7VA79xWrMV");
         armamento.setNumeroSerieArma("G2LeQIr4F");
         armamento.setTipo(NFNotaInfoItemProdutoArmamentoTipo.PERMITIDO);
@@ -66,7 +66,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirTipoNulo() {
-        final DFNotaInfoItemProdutoArmamento armamento = new DFNotaInfoItemProdutoArmamento();
+        final NFNotaInfoItemProdutoArmamento armamento = new NFNotaInfoItemProdutoArmamento();
         armamento.setDescricao("lkVlEEeoLx8TnDSJ7ZfB0ohZacch9JMIT0lEOsXkSI1KDOWcOI3PjKe6QMAUeLitJ0aAi1LIGpKmN0sVZtp00qqzmgfySvraI98bmPN0RreMa1eDZwLQG2o46TT3vMHkZgBRZ6ofxUCLjUEgU7b2YZynsUuM3szCDup0TuUCjBULJEB8TTr4rCcLD1rCeVBljaFoclt16oQXio2UUEYXjgcCVpftSE0uamx3Ni2GCwlUQ4CCBAaVZv7VA79xWrMV");
         armamento.setNumeroSerieArma("G2LeQIr4F");
         armamento.setNumeroSerieCano("DCXuiWRlE");
@@ -75,7 +75,7 @@ public class NFNotaInfoItemProdutoArmamentoTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoItemProdutoArmamento><tpArma>0</tpArma><nSerie>G2LeQIr4F</nSerie><nCano>DCXuiWRlE</nCano><descr>lkVlEEeoLx8TnDSJ7ZfB0ohZacch9JMIT0lEOsXkSI1KDOWcOI3PjKe6QMAUeLitJ0aAi1LIGpKmN0sVZtp00qqzmgfySvraI98bmPN0RreMa1eDZwLQG2o46TT3vMHkZgBRZ6ofxUCLjUEgU7b2YZynsUuM3szCDup0TuUCjBULJEB8TTr4rCcLD1rCeVBljaFoclt16oQXio2UUEYXjgcCVpftSE0uamx3Ni2GCwlUQ4CCBAaVZv7VA79xWrMV</descr></DFNotaInfoItemProdutoArmamento>";
+        final String xmlEsperado = "<NFNotaInfoItemProdutoArmamento><tpArma>0</tpArma><nSerie>G2LeQIr4F</nSerie><nCano>DCXuiWRlE</nCano><descr>lkVlEEeoLx8TnDSJ7ZfB0ohZacch9JMIT0lEOsXkSI1KDOWcOI3PjKe6QMAUeLitJ0aAi1LIGpKmN0sVZtp00qqzmgfySvraI98bmPN0RreMa1eDZwLQG2o46TT3vMHkZgBRZ6ofxUCLjUEgU7b2YZynsUuM3szCDup0TuUCjBULJEB8TTr4rCcLD1rCeVBljaFoclt16oQXio2UUEYXjgcCVpftSE0uamx3Ni2GCwlUQ4CCBAaVZv7VA79xWrMV</descr></NFNotaInfoItemProdutoArmamento>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoItemProdutoArmamento().toString());
     }
 }

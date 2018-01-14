@@ -9,10 +9,10 @@ public class NFNotaInfoCompraTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPedidoComTamanhoNaoPermitido() {
         try {
-            new DFNotaInfoCompra().setPedido("");
+            new NFNotaInfoCompra().setPedido("");
             Assert.fail("Validacao nao esta funcionando corretamente");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoCompra().setPedido("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzca");
+            new NFNotaInfoCompra().setPedido("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzca");
         }
         Assert.fail("Validacao nao esta funcionando corretamente");
     }
@@ -20,10 +20,10 @@ public class NFNotaInfoCompraTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNotaDeEmpenhoComTamanhoNaoPermitido() {
         try {
-            new DFNotaInfoCompra().setNotaDeEmpenho("");
+            new NFNotaInfoCompra().setNotaDeEmpenho("");
             Assert.fail("Validacao nao esta funcionando corretamente");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoCompra().setNotaDeEmpenho("uCJhbWe0g8OQ8KtSKlkXpRC");
+            new NFNotaInfoCompra().setNotaDeEmpenho("uCJhbWe0g8OQ8KtSKlkXpRC");
         }
         Assert.fail("Validacao nao esta funcionando corretamente");
     }
@@ -31,17 +31,17 @@ public class NFNotaInfoCompraTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirContratoComTamanhoNaoPermitido() {
         try {
-            new DFNotaInfoCompra().setContrato("");
+            new NFNotaInfoCompra().setContrato("");
             Assert.fail("Validacao nao esta funcionando corretamente");
         } catch (final IllegalStateException e) {
-            new DFNotaInfoCompra().setContrato("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzca");
+            new NFNotaInfoCompra().setContrato("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzca");
         }
         Assert.fail("Validacao nao esta funcionando corretamente");
     }
 
     @Test
     public void deveGerarXMLSemContrato() {
-        final DFNotaInfoCompra compra = new DFNotaInfoCompra();
+        final NFNotaInfoCompra compra = new NFNotaInfoCompra();
         compra.setNotaDeEmpenho("abcefghijklmnopqrstuvx");
         compra.setPedido("1kG8gghJ0YTrUZnt00BJlOsFCtj43eV5mEHHXUzp3rD6QwwUwX4GPavXkMB1");
         compra.toString();
@@ -49,7 +49,7 @@ public class NFNotaInfoCompraTest {
 
     @Test
     public void deveGerarXMLSemPedido() {
-        final DFNotaInfoCompra compra = new DFNotaInfoCompra();
+        final NFNotaInfoCompra compra = new NFNotaInfoCompra();
         compra.setContrato("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzc");
         compra.setNotaDeEmpenho("abcefghijklmnopqrstuvx");
         compra.toString();
@@ -57,7 +57,7 @@ public class NFNotaInfoCompraTest {
 
     @Test
     public void deveGerarXMLSemNotaDeEmpenho() {
-        final DFNotaInfoCompra compra = new DFNotaInfoCompra();
+        final NFNotaInfoCompra compra = new NFNotaInfoCompra();
         compra.setContrato("9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzc");
         compra.setPedido("1kG8gghJ0YTrUZnt00BJlOsFCtj43eV5mEHHXUzp3rD6QwwUwX4GPavXkMB1");
         compra.toString();
@@ -65,7 +65,7 @@ public class NFNotaInfoCompraTest {
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<DFNotaInfoCompra><xNEmp>abcefghijklmnopqrstuvx</xNEmp><xPed>1kG8gghJ0YTrUZnt00BJlOsFCtj43eV5mEHHXUzp3rD6QwwUwX4GPavXkMB1</xPed><xCont>9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzc</xCont></DFNotaInfoCompra>";
+        final String xmlEsperado = "<NFNotaInfoCompra><xNEmp>abcefghijklmnopqrstuvx</xNEmp><xPed>1kG8gghJ0YTrUZnt00BJlOsFCtj43eV5mEHHXUzp3rD6QwwUwX4GPavXkMB1</xPed><xCont>9tQtearTIcXmO9vxNr3TPhSaItw5mk3zyTVlf2aIFXqqvtXrHoa0qPWKzUzc</xCont></NFNotaInfoCompra>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoCompra().toString());
     }
 }

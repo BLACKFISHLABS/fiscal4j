@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.nfe.validadores;
 
-import br.indie.fiscal4j.nfe.classes.nota.DFNotaInfoReboque;
+import br.indie.fiscal4j.nfe.classes.nota.NFNotaInfoReboque;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class ListValidador {
         ListValidador.validaTamanho(lista, 120, info);
     }
 
-    public static void tamanho5(final List<DFNotaInfoReboque> lista, final String info) {
+    public static void tamanho5(final List<NFNotaInfoReboque> lista, final String info) {
         ListValidador.validaTamanho(lista, 5, info);
     }
 

@@ -1,6 +1,6 @@
 # PROJETO FISCAL4J #
 
-### Comunicador de nota fiscal e nota fiscal do consumidor da [fazenda](http://www.nfe.fazenda.gov.br/portal/principal.aspx).<br/> ###
+### Comunicador de nota fiscal eletronica da [fazenda](http://www.nfe.fazenda.gov.br/portal/principal.aspx). ###
 
-## Licença
-Apache 2.0
+* LIB JAR
+* NFe - NFCe

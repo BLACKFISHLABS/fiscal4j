@@ -4,7 +4,7 @@
 
     <groupId>br.indie</groupId>
     <artifactId>fiscal4j</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>4.00-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>fiscal4j</name>
@@ -31,7 +31,7 @@
     <developers>
         <developer>
             <id>JefersonOC</id>
-            <name>Jeferson Oliveira Cruz</name>
+            <name>Jeferson Cruz</name>
             <url>https://github.com/JefersonOC</url>
         </developer>
     </developers>

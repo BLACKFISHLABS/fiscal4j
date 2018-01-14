@@ -1,7 +1,8 @@
 package br.indie.fiscal4j;
 
-import br.indie.fiscal4j.classes.NFTipoEmissao;
-import br.indie.fiscal4j.classes.NFUnidadeFederativa;
+import br.indie.fiscal4j.common.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe.classes.NFTipoEmissao;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public class NFeConfigTest {
     private class NFeConfigTeste extends NFeConfig {
 
         @Override
-        public NFUnidadeFederativa getCUF() {
+        public DFUnidadeFederativa getCUF() {
             return null;
         }
 

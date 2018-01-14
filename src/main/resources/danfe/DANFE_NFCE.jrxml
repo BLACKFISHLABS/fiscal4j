@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
@@ -90,7 +89,7 @@ new BigDecimal($F{nota.info.total.icmsTotal.valorTotalDesconto}.replace(".", "")
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement textAlignment="Left" verticalAlignment="Top">
-                    <font fontName="SansSerif" size="6" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{nota.info.emitente.endereco.logradouro}+", "+
 $F{nota.info.emitente.endereco.numero}+", "+
@@ -333,6 +332,16 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <textFieldExpression>
                     <![CDATA[new BigDecimal($F{nota.info.total.icmsTotal.valorTotalNFe})]]></textFieldExpression>
             </textField>
+            <textField pattern="#,##0.00" isBlankWhenNull="true">
+                <reportElement x="111" y="28" width="97" height="10" isRemoveLineWhenBlank="true"
+                               uuid="96e065a7-d841-4794-afe8-661bc6024992">
+                    <printWhenExpression><![CDATA[$V{ACRESCIMOS}.signum() != 0]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Right">
+                    <font size="7"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{ACRESCIMOS}]]></textFieldExpression>
+            </textField>
             <staticText>
                 <reportElement key="textField" positionType="Float" x="1" y="18" width="110" height="10"
                                uuid="c7129f1b-3655-410c-95fb-0e4bb0a94fdb"/>
@@ -365,7 +374,8 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <textElement markup="none">
                     <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
                 </textElement>
-                <textFieldExpression><![CDATA["DESCONTO:"]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$V{ACRESCIMOS}.signum() == 0 ? null :
+$V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpression>
             </textField>
             <staticText>
                 <reportElement key="textField" positionType="Float" x="1" y="50" width="110" height="12"
@@ -382,17 +392,6 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                     <![CDATA[new JRBeanCollectionDataSource($F{nota.info.itens})]]></dataSourceExpression>
                 <subreportExpression><![CDATA[$P{SUBREL}]]></subreportExpression>
             </subreport>
-            <textField pattern="#,##0.00" isBlankWhenNull="true">
-                <reportElement x="111" y="29" width="97" height="10" isRemoveLineWhenBlank="true"
-                               uuid="9d7f19c7-c89e-4813-a03e-9adb260a0f34">
-                    <printWhenExpression><![CDATA[$V{ACRESCIMOS}.signum() != 0]]></printWhenExpression>
-                </reportElement>
-                <textElement textAlignment="Right">
-                    <font size="7"/>
-                </textElement>
-                <textFieldExpression>
-                    <![CDATA[new BigDecimal($F{nota.info.total.icmsTotal.valorTotalDesconto})]]></textFieldExpression>
-            </textField>
         </band>
     </detail>
     <pageFooter>

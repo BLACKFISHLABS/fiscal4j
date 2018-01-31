@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 clear
 mvn clean install;
 echo "Type your commit: "

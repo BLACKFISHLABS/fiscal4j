@@ -1,7 +1,7 @@
 before_deploy: 
   - "git config --local user.name \"Jeferson Cruz\""
   - "git config --local user.email \"jeferson_oc@live.com\""
-  - "git tag fiscal4j-3.1.0-RELEASE
+  - "git tag \"fiscal4j-3.1.0-RELEASE\""
 deploy: 
   api_key:
     secure: cQa9EBE9TWCHh0DF8vP8VFlslQhTc0eCYHTW1rPEuP1chih4gMEAipkMfxNoA3LNTABuUnOHaIIX4JzGCeG965tHvm0vLxt7OCwmwzXSV34+LYMXdtNWSc2HSjQxyhqKxDLKOkXF+iRE96DmFE2TRkeVuhgZKWVaqDiWhchqVZuT2X7WRjFKVC7zjhaqLQmeMct+IyBO569RlOOv49e/dJ/FZtZSDEssPJ1OaJ3YpL5FiY6yxESuF6T/YvvFBD/oM17SrwGI+DN1vYsrCYeRYRwnfMwNRBFnm/4VrzPiZSvzUNsn90ExwyY/UC6UWQpwt2h38NlX/X2G3kDCecR5DKI9BtBFePNQhIc/LRl+evWbo09CwBtVXCbbh4zEEr/iwIf11tXcjXOE6lBelEaymYrM+UuUdEfGyELKlC3KkDKpe2uNxnpnWdY8U1MJPYlun/WvhoLZn1eowkKgWEK/xfL15234rK5uSO51jrap0O4rWQo17PwDHt3DPj+nQYJ2OM+og75Rv/A6hl+OOFYcOjJp05CGnHVlCT6uH2hnIsvGF5M+44RgmEx+JbTvyDboqgltxo7UrK2N21Ys3deduVp/rSMyh5T/2tErNVYnQk48PROIMZMm/fi1spBUQwXJbV8Z9xql9AAf0xe+n5dtEMWgoAvFjPAPNAWTWEBucmQ=

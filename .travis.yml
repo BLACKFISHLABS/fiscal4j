@@ -1,6 +1,15 @@
-language: java
-
+before_deploy: 
+  - "git config --local user.name \"Jeferson Cruz\""
+  - "git config --local user.email \"jeferson_oc@live.com\""
+  - "git tag \"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)\""
+deploy: 
+  user: "JefersonOC"
+  password: "iWzlDs2KTgYY4bn03cK/epnntraKOxlzMB5r8olmWB3HkVHsrfA871PfDPgmCAg+KEMOLP6Rcqqi7rnhrxSfNj09ne6KJhJyIRS6OpqfG2UyZUKhKGdmJte4LkaRDJJgZefYawVJwkI0sWcy/YWUAxYXhe+LAG//jDaISUgaizJJtHLBeOAI8Iu/PAHux9Lq5t2nHoM8dcxUz8XLnKqywZCjk7UCqsUWJcLRnmwenSQGtQrspdYmQyIAP7ruDIVUxJMwFVsxvo00f4vMZij8x9CksUd2XSFaS6eLLkUvv6Zpvch5QJ88/g3AS7AR1la2iri5b1ygGrhxnikcFPVz+NxREC87InpQ04nWIItogjIlstrgpV2xrPmuldlDJiKQ7PeFDXn0nskn/Cap6ZslhsQjaaE5UumdawYZaZAoWODa2DgsTNgDRVGoETrl6DAOwbIdtTEokVDRnk7q+14DF8nQrNYw3QHL9ML0XXoiTjc4hA5MGM7syz3DcBcLk6GF574u38ZKLWqfNGUNyHyFwhAeLUPjrBj8Ocqg+y3cqfUbaVSmuE42CgSOG6vIxwGIV85h8K5u8Un6C8GI94Jy8wakysuG0ZtZRQ+h/wopb4Ux0fTw+vgAw5vmjFr/b5JWV5a1bZ7HDpMVUloNJrgVdDbmZ1BcvbNxy/QRMKIggeA="
+  file: "target/fiscal4j-3.1.0-RELEASE.jar"
+  provider: releases
+  skip_cleanup: true
+  overwrite: true
 jdk: oraclejdk8
-
-script:
-  - mvn clean verify
+language: java
+script: 
+  - "mvn clean install"

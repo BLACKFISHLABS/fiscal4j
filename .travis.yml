@@ -3,8 +3,8 @@ before_deploy:
   - "git config --local user.email \"jeferson_oc@live.com\""
   - "git tag \"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)\""
 deploy: 
-  user: "JefersonOC"
-  password: "hikCcfDokwHnXAikJL6rvgXRotvLyDdX1ZyPv5gzWrzBZ9UqGwfPiLOZzd6Ops/ERss8JQSNo/FZSOMASk89kn+8doDB/Mig0cZAQDtn4u+BB4BOxnyTH9+BY8/Dqf5dHpJ1ZVTjOYeUnKHcpxSrPu+ssj5NdOcS+2Cs3vWqZHno8TVL1lDyFcx4aTsNPgNsDHLHPcyA83Jq975tViVOjjrf6wX15UloXuuRc5YsXnjTT7Pu8Bus3XdgvWCn43Ck1yOx4kzcb/bn1SFYkny/hkg2znjDcFrHz4HFacHPyBGmX6FSckG6SO0FSuuaEestub7OSHwK/2WQiHeL9P1CtRbIdbc8IEUsainh0KGyUITMwjrt+B5mH1b1dqax+9fzPMYaO2buhTL3Au/RnqeyTpj4o1Rblm75hjpYMbDwHQD5PF2gmpJR0jNscrZYNPJPbUaHx9NNg5e/ohHORnzfMkHuDhR8dtqhT0ys8MQfInLN2ZaYoaM0LNMlat4QICBn5bjfzY58umbpb7NMlUCf/QzT8cEfVO6knSalscKBAmMDSX8XSRcu5yKVOl/FumcVMqBWvsDex7VjBfDPcCxmcd7MYNbT5fv7wWpM37IHkBksiOJnGMAQyufxKQy2EOU5eN5ahs0qovjr3oB19xAujOxyUADK2ZNGbk0Zzalh/V4="
+  api_key:
+    secure: cQa9EBE9TWCHh0DF8vP8VFlslQhTc0eCYHTW1rPEuP1chih4gMEAipkMfxNoA3LNTABuUnOHaIIX4JzGCeG965tHvm0vLxt7OCwmwzXSV34+LYMXdtNWSc2HSjQxyhqKxDLKOkXF+iRE96DmFE2TRkeVuhgZKWVaqDiWhchqVZuT2X7WRjFKVC7zjhaqLQmeMct+IyBO569RlOOv49e/dJ/FZtZSDEssPJ1OaJ3YpL5FiY6yxESuF6T/YvvFBD/oM17SrwGI+DN1vYsrCYeRYRwnfMwNRBFnm/4VrzPiZSvzUNsn90ExwyY/UC6UWQpwt2h38NlX/X2G3kDCecR5DKI9BtBFePNQhIc/LRl+evWbo09CwBtVXCbbh4zEEr/iwIf11tXcjXOE6lBelEaymYrM+UuUdEfGyELKlC3KkDKpe2uNxnpnWdY8U1MJPYlun/WvhoLZn1eowkKgWEK/xfL15234rK5uSO51jrap0O4rWQo17PwDHt3DPj+nQYJ2OM+og75Rv/A6hl+OOFYcOjJp05CGnHVlCT6uH2hnIsvGF5M+44RgmEx+JbTvyDboqgltxo7UrK2N21Ys3deduVp/rSMyh5T/2tErNVYnQk48PROIMZMm/fi1spBUQwXJbV8Z9xql9AAf0xe+n5dtEMWgoAvFjPAPNAWTWEBucmQ=
   file: "target/fiscal4j-3.1.0-RELEASE.jar"
   provider: releases
   skip_cleanup: true

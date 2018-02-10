@@ -27,8 +27,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class NFDanfeReport {
 
@@ -42,16 +45,16 @@ public class NFDanfeReport {
         this.nota = nota;
     }
 
-    private static byte[] toPDF(JasperPrint print) throws JRException {
-        return JasperExportManager.exportReportToPdf(print);
-    }
-
     public byte[] gerarDanfeNFe(byte[] logoEmpresa) throws Exception {
         return toPDF(createJasperPrintNFe(logoEmpresa));
     }
 
     public byte[] gerarDanfeNFCe(String informacoesComplementares, boolean mostrarMsgFinalizacao, NFCePagamento... pags) throws Exception {
         return toPDF(createJasperPrintNFCe(informacoesComplementares, mostrarMsgFinalizacao, pags));
+    }
+
+    private static byte[] toPDF(JasperPrint print) throws JRException {
+        return JasperExportManager.exportReportToPdf(print);
     }
 
     public JasperPrint createJasperPrintNFe(byte[] logoEmpresa) throws IOException, ParserConfigurationException, SAXException, JRException {
@@ -112,13 +115,9 @@ public class NFDanfeReport {
         return StringUtils.join(nota.getNota().getInfo().getChaveAcesso().split("(?<=\\G....)"), " ");
     }
 
-    /**
-     * Geracao do QRCode com ZXing
-     * http://repo1.maven.org/maven2/com/google/zxing/core/3.2.0/
-     */
     public BufferedImage gerarQRCode() throws WriterException {
         int size = 250;
-        Map<EncodeHintType, Object> hintMap = new EnumMap<>(EncodeHintType.class);
+        Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
         hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
         hintMap.put(EncodeHintType.MARGIN, 1); /* default = 4 */
         hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
@@ -158,15 +157,12 @@ public class NFDanfeReport {
         public String getFormaPagamento() {
             return formaPagamento;
         }
-
         public void setFormaPagamento(String formaPagamento) {
             this.formaPagamento = formaPagamento;
         }
-
         public BigDecimal getValor() {
             return valor;
         }
-
         public void setValor(BigDecimal valor) {
             this.valor = valor;
         }

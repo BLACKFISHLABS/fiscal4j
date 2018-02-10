@@ -12,14 +12,18 @@ import java.util.List;
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFLoteEnvio extends DFBase {
     private static final long serialVersionUID = 4208444639749964265L;
-    @ElementList(name = "NFe", inline = true, required = true)
-    List<NFNota> notas;
+
     @Attribute(name = "versao", required = true)
     private String versao;
+
     @Element(name = "idLote", required = true)
     private String idLote;
+
     @Element(name = "indSinc", required = true)
     private NFLoteIndicadorProcessamento indicadorProcessamento;
+
+    @ElementList(name = "NFe", inline = true, required = true)
+    List<NFNota> notas;
 
     public String getIdLote() {
         return this.idLote;
@@ -30,28 +34,28 @@ public class NFLoteEnvio extends DFBase {
         this.idLote = idLote;
     }
 
-    public List<NFNota> getNotas() {
-        return this.notas;
-    }
-
     public void setNotas(final List<NFNota> notas) {
         ListValidador.tamanho50(notas, "Notas");
         this.notas = notas;
     }
 
-    public String getVersao() {
-        return this.versao;
+    public List<NFNota> getNotas() {
+        return this.notas;
     }
 
     public void setVersao(final String versao) {
         this.versao = versao;
     }
 
-    public NFLoteIndicadorProcessamento getIndicadorProcessamento() {
-        return this.indicadorProcessamento;
-    }
-
     public void setIndicadorProcessamento(final NFLoteIndicadorProcessamento indicadorProcessamento) {
         this.indicadorProcessamento = indicadorProcessamento;
+    }
+
+    public String getVersao() {
+        return this.versao;
+    }
+
+    public NFLoteIndicadorProcessamento getIndicadorProcessamento() {
+        return this.indicadorProcessamento;
     }
 }

@@ -4,11 +4,6 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
-/**
- * Created by Eldevan Nery Junior on 06/11/17.
- * <p>
- * Informações dos Municípios de Carregamento.
- */
 public class MDFInfoIdentificacaoMunicipioCarregamento extends DFBase {
 
     /**

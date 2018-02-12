@@ -17,10 +17,6 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 
-/**
- * Created by Eldevan Nery Junior on 03/11/17.
- * <h1>Identificação do MDF-e</h1>
- */
 @Root(name = "ide")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoIdentificacao extends DFBase {

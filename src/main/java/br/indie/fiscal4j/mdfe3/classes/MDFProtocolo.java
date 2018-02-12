@@ -6,9 +6,6 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-/**
- * @Author Eldevan Nery Junior on 26/05/17.
- */
 @Root(name = "protMDFe")
 public class MDFProtocolo extends DFBase {
 

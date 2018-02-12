@@ -9,9 +9,6 @@ import org.simpleframework.xml.Element;
 
 import java.text.SimpleDateFormat;
 
-/**
- * @Author Eldevan Nery Junior on 26/05/17.
- */
 public class MDFProtocoloInfo extends DFBase {
 
     @Attribute(name = "Id", required = false)

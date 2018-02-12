@@ -568,7 +568,7 @@ public abstract class StringValidador {
      * @param info        Informação de retorno caso haja erro.
      * @param tamanho     tamanho para validação da {@code String} , pode ser {@code null} :
      * @param exatamente  <pre>se false {@code null} a {@code String}
-     *                                                         não precisa ter o tamanho exato do parametro anterior.</pre>
+     *                                                                            não precisa ter o tamanho exato do parametro anterior.</pre>
      * @param numerico    se true {@code null} a {@code String}  precisa ser numérica[0-9].
      * @return retorna a própria {@code String} {@param paraValidar}.
      */

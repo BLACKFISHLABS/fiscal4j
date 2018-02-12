@@ -5,7 +5,6 @@ import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
 /**
- * Created by Eldevan Nery Junior on 01/11/17.
  * <p>
  * <h1>Informações do Condutor do veículo</h1>
  */

@@ -11,9 +11,6 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-/**
- * @Author Eldevan Nery Junior on 26/05/17.
- */
 @Root(name = "retConsReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaRetorno extends DFBase {

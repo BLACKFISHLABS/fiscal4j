@@ -8,7 +8,6 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * Created by Eldevan Nery Junior on 01/11/17.
  * <h1>Grupo de informações para Agência Reguladora</h1>
  */
 @Root(name = "infANTT")

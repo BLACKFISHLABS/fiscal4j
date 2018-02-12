@@ -3,9 +3,6 @@ package br.indie.fiscal4j.mdfe3.transformers;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoResponsavelSeguro;
 import org.simpleframework.xml.transform.Transform;
 
-/**
- * Created by Eldevan Nery Junior on 07/12/17.
- */
 public class MDFTipoResponsavelSeguroTransformer implements Transform<MDFTipoResponsavelSeguro> {
 
     @Override

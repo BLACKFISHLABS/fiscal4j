@@ -8,9 +8,6 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-/**
- * Created by Eldevan Nery Junior on 17/11/17.
- */
 @Root(name = "evEncMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeEnviaEventoEncerramento extends DFBase {

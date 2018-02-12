@@ -4,11 +4,6 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Element;
 
-/**
- * Created by Eldevan Nery Junior on 06/11/17.
- * <p>
- * Informações do Percurso do MDF-e
- */
 public class MDFInfoIdentificacaoUfPercurso extends DFBase {
 
     /**

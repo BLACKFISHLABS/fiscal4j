@@ -27,11 +27,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 public class NFDanfeReport {
 
@@ -157,12 +154,15 @@ public class NFDanfeReport {
         public String getFormaPagamento() {
             return formaPagamento;
         }
+
         public void setFormaPagamento(String formaPagamento) {
             this.formaPagamento = formaPagamento;
         }
+
         public BigDecimal getValor() {
             return valor;
         }
+
         public void setValor(BigDecimal valor) {
             this.valor = valor;
         }

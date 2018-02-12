@@ -11,9 +11,6 @@ import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
 
-/**
- * Tipo Evento
- */
 public class MDFeInfoEvento extends DFBase {
 
     @Attribute(name = "Id", required = false)

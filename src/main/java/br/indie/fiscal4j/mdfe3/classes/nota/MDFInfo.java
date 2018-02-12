@@ -7,11 +7,6 @@ import org.simpleframework.xml.*;
 
 import java.util.List;
 
-/**
- * Created by Eldevan Nery Junior on 03/11/17.
- * <p>
- * Informações do MDF-e.
- */
 @Root(name = "infMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfo extends DFBase {

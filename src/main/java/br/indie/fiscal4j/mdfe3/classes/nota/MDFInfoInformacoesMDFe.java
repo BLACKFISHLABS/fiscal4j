@@ -7,8 +7,6 @@ import org.simpleframework.xml.ElementList;
 import java.util.List;
 
 /**
- * Created by Eldevan Nery Junior on 08/11/17.
- * <p>
  * Manifesto Eletrônico de Documentos Fiscais. Somente para modal Aquaviário (vide regras MOC).
  */
 public class MDFInfoInformacoesMDFe {

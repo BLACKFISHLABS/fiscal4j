@@ -3,7 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -22,7 +22,7 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
      * Data que o Manifesto foi encerrado
      */
     @Element(name = "dtEnc")
-    private LocalDate dataEncerramento;
+    private DateTime dataEncerramento;
 
     /**
      * UF de encerramento do Manifesto
@@ -71,11 +71,11 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
         this.codigoMunicipio = codigoMunicipio;
     }
 
-    public LocalDate getDataEncerramento() {
+    public DateTime getDataEncerramento() {
         return dataEncerramento;
     }
 
-    public void setDataEncerramento(LocalDate dataEncerramento) {
+    public void setDataEncerramento(DateTime dataEncerramento) {
         this.dataEncerramento = dataEncerramento;
     }
 }

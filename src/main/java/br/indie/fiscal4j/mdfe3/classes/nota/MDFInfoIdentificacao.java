@@ -8,7 +8,7 @@ import br.indie.fiscal4j.mdfe3.classes.def.*;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.joda.time.LocalDateTime;
+import org.joda.time.DateTime;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -21,19 +21,21 @@ import java.util.List;
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoIdentificacao extends DFBase {
 
-    /**
-     * Modelo do Manifesto Eletrônico: 58
-     */
-    @Element(name = "mod")
-    public static final DFModelo MOD = DFModelo.MDFE;
     @Element(name = "cUF")
     private DFUnidadeFederativa codigoUF;
+
     @Element(name = "tpAmb")
     private DFAmbiente ambiente;
+
     @Element(name = "tpEmit")
     private MDFTipoEmitente tipoEmitente;
+
     @Element(name = "tpTransp", required = false)
     private MDFTipoTranportador tipoTranportador;
+
+    @Element(name = "mod")
+    public static final DFModelo MOD = DFModelo.MDFE;
+
     @Element(name = "serie")
     private Integer serie;
 
@@ -50,7 +52,7 @@ public class MDFInfoIdentificacao extends DFBase {
     private MDFModalidadeTransporte modalidadeFrete;
 
     @Element(name = "dhEmi")
-    private LocalDateTime dataEmissao;
+    private DateTime dataEmissao;
 
     @Element(name = "tpEmis")
     private MDFTipoEmissao tipoEmissao;
@@ -91,7 +93,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * Data e hora previstos de inicio da viagem.
      */
     @Element(name = "dhIniViagem", required = false)
-    private LocalDateTime dataHoraDoInicioViagem;
+    private DateTime dataHoraDoInicioViagem;
 
 
     public DFUnidadeFederativa getCodigoUF() {
@@ -143,15 +145,14 @@ public class MDFInfoIdentificacao extends DFBase {
         this.numero = numero;
     }
 
-    public LocalDateTime getDataEmissao() {
+    public DateTime getDataEmissao() {
         return this.dataEmissao;
     }
 
     /**
      * Data e hora de emissão do MDF-e<br>
-     * Formato AAAA-MM-DDTHH:MM:DD TZD
      */
-    public void setDataEmissao(final LocalDateTime dataEmissao) {
+    public void setDataEmissao(final DateTime dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 
@@ -275,11 +276,11 @@ public class MDFInfoIdentificacao extends DFBase {
         this.identificacaoUfPercursos = ListValidador.validaListaNaoObrigatoria(identificacaoUfPercursos, 25, "UF percurso MDF-e");
     }
 
-    public LocalDateTime getDataHoraDoInicioViagem() {
+    public DateTime getDataHoraDoInicioViagem() {
         return dataHoraDoInicioViagem;
     }
 
-    public void setDataHoraDoInicioViagem(LocalDateTime dataHoraDoInicioViagem) {
+    public void setDataHoraDoInicioViagem(DateTime dataHoraDoInicioViagem) {
         this.dataHoraDoInicioViagem = dataHoraDoInicioViagem;
     }
 }

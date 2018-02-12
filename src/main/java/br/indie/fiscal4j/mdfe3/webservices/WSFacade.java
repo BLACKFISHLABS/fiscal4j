@@ -11,7 +11,7 @@ import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
 import br.indie.fiscal4j.mdfe3.classes.nota.consulta.MDFeNotaConsultaRetorno;
 import br.indie.fiscal4j.mdfe3.classes.nota.evento.MDFeRetorno;
 import org.apache.commons.httpclient.protocol.Protocol;
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.security.KeyManagementException;
@@ -122,7 +122,7 @@ public class WSFacade {
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
     public MDFeRetorno encerramento(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
+            , final String codigoMunicipio, final DateTime dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         return this.wsEncerramento.encerraMdfe(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa);
     }
 

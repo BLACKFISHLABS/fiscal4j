@@ -39,7 +39,14 @@ class WSEncerramento {
     MDFeRetorno encerraMdfe(final String chaveAcesso, final String numeroProtocolo
             , final String codigoMunicipio, final DateTime dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         final String encerramentoNotaXML = this.gerarDadosEncerramento(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa).toString();
-        final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(encerramentoNotaXML);
+
+        String str = encerramentoNotaXML.substring(encerramentoNotaXML.indexOf("<dtEnc>") + "<dtEnc>".length(),
+                encerramentoNotaXML.indexOf("</dtEnc>"));
+
+        String array[] = str.split("T");
+        String s = encerramentoNotaXML.replaceAll(str, array[0]);
+
+        final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(s);
         final OMElement omElementResult = this.efetuaEncerramento(xmlAssinado, chaveAcesso);
         return new DFPersister().read(MDFeRetorno.class, omElementResult.toString());
     }

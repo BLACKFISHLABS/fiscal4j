@@ -21,30 +21,50 @@ public abstract class GeraCadeiaCertificados {
     private static final String PROTOCOL = "TLS";
     private static final Logger LOGGER = LoggerFactory.getLogger(GeraCadeiaCertificados.class);
 
-    public static byte[] geraCadeiaCertificados(final DFAmbiente ambiente, final String senha) throws Exception {
+    public static byte[] geraCadeiaCertificados(final String senha) throws Exception {
         final KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
         keyStore.load(null, senha.toCharArray());
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
             for (final NFAutorizador31 aut : NFAutorizador31.values()) {
                 //Para NFe...
-                final String urlNF = aut.getNfeStatusServico(ambiente);
-                if (StringUtils.isNotBlank(urlNF)) {
-                    final String host = new URI(urlNF).getHost();
+                final String urlNFH = aut.getNfeStatusServico(DFAmbiente.HOMOLOGACAO);
+                if (StringUtils.isNotBlank(urlNFH)) {
+                    final String host = new URI(urlNFH).getHost();
+                    GeraCadeiaCertificados.get(keyStore, host, PORT);
+                }
+
+                final String urlNFP = aut.getNfeStatusServico(DFAmbiente.PRODUCAO);
+                if (StringUtils.isNotBlank(urlNFP)) {
+                    final String host = new URI(urlNFP).getHost();
                     GeraCadeiaCertificados.get(keyStore, host, PORT);
                 }
 
                 //Para NFCe...
-                final String urlNFC = aut.getNfceStatusServico(ambiente);
-                if (StringUtils.isNotBlank(urlNFC)) {
-                    final String host = new URI(urlNFC).getHost();
+                final String urlNFCH = aut.getNfceStatusServico(DFAmbiente.HOMOLOGACAO);
+                if (StringUtils.isNotBlank(urlNFCH)) {
+                    final String host = new URI(urlNFCH).getHost();
+                    GeraCadeiaCertificados.get(keyStore, host, PORT);
+                }
+
+                final String urlNFCP = aut.getNfceStatusServico(DFAmbiente.PRODUCAO);
+                if (StringUtils.isNotBlank(urlNFCP)) {
+                    final String host = new URI(urlNFCP).getHost();
                     GeraCadeiaCertificados.get(keyStore, host, PORT);
                 }
             }
 
             //MDFE
             for (final MDFAutorizador3 aut : MDFAutorizador3.values()) {
-                final String urlMDFe = aut.getMDFeStatusServico(ambiente);
+                final String urlMDFe = aut.getMDFeStatusServico(DFAmbiente.HOMOLOGACAO);
+                if (StringUtils.isNotBlank(urlMDFe)) {
+                    final String host = new URI(urlMDFe).getHost();
+                    GeraCadeiaCertificados.get(keyStore, host, PORT);
+                }
+            }
+
+            for (final MDFAutorizador3 aut : MDFAutorizador3.values()) {
+                final String urlMDFe = aut.getMDFeStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlMDFe)) {
                     final String host = new URI(urlMDFe).getHost();
                     GeraCadeiaCertificados.get(keyStore, host, PORT);

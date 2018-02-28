@@ -3,6 +3,7 @@ package br.indie.fiscal4j.danfe;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.nfe310.classes.nota.NFNotaProcessada;
+import br.indie.fiscal4j.nfe310.classes.nota.consulta.NFProtocoloEvento;
 import br.indie.fiscal4j.parsers.DFParser;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -32,10 +33,16 @@ import java.util.List;
 
 public class NFDanfeReport {
 
-    private final NFNotaProcessada nota;
+    private NFNotaProcessada nota;
+
+    private NFProtocoloEvento evento;
 
     public NFDanfeReport(String xml) {
         this(new DFParser().notaProcessadaParaObjeto(xml));
+    }
+
+    public NFDanfeReport(NFProtocoloEvento evento) {
+        this.evento = evento;
     }
 
     public NFDanfeReport(NFNotaProcessada nota) {
@@ -50,6 +57,16 @@ public class NFDanfeReport {
         return toPDF(createJasperPrintNFCe(informacoesComplementares, mostrarMsgFinalizacao, pags));
     }
 
+    public byte[] gerarDanfeCCe() throws Exception {
+        return toPDF(createJasperPrintCCe());
+    }
+
+    private JasperPrint createJasperPrintCCe() throws IOException, SAXException, ParserConfigurationException, JRException {
+        InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/cce/CCE.jasper");
+        Map<String, Object> parameters = new HashMap<>();
+        return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(evento.toString()), "/"));
+    }
+
     private static byte[] toPDF(JasperPrint print) throws JRException {
         return JasperExportManager.exportReportToPdf(print);
     }
@@ -59,8 +76,8 @@ public class NFDanfeReport {
             throw new IllegalStateException("Nao e possivel gerar DANFe NFe de uma NFCe");
         }
 
-        try (InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/DANFE_NFE_RETRATO.jasper");
-             InputStream subDuplicatas = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/DANFE_NFE_DUPLICATAS.jasper")) {
+        try (InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/nfe/DANFE_NFE_RETRATO.jasper");
+             InputStream subDuplicatas = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/nfe/DANFE_NFE_DUPLICATAS.jasper")) {
             final JRPropertiesUtil jrPropertiesUtil = JRPropertiesUtil.getInstance(DefaultJasperReportsContext.getInstance());
             jrPropertiesUtil.setProperty("net.sf.jasperreports.xpath.executer.factory", "net.sf.jasperreports.engine.util.xml.JaxenXPathExecuterFactory");
 
@@ -68,27 +85,27 @@ public class NFDanfeReport {
             parameters.put("SUBREPORT_DUPLICATAS", subDuplicatas);
             parameters.put("LOGO_EMPRESA", (logoEmpresa == null ? null : new ByteArrayInputStream(logoEmpresa)));
 
-            return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(), "/nfeProc/NFe/infNFe/det"));
+            return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(nota.toString()), "/nfeProc/NFe/infNFe/det"));
         }
     }
 
-    private Document convertStringXMl2DOM() throws ParserConfigurationException, IOException, SAXException {
-        try (StringReader stringReader = new StringReader(nota.toString())) {
+    private Document convertStringXMl2DOM(String xml) throws ParserConfigurationException, IOException, SAXException {
+        try (StringReader stringReader = new StringReader(xml)) {
             InputSource inputSource = new InputSource();
             inputSource.setCharacterStream(stringReader);
             return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(inputSource);
         }
     }
 
-    public JasperPrint createJasperPrintNFCe(String informacoesComplementares, boolean mostrarMsgFinalizacao, NFCePagamento... pags)
+    private JasperPrint createJasperPrintNFCe(String informacoesComplementares, boolean mostrarMsgFinalizacao, NFCePagamento... pags)
             throws IOException, WriterException, JRException {
         if (!DFModelo.NFCE.equals(nota.getNota().getInfo().getIdentificacao().getModelo())) {
             throw new IllegalStateException("Nao e possivel gerar DANFe NFCe de uma NFe");
         }
 
-        try (InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/DANFE_NFCE.jasper");
-             InputStream subItens = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/DANFE_NFCE_ITENS.jasper");
-             InputStream subPagamentos = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/DANFE_NFCE_PAGAMENTOS.jasper")) {
+        try (InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/nfce/DANFE_NFCE.jasper");
+             InputStream subItens = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/nfce/DANFE_NFCE_ITENS.jasper");
+             InputStream subPagamentos = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/nfce/DANFE_NFCE_PAGAMENTOS.jasper")) {
 
             boolean homologacao = nota.getNota().getInfo().getIdentificacao().getAmbiente().equals(DFAmbiente.HOMOLOGACAO);
             List<NFCePagamento> pgtos = Arrays.asList(pags);
@@ -112,9 +129,9 @@ public class NFDanfeReport {
         return StringUtils.join(nota.getNota().getInfo().getChaveAcesso().split("(?<=\\G....)"), " ");
     }
 
-    public BufferedImage gerarQRCode() throws WriterException {
+    private BufferedImage gerarQRCode() throws WriterException {
         int size = 250;
-        Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
+        Map<EncodeHintType, Object> hintMap = new EnumMap<>(EncodeHintType.class);
         hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
         hintMap.put(EncodeHintType.MARGIN, 1); /* default = 4 */
         hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);

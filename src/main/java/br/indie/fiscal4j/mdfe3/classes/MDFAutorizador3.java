@@ -7,7 +7,8 @@ import java.util.Arrays;
 
 /**
  * <h1>URLs dos serviços para MDF-e</h1><br>
- * <p>
+ *
+ * @Author Eldevan Nery Junior on 26/05/17.
  * <p>
  * <p>Pela minha pesquisa, atualmente o serviço de MDF-e encontra-se apenas no  <a href="https://mdfe-portal.sefaz.rs.gov.br/Site/Servicos">RIO GRANDE DO SUL </a>.
  * veja no: <a href="https://www.fazenda.sp.gov.br/mdfe/url_webservices/url_webservices.htm"> link SP</a>
@@ -65,6 +66,20 @@ public enum MDFAutorizador3 {
         }
     };
 
+    public abstract String getMDFeRecepcao(final DFAmbiente ambiente);
+
+    public abstract String getMDFeRetornoRecepcao(final DFAmbiente ambiente);
+
+    public abstract String getMDFeRecepcaoEvento(final DFAmbiente ambiente);
+
+    public abstract String getMDFeStatusServico(final DFAmbiente ambiente);
+
+    public abstract String getMDFeConsulta(final DFAmbiente ambiente);
+
+    public abstract String getMDFeConsNaoEnc(final DFAmbiente ambiente);
+
+    public abstract DFUnidadeFederativa[] getUFs();
+
     /**
      * Retorna url do Estado ou o padrão (RS)
      * Se no futuro surgir novas URL'S para determinado Estado
@@ -82,19 +97,5 @@ public enum MDFAutorizador3 {
         return RS;
 //        throw new IllegalStateException(String.format("N\u00e3o existe autorizador para a UF %s", uf.getCodigo()));
     }
-
-    public abstract String getMDFeRecepcao(final DFAmbiente ambiente);
-
-    public abstract String getMDFeRetornoRecepcao(final DFAmbiente ambiente);
-
-    public abstract String getMDFeRecepcaoEvento(final DFAmbiente ambiente);
-
-    public abstract String getMDFeStatusServico(final DFAmbiente ambiente);
-
-    public abstract String getMDFeConsulta(final DFAmbiente ambiente);
-
-    public abstract String getMDFeConsNaoEnc(final DFAmbiente ambiente);
-
-    public abstract DFUnidadeFederativa[] getUFs();
 
 }

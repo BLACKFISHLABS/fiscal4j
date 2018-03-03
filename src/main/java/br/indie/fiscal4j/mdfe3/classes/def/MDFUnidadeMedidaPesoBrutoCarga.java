@@ -19,6 +19,10 @@ public enum MDFUnidadeMedidaPesoBrutoCarga {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFUnidadeMedidaPesoBrutoCarga valueOfCodigo(final String codigo) {
         for (MDFUnidadeMedidaPesoBrutoCarga pesoBrutoCarga : MDFUnidadeMedidaPesoBrutoCarga.values()) {
             if (pesoBrutoCarga.getCodigo().equalsIgnoreCase(codigo)) {
@@ -26,10 +30,6 @@ public enum MDFUnidadeMedidaPesoBrutoCarga {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

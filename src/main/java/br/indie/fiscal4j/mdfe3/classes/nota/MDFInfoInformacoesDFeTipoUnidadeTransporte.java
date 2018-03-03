@@ -6,7 +6,10 @@ import org.simpleframework.xml.ElementList;
 
 import java.util.List;
 
+
 /**
+ * Created by Eldevan Nery Junior on 06/11/17.
+ * <p>
  * Informações das Unidades de Transporte (Carreta/Reboque/Vagão)
  * Deve ser preenchido com as informações das unidades de transporte utilizadas.
  */

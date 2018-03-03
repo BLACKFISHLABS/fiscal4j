@@ -12,6 +12,7 @@ import br.indie.fiscal4j.validadores.BigDecimalParser;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,16 +38,9 @@ class WSEncerramento {
     }
 
     MDFeRetorno encerraMdfe(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final DateTime dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
+            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         final String encerramentoNotaXML = this.gerarDadosEncerramento(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa).toString();
-
-        String str = encerramentoNotaXML.substring(encerramentoNotaXML.indexOf("<dtEnc>") + "<dtEnc>".length(),
-                encerramentoNotaXML.indexOf("</dtEnc>"));
-
-        String array[] = str.split("T");
-        String s = encerramentoNotaXML.replaceAll(str, array[0]);
-
-        final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(s);
+        final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(encerramentoNotaXML);
         final OMElement omElementResult = this.efetuaEncerramento(xmlAssinado, chaveAcesso);
         return new DFPersister().read(MDFeRetorno.class, omElementResult.toString());
     }
@@ -80,7 +74,7 @@ class WSEncerramento {
     }
 
     private MDFeEvento gerarDadosEncerramento(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final DateTime dataEncerramento, final DFUnidadeFederativa unidadeFederativa) {
+            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) {
 
         final MDFChaveParser chaveParser = new MDFChaveParser(chaveAcesso);
 

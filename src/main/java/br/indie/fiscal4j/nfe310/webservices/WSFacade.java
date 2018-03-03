@@ -1,6 +1,7 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
 import br.indie.fiscal4j.DFModelo;
+import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe310.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.cadastro.NFRetornoConsultaCadastro;
@@ -38,7 +39,7 @@ public class WSFacade {
     private final WSNotaDownload wsNotaDownload;
 
     public WSFacade(final NFeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
-        Protocol.registerProtocol("https", new Protocol("https", new NFSocketFactory(config), 443));
+        Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
 
         // inicia os servicos disponiveis da nfe
         this.wsLoteEnvio = new WSLoteEnvio(config);

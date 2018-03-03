@@ -6,6 +6,9 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+/**
+ * @Author Eldevan Nery Junior on 26/05/17.
+ */
 @Root(name = "protMDFe")
 public class MDFProtocolo extends DFBase {
 
@@ -18,19 +21,19 @@ public class MDFProtocolo extends DFBase {
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
-    public MDFProtocoloInfo getProtocoloInfo() {
-        return this.protocoloInfo;
+    public void setVersao(final String versao) {
+        this.versao = versao;
     }
 
     public void setProtocoloInfo(final MDFProtocoloInfo protocoloInfo) {
         this.protocoloInfo = protocoloInfo;
     }
 
-    public String getVersao() {
-        return this.versao;
+    public MDFProtocoloInfo getProtocoloInfo() {
+        return this.protocoloInfo;
     }
 
-    public void setVersao(final String versao) {
-        this.versao = versao;
+    public String getVersao() {
+        return this.versao;
     }
 }

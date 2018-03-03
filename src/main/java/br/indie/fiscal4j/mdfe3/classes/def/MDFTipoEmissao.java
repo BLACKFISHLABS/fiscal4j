@@ -19,6 +19,14 @@ public enum MDFTipoEmissao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static MDFTipoEmissao valueOfCodigo(final String codigo) {
         for (final MDFTipoEmissao tipo : MDFTipoEmissao.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -26,14 +34,6 @@ public enum MDFTipoEmissao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

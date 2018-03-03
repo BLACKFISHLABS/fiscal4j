@@ -5,6 +5,9 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.joda.time.LocalDateTime;
 import org.simpleframework.xml.Element;
 
+/**
+ * Created by Eldevan Nery Junior on 17/11/17.
+ */
 public class MDFeEnviaEventoRegistroPassagemAutomaticaInfPass extends DFBase {
 
     @Element(name = "cUFTransito")

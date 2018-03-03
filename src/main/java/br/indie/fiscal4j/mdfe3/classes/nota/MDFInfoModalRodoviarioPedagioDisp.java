@@ -8,26 +8,30 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 /**
+ * Created by Eldevan Nery Junior on 01/11/17.
  * <p>
  * <p>Informações dos dispositivos do Vale Pedágio.</p>
  */
 public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
 
     /**
-     * <h1> CPF do responsável pelo pagamento do Vale-Pedágio</h1>
-     */
-    @Element(name = "CPFPg")
-    protected String cpfPagadora;
-    /**
      * <h1> CNPJ da empresa fornecedora do Vale-Pedágio.</h1>
      */
     @Element(name = "CNPJForn")
     private String cnpjFornecedora;
+
     /**
      * <h1> CNPJ do responsável pelo pagamento do Vale-Pedágio.</h1>
      */
     @Element(name = "CNPJPg", required = false)
     private String cnpjPagadora;
+
+    /**
+     * <h1> CPF do responsável pelo pagamento do Vale-Pedágio</h1>
+     */
+    @Element(name = "CPFPg")
+    protected String cpfPagadora;
+
     /**
      * <h1>Número do comprovante de compra.</h1>
      * <p>  Número de ordem do comprovante de compra do Vale-Pedágio

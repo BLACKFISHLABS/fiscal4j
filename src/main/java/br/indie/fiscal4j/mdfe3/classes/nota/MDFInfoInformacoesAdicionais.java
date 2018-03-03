@@ -4,6 +4,11 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
+/**
+ * Created by Eldevan Nery Junior on 06/11/17.
+ * <p>
+ * Informações do Percurso do MDF-e
+ */
 public class MDFInfoInformacoesAdicionais extends DFBase {
 
     /**
@@ -16,24 +21,24 @@ public class MDFInfoInformacoesAdicionais extends DFBase {
     @Element(name = "infCpl", required = false)
     private String informacoesComplementaresInteresseContribuinte;
 
-    public String getInformacoesAdicionaisInteresseFisco() {
-        return this.informacoesAdicionaisInteresseFisco;
-    }
-
     public void setInformacoesAdicionaisInteresseFisco(final String informacoesAdicionaisInteresseFisco) {
         StringValidador.tamanho2000(informacoesAdicionaisInteresseFisco,
                 "Informacoes Adicionais Interesse Fisco");
         this.informacoesAdicionaisInteresseFisco = informacoesAdicionaisInteresseFisco;
     }
 
-    public String getInformacoesComplementaresInteresseContribuinte() {
-        return this.informacoesComplementaresInteresseContribuinte;
-    }
-
     public void setInformacoesComplementaresInteresseContribuinte(final String informacoesComplementaresInteresseContribuinte) {
         StringValidador.tamanho5000(informacoesComplementaresInteresseContribuinte,
                 "Informacoes Adicionais Interesse Contribuinte");
         this.informacoesComplementaresInteresseContribuinte = informacoesComplementaresInteresseContribuinte;
+    }
+
+    public String getInformacoesAdicionaisInteresseFisco() {
+        return this.informacoesAdicionaisInteresseFisco;
+    }
+
+    public String getInformacoesComplementaresInteresseContribuinte() {
+        return this.informacoesComplementaresInteresseContribuinte;
     }
 
 }

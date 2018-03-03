@@ -4,6 +4,9 @@ import br.indie.fiscal4j.DFBase;
 import org.joda.time.LocalDateTime;
 import org.simpleframework.xml.Element;
 
+/**
+ * Created by Eldevan Nery Junior on 17/11/17.
+ */
 public class MDFeEnviaEventoRegistroPassagem extends DFBase {
 
     @Element(name = "descEvento")

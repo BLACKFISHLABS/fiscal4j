@@ -6,6 +6,11 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
+/**
+ * Created by Eldevan Nery Junior on 03/11/17.
+ * <p>
+ * <h1>Autorizados para download do XML do DF-e</h1>
+ */
 @Root(name = "autXML")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoAutorizacaoDownload extends DFBase {

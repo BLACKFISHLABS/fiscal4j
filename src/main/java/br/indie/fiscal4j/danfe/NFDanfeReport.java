@@ -3,7 +3,6 @@ package br.indie.fiscal4j.danfe;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.nfe310.classes.nota.NFNotaProcessada;
-import br.indie.fiscal4j.nfe310.classes.nota.consulta.NFProtocoloEvento;
 import br.indie.fiscal4j.parsers.DFParser;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -35,14 +34,8 @@ public class NFDanfeReport {
 
     private NFNotaProcessada nota;
 
-    private NFProtocoloEvento evento;
-
     public NFDanfeReport(String xml) {
         this(new DFParser().notaProcessadaParaObjeto(xml));
-    }
-
-    public NFDanfeReport(NFProtocoloEvento evento) {
-        this.evento = evento;
     }
 
     public NFDanfeReport(NFNotaProcessada nota) {
@@ -55,16 +48,6 @@ public class NFDanfeReport {
 
     public byte[] gerarDanfeNFCe(String informacoesComplementares, boolean mostrarMsgFinalizacao, NFCePagamento... pags) throws Exception {
         return toPDF(createJasperPrintNFCe(informacoesComplementares, mostrarMsgFinalizacao, pags));
-    }
-
-    public byte[] gerarDanfeCCe() throws Exception {
-        return toPDF(createJasperPrintCCe());
-    }
-
-    private JasperPrint createJasperPrintCCe() throws IOException, SAXException, ParserConfigurationException, JRException {
-        InputStream in = NFDanfeReport.class.getClassLoader().getResourceAsStream("danfe/cce/CCE.jasper");
-        Map<String, Object> parameters = new HashMap<>();
-        return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(evento.toString()), "/"));
     }
 
     private static byte[] toPDF(JasperPrint print) throws JRException {

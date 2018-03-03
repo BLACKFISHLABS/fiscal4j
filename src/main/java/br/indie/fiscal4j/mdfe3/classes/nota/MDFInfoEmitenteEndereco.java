@@ -4,6 +4,10 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
+/**
+ * Created by Eldevan Nery Junior on 03/11/17.
+ * <h1>Identificação do Emitente do Manifesto</h1>
+ */
 public class MDFInfoEmitenteEndereco extends DFBase {
 
     private static final String INFO = "endereço do Emitente";

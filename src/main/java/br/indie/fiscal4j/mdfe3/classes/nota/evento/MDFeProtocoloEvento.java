@@ -38,11 +38,11 @@ public class MDFeProtocoloEvento extends DFBase {
         this.evento = evento;
     }
 
-    public MDFeEventoRetorno getEventoRetorno() {
-        return eventoRetorno;
-    }
-
     public void setEventoRetorno(final MDFeEventoRetorno infoEventoRetorno) {
         this.eventoRetorno = infoEventoRetorno;
+    }
+
+    public MDFeEventoRetorno getEventoRetorno() {
+        return eventoRetorno;
     }
 }

@@ -8,6 +8,9 @@ import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
 
+/**
+ * Created by Eldevan Nery Junior on 17/11/17.
+ */
 public class MDFeDetalhamentoEvento extends DFBase {
 
     @Attribute(name = "versaoEvento")

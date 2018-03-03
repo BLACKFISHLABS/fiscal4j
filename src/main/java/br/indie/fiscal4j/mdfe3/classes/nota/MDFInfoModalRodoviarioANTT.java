@@ -8,13 +8,12 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
+ * Created by Eldevan Nery Junior on 01/11/17.
  * <h1>Grupo de informações para Agência Reguladora</h1>
  */
 @Root(name = "infANTT")
 public class MDFInfoModalRodoviarioANTT extends DFBase {
 
-    @ElementList(entry = "infContratante", inline = true, required = false)
-    protected List<MDFInfoModalRodoviarioInfContratante> infContratante;
     /**
      * <h1>Registro Nacional de Transportadores Rodoviários de Carga</h1>
      * <p>  Registro obrigatório do emitente do MDF-e junto à ANTT
@@ -33,6 +32,9 @@ public class MDFInfoModalRodoviarioANTT extends DFBase {
      */
     @Element(name = "valePed", required = false)
     private MDFInfoModalRodoviarioPedagio valePedagio;
+
+    @ElementList(entry = "infContratante", inline = true, required = false)
+    protected List<MDFInfoModalRodoviarioInfContratante> infContratante;
 
     public String getRntrc() {
         return rntrc;

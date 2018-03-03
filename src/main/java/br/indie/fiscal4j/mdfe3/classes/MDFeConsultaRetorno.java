@@ -11,6 +11,9 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
+/**
+ * @Author Eldevan Nery Junior on 26/05/17.
+ */
 @Root(name = "retConsReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaRetorno extends DFBase {
@@ -48,6 +51,34 @@ public class MDFeConsultaRetorno extends DFBase {
     @Element(name = "infProt", required = false)
     private NFProtocoloInfo protocoloInfo;
 
+    public void setVersao(final String versao) {
+        this.versao = versao;
+    }
+
+    public void setAmbiente(final DFAmbiente ambiente) {
+        this.ambiente = ambiente;
+    }
+
+    public void setVersaoAplicacao(final String versaoAplicacao) {
+        this.versaoAplicacao = versaoAplicacao;
+    }
+
+    public void setStatus(final String status) {
+        this.status = status;
+    }
+
+    public void setMotivo(final String motivo) {
+        this.motivo = motivo;
+    }
+
+    public void setUf(final DFUnidadeFederativa uf) {
+        this.uf = uf;
+    }
+
+    public void setDataRecebimento(final LocalDateTime dataRecebimento) {
+        this.dataRecebimento = dataRecebimento;
+    }
+
     public NFLoteEnvioRetornoRecebimentoInfo getInfoRecebimento() {
         return this.infoRecebimento;
     }
@@ -60,56 +91,28 @@ public class MDFeConsultaRetorno extends DFBase {
         return this.versao;
     }
 
-    public void setVersao(final String versao) {
-        this.versao = versao;
-    }
-
     public DFAmbiente getAmbiente() {
         return this.ambiente;
-    }
-
-    public void setAmbiente(final DFAmbiente ambiente) {
-        this.ambiente = ambiente;
     }
 
     public String getVersaoAplicacao() {
         return this.versaoAplicacao;
     }
 
-    public void setVersaoAplicacao(final String versaoAplicacao) {
-        this.versaoAplicacao = versaoAplicacao;
-    }
-
     public String getStatus() {
         return this.status;
-    }
-
-    public void setStatus(final String status) {
-        this.status = status;
     }
 
     public String getMotivo() {
         return this.motivo;
     }
 
-    public void setMotivo(final String motivo) {
-        this.motivo = motivo;
-    }
-
     public DFUnidadeFederativa getUf() {
         return this.uf;
     }
 
-    public void setUf(final DFUnidadeFederativa uf) {
-        this.uf = uf;
-    }
-
     public LocalDateTime getDataRecebimento() {
         return this.dataRecebimento;
-    }
-
-    public void setDataRecebimento(final LocalDateTime dataRecebimento) {
-        this.dataRecebimento = dataRecebimento;
     }
 
     public MDFProtocolo getProtocoloRecebimento() {

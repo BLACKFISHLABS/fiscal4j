@@ -7,6 +7,11 @@ import org.simpleframework.xml.*;
 
 import java.util.List;
 
+/**
+ * Created by Eldevan Nery Junior on 03/11/17.
+ * <p>
+ * Informações do MDF-e.
+ */
 @Root(name = "infMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfo extends DFBase {
@@ -77,10 +82,6 @@ public class MDFInfo extends DFBase {
         return this.identificacao;
     }
 
-    public void setIdentificacao(MDFInfoIdentificacao identificacao) {
-        this.identificacao = identificacao;
-    }
-
     public MDFInfoEmitente getEmitente() {
         return this.emitente;
     }
@@ -115,6 +116,10 @@ public class MDFInfo extends DFBase {
     public void setVersao(final String versao) {
         StringValidador.equals(MDFe.VERSAO, versao);
         this.versao = versao;
+    }
+
+    public void setIdentificacao(MDFInfoIdentificacao identificacao) {
+        this.identificacao = identificacao;
     }
 
     public MDFInfoModal getMdfInfoModal() {

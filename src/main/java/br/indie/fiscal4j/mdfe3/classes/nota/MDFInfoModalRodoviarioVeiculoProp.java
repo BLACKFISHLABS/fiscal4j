@@ -72,8 +72,8 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
         return unidadeFederativa;
     }
 
-    public void setUnidadeFederativa(DFUnidadeFederativa unidadeFederativa) {
-        this.unidadeFederativa = unidadeFederativa.getCodigo();
+    public void setUnidadeFederativa(String unidadeFederativa) {
+        this.unidadeFederativa = unidadeFederativa;
     }
 
     public MDFTipoProprietario getTipoProprietario() {

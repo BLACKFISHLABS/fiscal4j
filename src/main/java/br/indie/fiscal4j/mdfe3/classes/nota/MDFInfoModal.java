@@ -6,6 +6,9 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
+/**
+ * Created by Eldevan Nery Junior on 01/11/17.
+ */
 @Root(name = "infModal")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoModal extends DFBase {

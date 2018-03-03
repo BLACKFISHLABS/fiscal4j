@@ -9,6 +9,7 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 /**
+ * Created by Eldevan Nery Junior on 06/11/17.
  * <p>
  * Totalizadores da carga transportada e seus documentos fiscais.
  */

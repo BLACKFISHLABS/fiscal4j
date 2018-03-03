@@ -6,6 +6,10 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
+/**
+ * Created by Eldevan Nery Junior on 03/11/17.
+ * <h1>Identificação do Emitente do Manifesto</h1>
+ */
 @Root(name = "emit")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoEmitente extends DFBase {

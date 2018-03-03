@@ -19,17 +19,10 @@ public class MDFeEnviaEventoCancelamento extends DFBase {
     @Element(name = "xJust")
     private String justificativa;
 
-    public String getJustificativa() {
-        return this.justificativa;
-    }
 
     public void setJustificativa(final String justificativa) {
         StringValidador.tamanho15a256(justificativa, "Justificativa");
         this.justificativa = justificativa;
-    }
-
-    public String getProtocoloAutorizacao() {
-        return this.protocoloAutorizacao;
     }
 
     public void setProtocoloAutorizacao(final String protocoloAutorizacao) {
@@ -37,8 +30,12 @@ public class MDFeEnviaEventoCancelamento extends DFBase {
         this.protocoloAutorizacao = protocoloAutorizacao;
     }
 
-    public String getDescricaoEvento() {
-        return this.descricaoEvento;
+    public String getJustificativa() {
+        return this.justificativa;
+    }
+
+    public String getProtocoloAutorizacao() {
+        return this.protocoloAutorizacao;
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {
@@ -46,6 +43,10 @@ public class MDFeEnviaEventoCancelamento extends DFBase {
         StringValidador.tamanho12(descricaoEvento, defaultValue);
         StringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
+    }
+
+    public String getDescricaoEvento() {
+        return this.descricaoEvento;
     }
 
 }

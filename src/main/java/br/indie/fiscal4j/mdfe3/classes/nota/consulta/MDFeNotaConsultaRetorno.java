@@ -14,20 +14,27 @@ import java.util.List;
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeNotaConsultaRetorno extends DFBase {
 
-    @Element(name = "protMDFe", required = false)
-    protected MDFProtocolo protocolo;
     @Attribute(name = "versao", required = true)
     private String versao;
+
     @Element(name = "tpAmb", required = true)
     private DFAmbiente ambiente;
+
     @Element(name = "verAplic", required = true)
     private String versaoAplicacao;
+
     @Element(name = "cStat", required = true)
     private String status;
+
     @Element(name = "xMotivo", required = true)
     private String motivo;
+
     @Element(name = "cUF", required = true)
     private DFUnidadeFederativa uf;
+
+    @Element(name = "protMDFe", required = false)
+    protected MDFProtocolo protocolo;
+
     @ElementList(entry = "procEventoMDFe", inline = true, required = false)
     private List<MDFeProtocoloEvento> protocoloEvento;
 

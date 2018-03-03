@@ -3,6 +3,9 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 
+/**
+ * Created by Eldevan Nery Junior on 17/11/17.
+ */
 public class MDFeEnviaEventoRegistroPassagemAutomatica extends DFBase {
 
     @Element(name = "descEvento")

@@ -22,6 +22,10 @@ public enum MDFTipoEmitente {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFTipoEmitente valueOfCodigo(final String codigo) {
         for (MDFTipoEmitente tipoEmitente : MDFTipoEmitente.values()) {
             if (tipoEmitente.getCodigo().equalsIgnoreCase(codigo)) {
@@ -29,10 +33,6 @@ public enum MDFTipoEmitente {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

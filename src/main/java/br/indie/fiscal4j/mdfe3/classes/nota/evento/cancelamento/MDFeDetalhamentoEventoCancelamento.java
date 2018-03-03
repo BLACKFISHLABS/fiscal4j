@@ -15,12 +15,13 @@ public class MDFeDetalhamentoEventoCancelamento extends DFBase {
     @Element(name = "evCancMDFe")
     private MDFeEnviaEventoCancelamento eventoCancelamento;
 
-    public String getVersaoEvento() {
-        return versaoEvento;
-    }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
         this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+    }
+
+    public String getVersaoEvento() {
+        return versaoEvento;
     }
 
     public MDFeEnviaEventoCancelamento getEventoCancelamento() {

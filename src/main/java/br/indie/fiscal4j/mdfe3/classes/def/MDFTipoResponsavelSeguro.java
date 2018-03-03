@@ -26,6 +26,10 @@ public enum MDFTipoResponsavelSeguro {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFTipoResponsavelSeguro valueOfCodigo(final String codigo) {
         for (MDFTipoResponsavelSeguro tipoUnidadeCarga : MDFTipoResponsavelSeguro.values()) {
             if (tipoUnidadeCarga.getCodigo().equalsIgnoreCase(codigo)) {
@@ -33,10 +37,6 @@ public enum MDFTipoResponsavelSeguro {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

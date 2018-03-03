@@ -7,6 +7,8 @@ import org.simpleframework.xml.ElementList;
 import java.util.List;
 
 /**
+ * Created by Eldevan Nery Junior on 08/11/17.
+ * <p>
  * Nota Fiscal Eletronica.
  */
 public class MDFInfoInformacoesNFe {

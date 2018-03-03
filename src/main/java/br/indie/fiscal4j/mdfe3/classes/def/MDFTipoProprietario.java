@@ -22,6 +22,10 @@ public enum MDFTipoProprietario {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFTipoProprietario valueOfCodigo(final String codigo) {
         for (MDFTipoProprietario tipoUnidadeCarga : MDFTipoProprietario.values()) {
             if (tipoUnidadeCarga.getCodigo().equalsIgnoreCase(codigo)) {
@@ -29,10 +33,6 @@ public enum MDFTipoProprietario {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

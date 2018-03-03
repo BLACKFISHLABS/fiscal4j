@@ -7,6 +7,9 @@ import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
 
+/**
+ * Created by Eldevan Nery Junior on 17/11/17.
+ */
 public class MDFeDetalhamentoEventoRegistroPassagem extends DFBase {
 
     @Attribute(name = "versaoEvento", required = false)
@@ -15,12 +18,13 @@ public class MDFeDetalhamentoEventoRegistroPassagem extends DFBase {
     @Element(name = "evMDFeRegPassagem")
     private MDFeEnviaEventoRegistroPassagem eventoRegistroPassagem;
 
-    public String getVersaoEvento() {
-        return versaoEvento;
-    }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
         this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+    }
+
+    public String getVersaoEvento() {
+        return versaoEvento;
     }
 
     public MDFeEnviaEventoRegistroPassagem getEventoRegistroPassagem() {

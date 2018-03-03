@@ -39,29 +39,29 @@ public class MDFeConsultaNaoEncerrados extends DFBase {
         this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
     }
 
-    public String getVersao() {
-        return this.versao;
-    }
-
     public void setVersao(String versao) {
         this.versao = versao;
-    }
-
-    public DFAmbiente getAmbiente() {
-        return this.ambiente;
     }
 
     public void setAmbiente(final DFAmbiente ambiente) {
         this.ambiente = ambiente;
     }
 
-    public String getServico() {
-        return this.servico;
-    }
-
     public void setServico(final String servico) {
         StringValidador.equals("CONSULTAR NÃO ENCERRADOS", servico);
         this.servico = servico;
+    }
+
+    public String getVersao() {
+        return this.versao;
+    }
+
+    public DFAmbiente getAmbiente() {
+        return this.ambiente;
+    }
+
+    public String getServico() {
+        return this.servico;
     }
 
     public String getCnpj() {

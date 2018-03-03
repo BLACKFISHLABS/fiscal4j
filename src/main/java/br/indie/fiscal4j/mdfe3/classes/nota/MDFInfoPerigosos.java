@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 
 /**
+ * Created by Eldevan Nery Junior on 07/11/17.
  * <p>
  * Preenchido quando for  transporte de produtos classificados pela ONU como perigosos.
  */

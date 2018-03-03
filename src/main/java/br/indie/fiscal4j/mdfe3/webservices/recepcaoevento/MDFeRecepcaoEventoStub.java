@@ -14,14 +14,53 @@ package br.indie.fiscal4j.mdfe3.webservices.recepcaoevento;
 
 
 public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
-    private static int counter = 0;
     protected org.apache.axis2.description.AxisOperation[] _operations;
+
     //hashmaps to keep the fault mapping
     private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
     private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     private java.util.HashMap faultMessageMap = new java.util.HashMap();
-    private javax.xml.namespace.QName[] opNameArray = null;
 
+    private static int counter = 0;
+
+    private static synchronized java.lang.String getUniqueSuffix() {
+        // reset the counter if it is greater than 99999
+        if (counter > 99999) {
+            counter = 0;
+        }
+        counter = counter + 1;
+        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
+    }
+
+
+    private void populateAxisService() throws org.apache.axis2.AxisFault {
+
+        //creating the Service with a unique name
+        _service = new org.apache.axis2.description.AxisService("MDFeRecepcaoEvento" + getUniqueSuffix());
+        addAnonymousOperations();
+
+        //creating the operations
+        org.apache.axis2.description.AxisOperation __operation;
+
+        _operations = new org.apache.axis2.description.AxisOperation[1];
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento", "mdfeRecepcaoEvento"));
+        _service.addOperation(__operation);
+
+
+        _operations[0] = __operation;
+
+
+    }
+
+    //populates the faults
+    private void populateFaults() {
+
+
+    }
 
     /**
      * Constructor that takes in a configContext
@@ -32,6 +71,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             throws org.apache.axis2.AxisFault {
         this(configurationContext, targetEndpoint, false);
     }
+
 
     /**
      * Constructor that takes in a configContext  and useseperate listner
@@ -65,7 +105,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     }
 
-
     /**
      * Default Constructor
      */
@@ -82,43 +121,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         this(null, targetEndpoint);
     }
 
-    private static synchronized java.lang.String getUniqueSuffix() {
-        // reset the counter if it is greater than 99999
-        if (counter > 99999) {
-            counter = 0;
-        }
-        counter = counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
-    }
-
-    private void populateAxisService() throws org.apache.axis2.AxisFault {
-
-        //creating the Service with a unique name
-        _service = new org.apache.axis2.description.AxisService("MDFeRecepcaoEvento" + getUniqueSuffix());
-        addAnonymousOperations();
-
-        //creating the operations
-        org.apache.axis2.description.AxisOperation __operation;
-
-        _operations = new org.apache.axis2.description.AxisOperation[1];
-
-        __operation = new org.apache.axis2.description.OutInAxisOperation();
-
-
-        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento", "mdfeRecepcaoEvento"));
-        _service.addOperation(__operation);
-
-
-        _operations[0] = __operation;
-
-
-    }
-
-    //populates the faults
-    private void populateFaults() {
-
-
-    }
 
     /**
      * Auto generated method signature
@@ -402,6 +404,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     }
 
+
     /**
      * A utility method that copies the namepaces from the SOAPEnvelope
      */
@@ -415,6 +418,9 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         return returnMap;
     }
 
+
+    private javax.xml.namespace.QName[] opNameArray = null;
+
     private boolean optimizeContent(javax.xml.namespace.QName opName) {
 
 
@@ -427,112 +433,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             }
         }
         return false;
-    }
-
-    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.MY_QNAME,
-                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.MY_QNAME,
-                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.MY_QNAME,
-                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-
-            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-    /**
-     * get the default envelope
-     */
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory) {
-        return factory.getDefaultEnvelope();
-    }
-
-    private java.lang.Object fromOM(
-            org.apache.axiom.om.OMElement param,
-            java.lang.Class type,
-            java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
-
-        try {
-
-            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.class.equals(type)) {
-
-                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
-            }
-
-            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.class.equals(type)) {
-
-                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
-            }
-
-            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.class.equals(type)) {
-
-                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
-            }
-
-            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.class.equals(type)) {
-
-                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
-            }
-
-        } catch (java.lang.Exception e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-        return null;
     }
 
     //https://mdfe.sefaz.rs.gov.br/ws/MDFeRecepcaoEvento/MDFeRecepcaoEvento.asmx
@@ -574,12 +474,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         protected MdfeCabecMsg localMdfeCabecMsg;
 
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
-                return "ns3";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -589,6 +483,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         public MdfeCabecMsg getMdfeCabecMsg() {
             return localMdfeCabecMsg;
         }
+
 
         /**
          * Auto generated setter method
@@ -601,6 +496,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
 
         }
+
 
         /**
          * @param parentQName
@@ -638,6 +534,13 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             localMdfeCabecMsg.serialize(MY_QNAME, xmlWriter);
 
 
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
+                return "ns3";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -877,6 +780,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     }
 
+
     public static class MdfeDadosMsg
             implements org.apache.axis2.databinding.ADBBean {
 
@@ -893,12 +797,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         protected org.apache.axiom.om.OMElement localExtraElement;
 
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
-                return "ns3";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -908,6 +806,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         public org.apache.axiom.om.OMElement getExtraElement() {
             return localExtraElement;
         }
+
 
         /**
          * Auto generated setter method
@@ -920,6 +819,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
 
         }
+
 
         /**
          * @param parentQName
@@ -984,6 +884,13 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             xmlWriter.writeEndElement();
 
 
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
+                return "ns3";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1277,8 +1184,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
     }
 
 
-    /* methods to provide back word compatibility */
-
     public static class MdfeRecepcaoEventoResult
             implements org.apache.axis2.databinding.ADBBean {
 
@@ -1295,12 +1200,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         protected org.apache.axiom.om.OMElement localExtraElement;
 
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
-                return "ns3";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -1310,6 +1209,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         public org.apache.axiom.om.OMElement getExtraElement() {
             return localExtraElement;
         }
+
 
         /**
          * Auto generated setter method
@@ -1322,6 +1222,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
 
         }
+
 
         /**
          * @param parentQName
@@ -1386,6 +1287,13 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             xmlWriter.writeEndElement();
 
 
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
+                return "ns3";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1678,6 +1586,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     }
 
+
     public static class MdfeCabecMsg
             implements org.apache.axis2.databinding.ADBBean {
         /* This type was generated from the piece of schema that had
@@ -1699,36 +1608,11 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
          *   in the serialized XML
          */
         protected boolean localCUFTracker = false;
-        /**
-         * field for VersaoDados
-         */
-
-
-        protected java.lang.String localVersaoDados;
-        /*  This tracker boolean wil be used to detect whether the user called the set method
-         *   for this attribute. It will be used to determine whether to include this field
-         *   in the serialized XML
-         */
-        protected boolean localVersaoDadosTracker = false;
-        /**
-         * field for ExtraAttributes
-         * This was an Attribute!
-         * This was an Array!
-         */
-
-
-        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
-                return "ns3";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         public boolean isCUFSpecified() {
             return localCUFTracker;
         }
+
 
         /**
          * Auto generated getter method
@@ -1738,6 +1622,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         public java.lang.String getCUF() {
             return localCUF;
         }
+
 
         /**
          * Auto generated setter method
@@ -1752,9 +1637,24 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         }
 
+
+        /**
+         * field for VersaoDados
+         */
+
+
+        protected java.lang.String localVersaoDados;
+
+        /*  This tracker boolean wil be used to detect whether the user called the set method
+         *   for this attribute. It will be used to determine whether to include this field
+         *   in the serialized XML
+         */
+        protected boolean localVersaoDadosTracker = false;
+
         public boolean isVersaoDadosSpecified() {
             return localVersaoDadosTracker;
         }
+
 
         /**
          * Auto generated getter method
@@ -1764,6 +1664,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         public java.lang.String getVersaoDados() {
             return localVersaoDados;
         }
+
 
         /**
          * Auto generated setter method
@@ -1778,6 +1679,17 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         }
 
+
+        /**
+         * field for ExtraAttributes
+         * This was an Attribute!
+         * This was an Array!
+         */
+
+
+        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
+
+
         /**
          * Auto generated getter method
          *
@@ -1787,18 +1699,6 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             return localExtraAttributes;
         }
 
-        /**
-         * Auto generated setter method
-         *
-         * @param param ExtraAttributes
-         */
-        public void setExtraAttributes(org.apache.axiom.om.OMAttribute[] param) {
-
-            validateExtraAttributes(param);
-
-
-            this.localExtraAttributes = param;
-        }
 
         /**
          * validate the array for ExtraAttributes
@@ -1814,6 +1714,21 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             }
 
         }
+
+
+        /**
+         * Auto generated setter method
+         *
+         * @param param ExtraAttributes
+         */
+        public void setExtraAttributes(org.apache.axiom.om.OMAttribute[] param) {
+
+            validateExtraAttributes(param);
+
+
+            this.localExtraAttributes = param;
+        }
+
 
         /**
          * Auto generated add method for the array for convenience
@@ -1834,6 +1749,7 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
                             new org.apache.axiom.om.OMAttribute[list.size()]);
 
         }
+
 
         /**
          * @param parentQName
@@ -1936,6 +1852,13 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
             xmlWriter.writeEndElement();
 
 
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/mdfe/wsdl/MDFeRecepcaoEvento")) {
+                return "ns3";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -2289,6 +2212,119 @@ public class MDFeRecepcaoEventoStub extends org.apache.axis2.client.Stub {
         }//end of factory class
 
 
+    }
+
+
+    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.MY_QNAME,
+                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.MY_QNAME,
+                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.MY_QNAME,
+                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+
+    }
+
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
+
+
+        try {
+
+            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+
+    }
+
+
+    /* methods to provide back word compatibility */
+
+
+    /**
+     * get the default envelope
+     */
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory) {
+        return factory.getDefaultEnvelope();
+    }
+
+
+    private java.lang.Object fromOM(
+            org.apache.axiom.om.OMElement param,
+            java.lang.Class type,
+            java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.class.equals(type)) {
+
+                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+
+            }
+
+            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.class.equals(type)) {
+
+                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+
+            }
+
+            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.class.equals(type)) {
+
+                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+
+            }
+
+            if (br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.class.equals(type)) {
+
+                return br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+
+            }
+
+        } catch (java.lang.Exception e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+        return null;
     }
 
 

@@ -24,6 +24,10 @@ public enum MDFTipoUnidadeCarga {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFTipoUnidadeCarga valueOfCodigo(final String codigo) {
         for (MDFTipoUnidadeCarga tipoUnidadeCarga : MDFTipoUnidadeCarga.values()) {
             if (tipoUnidadeCarga.getCodigo().equalsIgnoreCase(codigo)) {
@@ -31,10 +35,6 @@ public enum MDFTipoUnidadeCarga {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

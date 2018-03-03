@@ -6,9 +6,16 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
+/**
+ * Created by Eldevan Nery Junior on 03/11/17.
+ * <p>
+ * Tipo Manifesto de Documentos Fiscais Eletrônicos.
+ */
 @Root(name = "MDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFe extends DFBase {
+
+    private static final long serialVersionUID = 201803031532L;
 
     public static final String VERSAO = "3.00";
 

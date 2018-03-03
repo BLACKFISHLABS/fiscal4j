@@ -22,6 +22,10 @@ public enum MDFTipoTranportador {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static MDFTipoTranportador valueOfCodigo(final String codigo) {
         for (MDFTipoTranportador tipoTranportador : MDFTipoTranportador.values()) {
             if (tipoTranportador.getCodigo().equalsIgnoreCase(codigo)) {
@@ -29,10 +33,6 @@ public enum MDFTipoTranportador {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

@@ -5,6 +5,8 @@ import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
 /**
+ * Created by Eldevan Nery Junior on 01/11/17.
+ * <p>
  * <h1>Dados do CIOT(Código Identificador da Operação de Transporte)</h1>
  */
 public class MDFInfoModalRodoviarioInfCIOT extends DFBase {

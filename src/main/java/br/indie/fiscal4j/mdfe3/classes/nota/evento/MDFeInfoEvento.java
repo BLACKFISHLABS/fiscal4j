@@ -11,6 +11,9 @@ import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
 
+/**
+ * Tipo Evento
+ */
 public class MDFeInfoEvento extends DFBase {
 
     @Attribute(name = "Id", required = false)
@@ -46,6 +49,10 @@ public class MDFeInfoEvento extends DFBase {
      */
     @Element(name = "detEvento")
     private MDFeDetalhamentoEvento detEvento;
+
+    public void setOrgao(final String orgao) {
+        this.orgao = orgao;
+    }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
         this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
@@ -112,24 +119,20 @@ public class MDFeInfoEvento extends DFBase {
         this.numeroSequencialEvento = numeroSequencialEvento;
     }
 
-    public void setNumeroSequencialEvento(Integer numeroSequencialEvento) {
-        this.numeroSequencialEvento = numeroSequencialEvento;
-    }
-
     public String getVersaoEvento() {
         return this.versaoEvento;
-    }
-
-    public void setVersaoEvento(String versaoEvento) {
-        this.versaoEvento = versaoEvento;
     }
 
     public String getOrgao() {
         return this.orgao;
     }
 
-    public void setOrgao(final String orgao) {
-        this.orgao = orgao;
+    public void setNumeroSequencialEvento(Integer numeroSequencialEvento) {
+        this.numeroSequencialEvento = numeroSequencialEvento;
+    }
+
+    public void setVersaoEvento(String versaoEvento) {
+        this.versaoEvento = versaoEvento;
     }
 
     public MDFeDetalhamentoEvento getDetEvento() {

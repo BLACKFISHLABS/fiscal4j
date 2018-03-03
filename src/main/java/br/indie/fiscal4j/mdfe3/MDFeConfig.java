@@ -4,10 +4,6 @@ import br.indie.fiscal4j.DFConfig;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
 
-/**
- * <p>
- * Configuracão padrão do MDF-e.
- */
 public abstract class MDFeConfig extends DFConfig {
 
     public static final String VERSAO = "3.00";

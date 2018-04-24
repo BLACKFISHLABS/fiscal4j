@@ -31,24 +31,24 @@ public class NFNotaProcessada extends DFBase {
         return this.nota;
     }
 
-    public void setNota(final NFNota nota) {
-        this.nota = nota;
-    }
-
     public String getVersao() {
         return this.versao;
-    }
-
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Processada");
     }
 
     public NFProtocolo getProtocolo() {
         return this.protocolo;
     }
 
+    public void setNota(final NFNota nota) {
+        this.nota = nota;
+    }
+
     public void setProtocolo(final NFProtocolo protocolo) {
         this.protocolo = protocolo;
+    }
+
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Processada");
     }
 
     public String getSchemaLocation() {

@@ -15,6 +15,14 @@ public enum NFProcessoEmissor {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFProcessoEmissor valueOfCodigo(final String codigo) {
         for (final NFProcessoEmissor tipo : NFProcessoEmissor.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -22,14 +30,6 @@ public enum NFProcessoEmissor {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

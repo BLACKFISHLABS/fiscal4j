@@ -20,27 +20,27 @@ public class NFEvento extends DFBase {
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
-    public NFInfoEvento getInfoEvento() {
-        return this.infoEvento;
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
-    public void setInfoEvento(final NFInfoEvento infoEvento) {
-        this.infoEvento = infoEvento;
+    public NFInfoEvento getInfoEvento() {
+        return this.infoEvento;
     }
 
     public String getVersao() {
         return this.versao;
     }
 
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
-    }
-
-    public NFSignature getAssinatura() {
-        return this.assinatura;
+    public void setInfoEvento(final NFInfoEvento infoEvento) {
+        this.infoEvento = infoEvento;
     }
 
     public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
+    }
+
+    public NFSignature getAssinatura() {
+        return this.assinatura;
     }
 }

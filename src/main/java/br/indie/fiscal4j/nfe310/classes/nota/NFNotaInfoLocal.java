@@ -35,20 +35,12 @@ public class NFNotaInfoLocal extends DFBase {
     @Element(name = "UF", required = true)
     private String uf;
 
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
     public void setCnpj(final String cnpj) {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao pode setar CNPJ por que o CPF foi setado");
         }
         StringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
-    }
-
-    public String getCpf() {
-        return this.cpf;
     }
 
     public void setCpf(final String cpf) {
@@ -59,17 +51,9 @@ public class NFNotaInfoLocal extends DFBase {
         this.cpf = cpf;
     }
 
-    public String getLogradouro() {
-        return this.logradouro;
-    }
-
     public void setLogradouro(final String logradouro) {
         StringValidador.tamanho60(logradouro, "Logradouro Local");
         this.logradouro = logradouro;
-    }
-
-    public String getNumero() {
-        return this.numero;
     }
 
     public void setNumero(final String numero) {
@@ -77,17 +61,9 @@ public class NFNotaInfoLocal extends DFBase {
         this.numero = numero;
     }
 
-    public String getComplemento() {
-        return this.complemento;
-    }
-
     public void setComplemento(final String complemento) {
         StringValidador.tamanho60(complemento, "Complemento Local");
         this.complemento = complemento;
-    }
-
-    public String getBairro() {
-        return this.bairro;
     }
 
     public void setBairro(final String bairro) {
@@ -95,17 +71,9 @@ public class NFNotaInfoLocal extends DFBase {
         this.bairro = bairro;
     }
 
-    public String getCodigoMunicipio() {
-        return this.codigoMunicipio;
-    }
-
     public void setCodigoMunicipio(final String codigoMunicipio) {
         StringValidador.exatamente7(codigoMunicipio, "Codigo Municipio Local");
         this.codigoMunicipio = codigoMunicipio;
-    }
-
-    public String getNomeMunicipio() {
-        return this.nomeMunicipio;
     }
 
     public void setNomeMunicipio(final String nomeMunicipio) {
@@ -113,11 +81,43 @@ public class NFNotaInfoLocal extends DFBase {
         this.nomeMunicipio = nomeMunicipio;
     }
 
-    public String getUf() {
-        return this.uf;
-    }
-
     public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf.getCodigo();
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public String getLogradouro() {
+        return this.logradouro;
+    }
+
+    public String getNumero() {
+        return this.numero;
+    }
+
+    public String getComplemento() {
+        return this.complemento;
+    }
+
+    public String getBairro() {
+        return this.bairro;
+    }
+
+    public String getCodigoMunicipio() {
+        return this.codigoMunicipio;
+    }
+
+    public String getNomeMunicipio() {
+        return this.nomeMunicipio;
+    }
+
+    public String getUf() {
+        return this.uf;
     }
 }

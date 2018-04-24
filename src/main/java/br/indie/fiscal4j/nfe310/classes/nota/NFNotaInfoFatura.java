@@ -22,36 +22,36 @@ public class NFNotaInfoFatura extends DFBase {
     @Element(name = "vLiq", required = false)
     private String valorLiquidoFatura;
 
-    public String getValorOriginalFatura() {
-        return this.valorOriginalFatura;
+    public void setNumeroFatura(final String numeroFatura) {
+        StringValidador.tamanho60(numeroFatura, "Numero Fatura");
+        this.numeroFatura = numeroFatura;
     }
 
     public void setValorOriginalFatura(final BigDecimal valorOriginalFatura) {
         this.valorOriginalFatura = BigDecimalParser.tamanho15Com2CasasDecimais(valorOriginalFatura, "Valor Original Fatura");
     }
 
-    public String getValorDesconto() {
-        return this.valorDesconto;
-    }
-
     public void setValorDesconto(final BigDecimal valorDesconto) {
         this.valorDesconto = BigDecimalParser.tamanho15Com2CasasDecimais(valorDesconto, "Valor Desconto Fatura");
-    }
-
-    public String getValorLiquidoFatura() {
-        return this.valorLiquidoFatura;
     }
 
     public void setValorLiquidoFatura(final BigDecimal valorLiquidoFatura) {
         this.valorLiquidoFatura = BigDecimalParser.tamanho15Com2CasasDecimais(valorLiquidoFatura, "Valor Liquido Fatura");
     }
 
-    public String getNumeroFatura() {
-        return this.numeroFatura;
+    public String getValorOriginalFatura() {
+        return this.valorOriginalFatura;
     }
 
-    public void setNumeroFatura(final String numeroFatura) {
-        StringValidador.tamanho60(numeroFatura, "Numero Fatura");
-        this.numeroFatura = numeroFatura;
+    public String getValorDesconto() {
+        return this.valorDesconto;
+    }
+
+    public String getValorLiquidoFatura() {
+        return this.valorLiquidoFatura;
+    }
+
+    public String getNumeroFatura() {
+        return this.numeroFatura;
     }
 }

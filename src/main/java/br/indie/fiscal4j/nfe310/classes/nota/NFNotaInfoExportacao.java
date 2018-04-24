@@ -17,17 +17,8 @@ public class NFNotaInfoExportacao extends DFBase {
     @Element(name = "xLocDespacho", required = false)
     private String localDespachoProdutos;
 
-    public String getLocalDespachoProdutos() {
-        return this.localDespachoProdutos;
-    }
-
-    public void setLocalDespachoProdutos(final String localDespachoProdutos) {
-        StringValidador.tamanho60(localDespachoProdutos, "Local Despacho Produtos");
-        this.localDespachoProdutos = localDespachoProdutos;
-    }
-
-    public String getLocalEmbarqueProdutos() {
-        return this.localEmbarqueProdutos;
+    public void setUfEmbarqueProduto(final DFUnidadeFederativa ufEmbarqueProduto) {
+        this.ufEmbarqueProduto = ufEmbarqueProduto.getCodigo();
     }
 
     public void setLocalEmbarqueProdutos(final String localEmbarqueProdutos) {
@@ -35,11 +26,20 @@ public class NFNotaInfoExportacao extends DFBase {
         this.localEmbarqueProdutos = localEmbarqueProdutos;
     }
 
-    public String getUfEmbarqueProduto() {
-        return this.ufEmbarqueProduto;
+    public void setLocalDespachoProdutos(final String localDespachoProdutos) {
+        StringValidador.tamanho60(localDespachoProdutos, "Local Despacho Produtos");
+        this.localDespachoProdutos = localDespachoProdutos;
     }
 
-    public void setUfEmbarqueProduto(final DFUnidadeFederativa ufEmbarqueProduto) {
-        this.ufEmbarqueProduto = ufEmbarqueProduto.getCodigo();
+    public String getLocalDespachoProdutos() {
+        return this.localDespachoProdutos;
+    }
+
+    public String getLocalEmbarqueProdutos() {
+        return this.localEmbarqueProdutos;
+    }
+
+    public String getUfEmbarqueProduto() {
+        return this.ufEmbarqueProduto;
     }
 }

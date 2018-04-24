@@ -28,17 +28,9 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao extends DFBase {
     @Element(name = "nDraw", required = false)
     private BigInteger numeroAtoConcessorioDrawback;
 
-    public Integer getNumero() {
-        return this.numero;
-    }
-
     public void setNumero(final Integer numero) {
         IntegerValidador.tamanho3(numero, "Numero Declaracao Importacao Adicao");
         this.numero = numero;
-    }
-
-    public Integer getSequencial() {
-        return this.sequencial;
     }
 
     public void setSequencial(final Integer sequencial) {
@@ -46,29 +38,37 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao extends DFBase {
         this.sequencial = sequencial;
     }
 
-    public String getCodigoFabricante() {
-        return this.codigoFabricante;
-    }
-
     public void setCodigoFabricante(final String codigoFabricante) {
         StringValidador.tamanho60(codigoFabricante, "Codigo Fabricante Declaracao Importacao Adicao");
         this.codigoFabricante = codigoFabricante;
-    }
-
-    public String getDesconto() {
-        return this.desconto;
     }
 
     public void setDesconto(final BigDecimal desconto) {
         this.desconto = BigDecimalParser.tamanho15Com2CasasDecimais(desconto, "Desconto Declaracao Importacao Adicao");
     }
 
-    public BigInteger getNumeroAtoConcessorioDrawback() {
-        return this.numeroAtoConcessorioDrawback;
-    }
-
     public void setNumeroAtoConcessorioDrawback(final BigInteger numeroAtoConcessorioDrawback) {
         BigIntegerValidador.tamanho11(numeroAtoConcessorioDrawback, "Numero Ato Concessorio Declaracao Importacao Adicao");
         this.numeroAtoConcessorioDrawback = numeroAtoConcessorioDrawback;
+    }
+
+    public Integer getNumero() {
+        return this.numero;
+    }
+
+    public Integer getSequencial() {
+        return this.sequencial;
+    }
+
+    public String getCodigoFabricante() {
+        return this.codigoFabricante;
+    }
+
+    public String getDesconto() {
+        return this.desconto;
+    }
+
+    public BigInteger getNumeroAtoConcessorioDrawback() {
+        return this.numeroAtoConcessorioDrawback;
     }
 }

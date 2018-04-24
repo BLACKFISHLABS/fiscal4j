@@ -24,38 +24,38 @@ public class NFNotaInfoItem extends DFBase {
     @Element(name = "infAdProd", required = false)
     private String informacoesAdicionais;
 
-    public Integer getNumeroItem() {
-        return this.numeroItem;
-    }
-
     public void setNumeroItem(final Integer numeroItem) {
         IntegerValidador.tamanho3maximo990(numeroItem, "Numero do Item");
         this.numeroItem = numeroItem;
     }
 
-    public NFNotaInfoItemProduto getProduto() {
-        return this.produto;
+    public void setInformacoesAdicionais(final String informacoesAdicionais) {
+        StringValidador.tamanho500(informacoesAdicionais, "Informacoes Adicionais do Item");
+        this.informacoesAdicionais = informacoesAdicionais;
     }
 
     public void setProduto(final NFNotaInfoItemProduto produto) {
         this.produto = produto;
     }
 
-    public NFNotaInfoItemImposto getImposto() {
-        return this.imposto;
-    }
-
     public void setImposto(final NFNotaInfoItemImposto imposto) {
         this.imposto = imposto;
     }
 
-    public String getInformacoesAdicionais() {
-        return this.informacoesAdicionais;
+    public Integer getNumeroItem() {
+        return this.numeroItem;
     }
 
-    public void setInformacoesAdicionais(final String informacoesAdicionais) {
-        StringValidador.tamanho500(informacoesAdicionais, "Informacoes Adicionais do Item");
-        this.informacoesAdicionais = informacoesAdicionais;
+    public NFNotaInfoItemProduto getProduto() {
+        return this.produto;
+    }
+
+    public NFNotaInfoItemImposto getImposto() {
+        return this.imposto;
+    }
+
+    public String getInformacoesAdicionais() {
+        return this.informacoesAdicionais;
     }
 
     public NFImpostoDevolvido getImpostoDevolvido() {

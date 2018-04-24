@@ -28,35 +28,35 @@ public class NFNotaInfoItemImpostoImportacao extends DFBase {
         this.valorIOF = null;
     }
 
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
-    }
-
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC Importacao Item");
-    }
-
-    public String getValorDespesaAduaneira() {
-        return this.valorDespesaAduaneira;
     }
 
     public void setValorDespesaAduaneira(final BigDecimal valorDespesaAduaneira) {
         this.valorDespesaAduaneira = BigDecimalParser.tamanho15Com2CasasDecimais(valorDespesaAduaneira, "Valor Despesa Aduaneira Importacao Item");
     }
 
-    public String getValorImpostoImportacao() {
-        return this.valorImpostoImportacao;
-    }
-
     public void setValorImpostoImportacao(final BigDecimal valorImpostoImportacao) {
         this.valorImpostoImportacao = BigDecimalParser.tamanho15Com2CasasDecimais(valorImpostoImportacao, "Valor Imposto Importacao Item");
     }
 
-    public String getValorIOF() {
-        return this.valorIOF;
-    }
-
     public void setValorIOF(final BigDecimal valorIOF) {
         this.valorIOF = BigDecimalParser.tamanho15Com2CasasDecimais(valorIOF, "Valor IOF Importacao Item");
+    }
+
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
+    }
+
+    public String getValorDespesaAduaneira() {
+        return this.valorDespesaAduaneira;
+    }
+
+    public String getValorImpostoImportacao() {
+        return this.valorImpostoImportacao;
+    }
+
+    public String getValorIOF() {
+        return this.valorIOF;
     }
 }

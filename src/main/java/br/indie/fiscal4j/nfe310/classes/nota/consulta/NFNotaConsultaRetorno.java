@@ -14,24 +14,34 @@ import java.util.List;
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFNotaConsultaRetorno extends DFBase {
     private static final long serialVersionUID = -5747228973124291025L;
-    @Element(name = "protNFe", required = false)
-    protected NFProtocolo protocolo;
+
     @Attribute(name = "versao", required = true)
     private String versao;
+
     @Element(name = "tpAmb", required = true)
     private DFAmbiente ambiente;
+
     @Element(name = "verAplic", required = true)
     private String versaoAplicacao;
+
     @Element(name = "cStat", required = true)
     private String status;
+
     @Element(name = "xMotivo", required = true)
     private String motivo;
+
     @Element(name = "cUF", required = true)
     private DFUnidadeFederativa uf;
+
     @Element(name = "dhRecbto", required = true)
     private LocalDateTime dataHoraRecibo;
+
     @Element(name = "chNFe", required = true)
     private String chave;
+
+    @Element(name = "protNFe", required = false)
+    protected NFProtocolo protocolo;
+
     @Element(name = "retCancNFe", required = false)
     private NFRetornoCancelamento protocoloCancelamento;
 
@@ -101,24 +111,16 @@ public class NFNotaConsultaRetorno extends DFBase {
         return this.chave;
     }
 
-    public void setChave(final String chave) {
-        this.chave = chave;
-    }
-
     public List<NFProtocoloEvento> getProtocoloEvento() {
         return this.protocoloEvento;
-    }
-
-    public void setProtocoloEvento(final List<NFProtocoloEvento> protocoloEvento) {
-        this.protocoloEvento = protocoloEvento;
     }
 
     public NFRetornoCancelamento getProtocoloCancelamento() {
         return this.protocoloCancelamento;
     }
 
-    public void setProtocoloCancelamento(final NFRetornoCancelamento protocoloCancelamento) {
-        this.protocoloCancelamento = protocoloCancelamento;
+    public void setChave(final String chave) {
+        this.chave = chave;
     }
 
     public NFProtocolo getProtocolo() {
@@ -135,5 +137,13 @@ public class NFNotaConsultaRetorno extends DFBase {
 
     public void setDataHoraRecibo(final LocalDateTime dataHoraRecibo) {
         this.dataHoraRecibo = dataHoraRecibo;
+    }
+
+    public void setProtocoloEvento(final List<NFProtocoloEvento> protocoloEvento) {
+        this.protocoloEvento = protocoloEvento;
+    }
+
+    public void setProtocoloCancelamento(final NFRetornoCancelamento protocoloCancelamento) {
+        this.protocoloCancelamento = protocoloCancelamento;
     }
 }

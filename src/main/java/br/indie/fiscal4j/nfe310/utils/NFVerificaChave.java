@@ -18,17 +18,6 @@ public class NFVerificaChave {
         this.chave = chave;
     }
 
-    /**
-     * Método estático para verificar se uma chave de acesso é válida ou não.
-     *
-     * @param chave
-     * @return
-     */
-    public static boolean isChaveValida(String chave) {
-        NFVerificaChave nfVerificaChave = new NFVerificaChave(chave);
-        return nfVerificaChave.isChaveValida();
-    }
-
     public Integer calculaDV() {
         final char[] valores = this.chaveAcessoSemDV().toCharArray();
         final int[] valoresInt = {2, 3, 4, 5, 6, 7, 8, 9};
@@ -61,6 +50,17 @@ public class NFVerificaChave {
             return false;
         }
         return getChaveAcessoDV() == calculaDV();
+    }
+
+    /**
+     * Método estático para verificar se uma chave de acesso é válida ou não.
+     *
+     * @param chave
+     * @return
+     */
+    public static boolean isChaveValida(String chave) {
+        NFVerificaChave nfVerificaChave = new NFVerificaChave(chave);
+        return nfVerificaChave.isChaveValida();
     }
 
 }

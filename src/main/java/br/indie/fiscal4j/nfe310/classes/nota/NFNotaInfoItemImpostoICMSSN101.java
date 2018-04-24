@@ -23,35 +23,35 @@ public class NFNotaInfoItemImpostoICMSSN101 extends DFBase {
     @Element(name = "vCredICMSSN", required = true)
     private String valorCreditoICMSSN;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
-        return this.situacaoOperacaoSN;
     }
 
     public void setSituacaoOperacaoSN(final NFNotaSituacaoOperacionalSimplesNacional situacaoOperacaoSN) {
         this.situacaoOperacaoSN = situacaoOperacaoSN;
     }
 
-    public String getPercentualAliquotaAplicavelCalculoCreditoSN() {
-        return this.percentualAliquotaAplicavelCalculoCreditoSN;
-    }
-
     public void setPercentualAliquotaAplicavelCalculoCreditoSN(final BigDecimal percentualAliquotaAplicavelCalculoCreditoSN) {
         this.percentualAliquotaAplicavelCalculoCreditoSN = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaAplicavelCalculoCreditoSN, "Percentual Aliquota Aplicavel Calculo Credito SN ICMSSN101");
     }
 
-    public String getValorCreditoICMSSN() {
-        return this.valorCreditoICMSSN;
-    }
-
     public void setValorCreditoICMSSN(final BigDecimal valorCreditoICMSSN) {
         this.valorCreditoICMSSN = BigDecimalParser.tamanho15Com2CasasDecimais(valorCreditoICMSSN, "Valor Credito ICMSSN101");
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
+        return this.situacaoOperacaoSN;
+    }
+
+    public String getPercentualAliquotaAplicavelCalculoCreditoSN() {
+        return this.percentualAliquotaAplicavelCalculoCreditoSN;
+    }
+
+    public String getValorCreditoICMSSN() {
+        return this.valorCreditoICMSSN;
     }
 }

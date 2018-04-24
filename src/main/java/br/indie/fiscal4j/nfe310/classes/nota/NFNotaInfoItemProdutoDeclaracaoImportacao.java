@@ -50,25 +50,13 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     @ElementList(entry = "adi", inline = true, required = true)
     private List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> adicoes;
 
-    public String getNumeroRegistro() {
-        return this.numeroRegistro;
-    }
-
     public void setNumeroRegistro(final String numeroRegistro) {
         StringValidador.tamanho12(numeroRegistro, "Numero Registro Declaracao Importacao");
         this.numeroRegistro = numeroRegistro;
     }
 
-    public LocalDate getDataRegistro() {
-        return this.dataRegistro;
-    }
-
     public void setDataRegistro(final LocalDate dataRegistro) {
         this.dataRegistro = dataRegistro;
-    }
-
-    public String getLocalDesembaraco() {
-        return this.localDesembaraco;
     }
 
     public void setLocalDesembaraco(final String localDesembaraco) {
@@ -76,65 +64,12 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
         this.localDesembaraco = localDesembaraco;
     }
 
-    public String getUfDesembaraco() {
-        return this.ufDesembaraco;
-    }
-
     public void setUfDesembaraco(final DFUnidadeFederativa ufDesembaraco) {
         this.ufDesembaraco = ufDesembaraco.getCodigo();
     }
 
-    public LocalDate getDataDesembaraco() {
-        return this.dataDesembaraco;
-    }
-
     public void setDataDesembaraco(final LocalDate dataDesembaraco) {
         this.dataDesembaraco = dataDesembaraco;
-    }
-
-    public NFViaTransporteInternacional getTransporteInternacional() {
-        return this.transporteInternacional;
-    }
-
-    public void setTransporteInternacional(final NFViaTransporteInternacional transporteInternacional) {
-        this.transporteInternacional = transporteInternacional;
-    }
-
-    public String getValorAFRMM() {
-        return this.valorAFRMM;
-    }
-
-    public void setValorAFRMM(final BigDecimal valorAFRMM) {
-        this.valorAFRMM = BigDecimalParser.tamanho15Com2CasasDecimais(valorAFRMM, "Valor AFRMM Declaracao Importacao");
-    }
-
-    public NFFormaImportacaoIntermediacao getFormaImportacaoIntermediacao() {
-        return this.formaImportacaoIntermediacao;
-    }
-
-    public void setFormaImportacaoIntermediacao(final NFFormaImportacaoIntermediacao formaImportacaoIntermediacao) {
-        this.formaImportacaoIntermediacao = formaImportacaoIntermediacao;
-    }
-
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
-    public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
-        this.cnpj = cnpj;
-    }
-
-    public String getUfTerceiro() {
-        return this.ufTerceiro;
-    }
-
-    public void setUfTerceiro(final DFUnidadeFederativa ufTerceiro) {
-        this.ufTerceiro = ufTerceiro.getCodigo();
-    }
-
-    public String getCodigoExportador() {
-        return this.codigoExportador;
     }
 
     public void setCodigoExportador(final String codigoExportador) {
@@ -142,11 +77,76 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
         this.codigoExportador = codigoExportador;
     }
 
-    public List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> getAdicoes() {
-        return this.adicoes;
-    }
-
     public void setAdicoes(final List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> adicoes) {
         this.adicoes = adicoes;
+    }
+
+    public void setTransporteInternacional(final NFViaTransporteInternacional transporteInternacional) {
+        this.transporteInternacional = transporteInternacional;
+    }
+
+    public void setValorAFRMM(final BigDecimal valorAFRMM) {
+        this.valorAFRMM = BigDecimalParser.tamanho15Com2CasasDecimais(valorAFRMM, "Valor AFRMM Declaracao Importacao");
+    }
+
+    public void setFormaImportacaoIntermediacao(final NFFormaImportacaoIntermediacao formaImportacaoIntermediacao) {
+        this.formaImportacaoIntermediacao = formaImportacaoIntermediacao;
+    }
+
+    public void setCnpj(final String cnpj) {
+        StringValidador.cnpj(cnpj);
+        this.cnpj = cnpj;
+    }
+
+    public void setUfTerceiro(final DFUnidadeFederativa ufTerceiro) {
+        this.ufTerceiro = ufTerceiro.getCodigo();
+    }
+
+    public String getNumeroRegistro() {
+        return this.numeroRegistro;
+    }
+
+    public LocalDate getDataRegistro() {
+        return this.dataRegistro;
+    }
+
+    public String getLocalDesembaraco() {
+        return this.localDesembaraco;
+    }
+
+    public String getUfDesembaraco() {
+        return this.ufDesembaraco;
+    }
+
+    public LocalDate getDataDesembaraco() {
+        return this.dataDesembaraco;
+    }
+
+    public NFViaTransporteInternacional getTransporteInternacional() {
+        return this.transporteInternacional;
+    }
+
+    public String getValorAFRMM() {
+        return this.valorAFRMM;
+    }
+
+    public NFFormaImportacaoIntermediacao getFormaImportacaoIntermediacao() {
+        return this.formaImportacaoIntermediacao;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getUfTerceiro() {
+        return this.ufTerceiro;
+    }
+
+    public String getCodigoExportador() {
+        return this.codigoExportador;
+    }
+
+    public List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> getAdicoes() {
+        return this.adicoes;
     }
 }

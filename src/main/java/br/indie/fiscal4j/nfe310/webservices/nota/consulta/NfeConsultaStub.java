@@ -14,12 +14,13 @@ import javax.xml.namespace.QName;
 @SuppressWarnings({"rawtypes", "unchecked", "deprecation", "unused"})
 public class NfeConsultaStub extends org.apache.axis2.client.Stub {
     private static int counter = 0;
+    protected org.apache.axis2.description.AxisOperation[] _operations;
+
     // hashmaps to keep the fault mapping
     private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
     private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     private final java.util.HashMap faultMessageMap = new java.util.HashMap();
     private final javax.xml.namespace.QName[] opNameArray = null;
-    protected org.apache.axis2.description.AxisOperation[] _operations;
 
     /**
      * Constructor that takes in a configContext
@@ -412,20 +413,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
 
     // https://nfe.sefaz.ba.gov.br/webservices/NfeConsulta/NfeConsulta.asmx
     public static class NfeConsultaNFResult implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeConsultaNFResult", "ns1");
         private static final long serialVersionUID = 2729727702061603854L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeConsultaNFResult", "ns1");
+
         /**
          * field for ExtraElement
          */
         protected org.apache.axiom.om.OMElement localExtraElement;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
-                return "ns1";
-            }
-
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -486,6 +481,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
             }
 
             xmlWriter.writeEndElement();
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
+                return "ns1";
+            }
+
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -793,14 +796,6 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
          */
         protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
 
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
-                return "ns1";
-            }
-
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
         public boolean isVersaoDadosSpecified() {
             return this.localVersaoDadosTracker;
         }
@@ -859,17 +854,6 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         * Auto generated setter method
-         *
-         * @param param ExtraAttributes
-         */
-        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
-            this.validateExtraAttributes(param);
-
-            this.localExtraAttributes = param;
-        }
-
-        /**
          * validate the array for ExtraAttributes
          */
         protected void validateExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
@@ -880,6 +864,17 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
             if ((param != null) && (param.length < 1)) {
                 throw new java.lang.RuntimeException("Input values do not follow defined XSD restrictions");
             }
+        }
+
+        /**
+         * Auto generated setter method
+         *
+         * @param param ExtraAttributes
+         */
+        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
+            this.validateExtraAttributes(param);
+
+            this.localExtraAttributes = param;
         }
 
         /**
@@ -966,6 +961,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
             }
 
             xmlWriter.writeEndElement();
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
+                return "ns1";
+            }
+
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1305,20 +1308,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeDadosMsg implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeDadosMsg", "ns1");
         private static final long serialVersionUID = 1705520115890695657L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeDadosMsg", "ns1");
+
         /**
          * field for ExtraElement
          */
         protected org.apache.axiom.om.OMElement localExtraElement;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
-                return "ns1";
-            }
-
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -1379,6 +1376,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
             }
 
             xmlWriter.writeEndElement();
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
+                return "ns1";
+            }
+
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1657,20 +1662,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeCabecMsgE implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeCabecMsg", "ns1");
         private static final long serialVersionUID = -2890786547466882892L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta", "nfeCabecMsg", "ns1");
+
         /**
          * field for NfeCabecMsg
          */
         protected NfeCabecMsg localNfeCabecMsg;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
-                return "ns1";
-            }
-
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -1713,6 +1712,14 @@ public class NfeConsultaStub extends org.apache.axis2.client.Stub {
             }
 
             this.localNfeCabecMsg.serialize(NfeCabecMsgE.MY_QNAME, xmlWriter);
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeConsulta")) {
+                return "ns1";
+            }
+
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**

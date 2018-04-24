@@ -18,6 +18,10 @@ public enum NFNotaInfoItemIndicadorExigibilidadeISS {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoItemIndicadorExigibilidadeISS valueOfCodigo(final String codigo) {
         for (final NFNotaInfoItemIndicadorExigibilidadeISS exigibilidadeISS : NFNotaInfoItemIndicadorExigibilidadeISS.values()) {
             if (exigibilidadeISS.getCodigo().equals(codigo)) {
@@ -25,10 +29,6 @@ public enum NFNotaInfoItemIndicadorExigibilidadeISS {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

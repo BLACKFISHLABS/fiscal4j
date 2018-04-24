@@ -16,17 +16,14 @@ public class NFInfoCupomFiscalReferenciado extends DFBase {
     @Element(name = "nCOO", required = true)
     private String numeroContadorOrdemOperacao;
 
-    public String getModeloDocumentoFiscal() {
-        return this.modeloDocumentoFiscal;
-    }
-
     public void setModeloDocumentoFiscal(final String modeloDocumentoFiscal) {
         StringValidador.exatamente2(modeloDocumentoFiscal, "Modelo Documento Fiscal");
         this.modeloDocumentoFiscal = modeloDocumentoFiscal;
     }
 
-    public String getNumeroContadorOrdemOperacao() {
-        return this.numeroContadorOrdemOperacao;
+    public void setNumeroOrdemSequencialECF(final String numeroOrdemSequencialECF) {
+        StringValidador.exatamente3(numeroOrdemSequencialECF, "Numero Ordem Sequencial ECF");
+        this.numeroOrdemSequencialECF = numeroOrdemSequencialECF;
     }
 
     public void setNumeroContadorOrdemOperacao(final String numeroContadorOrdemOperacao) {
@@ -34,12 +31,15 @@ public class NFInfoCupomFiscalReferenciado extends DFBase {
         this.numeroContadorOrdemOperacao = numeroContadorOrdemOperacao;
     }
 
-    public String getNumeroOrdemSequencialECF() {
-        return this.numeroOrdemSequencialECF;
+    public String getModeloDocumentoFiscal() {
+        return this.modeloDocumentoFiscal;
     }
 
-    public void setNumeroOrdemSequencialECF(final String numeroOrdemSequencialECF) {
-        StringValidador.exatamente3(numeroOrdemSequencialECF, "Numero Ordem Sequencial ECF");
-        this.numeroOrdemSequencialECF = numeroOrdemSequencialECF;
+    public String getNumeroContadorOrdemOperacao() {
+        return this.numeroContadorOrdemOperacao;
+    }
+
+    public String getNumeroOrdemSequencialECF() {
+        return this.numeroOrdemSequencialECF;
     }
 }

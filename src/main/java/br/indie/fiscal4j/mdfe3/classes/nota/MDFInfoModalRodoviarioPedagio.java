@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.
- * <p>
+ *
  * <h1>Informações de Vale Pedágio.</h1>
  * <p>Outras informações sobre Vale-Pedágio obrigatório que não tenham campos específicos
  * devem ser informadas no campo de observações gerais de uso livre pelo contribuinte,

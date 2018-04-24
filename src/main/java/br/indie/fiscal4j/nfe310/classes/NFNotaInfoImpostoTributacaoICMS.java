@@ -22,6 +22,14 @@ public enum NFNotaInfoImpostoTributacaoICMS {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFNotaInfoImpostoTributacaoICMS valueOfCodigo(final String codigoICMS) {
         for (final NFNotaInfoImpostoTributacaoICMS icms : NFNotaInfoImpostoTributacaoICMS.values()) {
             if (icms.getCodigo().equals(codigoICMS)) {
@@ -29,14 +37,6 @@ public enum NFNotaInfoImpostoTributacaoICMS {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

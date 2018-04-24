@@ -29,10 +29,6 @@ public class NFNotaInfoItemImpostoCOFINSQuantidade extends DFBase {
         this.valorTributo = null;
     }
 
-    public NFNotaInfoSituacaoTributariaCOFINS getSituacaoTributaria() {
-        return this.situacaoTributaria;
-    }
-
     public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaCOFINS situacaoTributaria) {
         if (!NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_TRIBUTAVEL_QUANTIDADE_VENDIDA_POR_ALIQUOTA_POR_UNIDADE_PRODUTO.equals(situacaoTributaria)) {
             throw new IllegalStateException("Situacao tributaria invalida no item COFINS quantidade.");
@@ -40,27 +36,31 @@ public class NFNotaInfoItemImpostoCOFINSQuantidade extends DFBase {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public String getQuantidadeVendida() {
-        return this.quantidadeVendida;
-    }
-
     public void setQuantidadeVendida(final BigDecimal quantidadeVendida) {
         this.quantidadeVendida = BigDecimalParser.tamanho16ComAte4CasasDecimais(quantidadeVendida, "Quantidade Vendida COFINS Item Qtde");
-    }
-
-    public String getValorAliquota() {
-        return this.valorAliquota;
     }
 
     public void setValorAliquota(final BigDecimal valorAliquota) {
         this.valorAliquota = BigDecimalParser.tamanho15Com4CasasDecimais(valorAliquota, "Valor Aliquota COFINS Item Qtde");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo COFINS Item Qtde");
+    }
+
+    public NFNotaInfoSituacaoTributariaCOFINS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getQuantidadeVendida() {
+        return this.quantidadeVendida;
+    }
+
+    public String getValorAliquota() {
+        return this.valorAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
     }
 }

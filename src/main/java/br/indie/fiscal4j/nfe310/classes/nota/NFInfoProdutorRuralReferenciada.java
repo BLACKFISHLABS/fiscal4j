@@ -33,25 +33,13 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
     @Element(name = "nNF", required = true)
     private Integer numeroDocumentoFiscal;
 
-    public DFUnidadeFederativa getUfEmitente() {
-        return this.ufEmitente;
-    }
-
     public void setUfEmitente(final DFUnidadeFederativa ufEmitente) {
         this.ufEmitente = ufEmitente;
-    }
-
-    public String getAnoMesEmissao() {
-        return this.anoMesEmissao;
     }
 
     public void setAnoMesEmissao(final String anoMesEmissao) {
         StringValidador.aamm(anoMesEmissao);
         this.anoMesEmissao = anoMesEmissao;
-    }
-
-    public String getCnpjEmitente() {
-        return this.cnpjEmitente;
     }
 
     public void setCnpjEmitente(final String cnpjEmitente) {
@@ -62,10 +50,6 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
         this.cnpjEmitente = cnpjEmitente;
     }
 
-    public String getCpfEmitente() {
-        return this.cpfEmitente;
-    }
-
     public void setCpfEmitente(final String cpfEmitente) {
         if (this.cnpjEmitente != null) {
             throw new IllegalStateException("Nao pode setar CPF pois CNPJ ja esta setado");
@@ -74,17 +58,9 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
         this.cpfEmitente = cpfEmitente;
     }
 
-    public String getIeEmitente() {
-        return this.ieEmitente;
-    }
-
     public void setIeEmitente(final String ieEmitente) {
         StringValidador.inscricaoEstadual(ieEmitente);
         this.ieEmitente = ieEmitente;
-    }
-
-    public String getModeloDocumentoFiscal() {
-        return this.modeloDocumentoFiscal;
     }
 
     public void setModeloDocumentoFiscal(final String modeloDocumentoFiscal) {
@@ -92,17 +68,9 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
         this.modeloDocumentoFiscal = modeloDocumentoFiscal;
     }
 
-    public Integer getSerieDocumentoFiscal() {
-        return this.serieDocumentoFiscal;
-    }
-
     public void setSerieDocumentoFiscal(final Integer serieDocumentoFiscal) {
         IntegerValidador.tamanho3(serieDocumentoFiscal, "Serie Documento Fiscal");
         this.serieDocumentoFiscal = serieDocumentoFiscal;
-    }
-
-    public Integer getNumeroDocumentoFiscal() {
-        return this.numeroDocumentoFiscal;
     }
 
     /**
@@ -113,5 +81,37 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
     public void setNumeroDocumentoFiscal(final Integer numeroDocumentoFiscal) {
         IntegerValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
         this.numeroDocumentoFiscal = numeroDocumentoFiscal;
+    }
+
+    public DFUnidadeFederativa getUfEmitente() {
+        return this.ufEmitente;
+    }
+
+    public String getAnoMesEmissao() {
+        return this.anoMesEmissao;
+    }
+
+    public String getCnpjEmitente() {
+        return this.cnpjEmitente;
+    }
+
+    public String getCpfEmitente() {
+        return this.cpfEmitente;
+    }
+
+    public String getIeEmitente() {
+        return this.ieEmitente;
+    }
+
+    public String getModeloDocumentoFiscal() {
+        return this.modeloDocumentoFiscal;
+    }
+
+    public Integer getSerieDocumentoFiscal() {
+        return this.serieDocumentoFiscal;
+    }
+
+    public Integer getNumeroDocumentoFiscal() {
+        return this.numeroDocumentoFiscal;
     }
 }

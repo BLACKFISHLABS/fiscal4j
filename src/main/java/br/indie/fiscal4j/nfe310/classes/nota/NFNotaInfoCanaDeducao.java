@@ -16,20 +16,20 @@ public class NFNotaInfoCanaDeducao extends DFBase {
     @Element(name = "vDed", required = true)
     private String valorDeducao;
 
-    public String getDescricaoDeducao() {
-        return this.descricaoDeducao;
-    }
-
     public void setDescricaoDeducao(final String descricaoDeducao) {
         StringValidador.tamanho60(descricaoDeducao, "Descricao Deducao");
         this.descricaoDeducao = descricaoDeducao;
     }
 
-    public String getValorDeducao() {
-        return this.valorDeducao;
-    }
-
     public void setValorDeducao(final BigDecimal valorDeducao) {
         this.valorDeducao = BigDecimalParser.tamanho15Com2CasasDecimais(valorDeducao, "Valor Deducao");
+    }
+
+    public String getDescricaoDeducao() {
+        return this.descricaoDeducao;
+    }
+
+    public String getValorDeducao() {
+        return this.valorDeducao;
     }
 }

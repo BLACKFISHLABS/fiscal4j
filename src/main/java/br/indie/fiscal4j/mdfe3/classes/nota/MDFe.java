@@ -15,8 +15,6 @@ import org.simpleframework.xml.Root;
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFe extends DFBase {
 
-    private static final long serialVersionUID = 201803031532L;
-
     public static final String VERSAO = "3.00";
 
     @Element(name = "infMDFe")

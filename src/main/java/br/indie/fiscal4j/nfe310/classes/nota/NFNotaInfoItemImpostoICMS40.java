@@ -24,35 +24,35 @@ public class NFNotaInfoItemImpostoICMS40 extends DFBase {
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS motivoDesoneracaoICMS;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public String getValorICMSDesoneracao() {
-        return this.valorICMSDesoneracao;
-    }
-
     public void setValorICMSDesoneracao(final BigDecimal valorICMSDesoneracao) {
         this.valorICMSDesoneracao = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS40 Item");
     }
 
-    public NFNotaMotivoDesoneracaoICMS getMotivoDesoneracaoICMS() {
-        return this.motivoDesoneracaoICMS;
-    }
-
     public void setMotivoDesoneracaoICMS(final NFNotaMotivoDesoneracaoICMS motivoDesoneracaoICMS) {
         this.motivoDesoneracaoICMS = motivoDesoneracaoICMS;
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getValorICMSDesoneracao() {
+        return this.valorICMSDesoneracao;
+    }
+
+    public NFNotaMotivoDesoneracaoICMS getMotivoDesoneracaoICMS() {
+        return this.motivoDesoneracaoICMS;
     }
 }

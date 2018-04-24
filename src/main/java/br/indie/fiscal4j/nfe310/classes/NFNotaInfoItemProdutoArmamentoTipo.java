@@ -13,6 +13,10 @@ public enum NFNotaInfoItemProdutoArmamentoTipo {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoItemProdutoArmamentoTipo valueOfCodigo(final String codigo) {
         for (final NFNotaInfoItemProdutoArmamentoTipo tipo : NFNotaInfoItemProdutoArmamentoTipo.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFNotaInfoItemProdutoArmamentoTipo {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

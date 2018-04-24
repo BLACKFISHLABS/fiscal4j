@@ -27,7 +27,7 @@ public abstract class StringValidador {
     }
 
     public static void codigoDeBarras(final String codigoDeBarras) {
-        final Matcher matcher = Pattern.compile("^([0-9]{0}|[0-9]{8}|[0-9]{12,14})$").matcher(codigoDeBarras);
+        final Matcher matcher = Pattern.compile("^([0-9]{0}|[0-9]{8}|[0-9]{12,14}|SEM GTIN)$").matcher(codigoDeBarras);
         if (!matcher.find()) {
             throw new IllegalStateException(String.format("Codigo de barras com formato invalido (%s)", codigoDeBarras));
         }
@@ -54,7 +54,7 @@ public abstract class StringValidador {
 
     public static void email(final String email) {
         if (email != null) {
-            String regex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
+            final String regex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
             final Matcher matcher = Pattern.compile(regex).matcher(email);
             if (!matcher.find()) {
                 throw new IllegalStateException(String.format("Email invalido (%s)", email));
@@ -64,7 +64,7 @@ public abstract class StringValidador {
 
     public static String email(final String email, final String info) {
         if (email != null) {
-            String regex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
+            final String regex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
             final Matcher matcher = Pattern.compile(regex).matcher(email);
             if (!matcher.find()) {
                 throw new IllegalStateException(String.format("Email invalido (%s) em %s", email, info));
@@ -72,7 +72,6 @@ public abstract class StringValidador {
         }
         return email;
     }
-
 
     public static void tamanho256(final String string, final String info) {
         if (string != null) {
@@ -131,7 +130,7 @@ public abstract class StringValidador {
     public static void tamanho20N(final String string, final String info) {
         if (string != null) {
             StringValidador.apenasNumerico(string, info);
-            tamanho20(string, info);
+            StringValidador.tamanho20(string, info);
         }
     }
 
@@ -292,6 +291,12 @@ public abstract class StringValidador {
         }
     }
 
+    public static void exatamente13(final String string, final String info) {
+        if (string != null) {
+            StringValidador.validaTamanhoExato(string, 13, info);
+        }
+    }
+
     public static void tamanho15(final String string, final String info) {
         if (string != null) {
             StringValidador.validaTamanhoMaximo(string, 15, info);
@@ -436,7 +441,7 @@ public abstract class StringValidador {
     public static void tamanho2a9N(final String string, final String info) {
         if (string != null) {
             StringValidador.apenasNumerico(string, info);
-            StringValidador.intervalo(string, 2, 4, info);
+            StringValidador.intervalo(string, 2, 9, info);
         }
     }
 
@@ -456,6 +461,12 @@ public abstract class StringValidador {
     public static void tamanho100a600(final String string, final String info) {
         if (string != null) {
             StringValidador.intervalo(string, 100, 600, info);
+        }
+    }
+
+    public static void tamanho2a95(final String string, final String info) {
+        if (string != null) {
+            StringValidador.intervalo(string, 2, 95, info);
         }
     }
 
@@ -567,13 +578,14 @@ public abstract class StringValidador {
      * @param paraValidar String a ser validada
      * @param info        Informação de retorno caso haja erro.
      * @param tamanho     tamanho para validação da {@code String} , pode ser {@code null} :
-     * @param exatamente  <pre>se false {@code null} a {@code String}
-     *                                                                                                                                                        não precisa ter o tamanho exato do parametro anterior.</pre>
-     * @param numerico    se true {@code null} a {@code String}  precisa ser numérica[0-9].
+     * @param exatamente  <pre>
+     *                    se false {@code null} a {@code String}
+     *                                      não precisa ter o tamanho exato do parametro anterior.
+     *                               </pre>
+     * @param numerico    se true {@code null} a {@code String} precisa ser numérica[0-9].
      * @return retorna a própria {@code String} {@param paraValidar}.
      */
-    public static String validador(final String paraValidar, final String info,
-                                   Integer tamanho, Boolean exatamente, Boolean numerico) {
+    public static String validador(final String paraValidar, final String info, Integer tamanho, Boolean exatamente, Boolean numerico) {
         tamanho = ObjectUtils.defaultIfNull(tamanho, 1);
         exatamente = ObjectUtils.defaultIfNull(exatamente, false);
         numerico = ObjectUtils.defaultIfNull(numerico, true);
@@ -593,16 +605,15 @@ public abstract class StringValidador {
     /**
      * @See #validador
      */
-    public static String validador(final String paraValidar, final String info,
-                                   Integer tamanho, Boolean exatamente) {
-        return validador(paraValidar, info, tamanho, exatamente, null);
+    public static String validador(final String paraValidar, final String info, final Integer tamanho, final Boolean exatamente) {
+        return StringValidador.validador(paraValidar, info, tamanho, exatamente, null);
     }
 
     /**
      * @See #validador
      */
-    public static String validador(final String paraValidar, final String info, Integer tamanho) {
-        return validador(paraValidar, info, tamanho, null, null);
+    public static String validador(final String paraValidar, final String info, final Integer tamanho) {
+        return StringValidador.validador(paraValidar, info, tamanho, null, null);
     }
 
     public static void fci(final String numeroControleFCI) {
@@ -648,27 +659,25 @@ public abstract class StringValidador {
     }
 
     public static String validaIntervalo(final String string, final int inicio, final int fim, final String info) {
-        return validaIntervalo(string, inicio, fim, info, false);
+        return StringValidador.validaIntervalo(string, inicio, fim, info, false);
     }
 
     public static String validaIntervalo(final String string, final int inicio, final int fim, final String info, Boolean isNumeric) {
         isNumeric = ObjectUtils.defaultIfNull(isNumeric, false);
         if (isNumeric) {
-            apenasNumerico(string, info);
+            StringValidador.apenasNumerico(string, info);
         }
-        intervalo(string, inicio, fim, info);
+        StringValidador.intervalo(string, inicio, fim, info);
         return string;
     }
 
-
     /**
      * Valida um número com N {@param digitos}.
-     * <p>
+     *
      * <pre>
      *
      *  StringValidador.capacidadeNDigitos("10000", "info" , 5)   = "10000"
      *  StringValidador.capacidadeNDigitos("5", "info" , 2)   = "5"
-     *
      * </pre>
      *
      * @param capacidade
@@ -727,7 +736,7 @@ public abstract class StringValidador {
         }
     }
 
-    public static void equals(String test, String tested) {
+    public static void equals(final String test, final String tested) {
         if (!StringUtils.equals(test, tested)) {
             throw new IllegalStateException(String.format("Valor('%s') não corresponde com o padrao('%s')", (Object[]) new String[]{tested, test}));
         }

@@ -48,6 +48,14 @@ public class NFInfoEventoCancelamento extends DFBase {
     @Element(name = "detEvento", required = true)
     private NFInfoCancelamento cancelamento;
 
+    public void setOrgao(final DFUnidadeFederativa orgao) {
+        this.orgao = orgao;
+    }
+
+    public void setVersaoEvento(final BigDecimal versaoEvento) {
+        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+    }
+
     public String getId() {
         return this.id;
     }
@@ -128,10 +136,6 @@ public class NFInfoEventoCancelamento extends DFBase {
         return this.versaoEvento;
     }
 
-    public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
-    }
-
     public NFInfoCancelamento getCancelamento() {
         return this.cancelamento;
     }
@@ -142,9 +146,5 @@ public class NFInfoEventoCancelamento extends DFBase {
 
     public DFUnidadeFederativa getOrgao() {
         return this.orgao;
-    }
-
-    public void setOrgao(final DFUnidadeFederativa orgao) {
-        this.orgao = orgao;
     }
 }

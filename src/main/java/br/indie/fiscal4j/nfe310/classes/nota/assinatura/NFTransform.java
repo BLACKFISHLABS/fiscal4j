@@ -9,11 +9,11 @@ public class NFTransform extends DFBase {
     @Attribute(name = "Algorithm", required = false)
     private String algorithm;
 
-    public String getAlgorithm() {
-        return this.algorithm;
-    }
-
     public void setAlgorithm(final String algorithm) {
         this.algorithm = algorithm;
+    }
+
+    public String getAlgorithm() {
+        return this.algorithm;
     }
 }

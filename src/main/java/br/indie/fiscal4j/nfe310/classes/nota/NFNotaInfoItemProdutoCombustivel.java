@@ -41,26 +41,42 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
         this.encerrante = null;
     }
 
+    public void setCodigoProdutoANP(final String codigoProdutoANP) {
+        StringValidador.exatamente9(codigoProdutoANP, "Codigo Produto ANP Combustivel");
+        this.codigoProdutoANP = codigoProdutoANP;
+    }
+
     public void setCodigoAutorizacaoCODIF(final String codigoAutorizacaoCODIF) {
         StringValidador.tamanho21(codigoAutorizacaoCODIF, "Codigo Autorizacao CODIF Combustivel");
         this.codigoAutorizacaoCOFIF = codigoAutorizacaoCODIF;
+    }
+
+    public void setQuantidade(final BigDecimal quantidade) {
+        this.quantidade = BigDecimalParser.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
+    }
+
+    public void setUf(final DFUnidadeFederativa uf) {
+        this.uf = uf.getCodigo();
+    }
+
+    public void setCide(final NFNotaInfoItemProdutoCombustivelCIDE cide) {
+        this.cide = cide;
+    }
+
+    public void setPercentualGasNatural(final BigDecimal percentualGasNatural) {
+        this.percentualGasNatural = BigDecimalParser.tamanho5Com2CasasDecimais(percentualGasNatural, "Percentual Gas Natural Combustivel");
+    }
+
+    public void setEncerrante(final NFNotaInfoItemProdutoCombustivelEncerrante encerrante) {
+        this.encerrante = encerrante;
     }
 
     public String getCodigoProdutoANP() {
         return this.codigoProdutoANP;
     }
 
-    public void setCodigoProdutoANP(final String codigoProdutoANP) {
-        StringValidador.exatamente9(codigoProdutoANP, "Codigo Produto ANP Combustivel");
-        this.codigoProdutoANP = codigoProdutoANP;
-    }
-
     public String getPercentualGasNatural() {
         return this.percentualGasNatural;
-    }
-
-    public void setPercentualGasNatural(final BigDecimal percentualGasNatural) {
-        this.percentualGasNatural = BigDecimalParser.tamanho5Com2CasasDecimais(percentualGasNatural, "Percentual Gas Natural Combustivel");
     }
 
     public String getCodigoAutorizacaoCOFIF() {
@@ -71,31 +87,15 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
         return this.quantidade;
     }
 
-    public void setQuantidade(final BigDecimal quantidade) {
-        this.quantidade = BigDecimalParser.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
-    }
-
     public String getUf() {
         return this.uf;
-    }
-
-    public void setUf(final DFUnidadeFederativa uf) {
-        this.uf = uf.getCodigo();
     }
 
     public NFNotaInfoItemProdutoCombustivelCIDE getCide() {
         return this.cide;
     }
 
-    public void setCide(final NFNotaInfoItemProdutoCombustivelCIDE cide) {
-        this.cide = cide;
-    }
-
     public NFNotaInfoItemProdutoCombustivelEncerrante getEncerrante() {
         return encerrante;
-    }
-
-    public void setEncerrante(final NFNotaInfoItemProdutoCombustivelEncerrante encerrante) {
-        this.encerrante = encerrante;
     }
 }

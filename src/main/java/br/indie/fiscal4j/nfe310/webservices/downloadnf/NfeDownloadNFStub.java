@@ -14,13 +14,48 @@ import javax.xml.namespace.QName;
  */
 @SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
-    private static int counter = 0;
+    protected org.apache.axis2.description.AxisOperation[] _operations;
+
     // hashmaps to keep the fault mapping
     private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
     private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     private final java.util.HashMap faultMessageMap = new java.util.HashMap();
-    private final javax.xml.namespace.QName[] opNameArray = null;
-    protected org.apache.axis2.description.AxisOperation[] _operations;
+
+    private static int counter = 0;
+
+    private static synchronized java.lang.String getUniqueSuffix() {
+        // reset the counter if it is greater than 99999
+        if (NfeDownloadNFStub.counter > 99999) {
+            NfeDownloadNFStub.counter = 0;
+        }
+        NfeDownloadNFStub.counter = NfeDownloadNFStub.counter + 1;
+        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + NfeDownloadNFStub.counter;
+    }
+
+    private void populateAxisService() throws org.apache.axis2.AxisFault {
+
+        // creating the Service with a unique name
+        this._service = new org.apache.axis2.description.AxisService("NfeDownloadNF" + NfeDownloadNFStub.getUniqueSuffix());
+        this.addAnonymousOperations();
+
+        // creating the operations
+        org.apache.axis2.description.AxisOperation __operation;
+
+        this._operations = new org.apache.axis2.description.AxisOperation[1];
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDownloadNF"));
+        this._service.addOperation(__operation);
+
+        this._operations[0] = __operation;
+
+    }
+
+    // populates the faults
+    private void populateFaults() {
+
+    }
 
     /**
      * Constructor that takes in a configContext
@@ -71,40 +106,6 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
      */
     public NfeDownloadNFStub(final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(null, targetEndpoint);
-    }
-
-    private static synchronized java.lang.String getUniqueSuffix() {
-        // reset the counter if it is greater than 99999
-        if (NfeDownloadNFStub.counter > 99999) {
-            NfeDownloadNFStub.counter = 0;
-        }
-        NfeDownloadNFStub.counter = NfeDownloadNFStub.counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + NfeDownloadNFStub.counter;
-    }
-
-    private void populateAxisService() throws org.apache.axis2.AxisFault {
-
-        // creating the Service with a unique name
-        this._service = new org.apache.axis2.description.AxisService("NfeDownloadNF" + NfeDownloadNFStub.getUniqueSuffix());
-        this.addAnonymousOperations();
-
-        // creating the operations
-        org.apache.axis2.description.AxisOperation __operation;
-
-        this._operations = new org.apache.axis2.description.AxisOperation[1];
-
-        __operation = new org.apache.axis2.description.OutInAxisOperation();
-
-        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDownloadNF"));
-        this._service.addOperation(__operation);
-
-        this._operations[0] = __operation;
-
-    }
-
-    // populates the faults
-    private void populateFaults() {
-
     }
 
     /**
@@ -370,6 +371,8 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
         return returnMap;
     }
 
+    private final javax.xml.namespace.QName[] opNameArray = null;
+
     private boolean optimizeContent(final javax.xml.namespace.QName opName) {
 
         if (this.opNameArray == null) {
@@ -383,100 +386,17 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
         return false;
     }
 
-    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName methodQName) throws org.apache.axis2.AxisFault {
-
-        try {
-
-            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    /**
-     * get the default envelope
-     */
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory) {
-        return factory.getDefaultEnvelope();
-    }
-
-    private java.lang.Object fromOM(final org.apache.axiom.om.OMElement param, final java.lang.Class type, final java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
-
-        try {
-
-            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.class.equals(type)) {
-
-                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.class.equals(type)) {
-
-                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.class.equals(type)) {
-
-                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-        } catch (final java.lang.Exception e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-        return null;
-    }
-
     // https://www.nfe.fazenda.gov.br/NfeDownloadNF/NfeDownloadNF.asmx
     public static class NfeDadosMsg implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDadosMsg", "");
         private static final long serialVersionUID = -6125867823526921405L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDadosMsg", "");
+
         /**
          * field for ExtraElement
          */
 
         protected org.apache.axiom.om.OMElement localExtraElement;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -545,6 +465,13 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -810,20 +737,15 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeCabecMsgE implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeCabecMsg", "");
         private static final long serialVersionUID = -1490720242895283052L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeCabecMsg", "");
+
         /**
          * field for NfeCabecMsg
          */
 
         protected NfeCabecMsg localNfeCabecMsg;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -873,6 +795,13 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
             }
             this.localNfeCabecMsg.serialize(NfeCabecMsgE.MY_QNAME, xmlWriter);
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1107,8 +1036,6 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
     }
 
-    /* methods to provide back word compatibility */
-
     public static class NfeCabecMsg implements org.apache.axis2.databinding.ADBBean {
         private static final long serialVersionUID = -5336928686307679891L;
         /*
@@ -1125,27 +1052,6 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
          * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
          */
         protected boolean localVersaoDadosTracker = false;
-        /**
-         * field for CUF
-         */
-
-        protected java.lang.String localCUF;
-        /*
-         * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
-         */
-        protected boolean localCUFTracker = false;
-        /**
-         * field for ExtraAttributes This was an Attribute! This was an Array!
-         */
-
-        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         public boolean isVersaoDadosSpecified() {
             return this.localVersaoDadosTracker;
@@ -1171,6 +1077,17 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
             this.localVersaoDados = param;
 
         }
+
+        /**
+         * field for CUF
+         */
+
+        protected java.lang.String localCUF;
+
+        /*
+         * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
+         */
+        protected boolean localCUFTracker = false;
 
         public boolean isCUFSpecified() {
             return this.localCUFTracker;
@@ -1198,24 +1115,18 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
         }
 
         /**
+         * field for ExtraAttributes This was an Attribute! This was an Array!
+         */
+
+        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
+
+        /**
          * Auto generated getter method
          *
          * @return org.apache.axiom.om.OMAttribute[]
          */
         public org.apache.axiom.om.OMAttribute[] getExtraAttributes() {
             return this.localExtraAttributes;
-        }
-
-        /**
-         * Auto generated setter method
-         *
-         * @param param ExtraAttributes
-         */
-        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
-
-            this.validateExtraAttributes(param);
-
-            this.localExtraAttributes = param;
         }
 
         /**
@@ -1231,6 +1142,18 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
                 throw new java.lang.RuntimeException();
             }
 
+        }
+
+        /**
+         * Auto generated setter method
+         *
+         * @param param ExtraAttributes
+         */
+        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
+
+            this.validateExtraAttributes(param);
+
+            this.localExtraAttributes = param;
         }
 
         /**
@@ -1329,6 +1252,13 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
             }
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1649,20 +1579,15 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeDownloadNFResult implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDownloadNFResult", "");
         private static final long serialVersionUID = -7391446359804967778L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF", "nfeDownloadNFResult", "");
+
         /**
          * field for ExtraElement
          */
 
         protected org.apache.axiom.om.OMElement localExtraElement;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         /**
          * Auto generated getter method
@@ -1731,6 +1656,13 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/NfeDownloadNF")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         /**
@@ -1993,6 +1925,86 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
         }// end of factory class
 
+    }
+
+    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName methodQName) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    /**
+     * get the default envelope
+     */
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory) {
+        return factory.getDefaultEnvelope();
+    }
+
+    private java.lang.Object fromOM(final org.apache.axiom.om.OMElement param, final java.lang.Class type, final java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.class.equals(type)) {
+
+                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.class.equals(type)) {
+
+                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.class.equals(type)) {
+
+                return br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+        } catch (final java.lang.Exception e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+        return null;
     }
 
 }

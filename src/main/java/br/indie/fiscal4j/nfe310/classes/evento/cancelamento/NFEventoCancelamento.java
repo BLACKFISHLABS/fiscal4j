@@ -22,27 +22,27 @@ public class NFEventoCancelamento extends DFBase {
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
-    public NFInfoEventoCancelamento getInfoEvento() {
-        return this.infoEvento;
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
-    public void setInfoEvento(final NFInfoEventoCancelamento infoEvento) {
-        this.infoEvento = infoEvento;
+    public NFInfoEventoCancelamento getInfoEvento() {
+        return this.infoEvento;
     }
 
     public String getVersao() {
         return this.versao;
     }
 
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
-    }
-
-    public NFSignature getAssinatura() {
-        return this.assinatura;
+    public void setInfoEvento(final NFInfoEventoCancelamento infoEvento) {
+        this.infoEvento = infoEvento;
     }
 
     public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
+    }
+
+    public NFSignature getAssinatura() {
+        return this.assinatura;
     }
 }

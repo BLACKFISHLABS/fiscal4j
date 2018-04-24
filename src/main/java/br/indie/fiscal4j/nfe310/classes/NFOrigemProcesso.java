@@ -16,6 +16,10 @@ public enum NFOrigemProcesso {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFOrigemProcesso valueOfCodigo(final String codigo) {
         for (final NFOrigemProcesso origemProcesso : NFOrigemProcesso.values()) {
             if (origemProcesso.getCodigo().equals(codigo)) {
@@ -23,10 +27,6 @@ public enum NFOrigemProcesso {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

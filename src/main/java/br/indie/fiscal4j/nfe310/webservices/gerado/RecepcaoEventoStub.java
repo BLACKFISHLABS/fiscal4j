@@ -16,7 +16,8 @@ import java.util.Vector;
  */
 
 public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
-    private static int counter = 0;
+    protected org.apache.axis2.description.AxisOperation[] _operations;
+
     // hashmaps to keep the fault mapping
     @SuppressWarnings("rawtypes")
     private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
@@ -24,8 +25,42 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
     private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     @SuppressWarnings("rawtypes")
     private final java.util.HashMap faultMessageMap = new java.util.HashMap();
-    private final javax.xml.namespace.QName[] opNameArray = null;
-    protected org.apache.axis2.description.AxisOperation[] _operations;
+
+    private static int counter = 0;
+
+    private static synchronized java.lang.String getUniqueSuffix() {
+        // reset the counter if it is greater than 99999
+        if (RecepcaoEventoStub.counter > 99999) {
+            RecepcaoEventoStub.counter = 0;
+        }
+        RecepcaoEventoStub.counter = RecepcaoEventoStub.counter + 1;
+        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + RecepcaoEventoStub.counter;
+    }
+
+    private void populateAxisService() throws org.apache.axis2.AxisFault {
+
+        // creating the Service with a unique name
+        this._service = new org.apache.axis2.description.AxisService("RecepcaoEvento" + RecepcaoEventoStub.getUniqueSuffix());
+        this.addAnonymousOperations();
+
+        // creating the operations
+        org.apache.axis2.description.AxisOperation __operation;
+
+        this._operations = new org.apache.axis2.description.AxisOperation[1];
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeRecepcaoEvento"));
+        this._service.addOperation(__operation);
+
+        this._operations[0] = __operation;
+
+    }
+
+    // populates the faults
+    private void populateFaults() {
+
+    }
 
     public RecepcaoEventoStub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(configurationContext, targetEndpoint, false);
@@ -60,40 +95,6 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     public RecepcaoEventoStub(final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(null, targetEndpoint);
-    }
-
-    private static synchronized java.lang.String getUniqueSuffix() {
-        // reset the counter if it is greater than 99999
-        if (RecepcaoEventoStub.counter > 99999) {
-            RecepcaoEventoStub.counter = 0;
-        }
-        RecepcaoEventoStub.counter = RecepcaoEventoStub.counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + RecepcaoEventoStub.counter;
-    }
-
-    private void populateAxisService() throws org.apache.axis2.AxisFault {
-
-        // creating the Service with a unique name
-        this._service = new org.apache.axis2.description.AxisService("RecepcaoEvento" + RecepcaoEventoStub.getUniqueSuffix());
-        this.addAnonymousOperations();
-
-        // creating the operations
-        org.apache.axis2.description.AxisOperation __operation;
-
-        this._operations = new org.apache.axis2.description.AxisOperation[1];
-
-        __operation = new org.apache.axis2.description.OutInAxisOperation();
-
-        __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeRecepcaoEvento"));
-        this._service.addOperation(__operation);
-
-        this._operations[0] = __operation;
-
-    }
-
-    // populates the faults
-    private void populateFaults() {
-
     }
 
     public RecepcaoEventoStub.NfeRecepcaoEventoResult nfeRecepcaoEvento(
@@ -193,6 +194,8 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
         return returnMap;
     }
 
+    private final javax.xml.namespace.QName[] opNameArray = null;
+
     private boolean optimizeContent(final javax.xml.namespace.QName opName) {
 
         if (this.opNameArray == null) {
@@ -206,75 +209,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
         return false;
     }
 
-    private org.apache.axiom.om.OMElement toOM(final RecepcaoEventoStub.NfeCabecMsgE param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
-
-        try {
-            return param.getOMElement(RecepcaoEventoStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final RecepcaoEventoStub.NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName methodQName) throws org.apache.axis2.AxisFault {
-
-        try {
-
-            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RecepcaoEventoStub.NfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
-        } catch (final org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-    }
-
-    private java.lang.Object fromOM(final org.apache.axiom.om.OMElement param, final java.lang.Class<?> type, final java.util.Map<String, String> extraNamespaces) throws org.apache.axis2.AxisFault {
-
-        try {
-
-            if (RecepcaoEventoStub.NfeDadosMsg.class.equals(type)) {
-
-                return RecepcaoEventoStub.NfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-            if (RecepcaoEventoStub.NfeRecepcaoEventoResult.class.equals(type)) {
-
-                return RecepcaoEventoStub.NfeRecepcaoEventoResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-            if (RecepcaoEventoStub.NfeCabecMsgE.class.equals(type)) {
-
-                return RecepcaoEventoStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-            if (RecepcaoEventoStub.NfeCabecMsgE.class.equals(type)) {
-
-                return RecepcaoEventoStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-            }
-
-        } catch (final java.lang.Exception e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-        return null;
-    }
-
     // https://nfe.sefazvirtual.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx
     public static class NfeDadosMsg implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeDadosMsg", "");
         private static final long serialVersionUID = 7332017688778139531L;
-        protected org.apache.axiom.om.OMElement localExtraElement;
 
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeDadosMsg", "");
+
+        protected org.apache.axiom.om.OMElement localExtraElement;
 
         public org.apache.axiom.om.OMElement getExtraElement() {
             return this.localExtraElement;
@@ -328,6 +269,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         private void writeStartElement(java.lang.String prefix, final java.lang.String namespace, final java.lang.String localPart, final javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
@@ -486,16 +434,11 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeRecepcaoEventoResult implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeRecepcaoEventoResult", "");
         private static final long serialVersionUID = -7520254300393624342L;
-        protected org.apache.axiom.om.OMElement localExtraElement;
 
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeRecepcaoEventoResult", "");
+
+        protected org.apache.axiom.om.OMElement localExtraElement;
 
         public org.apache.axiom.om.OMElement getExtraElement() {
             return this.localExtraElement;
@@ -549,6 +492,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         private void writeStartElement(java.lang.String prefix, final java.lang.String namespace, final java.lang.String localPart, final javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
@@ -692,8 +642,10 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
     }
 
     public static class NfeCabecMsgE implements org.apache.axis2.databinding.ADBBean {
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeCabecMsg", "");
         private static final long serialVersionUID = -1051881154292027306L;
+
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento", "nfeCabecMsg", "");
+
         protected NfeCabecMsg localNfeCabecMsg;
 
         public NfeCabecMsg getNfeCabecMsg() {
@@ -783,8 +735,6 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
     }
 
-    /* methods to provide back word compatibility */
-
     public static class NfeCabecMsg implements org.apache.axis2.databinding.ADBBean {
         /*
          * This type was generated from the piece of schema that had name = nfeCabecMsg Namespace URI = http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento Namespace Prefix = ns1
@@ -797,19 +747,6 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
          * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
          */
         protected boolean localCUFTracker = false;
-        protected java.lang.String localVersaoDados;
-        /*
-         * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
-         */
-        protected boolean localVersaoDadosTracker = false;
-        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
-
-        private static java.lang.String generatePrefix(final java.lang.String namespace) {
-            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
-                return "";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
 
         public boolean isCUFSpecified() {
             return this.localCUFTracker;
@@ -826,6 +763,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         }
 
+        protected java.lang.String localVersaoDados;
+
+        /*
+         * This tracker boolean wil be used to detect whether the user called the set method for this attribute. It will be used to determine whether to include this field in the serialized XML
+         */
+        protected boolean localVersaoDadosTracker = false;
+
         public boolean isVersaoDadosSpecified() {
             return this.localVersaoDadosTracker;
         }
@@ -841,15 +785,10 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         }
 
+        protected org.apache.axiom.om.OMAttribute[] localExtraAttributes;
+
         public org.apache.axiom.om.OMAttribute[] getExtraAttributes() {
             return this.localExtraAttributes;
-        }
-
-        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
-
-            this.validateExtraAttributes(param);
-
-            this.localExtraAttributes = param;
         }
 
         protected void validateExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
@@ -862,6 +801,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
                 throw new java.lang.RuntimeException();
             }
 
+        }
+
+        public void setExtraAttributes(final org.apache.axiom.om.OMAttribute[] param) {
+
+            this.validateExtraAttributes(param);
+
+            this.localExtraAttributes = param;
         }
 
         public void addExtraAttributes(final org.apache.axiom.om.OMAttribute param) {
@@ -950,6 +896,13 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
             }
             xmlWriter.writeEndElement();
 
+        }
+
+        private static java.lang.String generatePrefix(final java.lang.String namespace) {
+            if (namespace.equals("http://www.portalfiscal.inf.br/nfe/wsdl/RecepcaoEvento")) {
+                return "";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
         private void writeStartElement(java.lang.String prefix, final java.lang.String namespace, final java.lang.String localPart, final javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
@@ -1156,5 +1109,64 @@ public class RecepcaoEventoStub extends org.apache.axis2.client.Stub {
 
         }// end of factory class
 
+    }
+
+    private org.apache.axiom.om.OMElement toOM(final RecepcaoEventoStub.NfeCabecMsgE param, final boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(RecepcaoEventoStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final RecepcaoEventoStub.NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName methodQName) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(RecepcaoEventoStub.NfeDadosMsg.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (final org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    private java.lang.Object fromOM(final org.apache.axiom.om.OMElement param, final java.lang.Class<?> type, final java.util.Map<String, String> extraNamespaces) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            if (RecepcaoEventoStub.NfeDadosMsg.class.equals(type)) {
+
+                return RecepcaoEventoStub.NfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (RecepcaoEventoStub.NfeRecepcaoEventoResult.class.equals(type)) {
+
+                return RecepcaoEventoStub.NfeRecepcaoEventoResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (RecepcaoEventoStub.NfeCabecMsgE.class.equals(type)) {
+
+                return RecepcaoEventoStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (RecepcaoEventoStub.NfeCabecMsgE.class.equals(type)) {
+
+                return RecepcaoEventoStub.NfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+        } catch (final java.lang.Exception e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+        return null;
     }
 }

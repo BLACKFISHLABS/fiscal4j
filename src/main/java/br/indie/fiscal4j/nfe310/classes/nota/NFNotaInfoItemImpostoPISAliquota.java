@@ -33,10 +33,6 @@ public class NFNotaInfoItemImpostoPISAliquota extends DFBase {
         this.valorTributo = null;
     }
 
-    public NFNotaInfoSituacaoTributariaPIS getSituacaoTributaria() {
-        return this.situacaoTributaria;
-    }
-
     public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaPIS situacaoTributaria) {
         if (!NFNotaInfoItemImpostoPISAliquota.SITUACOES_VALIDAS.contains(situacaoTributaria)) {
             throw new IllegalStateException("Situacao tributaria invalida no item PIS aliquota");
@@ -44,27 +40,31 @@ public class NFNotaInfoItemImpostoPISAliquota extends DFBase {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
-    }
-
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC PIS Item");
-    }
-
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
     }
 
     public void setPercentualAliquota(final BigDecimal aliquota) {
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota PIS Item");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valor) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valor, "Valor PIS Item");
+    }
+
+    public NFNotaInfoSituacaoTributariaPIS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
     }
 }

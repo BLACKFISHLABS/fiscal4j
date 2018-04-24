@@ -18,19 +18,11 @@ public class NFNotaInfoItemImpostoCOFINS extends DFBase {
     @Element(name = "COFINSOutr", required = false)
     private NFNotaInfoItemImpostoCOFINSOutrasOperacoes outrasOperacoes;
 
-    public NFNotaInfoItemImpostoCOFINSAliquota getAliquota() {
-        return this.aliquota;
-    }
-
     public void setAliquota(final NFNotaInfoItemImpostoCOFINSAliquota aliquota) {
         if (this.quantidade != null || this.naoTributavel != null || this.outrasOperacoes != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributavel e outras operacoes sao mutuamente exclusivos");
         }
         this.aliquota = aliquota;
-    }
-
-    public NFNotaInfoItemImpostoCOFINSQuantidade getQuantidade() {
-        return this.quantidade;
     }
 
     public void setQuantidade(final NFNotaInfoItemImpostoCOFINSQuantidade quantidade) {
@@ -40,10 +32,6 @@ public class NFNotaInfoItemImpostoCOFINS extends DFBase {
         this.quantidade = quantidade;
     }
 
-    public NFNotaInfoItemImpostoCOFINSNaoTributavel getNaoTributavel() {
-        return this.naoTributavel;
-    }
-
     public void setNaoTributavel(final NFNotaInfoItemImpostoCOFINSNaoTributavel naoTributavel) {
         if (this.quantidade != null || this.aliquota != null || this.outrasOperacoes != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributavel e outras operacoes sao mutuamente exclusivos");
@@ -51,14 +39,26 @@ public class NFNotaInfoItemImpostoCOFINS extends DFBase {
         this.naoTributavel = naoTributavel;
     }
 
-    public NFNotaInfoItemImpostoCOFINSOutrasOperacoes getOutrasOperacoes() {
-        return this.outrasOperacoes;
-    }
-
     public void setOutrasOperacoes(final NFNotaInfoItemImpostoCOFINSOutrasOperacoes outrasOperacoes) {
         if (this.quantidade != null || this.naoTributavel != null || this.aliquota != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributavel e outras operacoes sao mutuamente exclusivos");
         }
         this.outrasOperacoes = outrasOperacoes;
+    }
+
+    public NFNotaInfoItemImpostoCOFINSAliquota getAliquota() {
+        return this.aliquota;
+    }
+
+    public NFNotaInfoItemImpostoCOFINSQuantidade getQuantidade() {
+        return this.quantidade;
+    }
+
+    public NFNotaInfoItemImpostoCOFINSNaoTributavel getNaoTributavel() {
+        return this.naoTributavel;
+    }
+
+    public NFNotaInfoItemImpostoCOFINSOutrasOperacoes getOutrasOperacoes() {
+        return this.outrasOperacoes;
     }
 }

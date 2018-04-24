@@ -17,6 +17,10 @@ public enum NFTipoImpressao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFTipoImpressao valueOfCodigo(final String codigo) {
         for (final NFTipoImpressao tipo : NFTipoImpressao.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -24,10 +28,6 @@ public enum NFTipoImpressao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

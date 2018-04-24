@@ -58,123 +58,123 @@ public class NFNotaInfoItemImpostoICMSSN900 extends DFBase {
     @Element(name = "vCredICMSSN", required = false)
     private String valorCreditoICMSSN;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
-        return this.situacaoOperacaoSN;
     }
 
     public void setSituacaoOperacaoSN(final NFNotaSituacaoOperacionalSimplesNacional situacaoOperacaoSN) {
         this.situacaoOperacaoSN = situacaoOperacaoSN;
     }
 
-    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
-        return this.modalidadeBCICMS;
-    }
-
     public void setModalidadeBCICMS(final NFNotaInfoItemModalidadeBCICMS modalidadeBCICMS) {
         this.modalidadeBCICMS = modalidadeBCICMS;
-    }
-
-    public String getValorBCICMS() {
-        return this.valorBCICMS;
     }
 
     public void setValorBCICMS(final BigDecimal valorBCICMS) {
         this.valorBCICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMS, "Valor BC ICMSSN900");
     }
 
-    public String getPercentualReducaoBC() {
-        return this.percentualReducaoBC;
-    }
-
     public void setPercentualReducaoBC(final BigDecimal percentualReducaoBC) {
         this.percentualReducaoBC = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBC, "Percentual Reducao BC ICMSSN900");
-    }
-
-    public String getPercentualAliquotaImposto() {
-        return this.percentualAliquotaImposto;
     }
 
     public void setPercentualAliquotaImposto(final BigDecimal aliquotaImposto) {
         this.percentualAliquotaImposto = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquotaImposto, "Aliquota Imposto ICMSSN900");
     }
 
-    public String getValorICMS() {
-        return this.valorICMS;
-    }
-
     public void setValorICMS(final BigDecimal valorICMS) {
         this.valorICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMS, "Valor ICMSSN900");
-    }
-
-    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
-        return this.modalidadeBCICMSST;
     }
 
     public void setModalidadeBCICMSST(final NFNotaInfoItemModalidadeBCICMSST modalidadeBCICMSST) {
         this.modalidadeBCICMSST = modalidadeBCICMSST;
     }
 
-    public String getPercentualMargemValorAdicionadoICMSST() {
-        return this.percentualMargemValorAdicionadoICMSST;
-    }
-
     public void setPercentualMargemValorAdicionadoICMSST(final BigDecimal percentualMargemValorAdicionadoICMSST) {
         this.percentualMargemValorAdicionadoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualMargemValorAdicionadoICMSST, "Percentual Margel Valor Adicionado ICMS ST ICMSSN900");
-    }
-
-    public String getPercentualReducaoBCICMSST() {
-        return this.percentualReducaoBCICMSST;
     }
 
     public void setPercentualReducaoBCICMSST(final BigDecimal percentualReducaoBCICMSST) {
         this.percentualReducaoBCICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCICMSST, "Percentual Reducao BC ICMS ST ICMSSN900");
     }
 
-    public String getValorBCICMSST() {
-        return this.valorBCICMSST;
-    }
-
     public void setValorBCICMSST(final BigDecimal valorBCICMSST) {
         this.valorBCICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSST, "Valor BC ICMS ST ICMSSN900");
-    }
-
-    public String getPercentualAliquotaImpostoICMSST() {
-        return this.percentualAliquotaImpostoICMSST;
     }
 
     public void setPercentualAliquotaImpostoICMSST(final BigDecimal aliquotaImpostoICMSST) {
         this.percentualAliquotaImpostoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquotaImpostoICMSST, "Aliquota Imposto ICMS ST ICMSSN900");
     }
 
-    public String getValorICMSST() {
-        return this.valorICMSST;
-    }
-
     public void setValorICMSST(final BigDecimal valorICMSST) {
         this.valorICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSST, "Valor ICMS ST ICMSSN900");
-    }
-
-    public String getPercentualAliquotaAplicavelCalculoCreditoSN() {
-        return this.percentualAliquotaAplicavelCalculoCreditoSN;
     }
 
     public void setPercentualAliquotaAplicavelCalculoCreditoSN(final BigDecimal percentualAliquotaAplicavelCalculoCreditoSN) {
         this.percentualAliquotaAplicavelCalculoCreditoSN = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaAplicavelCalculoCreditoSN, "Aliquota Aplicavel Calculo Credito SN ICMSSN900");
     }
 
-    public String getValorCreditoICMSSN() {
-        return this.valorCreditoICMSSN;
-    }
-
     public void setValorCreditoICMSSN(final BigDecimal valorCreditoICMSSN) {
         this.valorCreditoICMSSN = BigDecimalParser.tamanho15Com2CasasDecimais(valorCreditoICMSSN, "Valor Credito ICMSSN900");
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
+        return this.situacaoOperacaoSN;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
+        return this.modalidadeBCICMS;
+    }
+
+    public String getValorBCICMS() {
+        return this.valorBCICMS;
+    }
+
+    public String getPercentualReducaoBC() {
+        return this.percentualReducaoBC;
+    }
+
+    public String getPercentualAliquotaImposto() {
+        return this.percentualAliquotaImposto;
+    }
+
+    public String getValorICMS() {
+        return this.valorICMS;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
+        return this.modalidadeBCICMSST;
+    }
+
+    public String getPercentualMargemValorAdicionadoICMSST() {
+        return this.percentualMargemValorAdicionadoICMSST;
+    }
+
+    public String getPercentualReducaoBCICMSST() {
+        return this.percentualReducaoBCICMSST;
+    }
+
+    public String getValorBCICMSST() {
+        return this.valorBCICMSST;
+    }
+
+    public String getPercentualAliquotaImpostoICMSST() {
+        return this.percentualAliquotaImpostoICMSST;
+    }
+
+    public String getValorICMSST() {
+        return this.valorICMSST;
+    }
+
+    public String getPercentualAliquotaAplicavelCalculoCreditoSN() {
+        return this.percentualAliquotaAplicavelCalculoCreditoSN;
+    }
+
+    public String getValorCreditoICMSSN() {
+        return this.valorCreditoICMSSN;
     }
 }

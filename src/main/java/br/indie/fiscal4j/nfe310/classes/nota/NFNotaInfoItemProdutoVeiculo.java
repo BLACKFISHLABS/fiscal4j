@@ -84,20 +84,8 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     @Element(name = "tpRest", required = true)
     private NFNotaInfoItemProdutoVeiculoRestricao restricao;
 
-    public void setCodigoCorDENATRAN(final NFNotaInfoVeiculoCor corDENATRAN) {
-        this.corDENATRAN = corDENATRAN;
-    }
-
-    public NFNotaInfoItemProdutoVeiculoTipoOperacao getTipoOperacao() {
-        return this.tipoOperacao;
-    }
-
     public void setTipoOperacao(final NFNotaInfoItemProdutoVeiculoTipoOperacao tipoOperacao) {
         this.tipoOperacao = tipoOperacao;
-    }
-
-    public String getChassi() {
-        return this.chassi;
     }
 
     public void setChassi(final String chassi) {
@@ -105,17 +93,9 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.chassi = chassi;
     }
 
-    public String getCodigoCor() {
-        return this.codigoCor;
-    }
-
     public void setCodigoCor(final String codigoCor) {
         StringValidador.exatamente4(codigoCor, "Codigo Cor Veiculo");
         this.codigoCor = codigoCor;
-    }
-
-    public String getDescricaoCor() {
-        return this.descricaoCor;
     }
 
     public void setDescricaoCor(final String descricaoCor) {
@@ -123,17 +103,9 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.descricaoCor = descricaoCor;
     }
 
-    public String getPotencia() {
-        return this.potencia;
-    }
-
     public void setPotencia(final String potencia) {
         StringValidador.exatamente4(potencia, "Potencia Veiculo");
         this.potencia = potencia;
-    }
-
-    public String getCilindrada() {
-        return this.cilindrada;
     }
 
     public void setCilindrada(final String cilindrada) {
@@ -141,24 +113,12 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.cilindrada = cilindrada;
     }
 
-    public String getPesoLiquido() {
-        return this.pesoLiquido;
-    }
-
     public void setPesoLiquido(final BigDecimal pesoLiquido) {
         this.pesoLiquido = BigDecimalParser.tamanho9Com4CasasDecimais(pesoLiquido, "Peso Liquido Veiculo");
     }
 
-    public String getPesoBruto() {
-        return this.pesoBruto;
-    }
-
     public void setPesoBruto(final BigDecimal pesoBruto) {
         this.pesoBruto = BigDecimalParser.tamanho9Com4CasasDecimais(pesoBruto, "Peso Bruto Veiculo");
-    }
-
-    public String getNumeroSerie() {
-        return this.numeroSerie;
     }
 
     public void setNumeroSerie(final String numeroSerie) {
@@ -166,16 +126,8 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.numeroSerie = numeroSerie;
     }
 
-    public NFNotaInfoCombustivelTipo getTipoCombustivel() {
-        return this.tipoCombustivel;
-    }
-
     public void setTipoCombustivel(final NFNotaInfoCombustivelTipo tipoCombustivel) {
         this.tipoCombustivel = tipoCombustivel;
-    }
-
-    public String getNumeroMotor() {
-        return this.numeroMotor;
     }
 
     public void setNumeroMotor(final String numeroMotor) {
@@ -183,16 +135,8 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.numeroMotor = numeroMotor;
     }
 
-    public String getCapacidadeMaximaTracao() {
-        return this.capacidadeMaximaTracao;
-    }
-
     public void setCapacidadeMaximaTracao(final BigDecimal capacidadeMaximaTracao) {
         this.capacidadeMaximaTracao = BigDecimalParser.tamanho9Com4CasasDecimais(capacidadeMaximaTracao, "Capacidade Maxima Tracao Veiculo");
-    }
-
-    public String getDistanciaEntreEixos() {
-        return this.distanciaEntreEixos;
     }
 
     public void setDistanciaEntreEixos(final String distanciaEntreEixos) {
@@ -200,17 +144,9 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.distanciaEntreEixos = distanciaEntreEixos;
     }
 
-    public Integer getAnoModeloFabricacao() {
-        return this.anoModeloFabricacao;
-    }
-
     public void setAnoModeloFabricacao(final int anoModeloFabricacao) {
         IntegerValidador.exatamente4(anoModeloFabricacao, "Ano Modelo Fabricacao Veiculo");
         this.anoModeloFabricacao = anoModeloFabricacao;
-    }
-
-    public Integer getAnoFabricacao() {
-        return this.anoFabricacao;
     }
 
     public void setAnoFabricacao(final int anoFabricacao) {
@@ -218,54 +154,127 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         this.anoFabricacao = anoFabricacao;
     }
 
-    public String getTipoPintura() {
-        return this.tipoPintura;
-    }
-
     public void setTipoPintura(final String tipoPintura) {
         StringValidador.exatamente1(tipoPintura, "Tipo Pintura Veiculo");
         this.tipoPintura = tipoPintura;
-    }
-
-    public NFNotaInfoTipoVeiculo getTipoVeiculo() {
-        return this.tipoVeiculo;
     }
 
     public void setTipoVeiculo(final NFNotaInfoTipoVeiculo tipoVeiculo) {
         this.tipoVeiculo = tipoVeiculo;
     }
 
-    public NFNotaInfoEspecieVeiculo getEspecieVeiculo() {
-        return this.especieVeiculo;
-    }
-
     public void setEspecieVeiculo(final NFNotaInfoEspecieVeiculo especieVeiculo) {
         this.especieVeiculo = especieVeiculo;
-    }
-
-    public NFNotaInfoItemProdutoVeiculoCondicaoChassi getCondicaoChassi() {
-        return this.condicaoChassi;
     }
 
     public void setCondicaoChassi(final NFNotaInfoItemProdutoVeiculoCondicaoChassi condicaoChassi) {
         this.condicaoChassi = condicaoChassi;
     }
 
-    public NFNotaInfoItemProdutoVeiculoCondicao getCondicao() {
-        return this.condicao;
-    }
-
     public void setCondicao(final NFNotaInfoItemProdutoVeiculoCondicao condicao) {
         this.condicao = condicao;
-    }
-
-    public String getCodigoMarcaModelo() {
-        return this.codigoMarcaModelo;
     }
 
     public void setCodigoMarcaModelo(final String codigoMarcaModelo) {
         StringValidador.exatamente6N(codigoMarcaModelo, "Codigo Marca Modelo Veiculo");
         this.codigoMarcaModelo = codigoMarcaModelo;
+    }
+
+    public void setCodigoCorDENATRAN(final NFNotaInfoVeiculoCor corDENATRAN) {
+        this.corDENATRAN = corDENATRAN;
+    }
+
+    public void setLotacao(final int lotacao) {
+        IntegerValidador.tamanho3(lotacao, "Lotacao Veiculo");
+        this.lotacao = lotacao;
+    }
+
+    public void setRestricao(final NFNotaInfoItemProdutoVeiculoRestricao restricao) {
+        this.restricao = restricao;
+    }
+
+    public NFNotaInfoItemProdutoVeiculoTipoOperacao getTipoOperacao() {
+        return this.tipoOperacao;
+    }
+
+    public String getChassi() {
+        return this.chassi;
+    }
+
+    public String getCodigoCor() {
+        return this.codigoCor;
+    }
+
+    public String getDescricaoCor() {
+        return this.descricaoCor;
+    }
+
+    public String getPotencia() {
+        return this.potencia;
+    }
+
+    public String getCilindrada() {
+        return this.cilindrada;
+    }
+
+    public String getPesoLiquido() {
+        return this.pesoLiquido;
+    }
+
+    public String getPesoBruto() {
+        return this.pesoBruto;
+    }
+
+    public String getNumeroSerie() {
+        return this.numeroSerie;
+    }
+
+    public NFNotaInfoCombustivelTipo getTipoCombustivel() {
+        return this.tipoCombustivel;
+    }
+
+    public String getNumeroMotor() {
+        return this.numeroMotor;
+    }
+
+    public String getCapacidadeMaximaTracao() {
+        return this.capacidadeMaximaTracao;
+    }
+
+    public String getDistanciaEntreEixos() {
+        return this.distanciaEntreEixos;
+    }
+
+    public Integer getAnoModeloFabricacao() {
+        return this.anoModeloFabricacao;
+    }
+
+    public Integer getAnoFabricacao() {
+        return this.anoFabricacao;
+    }
+
+    public String getTipoPintura() {
+        return this.tipoPintura;
+    }
+
+    public NFNotaInfoTipoVeiculo getTipoVeiculo() {
+        return this.tipoVeiculo;
+    }
+
+    public NFNotaInfoEspecieVeiculo getEspecieVeiculo() {
+        return this.especieVeiculo;
+    }
+
+    public NFNotaInfoItemProdutoVeiculoCondicaoChassi getCondicaoChassi() {
+        return this.condicaoChassi;
+    }
+
+    public NFNotaInfoItemProdutoVeiculoCondicao getCondicao() {
+        return this.condicao;
+    }
+
+    public String getCodigoMarcaModelo() {
+        return this.codigoMarcaModelo;
     }
 
     public NFNotaInfoVeiculoCor getCorDENATRAN() {
@@ -276,16 +285,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
         return this.lotacao;
     }
 
-    public void setLotacao(final int lotacao) {
-        IntegerValidador.tamanho3(lotacao, "Lotacao Veiculo");
-        this.lotacao = lotacao;
-    }
-
     public NFNotaInfoItemProdutoVeiculoRestricao getRestricao() {
         return this.restricao;
-    }
-
-    public void setRestricao(final NFNotaInfoItemProdutoVeiculoRestricao restricao) {
-        this.restricao = restricao;
     }
 }

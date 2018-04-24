@@ -5,7 +5,7 @@ import org.simpleframework.xml.Element;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.
- * <p>
+ *
  * <h1>Grupo de informações dos contratantes do serviço de transporte</h1>
  */
 public class MDFInfoModalRodoviarioInfContratante {

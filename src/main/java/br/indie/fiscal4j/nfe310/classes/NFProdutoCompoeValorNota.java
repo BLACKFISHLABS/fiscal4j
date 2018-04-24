@@ -13,6 +13,10 @@ public enum NFProdutoCompoeValorNota {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFProdutoCompoeValorNota valueOfCodigo(final String codigo) {
         for (final NFProdutoCompoeValorNota produtoCompoeValorNota : NFProdutoCompoeValorNota.values()) {
             if (produtoCompoeValorNota.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFProdutoCompoeValorNota {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

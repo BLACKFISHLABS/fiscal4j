@@ -14,6 +14,14 @@ public enum NFFormaPagamentoPrazo {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFFormaPagamentoPrazo valueOfCodigo(final String codigo) {
         for (NFFormaPagamentoPrazo formaPagamento : NFFormaPagamentoPrazo.values()) {
             if (formaPagamento.getCodigo().equals(codigo)) {
@@ -21,14 +29,6 @@ public enum NFFormaPagamentoPrazo {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

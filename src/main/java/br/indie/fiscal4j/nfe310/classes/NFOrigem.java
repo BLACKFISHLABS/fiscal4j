@@ -20,6 +20,10 @@ public enum NFOrigem {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFOrigem valueOfCodigo(final String codigo) {
         for (final NFOrigem origem : NFOrigem.values()) {
             if (origem.getCodigo().equals(codigo)) {
@@ -27,10 +31,6 @@ public enum NFOrigem {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

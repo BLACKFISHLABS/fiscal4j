@@ -13,22 +13,22 @@ public class NFInfoCancelamento extends NFTipoEvento {
     @Element(name = "xJust", required = true)
     private String justificativa;
 
-    public String getJustificativa() {
-        return this.justificativa;
-    }
-
     public void setJustificativa(final String justificativa) {
         StringValidador.tamanho15a256(justificativa, "Justificativa");
         this.justificativa = justificativa;
     }
 
-    public String getProtocoloAutorizacao() {
-        return this.protocoloAutorizacao;
-    }
-
     public void setProtocoloAutorizacao(final String protocoloAutorizacao) {
         StringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
         this.protocoloAutorizacao = protocoloAutorizacao;
+    }
+
+    public String getJustificativa() {
+        return this.justificativa;
+    }
+
+    public String getProtocoloAutorizacao() {
+        return this.protocoloAutorizacao;
     }
 
     @Override

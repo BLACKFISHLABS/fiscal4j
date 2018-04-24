@@ -14,11 +14,23 @@ public class NFNotaInfoItemImpostoIPINaoTributado extends DFBase {
         this.situacaoTributaria = null;
     }
 
-    public NFNotaInfoSituacaoTributariaIPI getSituacaoTributaria() {
-        return this.situacaoTributaria;
+    public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaIPI situacaoTributaria) {
+        //Valores inválidos
+//        00-Entrada com recuperação de crédito
+//        49 - Outras entradas
+//        50-Saída tributada
+//        99-Outras saídas
+        if (situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.ENTRADA_RECUPERACAO_CREDITO)
+                || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_ENTRADAS)
+                || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.SAIDA_TRIBUTADA)
+                || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_SAIDAS)) {
+            throw new IllegalStateException("Situacao tributaria: " + situacaoTributaria.getCodigo() + "  invalido no item IPI nao tributavel");
+        }
+
+        this.situacaoTributaria = situacaoTributaria;
     }
 
-    public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaIPI situacaoTributaria) {
-        this.situacaoTributaria = situacaoTributaria;
+    public NFNotaInfoSituacaoTributariaIPI getSituacaoTributaria() {
+        return this.situacaoTributaria;
     }
 }

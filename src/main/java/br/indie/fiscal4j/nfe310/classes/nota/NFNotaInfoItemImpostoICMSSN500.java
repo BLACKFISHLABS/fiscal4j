@@ -23,35 +23,35 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
     @Element(name = "vICMSSTRet", required = false)
     private String valorICMSSTRetido;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
-        return this.situacaoOperacaoSN;
     }
 
     public void setSituacaoOperacaoSN(final NFNotaSituacaoOperacionalSimplesNacional situacaoOperacaoSN) {
         this.situacaoOperacaoSN = situacaoOperacaoSN;
     }
 
-    public String getValorBCICMSSTRetido() {
-        return this.valorBCICMSSTRetido;
-    }
-
     public void setValorBCICMSSTRetido(final BigDecimal valorBCICMSSTRetido) {
         this.valorBCICMSSTRetido = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSSTRetido, "Valor BC ICMS ST Retido ICMSSN500");
     }
 
-    public String getValorICMSSTRetido() {
-        return this.valorICMSSTRetido;
-    }
-
     public void setValorICMSSTRetido(final BigDecimal valorICMSSTRetido) {
         this.valorICMSSTRetido = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSSTRetido, "Valor ICMS ST Retido ICMSSN500");
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaSituacaoOperacionalSimplesNacional getSituacaoOperacaoSN() {
+        return this.situacaoOperacaoSN;
+    }
+
+    public String getValorBCICMSSTRetido() {
+        return this.valorBCICMSSTRetido;
+    }
+
+    public String getValorICMSSTRetido() {
+        return this.valorICMSSTRetido;
     }
 }

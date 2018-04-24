@@ -59,116 +59,116 @@ public class NFInfoEventoRetorno extends DFBase {
         return this.id;
     }
 
-    public void setId(final String id) {
-        this.id = id;
-    }
-
     public DFAmbiente getAmbiente() {
         return this.ambiente;
-    }
-
-    public void setAmbiente(final DFAmbiente ambiente) {
-        this.ambiente = ambiente;
     }
 
     public String getVersaoAplicativo() {
         return this.versaoAplicativo;
     }
 
-    public void setVersaoAplicativo(final String versaoAplicativo) {
-        this.versaoAplicativo = versaoAplicativo;
-    }
-
     public DFUnidadeFederativa getOrgao() {
         return this.orgao;
-    }
-
-    public void setOrgao(final DFUnidadeFederativa orgao) {
-        this.orgao = orgao;
     }
 
     public Integer getCodigoStatus() {
         return this.codigoStatus;
     }
 
-    public void setCodigoStatus(final Integer codigoStatus) {
-        this.codigoStatus = codigoStatus;
-    }
-
     public String getMotivo() {
         return this.motivo;
-    }
-
-    public void setMotivo(final String motivo) {
-        this.motivo = motivo;
     }
 
     public String getChave() {
         return this.chave;
     }
 
-    public void setChave(final String chave) {
-        this.chave = chave;
-    }
-
     public String getTipoEvento() {
         return this.tipoEvento;
-    }
-
-    public void setTipoEvento(final String tipoEvento) {
-        this.tipoEvento = tipoEvento;
     }
 
     public String getDescricaoEvento() {
         return this.descricaoEvento;
     }
 
-    public void setDescricaoEvento(final String descricaoEvento) {
-        this.descricaoEvento = descricaoEvento;
-    }
-
     public Integer getNumeroSequencialEvento() {
         return this.numeroSequencialEvento;
-    }
-
-    public void setNumeroSequencialEvento(final Integer numeroSequencialEvento) {
-        this.numeroSequencialEvento = numeroSequencialEvento;
     }
 
     public String getCpnj() {
         return this.cpnj;
     }
 
-    public void setCpnj(final String cpnj) {
-        this.cpnj = cpnj;
-    }
-
     public String getCpf() {
         return this.cpf;
-    }
-
-    public void setCpf(final String cpf) {
-        this.cpf = cpf;
     }
 
     public String getEmail() {
         return this.email;
     }
 
-    public void setEmail(final String email) {
-        this.email = email;
-    }
-
     public LocalDateTime getDataHoraRegistro() {
         return this.dataHoraRegistro;
     }
 
-    public void setDataHoraRegistro(final LocalDateTime dataHoraRegistro) {
-        this.dataHoraRegistro = dataHoraRegistro;
-    }
-
     public String getNumeroProtocolo() {
         return this.numeroProtocolo;
+    }
+
+    public void setId(final String id) {
+        this.id = id;
+    }
+
+    public void setAmbiente(final DFAmbiente ambiente) {
+        this.ambiente = ambiente;
+    }
+
+    public void setVersaoAplicativo(final String versaoAplicativo) {
+        this.versaoAplicativo = versaoAplicativo;
+    }
+
+    public void setOrgao(final DFUnidadeFederativa orgao) {
+        this.orgao = orgao;
+    }
+
+    public void setCodigoStatus(final Integer codigoStatus) {
+        this.codigoStatus = codigoStatus;
+    }
+
+    public void setMotivo(final String motivo) {
+        this.motivo = motivo;
+    }
+
+    public void setChave(final String chave) {
+        this.chave = chave;
+    }
+
+    public void setTipoEvento(final String tipoEvento) {
+        this.tipoEvento = tipoEvento;
+    }
+
+    public void setDescricaoEvento(final String descricaoEvento) {
+        this.descricaoEvento = descricaoEvento;
+    }
+
+    public void setNumeroSequencialEvento(final Integer numeroSequencialEvento) {
+        this.numeroSequencialEvento = numeroSequencialEvento;
+    }
+
+    public void setCpnj(final String cpnj) {
+        this.cpnj = cpnj;
+    }
+
+    public void setCpf(final String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setEmail(final String email) {
+        this.email = email;
+    }
+
+    public void setDataHoraRegistro(final LocalDateTime dataHoraRegistro) {
+        this.dataHoraRegistro = dataHoraRegistro;
     }
 
     public void setNumeroProtocolo(final String numeroProtocolo) {

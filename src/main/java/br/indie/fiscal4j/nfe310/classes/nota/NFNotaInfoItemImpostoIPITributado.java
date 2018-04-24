@@ -37,19 +37,11 @@ public class NFNotaInfoItemImpostoIPITributado extends DFBase {
         this.valorTributo = null;
     }
 
-    public NFNotaInfoSituacaoTributariaIPI getSituacaoTributaria() {
-        return this.situacaoTributaria;
-    }
-
     public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaIPI situacaoTributaria) {
         if (!situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.ENTRADA_RECUPERACAO_CREDITO) && !situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_ENTRADAS) && !situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.SAIDA_TRIBUTADA) && !situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_SAIDAS)) {
-            throw new IllegalStateException("Situacao tributaria invalido no item IPI tributado.");
+            throw new IllegalStateException("Situacao tributaria:" + situacaoTributaria.getCodigo() + " invalido no item IPI tributado.");
         }
         this.situacaoTributaria = situacaoTributaria;
-    }
-
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
     }
 
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
@@ -59,19 +51,11 @@ public class NFNotaInfoItemImpostoIPITributado extends DFBase {
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC IPI Tributado");
     }
 
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
-    }
-
     public void setPercentualAliquota(final BigDecimal aliquota) {
         if (this.quantidade != null || this.valorUnidadeTributavel != null) {
             throw new IllegalStateException("Nao pode setar percentual aliquota se quantidade ou valor unidade tributavel esta setado");
         }
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota IPI Tributado");
-    }
-
-    public String getQuantidade() {
-        return this.quantidade;
     }
 
     public void setQuantidade(final BigDecimal quantidade) {
@@ -81,10 +65,6 @@ public class NFNotaInfoItemImpostoIPITributado extends DFBase {
         this.quantidade = BigDecimalParser.tamanho16ComAte4CasasDecimais(quantidade, "Quantidade IPI Tributado");
     }
 
-    public String getValorUnidadeTributavel() {
-        return this.valorUnidadeTributavel;
-    }
-
     public void setValorUnidadeTributavel(final BigDecimal valorUnitario) {
         if (this.valorBaseCalculo != null || this.percentualAliquota != null) {
             throw new IllegalStateException("Nao pode setar valor unidade tributavel se valorBaseCalculo ou PercentualAliquota esta setado");
@@ -92,11 +72,31 @@ public class NFNotaInfoItemImpostoIPITributado extends DFBase {
         this.valorUnidadeTributavel = BigDecimalParser.tamanho15comAte4CasasDecimais(valorUnitario, "Valor Unitario IPI Tributado");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo IPI Tributado");
+    }
+
+    public NFNotaInfoSituacaoTributariaIPI getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getQuantidade() {
+        return this.quantidade;
+    }
+
+    public String getValorUnidadeTributavel() {
+        return this.valorUnidadeTributavel;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
     }
 }

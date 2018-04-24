@@ -17,6 +17,14 @@ public enum NFNotaInfoItemModalidadeBCICMSST {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFNotaInfoItemModalidadeBCICMSST valueOfCodigo(final String codigo) {
         for (final NFNotaInfoItemModalidadeBCICMSST modalidadeBCIMSST : NFNotaInfoItemModalidadeBCICMSST.values()) {
             if (modalidadeBCIMSST.getCodigo().equals(codigo)) {
@@ -24,14 +32,6 @@ public enum NFNotaInfoItemModalidadeBCICMSST {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

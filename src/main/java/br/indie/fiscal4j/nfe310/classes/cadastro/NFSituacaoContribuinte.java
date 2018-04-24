@@ -13,6 +13,10 @@ public enum NFSituacaoContribuinte {
         this.descricao = descricao;
     }
 
+    public int getCodigo() {
+        return this.codigo;
+    }
+
     public static NFSituacaoContribuinte valueOfCodigo(final int codigo) {
         for (final NFSituacaoContribuinte situacaoContribuinte : NFSituacaoContribuinte.values()) {
             if (situacaoContribuinte.getCodigo() == codigo) {
@@ -20,10 +24,6 @@ public enum NFSituacaoContribuinte {
             }
         }
         throw new IllegalStateException(String.format("Situacao do contribuinte n\u00e3o mapeada: %s", codigo));
-    }
-
-    public int getCodigo() {
-        return this.codigo;
     }
 
     @Override

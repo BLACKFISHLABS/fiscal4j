@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 03/11/17.
- * <p>
+ *
  * <h1>Autorizados para download do XML do DF-e</h1>
  */
 @Root(name = "autXML")

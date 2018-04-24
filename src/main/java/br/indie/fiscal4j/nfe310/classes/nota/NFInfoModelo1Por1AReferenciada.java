@@ -27,16 +27,8 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
     @Element(name = "nNF", required = false)
     private String numeroDocumentoFiscal;
 
-    public DFUnidadeFederativa getUf() {
-        return this.uf;
-    }
-
     public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf;
-    }
-
-    public String getAnoMesEmissaoNFe() {
-        return this.anoMesEmissaoNFe;
     }
 
     public void setAnoMesEmissaoNFe(final String anoMesEmissaoNFe) {
@@ -44,17 +36,9 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
         this.anoMesEmissaoNFe = anoMesEmissaoNFe;
     }
 
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
     public void setCnpj(final String cnpj) {
         StringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
-    }
-
-    public String getModeloDocumentoFiscal() {
-        return this.modeloDocumentoFiscal;
     }
 
     public void setModeloDocumentoFiscal(final String modeloDocumentoFiscal) {
@@ -62,21 +46,37 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
         this.modeloDocumentoFiscal = modeloDocumentoFiscal;
     }
 
-    public Integer getSerie() {
-        return this.serie;
-    }
-
     public void setSerie(final Integer serie) {
         IntegerValidador.tamanho3(serie, "Serie");
         this.serie = serie;
     }
 
-    public String getNumeroDocumentoFiscal() {
-        return this.numeroDocumentoFiscal;
-    }
-
     public void setNumeroDocumentoFiscal(final String numeroDocumentoFiscal) {
         StringValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
         this.numeroDocumentoFiscal = numeroDocumentoFiscal;
+    }
+
+    public DFUnidadeFederativa getUf() {
+        return this.uf;
+    }
+
+    public String getAnoMesEmissaoNFe() {
+        return this.anoMesEmissaoNFe;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getModeloDocumentoFiscal() {
+        return this.modeloDocumentoFiscal;
+    }
+
+    public Integer getSerie() {
+        return this.serie;
+    }
+
+    public String getNumeroDocumentoFiscal() {
+        return this.numeroDocumentoFiscal;
     }
 }

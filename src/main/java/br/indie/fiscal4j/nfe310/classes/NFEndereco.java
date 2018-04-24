@@ -41,17 +41,9 @@ public class NFEndereco extends DFBase {
     @Element(name = "fone", required = false)
     private String telefone;
 
-    public String getLogradouro() {
-        return this.logradouro;
-    }
-
     public void setLogradouro(final String logradouro) {
         StringValidador.tamanho60(logradouro, "Logradouro");
         this.logradouro = logradouro;
-    }
-
-    public String getNumero() {
-        return this.numero;
     }
 
     public void setNumero(final String numero) {
@@ -59,17 +51,9 @@ public class NFEndereco extends DFBase {
         this.numero = numero;
     }
 
-    public String getComplemento() {
-        return this.complemento;
-    }
-
     public void setComplemento(final String complemento) {
         StringValidador.tamanho60(complemento, "Complemento");
         this.complemento = complemento;
-    }
-
-    public String getBairro() {
-        return this.bairro;
     }
 
     public void setBairro(final String bairro) {
@@ -77,17 +61,9 @@ public class NFEndereco extends DFBase {
         this.bairro = bairro;
     }
 
-    public String getCodigoMunicipio() {
-        return this.codigoMunicipio;
-    }
-
     public void setCodigoMunicipio(final String codigoMunicipio) {
         StringValidador.exatamente7(codigoMunicipio, "Codigo do Municipio");
         this.codigoMunicipio = codigoMunicipio;
-    }
-
-    public String getDescricaoMunicipio() {
-        return this.descricaoMunicipio;
     }
 
     public void setDescricaoMunicipio(final String descricaoMunicipio) {
@@ -95,16 +71,8 @@ public class NFEndereco extends DFBase {
         this.descricaoMunicipio = descricaoMunicipio;
     }
 
-    public String getUf() {
-        return this.uf;
-    }
-
     public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf.getCodigo();
-    }
-
-    public String getCep() {
-        return this.cep;
     }
 
     public void setCep(final String cep) {
@@ -112,17 +80,9 @@ public class NFEndereco extends DFBase {
         this.cep = cep;
     }
 
-    public String getCodigoPais() {
-        return this.codigoPais;
-    }
-
     public void setCodigoPais(final String codigoPais) {
         StringValidador.tamanho2a4(codigoPais, "Codigo do pais");
         this.codigoPais = codigoPais;
-    }
-
-    public String getDescricaoPais() {
-        return this.descricaoPais;
     }
 
     public void setDescricaoPais(final String descricaoPais) {
@@ -130,12 +90,52 @@ public class NFEndereco extends DFBase {
         this.descricaoPais = descricaoPais;
     }
 
-    public String getTelefone() {
-        return this.telefone;
-    }
-
     public void setTelefone(final String telefone) {
         StringValidador.telefone(telefone);
         this.telefone = telefone;
+    }
+
+    public String getLogradouro() {
+        return this.logradouro;
+    }
+
+    public String getNumero() {
+        return this.numero;
+    }
+
+    public String getComplemento() {
+        return this.complemento;
+    }
+
+    public String getBairro() {
+        return this.bairro;
+    }
+
+    public String getCodigoMunicipio() {
+        return this.codigoMunicipio;
+    }
+
+    public String getDescricaoMunicipio() {
+        return this.descricaoMunicipio;
+    }
+
+    public String getUf() {
+        return this.uf;
+    }
+
+    public String getCep() {
+        return this.cep;
+    }
+
+    public String getCodigoPais() {
+        return this.codigoPais;
+    }
+
+    public String getDescricaoPais() {
+        return this.descricaoPais;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
     }
 }

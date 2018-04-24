@@ -23,6 +23,10 @@ public enum NFViaTransporteInternacional {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFViaTransporteInternacional valueOfCodigo(final String codigo) {
         for (final NFViaTransporteInternacional via : NFViaTransporteInternacional.values()) {
             if (via.getCodigo().equals(codigo)) {
@@ -30,10 +34,6 @@ public enum NFViaTransporteInternacional {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

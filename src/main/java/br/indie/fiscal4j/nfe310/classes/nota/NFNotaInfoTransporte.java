@@ -36,40 +36,20 @@ public class NFNotaInfoTransporte extends DFBase {
     @ElementList(entry = "vol", inline = true, required = false)
     private List<NFNotaInfoVolume> volumes;
 
-    public NFModalidadeFrete getModalidadeFrete() {
-        return this.modalidadeFrete;
-    }
-
     public void setModalidadeFrete(final NFModalidadeFrete modalidadeFrete) {
         this.modalidadeFrete = modalidadeFrete;
-    }
-
-    public NFNotaInfoTransportador getTransportador() {
-        return this.transportador;
     }
 
     public void setTransportador(final NFNotaInfoTransportador transportador) {
         this.transportador = transportador;
     }
 
-    public NFNotaInfoRetencaoICMSTransporte getIcmsTransporte() {
-        return this.icmsTransporte;
-    }
-
     public void setIcmsTransporte(final NFNotaInfoRetencaoICMSTransporte icmsTransporte) {
         this.icmsTransporte = icmsTransporte;
     }
 
-    public NFNotaInfoVeiculo getVeiculo() {
-        return this.veiculo;
-    }
-
     public void setVeiculo(final NFNotaInfoVeiculo veiculo) {
         this.veiculo = veiculo;
-    }
-
-    public List<NFNotaInfoReboque> getReboques() {
-        return this.reboques;
     }
 
     public void setReboques(final List<NFNotaInfoReboque> reboques) {
@@ -77,8 +57,9 @@ public class NFNotaInfoTransporte extends DFBase {
         this.reboques = reboques;
     }
 
-    public String getVagao() {
-        return this.vagao;
+    public void setVolumes(final List<NFNotaInfoVolume> volumes) {
+        ListValidador.tamanho5000(volumes, "Volumes");
+        this.volumes = volumes;
     }
 
     public void setVagao(final String vagao) {
@@ -86,21 +67,40 @@ public class NFNotaInfoTransporte extends DFBase {
         this.vagao = vagao;
     }
 
-    public String getBalsa() {
-        return this.balsa;
-    }
-
     public void setBalsa(final String balsa) {
         StringValidador.tamanho20(balsa, "Balsa");
         this.balsa = balsa;
     }
 
-    public List<NFNotaInfoVolume> getVolumes() {
-        return this.volumes;
+    public NFModalidadeFrete getModalidadeFrete() {
+        return this.modalidadeFrete;
     }
 
-    public void setVolumes(final List<NFNotaInfoVolume> volumes) {
-        ListValidador.tamanho5000(volumes, "Volumes");
-        this.volumes = volumes;
+    public NFNotaInfoTransportador getTransportador() {
+        return this.transportador;
+    }
+
+    public NFNotaInfoRetencaoICMSTransporte getIcmsTransporte() {
+        return this.icmsTransporte;
+    }
+
+    public NFNotaInfoVeiculo getVeiculo() {
+        return this.veiculo;
+    }
+
+    public List<NFNotaInfoReboque> getReboques() {
+        return this.reboques;
+    }
+
+    public String getVagao() {
+        return this.vagao;
+    }
+
+    public String getBalsa() {
+        return this.balsa;
+    }
+
+    public List<NFNotaInfoVolume> getVolumes() {
+        return this.volumes;
     }
 }

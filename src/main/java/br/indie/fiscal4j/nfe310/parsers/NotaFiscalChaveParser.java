@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.parsers;
 
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe310.classes.NFTipoEmissao;
+import br.indie.fiscal4j.nfe.NFTipoEmissao;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.LocalDate;
 
@@ -18,7 +18,7 @@ public class NotaFiscalChaveParser {
     }
 
     public String getChave() {
-        return chave;
+        return this.chave;
     }
 
     public DFUnidadeFederativa getNFUnidadeFederativa() {

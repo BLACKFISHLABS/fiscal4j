@@ -13,6 +13,10 @@ public enum NFLoteIndicadorProcessamento {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFLoteIndicadorProcessamento valueOfCodigo(final String codigo) {
         for (final NFLoteIndicadorProcessamento indicadorProcessamento : NFLoteIndicadorProcessamento.values()) {
             if (indicadorProcessamento.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFLoteIndicadorProcessamento {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

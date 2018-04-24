@@ -35,34 +35,8 @@ public class NFNotaInfoVolume extends DFBase {
     @ElementList(entry = "lacres", inline = true, required = false)
     private List<NFNotaInfoLacre> lacres;
 
-    public BigInteger getQuantidadeVolumesTransportados() {
-        return this.quantidadeVolumesTransportados;
-    }
-
     public void setQuantidadeVolumesTransportados(final BigInteger quantidadeVolumesTransportados) {
         this.quantidadeVolumesTransportados = quantidadeVolumesTransportados;
-    }
-
-    public String getEspecieVolumesTransportados() {
-        return this.especieVolumesTransportados;
-    }
-
-    public void setEspecieVolumesTransportados(final String especieVolumesTransportados) {
-        StringValidador.tamanho60(especieVolumesTransportados, "Especie Volumes Transportados");
-        this.especieVolumesTransportados = especieVolumesTransportados;
-    }
-
-    public String getMarca() {
-        return this.marca;
-    }
-
-    public void setMarca(final String marca) {
-        StringValidador.tamanho60(marca, "Marca Volume");
-        this.marca = marca;
-    }
-
-    public String getNumeracaoVolumesTransportados() {
-        return this.numeracaoVolumesTransportados;
     }
 
     public void setNumeracaoVolumesTransportados(final String numeracaoVolumesTransportados) {
@@ -70,28 +44,54 @@ public class NFNotaInfoVolume extends DFBase {
         this.numeracaoVolumesTransportados = numeracaoVolumesTransportados;
     }
 
-    public String getPesoLiquido() {
-        return this.pesoLiquido;
+    public void setEspecieVolumesTransportados(final String especieVolumesTransportados) {
+        StringValidador.tamanho60(especieVolumesTransportados, "Especie Volumes Transportados");
+        this.especieVolumesTransportados = especieVolumesTransportados;
+    }
+
+    public void setMarca(final String marca) {
+        StringValidador.tamanho60(marca, "Marca Volume");
+        this.marca = marca;
     }
 
     public void setPesoLiquido(final BigDecimal pesoLiquido) {
         this.pesoLiquido = BigDecimalParser.tamanho15Com3CasasDecimais(pesoLiquido, "Peso Liquido Volume");
     }
 
-    public String getPesoBruto() {
-        return this.pesoBruto;
-    }
-
     public void setPesoBruto(final BigDecimal pesoBruto) {
         this.pesoBruto = BigDecimalParser.tamanho15Com3CasasDecimais(pesoBruto, "Peso Bruto Volume");
-    }
-
-    public List<NFNotaInfoLacre> getLacres() {
-        return this.lacres;
     }
 
     public void setLacres(final List<NFNotaInfoLacre> lacres) {
         ListValidador.tamanho5000(lacres, "Lacres");
         this.lacres = lacres;
+    }
+
+    public BigInteger getQuantidadeVolumesTransportados() {
+        return this.quantidadeVolumesTransportados;
+    }
+
+    public String getEspecieVolumesTransportados() {
+        return this.especieVolumesTransportados;
+    }
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public String getNumeracaoVolumesTransportados() {
+        return this.numeracaoVolumesTransportados;
+    }
+
+    public String getPesoLiquido() {
+        return this.pesoLiquido;
+    }
+
+    public String getPesoBruto() {
+        return this.pesoBruto;
+    }
+
+    public List<NFNotaInfoLacre> getLacres() {
+        return this.lacres;
     }
 }

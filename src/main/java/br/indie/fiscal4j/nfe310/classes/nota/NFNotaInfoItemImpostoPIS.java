@@ -25,19 +25,11 @@ public class NFNotaInfoItemImpostoPIS extends DFBase {
         this.outrasOperacoes = null;
     }
 
-    public NFNotaInfoItemImpostoPISAliquota getAliquota() {
-        return this.aliquota;
-    }
-
     public void setAliquota(final NFNotaInfoItemImpostoPISAliquota aliquota) {
         if (this.quantidade != null || this.naoTributado != null || this.outrasOperacoes != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributado e outras operacoes sao mutuamente exclusivos");
         }
         this.aliquota = aliquota;
-    }
-
-    public NFNotaInfoItemImpostoPISQuantidade getQuantidade() {
-        return this.quantidade;
     }
 
     public void setQuantidade(final NFNotaInfoItemImpostoPISQuantidade quantidade) {
@@ -47,10 +39,6 @@ public class NFNotaInfoItemImpostoPIS extends DFBase {
         this.quantidade = quantidade;
     }
 
-    public NFNotaInfoItemImpostoPISNaoTributado getNaoTributado() {
-        return this.naoTributado;
-    }
-
     public void setNaoTributado(final NFNotaInfoItemImpostoPISNaoTributado naoTributado) {
         if (this.aliquota != null || this.quantidade != null || this.outrasOperacoes != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributado e outras operacoes sao mutuamente exclusivos");
@@ -58,14 +46,26 @@ public class NFNotaInfoItemImpostoPIS extends DFBase {
         this.naoTributado = naoTributado;
     }
 
-    public NFNotaInfoItemImpostoPISOutrasOperacoes getOutrasOperacoes() {
-        return this.outrasOperacoes;
-    }
-
     public void setOutrasOperacoes(final NFNotaInfoItemImpostoPISOutrasOperacoes outrasOperacoes) {
         if (this.aliquota != null || this.quantidade != null || this.naoTributado != null) {
             throw new IllegalStateException("Aliquota, quantidade, nao tributado e outras operacoes sao mutuamente exclusivos");
         }
         this.outrasOperacoes = outrasOperacoes;
+    }
+
+    public NFNotaInfoItemImpostoPISAliquota getAliquota() {
+        return this.aliquota;
+    }
+
+    public NFNotaInfoItemImpostoPISQuantidade getQuantidade() {
+        return this.quantidade;
+    }
+
+    public NFNotaInfoItemImpostoPISNaoTributado getNaoTributado() {
+        return this.naoTributado;
+    }
+
+    public NFNotaInfoItemImpostoPISOutrasOperacoes getOutrasOperacoes() {
+        return this.outrasOperacoes;
     }
 }

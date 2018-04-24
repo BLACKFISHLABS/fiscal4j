@@ -22,11 +22,6 @@ public class NFDistribuicaoDocumentoZip extends DFBase {
         return this.value;
     }
 
-    public NFDistribuicaoDocumentoZip setValue(final String value) {
-        this.value = value;
-        return this;
-    }
-
     public String getNsu() {
         return this.nsu;
     }
@@ -42,6 +37,11 @@ public class NFDistribuicaoDocumentoZip extends DFBase {
 
     public NFDistribuicaoDocumentoZip setSchema(final String schema) {
         this.schema = schema;
+        return this;
+    }
+
+    public NFDistribuicaoDocumentoZip setValue(final String value) {
+        this.value = value;
         return this;
     }
 

@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.def;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.
- * <p>
+ *
  * <h1>Tipo de Carroceria.</h1>
  * <pre>Preencher com:
  * 00 - não aplicável;

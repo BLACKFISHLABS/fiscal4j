@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.webservices;
 
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.assinatura.AssinaturaDigital;
-import br.indie.fiscal4j.nfe310.NFeConfig;
+import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe310.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe310.classes.evento.cancelamento.NFEnviaEventoCancelamento;

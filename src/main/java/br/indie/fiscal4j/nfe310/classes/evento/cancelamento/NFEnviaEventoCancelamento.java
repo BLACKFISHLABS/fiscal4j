@@ -23,12 +23,12 @@ public class NFEnviaEventoCancelamento extends DFBase {
     @ElementList(entry = "evento", inline = true, required = true)
     private List<NFEventoCancelamento> evento;
 
-    public String getVersao() {
-        return this.versao;
-    }
-
     public void setVersao(final BigDecimal versao) {
         this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+    }
+
+    public String getVersao() {
+        return this.versao;
     }
 
     public String getIdLote() {

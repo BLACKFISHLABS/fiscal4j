@@ -15,6 +15,10 @@ public enum NFNotaInfoImpostoTributacaoISSQN {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoImpostoTributacaoISSQN valueOfCodigo(final String codigo) {
         for (final NFNotaInfoImpostoTributacaoISSQN impostoTributacaoISSQN : NFNotaInfoImpostoTributacaoISSQN.values()) {
             if (impostoTributacaoISSQN.getCodigo().equals(codigo)) {
@@ -22,10 +26,6 @@ public enum NFNotaInfoImpostoTributacaoISSQN {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

@@ -21,17 +21,9 @@ public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     @Element(name = "qExport", required = true)
     private String quantidadeItemEfetivamenteExportado;
 
-    public String getChaveAcessoNFe() {
-        return this.chaveAcessoNFe;
-    }
-
     public void setChaveAcessoNFe(final String chaveAcessoNFe) {
         StringValidador.exatamente44N(chaveAcessoNFe, "Chave de Acesso NFe");
         this.chaveAcessoNFe = chaveAcessoNFe;
-    }
-
-    public BigInteger getNumeroRegistroExportacao() {
-        return this.numeroRegistroExportacao;
     }
 
     public void setNumeroRegistroExportacao(final BigInteger numeroRegistroExportacao) {
@@ -39,11 +31,19 @@ public class NFNotaInfoItemExportacaoIndireta extends DFBase {
         this.numeroRegistroExportacao = numeroRegistroExportacao;
     }
 
-    public String getQuantidadeItemEfetivamenteExportado() {
-        return this.quantidadeItemEfetivamenteExportado;
-    }
-
     public void setQuantidadeItemEfetivamenteExportado(final BigDecimal quantidadeItemEfetivamenteExportado) {
         this.quantidadeItemEfetivamenteExportado = BigDecimalParser.tamanho15comAte4CasasDecimais(quantidadeItemEfetivamenteExportado, "Quantidade Item Evetivamente Exportado");
+    }
+
+    public String getChaveAcessoNFe() {
+        return this.chaveAcessoNFe;
+    }
+
+    public BigInteger getNumeroRegistroExportacao() {
+        return this.numeroRegistroExportacao;
+    }
+
+    public String getQuantidadeItemEfetivamenteExportado() {
+        return this.quantidadeItemEfetivamenteExportado;
     }
 }

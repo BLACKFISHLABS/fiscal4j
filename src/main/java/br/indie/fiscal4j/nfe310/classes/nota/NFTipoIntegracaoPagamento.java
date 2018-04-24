@@ -13,6 +13,10 @@ public enum NFTipoIntegracaoPagamento {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFTipoIntegracaoPagamento valueOfCodigo(final String codigo) {
         for (final NFTipoIntegracaoPagamento operadora : NFTipoIntegracaoPagamento.values()) {
             if (operadora.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFTipoIntegracaoPagamento {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

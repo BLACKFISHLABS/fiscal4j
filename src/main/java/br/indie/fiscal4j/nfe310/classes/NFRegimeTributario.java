@@ -14,6 +14,14 @@ public enum NFRegimeTributario {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFRegimeTributario valueOfCodigo(final String codigo) {
         for (final NFRegimeTributario regimeTributario : NFRegimeTributario.values()) {
             if (regimeTributario.getCodigo().equals(codigo)) {
@@ -21,14 +29,6 @@ public enum NFRegimeTributario {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

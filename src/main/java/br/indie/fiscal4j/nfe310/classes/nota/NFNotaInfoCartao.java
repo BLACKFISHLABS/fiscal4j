@@ -19,17 +19,9 @@ public class NFNotaInfoCartao extends DFBase {
     @Element(name = "cAut", required = false)
     private String numeroAutorizacaoOperacaoCartao;
 
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
     public void setCnpj(final String cnpj) {
         StringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
-    }
-
-    public String getNumeroAutorizacaoOperacaoCartao() {
-        return this.numeroAutorizacaoOperacaoCartao;
     }
 
     public void setNumeroAutorizacaoOperacaoCartao(final String numeroAutorizacaoOperacaoCartao) {
@@ -37,12 +29,20 @@ public class NFNotaInfoCartao extends DFBase {
         this.numeroAutorizacaoOperacaoCartao = numeroAutorizacaoOperacaoCartao;
     }
 
-    public NFOperadoraCartao getOperadoraCartao() {
-        return this.operadoraCartao;
-    }
-
     public void setOperadoraCartao(final NFOperadoraCartao operadoraCartao) {
         this.operadoraCartao = operadoraCartao;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getNumeroAutorizacaoOperacaoCartao() {
+        return this.numeroAutorizacaoOperacaoCartao;
+    }
+
+    public NFOperadoraCartao getOperadoraCartao() {
+        return this.operadoraCartao;
     }
 
     public NFTipoIntegracaoPagamento getTipoIntegracao() {

@@ -6,6 +6,11 @@ public enum NFOperadoraCartao {
     MASTERCARD("02", "Mastercard"),
     AMERICAN_EXPRESS("03", "American Express"),
     SOROCRED("04", "Sorocred"),
+    DINERS_CLUB("05", "Diners Club"),
+    ELO("06", "Elo"),
+    HIPERCARD("07", "Hipercard"),
+    AURA("08", "Aura"),
+    CABAL("09", "Cabal"),
     OUTROS("99", "Outros");
 
     private final String codigo;
@@ -16,6 +21,10 @@ public enum NFOperadoraCartao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFOperadoraCartao valueOfCodigo(final String codigo) {
         for (final NFOperadoraCartao operadora : NFOperadoraCartao.values()) {
             if (operadora.getCodigo().equals(codigo)) {
@@ -23,10 +32,6 @@ public enum NFOperadoraCartao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

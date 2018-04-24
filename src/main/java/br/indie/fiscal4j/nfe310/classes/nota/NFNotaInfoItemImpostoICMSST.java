@@ -29,51 +29,51 @@ public class NFNotaInfoItemImpostoICMSST extends DFBase {
     @Element(name = "vICMSSTDest", required = true)
     private String valorICMSSTUFDestino;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public String getValorBCICMSSTRetidoUFRemetente() {
-        return this.valorBCICMSSTRetidoUFRemetente;
-    }
-
     public void setValorBCICMSSTRetidoUFRemetente(final BigDecimal valorBCICMSSTRetidoUFRemetente) {
         this.valorBCICMSSTRetidoUFRemetente = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSSTRetidoUFRemetente, "Valor BC ICMS ST Retido UF Remetente");
-    }
-
-    public String getValorICMSSTRetidoUFRemetente() {
-        return this.valorICMSSTRetidoUFRemetente;
     }
 
     public void setValorICMSSTRetidoUFRemetente(final BigDecimal valorICMSSTRetidoUFRemetente) {
         this.valorICMSSTRetidoUFRemetente = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSSTRetidoUFRemetente, "Valor ICMS ST Retido UF Remetente");
     }
 
-    public String getValorBCICMSSTUFDestino() {
-        return this.valorBCICMSSTUFDestino;
-    }
-
     public void setValorBCICMSSTUFDestino(final BigDecimal valorBCICMSSTUFDestino) {
         this.valorBCICMSSTUFDestino = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSSTUFDestino, "Valor BC ICMS ST UF Destino");
     }
 
-    public String getValorICMSSTUFDestino() {
-        return this.valorICMSSTUFDestino;
-    }
-
     public void setValorICMSSTUFDestino(final BigDecimal valorICMSSTUFDestino) {
         this.valorICMSSTUFDestino = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSSTUFDestino, "Valor ICMS ST UF Destino");
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getValorBCICMSSTRetidoUFRemetente() {
+        return this.valorBCICMSSTRetidoUFRemetente;
+    }
+
+    public String getValorICMSSTRetidoUFRemetente() {
+        return this.valorICMSSTRetidoUFRemetente;
+    }
+
+    public String getValorBCICMSSTUFDestino() {
+        return this.valorBCICMSSTUFDestino;
+    }
+
+    public String getValorICMSSTUFDestino() {
+        return this.valorICMSSTUFDestino;
     }
 }

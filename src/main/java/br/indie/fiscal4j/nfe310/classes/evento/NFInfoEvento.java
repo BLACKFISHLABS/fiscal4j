@@ -48,6 +48,14 @@ public class NFInfoEvento extends DFBase {
     @Element(name = "detEvento", required = true)
     private NFTipoEvento dadosEvento;
 
+    public void setOrgao(final DFUnidadeFederativa orgao) {
+        this.orgao = orgao;
+    }
+
+    public void setVersaoEvento(final BigDecimal versaoEvento) {
+        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Info Evento Versao");
+    }
+
     public String getId() {
         return this.id;
     }
@@ -110,10 +118,6 @@ public class NFInfoEvento extends DFBase {
         return this.codigoEvento;
     }
 
-    public void setCodigoEvento(final String codigoEvento) {
-        this.codigoEvento = codigoEvento;
-    }
-
     public void setTipoEvento(final String tipoEvento) {
         StringValidador.exatamente6N(tipoEvento, "Tipo Evento");
         this.codigoEvento = tipoEvento;
@@ -132,10 +136,6 @@ public class NFInfoEvento extends DFBase {
         return this.versaoEvento;
     }
 
-    public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Info Evento Versao");
-    }
-
     public NFTipoEvento getDadosEvento() {
         return this.dadosEvento;
     }
@@ -148,7 +148,7 @@ public class NFInfoEvento extends DFBase {
         return this.orgao;
     }
 
-    public void setOrgao(final DFUnidadeFederativa orgao) {
-        this.orgao = orgao;
+    public void setCodigoEvento(final String codigoEvento) {
+        this.codigoEvento = codigoEvento;
     }
 }

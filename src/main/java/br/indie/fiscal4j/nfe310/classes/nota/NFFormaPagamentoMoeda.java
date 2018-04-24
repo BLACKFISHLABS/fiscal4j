@@ -21,6 +21,10 @@ public enum NFFormaPagamentoMoeda {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFFormaPagamentoMoeda valueOfCodigo(final String codigo) {
         for (final NFFormaPagamentoMoeda formaPagamentoMoeda : NFFormaPagamentoMoeda.values()) {
             if (formaPagamentoMoeda.getCodigo().equals(codigo)) {
@@ -28,10 +32,6 @@ public enum NFFormaPagamentoMoeda {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

@@ -14,8 +14,9 @@ public class NFNotaInfoObservacao extends DFBase {
     @Element(name = "xTexto", required = true)
     private String conteudoCampo;
 
-    public String getConteudoCampo() {
-        return this.conteudoCampo;
+    public void setIdentificacaoCampo(final String identificacaoCampo) {
+        StringValidador.tamanho20(identificacaoCampo, "Identificacao Campo Obs");
+        this.identificacaoCampo = identificacaoCampo;
     }
 
     public void setConteudoCampo(final String conteudoCampo) {
@@ -23,12 +24,11 @@ public class NFNotaInfoObservacao extends DFBase {
         this.conteudoCampo = conteudoCampo;
     }
 
-    public String getIdentificacaoCampo() {
-        return this.identificacaoCampo;
+    public String getConteudoCampo() {
+        return this.conteudoCampo;
     }
 
-    public void setIdentificacaoCampo(final String identificacaoCampo) {
-        StringValidador.tamanho20(identificacaoCampo, "Identificacao Campo Obs");
-        this.identificacaoCampo = identificacaoCampo;
+    public String getIdentificacaoCampo() {
+        return this.identificacaoCampo;
     }
 }

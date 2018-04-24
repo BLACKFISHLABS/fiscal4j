@@ -3,7 +3,9 @@ package br.indie.fiscal4j.nfe310.webservices;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe310.NFeConfig;
+import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
+import br.indie.fiscal4j.nfe.webservices.distribuicao.WSDistribuicaoDFe;
 import br.indie.fiscal4j.nfe310.classes.cadastro.NFRetornoConsultaCadastro;
 import br.indie.fiscal4j.nfe310.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe310.classes.evento.downloadnf.NFDownloadNFeRetorno;
@@ -37,6 +39,7 @@ public class WSFacade {
     private final WSInutilizacao wsInutilizacao;
     private final WSManifestacaoDestinatario wSManifestacaoDestinatario;
     private final WSNotaDownload wsNotaDownload;
+    private final WSDistribuicaoDFe wSDistribuicaoDFe;
 
     public WSFacade(final NFeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
@@ -52,6 +55,7 @@ public class WSFacade {
         this.wsInutilizacao = new WSInutilizacao(config);
         this.wSManifestacaoDestinatario = new WSManifestacaoDestinatario(config);
         this.wsNotaDownload = new WSNotaDownload(config);
+        this.wSDistribuicaoDFe = new WSDistribuicaoDFe(config);
     }
 
     /**
@@ -62,8 +66,7 @@ public class WSFacade {
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
     public NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote) throws Exception {
-        if (lote.getIndicadorProcessamento().equals(NFLoteIndicadorProcessamento.PROCESSAMENTO_SINCRONO)
-                && lote.getNotas().size() > 1) {
+        if (lote.getIndicadorProcessamento().equals(NFLoteIndicadorProcessamento.PROCESSAMENTO_SINCRONO) && lote.getNotas().size() > 1) {
             throw new IllegalArgumentException("Apenas uma nota permitida no modo sincrono!");
         } else if (lote.getNotas().size() == 0) {
             throw new IllegalArgumentException("Nenhuma nota informada no envio do Lote!");
@@ -76,8 +79,7 @@ public class WSFacade {
     }
 
     /**
-     * Faz o envio assinado para a Sefaz de NF-e e NFC-e
-     * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
+     * Faz o envio assinado para a Sefaz de NF-e e NFC-e ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
      * @param loteAssinadoXml lote assinado no formato XML
      * @param modelo          modelo da nota (NF-e ou NFC-e)
@@ -137,8 +139,7 @@ public class WSFacade {
     }
 
     /**
-     * Faz a correcao da nota com o evento ja assinado
-     * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
+     * Faz a correcao da nota com o evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
      * @param chave             chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
@@ -163,8 +164,7 @@ public class WSFacade {
     }
 
     /**
-     * Faz o cancelamento da nota com evento ja assinado
-     * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
+     * Faz o cancelamento da nota com evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
      * @param chave             chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
@@ -176,8 +176,7 @@ public class WSFacade {
     }
 
     /**
-     * Inutiliza a nota com o evento assinado
-     * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
+     * Inutiliza a nota com o evento assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
      * @param eventoAssinadoXml evento assinado em XML
      * @param modelo            modelo da nota (NF-e ou NFC-e)
@@ -232,8 +231,7 @@ public class WSFacade {
     }
 
     /**
-     * Faz a manifestação do destinatário da nota com evento ja assinado
-     * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
+     * Faz a manifestação do destinatário da nota com evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
      * @param chave             chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
@@ -245,8 +243,7 @@ public class WSFacade {
     }
 
     /**
-     * Faz o download do xml da nota para um cnpj
-     * Informando até 10 chaves de acesso
+     * Faz o download do xml da nota para um cnpj Informando até 10 chaves de acesso
      *
      * @param cnpj  para quem foi emitida a nota
      * @param chave chave de acesso da nota
@@ -255,5 +252,19 @@ public class WSFacade {
      */
     public NFDownloadNFeRetorno downloadNota(final String cnpj, final String chave) throws Exception {
         return this.wsNotaDownload.downloadNota(cnpj, chave);
+    }
+
+    /**
+     * Faz consulta de distribuicao das notas fiscais. Pode ser feita pela chave de acesso ou utilizando o NSU (numero sequencial unico) da receita.
+     *
+     * @param cnpj  CNPJ da pessoa juridica a consultar
+     * @param uf    Unidade federativa da pessoa juridica a consultar
+     * @param chave Chave de acesso da nota
+     * @param nsu   Numero sequencial unico fornecido pela receita ao fazer a consulta. Enviar 0 para trazer os ultimos 3 meses
+     * @return dados da consulta retornado pelo webservice limitando um total de 50 registros
+     * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
+     */
+    public NFDistribuicaoIntRetorno consultarDistribuicaoDFe(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu) throws Exception {
+        return this.wSDistribuicaoDFe.consultar(cnpj, uf, chaveAcesso, nsu);
     }
 }

@@ -113,21 +113,9 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "nRECOPI", required = false)
     private String numeroRECOPI;
 
-    public void setCampoeValorNota(final NFProdutoCompoeValorNota compoeValorNota) {
-        this.compoeValorNota = compoeValorNota;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
     public void setCodigo(final String codigo) {
         StringValidador.tamanho60(codigo, "Codigo Produto");
         this.codigo = codigo;
-    }
-
-    public String getCodigoDeBarras() {
-        return this.codigoDeBarras == null ? StringUtils.EMPTY : this.codigoDeBarras;
     }
 
     public void setCodigoDeBarras(final String codigoDeBarras) {
@@ -135,17 +123,9 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.codigoDeBarras = codigoDeBarras;
     }
 
-    public String getDescricao() {
-        return this.descricao;
-    }
-
     public void setDescricao(final String descricao) {
         StringValidador.tamanho120(descricao, "Descricao Produto");
         this.descricao = descricao;
-    }
-
-    public String getNcm() {
-        return this.ncm;
     }
 
     public void setNcm(final String ncm) {
@@ -153,37 +133,9 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.ncm = ncm;
     }
 
-    public List<String> getNomeclaturaValorAduaneiroEstatistica() {
-        return this.nomeclaturaValorAduaneiroEstatistica;
-    }
-
-    public void setNomeclaturaValorAduaneiroEstatistica(final List<String> nomeclaturaValorAduaneiroEstatistica) {
-        for (final String nomeclatra : nomeclaturaValorAduaneiroEstatistica) {
-            StringValidador.nve(nomeclatra);
-        }
-        this.nomeclaturaValorAduaneiroEstatistica = nomeclaturaValorAduaneiroEstatistica;
-    }
-
-    public String getCodigoEspecificadorSituacaoTributaria() {
-        return this.codigoEspecificadorSituacaoTributaria;
-    }
-
-    public void setCodigoEspecificadorSituacaoTributaria(final String codigoEspecificadorSituacaoTributaria) {
-        StringValidador.exatamente7N(codigoEspecificadorSituacaoTributaria, "CEST Produto");
-        this.codigoEspecificadorSituacaoTributaria = codigoEspecificadorSituacaoTributaria;
-    }
-
-    public String getExtipi() {
-        return this.extipi;
-    }
-
     public void setExtipi(final String extipi) {
         StringValidador.tamanho2ou3N(extipi, "EX TIPI Produto");
         this.extipi = extipi;
-    }
-
-    public String getCfop() {
-        return this.cfop;
     }
 
     public void setCfop(final String cfop) {
@@ -191,41 +143,21 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.cfop = cfop;
     }
 
-    public String getUnidadeComercial() {
-        return this.unidadeComercial;
-    }
-
     public void setUnidadeComercial(final String unidadeComercial) {
         StringValidador.tamanho6(unidadeComercial, "Unidade Comercial Produto");
         this.unidadeComercial = unidadeComercial;
-    }
-
-    public String getQuantidadeComercial() {
-        return this.quantidadeComercial;
     }
 
     public void setQuantidadeComercial(final BigDecimal quantidadeComercial) {
         this.quantidadeComercial = BigDecimalParser.tamanho15comAte4CasasDecimais(quantidadeComercial, "Qtde Comercial Produto");
     }
 
-    public String getValorUnitario() {
-        return this.valorUnitario;
-    }
-
     public void setValorUnitario(final BigDecimal valorUnitario) {
         this.valorUnitario = BigDecimalParser.tamanho21ComAte10CasasDecimais(valorUnitario, "Valor Unitario Produto");
     }
 
-    public String getValorTotalBruto() {
-        return this.valorTotalBruto;
-    }
-
     public void setValorTotalBruto(final BigDecimal valorTotalBruto) {
         this.valorTotalBruto = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalBruto, "Valor Total Bruto Produto");
-    }
-
-    public String getCodigoDeBarrasTributavel() {
-        return this.codigoDeBarrasTributavel == null ? StringUtils.EMPTY : this.codigoDeBarrasTributavel;
     }
 
     public void setCodigoDeBarrasTributavel(final String codigoDeBarrasTributavel) {
@@ -233,86 +165,41 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.codigoDeBarrasTributavel = codigoDeBarrasTributavel;
     }
 
-    public String getUnidadeTributavel() {
-        return this.unidadeTributavel;
-    }
-
     public void setUnidadeTributavel(final String unidadeTributavel) {
         StringValidador.tamanho6(unidadeTributavel, "Unidade Tributavel Produto");
         this.unidadeTributavel = unidadeTributavel;
-    }
-
-    public String getQuantidadeTributavel() {
-        return this.quantidadeTributavel;
     }
 
     public void setQuantidadeTributavel(final BigDecimal quantidadeTributavel) {
         this.quantidadeTributavel = BigDecimalParser.tamanho15comAte4CasasDecimais(quantidadeTributavel, "Qtde Tributavel Produto");
     }
 
-    public String getValorUnitarioTributavel() {
-        return this.valorUnitarioTributavel;
-    }
-
     public void setValorUnitarioTributavel(final BigDecimal valorUnitarioTributavel) {
         this.valorUnitarioTributavel = BigDecimalParser.tamanho21ComAte10CasasDecimais(valorUnitarioTributavel, "Valor Unitario Tributavel Produto");
-    }
-
-    public String getValorFrete() {
-        return this.valorFrete;
     }
 
     public void setValorFrete(final BigDecimal valorFrete) {
         this.valorFrete = BigDecimalParser.tamanho15Com2CasasDecimais(valorFrete, "Valor Frete Produto");
     }
 
-    public String getValorSeguro() {
-        return this.valorSeguro;
-    }
-
     public void setValorSeguro(final BigDecimal valorSeguro) {
         this.valorSeguro = BigDecimalParser.tamanho15Com2CasasDecimais(valorSeguro, "Valor Seguro Produto");
-    }
-
-    public String getValorDesconto() {
-        return this.valorDesconto;
     }
 
     public void setValorDesconto(final BigDecimal valorDesconto) {
         this.valorDesconto = BigDecimalParser.tamanho15Com2CasasDecimais(valorDesconto, "Valor Desconto Produto");
     }
 
-    public String getValorOutrasDespesasAcessorias() {
-        return this.valorOutrasDespesasAcessorias;
-    }
-
     public void setValorOutrasDespesasAcessorias(final BigDecimal valorOutrasDespesasAcessorias) {
         this.valorOutrasDespesasAcessorias = BigDecimalParser.tamanho15Com2CasasDecimais(valorOutrasDespesasAcessorias, "Valor Outras Despesas Acessorias Produto");
     }
 
-    public NFProdutoCompoeValorNota getCompoeValorNota() {
-        return this.compoeValorNota;
-    }
-
-    public List<NFNotaInfoItemProdutoDeclaracaoImportacao> getDeclaracoesImportacao() {
-        return this.declaracoesImportacao;
+    public void setCampoeValorNota(final NFProdutoCompoeValorNota compoeValorNota) {
+        this.compoeValorNota = compoeValorNota;
     }
 
     public void setDeclaracoesImportacao(final List<NFNotaInfoItemProdutoDeclaracaoImportacao> declaracoesImportacao) {
         this.declaracoesImportacao = declaracoesImportacao;
-    }
-
-    public List<NFNotaInfoItemDetalheExportacao> getDetalhesExportacao() {
-        return this.detalhesExportacao;
-    }
-
-    public void setDetalhesExportacao(final List<NFNotaInfoItemDetalheExportacao> detalhesExportacao) {
-        ListValidador.tamanho500(detalhesExportacao, "Detalhes Exportacao Produto");
-        this.detalhesExportacao = detalhesExportacao;
-    }
-
-    public String getNumeroPedidoCliente() {
-        return this.numeroPedidoCliente;
     }
 
     public void setNumeroPedidoCliente(final String numeroPedidoCliente) {
@@ -320,17 +207,9 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.numeroPedidoCliente = numeroPedidoCliente;
     }
 
-    public Integer getNumeroPedidoItemCliente() {
-        return this.numeroPedidoItemCliente;
-    }
-
     public void setNumeroPedidoItemCliente(final Integer numeroPedidoItemCliente) {
         IntegerValidador.tamanho6(numeroPedidoItemCliente, "Numero Pedido Item Cliente Produto");
         this.numeroPedidoItemCliente = numeroPedidoItemCliente;
-    }
-
-    public String getNumeroControleFCI() {
-        return this.numeroControleFCI;
     }
 
     public void setNumeroControleFCI(final String numeroControleFCI) {
@@ -338,19 +217,11 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.numeroControleFCI = numeroControleFCI;
     }
 
-    public NFNotaInfoItemProdutoVeiculo getVeiculo() {
-        return this.veiculo;
-    }
-
     public void setVeiculo(final NFNotaInfoItemProdutoVeiculo veiculo) {
         if (this.medicamentos != null || this.armamentos != null || this.combustivel != null || this.numeroRECOPI != null) {
             throw new IllegalStateException("veiculos, medicamentos, armamentos e combustivel sao mutuamente exclusivos");
         }
         this.veiculo = veiculo;
-    }
-
-    public List<NFNotaInfoItemProdutoMedicamento> getMedicamentos() {
-        return this.medicamentos;
     }
 
     public void setMedicamentos(final List<NFNotaInfoItemProdutoMedicamento> medicamentos) {
@@ -361,20 +232,12 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.medicamentos = medicamentos;
     }
 
-    public List<NFNotaInfoItemProdutoArmamento> getArmamentos() {
-        return this.armamentos;
-    }
-
     public void setArmamentos(final List<NFNotaInfoItemProdutoArmamento> armamentos) {
         if (this.medicamentos != null || this.veiculo != null || this.combustivel != null || this.numeroRECOPI != null) {
             throw new IllegalStateException("veiculos, medicamentos, armamentos, RECOPI e combustivel sao mutuamente exclusivos");
         }
         ListValidador.tamanho500(armamentos, "Armamentos Produto");
         this.armamentos = armamentos;
-    }
-
-    public NFNotaInfoItemProdutoCombustivel getCombustivel() {
-        return this.combustivel;
     }
 
     public void setCombustivel(final NFNotaInfoItemProdutoCombustivel combustivel) {
@@ -384,8 +247,21 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.combustivel = combustivel;
     }
 
-    public String getNumeroRECOPI() {
-        return this.numeroRECOPI;
+    public void setNomeclaturaValorAduaneiroEstatistica(final List<String> nomeclaturaValorAduaneiroEstatistica) {
+        for (final String nomeclatra : nomeclaturaValorAduaneiroEstatistica) {
+            StringValidador.nve(nomeclatra);
+        }
+        this.nomeclaturaValorAduaneiroEstatistica = nomeclaturaValorAduaneiroEstatistica;
+    }
+
+    public void setCodigoEspecificadorSituacaoTributaria(final String codigoEspecificadorSituacaoTributaria) {
+        StringValidador.exatamente7N(codigoEspecificadorSituacaoTributaria, "CEST Produto");
+        this.codigoEspecificadorSituacaoTributaria = codigoEspecificadorSituacaoTributaria;
+    }
+
+    public void setDetalhesExportacao(final List<NFNotaInfoItemDetalheExportacao> detalhesExportacao) {
+        ListValidador.tamanho500(detalhesExportacao, "Detalhes Exportacao Produto");
+        this.detalhesExportacao = detalhesExportacao;
     }
 
     public void setNumeroRECOPI(final String numeroRECOPI) {
@@ -394,5 +270,129 @@ public class NFNotaInfoItemProduto extends DFBase {
         }
         StringValidador.exatamente20N(numeroRECOPI, "Numero RECOPI Produto");
         this.numeroRECOPI = numeroRECOPI;
+    }
+
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getCodigoDeBarras() {
+        return this.codigoDeBarras == null ? StringUtils.EMPTY : this.codigoDeBarras;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public String getNcm() {
+        return this.ncm;
+    }
+
+    public List<String> getNomeclaturaValorAduaneiroEstatistica() {
+        return this.nomeclaturaValorAduaneiroEstatistica;
+    }
+
+    public String getCodigoEspecificadorSituacaoTributaria() {
+        return this.codigoEspecificadorSituacaoTributaria;
+    }
+
+    public String getExtipi() {
+        return this.extipi;
+    }
+
+    public String getCfop() {
+        return this.cfop;
+    }
+
+    public String getUnidadeComercial() {
+        return this.unidadeComercial;
+    }
+
+    public String getQuantidadeComercial() {
+        return this.quantidadeComercial;
+    }
+
+    public String getValorUnitario() {
+        return this.valorUnitario;
+    }
+
+    public String getValorTotalBruto() {
+        return this.valorTotalBruto;
+    }
+
+    public String getCodigoDeBarrasTributavel() {
+        return this.codigoDeBarrasTributavel == null ? StringUtils.EMPTY : this.codigoDeBarrasTributavel;
+    }
+
+    public String getUnidadeTributavel() {
+        return this.unidadeTributavel;
+    }
+
+    public String getQuantidadeTributavel() {
+        return this.quantidadeTributavel;
+    }
+
+    public String getValorUnitarioTributavel() {
+        return this.valorUnitarioTributavel;
+    }
+
+    public String getValorFrete() {
+        return this.valorFrete;
+    }
+
+    public String getValorSeguro() {
+        return this.valorSeguro;
+    }
+
+    public String getValorDesconto() {
+        return this.valorDesconto;
+    }
+
+    public String getValorOutrasDespesasAcessorias() {
+        return this.valorOutrasDespesasAcessorias;
+    }
+
+    public NFProdutoCompoeValorNota getCompoeValorNota() {
+        return this.compoeValorNota;
+    }
+
+    public List<NFNotaInfoItemProdutoDeclaracaoImportacao> getDeclaracoesImportacao() {
+        return this.declaracoesImportacao;
+    }
+
+    public List<NFNotaInfoItemDetalheExportacao> getDetalhesExportacao() {
+        return this.detalhesExportacao;
+    }
+
+    public String getNumeroPedidoCliente() {
+        return this.numeroPedidoCliente;
+    }
+
+    public Integer getNumeroPedidoItemCliente() {
+        return this.numeroPedidoItemCliente;
+    }
+
+    public String getNumeroControleFCI() {
+        return this.numeroControleFCI;
+    }
+
+    public NFNotaInfoItemProdutoVeiculo getVeiculo() {
+        return this.veiculo;
+    }
+
+    public List<NFNotaInfoItemProdutoMedicamento> getMedicamentos() {
+        return this.medicamentos;
+    }
+
+    public List<NFNotaInfoItemProdutoArmamento> getArmamentos() {
+        return this.armamentos;
+    }
+
+    public NFNotaInfoItemProdutoCombustivel getCombustivel() {
+        return this.combustivel;
+    }
+
+    public String getNumeroRECOPI() {
+        return this.numeroRECOPI;
     }
 }

@@ -14,6 +14,10 @@ public enum NFIndicadorIEDestinatario {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFIndicadorIEDestinatario valueOfCodigo(final String codigo) {
         for (final NFIndicadorIEDestinatario indicador : NFIndicadorIEDestinatario.values()) {
             if (indicador.getCodigo().equals(codigo)) {
@@ -21,10 +25,6 @@ public enum NFIndicadorIEDestinatario {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

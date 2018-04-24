@@ -2,6 +2,7 @@ package br.indie.fiscal4j.nfe310.classes;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe.NFTipoEmissao;
 import br.indie.fiscal4j.nfe310.parsers.NotaFiscalChaveParser;
 
 import java.util.Arrays;
@@ -1569,6 +1570,40 @@ public enum NFAutorizador31 {
         }
     };
 
+    public abstract String getNfeAutorizacao(final DFAmbiente ambiente);
+
+    public abstract String getNfeRetAutorizacao(final DFAmbiente ambiente);
+
+    public abstract String getNfeConsultaProtocolo(final DFAmbiente ambiente);
+
+    public abstract String getNfeStatusServico(final DFAmbiente ambiente);
+
+    public abstract String getRecepcaoEvento(final DFAmbiente ambiente);
+
+    public abstract String getConsultaCadastro(final DFAmbiente ambiente);
+
+    public abstract String getNfeInutilizacao(final DFAmbiente ambiente);
+
+    public abstract String getNfceAutorizacao(final DFAmbiente ambiente);
+
+    public abstract String getNfceRetAutorizacao(final DFAmbiente ambiente);
+
+    public abstract String getNfceConsultaProtocolo(final DFAmbiente ambiente);
+
+    public abstract String getNfceStatusServico(final DFAmbiente ambiente);
+
+    public abstract String getNfceRecepcaoEvento(final DFAmbiente ambiente);
+
+    public abstract String getNfceInutilizacao(final DFAmbiente ambiente);
+
+    public abstract String getRecepcaoEventoAN(final DFAmbiente ambiente);
+
+    public abstract String getNFeDistribuicaoDFe(final DFAmbiente ambiente);
+
+    public abstract String getNfeDownloadNF(final DFAmbiente ambiente);
+
+    public abstract DFUnidadeFederativa[] getUFs();
+
     public static NFAutorizador31 valueOfCodigoUF(final DFUnidadeFederativa uf) {
         for (final NFAutorizador31 autorizador : NFAutorizador31.values()) {
             if (Arrays.asList(autorizador.getUFs()).contains(uf)) {
@@ -1603,38 +1638,4 @@ public enum NFAutorizador31 {
                 throw new IllegalArgumentException("N\u00e3o ha implementac\u00e3o para o tipo de emiss\u00e3o: " + tpEmissao.getDescricao());
         }
     }
-
-    public abstract String getNfeAutorizacao(final DFAmbiente ambiente);
-
-    public abstract String getNfeRetAutorizacao(final DFAmbiente ambiente);
-
-    public abstract String getNfeConsultaProtocolo(final DFAmbiente ambiente);
-
-    public abstract String getNfeStatusServico(final DFAmbiente ambiente);
-
-    public abstract String getRecepcaoEvento(final DFAmbiente ambiente);
-
-    public abstract String getConsultaCadastro(final DFAmbiente ambiente);
-
-    public abstract String getNfeInutilizacao(final DFAmbiente ambiente);
-
-    public abstract String getNfceAutorizacao(final DFAmbiente ambiente);
-
-    public abstract String getNfceRetAutorizacao(final DFAmbiente ambiente);
-
-    public abstract String getNfceConsultaProtocolo(final DFAmbiente ambiente);
-
-    public abstract String getNfceStatusServico(final DFAmbiente ambiente);
-
-    public abstract String getNfceRecepcaoEvento(final DFAmbiente ambiente);
-
-    public abstract String getNfceInutilizacao(final DFAmbiente ambiente);
-
-    public abstract String getRecepcaoEventoAN(final DFAmbiente ambiente);
-
-    public abstract String getNFeDistribuicaoDFe(final DFAmbiente ambiente);
-
-    public abstract String getNfeDownloadNF(final DFAmbiente ambiente);
-
-    public abstract DFUnidadeFederativa[] getUFs();
 }

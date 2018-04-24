@@ -28,8 +28,8 @@ public class NFNotaInfoItemImpostoPISOutrasOperacoes extends DFBase {
     @Element(name = "vPIS", required = true)
     private String valorTributo;
 
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
+    public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaPIS situacaoTributaria) {
+        this.situacaoTributaria = situacaoTributaria;
     }
 
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
@@ -39,19 +39,11 @@ public class NFNotaInfoItemImpostoPISOutrasOperacoes extends DFBase {
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC PIS OA Item");
     }
 
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
-    }
-
     public void setPercentualAliquota(final BigDecimal aliquota) {
         if (this.valorAliquota != null || this.quantidadeVendida != null) {
             throw new IllegalStateException("Nao pode setar percentual aliquota caso valor aliquota ou quantidade vendida esteja setado");
         }
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota PIS OA Item");
-    }
-
-    public String getQuantidadeVendida() {
-        return this.quantidadeVendida;
     }
 
     public void setQuantidadeVendida(final BigDecimal quantidadeVendida) {
@@ -61,10 +53,6 @@ public class NFNotaInfoItemImpostoPISOutrasOperacoes extends DFBase {
         this.quantidadeVendida = BigDecimalParser.tamanho16ComAte4CasasDecimais(quantidadeVendida, "Qtde Vendida PIS OA Item");
     }
 
-    public String getValorAliquota() {
-        return this.valorAliquota;
-    }
-
     public void setValorAliquota(final BigDecimal valorAliquota) {
         if (this.percentualAliquota != null || this.valorBaseCalculo != null) {
             throw new IllegalStateException("Nao pode setar valor aliquota caso percentual aliquota ou valor base calculo esteja setado");
@@ -72,19 +60,31 @@ public class NFNotaInfoItemImpostoPISOutrasOperacoes extends DFBase {
         this.valorAliquota = BigDecimalParser.tamanho15Com4CasasDecimais(valorAliquota, "Valor Aliquota PIS OA Item");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo PIS OA Item");
     }
 
-    public NFNotaInfoSituacaoTributariaPIS getSituacaoTributaria() {
-        return this.situacaoTributaria;
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
     }
 
-    public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaPIS situacaoTributaria) {
-        this.situacaoTributaria = situacaoTributaria;
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getQuantidadeVendida() {
+        return this.quantidadeVendida;
+    }
+
+    public String getValorAliquota() {
+        return this.valorAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
+    }
+
+    public NFNotaInfoSituacaoTributariaPIS getSituacaoTributaria() {
+        return this.situacaoTributaria;
     }
 }

@@ -9,12 +9,12 @@ public class NFInfoManifestacaoDestinatario extends NFTipoEvento {
     @Element(name = "xJust", required = false)
     private String justificativa;
 
-    public String getJustificativa() {
-        return this.justificativa;
-    }
-
     public void setJustificativa(final String justificativa) {
         this.justificativa = justificativa;
+    }
+
+    public String getJustificativa() {
+        return this.justificativa;
     }
 
     @Override

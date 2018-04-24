@@ -39,20 +39,12 @@ public class NFNotaInfoEmitente extends DFBase {
     @Element(name = "CRT", required = true)
     private NFRegimeTributario regimeTributario;
 
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
     public void setCnpj(final String cnpj) {
         if (this.cpf != null && cnpj != null) {
             throw new IllegalStateException("Nao pode setar CNPJ caso CPF esteja setado");
         }
         StringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
-    }
-
-    public String getCpf() {
-        return this.cpf;
     }
 
     public void setCpf(final String cpf) {
@@ -63,17 +55,9 @@ public class NFNotaInfoEmitente extends DFBase {
         this.cpf = cpf;
     }
 
-    public String getRazaoSocial() {
-        return this.razaoSocial;
-    }
-
     public void setRazaoSocial(final String razaoSocial) {
         StringValidador.tamanho60(razaoSocial, "Razao Social Emitente");
         this.razaoSocial = razaoSocial;
-    }
-
-    public String getNomeFantasia() {
-        return this.nomeFantasia;
     }
 
     public void setNomeFantasia(final String nomeFantasia) {
@@ -81,16 +65,8 @@ public class NFNotaInfoEmitente extends DFBase {
         this.nomeFantasia = nomeFantasia;
     }
 
-    public NFEndereco getEndereco() {
-        return this.endereco;
-    }
-
     public void setEndereco(final NFEndereco endereco) {
         this.endereco = endereco;
-    }
-
-    public String getInscricaoEstadual() {
-        return this.inscricaoEstadual;
     }
 
     public void setInscricaoEstadual(final String inscricaoEstadual) {
@@ -98,17 +74,9 @@ public class NFNotaInfoEmitente extends DFBase {
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
-    public String getInscricaoEstadualSubstituicaoTributaria() {
-        return this.inscricaoEstadualSubstituicaoTributaria;
-    }
-
     public void setInscricaoEstadualSubstituicaoTributaria(final String inscricaoEstadualSubstituicaoTributaria) {
         StringValidador.inscricaoEstadualSemIsencao(inscricaoEstadualSubstituicaoTributaria);
         this.inscricaoEstadualSubstituicaoTributaria = inscricaoEstadualSubstituicaoTributaria;
-    }
-
-    public String getInscricaoMunicipal() {
-        return this.inscricaoMunicipal;
     }
 
     public void setInscricaoMunicipal(final String inscricaoMunicipal) {
@@ -116,20 +84,52 @@ public class NFNotaInfoEmitente extends DFBase {
         this.inscricaoMunicipal = inscricaoMunicipal;
     }
 
-    public String getClassificacaoNacionalAtividadesEconomicas() {
-        return this.classificacaoNacionalAtividadesEconomicas;
-    }
-
     public void setClassificacaoNacionalAtividadesEconomicas(final String classificacaoNacionalAtividadesEconomicas) {
         StringValidador.exatamente7N(classificacaoNacionalAtividadesEconomicas, "CNAE Emitente");
         this.classificacaoNacionalAtividadesEconomicas = classificacaoNacionalAtividadesEconomicas;
     }
 
-    public NFRegimeTributario getRegimeTributario() {
-        return this.regimeTributario;
-    }
-
     public void setRegimeTributario(final NFRegimeTributario regimeTributario) {
         this.regimeTributario = regimeTributario;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public String getRazaoSocial() {
+        return this.razaoSocial;
+    }
+
+    public String getNomeFantasia() {
+        return this.nomeFantasia;
+    }
+
+    public NFEndereco getEndereco() {
+        return this.endereco;
+    }
+
+    public String getInscricaoEstadual() {
+        return this.inscricaoEstadual;
+    }
+
+    public String getInscricaoEstadualSubstituicaoTributaria() {
+        return this.inscricaoEstadualSubstituicaoTributaria;
+    }
+
+    public String getInscricaoMunicipal() {
+        return this.inscricaoMunicipal;
+    }
+
+    public String getClassificacaoNacionalAtividadesEconomicas() {
+        return this.classificacaoNacionalAtividadesEconomicas;
+    }
+
+    public NFRegimeTributario getRegimeTributario() {
+        return this.regimeTributario;
     }
 }

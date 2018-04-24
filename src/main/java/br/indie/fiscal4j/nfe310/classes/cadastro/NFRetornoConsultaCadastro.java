@@ -19,12 +19,12 @@ public class NFRetornoConsultaCadastro extends DFBase {
         return this.dados;
     }
 
-    public void setDados(final NFRetornoConsultaCadastroDados dados) {
-        this.dados = dados;
-    }
-
     public String getVersao() {
         return this.versao;
+    }
+
+    public void setDados(final NFRetornoConsultaCadastroDados dados) {
+        this.dados = dados;
     }
 
     public void setVersao(final String versao) {

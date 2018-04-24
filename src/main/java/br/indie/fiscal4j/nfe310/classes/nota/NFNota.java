@@ -22,12 +22,12 @@ public class NFNota extends DFBase {
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
-    public NFNotaInfo getInfo() {
-        return this.info;
-    }
-
     public void setInfo(final NFNotaInfo info) {
         this.info = info;
+    }
+
+    public NFNotaInfo getInfo() {
+        return this.info;
     }
 
     public NFNotaInfoSuplementar getInfoSuplementar() {
@@ -36,10 +36,6 @@ public class NFNota extends DFBase {
 
     public void setInfoSuplementar(final NFNotaInfoSuplementar infoSuplementar) {
         this.infoSuplementar = infoSuplementar;
-    }
-
-    public long getIdentificadorLocal() {
-        return this.identificadorLocal;
     }
 
     /**
@@ -51,11 +47,15 @@ public class NFNota extends DFBase {
         this.identificadorLocal = identificadorLocal;
     }
 
-    public NFSignature getAssinatura() {
-        return this.assinatura;
+    public long getIdentificadorLocal() {
+        return this.identificadorLocal;
     }
 
     public void setAssinatura(final NFSignature assinatura) {
         this.assinatura = assinatura;
+    }
+
+    public NFSignature getAssinatura() {
+        return this.assinatura;
     }
 }

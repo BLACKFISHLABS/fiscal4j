@@ -25,6 +25,10 @@ public enum NFNotaInfoSituacaoTributariaIPI {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoSituacaoTributariaIPI valueOfCodigo(final String codigo) {
         for (final NFNotaInfoSituacaoTributariaIPI situacaoTributariaIPI : NFNotaInfoSituacaoTributariaIPI.values()) {
             if (situacaoTributariaIPI.getCodigo().equals(codigo)) {
@@ -32,10 +36,6 @@ public enum NFNotaInfoSituacaoTributariaIPI {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

@@ -59,123 +59,123 @@ public class NFNotaInfoItemImpostoICMSPartilhado extends DFBase {
     @Element(name = "UFST", required = true)
     private String ufICMSST;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
-        return this.modalidadeBCICMS;
-    }
-
     public void setModalidadeBCICMS(final NFNotaInfoItemModalidadeBCICMS modalidadeBCICMS) {
         this.modalidadeBCICMS = modalidadeBCICMS;
-    }
-
-    public String getValorBCICMS() {
-        return this.valorBCICMS;
     }
 
     public void setValorBCICMS(final BigDecimal valorBCICMS) {
         this.valorBCICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMS, "Valor BC ICMS Partilhado");
     }
 
-    public String getPercentualReducaoBC() {
-        return this.percentualReducaoBC;
-    }
-
     public void setPercentualReducaoBC(final BigDecimal percentualReducaoBC) {
         this.percentualReducaoBC = BigDecimalParser.tamanho5Com2CasasDecimais(percentualReducaoBC, "Percentual Reducao BC ICMS Partilhado");
-    }
-
-    public String getPercentualAliquotaImposto() {
-        return this.percentualAliquotaImposto;
     }
 
     public void setPercentualAliquotaImposto(final BigDecimal percentualAliquotaImposto) {
         this.percentualAliquotaImposto = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaImposto, "Percentual Aliquota Imposto ICMS Partilhado");
     }
 
-    public String getValorICMS() {
-        return this.valorICMS;
-    }
-
     public void setValorICMS(final BigDecimal valorICMS) {
         this.valorICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMS, "Valor ICMS Partilhado");
-    }
-
-    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
-        return this.modalidadeBCICMSST;
     }
 
     public void setModalidadeBCICMSST(final NFNotaInfoItemModalidadeBCICMSST modalidadeBCICMSST) {
         this.modalidadeBCICMSST = modalidadeBCICMSST;
     }
 
-    public String getPercentualMargemValorAdicionadoICMSST() {
-        return this.percentualMargemValorAdicionadoICMSST;
-    }
-
     public void setPercentualMargemValorAdicionadoICMSST(final BigDecimal percentualMargemValorAdicionadoICMSST) {
         this.percentualMargemValorAdicionadoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualMargemValorAdicionadoICMSST, "Percentual Margem Valor Adicionado ICMS ST Partilhado");
-    }
-
-    public String getPercentualReducaoBCICMSST() {
-        return this.percentualReducaoBCICMSST;
     }
 
     public void setPercentualReducaoBCICMSST(final BigDecimal percentualReducaoBCICMSST) {
         this.percentualReducaoBCICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCICMSST, "Percentual Reducao BC ICMS ST Partilhado");
     }
 
-    public String getValorBCICMSST() {
-        return this.valorBCICMSST;
-    }
-
     public void setValorBCICMSST(final BigDecimal valorBCICMSST) {
         this.valorBCICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSST, "Valor BC ICMS ST Partilhado");
-    }
-
-    public String getPercentualAliquotaImpostoICMSST() {
-        return this.percentualAliquotaImpostoICMSST;
     }
 
     public void setPercentualAliquotaImpostoICMSST(final BigDecimal percentualAliquotaImpostoICMSST) {
         this.percentualAliquotaImpostoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaImpostoICMSST, "Percentual Aliquota Imposto ICMS ST Partilhado");
     }
 
-    public String getValorICMSST() {
-        return this.valorICMSST;
-    }
-
     public void setValorICMSST(final BigDecimal valorICMSST) {
         this.valorICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSST, "Valor ICMS ST Partilhado");
-    }
-
-    public String getPercentualBCOperacaoPropria() {
-        return this.percentualBCOperacaoPropria;
     }
 
     public void setPercentualBCOperacaoPropria(final BigDecimal percentual) {
         this.percentualBCOperacaoPropria = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentual, "Percentual Partilhado");
     }
 
-    public String getUfICMSST() {
-        return this.ufICMSST;
-    }
-
     public void setUfICMSST(final DFUnidadeFederativa ufICMSST) {
         this.ufICMSST = ufICMSST.getCodigo();
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
+        return this.modalidadeBCICMS;
+    }
+
+    public String getValorBCICMS() {
+        return this.valorBCICMS;
+    }
+
+    public String getPercentualReducaoBC() {
+        return this.percentualReducaoBC;
+    }
+
+    public String getPercentualAliquotaImposto() {
+        return this.percentualAliquotaImposto;
+    }
+
+    public String getValorICMS() {
+        return this.valorICMS;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
+        return this.modalidadeBCICMSST;
+    }
+
+    public String getPercentualMargemValorAdicionadoICMSST() {
+        return this.percentualMargemValorAdicionadoICMSST;
+    }
+
+    public String getPercentualReducaoBCICMSST() {
+        return this.percentualReducaoBCICMSST;
+    }
+
+    public String getValorBCICMSST() {
+        return this.valorBCICMSST;
+    }
+
+    public String getPercentualAliquotaImpostoICMSST() {
+        return this.percentualAliquotaImpostoICMSST;
+    }
+
+    public String getValorICMSST() {
+        return this.valorICMSST;
+    }
+
+    public String getPercentualBCOperacaoPropria() {
+        return this.percentualBCOperacaoPropria;
+    }
+
+    public String getUfICMSST() {
+        return this.ufICMSST;
     }
 }

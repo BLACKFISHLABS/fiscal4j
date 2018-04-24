@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
 import br.indie.fiscal4j.DFModelo;
-import br.indie.fiscal4j.nfe310.NFeConfig;
+import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe310.classes.lote.consulta.NFLoteConsulta;
 import br.indie.fiscal4j.nfe310.classes.lote.consulta.NFLoteConsultaRetorno;
@@ -40,7 +40,7 @@ class WSLoteConsulta {
     private OMElement efetuaConsulta(final OMElement omElement, final DFModelo modelo) throws RemoteException {
         final NfeRetAutorizacaoStub.NfeCabecMsg cabec = new NfeRetAutorizacaoStub.NfeCabecMsg();
         cabec.setCUF(this.config.getCUF().getCodigoIbge());
-        cabec.setVersaoDados(NFeConfig.VERSAO);
+        cabec.setVersaoDados(this.config.getVersao());
 
         final NfeRetAutorizacaoStub.NfeCabecMsgE cabecE = new NfeRetAutorizacaoStub.NfeCabecMsgE();
         cabecE.setNfeCabecMsg(cabec);
@@ -62,7 +62,7 @@ class WSLoteConsulta {
         final NFLoteConsulta consulta = new NFLoteConsulta();
         consulta.setRecibo(numeroRecibo);
         consulta.setAmbiente(this.config.getAmbiente());
-        consulta.setVersao(new BigDecimal(NFeConfig.VERSAO));
+        consulta.setVersao(new BigDecimal(this.config.getVersao()));
         return consulta;
     }
 }

@@ -18,27 +18,27 @@ public class NFNotaInfoPagamento extends DFBase {
     @Element(name = "card", required = false)
     private NFNotaInfoCartao cartao;
 
-    public NFFormaPagamentoMoeda getFormaPagamentoMoeda() {
-        return this.formaPagamentoMoeda;
+    public void setCartao(final NFNotaInfoCartao cartao) {
+        this.cartao = cartao;
     }
 
     public void setFormaPagamentoMoeda(final NFFormaPagamentoMoeda formaPagamentoMoeda) {
         this.formaPagamentoMoeda = formaPagamentoMoeda;
     }
 
-    public String getValorPagamento() {
-        return this.valorPagamento;
-    }
-
     public void setValorPagamento(final BigDecimal valorPagamento) {
         this.valorPagamento = BigDecimalParser.tamanho15Com2CasasDecimais(valorPagamento, "Valor Pagamento");
     }
 
-    public NFNotaInfoCartao getCartao() {
-        return this.cartao;
+    public NFFormaPagamentoMoeda getFormaPagamentoMoeda() {
+        return this.formaPagamentoMoeda;
     }
 
-    public void setCartao(final NFNotaInfoCartao cartao) {
-        this.cartao = cartao;
+    public String getValorPagamento() {
+        return this.valorPagamento;
+    }
+
+    public NFNotaInfoCartao getCartao() {
+        return this.cartao;
     }
 }

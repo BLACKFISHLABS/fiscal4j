@@ -14,6 +14,10 @@ public enum NFModalidadeFrete {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFModalidadeFrete valueOfCodigo(final String codigo) {
         for (final NFModalidadeFrete modalidadeFrete : NFModalidadeFrete.values()) {
             if (modalidadeFrete.getCodigo().equals(codigo)) {
@@ -21,10 +25,6 @@ public enum NFModalidadeFrete {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

@@ -13,6 +13,10 @@ public enum NFTipo {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFTipo valueOfCodigo(final String codigo) {
         for (final NFTipo tipo : NFTipo.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFTipo {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

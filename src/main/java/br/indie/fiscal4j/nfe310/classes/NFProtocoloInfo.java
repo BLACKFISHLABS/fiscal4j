@@ -39,28 +39,48 @@ public class NFProtocoloInfo extends DFBase {
     @Element(name = "xMotivo", required = true)
     private String motivo;
 
-    public DFAmbiente getAmbiente() {
-        return this.ambiente;
-    }
-
     public void setAmbiente(final DFAmbiente ambiente) {
         this.ambiente = ambiente;
-    }
-
-    public String getVersaoAplicacao() {
-        return this.versaoAplicacao;
     }
 
     public void setVersaoAplicacao(final String versaoAplicacao) {
         this.versaoAplicacao = versaoAplicacao;
     }
 
-    public String getChave() {
-        return this.chave;
-    }
-
     public void setChave(final String chave) {
         this.chave = chave;
+    }
+
+    public void setDataRecebimento(final String dataRecebimento) {
+        this.dataRecebimento = dataRecebimento;
+    }
+
+    public void setNumeroProtocolo(final String numeroProtocolo) {
+        this.numeroProtocolo = numeroProtocolo;
+    }
+
+    public void setValidador(final String validador) {
+        this.validador = validador;
+    }
+
+    public void setStatus(final String status) {
+        this.status = status;
+    }
+
+    public void setMotivo(final String motivo) {
+        this.motivo = motivo;
+    }
+
+    public DFAmbiente getAmbiente() {
+        return this.ambiente;
+    }
+
+    public String getVersaoAplicacao() {
+        return this.versaoAplicacao;
+    }
+
+    public String getChave() {
+        return this.chave;
     }
 
     public LocalDateTime getDataRecebimento() throws Exception {
@@ -71,40 +91,20 @@ public class NFProtocoloInfo extends DFBase {
         }
     }
 
-    public void setDataRecebimento(final String dataRecebimento) {
-        this.dataRecebimento = dataRecebimento;
-    }
-
     public String getNumeroProtocolo() {
         return this.numeroProtocolo;
-    }
-
-    public void setNumeroProtocolo(final String numeroProtocolo) {
-        this.numeroProtocolo = numeroProtocolo;
     }
 
     public String getValidador() {
         return this.validador;
     }
 
-    public void setValidador(final String validador) {
-        this.validador = validador;
-    }
-
     public String getStatus() {
         return this.status;
     }
 
-    public void setStatus(final String status) {
-        this.status = status;
-    }
-
     public String getMotivo() {
         return this.motivo;
-    }
-
-    public void setMotivo(final String motivo) {
-        this.motivo = motivo;
     }
 
     public String getIdentificador() {

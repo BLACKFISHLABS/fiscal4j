@@ -66,132 +66,132 @@ public class NFNotaInfoICMSTotal extends DFBase {
     @Element(name = "vTotTrib", required = false)
     private String valorTotalTributos;
 
-    public String getBaseCalculoICMS() {
-        return this.baseCalculoICMS;
-    }
-
     public void setBaseCalculoICMS(final BigDecimal baseCalculoICMS) {
         this.baseCalculoICMS = BigDecimalParser.tamanho15Com2CasasDecimais(baseCalculoICMS, "Base de Calculo ICMS Total");
-    }
-
-    public String getValorTotalICMS() {
-        return this.valorTotalICMS;
     }
 
     public void setValorTotalICMS(final BigDecimal valorTotalICMS) {
         this.valorTotalICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalICMS, "Valalor Total ICMS");
     }
 
-    public String getValorICMSDesonerado() {
-        return this.valorICMSDesonerado;
-    }
-
-    public void setValorICMSDesonerado(final BigDecimal valorICMSDesonerado) {
-        this.valorICMSDesonerado = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesonerado, "Valor ICMS Desonerado");
-    }
-
-    public String getBaseCalculoICMSST() {
-        return this.baseCalculoICMSST;
-    }
-
     public void setBaseCalculoICMSST(final BigDecimal baseCalculoICMSST) {
         this.baseCalculoICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(baseCalculoICMSST, "Base de Calculo ICMS ST Total");
-    }
-
-    public String getValorTotalICMSST() {
-        return this.valorTotalICMSST;
     }
 
     public void setValorTotalICMSST(final BigDecimal valorTotalICMSST) {
         this.valorTotalICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalICMSST, "Valor Total ICMS ST");
     }
 
-    public String getValorTotalDosProdutosServicos() {
-        return this.valorTotalDosProdutosServicos;
-    }
-
     public void setValorTotalDosProdutosServicos(final BigDecimal valorTotalDosProdutosServicos) {
         this.valorTotalDosProdutosServicos = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalDosProdutosServicos, "Valor Total Produtos e Servicos");
-    }
-
-    public String getValorTotalFrete() {
-        return this.valorTotalFrete;
     }
 
     public void setValorTotalFrete(final BigDecimal valorTotalFrete) {
         this.valorTotalFrete = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalFrete, "Valor Total Frete");
     }
 
-    public String getValorTotalSeguro() {
-        return this.valorTotalSeguro;
-    }
-
     public void setValorTotalSeguro(final BigDecimal valorTotalSeguro) {
         this.valorTotalSeguro = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalSeguro, "Valor Total Seguro");
-    }
-
-    public String getValorTotalDesconto() {
-        return this.valorTotalDesconto;
     }
 
     public void setValorTotalDesconto(final BigDecimal valorTotalDesconto) {
         this.valorTotalDesconto = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalDesconto, "Valor Total Desconto");
     }
 
-    public String getValorTotalII() {
-        return this.valorTotalII;
-    }
-
     public void setValorTotalII(final BigDecimal valorTotalII) {
         this.valorTotalII = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalII, "Valor Total II");
-    }
-
-    public String getValorTotalIPI() {
-        return this.valorTotalIPI;
     }
 
     public void setValorTotalIPI(final BigDecimal valorTotalIPI) {
         this.valorTotalIPI = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalIPI, "Valor Total IPI");
     }
 
-    public String getValorPIS() {
-        return this.valorPIS;
-    }
-
     public void setValorPIS(final BigDecimal valorPIS) {
         this.valorPIS = BigDecimalParser.tamanho15Com2CasasDecimais(valorPIS, "Valor Total PIS");
-    }
-
-    public String getValorCOFINS() {
-        return this.valorCOFINS;
     }
 
     public void setValorCOFINS(final BigDecimal valorCOFINS) {
         this.valorCOFINS = BigDecimalParser.tamanho15Com2CasasDecimais(valorCOFINS, "Valor Total COFINS");
     }
 
-    public String getOutrasDespesasAcessorias() {
-        return this.outrasDespesasAcessorias;
-    }
-
     public void setOutrasDespesasAcessorias(final BigDecimal outrasDespesasAcessorias) {
         this.outrasDespesasAcessorias = BigDecimalParser.tamanho15Com2CasasDecimais(outrasDespesasAcessorias, "Outras Despesas Acessorias");
-    }
-
-    public String getValorTotalNFe() {
-        return this.valorTotalNFe;
     }
 
     public void setValorTotalNFe(final BigDecimal valorTotalNFe) {
         this.valorTotalNFe = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalNFe, "Valor Total NFe");
     }
 
-    public String getValorTotalTributos() {
-        return this.valorTotalTributos;
-    }
-
     public void setValorTotalTributos(final BigDecimal valorTotalTributos) {
         this.valorTotalTributos = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalTributos, "Valor Total Tributos");
+    }
+
+    public void setValorICMSDesonerado(final BigDecimal valorICMSDesonerado) {
+        this.valorICMSDesonerado = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesonerado, "Valor ICMS Desonerado");
+    }
+
+    public String getBaseCalculoICMS() {
+        return this.baseCalculoICMS;
+    }
+
+    public String getValorTotalICMS() {
+        return this.valorTotalICMS;
+    }
+
+    public String getValorICMSDesonerado() {
+        return this.valorICMSDesonerado;
+    }
+
+    public String getBaseCalculoICMSST() {
+        return this.baseCalculoICMSST;
+    }
+
+    public String getValorTotalICMSST() {
+        return this.valorTotalICMSST;
+    }
+
+    public String getValorTotalDosProdutosServicos() {
+        return this.valorTotalDosProdutosServicos;
+    }
+
+    public String getValorTotalFrete() {
+        return this.valorTotalFrete;
+    }
+
+    public String getValorTotalSeguro() {
+        return this.valorTotalSeguro;
+    }
+
+    public String getValorTotalDesconto() {
+        return this.valorTotalDesconto;
+    }
+
+    public String getValorTotalII() {
+        return this.valorTotalII;
+    }
+
+    public String getValorTotalIPI() {
+        return this.valorTotalIPI;
+    }
+
+    public String getValorPIS() {
+        return this.valorPIS;
+    }
+
+    public String getValorCOFINS() {
+        return this.valorCOFINS;
+    }
+
+    public String getOutrasDespesasAcessorias() {
+        return this.outrasDespesasAcessorias;
+    }
+
+    public String getValorTotalNFe() {
+        return this.valorTotalNFe;
+    }
+
+    public String getValorTotalTributos() {
+        return this.valorTotalTributos;
     }
 
     public String getValorICMSFundoCombatePobreza() {

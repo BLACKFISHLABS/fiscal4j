@@ -26,10 +26,6 @@ public class NFNotaInfoItemImpostoCOFINSAliquota extends DFBase {
     @Element(name = "vCOFINS", required = true)
     private String valor;
 
-    public NFNotaInfoSituacaoTributariaCOFINS getSituacaoTributaria() {
-        return this.situacaoTributaria;
-    }
-
     public void setSituacaoTributaria(final NFNotaInfoSituacaoTributariaCOFINS situacaoTributaria) {
         if (!NFNotaInfoItemImpostoCOFINSAliquota.SITUACOES_VALIDAS.contains(situacaoTributaria)) {
             throw new IllegalStateException("Situacao tributaria invalido no item COFINS Aliquota.");
@@ -37,27 +33,31 @@ public class NFNotaInfoItemImpostoCOFINSAliquota extends DFBase {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public String getValorBaseCalulo() {
-        return this.valorBaseCalulo;
-    }
-
     public void setValorBaseCalulo(final BigDecimal valorBaseCalulo) {
         this.valorBaseCalulo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalulo, "Valor Base de Calculo COFINS Item");
-    }
-
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
     }
 
     public void setPercentualAliquota(final BigDecimal aliquota) {
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota COFINS Item");
     }
 
-    public String getValor() {
-        return this.valor;
-    }
-
     public void setValor(final BigDecimal valor) {
         this.valor = BigDecimalParser.tamanho15Com2CasasDecimais(valor, "Valor COFINS Item");
+    }
+
+    public NFNotaInfoSituacaoTributariaCOFINS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public String getValorBaseCalulo() {
+        return this.valorBaseCalulo;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getValor() {
+        return this.valor;
     }
 }

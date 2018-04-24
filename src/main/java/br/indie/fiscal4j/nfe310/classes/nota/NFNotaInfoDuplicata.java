@@ -20,6 +20,15 @@ public class NFNotaInfoDuplicata extends DFBase {
     @Element(name = "vDup", required = true)
     private String valorDuplicata;
 
+    public void setNumeroDuplicata(final String numeroDuplicata) {
+        StringValidador.tamanho60(numeroDuplicata, "Numero Duplicata");
+        this.numeroDuplicata = numeroDuplicata;
+    }
+
+    public void setDataVencimento(final LocalDate dataVencimento) {
+        this.dataVencimento = dataVencimento;
+    }
+
     public void setValorDuplicata(final BigDecimal valorDuplicata) {
         this.valorDuplicata = BigDecimalParser.tamanho15Com2CasasDecimais(valorDuplicata, "Valor Duplicata");
     }
@@ -36,16 +45,7 @@ public class NFNotaInfoDuplicata extends DFBase {
         return this.numeroDuplicata;
     }
 
-    public void setNumeroDuplicata(final String numeroDuplicata) {
-        StringValidador.tamanho60(numeroDuplicata, "Numero Duplicata");
-        this.numeroDuplicata = numeroDuplicata;
-    }
-
     public LocalDate getDataVencimento() {
         return this.dataVencimento;
-    }
-
-    public void setDataVencimento(final LocalDate dataVencimento) {
-        this.dataVencimento = dataVencimento;
     }
 }

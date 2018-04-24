@@ -29,8 +29,8 @@ public class NFNotaInfoTransportador extends DFBase {
     @Element(name = "UF", required = false)
     private String uf;
 
-    public String getCnpj() {
-        return this.cnpj;
+    public void setEnderecoComplemento(final String enderecoComplemento) {
+        this.enderecoComplemento = enderecoComplemento;
     }
 
     public void setCnpj(final String cnpj) {
@@ -41,10 +41,6 @@ public class NFNotaInfoTransportador extends DFBase {
         this.cnpj = cnpj;
     }
 
-    public String getCpf() {
-        return this.cpf;
-    }
-
     public void setCpf(final String cpf) {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao pode ter CPF e CNPJ ao mesmo tempo");
@@ -53,17 +49,9 @@ public class NFNotaInfoTransportador extends DFBase {
         this.cpf = cpf;
     }
 
-    public String getRazaoSocial() {
-        return this.razaoSocial;
-    }
-
     public void setRazaoSocial(final String razaoSocial) {
         StringValidador.tamanho60(razaoSocial, "Razao Social Transportador");
         this.razaoSocial = razaoSocial;
-    }
-
-    public String getInscricaoEstadual() {
-        return this.inscricaoEstadual;
     }
 
     public void setInscricaoEstadual(final String inscricaoEstadual) {
@@ -71,28 +59,40 @@ public class NFNotaInfoTransportador extends DFBase {
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
-    public String getEnderecoComplemento() {
-        return this.enderecoComplemento;
+    public void setNomeMunicipio(final String nomeMunicipio) {
+        StringValidador.tamanho60(nomeMunicipio, "Nome Municipio Transportador");
+        this.nomeMunicipio = nomeMunicipio;
     }
 
-    public void setEnderecoComplemento(final String enderecoComplemento) {
-        this.enderecoComplemento = enderecoComplemento;
+    public void setUf(final DFUnidadeFederativa uf) {
+        this.uf = uf.getCodigo();
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public String getRazaoSocial() {
+        return this.razaoSocial;
+    }
+
+    public String getInscricaoEstadual() {
+        return this.inscricaoEstadual;
+    }
+
+    public String getEnderecoComplemento() {
+        return this.enderecoComplemento;
     }
 
     public String getNomeMunicipio() {
         return this.nomeMunicipio;
     }
 
-    public void setNomeMunicipio(final String nomeMunicipio) {
-        StringValidador.tamanho60(nomeMunicipio, "Nome Municipio Transportador");
-        this.nomeMunicipio = nomeMunicipio;
-    }
-
     public String getUf() {
         return this.uf;
-    }
-
-    public void setUf(final DFUnidadeFederativa uf) {
-        this.uf = uf.getCodigo();
     }
 }

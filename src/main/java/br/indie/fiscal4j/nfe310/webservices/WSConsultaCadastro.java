@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe310.NFeConfig;
+import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe310.classes.cadastro.NFConsultaCadastro;
 import br.indie.fiscal4j.nfe310.classes.cadastro.NFInfoConsultaCadastro;

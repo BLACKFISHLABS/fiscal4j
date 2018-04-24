@@ -13,28 +13,39 @@ import java.util.List;
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFLoteConsultaRetorno extends DFBase {
     private static final long serialVersionUID = -4164491132370082153L;
-    @ElementList(entry = "protNFe", inline = true, required = false)
-    protected List<NFProtocolo> protocolos;
+
     @Attribute(name = "versao", required = true)
     private String versao;
+
     @Element(name = "tpAmb", required = true)
     private DFAmbiente ambiente;
+
     @Element(name = "verAplic", required = true)
     private String versaoAplicacao;
+
     @Element(name = "nRec", required = false)
     private String numeroRecibo;
+
     @Element(name = "cStat", required = true)
     private String status;
+
     @Element(name = "dhRecbto", required = true)
     private LocalDateTime dataHoraRecebimento;
+
     @Element(name = "xMotivo", required = true)
     private String motivo;
+
     @Element(name = "cUF", required = true)
     private DFUnidadeFederativa uf;
+
     @Element(name = "cMsg", required = false)
     private String codigoMessage;
+
     @Element(name = "xMsg", required = false)
     private String mensagem;
+
+    @ElementList(entry = "protNFe", inline = true, required = false)
+    protected List<NFProtocolo> protocolos;
 
     public String getVersao() {
         return this.versao;

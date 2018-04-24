@@ -43,83 +43,83 @@ public class NFNotaInfoItemImpostoICMS30 extends DFBase {
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS desoneracao;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
-        return this.modalidadeBCICMSST;
-    }
-
     public void setModalidadeBCICMSST(final NFNotaInfoItemModalidadeBCICMSST modalidadeBCICMSST) {
         this.modalidadeBCICMSST = modalidadeBCICMSST;
-    }
-
-    public String getPercentualMargemValorAdicionadoICMSST() {
-        return this.percentualMargemValorAdicionadoICMSST;
     }
 
     public void setPercentualMargemValorAdicionadoICMSST(final BigDecimal percentualMargemValorAdicionadoICMSST) {
         this.percentualMargemValorAdicionadoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualMargemValorAdicionadoICMSST, "Percentual Margem Valor Adicionado ICMS ST ICMS30 Item");
     }
 
-    public String getPercentualReducaoBCICMSST() {
-        return this.percentualReducaoBCICMSST;
-    }
-
     public void setPercentualReducaoBCICMSST(final BigDecimal percentualReducaoBCICMSST) {
         this.percentualReducaoBCICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCICMSST, "Percentual Reducao BC ICMS ST ICMS30 Item");
-    }
-
-    public String getValorBCICMSST() {
-        return this.valorBCICMSST;
     }
 
     public void setValorBCICMSST(final BigDecimal valorBCICMSST) {
         this.valorBCICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSST, "Valor BC ICMS ST ICMS30 Item");
     }
 
-    public String getPercentualAliquotaImpostoICMSST() {
-        return this.percentualAliquotaImpostoICMSST;
-    }
-
     public void setPercentualAliquotaImpostoICMSST(final BigDecimal aliquotaImpostoICMSST) {
         this.percentualAliquotaImpostoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquotaImpostoICMSST, "Aliquota Imposto ICMS ST ICMS30 Item");
-    }
-
-    public String getValorImpostoICMSST() {
-        return this.valorImpostoICMSST;
     }
 
     public void setValorImpostoICMSST(final BigDecimal valorImpostoICMSST) {
         this.valorImpostoICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorImpostoICMSST, "Valor Imposto ICMS ST ICMS30 Item");
     }
 
-    public String getValorICMSDesoneracao() {
-        return this.valorICMSDesoneracao;
+    public void setDesoneracao(final NFNotaMotivoDesoneracaoICMS nfNotaMotivoDesoneracaoICMS) {
+        this.desoneracao = nfNotaMotivoDesoneracaoICMS;
     }
 
     public void setValorICMSDesoneracao(final BigDecimal valorICMSDesoneracao) {
         this.valorICMSDesoneracao = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao");
     }
 
-    public NFNotaMotivoDesoneracaoICMS getDesoneracao() {
-        return this.desoneracao;
+    public NFOrigem getOrigem() {
+        return this.origem;
     }
 
-    public void setDesoneracao(final NFNotaMotivoDesoneracaoICMS nfNotaMotivoDesoneracaoICMS) {
-        this.desoneracao = nfNotaMotivoDesoneracaoICMS;
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMSST getModalidadeBCICMSST() {
+        return this.modalidadeBCICMSST;
+    }
+
+    public String getPercentualMargemValorAdicionadoICMSST() {
+        return this.percentualMargemValorAdicionadoICMSST;
+    }
+
+    public String getPercentualReducaoBCICMSST() {
+        return this.percentualReducaoBCICMSST;
+    }
+
+    public String getValorBCICMSST() {
+        return this.valorBCICMSST;
+    }
+
+    public String getPercentualAliquotaImpostoICMSST() {
+        return this.percentualAliquotaImpostoICMSST;
+    }
+
+    public String getValorImpostoICMSST() {
+        return this.valorImpostoICMSST;
+    }
+
+    public String getValorICMSDesoneracao() {
+        return this.valorICMSDesoneracao;
+    }
+
+    public NFNotaMotivoDesoneracaoICMS getDesoneracao() {
+        return this.desoneracao;
     }
 }

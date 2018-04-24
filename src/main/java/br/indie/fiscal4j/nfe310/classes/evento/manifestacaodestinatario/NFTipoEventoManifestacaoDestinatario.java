@@ -15,6 +15,14 @@ public enum NFTipoEventoManifestacaoDestinatario {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
     public static NFTipoEventoManifestacaoDestinatario valueOfCodigo(final String codigo) {
         for (NFTipoEventoManifestacaoDestinatario tipoEvento : NFTipoEventoManifestacaoDestinatario.values()) {
             if (tipoEvento.getCodigo().equalsIgnoreCase(codigo)) {
@@ -22,14 +30,6 @@ public enum NFTipoEventoManifestacaoDestinatario {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
     }
 
     @Override

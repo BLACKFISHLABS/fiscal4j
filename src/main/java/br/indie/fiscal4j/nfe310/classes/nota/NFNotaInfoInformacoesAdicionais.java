@@ -26,17 +26,9 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
     @ElementList(entry = "procRef", inline = true, required = false)
     private List<NFNotaInfoProcessoReferenciado> processosRefenciado;
 
-    public String getInformacoesAdicionaisInteresseFisco() {
-        return this.informacoesAdicionaisInteresseFisco;
-    }
-
     public void setInformacoesAdicionaisInteresseFisco(final String informacoesAdicionaisInteresseFisco) {
         StringValidador.tamanho2000(informacoesAdicionaisInteresseFisco, "Informacoes Adicionais Interesse Fisco");
         this.informacoesAdicionaisInteresseFisco = informacoesAdicionaisInteresseFisco;
-    }
-
-    public String getInformacoesComplementaresInteresseContribuinte() {
-        return this.informacoesComplementaresInteresseContribuinte;
     }
 
     public void setInformacoesComplementaresInteresseContribuinte(final String informacoesComplementaresInteresseContribuinte) {
@@ -44,17 +36,9 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
         this.informacoesComplementaresInteresseContribuinte = informacoesComplementaresInteresseContribuinte;
     }
 
-    public List<NFNotaInfoObservacao> getObservacoesContribuinte() {
-        return this.observacoesContribuinte;
-    }
-
     public void setObservacoesContribuinte(final List<NFNotaInfoObservacao> observacoesContribuinte) {
         ListValidador.tamanho10(observacoesContribuinte, "Observacoes Contribuinte");
         this.observacoesContribuinte = observacoesContribuinte;
-    }
-
-    public List<NFNotaInfoObservacao> getObservacoesFisco() {
-        return this.observacoesFisco;
     }
 
     public void setObservacoesFisco(final List<NFNotaInfoObservacao> observacoesFisco) {
@@ -62,12 +46,28 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
         this.observacoesFisco = observacoesFisco;
     }
 
-    public List<NFNotaInfoProcessoReferenciado> getProcessosRefenciado() {
-        return this.processosRefenciado;
-    }
-
     public void setProcessosRefenciado(final List<NFNotaInfoProcessoReferenciado> processosRefenciado) {
         ListValidador.tamanho100(processosRefenciado, "Processos Referenciados");
         this.processosRefenciado = processosRefenciado;
+    }
+
+    public String getInformacoesAdicionaisInteresseFisco() {
+        return this.informacoesAdicionaisInteresseFisco;
+    }
+
+    public String getInformacoesComplementaresInteresseContribuinte() {
+        return this.informacoesComplementaresInteresseContribuinte;
+    }
+
+    public List<NFNotaInfoObservacao> getObservacoesContribuinte() {
+        return this.observacoesContribuinte;
+    }
+
+    public List<NFNotaInfoObservacao> getObservacoesFisco() {
+        return this.observacoesFisco;
+    }
+
+    public List<NFNotaInfoProcessoReferenciado> getProcessosRefenciado() {
+        return this.processosRefenciado;
     }
 }

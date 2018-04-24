@@ -32,19 +32,11 @@ public class NFNotaInfoItemImpostoPISST extends DFBase {
         this.valorTributo = null;
     }
 
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
-    }
-
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
         if (this.valorAliquota != null || this.quantidadeVendida != null) {
             throw new IllegalStateException("Nao pode setar percentual aliquota caso valor aliquota ou quantidade vendida esteja setado");
         }
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC PIS ST Item");
-    }
-
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
     }
 
     public void setPercentualAliquota(final BigDecimal aliquota) {
@@ -54,19 +46,11 @@ public class NFNotaInfoItemImpostoPISST extends DFBase {
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota PIS ST Item");
     }
 
-    public String getQuantidadeVendida() {
-        return this.quantidadeVendida;
-    }
-
     public void setQuantidadeVendida(final BigDecimal quantidadeVendida) {
         if (this.percentualAliquota != null || this.valorBaseCalculo != null) {
             throw new IllegalStateException("Nao pode setar valor aliquota caso percentual aliquota ou valor base calculo esteja setado");
         }
         this.quantidadeVendida = BigDecimalParser.tamanho16ComAte4CasasDecimais(quantidadeVendida, "Quantidade Vendida PIS ST Item");
-    }
-
-    public String getValorAliquota() {
-        return this.valorAliquota;
     }
 
     public void setValorAliquota(final BigDecimal valorAliquota) {
@@ -76,11 +60,27 @@ public class NFNotaInfoItemImpostoPISST extends DFBase {
         this.valorAliquota = BigDecimalParser.tamanho15Com4CasasDecimais(valorAliquota, "Valor Aliquota PIS ST Item");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo PIS ST Item");
+    }
+
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getQuantidadeVendida() {
+        return this.quantidadeVendida;
+    }
+
+    public String getValorAliquota() {
+        return this.valorAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
     }
 }

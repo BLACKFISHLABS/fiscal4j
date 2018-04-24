@@ -26,8 +26,8 @@ public class NFTipoEvento extends DFBase {
     @Element(name = "xCondUso", required = false)
     private String condicaoUso;
 
-    public String getDescricaoEvento() {
-        return this.descricaoEvento;
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {
@@ -35,27 +35,27 @@ public class NFTipoEvento extends DFBase {
         this.descricaoEvento = descricaoEvento;
     }
 
+    public String getDescricaoEvento() {
+        return this.descricaoEvento;
+    }
+
     public String getVersao() {
         return this.versao;
-    }
-
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
-    }
-
-    public String getCondicaoUso() {
-        return this.condicaoUso;
     }
 
     public void setCondicaoUso(final String condicaoUso) {
         this.condicaoUso = condicaoUso;
     }
 
-    public String getTextoCorrecao() {
-        return this.textoCorrecao;
-    }
-
     public void setTextoCorrecao(final String textoCorrecao) {
         this.textoCorrecao = textoCorrecao;
+    }
+
+    public String getCondicaoUso() {
+        return this.condicaoUso;
+    }
+
+    public String getTextoCorrecao() {
+        return this.textoCorrecao;
     }
 }

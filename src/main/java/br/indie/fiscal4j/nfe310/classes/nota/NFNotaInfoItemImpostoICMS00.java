@@ -30,16 +30,8 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
     @Element(name = "vICMS", required = true)
     private String valorTributo;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
@@ -49,35 +41,43 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
-        return this.modalidadeBCICMS;
-    }
-
     public void setModalidadeBCICMS(final NFNotaInfoItemModalidadeBCICMS modalidadeBCICMS) {
         this.modalidadeBCICMS = modalidadeBCICMS;
-    }
-
-    public String getValorBaseCalculo() {
-        return this.valorBaseCalculo;
     }
 
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
         this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor Base Calculo ICMS00 Item");
     }
 
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
-    }
-
     public void setPercentualAliquota(final BigDecimal aliquota) {
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota ICMS00 Item");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo ICMS00 Item");
+    }
+
+    public NFOrigem getOrigem() {
+        return this.origem;
+    }
+
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
+        return this.modalidadeBCICMS;
+    }
+
+    public String getValorBaseCalculo() {
+        return this.valorBaseCalculo;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
     }
 }

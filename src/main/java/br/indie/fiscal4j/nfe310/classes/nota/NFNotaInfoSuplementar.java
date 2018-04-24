@@ -14,12 +14,12 @@ public class NFNotaInfoSuplementar extends DFBase {
     @Element(data = true, name = "qrCode", required = true)
     private String qrCode;
 
-    public String getQrCode() {
-        return this.qrCode;
-    }
-
     public void setQrCode(final String qrCode) {
         StringValidador.tamanho100a600(qrCode, "QR Code");
         this.qrCode = qrCode;
+    }
+
+    public String getQrCode() {
+        return this.qrCode;
     }
 }

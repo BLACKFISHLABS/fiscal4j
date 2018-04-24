@@ -51,6 +51,14 @@ public class NFNotaInfoDestinatario extends DFBase {
         this.cnpj = cnpj;
     }
 
+    public void setCpf(final String cpf) {
+        if (this.cnpj != null) {
+            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado");
+        }
+        StringValidador.cpf(cpf);
+        this.cpf = cpf;
+    }
+
     public String getCpfj() {
         if (StringUtils.isNotBlank(this.cpf)) {
             return this.cpf;
@@ -64,16 +72,28 @@ public class NFNotaInfoDestinatario extends DFBase {
         return this.cpf;
     }
 
-    public void setCpf(final String cpf) {
-        if (this.cnpj != null) {
-            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado");
-        }
-        StringValidador.cpf(cpf);
-        this.cpf = cpf;
+    public void setRazaoSocial(final String razaoSocial) {
+        StringValidador.tamanho60(razaoSocial, "Razao Social Destinatario");
+        this.razaoSocial = razaoSocial;
     }
 
-    public String getIdEstrangeiro() {
-        return this.idEstrangeiro;
+    public void setEndereco(final NFEndereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setInscricaoEstadual(final String inscricaoEstadual) {
+        StringValidador.inscricaoEstadual(inscricaoEstadual);
+        this.inscricaoEstadual = inscricaoEstadual;
+    }
+
+    public void setInscricaoSuframa(final String inscricaoSuframa) {
+        StringValidador.tamanho8a9N(inscricaoSuframa, "Inscricao Suframa Destinatario");
+        this.inscricaoSuframa = inscricaoSuframa;
+    }
+
+    public void setEmail(final String email) {
+        StringValidador.tamanho60(email, "Email Destinatario");
+        this.email = email;
     }
 
     public void setIdEstrangeiro(final String idEstrangeiro) {
@@ -83,51 +103,8 @@ public class NFNotaInfoDestinatario extends DFBase {
         this.idEstrangeiro = idEstrangeiro;
     }
 
-    public String getRazaoSocial() {
-        return this.razaoSocial;
-    }
-
-    public void setRazaoSocial(final String razaoSocial) {
-        StringValidador.tamanho60(razaoSocial, "Razao Social Destinatario");
-        this.razaoSocial = razaoSocial;
-    }
-
-    public NFEndereco getEndereco() {
-        return this.endereco;
-    }
-
-    public void setEndereco(final NFEndereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public NFIndicadorIEDestinatario getIndicadorIEDestinatario() {
-        return this.indicadorIEDestinatario;
-    }
-
     public void setIndicadorIEDestinatario(final NFIndicadorIEDestinatario indicadorIEDestinatario) {
         this.indicadorIEDestinatario = indicadorIEDestinatario;
-    }
-
-    public String getInscricaoEstadual() {
-        return this.inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(final String inscricaoEstadual) {
-        StringValidador.inscricaoEstadual(inscricaoEstadual);
-        this.inscricaoEstadual = inscricaoEstadual;
-    }
-
-    public String getInscricaoSuframa() {
-        return this.inscricaoSuframa;
-    }
-
-    public void setInscricaoSuframa(final String inscricaoSuframa) {
-        StringValidador.tamanho8a9N(inscricaoSuframa, "Inscricao Suframa Destinatario");
-        this.inscricaoSuframa = inscricaoSuframa;
-    }
-
-    public String getInscricaoMunicipal() {
-        return this.inscricaoMunicipal;
     }
 
     public void setInscricaoMunicipal(final String inscricaoMunicipal) {
@@ -135,12 +112,35 @@ public class NFNotaInfoDestinatario extends DFBase {
         this.inscricaoMunicipal = inscricaoMunicipal;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getIdEstrangeiro() {
+        return this.idEstrangeiro;
     }
 
-    public void setEmail(final String email) {
-        StringValidador.tamanho60(email, "Email Destinatario");
-        this.email = email;
+    public String getRazaoSocial() {
+        return this.razaoSocial;
+    }
+
+    public NFEndereco getEndereco() {
+        return this.endereco;
+    }
+
+    public NFIndicadorIEDestinatario getIndicadorIEDestinatario() {
+        return this.indicadorIEDestinatario;
+    }
+
+    public String getInscricaoEstadual() {
+        return this.inscricaoEstadual;
+    }
+
+    public String getInscricaoSuframa() {
+        return this.inscricaoSuframa;
+    }
+
+    public String getInscricaoMunicipal() {
+        return this.inscricaoMunicipal;
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 }

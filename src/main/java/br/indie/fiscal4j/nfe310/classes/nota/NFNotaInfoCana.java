@@ -40,10 +40,6 @@ public class NFNotaInfoCana extends DFBase {
     @Element(name = "vLiqFor", required = true)
     private String valorLiquidoFornecimento;
 
-    public String getSafra() {
-        return this.safra;
-    }
-
     public void setSafra(final String safra) {
         if (safra.length() != 4 && safra.length() != 9) {
             throw new IllegalStateException("Tamanho invalido");
@@ -58,17 +54,9 @@ public class NFNotaInfoCana extends DFBase {
         this.safra = safra;
     }
 
-    public String getReferencia() {
-        return this.referencia;
-    }
-
     public void setReferencia(final String referencia) {
         StringValidador.mmaaaa(referencia);
         this.referencia = referencia;
-    }
-
-    public List<NFNotaInfoCanaFornecimentoDiario> getFornecimentosDiario() {
-        return this.fornecimentosDiario;
     }
 
     public void setFornecimentosDiario(final List<NFNotaInfoCanaFornecimentoDiario> fornecimentosDiario) {
@@ -76,60 +64,72 @@ public class NFNotaInfoCana extends DFBase {
         this.fornecimentosDiario = fornecimentosDiario;
     }
 
-    public List<NFNotaInfoCanaDeducao> getDeducoes() {
-        return this.deducoes;
-    }
-
     public void setDeducoes(final List<NFNotaInfoCanaDeducao> deducoes) {
         ListValidador.tamanho10(deducoes, "Deducoes");
         this.deducoes = deducoes;
-    }
-
-    public String getQuantidadeTotalMes() {
-        return this.quantidadeTotalMes;
     }
 
     public void setQuantidadeTotalMes(final BigDecimal quantidadeTotalMes) {
         this.quantidadeTotalMes = BigDecimalParser.tamanho21ComAte10CasasDecimais(quantidadeTotalMes, "Quantidade Total Mes");
     }
 
-    public String getQuantidadeTotalAnterior() {
-        return this.quantidadeTotalAnterior;
-    }
-
     public void setQuantidadeTotalAnterior(final BigDecimal quantidadeTotalAnterior) {
         this.quantidadeTotalAnterior = BigDecimalParser.tamanho21ComAte10CasasDecimais(quantidadeTotalAnterior, "Quantidade Total Anterior");
-    }
-
-    public String getQuantidadeTotalGeral() {
-        return this.quantidadeTotalGeral;
     }
 
     public void setQuantidadeTotalGeral(final BigDecimal quantidadeTotalGeral) {
         this.quantidadeTotalGeral = BigDecimalParser.tamanho21ComAte10CasasDecimais(quantidadeTotalGeral, "Quantidade Total Geral");
     }
 
-    public String getValorFornecimento() {
-        return this.valorFornecimento;
-    }
-
     public void setValorFornecimento(final BigDecimal valorFornecimento) {
         this.valorFornecimento = BigDecimalParser.tamanho15Com2CasasDecimais(valorFornecimento, "Valor Fornecimento");
-    }
-
-    public String getValorTotalDeducao() {
-        return this.valorTotalDeducao;
     }
 
     public void setValorTotalDeducao(final BigDecimal valorTotalDeducao) {
         this.valorTotalDeducao = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalDeducao, "Valor Total Deducao");
     }
 
-    public String getValorLiquidoFornecimento() {
-        return this.valorLiquidoFornecimento;
-    }
-
     public void setValorLiquidoFornecimento(final BigDecimal valorLiquidoFornecimento) {
         this.valorLiquidoFornecimento = BigDecimalParser.tamanho15Com2CasasDecimais(valorLiquidoFornecimento, "Valor Liquido Fornecimento");
+    }
+
+    public String getSafra() {
+        return this.safra;
+    }
+
+    public String getReferencia() {
+        return this.referencia;
+    }
+
+    public List<NFNotaInfoCanaFornecimentoDiario> getFornecimentosDiario() {
+        return this.fornecimentosDiario;
+    }
+
+    public List<NFNotaInfoCanaDeducao> getDeducoes() {
+        return this.deducoes;
+    }
+
+    public String getQuantidadeTotalMes() {
+        return this.quantidadeTotalMes;
+    }
+
+    public String getQuantidadeTotalAnterior() {
+        return this.quantidadeTotalAnterior;
+    }
+
+    public String getQuantidadeTotalGeral() {
+        return this.quantidadeTotalGeral;
+    }
+
+    public String getValorFornecimento() {
+        return this.valorFornecimento;
+    }
+
+    public String getValorTotalDeducao() {
+        return this.valorTotalDeducao;
+    }
+
+    public String getValorLiquidoFornecimento() {
+        return this.valorLiquidoFornecimento;
     }
 }

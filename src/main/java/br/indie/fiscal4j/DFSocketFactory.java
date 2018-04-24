@@ -1,5 +1,9 @@
 package br.indie.fiscal4j;
 
+import org.apache.commons.httpclient.params.HttpConnectionParams;
+import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
+
+import javax.net.ssl.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -8,11 +12,6 @@ import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Enumeration;
-
-import javax.net.ssl.*;
-
-import org.apache.commons.httpclient.params.HttpConnectionParams;
-import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
 
 public class DFSocketFactory implements ProtocolSocketFactory {
 
@@ -55,7 +54,7 @@ public class DFSocketFactory implements ProtocolSocketFactory {
         final String alias = DFSocketFactory.getAlias(config.getCertificadoKeyStore());
         final X509Certificate certificate = (X509Certificate) config.getCertificadoKeyStore().getCertificate(alias);
         final PrivateKey privateKey = (PrivateKey) config.getCertificadoKeyStore().getKey(alias, config.getCertificadoSenha().toCharArray());
-        return new KeyManager[] { new DFKeyManager(certificate, privateKey) };
+        return new KeyManager[]{new DFKeyManager(certificate, privateKey)};
     }
 
     private TrustManager[] createTrustManagers(final DFConfig config) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
@@ -98,12 +97,12 @@ class DFKeyManager implements X509KeyManager {
 
     @Override
     public X509Certificate[] getCertificateChain(final String arg0) {
-        return new X509Certificate[] { this.certificate };
+        return new X509Certificate[]{this.certificate};
     }
 
     @Override
     public String[] getClientAliases(final String arg0, final Principal[] arg1) {
-        return new String[] { this.certificate.getIssuerDN().getName() };
+        return new String[]{this.certificate.getIssuerDN().getName()};
     }
 
     @Override

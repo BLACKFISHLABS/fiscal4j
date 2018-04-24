@@ -20,16 +20,8 @@ public class NFNotaInfoItemProdutoArmamento extends DFBase {
     @Element(name = "descr", required = true)
     private String descricao;
 
-    public NFNotaInfoItemProdutoArmamentoTipo getTipo() {
-        return this.tipo;
-    }
-
     public void setTipo(final NFNotaInfoItemProdutoArmamentoTipo tipo) {
         this.tipo = tipo;
-    }
-
-    public String getNumeroSerieArma() {
-        return this.numeroSerieArma;
     }
 
     public void setNumeroSerieArma(final String numeroSerieArma) {
@@ -37,21 +29,29 @@ public class NFNotaInfoItemProdutoArmamento extends DFBase {
         this.numeroSerieArma = numeroSerieArma;
     }
 
-    public String getNumeroSerieCano() {
-        return this.numeroSerieCano;
-    }
-
     public void setNumeroSerieCano(final String numeroSerieCano) {
         StringValidador.tamanho15(numeroSerieCano, "Numero Serie Cano Armamento");
         this.numeroSerieCano = numeroSerieCano;
     }
 
-    public String getDescricao() {
-        return this.descricao;
-    }
-
     public void setDescricao(final String descricao) {
         StringValidador.tamanho256(descricao, "Descricao Armamento");
         this.descricao = descricao;
+    }
+
+    public NFNotaInfoItemProdutoArmamentoTipo getTipo() {
+        return this.tipo;
+    }
+
+    public String getNumeroSerieArma() {
+        return this.numeroSerieArma;
+    }
+
+    public String getNumeroSerieCano() {
+        return this.numeroSerieCano;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
     }
 }

@@ -13,6 +13,10 @@ public enum DFAmbiente {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static DFAmbiente valueOfCodigo(final String codigo) {
         for (DFAmbiente ambiente : DFAmbiente.values()) {
             if (ambiente.getCodigo().equalsIgnoreCase(codigo)) {
@@ -20,10 +24,6 @@ public enum DFAmbiente {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

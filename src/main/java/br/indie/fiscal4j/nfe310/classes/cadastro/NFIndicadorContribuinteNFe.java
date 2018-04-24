@@ -16,6 +16,10 @@ public enum NFIndicadorContribuinteNFe {
         this.descricao = descricao;
     }
 
+    public int getCodigo() {
+        return this.codigo;
+    }
+
     public static NFIndicadorContribuinteNFe valueOfCodigo(final int codigo) {
         for (final NFIndicadorContribuinteNFe indicador : NFIndicadorContribuinteNFe.values()) {
             if (indicador.getCodigo() == codigo) {
@@ -23,10 +27,6 @@ public enum NFIndicadorContribuinteNFe {
             }
         }
         throw new IllegalStateException(String.format("Nao existe o codigo %s", codigo));
-    }
-
-    public int getCodigo() {
-        return this.codigo;
     }
 
     @Override

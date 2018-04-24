@@ -40,75 +40,75 @@ public class NFNotaInfoItemImpostoICMS20 extends DFBase {
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS desoneracao;
 
-    public NFOrigem getOrigem() {
-        return this.origem;
-    }
-
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
-    }
-
-    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
-        return this.situacaoTributaria;
     }
 
     public void setSituacaoTributaria(final NFNotaInfoImpostoTributacaoICMS situacaoTributaria) {
         this.situacaoTributaria = situacaoTributaria;
     }
 
-    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
-        return this.modalidadeBCICMS;
-    }
-
     public void setModalidadeBCICMS(final NFNotaInfoItemModalidadeBCICMS modalidadeBCICMS) {
         this.modalidadeBCICMS = modalidadeBCICMS;
-    }
-
-    public String getPercentualReducaoBC() {
-        return this.percentualReducaoBC;
     }
 
     public void setPercentualReducaoBC(final BigDecimal percentualReducaoBC) {
         this.percentualReducaoBC = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBC, "Percentual Reducao BC ICMS20 Item");
     }
 
-    public String getValorBCICMS() {
-        return this.valorBCICMS;
-    }
-
     public void setValorBCICMS(final BigDecimal valorBCICMS) {
         this.valorBCICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMS, "Valor BC ICMS ICMS20 Item");
-    }
-
-    public String getPercentualAliquota() {
-        return this.percentualAliquota;
     }
 
     public void setPercentualAliquota(final BigDecimal aliquota) {
         this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota ICMS20 Item");
     }
 
-    public String getValorTributo() {
-        return this.valorTributo;
-    }
-
     public void setValorTributo(final BigDecimal valorTributo) {
         this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo ICMS20 Item");
     }
 
-    public String getValorICMSDesoneracao() {
-        return this.valorICMSDesoneracao;
+    public void setDesoneracao(final NFNotaMotivoDesoneracaoICMS outros) {
+        this.desoneracao = outros;
     }
 
     public void setValorICMSDesoneracao(final BigDecimal valorICMSDesoneracao) {
         this.valorICMSDesoneracao = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS20 Item");
     }
 
-    public NFNotaMotivoDesoneracaoICMS getDesoneracao() {
-        return this.desoneracao;
+    public NFOrigem getOrigem() {
+        return this.origem;
     }
 
-    public void setDesoneracao(final NFNotaMotivoDesoneracaoICMS outros) {
-        this.desoneracao = outros;
+    public NFNotaInfoImpostoTributacaoICMS getSituacaoTributaria() {
+        return this.situacaoTributaria;
+    }
+
+    public NFNotaInfoItemModalidadeBCICMS getModalidadeBCICMS() {
+        return this.modalidadeBCICMS;
+    }
+
+    public String getPercentualReducaoBC() {
+        return this.percentualReducaoBC;
+    }
+
+    public String getValorBCICMS() {
+        return this.valorBCICMS;
+    }
+
+    public String getPercentualAliquota() {
+        return this.percentualAliquota;
+    }
+
+    public String getValorTributo() {
+        return this.valorTributo;
+    }
+
+    public String getValorICMSDesoneracao() {
+        return this.valorICMSDesoneracao;
+    }
+
+    public NFNotaMotivoDesoneracaoICMS getDesoneracao() {
+        return this.desoneracao;
     }
 }

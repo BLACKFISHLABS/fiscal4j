@@ -46,60 +46,60 @@ public class NFEnviaEventoRetorno extends DFBase {
         return this.versao;
     }
 
-    public void setVersao(final String versao) {
-        this.versao = versao;
-    }
-
     public String getIdLote() {
         return this.idLote;
-    }
-
-    public void setIdLote(final String idLote) {
-        this.idLote = idLote;
     }
 
     public DFAmbiente getAmbiente() {
         return this.ambiente;
     }
 
-    public void setAmbiente(final DFAmbiente ambiente) {
-        this.ambiente = ambiente;
-    }
-
     public String getVersaoAplicativo() {
         return this.versaoAplicativo;
-    }
-
-    public void setVersaoAplicativo(final String versaoAplicativo) {
-        this.versaoAplicativo = versaoAplicativo;
     }
 
     public DFUnidadeFederativa getOrgao() {
         return this.orgao;
     }
 
-    public void setOrgao(final DFUnidadeFederativa orgao) {
-        this.orgao = orgao;
-    }
-
     public Integer getCodigoStatusReposta() {
         return this.codigoStatusReposta;
-    }
-
-    public void setCodigoStatusReposta(final Integer codigoStatusReposta) {
-        this.codigoStatusReposta = codigoStatusReposta;
     }
 
     public String getMotivo() {
         return this.motivo;
     }
 
-    public void setMotivo(final String motivo) {
-        this.motivo = motivo;
-    }
-
     public List<NFEventoRetorno> getEventoRetorno() {
         return this.eventoRetorno;
+    }
+
+    public void setVersao(final String versao) {
+        this.versao = versao;
+    }
+
+    public void setIdLote(final String idLote) {
+        this.idLote = idLote;
+    }
+
+    public void setAmbiente(final DFAmbiente ambiente) {
+        this.ambiente = ambiente;
+    }
+
+    public void setVersaoAplicativo(final String versaoAplicativo) {
+        this.versaoAplicativo = versaoAplicativo;
+    }
+
+    public void setOrgao(final DFUnidadeFederativa orgao) {
+        this.orgao = orgao;
+    }
+
+    public void setCodigoStatusReposta(final Integer codigoStatusReposta) {
+        this.codigoStatusReposta = codigoStatusReposta;
+    }
+
+    public void setMotivo(final String motivo) {
+        this.motivo = motivo;
     }
 
     public void setEventoRetorno(final List<NFEventoRetorno> eventoRetorno) {

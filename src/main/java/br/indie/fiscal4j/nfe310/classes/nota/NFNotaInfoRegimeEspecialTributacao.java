@@ -17,6 +17,10 @@ public enum NFNotaInfoRegimeEspecialTributacao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoRegimeEspecialTributacao valueOfCodigo(final String codigo) {
         for (final NFNotaInfoRegimeEspecialTributacao tributacao : NFNotaInfoRegimeEspecialTributacao.values()) {
             if (tributacao.getCodigo().equals(codigo)) {
@@ -24,10 +28,6 @@ public enum NFNotaInfoRegimeEspecialTributacao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

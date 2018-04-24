@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 07/12/17.
- * <p>
+ *
  * <h1>Informações do responsável pelo seguro da carga</h1>
  */
 @Root(name = "infResp")

@@ -1,5 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes;
 
+import org.apache.commons.lang3.StringUtils;
+
 public enum NFNotaInfoCombustivelTipo {
 
     ALCOOL("01", "\u00c1lcool"),
@@ -25,21 +27,21 @@ public enum NFNotaInfoCombustivelTipo {
     private final String descricao;
 
     NFNotaInfoCombustivelTipo(final String codigo, final String descricao) {
-        this.codigo = codigo;
+        this.codigo = StringUtils.leftPad(codigo, 2, "0");
         this.descricao = descricao;
-    }
-
-    public static NFNotaInfoCombustivelTipo valueOfCodigo(final String codigo) {
-        for (final NFNotaInfoCombustivelTipo tipo : NFNotaInfoCombustivelTipo.values()) {
-            if (tipo.getCodigo().equals(codigo)) {
-                return tipo;
-            }
-        }
-        return null;
     }
 
     public String getCodigo() {
         return this.codigo;
+    }
+
+    public static NFNotaInfoCombustivelTipo valueOfCodigo(final String codigo) {
+        for (final NFNotaInfoCombustivelTipo tipo : NFNotaInfoCombustivelTipo.values()) {
+            if (tipo.getCodigo().equals(StringUtils.leftPad(codigo, 2, "0"))) {
+                return tipo;
+            }
+        }
+        return null;
     }
 
     @Override

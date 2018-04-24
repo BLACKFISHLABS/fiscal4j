@@ -16,10 +16,6 @@ public class NFNotaInfoCanaFornecimentoDiario extends DFBase {
     @Element(name = "qtde", required = true)
     private String quantidade;
 
-    public int getDia() {
-        return this.dia;
-    }
-
     public void setDia(final int dia) {
         if (dia > 31 || dia < 1) {
             throw new IllegalStateException("valor do dia invalido.");
@@ -27,11 +23,15 @@ public class NFNotaInfoCanaFornecimentoDiario extends DFBase {
         this.dia = dia;
     }
 
-    public String getQuantidade() {
-        return this.quantidade;
-    }
-
     public void setQuantidade(final BigDecimal quantidade) {
         this.quantidade = BigDecimalParser.tamanho21ComAte10CasasDecimais(quantidade, "Quantidade");
+    }
+
+    public int getDia() {
+        return this.dia;
+    }
+
+    public String getQuantidade() {
+        return this.quantidade;
     }
 }

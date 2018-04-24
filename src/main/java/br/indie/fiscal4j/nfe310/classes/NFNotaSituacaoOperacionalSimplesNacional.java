@@ -21,6 +21,14 @@ public enum NFNotaSituacaoOperacionalSimplesNacional {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFNotaSituacaoOperacionalSimplesNacional valueOfCodigo(final String codigo) {
         for (final NFNotaSituacaoOperacionalSimplesNacional situacaoOperacional : NFNotaSituacaoOperacionalSimplesNacional.values()) {
             if (situacaoOperacional.getCodigo().equals(codigo)) {
@@ -28,14 +36,6 @@ public enum NFNotaSituacaoOperacionalSimplesNacional {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

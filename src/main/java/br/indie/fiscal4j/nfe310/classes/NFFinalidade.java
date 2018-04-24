@@ -15,6 +15,14 @@ public enum NFFinalidade {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     public static NFFinalidade valueOfCodigo(final String codigo) {
         for (final NFFinalidade tipo : NFFinalidade.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -22,14 +30,6 @@ public enum NFFinalidade {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
-    }
-
-    public String getDescricao() {
-        return this.descricao;
     }
 
     @Override

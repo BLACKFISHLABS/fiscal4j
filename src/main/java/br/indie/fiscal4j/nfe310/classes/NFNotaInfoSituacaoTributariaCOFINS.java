@@ -44,6 +44,10 @@ public enum NFNotaInfoSituacaoTributariaCOFINS {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoSituacaoTributariaCOFINS valueOfCodigo(final String codigo) {
         for (final NFNotaInfoSituacaoTributariaCOFINS situacaoTributariaCOFINS : NFNotaInfoSituacaoTributariaCOFINS.values()) {
             if (situacaoTributariaCOFINS.getCodigo().equals(codigo)) {
@@ -51,10 +55,6 @@ public enum NFNotaInfoSituacaoTributariaCOFINS {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

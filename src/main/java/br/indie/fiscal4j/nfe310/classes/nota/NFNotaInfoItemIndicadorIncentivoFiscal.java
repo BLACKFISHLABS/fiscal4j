@@ -13,6 +13,10 @@ public enum NFNotaInfoItemIndicadorIncentivoFiscal {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoItemIndicadorIncentivoFiscal valueOfCodigo(final String codigo) {
         for (final NFNotaInfoItemIndicadorIncentivoFiscal incentivoFiscal : NFNotaInfoItemIndicadorIncentivoFiscal.values()) {
             if (incentivoFiscal.getCodigo().equals(codigo)) {
@@ -20,10 +24,6 @@ public enum NFNotaInfoItemIndicadorIncentivoFiscal {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

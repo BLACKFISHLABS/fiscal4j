@@ -21,12 +21,12 @@ public class NFConsultaCadastro extends DFBase {
         return this.consultaCadastro;
     }
 
-    public void setConsultaCadastro(final NFInfoConsultaCadastro consultaCadastro) {
-        this.consultaCadastro = consultaCadastro;
-    }
-
     public String getVersao() {
         return this.versao;
+    }
+
+    public void setConsultaCadastro(final NFInfoConsultaCadastro consultaCadastro) {
+        this.consultaCadastro = consultaCadastro;
     }
 
     public void setVersao(final String versao) {

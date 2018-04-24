@@ -16,8 +16,14 @@ public class NFNotaInfoCompra extends DFBase {
     @Element(name = "xCont", required = false)
     private String contrato;
 
-    public String getContrato() {
-        return this.contrato;
+    public void setNotaDeEmpenho(final String notaDeEmpenho) {
+        StringValidador.tamanho22(notaDeEmpenho, "Nota de Empenho");
+        this.notaDeEmpenho = notaDeEmpenho;
+    }
+
+    public void setPedido(final String pedido) {
+        StringValidador.tamanho60(pedido, "Pedido");
+        this.pedido = pedido;
     }
 
     public void setContrato(final String contrato) {
@@ -25,21 +31,15 @@ public class NFNotaInfoCompra extends DFBase {
         this.contrato = contrato;
     }
 
+    public String getContrato() {
+        return this.contrato;
+    }
+
     public String getNotaDeEmpenho() {
         return this.notaDeEmpenho;
     }
 
-    public void setNotaDeEmpenho(final String notaDeEmpenho) {
-        StringValidador.tamanho22(notaDeEmpenho, "Nota de Empenho");
-        this.notaDeEmpenho = notaDeEmpenho;
-    }
-
     public String getPedido() {
         return this.pedido;
-    }
-
-    public void setPedido(final String pedido) {
-        StringValidador.tamanho60(pedido, "Pedido");
-        this.pedido = pedido;
     }
 }

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.
- * <p>
+ *
  * <p>Informações dos dispositivos do Vale Pedágio.</p>
  */
 public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {

@@ -17,6 +17,10 @@ public enum NFNotaInfoItemProdutoVeiculoRestricao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaInfoItemProdutoVeiculoRestricao valueOfCodigo(final String codigo) {
         for (final NFNotaInfoItemProdutoVeiculoRestricao tipo : NFNotaInfoItemProdutoVeiculoRestricao.values()) {
             if (tipo.getCodigo().equals(codigo)) {
@@ -24,10 +28,6 @@ public enum NFNotaInfoItemProdutoVeiculoRestricao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

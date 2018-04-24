@@ -23,64 +23,10 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     private String inscricaoEstadual;
 
     @Element(name = "UF")
-    private String unidadeFederativa;
+    private DFUnidadeFederativa unidadeFederativa;
 
     @Element(name = "tpProp", required = false)
     private MDFTipoProprietario tipoProprietario;
 
-    public String getCpf() {
-        return cpf;
-    }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public String getRegistroNacionalTransportes() {
-        return registroNacionalTransportes;
-    }
-
-    public void setRegistroNacionalTransportes(String registroNacionalTransportes) {
-        this.registroNacionalTransportes = registroNacionalTransportes;
-    }
-
-    public String getRazaoSocial() {
-        return razaoSocial;
-    }
-
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
-    }
-
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
-    }
-
-    public String getUnidadeFederativa() {
-        return unidadeFederativa;
-    }
-
-    public void setUnidadeFederativa(String unidadeFederativa) {
-        this.unidadeFederativa = unidadeFederativa;
-    }
-
-    public MDFTipoProprietario getTipoProprietario() {
-        return tipoProprietario;
-    }
-
-    public void setTipoProprietario(MDFTipoProprietario tipoProprietario) {
-        this.tipoProprietario = tipoProprietario;
-    }
 }

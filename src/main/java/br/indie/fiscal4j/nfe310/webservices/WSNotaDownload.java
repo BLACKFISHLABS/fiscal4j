@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
-import br.indie.fiscal4j.nfe310.NFeConfig;
+import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe310.classes.evento.downloadnf.NFDownloadNFe;
 import br.indie.fiscal4j.nfe310.classes.evento.downloadnf.NFDownloadNFeRetorno;
@@ -41,7 +41,7 @@ class WSNotaDownload {
         return new Persister(new DFRegistryMatcher(), new Format(0)).read(NFDownloadNFeRetorno.class, omElementRetorno.toString());
     }
 
-    private OMElement efetuaDownloadNF(OMElement omElementConsulta) throws RemoteException {
+    private OMElement efetuaDownloadNF(final OMElement omElementConsulta) throws RemoteException {
         final NfeCabecMsg cabec = new NfeCabecMsg();
         cabec.setCUF(this.config.getCUF().getCodigoIbge());
         cabec.setVersaoDados(WSNotaDownload.VERSAO_LEIAUTE.toPlainString());
@@ -52,13 +52,13 @@ class WSNotaDownload {
         final NfeDownloadNFStub.NfeDadosMsg dados = new NfeDadosMsg();
         dados.setExtraElement(omElementConsulta);
 
-        NFAutorizador31 autorizador = NFAutorizador31.valueOfCodigoUF(this.config.getCUF());
+        final NFAutorizador31 autorizador = NFAutorizador31.valueOfCodigoUF(this.config.getCUF());
         final String endpoint = autorizador.getNfeDownloadNF(this.config.getAmbiente());
         if (endpoint == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para DownloadNF, autorizador " + autorizador.name());
         }
 
-        NfeDownloadNFResult nfeDownloadNFResult = new NfeDownloadNFStub(endpoint).nfeDownloadNF(dados, cabecE);
+        final NfeDownloadNFResult nfeDownloadNFResult = new NfeDownloadNFStub(endpoint).nfeDownloadNF(dados, cabecE);
         return nfeDownloadNFResult.getExtraElement();
     }
 

@@ -6,7 +6,7 @@ import org.simpleframework.xml.Element;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.
- * <p>
+ *
  * <h1>Informações do Condutor do veículo</h1>
  */
 public class MDFInfoModalRodoviarioVeiculoCondutor extends DFBase {

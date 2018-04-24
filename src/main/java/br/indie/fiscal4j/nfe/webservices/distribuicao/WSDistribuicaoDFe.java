@@ -1,20 +1,17 @@
 package br.indie.fiscal4j.nfe.webservices.distribuicao;
 
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoConsultaChaveAcesso;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoConsultaNSU;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoInt;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
-import br.indie.fiscal4j.nfe310.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.BufferedReader;

@@ -22,6 +22,10 @@ public enum NFNotaMotivoDesoneracaoICMS {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFNotaMotivoDesoneracaoICMS valueOfCodigo(final String codigo) {
         for (final NFNotaMotivoDesoneracaoICMS motivoDesonaracao : NFNotaMotivoDesoneracaoICMS.values()) {
             if (motivoDesonaracao.getCodigo().equals(codigo)) {
@@ -29,10 +33,6 @@ public enum NFNotaMotivoDesoneracaoICMS {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

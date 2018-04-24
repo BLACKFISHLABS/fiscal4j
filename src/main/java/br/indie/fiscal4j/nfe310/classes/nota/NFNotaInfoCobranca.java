@@ -16,20 +16,20 @@ public class NFNotaInfoCobranca extends DFBase {
     @ElementList(entry = "dup", inline = true, required = false)
     private List<NFNotaInfoDuplicata> duplicatas;
 
-    public NFNotaInfoFatura getFatura() {
-        return this.fatura;
-    }
-
     public void setFatura(final NFNotaInfoFatura fatura) {
         this.fatura = fatura;
-    }
-
-    public List<NFNotaInfoDuplicata> getDuplicatas() {
-        return this.duplicatas;
     }
 
     public void setDuplicatas(final List<NFNotaInfoDuplicata> duplicatas) {
         ListValidador.tamanho120(duplicatas, "Duplicatas");
         this.duplicatas = duplicatas;
+    }
+
+    public NFNotaInfoFatura getFatura() {
+        return this.fatura;
+    }
+
+    public List<NFNotaInfoDuplicata> getDuplicatas() {
+        return this.duplicatas;
     }
 }

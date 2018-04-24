@@ -19,27 +19,27 @@ public class NFEventoManifestacaoDestinatario extends DFBase {
     @Element(name = "Signature", required = false)
     private String assinatura;
 
-    public NFInfoEventoManifestacaoDestinatario getInfoEvento() {
-        return this.infoEvento;
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
-    public void setInfoEvento(final NFInfoEventoManifestacaoDestinatario infoEvento) {
-        this.infoEvento = infoEvento;
+    public NFInfoEventoManifestacaoDestinatario getInfoEvento() {
+        return this.infoEvento;
     }
 
     public String getVersao() {
         return this.versao;
     }
 
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
-    }
-
-    public String getAssinatura() {
-        return this.assinatura;
+    public void setInfoEvento(final NFInfoEventoManifestacaoDestinatario infoEvento) {
+        this.infoEvento = infoEvento;
     }
 
     public void setAssinatura(final String assinatura) {
         this.assinatura = assinatura;
+    }
+
+    public String getAssinatura() {
+        return this.assinatura;
     }
 }

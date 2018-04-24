@@ -41,17 +41,9 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
         this.naoTributado = null;
     }
 
-    public String getClasseEnquadramento() {
-        return this.classeEnquadramento;
-    }
-
     public void setClasseEnquadramento(final String classeEnquadramento) {
         StringValidador.exatamente5(classeEnquadramento, "Classe Enquadramento IPI Item");
         this.classeEnquadramento = classeEnquadramento;
-    }
-
-    public String getCnpjProdutor() {
-        return this.cnpjProdutor;
     }
 
     public void setCnpjProdutor(final String cnpjProdutor) {
@@ -59,17 +51,9 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
         this.cnpjProdutor = cnpjProdutor;
     }
 
-    public String getCodigoSelo() {
-        return this.codigoSelo;
-    }
-
     public void setCodigoSelo(final String codigoSelo) {
         StringValidador.tamanho60(codigoSelo, "Codigo Selo IPI Item");
         this.codigoSelo = codigoSelo;
-    }
-
-    public BigInteger getQuantidadeSelo() {
-        return this.quantidadeSelo;
     }
 
     public void setQuantidadeSelo(final BigInteger quantidadeSelo) {
@@ -77,17 +61,9 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
         this.quantidadeSelo = quantidadeSelo;
     }
 
-    public String getCodigoEnquadramento() {
-        return this.codigoEnquadramento;
-    }
-
     public void setCodigoEnquadramento(final String codigoEnquadramento) {
         StringValidador.exatamente3(codigoEnquadramento, "Codigo Enquadramento IPI Item");
         this.codigoEnquadramento = codigoEnquadramento;
-    }
-
-    public NFNotaInfoItemImpostoIPITributado getTributado() {
-        return this.tributado;
     }
 
     public void setTributado(final NFNotaInfoItemImpostoIPITributado tributado) {
@@ -97,14 +73,38 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
         this.tributado = tributado;
     }
 
-    public NFNotaInfoItemImpostoIPINaoTributado getNaoTributado() {
-        return this.naoTributado;
-    }
-
     public void setNaoTributado(final NFNotaInfoItemImpostoIPINaoTributado naoTributado) {
         if (this.tributado != null) {
             throw new IllegalStateException("IPI tributado e nao tributado sao mutuamente exclusivos");
         }
         this.naoTributado = naoTributado;
+    }
+
+    public String getClasseEnquadramento() {
+        return this.classeEnquadramento;
+    }
+
+    public String getCnpjProdutor() {
+        return this.cnpjProdutor;
+    }
+
+    public String getCodigoSelo() {
+        return this.codigoSelo;
+    }
+
+    public BigInteger getQuantidadeSelo() {
+        return this.quantidadeSelo;
+    }
+
+    public String getCodigoEnquadramento() {
+        return this.codigoEnquadramento;
+    }
+
+    public NFNotaInfoItemImpostoIPITributado getTributado() {
+        return this.tributado;
+    }
+
+    public NFNotaInfoItemImpostoIPINaoTributado getNaoTributado() {
+        return this.naoTributado;
     }
 }

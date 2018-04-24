@@ -20,15 +20,15 @@ public class NFNotaInfoItemDetalheExportacao extends DFBase {
         this.atoConcessorioDrawback = numeroAtoConcessorioDrawback;
     }
 
+    public void setExportacaoIndireta(final NFNotaInfoItemExportacaoIndireta exportacaoIndireta) {
+        this.exportacaoIndireta = exportacaoIndireta;
+    }
+
     public BigInteger getAtoConcessorioDrawback() {
         return this.atoConcessorioDrawback;
     }
 
     public NFNotaInfoItemExportacaoIndireta getExportacaoIndireta() {
         return this.exportacaoIndireta;
-    }
-
-    public void setExportacaoIndireta(final NFNotaInfoItemExportacaoIndireta exportacaoIndireta) {
-        this.exportacaoIndireta = exportacaoIndireta;
     }
 }

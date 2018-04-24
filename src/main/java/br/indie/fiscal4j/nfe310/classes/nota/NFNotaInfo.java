@@ -12,8 +12,10 @@ import java.util.List;
 @Root(name = "infNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFNotaInfo extends DFBase {
-    public static final String IDENT = "NFe";
     private static final long serialVersionUID = 4569152242139670228L;
+
+    public static final String IDENT = "NFe";
+
     @Attribute(name = "Id", required = true)
     private String identificador;
 
@@ -77,13 +79,17 @@ public class NFNotaInfo extends DFBase {
         return this.identificador.replace(NFNotaInfo.IDENT, "");
     }
 
+    public void setIdentificador(final String identificador) {
+        StringValidador.exatamente44N(identificador, "Identificador");
+        this.identificador = NFNotaInfo.IDENT + identificador;
+    }
+
     public String getIdentificador() {
         return this.identificador;
     }
 
-    public void setIdentificador(final String identificador) {
-        StringValidador.exatamente44N(identificador, "Identificador");
-        this.identificador = NFNotaInfo.IDENT + identificador;
+    public void setVersao(final BigDecimal versao) {
+        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public NFNotaInfoIdentificacao getIdentificacao() {
@@ -94,6 +100,14 @@ public class NFNotaInfo extends DFBase {
         this.identificacao = identificacao;
     }
 
+    public void setEmitente(final NFNotaInfoEmitente emitente) {
+        this.emitente = emitente;
+    }
+
+    public void setAvulsa(final NFNotaInfoAvulsa avulsa) {
+        this.avulsa = avulsa;
+    }
+
     public NFNotaInfoDestinatario getDestinatario() {
         return this.destinatario;
     }
@@ -102,48 +116,45 @@ public class NFNotaInfo extends DFBase {
         this.destinatario = destinatario;
     }
 
-    public String getVersao() {
-        return this.versao;
-    }
-
-    public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
-    }
-
-    public NFNotaInfoEmitente getEmitente() {
-        return this.emitente;
-    }
-
-    public void setEmitente(final NFNotaInfoEmitente emitente) {
-        this.emitente = emitente;
-    }
-
-    public NFNotaInfoAvulsa getAvulsa() {
-        return this.avulsa;
-    }
-
-    public void setAvulsa(final NFNotaInfoAvulsa avulsa) {
-        this.avulsa = avulsa;
-    }
-
-    public NFNotaInfoLocal getRetirada() {
-        return this.retirada;
+    public void setItens(final List<NFNotaInfoItem> itens) {
+        ListValidador.tamanho990(itens, "Itens da Nota");
+        this.itens = itens;
     }
 
     public void setRetirada(final NFNotaInfoLocal retirada) {
         this.retirada = retirada;
     }
 
-    public NFNotaInfoLocal getEntrega() {
-        return this.entrega;
-    }
-
     public void setEntrega(final NFNotaInfoLocal entrega) {
         this.entrega = entrega;
     }
 
-    public List<NFPessoaAutorizadaDownloadNFe> getPessoasAutorizadasDownloadNFe() {
-        return this.pessoasAutorizadasDownloadNFe;
+    public void setCobranca(final NFNotaInfoCobranca cobranca) {
+        this.cobranca = cobranca;
+    }
+
+    public void setTotal(final NFNotaInfoTotal total) {
+        this.total = total;
+    }
+
+    public void setTransporte(final NFNotaInfoTransporte transporte) {
+        this.transporte = transporte;
+    }
+
+    public void setInformacoesAdicionais(final NFNotaInfoInformacoesAdicionais informacoesAdicionais) {
+        this.informacoesAdicionais = informacoesAdicionais;
+    }
+
+    public void setExportacao(final NFNotaInfoExportacao exportacao) {
+        this.exportacao = exportacao;
+    }
+
+    public void setCompra(final NFNotaInfoCompra compra) {
+        this.compra = compra;
+    }
+
+    public void setCana(final NFNotaInfoCana cana) {
+        this.cana = cana;
     }
 
     public void setPessoasAutorizadasDownloadNFe(final List<NFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe) {
@@ -151,77 +162,68 @@ public class NFNotaInfo extends DFBase {
         this.pessoasAutorizadasDownloadNFe = pessoasAutorizadasDownloadNFe;
     }
 
-    public List<NFNotaInfoItem> getItens() {
-        return this.itens;
+    public void setPagamentos(final List<NFNotaInfoPagamento> pagamentos) {
+        ListValidador.tamanho100(pagamentos, "Pagamentos");
+        this.pagamentos = pagamentos;
     }
 
-    public void setItens(final List<NFNotaInfoItem> itens) {
-        ListValidador.tamanho990(itens, "Itens da Nota");
-        this.itens = itens;
+    public String getVersao() {
+        return this.versao;
+    }
+
+    public NFNotaInfoEmitente getEmitente() {
+        return this.emitente;
+    }
+
+    public NFNotaInfoAvulsa getAvulsa() {
+        return this.avulsa;
+    }
+
+    public NFNotaInfoLocal getRetirada() {
+        return this.retirada;
+    }
+
+    public NFNotaInfoLocal getEntrega() {
+        return this.entrega;
+    }
+
+    public List<NFPessoaAutorizadaDownloadNFe> getPessoasAutorizadasDownloadNFe() {
+        return this.pessoasAutorizadasDownloadNFe;
+    }
+
+    public List<NFNotaInfoItem> getItens() {
+        return this.itens;
     }
 
     public NFNotaInfoTotal getTotal() {
         return this.total;
     }
 
-    public void setTotal(final NFNotaInfoTotal total) {
-        this.total = total;
-    }
-
     public NFNotaInfoTransporte getTransporte() {
         return this.transporte;
-    }
-
-    public void setTransporte(final NFNotaInfoTransporte transporte) {
-        this.transporte = transporte;
     }
 
     public NFNotaInfoCobranca getCobranca() {
         return this.cobranca;
     }
 
-    public void setCobranca(final NFNotaInfoCobranca cobranca) {
-        this.cobranca = cobranca;
-    }
-
     public List<NFNotaInfoPagamento> getPagamentos() {
         return this.pagamentos;
-    }
-
-    public void setPagamentos(final List<NFNotaInfoPagamento> pagamentos) {
-        ListValidador.tamanho100(pagamentos, "Pagamentos");
-        this.pagamentos = pagamentos;
     }
 
     public NFNotaInfoInformacoesAdicionais getInformacoesAdicionais() {
         return this.informacoesAdicionais;
     }
 
-    public void setInformacoesAdicionais(final NFNotaInfoInformacoesAdicionais informacoesAdicionais) {
-        this.informacoesAdicionais = informacoesAdicionais;
-    }
-
     public NFNotaInfoExportacao getExportacao() {
         return this.exportacao;
-    }
-
-    public void setExportacao(final NFNotaInfoExportacao exportacao) {
-        this.exportacao = exportacao;
     }
 
     public NFNotaInfoCompra getCompra() {
         return this.compra;
     }
 
-    public void setCompra(final NFNotaInfoCompra compra) {
-        this.compra = compra;
-    }
-
     public NFNotaInfoCana getCana() {
         return this.cana;
-    }
-
-    public void setCana(final NFNotaInfoCana cana) {
-        this.cana = cana;
     }
 }

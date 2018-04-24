@@ -14,6 +14,10 @@ public enum NFFormaImportacaoIntermediacao {
         this.descricao = descricao;
     }
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
     public static NFFormaImportacaoIntermediacao valueOfCodigo(final String codigo) {
         for (final NFFormaImportacaoIntermediacao intermediacao : NFFormaImportacaoIntermediacao.values()) {
             if (intermediacao.getCodigo().equals(codigo)) {
@@ -21,10 +25,6 @@ public enum NFFormaImportacaoIntermediacao {
             }
         }
         return null;
-    }
-
-    public String getCodigo() {
-        return this.codigo;
     }
 
     @Override

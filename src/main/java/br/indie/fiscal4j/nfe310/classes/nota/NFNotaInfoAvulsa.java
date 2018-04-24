@@ -45,17 +45,9 @@ public class NFNotaInfoAvulsa extends DFBase {
     @Element(name = "dPag", required = false)
     private LocalDate dataPagamentoDocumentoArrecadacao;
 
-    public String getCnpj() {
-        return this.cnpj;
-    }
-
     public void setCnpj(final String cnpj) {
         StringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
-    }
-
-    public String getOrgaoEmitente() {
-        return this.orgaoEmitente;
     }
 
     public void setOrgaoEmitente(final String orgaoEmitente) {
@@ -63,17 +55,9 @@ public class NFNotaInfoAvulsa extends DFBase {
         this.orgaoEmitente = orgaoEmitente;
     }
 
-    public String getMatriculaAgente() {
-        return this.matriculaAgente;
-    }
-
     public void setMatriculaAgente(final String matriculaAgente) {
         StringValidador.tamanho60(matriculaAgente, "Matricula Agente");
         this.matriculaAgente = matriculaAgente;
-    }
-
-    public String getNomeAgente() {
-        return this.nomeAgente;
     }
 
     public void setNomeAgente(final String nomeAgente) {
@@ -81,25 +65,13 @@ public class NFNotaInfoAvulsa extends DFBase {
         this.nomeAgente = nomeAgente;
     }
 
-    public String getFone() {
-        return this.fone;
-    }
-
     public void setFone(final String fone) {
         StringValidador.telefone(fone);
         this.fone = fone;
     }
 
-    public String getUf() {
-        return this.uf;
-    }
-
     public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf.getCodigo();
-    }
-
-    public String getNumeroDocumentoArrecadacaoReceita() {
-        return this.numeroDocumentoArrecadacaoReceita;
     }
 
     public void setNumeroDocumentoArrecadacaoReceita(final String numeroDocumentoArrecadacaoReceita) {
@@ -107,24 +79,12 @@ public class NFNotaInfoAvulsa extends DFBase {
         this.numeroDocumentoArrecadacaoReceita = numeroDocumentoArrecadacaoReceita;
     }
 
-    public LocalDate getDataEmissaoDocumentoArrecadacao() {
-        return this.dataEmissaoDocumentoArrecadacao;
-    }
-
     public void setDataEmissaoDocumentoArrecadacao(final LocalDate dataEmissaoDocumentoArrecadacao) {
         this.dataEmissaoDocumentoArrecadacao = dataEmissaoDocumentoArrecadacao;
     }
 
-    public String getValorTotalConstanteDocumentoArrecadacaoReceita() {
-        return this.valorTotalConstanteDocumentoArrecadacaoReceita;
-    }
-
     public void setValorTotalConstanteDocumentoArrecadacaoReceita(final BigDecimal valorTotalConstanteDocumentoArrecadacaoReceita) {
         this.valorTotalConstanteDocumentoArrecadacaoReceita = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalConstanteDocumentoArrecadacaoReceita, "Valor Total Constante Documento Arrecadacao Receita");
-    }
-
-    public String getReparticaoFiscalEmitente() {
-        return this.reparticaoFiscalEmitente;
     }
 
     public void setReparticaoFiscalEmitente(final String reparticaoFiscalEmitente) {
@@ -132,11 +92,51 @@ public class NFNotaInfoAvulsa extends DFBase {
         this.reparticaoFiscalEmitente = reparticaoFiscalEmitente;
     }
 
-    public LocalDate getDataPagamentoDocumentoArrecadacao() {
-        return this.dataPagamentoDocumentoArrecadacao;
-    }
-
     public void setDataPagamentoDocumentoArrecadacao(final LocalDate dataPagamentoDocumentoArrecadacao) {
         this.dataPagamentoDocumentoArrecadacao = dataPagamentoDocumentoArrecadacao;
+    }
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public String getOrgaoEmitente() {
+        return this.orgaoEmitente;
+    }
+
+    public String getMatriculaAgente() {
+        return this.matriculaAgente;
+    }
+
+    public String getNomeAgente() {
+        return this.nomeAgente;
+    }
+
+    public String getFone() {
+        return this.fone;
+    }
+
+    public String getUf() {
+        return this.uf;
+    }
+
+    public String getNumeroDocumentoArrecadacaoReceita() {
+        return this.numeroDocumentoArrecadacaoReceita;
+    }
+
+    public LocalDate getDataEmissaoDocumentoArrecadacao() {
+        return this.dataEmissaoDocumentoArrecadacao;
+    }
+
+    public String getValorTotalConstanteDocumentoArrecadacaoReceita() {
+        return this.valorTotalConstanteDocumentoArrecadacaoReceita;
+    }
+
+    public String getReparticaoFiscalEmitente() {
+        return this.reparticaoFiscalEmitente;
+    }
+
+    public LocalDate getDataPagamentoDocumentoArrecadacao() {
+        return this.dataPagamentoDocumentoArrecadacao;
     }
 }

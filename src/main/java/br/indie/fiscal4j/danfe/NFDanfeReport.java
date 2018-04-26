@@ -2,8 +2,8 @@ package br.indie.fiscal4j.danfe;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFModelo;
-import br.indie.fiscal4j.nfe310.classes.nota.NFNotaProcessada;
-import br.indie.fiscal4j.parsers.DFParser;
+import br.indie.fiscal4j.nfe400.classes.nota.NFNotaProcessada;
+import br.indie.fiscal4j.nfe400.parsers.DFParser;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;

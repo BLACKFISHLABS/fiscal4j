@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.danfe;
 
-import br.indie.fiscal4j.nfe310.classes.nota.consulta.NFProtocoloEvento;
+import br.indie.fiscal4j.nfe400.classes.nota.consulta.NFProtocoloEvento;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;

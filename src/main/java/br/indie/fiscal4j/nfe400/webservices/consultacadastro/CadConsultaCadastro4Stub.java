@@ -63,7 +63,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     }
 
     /**
-     *Constructor that takes in a configContext
+     * Constructor that takes in a configContext
      */
 
     public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext,
@@ -125,9 +125,9 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature
      * Consulta Cadastro de Contribuintes do ICMS
-     * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#consultaCadastro
+     *
      * @param nfeDadosMsg0
-
+     * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#consultaCadastro
      */
 
 
@@ -244,9 +244,9 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     /**
      * Auto generated method signature for Asynchronous Invocations
      * Consulta Cadastro de Contribuintes do ICMS
-     * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#startconsultaCadastro
+     *
      * @param nfeDadosMsg0
-
+     * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#startconsultaCadastro
      */
     public void startconsultaCadastro(
 
@@ -387,7 +387,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
     /**
-     *  A utility method that copies the namepaces from the SOAPEnvelope
+     * A utility method that copies the namepaces from the SOAPEnvelope
      */
     private java.util.Map getEnvelopeNamespaces(org.apache.axiom.soap.SOAPEnvelope env) {
         java.util.Map returnMap = new java.util.HashMap();
@@ -448,6 +448,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return org.apache.axiom.om.OMElement
          */
         public org.apache.axiom.om.OMElement getExtraElement() {
@@ -457,6 +458,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param ExtraElement
          */
         public void setExtraElement(org.apache.axiom.om.OMElement param) {
@@ -468,7 +470,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -614,7 +615,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
 
         private void writeQName(javax.xml.namespace.QName qname,
@@ -702,7 +703,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * databinding method to get an XML representation of this object
-         *
          */
         public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
                 throws org.apache.axis2.databinding.ADBException {
@@ -727,7 +727,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
 
@@ -735,9 +735,9 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static NfeResultMsg parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
                 NfeResultMsg object =
@@ -851,6 +851,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated getter method
+         *
          * @return org.apache.axiom.om.OMElement
          */
         public org.apache.axiom.om.OMElement getExtraElement() {
@@ -860,6 +861,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * Auto generated setter method
+         *
          * @param param ExtraElement
          */
         public void setExtraElement(org.apache.axiom.om.OMElement param) {
@@ -871,7 +873,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
         /**
-         *
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
@@ -1017,7 +1018,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         }
 
         /**
-         *  method to handle Qnames
+         * method to handle Qnames
          */
 
         private void writeQName(javax.xml.namespace.QName qname,
@@ -1105,7 +1106,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         /**
          * databinding method to get an XML representation of this object
-         *
          */
         public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
                 throws org.apache.axis2.databinding.ADBException {
@@ -1130,7 +1130,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
         /**
-         *  Factory class that keeps the parse method
+         * Factory class that keeps the parse method
          */
         public static class Factory {
 
@@ -1138,9 +1138,9 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             /**
              * static method to create the object
              * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-             *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+             * If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
              * Postcondition: If this object is an element, the reader is positioned at its end element
-             *                If this object is a complex type, the reader is positioned at the end element of its outer element
+             * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static NfeDadosMsg parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
                 NfeDadosMsg object =
@@ -1285,7 +1285,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
 
     /**
-     *  get the default envelope
+     * get the default envelope
      */
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory) {
         return factory.getDefaultEnvelope();

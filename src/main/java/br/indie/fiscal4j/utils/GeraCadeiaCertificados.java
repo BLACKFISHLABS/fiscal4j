@@ -3,7 +3,6 @@ package br.indie.fiscal4j.utils;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.cte300.classes.CTAutorizador31;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
-import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -27,34 +26,6 @@ public abstract class GeraCadeiaCertificados {
         final KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
         keyStore.load(null, senha.toCharArray());
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-
-            for (final NFAutorizador31 aut : NFAutorizador31.values()) {
-                // Para NFe...
-                final String urlNFH = aut.getNfeStatusServico(DFAmbiente.HOMOLOGACAO);
-                if (StringUtils.isNotBlank(urlNFH)) {
-                    final String host = new URI(urlNFH).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-
-                final String urlNFP = aut.getNfeStatusServico(DFAmbiente.PRODUCAO);
-                if (StringUtils.isNotBlank(urlNFP)) {
-                    final String host = new URI(urlNFP).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-
-                // Para NFCe...
-                final String urlNFCH = aut.getNfceStatusServico(DFAmbiente.HOMOLOGACAO);
-                if (StringUtils.isNotBlank(urlNFCH)) {
-                    final String host = new URI(urlNFCH).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-
-                final String urlNFCP = aut.getNfceStatusServico(DFAmbiente.PRODUCAO);
-                if (StringUtils.isNotBlank(urlNFCP)) {
-                    final String host = new URI(urlNFCP).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-            }
 
             for (final NFAutorizador400 aut : NFAutorizador400.values()) {
                 // Para NFe...

@@ -3,6 +3,8 @@ package br.indie.fiscal4j.cte300.utils;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNota;
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class CTeGeraChave {
@@ -12,9 +14,9 @@ public class CTeGeraChave {
     public CTeGeraChave(final CTeNota nota) {
         this.nota = nota;
     }
-
+    
     public String geraCodigoRandomico() {
-        final Random random = new Random(this.nota.getCteNotaInfo().getIdentificacao().getDataEmissao().toDateTime().getMillis());
+        final Random random = new Random(this.nota.getCteNotaInfo().getIdentificacao().getDataEmissao().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
         return StringUtils.leftPad(String.valueOf(random.nextInt(100000000)), 8, "0");
     }
 
@@ -43,15 +45,15 @@ public class CTeGeraChave {
     }
 
     private String geraChaveAcessoSemDV() {
-        if (StringUtils.isBlank(this.nota.getCteNotaInfo().getIdentificacao().getCodigoNumerico())) {
+    	if (StringUtils.isBlank(this.nota.getCteNotaInfo().getIdentificacao().getCodigoNumerico())) {
             throw new IllegalStateException("Codigo numerico deve estar presente para gerar a chave de acesso");
         }
         return StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getCodigoUF().getCodigoIbge(), 2, "0") +
-                StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getDataEmissao().toString("yyMM"), 4, "0") +
+                StringUtils.leftPad(DateTimeFormatter.ofPattern("yyMM").format(this.nota.getCteNotaInfo().getIdentificacao().getDataEmissao()), 4, "0") +
                 StringUtils.leftPad(this.nota.getCteNotaInfo().getEmitente().getCnpj(), 14, "0") +
                 StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getModelo().getCodigo(), 2, "0") +
-                StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getSerie() + "", 3, "0") +
-                StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getNumero() + "", 9, "0") +
+                StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getSerie()+"", 3, "0") +
+                StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getNumero()+"", 9, "0") +
                 StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getTipoEmissao().getCodigo(), 1, "0") +
                 StringUtils.leftPad(this.nota.getCteNotaInfo().getIdentificacao().getCodigoNumerico(), 8, "0");
     }

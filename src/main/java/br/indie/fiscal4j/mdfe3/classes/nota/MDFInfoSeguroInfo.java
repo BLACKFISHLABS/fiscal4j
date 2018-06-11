@@ -7,9 +7,11 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
+ *
  * Created by Eldevan Nery Junior on 07/12/17.
- * <p>
+ *
  * Informações da seguradora.
+ *
  */
 
 @Root(name = "infSeg")

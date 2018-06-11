@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe310.classes.evento;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 
 public class NFEventoRetorno extends DFBase {
     private static final long serialVersionUID = -3477722335101130748L;

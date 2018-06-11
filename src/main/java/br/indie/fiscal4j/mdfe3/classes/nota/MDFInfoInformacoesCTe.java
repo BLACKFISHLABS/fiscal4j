@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- * <p>
+ *
  * Conhecimentos de Tranporte - usar este grupo quando for prestador de serviço de transporte.
  */
 public class MDFInfoInformacoesCTe {
@@ -16,7 +16,7 @@ public class MDFInfoInformacoesCTe {
     /**
      * Conhecimento Eletrônico - Chave de Acesso
      */
-    @Element(name = "chCTe")
+    @Element(name = "chCTe" )
     private String chaveCTe;
     /**
      * Segundo código de barras
@@ -63,7 +63,7 @@ public class MDFInfoInformacoesCTe {
     }
 
     public void setIndicadorReentrega(String indicadorReentrega) {
-        StringValidador.equals("1", indicadorReentrega);
+        StringValidador.equals( "1", indicadorReentrega);
         this.indicadorReentrega = indicadorReentrega;
     }
 

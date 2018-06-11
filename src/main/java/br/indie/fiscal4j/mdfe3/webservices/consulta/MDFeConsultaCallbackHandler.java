@@ -1,27 +1,25 @@
-/**
- * MDFeConsultaCallbackHandler.java
- * <p>
- * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
+/*
+  MDFeConsultaCallbackHandler.java
+  <p>
+  This file was auto-generated from WSDL
+  by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 
 package br.indie.fiscal4j.mdfe3.webservices.consulta;
 
 /**
- * MDFeConsultaCallbackHandler Callback class, Users can extend this class and implement
- * their own receiveResult and receiveError methods.
+ *  MDFeConsultaCallbackHandler Callback class, Users can extend this class and implement
+ *  their own receiveResult and receiveError methods.
  */
 public abstract class MDFeConsultaCallbackHandler {
 
-
-    protected Object clientData;
+    protected final Object clientData;
 
     /**
      * User can pass in any object that needs to be accessed once the NonBlocking
      * Web service call is finished and appropriate method of this CallBack is called.
-     *
      * @param clientData Object mechanism by which the user can pass in user data
-     *                   that will be avilable at the time this callback is called.
+     * that will be avilable at the time this callback is called.
      */
     public MDFeConsultaCallbackHandler(Object clientData) {
         this.clientData = clientData;

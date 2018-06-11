@@ -8,11 +8,9 @@ import br.indie.fiscal4j.DFConfig;
 public abstract class NFeConfig extends DFConfig {
 
     public static final String NAMESPACE = "http://www.portalfiscal.inf.br/nfe";
-    public static final String VERSAO = "4.00";
 
     /**
      * ID de contribuinte, somente para NFCe.
-     *
      * @return ID do contribuinte.
      */
     public Integer getCodigoSegurancaContribuinteID() {
@@ -21,7 +19,6 @@ public abstract class NFeConfig extends DFConfig {
 
     /**
      * Codigo de seguranca do contribuinte, com 36 caracteres, somente para NFCe.
-     *
      * @return Codigo de seguranca do contribuinte.
      */
     public String getCodigoSegurancaContribuinte() {
@@ -30,7 +27,6 @@ public abstract class NFeConfig extends DFConfig {
 
     /**
      * Tipo da emissao das notas (se normal ou em contingencia).
-     *
      * @return Tipo da emissao das notas.
      */
     public NFTipoEmissao getTipoEmissao() {
@@ -39,10 +35,9 @@ public abstract class NFeConfig extends DFConfig {
 
     /**
      * Retorna a versão do XML na receita.
-     *
      * @return versão nota fiscal
      */
     public String getVersao() {
-        return VERSAO;
+        return "3.10";
     }
 }

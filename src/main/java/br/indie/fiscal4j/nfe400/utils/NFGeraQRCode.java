@@ -5,12 +5,13 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
+import java.time.ZonedDateTime;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.format.DateTimeFormatter;
 
 public class NFGeraQRCode {
 
@@ -28,9 +29,9 @@ public class NFGeraQRCode {
         /* FIXME TODO Workaround para corrigir erro :
          *<cStat>395</cStat><xMotivo>Endereco do site da UF da Consulta via QR-Code diverge do previsto. Novo endereco:http://www.fazenda.pr.gov.br/nfce/qrcode</xMotivo>
          * corrigir em DFUnidadeFederativa quando a URL da versao 3.10 do PR for desabilitada.
-         */
-        if (this.nota.getInfo().getIdentificacao().getUf().equals(DFUnidadeFederativa.PR) && this.nota.getInfo().getVersao().equals("4.00")) {
-            url = "http://www.fazenda.pr.gov.br/nfce/qrcode";
+        */
+        if(this.nota.getInfo().getIdentificacao().getUf().equals(DFUnidadeFederativa.PR) &&this.nota.getInfo().getVersao().equals("4.00")){
+           url = "http://www.fazenda.pr.gov.br/nfce/qrcode";
         }
 
 
@@ -44,8 +45,8 @@ public class NFGeraQRCode {
             throw new IllegalArgumentException("IdCSC nao informado nas configuracoes!");
         }
 
-        final DateTime dt = this.nota.getInfo().getIdentificacao().getDataHoraEmissao();
-        final String dtf = dt.toString("yyyy-MM-dd") + "T" + dt.toString("HH:mm:ssZZ");
+        final ZonedDateTime dt = this.nota.getInfo().getIdentificacao().getDataHoraEmissao();
+        final String dtf =  DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX").format(dt);
 
         final String cpfj = this.nota.getInfo().getDestinatario() == null ? null : this.nota.getInfo().getDestinatario().getCpfj();
 
@@ -85,7 +86,7 @@ public class NFGeraQRCode {
         return sb.toString();
     }
 
-    public String urlConsultaChaveAcesso() {
+    public String urlConsultaChaveAcesso(){
         return this.config.getAmbiente().equals(DFAmbiente.PRODUCAO) ? this.nota.getInfo().getIdentificacao().getUf().getConsultaChaveAcessoProducao() : this.nota.getInfo().getIdentificacao().getUf().getConsultaChaveAcessoHomologacao();
     }
 }

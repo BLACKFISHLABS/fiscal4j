@@ -1,15 +1,16 @@
 package br.indie.fiscal4j.cte300.classes.nota.consulta;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.math.BigDecimal;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import java.math.BigDecimal;
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 @Root(name = "consSitCTe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/cte")

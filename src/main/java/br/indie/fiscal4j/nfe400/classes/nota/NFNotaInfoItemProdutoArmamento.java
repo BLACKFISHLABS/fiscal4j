@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoArmamentoTipo;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class NFNotaInfoItemProdutoArmamento extends DFBase {
     private static final long serialVersionUID = -4438932795183476289L;

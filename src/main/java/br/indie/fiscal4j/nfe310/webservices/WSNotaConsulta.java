@@ -1,5 +1,15 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
+import java.math.BigDecimal;
+import java.rmi.RemoteException;
+
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.util.AXIOMUtil;
+import org.simpleframework.xml.core.Persister;
+import org.simpleframework.xml.stream.Format;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
@@ -12,15 +22,6 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.NfeConsulta2Stub.NfeConsultaN
 import br.indie.fiscal4j.nfe310.webservices.nota.consulta.NfeConsultaStub;
 import br.indie.fiscal4j.nfe310.webservices.nota.consulta.NfeConsultaStub.NfeConsultaNFResult;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.math.BigDecimal;
-import java.rmi.RemoteException;
 
 class WSNotaConsulta {
     private static final String NOME_SERVICO = "CONSULTAR";

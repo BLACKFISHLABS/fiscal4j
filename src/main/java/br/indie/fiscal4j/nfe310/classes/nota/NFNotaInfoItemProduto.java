@@ -1,5 +1,13 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.convert.Convert;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.NFProdutoCompoeValorNota;
 import br.indie.fiscal4j.nfe310.converters.StringNullConverter;
@@ -7,13 +15,6 @@ import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.apache.commons.lang3.StringUtils;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.convert.Convert;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 public class NFNotaInfoItemProduto extends DFBase {
     private static final long serialVersionUID = -2271625077897052364L;

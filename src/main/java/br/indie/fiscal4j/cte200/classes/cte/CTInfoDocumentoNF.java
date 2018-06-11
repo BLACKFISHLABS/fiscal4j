@@ -1,13 +1,14 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFModelo;
-import org.joda.time.LocalDate;
+import java.util.List;
+
+import java.time.LocalDate;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFModelo;
 
 @Root(name = "infNF")
 public class CTInfoDocumentoNF extends DFBase {

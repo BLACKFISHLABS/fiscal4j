@@ -12,8 +12,10 @@ import java.util.Arrays;
  *
  * <p>Pela minha pesquisa, atualmente o serviço de MDF-e encontra-se apenas no  <a href="https://mdfe-portal.sefaz.rs.gov.br/Site/Servicos">RIO GRANDE DO SUL </a>.
  * veja no: <a href="https://www.fazenda.sp.gov.br/mdfe/url_webservices/url_webservices.htm"> link SP</a>
- * e <a href="http://boletim.fazenda.pr.gov.br/boletins/item/2015/34"> link PR</a>
- * <p/>
+ *  e <a href="http://boletim.fazenda.pr.gov.br/boletins/item/2015/34"> link PR</a>
+ *  <p/>
+ *
+ *
  */
 public enum MDFAutorizador3 {
 
@@ -83,8 +85,7 @@ public enum MDFAutorizador3 {
     /**
      * Retorna url do Estado ou o padrão (RS)
      * Se no futuro surgir novas URL'S para determinado Estado
-     * só implementar o enum correspondente.
-     *
+     *  só implementar o enum correspondente.
      * @param uf
      * @return
      */

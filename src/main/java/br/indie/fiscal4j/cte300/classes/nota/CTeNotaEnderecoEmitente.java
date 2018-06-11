@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 /**
  * @author Caio

@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.nfe310.classes.nota.assinatura;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 public class NFSignedInfo extends DFBase {
     private static final long serialVersionUID = -5878065134465400530L;

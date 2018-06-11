@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.cte300.classes.nota.assinatura;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
+
+import br.indie.fiscal4j.DFBase;
 
 public class CTeTransform extends DFBase {
     private static final long serialVersionUID = 4404647911665495803L;

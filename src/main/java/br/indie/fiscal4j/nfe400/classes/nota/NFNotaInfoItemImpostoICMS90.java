@@ -146,12 +146,10 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
 
     public void setValorFundoCombatePobreza(final BigDecimal valorFundoCombatePobreza) {
         this.valorFundoCombatePobreza = BigDecimalParser.tamanho15Com2CasasDecimais(valorFundoCombatePobreza, "Valor fundo combate pobreza");
-        ;
     }
 
     public void setValorBCFundoCombatePobrezaST(final BigDecimal valorBCFundoCombatePobrezaST) {
         this.valorBCFundoCombatePobrezaST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCFundoCombatePobrezaST, "Base calculo fundo combate pobreza ST");
-        ;
     }
 
     public void setPercentualFundoCombatePobrezaST(final BigDecimal percentualFundoCombatePobrezaST) {

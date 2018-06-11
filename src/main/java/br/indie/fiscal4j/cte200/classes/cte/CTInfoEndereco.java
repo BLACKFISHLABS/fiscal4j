@@ -1,8 +1,11 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import br.indie.fiscal4j.DFPais;
+import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.simpleframework.xml.Element;
 
 public class CTInfoEndereco extends DFBase {
     private static final long serialVersionUID = -3018557372923308651L;
@@ -32,7 +35,7 @@ public class CTInfoEndereco extends DFBase {
     private DFUnidadeFederativa unidadeFederativa;
 
     @Element(name = "cPais", required = false)
-    private String codigoPais;
+    private DFPais codigoPais;
 
     @Element(name = "xPais", required = false)
     private String descricaoPais;
@@ -105,11 +108,12 @@ public class CTInfoEndereco extends DFBase {
         this.unidadeFederativa = unidadeFederativa;
     }
 
-    public String getCodigoPais() {
-        return this.codigoPais;
+    public void setCodigoPais(final String codigoPais) {
+        StringValidador.tamanho2a4(codigoPais, "Codigo do pais");
+        this.codigoPais = DFPais.valueOfCodigo(codigoPais);
     }
 
-    public void setCodigoPais(final String codigoPais) {
+    public void setCodigoPais(final DFPais codigoPais) {
         this.codigoPais = codigoPais;
     }
 

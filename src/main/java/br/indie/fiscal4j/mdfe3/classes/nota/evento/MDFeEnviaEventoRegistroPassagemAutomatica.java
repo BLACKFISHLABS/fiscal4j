@@ -6,7 +6,7 @@ import org.simpleframework.xml.Element;
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
  */
-public class MDFeEnviaEventoRegistroPassagemAutomatica extends DFBase {
+public class MDFeEnviaEventoRegistroPassagemAutomatica extends DFBase{
 
     @Element(name = "descEvento")
     private String descricaoEvento;

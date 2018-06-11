@@ -22,7 +22,7 @@ public class MDFeNotaConsulta extends DFBase {
     private DFAmbiente ambiente;
 
     @Element(name = "xServ")
-    private String servico;
+    private String servico ;
 
     @Element(name = "chMDFe")
     private String chave;

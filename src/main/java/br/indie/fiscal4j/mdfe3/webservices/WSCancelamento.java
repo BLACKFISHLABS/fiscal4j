@@ -14,11 +14,11 @@ import br.indie.fiscal4j.persister.DFPersister;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
+import java.time.ZonedDateTime;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
@@ -50,7 +50,7 @@ class WSCancelamento {
         final MDFChaveParser mdfChaveParser = new MDFChaveParser(chaveAcesso);
         final MDFeRecepcaoEventoStub.MdfeCabecMsg cabec = new MDFeRecepcaoEventoStub.MdfeCabecMsg();
         cabec.setCUF(mdfChaveParser.getNFUnidadeFederativa().getCodigoIbge());
-        cabec.setVersaoDados(BigDecimalParser.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
+        cabec.setVersaoDados( BigDecimalParser.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
 
         final MDFeRecepcaoEventoStub.MdfeCabecMsgE cabecE = new MDFeRecepcaoEventoStub.MdfeCabecMsgE();
         cabecE.setMdfeCabecMsg(cabec);
@@ -63,7 +63,7 @@ class WSCancelamento {
         WSCancelamento.LOGGER.info(cabec.toString());
 
         final MDFAutorizador3 autorizador = MDFAutorizador3.valueOfCodigoUF(mdfChaveParser.getNFUnidadeFederativa());
-        final String urlWebService = autorizador.getMDFeRecepcaoEvento(this.config.getAmbiente());
+        final String urlWebService =  autorizador.getMDFeRecepcaoEvento(this.config.getAmbiente());
         if (urlWebService == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para RecepcaoEvento "
                     + mdfChaveParser.getModelo().name() + ", autorizador " + autorizador.name());
@@ -90,7 +90,7 @@ class WSCancelamento {
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
         infoEvento.setCnpj(chaveParser.getCnpjEmitente());
-        infoEvento.setDataHoraEvento(DateTime.now());
+        infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", WSCancelamento.EVENTO_CANCELAMENTO, chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);
         infoEvento.setOrgao(chaveParser.getNFUnidadeFederativa().getCodigoIbge());

@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFViaTransporteInternacionalTransformer implements Transform<NFViaTransporteInternacional> {
 
     @Override
-    public NFViaTransporteInternacional read(final String codigo) throws Exception {
+    public NFViaTransporteInternacional read(final String codigo) {
         return NFViaTransporteInternacional.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final NFViaTransporteInternacional via) throws Exception {
+    public String write(final NFViaTransporteInternacional via) {
         return via.getCodigo();
     }
 }

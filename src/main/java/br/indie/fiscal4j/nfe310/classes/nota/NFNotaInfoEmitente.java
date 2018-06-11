@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.NFEndereco;
 import br.indie.fiscal4j.nfe310.classes.NFRegimeTributario;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class NFNotaInfoEmitente extends DFBase {
     private static final long serialVersionUID = -2236869565066526162L;

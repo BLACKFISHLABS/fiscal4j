@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class CTTipoDocumentoTransporteAnteriorTransformer implements Transform<CTTipoDocumentoTransporteAnterior> {
 
     @Override
-    public CTTipoDocumentoTransporteAnterior read(final String codigo) throws Exception {
+    public CTTipoDocumentoTransporteAnterior read(final String codigo) {
         return CTTipoDocumentoTransporteAnterior.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final CTTipoDocumentoTransporteAnterior tipo) throws Exception {
+    public String write(final CTTipoDocumentoTransporteAnterior tipo) {
         return tipo.getCodigo();
     }
 }

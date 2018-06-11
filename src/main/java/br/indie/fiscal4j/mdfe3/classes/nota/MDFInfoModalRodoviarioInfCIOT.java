@@ -8,8 +8,9 @@ import org.simpleframework.xml.Element;
  * Created by Eldevan Nery Junior on 01/11/17.
  *
  * <h1>Dados do CIOT(Código Identificador da Operação de Transporte)</h1>
+ *
  */
-public class MDFInfoModalRodoviarioInfCIOT extends DFBase {
+public class MDFInfoModalRodoviarioInfCIOT extends DFBase{
 
     /**
      * <p>  Código Identificador da Operação de Transporte.

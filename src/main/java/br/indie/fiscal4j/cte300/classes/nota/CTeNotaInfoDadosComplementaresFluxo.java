@@ -1,17 +1,18 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.util.List;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 /**
  * @author Caio
  * @info Previsão do fluxo da carga<br>
- * Preenchimento obrigatório para o modal aéreo.
+ *       Preenchimento obrigatório para o modal aéreo.
  */
 
 @Root(name = "fluxo")

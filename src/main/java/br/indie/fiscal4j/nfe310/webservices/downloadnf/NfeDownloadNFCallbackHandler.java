@@ -1,36 +1,34 @@
-/**
- * NfeDownloadNFCallbackHandler.java
- * <p>
- * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
+/*
+  NfeDownloadNFCallbackHandler.java
+
+  This file was auto-generated from WSDL
+  by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 
 package br.indie.fiscal4j.nfe310.webservices.downloadnf;
 
 /**
- * NfeDownloadNFCallbackHandler Callback class, Users can extend this class and implement
- * their own receiveResult and receiveError methods.
+ *  NfeDownloadNFCallbackHandler Callback class, Users can extend this class and implement
+ *  their own receiveResult and receiveError methods.
  */
-public abstract class NfeDownloadNFCallbackHandler {
+public abstract class NfeDownloadNFCallbackHandler{
 
-
-    protected Object clientData;
+    protected final Object clientData;
 
     /**
      * User can pass in any object that needs to be accessed once the NonBlocking
      * Web service call is finished and appropriate method of this CallBack is called.
-     *
      * @param clientData Object mechanism by which the user can pass in user data
-     *                   that will be avilable at the time this callback is called.
+     * that will be avilable at the time this callback is called.
      */
-    public NfeDownloadNFCallbackHandler(Object clientData) {
+    public NfeDownloadNFCallbackHandler(Object clientData){
         this.clientData = clientData;
     }
 
     /**
      * Please use this constructor if you don't want to set any clientData
      */
-    public NfeDownloadNFCallbackHandler() {
+    public NfeDownloadNFCallbackHandler(){
         this.clientData = null;
     }
 
@@ -42,14 +40,11 @@ public abstract class NfeDownloadNFCallbackHandler {
         return clientData;
     }
 
-
     /**
      * auto generated Axis2 call back method for nfeDownloadNF method
      * override this method for handling normal response from nfeDownloadNF operation
      */
-    public void receiveResultnfeDownloadNF(
-            br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult result
-    ) {
+    public void receiveResultnfeDownloadNF(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult result) {
     }
 
     /**
@@ -58,7 +53,5 @@ public abstract class NfeDownloadNFCallbackHandler {
      */
     public void receiveErrornfeDownloadNF(java.lang.Exception e) {
     }
-
-
 }
     

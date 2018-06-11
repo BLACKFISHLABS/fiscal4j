@@ -1,13 +1,14 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoSituacaoTributariaCOFINS;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
-import org.simpleframework.xml.Element;
-
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+
+import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe400.classes.NFNotaInfoSituacaoTributariaCOFINS;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 
 public class NFNotaInfoItemImpostoCOFINSAliquota extends DFBase {
     private static final long serialVersionUID = -8079337130690627887L;

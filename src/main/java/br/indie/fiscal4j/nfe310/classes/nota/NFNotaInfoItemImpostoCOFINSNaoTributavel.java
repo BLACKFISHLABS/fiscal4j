@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.NFNotaInfoSituacaoTributariaCOFINS;
-import org.simpleframework.xml.Element;
 
 public class NFNotaInfoItemImpostoCOFINSNaoTributavel extends DFBase {
     private static final long serialVersionUID = -478795766582725560L;

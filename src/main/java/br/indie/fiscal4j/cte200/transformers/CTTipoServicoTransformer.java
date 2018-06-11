@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class CTTipoServicoTransformer implements Transform<CTTipoServico> {
 
     @Override
-    public CTTipoServico read(final String codigo) throws Exception {
+    public CTTipoServico read(final String codigo) {
         return CTTipoServico.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final CTTipoServico tipo) throws Exception {
+    public String write(final CTTipoServico tipo) {
         return tipo.getCodigo();
     }
 }

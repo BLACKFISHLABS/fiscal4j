@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe400.classes.cadastro;
 
+import java.time.LocalDate;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.joda.time.LocalDate;
-import org.simpleframework.xml.Element;
 
 public class NFRetornoConsultaCadastroSituacaoCadastral extends DFBase {
     private static final long serialVersionUID = 7375181464271665520L;

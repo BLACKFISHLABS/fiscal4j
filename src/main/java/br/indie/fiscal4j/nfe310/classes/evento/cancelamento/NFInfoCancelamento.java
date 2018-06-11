@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.nfe310.classes.evento.cancelamento;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.nfe310.classes.evento.NFTipoEvento;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class NFInfoCancelamento extends NFTipoEvento {
     private static final long serialVersionUID = 7427073073940993756L;

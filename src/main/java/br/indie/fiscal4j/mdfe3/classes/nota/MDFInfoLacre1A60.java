@@ -5,10 +5,11 @@ import org.simpleframework.xml.Element;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- * <p>
+ *
  * Numero lacre de 1 a 60 caracteres.
- * <p>
+ *
  * Preechimento opcional para os modais Rodoviário e Ferroviário.
+ *
  */
 public class MDFInfoLacre1A60 {
 

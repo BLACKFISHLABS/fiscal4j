@@ -14,6 +14,7 @@ import java.util.List;
  * <p>Outras informações sobre Vale-Pedágio obrigatório que não tenham campos específicos
  * devem ser informadas no campo de observações gerais de uso livre pelo contribuinte,
  * visando atender as determinações legais vigentes.</p>
+ *
  */
 @Root(name = "valePed")
 public class MDFInfoModalRodoviarioPedagio extends DFBase {

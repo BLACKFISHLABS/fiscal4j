@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class CTModalTransformer implements Transform<CTModal> {
 
     @Override
-    public CTModal read(final String codigo) throws Exception {
+    public CTModal read(final String codigo) {
         return CTModal.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final CTModal tipo) throws Exception {
+    public String write(final CTModal tipo) {
         return tipo.getCodigo();
     }
 }

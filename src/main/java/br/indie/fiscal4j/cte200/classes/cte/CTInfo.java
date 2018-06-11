@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
+import java.util.List;
+
 import org.simpleframework.xml.*;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
 
 @Root(name = "infCte")
 @Namespace(reference = "http://www.portalfiscal.inf.br/cte")

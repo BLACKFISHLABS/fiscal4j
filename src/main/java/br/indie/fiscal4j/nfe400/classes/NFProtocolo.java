@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe400.classes;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
 
 @Root(name = "protNFe")
 public class NFProtocolo extends DFBase {

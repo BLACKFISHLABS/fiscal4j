@@ -1,11 +1,11 @@
 package br.indie.fiscal4j.nfe310.classes;
 
+import java.util.Arrays;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFTipoEmissao;
 import br.indie.fiscal4j.nfe310.parsers.NotaFiscalChaveParser;
-
-import java.util.Arrays;
 
 /**
  * <h1>URLs dos serviços</h1><br>
@@ -100,7 +100,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.AM};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.AM };
         }
     },
     AN {
@@ -186,7 +186,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{};
+            return new DFUnidadeFederativa[] {};
         }
     },
     /**
@@ -275,7 +275,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.BA};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.BA };
         }
     },
     CE {
@@ -361,7 +361,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.CE};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.CE };
         }
     },
     GO {
@@ -447,7 +447,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.GO};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.GO };
         }
     },
     MA {
@@ -533,7 +533,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MA};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MA };
         }
     },
     MG {
@@ -619,7 +619,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MG};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MG };
         }
     },
     MS {
@@ -705,7 +705,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MS};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MS };
         }
     },
     MT {
@@ -791,7 +791,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MT};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MT };
         }
     },
     PA {
@@ -877,7 +877,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.PA};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.PA };
         }
     },
     PE {
@@ -964,7 +964,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.PE};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.PE };
         }
     },
     PI {
@@ -1050,7 +1050,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.PI};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.PI };
         }
     },
     PR {
@@ -1136,7 +1136,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.PR};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.PR };
         }
     },
     RS {
@@ -1222,7 +1222,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.RS};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.RS };
         }
     },
     SP {
@@ -1308,7 +1308,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.SP};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.SP };
         }
     },
     SVRS {
@@ -1394,7 +1394,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{DFUnidadeFederativa.AC, DFUnidadeFederativa.AL, DFUnidadeFederativa.AP, DFUnidadeFederativa.DF, DFUnidadeFederativa.ES, DFUnidadeFederativa.PA, DFUnidadeFederativa.PB, DFUnidadeFederativa.RJ, DFUnidadeFederativa.RN, DFUnidadeFederativa.RO, DFUnidadeFederativa.RR, DFUnidadeFederativa.SC, DFUnidadeFederativa.SE, DFUnidadeFederativa.TO};
+            return new DFUnidadeFederativa[] { DFUnidadeFederativa.AC, DFUnidadeFederativa.AL, DFUnidadeFederativa.AP, DFUnidadeFederativa.DF, DFUnidadeFederativa.ES, DFUnidadeFederativa.PA, DFUnidadeFederativa.PB, DFUnidadeFederativa.RJ, DFUnidadeFederativa.RN, DFUnidadeFederativa.RO, DFUnidadeFederativa.RR, DFUnidadeFederativa.SC, DFUnidadeFederativa.SE, DFUnidadeFederativa.TO };
         }
     },
     SCAN {
@@ -1480,7 +1480,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{};
+            return new DFUnidadeFederativa[] {};
         }
     },
     SVAN {
@@ -1566,7 +1566,7 @@ public enum NFAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[]{};
+            return new DFUnidadeFederativa[] {};
         }
     };
 

@@ -17,13 +17,13 @@ public class NFNotaInfoItemImpostoICMS60 extends DFBase {
     @Element(name = "CST", required = true)
     private NFNotaInfoImpostoTributacaoICMS situacaoTributaria;
 
-    @Element(name = "vBCSTRet", required = true)
+    @Element(name = "vBCSTRet", required = false)
     private String valorBCICMSSTRetido;
 
-    @Element(name = "pST", required = true)
+    @Element(name = "pST", required = false)
     private String percentualAliquotaICMSST;
 
-    @Element(name = "vICMSSTRet", required = true)
+    @Element(name = "vICMSSTRet", required = false)
     private String valorICMSSTRetido;
 
     @Element(name = "vBCFCPSTRet", required = false)
@@ -64,12 +64,10 @@ public class NFNotaInfoItemImpostoICMS60 extends DFBase {
             throw new IllegalStateException("Percentual fundo de combate a pobreza precisa ser maior que zero!");
         }
         this.percentualFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualFundoCombatePobrezaRetidoST, "Percentual fundo combate pobreza retido ST");
-        ;
     }
 
     public void setValorFundoCombatePobrezaRetidoST(final BigDecimal valorFundoCombatePobrezaRetidoST) {
         this.valorFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho15Com2CasasDecimais(valorFundoCombatePobrezaRetidoST, "Valor fundo combate pobreza retido ST");
-        ;
     }
 
     public NFOrigem getOrigem() {

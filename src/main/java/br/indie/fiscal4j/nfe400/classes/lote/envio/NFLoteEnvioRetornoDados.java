@@ -4,20 +4,20 @@ import br.indie.fiscal4j.DFBase;
 
 public class NFLoteEnvioRetornoDados extends DFBase {
 
-    private NFLoteEnvioRetorno retorno;
-    private NFLoteEnvio loteAssinado;
+    private final NFLoteEnvioRetorno retorno;
+    private final NFLoteEnvio loteAssinado;
+	
+	public NFLoteEnvioRetornoDados(NFLoteEnvioRetorno retorno, NFLoteEnvio loteAssinado) {
+		this.retorno = retorno;
+		this.loteAssinado = loteAssinado;
+	}
 
-    public NFLoteEnvioRetornoDados(NFLoteEnvioRetorno retorno, NFLoteEnvio loteAssinado) {
-        this.retorno = retorno;
-        this.loteAssinado = loteAssinado;
-    }
+	public NFLoteEnvioRetorno getRetorno() {
+		return retorno;
+	}
 
-    public NFLoteEnvioRetorno getRetorno() {
-        return retorno;
-    }
-
-    public NFLoteEnvio getLoteAssinado() {
-        return loteAssinado;
-    }
-
+	public NFLoteEnvio getLoteAssinado() {
+		return loteAssinado;
+	}
+	
 }

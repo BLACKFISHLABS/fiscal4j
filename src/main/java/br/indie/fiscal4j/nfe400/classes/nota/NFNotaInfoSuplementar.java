@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 @Root(name = "infNFeSupl")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
@@ -32,12 +33,11 @@ public class NFNotaInfoSuplementar extends DFBase {
 
     /**
      * Informar a URL da &quot;Consulta por chave de acesso da NFC-e&quot;.
-     * A mesma URL que deve estar informada no DANFE NFC-e para consulta por chave de acesso.
-     *
+     *  A mesma URL que deve estar informada no DANFE NFC-e para consulta por chave de acesso.
      * @param urlConsultaChaveAcesso
      */
     public void setUrlConsultaChaveAcesso(final String urlConsultaChaveAcesso) {
-        StringValidador.validaIntervalo(urlConsultaChaveAcesso, 21, 85, "Url Consulta Chave Acesso ");
+        StringValidador.validaIntervalo(urlConsultaChaveAcesso, 21,85, "Url Consulta Chave Acesso ");
         this.urlConsultaChaveAcesso = urlConsultaChaveAcesso;
     }
 }

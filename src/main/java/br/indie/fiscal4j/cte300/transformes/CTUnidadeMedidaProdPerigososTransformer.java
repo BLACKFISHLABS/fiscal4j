@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTUnidadeMedidaProdPerigososTransformer implements Transform<CTUnidadeMedidaProdPerigosos> {
 
-    @Override
-    public CTUnidadeMedidaProdPerigosos read(String arg0) throws Exception {
-        // TODO Auto-generated method stub
-        return CTUnidadeMedidaProdPerigosos.valueOfCodigo(arg0);
-    }
+	@Override
+    public CTUnidadeMedidaProdPerigosos read(String arg0) {
+		// TODO Auto-generated method stub
+		return CTUnidadeMedidaProdPerigosos.valueOfCodigo(arg0);
+	}
 
-    @Override
-    public String write(CTUnidadeMedidaProdPerigosos arg0) throws Exception {
-        // TODO Auto-generated method stub
-        return arg0.getCodigo();
-    }
+	@Override
+    public String write(CTUnidadeMedidaProdPerigosos arg0) {
+		// TODO Auto-generated method stub
+		return arg0.getCodigo();
+	}
 
 }

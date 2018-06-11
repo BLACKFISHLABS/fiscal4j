@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFNotaInfoItemProdutoVeiculoTipoOperacaoTransformer implements Transform<NFNotaInfoItemProdutoVeiculoTipoOperacao> {
 
     @Override
-    public NFNotaInfoItemProdutoVeiculoTipoOperacao read(final String codigo) throws Exception {
+    public NFNotaInfoItemProdutoVeiculoTipoOperacao read(final String codigo) {
         return NFNotaInfoItemProdutoVeiculoTipoOperacao.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final NFNotaInfoItemProdutoVeiculoTipoOperacao tipo) throws Exception {
+    public String write(final NFNotaInfoItemProdutoVeiculoTipoOperacao tipo) {
         return tipo.getCodigo();
     }
 }

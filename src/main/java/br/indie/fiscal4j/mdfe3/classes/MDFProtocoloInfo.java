@@ -2,12 +2,12 @@ package br.indie.fiscal4j.mdfe3.classes;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import org.joda.time.LocalDateTime;
-import org.joda.time.format.DateTimeFormat;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @Author Eldevan Nery Junior on 26/05/17.
@@ -85,11 +85,13 @@ public class MDFProtocoloInfo extends DFBase {
         return this.chave;
     }
 
-    public LocalDateTime getDataRecebimento() throws Exception {
+    public LocalDateTime getDataRecebimento() {
         try {
-            return LocalDateTime.parse(this.dataRecebimento, DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss"));
+            return LocalDateTime.parse(this.dataRecebimento, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
         } catch (final Exception e) {
-            return LocalDateTime.fromDateFields(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").parse(this.dataRecebimento));
+            return LocalDateTime.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX")
+                    .parse(this.dataRecebimento))
+                    .atZone(ZoneId.systemDefault()).toLocalDateTime();
         }
     }
 

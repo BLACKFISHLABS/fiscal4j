@@ -1,14 +1,15 @@
 package br.indie.fiscal4j.nfe400.classes.evento.cartacorrecao;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.simpleframework.xml.*;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.evento.NFEvento;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.*;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 @Root(name = "envEvento")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

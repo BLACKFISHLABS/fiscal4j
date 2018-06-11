@@ -11,6 +11,7 @@ import java.math.BigInteger;
  * Created by Eldevan Nery Junior on 14/11/17.
  *
  * @info Dados do Recibo do Lote.
+ *
  */
 
 @Root(name = "infRec")

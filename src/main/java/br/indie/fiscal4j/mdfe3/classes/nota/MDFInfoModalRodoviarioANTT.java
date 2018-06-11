@@ -26,15 +26,15 @@ public class MDFInfoModalRodoviarioANTT extends DFBase {
     /**
      * <h1>Dados do CIOT.</h1>
      */
-    @ElementList(entry = "infCIOT", inline = true, required = false)
+    @ElementList(entry="infCIOT", inline = true, required = false)
     private List<MDFInfoModalRodoviarioInfCIOT> infCIOT;
     /**
      * Informações de Vale Pedágio
      */
-    @Element(name = "valePed", required = false)
+    @Element(name="valePed", required = false)
     private MDFInfoModalRodoviarioPedagio valePedagio;
 
-    @ElementList(entry = "infContratante", inline = true, required = false)
+    @ElementList(entry ="infContratante", inline = true, required = false)
     protected List<MDFInfoModalRodoviarioInfContratante> infContratante;
 
     public String getRntrc() {
@@ -42,7 +42,7 @@ public class MDFInfoModalRodoviarioANTT extends DFBase {
     }
 
     public void setRntrc(String rntrc) {
-        StringValidador.validador(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga(RNTRC) ", 8, true, true);
+        StringValidador.validador(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga(RNTRC) ", 8, true,true);
         this.rntrc = rntrc;
     }
 

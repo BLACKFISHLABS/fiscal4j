@@ -1,12 +1,13 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.util.List;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 public class NFNotaInfoInformacoesAdicionais extends DFBase {
     private static final long serialVersionUID = 8661712792020458812L;

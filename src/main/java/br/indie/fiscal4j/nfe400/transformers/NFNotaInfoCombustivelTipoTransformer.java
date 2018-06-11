@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFNotaInfoCombustivelTipoTransformer implements Transform<NFNotaInfoCombustivelTipo> {
 
     @Override
-    public NFNotaInfoCombustivelTipo read(final String codigoCombustivelTipo) throws Exception {
+    public NFNotaInfoCombustivelTipo read(final String codigoCombustivelTipo) {
         return NFNotaInfoCombustivelTipo.valueOfCodigo(codigoCombustivelTipo);
     }
 
     @Override
-    public String write(final NFNotaInfoCombustivelTipo combustivelTipo) throws Exception {
+    public String write(final NFNotaInfoCombustivelTipo combustivelTipo) {
         return combustivelTipo.getCodigo();
     }
 }

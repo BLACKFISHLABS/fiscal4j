@@ -17,7 +17,7 @@ class DFDateFormatTransformer implements Transform<Date> {
     }
 
     @Override
-    public String write(final Date value) throws Exception {
+    public String write(final Date value) {
         return this.DATE_FORMAT.format(value);
     }
 }

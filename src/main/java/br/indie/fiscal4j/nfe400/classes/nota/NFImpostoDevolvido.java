@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import java.math.BigDecimal;
+
 import org.simpleframework.xml.Element;
 
-import java.math.BigDecimal;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 
 public class NFImpostoDevolvido extends DFBase {
     private static final long serialVersionUID = 3300133386344205418L;

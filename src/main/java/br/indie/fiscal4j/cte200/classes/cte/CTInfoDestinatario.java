@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 public class CTInfoDestinatario extends DFBase {
     private static final long serialVersionUID = 6538067070586588164L;

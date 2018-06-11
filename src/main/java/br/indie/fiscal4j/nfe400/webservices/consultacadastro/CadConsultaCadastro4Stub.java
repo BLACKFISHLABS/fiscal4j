@@ -1,8 +1,8 @@
-/**
- * CadConsultaCadastro4Stub.java
- * <p>
- * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
+/*
+  CadConsultaCadastro4Stub.java
+  <p>
+  This file was auto-generated from WSDL
+  by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 package br.indie.fiscal4j.nfe400.webservices.consultacadastro;
 
@@ -12,14 +12,15 @@ package br.indie.fiscal4j.nfe400.webservices.consultacadastro;
  *  CadConsultaCadastro4Stub java implementation
  */
 
+import javax.xml.namespace.QName;
 
 public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     protected org.apache.axis2.description.AxisOperation[] _operations;
 
     //hashmaps to keep the fault mapping
-    private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
-    private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
-    private java.util.HashMap faultMessageMap = new java.util.HashMap();
+    private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
+    private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
+    private final java.util.HashMap faultMessageMap = new java.util.HashMap();
 
     private static int counter = 0;
 
@@ -32,86 +33,57 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
     }
 
-
-    private void populateAxisService() throws org.apache.axis2.AxisFault {
-
+    private void populateAxisService() {
         //creating the Service with a unique name
         _service = new org.apache.axis2.description.AxisService("CadConsultaCadastro4" + getUniqueSuffix());
         addAnonymousOperations();
-
         //creating the operations
         org.apache.axis2.description.AxisOperation __operation;
-
         _operations = new org.apache.axis2.description.AxisOperation[1];
-
         __operation = new org.apache.axis2.description.OutInAxisOperation();
-
-
         __operation.setName(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "consultaCadastro"));
         _service.addOperation(__operation);
-
-
         _operations[0] = __operation;
-
-
     }
 
     //populates the faults
     private void populateFaults() {
-
-
     }
 
     /**
      * Constructor that takes in a configContext
      */
 
-    public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext,
-                                    java.lang.String targetEndpoint)
-            throws org.apache.axis2.AxisFault {
+    public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext, java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(configurationContext, targetEndpoint, false);
     }
-
 
     /**
      * Constructor that takes in a configContext  and useseperate listner
      */
-    public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext,
-                                    java.lang.String targetEndpoint, boolean useSeparateListener)
-            throws org.apache.axis2.AxisFault {
+    public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext, java.lang.String targetEndpoint, boolean useSeparateListener) throws org.apache.axis2.AxisFault {
         //To populate AxisService
         populateAxisService();
         populateFaults();
-
         _serviceClient = new org.apache.axis2.client.ServiceClient(configurationContext, _service);
-
-
-        _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(
-                targetEndpoint));
+        _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(targetEndpoint));
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
-
         //Set the soap version
         _serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP12Constants.SOAP_ENVELOPE_NAMESPACE_URI);
-
-
     }
 
     /**
      * Default Constructor
      */
     public CadConsultaCadastro4Stub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
-
         this(configurationContext, "https://nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx");
-
     }
 
     /**
      * Default Constructor
      */
     public CadConsultaCadastro4Stub() throws org.apache.axis2.AxisFault {
-
         this("https://nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx");
-
     }
 
     /**
@@ -121,7 +93,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         this(null, targetEndpoint);
     }
 
-
     /**
      * Auto generated method signature
      * Consulta Cadastro de Contribuintes do ICMS
@@ -130,66 +101,31 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
      * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#consultaCadastro
      */
 
-
-    public br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg consultaCadastro(
-
-            br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg nfeDadosMsg0)
-
-
-            throws java.rmi.RemoteException
-
-    {
+    public br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg consultaCadastro(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg nfeDadosMsg0) throws java.rmi.RemoteException {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
             _operationClient.getOptions().setAction("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4/consultaCadastro");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
-
-
             // create a message context
             _messageContext = new org.apache.axis2.context.MessageContext();
-
-
             // create SOAP envelope with that payload
-            org.apache.axiom.soap.SOAPEnvelope env = null;
-
-
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                    nfeDadosMsg0,
-                    optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                            "consultaCadastro")), new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                            "consultaCadastro"));
-
+            org.apache.axiom.soap.SOAPEnvelope env;
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), nfeDadosMsg0, optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "consultaCadastro")), new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "consultaCadastro"));
             //adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
             // set the message context with that soap envelope
             _messageContext.setEnvelope(env);
-
             // add the message contxt to the operation client
             _operationClient.addMessageContext(_messageContext);
-
             //execute the operation client
             _operationClient.execute(true);
-
-
-            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
-                    org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
-
-
-            java.lang.Object object = fromOM(
-                    _returnEnv.getBody().getFirstElement(),
-                    br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.class,
-                    getEnvelopeNamespaces(_returnEnv));
-
-
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.class, getEnvelopeNamespaces(_returnEnv));
             return (br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg) object;
-
         } catch (org.apache.axis2.AxisFault f) {
-
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(), "consultaCadastro"))) {
@@ -203,28 +139,10 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                         java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(), "consultaCadastro"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
-                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                new java.lang.Class[]{messageClass});
-                        m.invoke(ex, new java.lang.Object[]{messageObject});
-
-
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
+                        m.invoke(ex, messageObject);
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    } catch (java.lang.ClassCastException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.reflect.InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.InstantiationException e) {
+                    } catch (ClassCastException | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
                         // we cannot intantiate the class - throw the original Axis fault
                         throw f;
                     }
@@ -248,56 +166,28 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
      * @param nfeDadosMsg0
      * @see br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4#startconsultaCadastro
      */
-    public void startconsultaCadastro(
-
-            br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg nfeDadosMsg0,
-
-            final br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4CallbackHandler callback)
-
-            throws java.rmi.RemoteException {
-
+    public void startconsultaCadastro(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg nfeDadosMsg0, final br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4CallbackHandler callback) throws java.rmi.RemoteException {
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
         _operationClient.getOptions().setAction("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4/consultaCadastro");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
-
-
         // create SOAP envelope with that payload
-        org.apache.axiom.soap.SOAPEnvelope env = null;
+        org.apache.axiom.soap.SOAPEnvelope env;
         final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
-
-
         //Style is Doc.
-
-
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                nfeDadosMsg0,
-                optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                        "consultaCadastro")), new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                        "consultaCadastro"));
-
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), nfeDadosMsg0, optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "consultaCadastro")), new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "consultaCadastro"));
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
         // create message context with that soap envelope
         _messageContext.setEnvelope(env);
-
         // add the message context to the operation client
         _operationClient.addMessageContext(_messageContext);
-
-
         _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
             public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
-
-                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                            br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.class,
-                            getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultconsultaCadastro(
-                            (br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg) object);
-
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultconsultaCadastro((br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg) object);
                 } catch (org.apache.axis2.AxisFault e) {
                     callback.receiveErrorconsultaCadastro(e);
                 }
@@ -319,31 +209,10 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                                 java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(), "consultaCadastro"));
                                 java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                                 java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
-                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                        new java.lang.Class[]{messageClass});
-                                m.invoke(ex, new java.lang.Object[]{messageObject});
-
-
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
+                                m.invoke(ex, messageObject);
                                 callback.receiveErrorconsultaCadastro(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            } catch (java.lang.ClassCastException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (java.lang.ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (java.lang.NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (java.lang.reflect.InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (java.lang.IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (java.lang.InstantiationException e) {
-                                // we cannot intantiate the class - throw the original Axis fault
-                                callback.receiveErrorconsultaCadastro(f);
-                            } catch (org.apache.axis2.AxisFault e) {
+                            } catch (ClassCastException | org.apache.axis2.AxisFault | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the original Axis fault
                                 callback.receiveErrorconsultaCadastro(f);
                             }
@@ -371,20 +240,14 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                 }
             }
         });
-
-
-        org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        org.apache.axis2.util.CallbackReceiver _callbackReceiver;
         if (_operations[0].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
             _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-            _operations[0].setMessageReceiver(
-                    _callbackReceiver);
+            _operations[0].setMessageReceiver(_callbackReceiver);
         }
-
         //execute the operation client
         _operationClient.execute(false);
-
     }
-
 
     /**
      * A utility method that copies the namepaces from the SOAPEnvelope
@@ -399,17 +262,14 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         return returnMap;
     }
 
-
-    private javax.xml.namespace.QName[] opNameArray = null;
+    private final javax.xml.namespace.QName[] opNameArray = null;
 
     private boolean optimizeContent(javax.xml.namespace.QName opName) {
-
-
         if (opNameArray == null) {
             return false;
         }
-        for (int i = 0; i < opNameArray.length; i++) {
-            if (opName.equals(opNameArray[i])) {
+        for (QName anOpNameArray : opNameArray) {
+            if (opName.equals(anOpNameArray)) {
                 return true;
             }
         }
@@ -419,32 +279,20 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     //https://nfe.fazenda.sp.gov.br/ws/cadconsultacadastro4.asmx
     public static class ExtensionMapper {
 
-        public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
-                                                     java.lang.String typeName,
-                                                     javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-
-
+        public static java.lang.Object getTypeObject(java.lang.String namespaceURI, java.lang.String typeName, javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
             throw new org.apache.axis2.databinding.ADBException("Unsupported type " + namespaceURI + " " + typeName);
         }
-
     }
 
-    public static class NfeResultMsg
-            implements org.apache.axis2.databinding.ADBBean {
+    public static class NfeResultMsg implements org.apache.axis2.databinding.ADBBean {
 
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                "nfeResultMsg",
-                "");
-
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "nfeResultMsg", "");
 
         /**
          * field for ExtraElement
          */
 
-
         protected org.apache.axiom.om.OMElement localExtraElement;
-
 
         /**
          * Auto generated getter method
@@ -455,83 +303,49 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             return localExtraElement;
         }
 
-
         /**
          * Auto generated setter method
          *
          * @param param ExtraElement
          */
         public void setExtraElement(org.apache.axiom.om.OMElement param) {
-
             this.localExtraElement = param;
-
-
         }
-
 
         /**
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
          */
-        public org.apache.axiom.om.OMElement getOMElement(
-                final javax.xml.namespace.QName parentQName,
-                final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException {
-
-
-            org.apache.axiom.om.OMDataSource dataSource =
-                    new org.apache.axis2.databinding.ADBDataSource(this, MY_QNAME);
+        public org.apache.axiom.om.OMElement getOMElement(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory) {
+            org.apache.axiom.om.OMDataSource dataSource = new org.apache.axis2.databinding.ADBDataSource(this, MY_QNAME);
             return factory.createOMElement(dataSource, MY_QNAME);
-
         }
 
-        public void serialize(final javax.xml.namespace.QName parentQName,
-                              javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
+        public void serialize(final javax.xml.namespace.QName parentQName, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             serialize(parentQName, xmlWriter, false);
         }
 
-        public void serialize(final javax.xml.namespace.QName parentQName,
-                              javax.xml.stream.XMLStreamWriter xmlWriter,
-                              boolean serializeType)
-                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
-
-
-            java.lang.String prefix = null;
-            java.lang.String namespace = null;
-
-
+        public void serialize(final javax.xml.namespace.QName parentQName, javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix;
+            java.lang.String namespace;
             prefix = parentQName.getPrefix();
             namespace = parentQName.getNamespaceURI();
             writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-
             if (serializeType) {
-
-
                 java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4");
                 if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
-                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type",
-                            namespacePrefix + ":nfeResultMsg",
-                            xmlWriter);
+                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":nfeResultMsg", xmlWriter);
                 } else {
-                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type",
-                            "nfeResultMsg",
-                            xmlWriter);
+                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "nfeResultMsg", xmlWriter);
                 }
-
-
             }
-
-
             if (localExtraElement != null) {
                 localExtraElement.serialize(xmlWriter);
             } else {
                 throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
             }
-
             xmlWriter.writeEndElement();
-
-
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
@@ -544,8 +358,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Utility method to write an element start tag.
          */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, localPart);
@@ -555,7 +368,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                 } else if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
-
                 xmlWriter.writeStartElement(prefix, localPart, namespace);
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
@@ -565,8 +377,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Util method to write an attribute with the ns prefix
          */
-        private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName,
-                                    java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (xmlWriter.getPrefix(namespace) == null) {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
@@ -577,8 +388,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Util method to write an attribute without the ns prefix
          */
-        private void writeAttribute(java.lang.String namespace, java.lang.String attName,
-                                    java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (namespace.equals("")) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
@@ -587,13 +397,10 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             }
         }
 
-
         /**
          * Util method to write an attribute without the ns prefix
          */
-        private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                         javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
+        private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName, javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String attributeNamespace = qname.getNamespaceURI();
             java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
             if (attributePrefix == null) {
@@ -605,7 +412,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             } else {
                 attributeValue = qname.getLocalPart();
             }
-
             if (namespace.equals("")) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
@@ -618,8 +424,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * method to handle Qnames
          */
 
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeQName(javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String namespaceURI = qname.getNamespaceURI();
             if (namespaceURI != null) {
                 java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
@@ -628,29 +433,24 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                     xmlWriter.writeNamespace(prefix, namespaceURI);
                     xmlWriter.setPrefix(prefix, namespaceURI);
                 }
-
                 if (prefix.trim().length() > 0) {
                     xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 } else {
                     // i.e this is the default namespace
                     xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 }
-
             } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
         }
 
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
+        private void writeQNames(javax.xml.namespace.QName[] qnames, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (qnames != null) {
                 // we have to store this data until last moment since it is not possible to write any
                 // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
+                StringBuilder stringToWrite = new StringBuilder();
+                java.lang.String namespaceURI;
+                java.lang.String prefix;
                 for (int i = 0; i < qnames.length; i++) {
                     if (i > 0) {
                         stringToWrite.append(" ");
@@ -663,7 +463,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                             xmlWriter.writeNamespace(prefix, namespaceURI);
                             xmlWriter.setPrefix(prefix, namespaceURI);
                         }
-
                         if (prefix.trim().length() > 0) {
                             stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                         } else {
@@ -675,9 +474,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                 }
                 xmlWriter.writeCharacters(stringToWrite.toString());
             }
-
         }
-
 
         /**
          * Register a namespace prefix
@@ -700,37 +497,25 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             return prefix;
         }
 
-
         /**
          * databinding method to get an XML representation of this object
          */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                throws org.apache.axis2.databinding.ADBException {
-
-
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
             java.util.ArrayList elementList = new java.util.ArrayList();
             java.util.ArrayList attribList = new java.util.ArrayList();
-
-
             if (localExtraElement != null) {
                 elementList.add(org.apache.axis2.databinding.utils.Constants.OM_ELEMENT_KEY);
                 elementList.add(localExtraElement);
             } else {
                 throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
             }
-
-
             return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-
-
         }
-
 
         /**
          * Factory class that keeps the parse method
          */
         public static class Factory {
-
 
             /**
              * static method to create the object
@@ -740,114 +525,68 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
              * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static NfeResultMsg parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-                NfeResultMsg object =
-                        new NfeResultMsg();
-
+                NfeResultMsg object = new NfeResultMsg();
                 int event;
                 java.lang.String nillableValue = null;
                 java.lang.String prefix = "";
                 java.lang.String namespaceuri = "";
                 try {
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-
+                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                     if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type") != null) {
-                        java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "type");
+                        java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type");
                         if (fullTypeName != null) {
                             java.lang.String nsPrefix = null;
-                            if (fullTypeName.indexOf(":") > -1) {
+                            if (fullTypeName.contains(":")) {
                                 nsPrefix = fullTypeName.substring(0, fullTypeName.indexOf(":"));
                             }
                             nsPrefix = nsPrefix == null ? "" : nsPrefix;
-
                             java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":") + 1);
-
                             if (!"nfeResultMsg".equals(type)) {
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (NfeResultMsg) ExtensionMapper.getTypeObject(
-                                        nsUri, type, reader);
+                                return (NfeResultMsg) ExtensionMapper.getTypeObject(nsUri, type, reader);
                             }
-
-
                         }
-
-
                     }
-
-
                     // Note all attributes that were handled. Used to differ normal attributes
                     // from anyAttributes.
                     java.util.Vector handledAttributes = new java.util.Vector();
-
-
                     reader.next();
-
-
                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-
                     if (reader.isStartElement()) {
-
-
                         //use the QName from the parser as the name for the builder
                         javax.xml.namespace.QName startQname1 = reader.getName();
-
                         // We need to wrap the reader so that it produces a fake START_DOCUMENT event
                         // this is needed by the builder classes
-                        org.apache.axis2.databinding.utils.NamedStaxOMBuilder builder1 =
-                                new org.apache.axis2.databinding.utils.NamedStaxOMBuilder(
-                                        new org.apache.axis2.util.StreamWrapper(reader), startQname1);
+                        org.apache.axis2.databinding.utils.NamedStaxOMBuilder builder1 = new org.apache.axis2.databinding.utils.NamedStaxOMBuilder(new org.apache.axis2.util.StreamWrapper(reader), startQname1);
                         object.setExtraElement(builder1.getOMElement());
-
                         reader.next();
-
                     }  // End of if for expected property start element
-
                     else {
                         // A start element we are not expecting indicates an invalid parameter was passed
                         throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                     }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
+                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                     if (reader.isStartElement())
                         // A start element we are not expecting indicates a trailing invalid property
                         throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-
-
                 } catch (javax.xml.stream.XMLStreamException e) {
                     throw new java.lang.Exception(e);
                 }
-
                 return object;
             }
-
         }//end of factory class
-
-
     }
 
+    public static class NfeDadosMsg implements org.apache.axis2.databinding.ADBBean {
 
-    public static class NfeDadosMsg
-            implements org.apache.axis2.databinding.ADBBean {
-
-        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4",
-                "nfeDadosMsg",
-                "");
-
+        public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4", "nfeDadosMsg", "");
 
         /**
          * field for ExtraElement
          */
 
-
         protected org.apache.axiom.om.OMElement localExtraElement;
-
 
         /**
          * Auto generated getter method
@@ -858,83 +597,49 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             return localExtraElement;
         }
 
-
         /**
          * Auto generated setter method
          *
          * @param param ExtraElement
          */
         public void setExtraElement(org.apache.axiom.om.OMElement param) {
-
             this.localExtraElement = param;
-
-
         }
-
 
         /**
          * @param parentQName
          * @param factory
          * @return org.apache.axiom.om.OMElement
          */
-        public org.apache.axiom.om.OMElement getOMElement(
-                final javax.xml.namespace.QName parentQName,
-                final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException {
-
-
-            org.apache.axiom.om.OMDataSource dataSource =
-                    new org.apache.axis2.databinding.ADBDataSource(this, MY_QNAME);
+        public org.apache.axiom.om.OMElement getOMElement(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory) {
+            org.apache.axiom.om.OMDataSource dataSource = new org.apache.axis2.databinding.ADBDataSource(this, MY_QNAME);
             return factory.createOMElement(dataSource, MY_QNAME);
-
         }
 
-        public void serialize(final javax.xml.namespace.QName parentQName,
-                              javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
+        public void serialize(final javax.xml.namespace.QName parentQName, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             serialize(parentQName, xmlWriter, false);
         }
 
-        public void serialize(final javax.xml.namespace.QName parentQName,
-                              javax.xml.stream.XMLStreamWriter xmlWriter,
-                              boolean serializeType)
-                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
-
-
-            java.lang.String prefix = null;
-            java.lang.String namespace = null;
-
-
+        public void serialize(final javax.xml.namespace.QName parentQName, javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix;
+            java.lang.String namespace;
             prefix = parentQName.getPrefix();
             namespace = parentQName.getNamespaceURI();
             writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-
             if (serializeType) {
-
-
                 java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.portalfiscal.inf.br/nfe/wsdl/CadConsultaCadastro4");
                 if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
-                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type",
-                            namespacePrefix + ":nfeDadosMsg",
-                            xmlWriter);
+                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":nfeDadosMsg", xmlWriter);
                 } else {
-                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type",
-                            "nfeDadosMsg",
-                            xmlWriter);
+                    writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "nfeDadosMsg", xmlWriter);
                 }
-
-
             }
-
-
             if (localExtraElement != null) {
                 localExtraElement.serialize(xmlWriter);
             } else {
                 throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
             }
-
             xmlWriter.writeEndElement();
-
-
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
@@ -947,8 +652,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Utility method to write an element start tag.
          */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, localPart);
@@ -958,7 +662,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                 } else if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
-
                 xmlWriter.writeStartElement(prefix, localPart, namespace);
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
@@ -968,8 +671,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Util method to write an attribute with the ns prefix
          */
-        private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName,
-                                    java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (xmlWriter.getPrefix(namespace) == null) {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
@@ -980,8 +682,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         /**
          * Util method to write an attribute without the ns prefix
          */
-        private void writeAttribute(java.lang.String namespace, java.lang.String attName,
-                                    java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (namespace.equals("")) {
                 xmlWriter.writeAttribute(attName, attValue);
             } else {
@@ -990,13 +691,10 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             }
         }
 
-
         /**
          * Util method to write an attribute without the ns prefix
          */
-        private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                         javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
+        private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName, javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String attributeNamespace = qname.getNamespaceURI();
             java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
             if (attributePrefix == null) {
@@ -1008,7 +706,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             } else {
                 attributeValue = qname.getLocalPart();
             }
-
             if (namespace.equals("")) {
                 xmlWriter.writeAttribute(attName, attributeValue);
             } else {
@@ -1021,8 +718,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * method to handle Qnames
          */
 
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeQName(javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             java.lang.String namespaceURI = qname.getNamespaceURI();
             if (namespaceURI != null) {
                 java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
@@ -1031,29 +727,24 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                     xmlWriter.writeNamespace(prefix, namespaceURI);
                     xmlWriter.setPrefix(prefix, namespaceURI);
                 }
-
                 if (prefix.trim().length() > 0) {
                     xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 } else {
                     // i.e this is the default namespace
                     xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 }
-
             } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
         }
 
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
+        private void writeQNames(javax.xml.namespace.QName[] qnames, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
             if (qnames != null) {
                 // we have to store this data until last moment since it is not possible to write any
                 // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
+                StringBuilder stringToWrite = new StringBuilder();
+                java.lang.String namespaceURI;
+                java.lang.String prefix;
                 for (int i = 0; i < qnames.length; i++) {
                     if (i > 0) {
                         stringToWrite.append(" ");
@@ -1066,7 +757,6 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                             xmlWriter.writeNamespace(prefix, namespaceURI);
                             xmlWriter.setPrefix(prefix, namespaceURI);
                         }
-
                         if (prefix.trim().length() > 0) {
                             stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                         } else {
@@ -1078,9 +768,7 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                 }
                 xmlWriter.writeCharacters(stringToWrite.toString());
             }
-
         }
-
 
         /**
          * Register a namespace prefix
@@ -1103,37 +791,25 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
             return prefix;
         }
 
-
         /**
          * databinding method to get an XML representation of this object
          */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                throws org.apache.axis2.databinding.ADBException {
-
-
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
             java.util.ArrayList elementList = new java.util.ArrayList();
             java.util.ArrayList attribList = new java.util.ArrayList();
-
-
             if (localExtraElement != null) {
                 elementList.add(org.apache.axis2.databinding.utils.Constants.OM_ELEMENT_KEY);
                 elementList.add(localExtraElement);
             } else {
                 throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
             }
-
-
             return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-
-
         }
-
 
         /**
          * Factory class that keeps the parse method
          */
         public static class Factory {
-
 
             /**
              * static method to create the object
@@ -1143,146 +819,86 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
              * If this object is a complex type, the reader is positioned at the end element of its outer element
              */
             public static NfeDadosMsg parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-                NfeDadosMsg object =
-                        new NfeDadosMsg();
-
+                NfeDadosMsg object = new NfeDadosMsg();
                 int event;
                 java.lang.String nillableValue = null;
                 java.lang.String prefix = "";
                 java.lang.String namespaceuri = "";
                 try {
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
-
+                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                     if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type") != null) {
-                        java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                                "type");
+                        java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type");
                         if (fullTypeName != null) {
                             java.lang.String nsPrefix = null;
-                            if (fullTypeName.indexOf(":") > -1) {
+                            if (fullTypeName.contains(":")) {
                                 nsPrefix = fullTypeName.substring(0, fullTypeName.indexOf(":"));
                             }
                             nsPrefix = nsPrefix == null ? "" : nsPrefix;
-
                             java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":") + 1);
-
                             if (!"nfeDadosMsg".equals(type)) {
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (NfeDadosMsg) ExtensionMapper.getTypeObject(
-                                        nsUri, type, reader);
+                                return (NfeDadosMsg) ExtensionMapper.getTypeObject(nsUri, type, reader);
                             }
-
-
                         }
-
-
                     }
-
-
                     // Note all attributes that were handled. Used to differ normal attributes
                     // from anyAttributes.
                     java.util.Vector handledAttributes = new java.util.Vector();
-
-
                     reader.next();
-
-
                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-
                     if (reader.isStartElement()) {
-
-
                         //use the QName from the parser as the name for the builder
                         javax.xml.namespace.QName startQname1 = reader.getName();
-
                         // We need to wrap the reader so that it produces a fake START_DOCUMENT event
                         // this is needed by the builder classes
-                        org.apache.axis2.databinding.utils.NamedStaxOMBuilder builder1 =
-                                new org.apache.axis2.databinding.utils.NamedStaxOMBuilder(
-                                        new org.apache.axis2.util.StreamWrapper(reader), startQname1);
+                        org.apache.axis2.databinding.utils.NamedStaxOMBuilder builder1 = new org.apache.axis2.databinding.utils.NamedStaxOMBuilder(new org.apache.axis2.util.StreamWrapper(reader), startQname1);
                         object.setExtraElement(builder1.getOMElement());
-
                         reader.next();
-
                     }  // End of if for expected property start element
-
                     else {
                         // A start element we are not expecting indicates an invalid parameter was passed
                         throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
                     }
-
-                    while (!reader.isStartElement() && !reader.isEndElement())
-                        reader.next();
-
+                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                     if (reader.isStartElement())
                         // A start element we are not expecting indicates a trailing invalid property
                         throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-
-
                 } catch (javax.xml.stream.XMLStreamException e) {
                     throw new java.lang.Exception(e);
                 }
-
                 return object;
             }
-
         }//end of factory class
-
-
     }
+    //    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    //        try {
+    //            return param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+    //        } catch (org.apache.axis2.databinding.ADBException e) {
+    //            throw org.apache.axis2.AxisFault.makeFault(e);
+    //        }
+    //    }
+    //
+    //    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    //        try {
+    //            return param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+    //        } catch (org.apache.axis2.databinding.ADBException e) {
+    //            throw org.apache.axis2.AxisFault.makeFault(e);
+    //        }
+    //    }
 
-
-    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.MY_QNAME,
-                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-    private org.apache.axiom.om.OMElement toOM(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.MY_QNAME,
-                    org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
-    }
-
-
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
-            throws org.apache.axis2.AxisFault {
-
-
-        try {
-
-            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
-        } catch (org.apache.axis2.databinding.ADBException e) {
-            throw org.apache.axis2.AxisFault.makeFault(e);
-        }
-
-
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg param, boolean optimizeContent, javax.xml.namespace.QName methodQName) {
+        //try {
+        org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+        emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.MY_QNAME, factory));
+        return emptyEnvelope;
+        //        } catch (org.apache.axis2.databinding.ADBException e) {
+        //            throw org.apache.axis2.AxisFault.makeFault(e);
+        //        }
     }
 
 
     /* methods to provide back word compatibility */
-
 
     /**
      * get the default envelope
@@ -1291,34 +907,17 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
         return factory.getDefaultEnvelope();
     }
 
-
-    private java.lang.Object fromOM(
-            org.apache.axiom.om.OMElement param,
-            java.lang.Class type,
-            java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
-
+    private java.lang.Object fromOM(org.apache.axiom.om.OMElement param, java.lang.Class type, java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
         try {
-
             if (br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.class.equals(type)) {
-
                 return br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
             }
-
             if (br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.class.equals(type)) {
-
                 return br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeResultMsg.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-
-
             }
-
         } catch (java.lang.Exception e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
         return null;
     }
-
-
 }
-   

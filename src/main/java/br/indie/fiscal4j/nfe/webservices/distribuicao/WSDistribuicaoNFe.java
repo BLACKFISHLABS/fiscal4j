@@ -2,30 +2,28 @@ package br.indie.fiscal4j.nfe.webservices.distribuicao;
 
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
-import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoConsultaChaveAcesso;
-import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoConsultaNSU;
-import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoInt;
-import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
+import br.indie.fiscal4j.nfe.classes.distribuicao.*;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
+import br.indie.fiscal4j.validadores.xsd.XMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.core.Persister;
 
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.stream.XMLStreamException;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.rmi.RemoteException;
-import java.util.Base64;
 import java.util.zip.GZIPInputStream;
 
-public class WSDistribuicaoDFe {
+public class WSDistribuicaoNFe {
 
     private final NFeConfig config;
 
-    public WSDistribuicaoDFe(final NFeConfig config) {
+    public WSDistribuicaoNFe(final NFeConfig config) {
         this.config = config;
     }
 
@@ -33,8 +31,20 @@ public class WSDistribuicaoDFe {
      * Metodo para consultar os dados das notas fiscais por chave de acesso ou NSU e retorna o objeto de retorno de distribuicao<br>
      */
     public NFDistribuicaoIntRetorno consultar(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu) throws Exception {
+        return consultar(cnpj, uf, chaveAcesso, nsu, null);
+    }
+
+    /**
+     * Metodo para consultar os dados das notas fiscais por chave de acesso ou NSU e retorna o objeto de retorno de distribuicao<br>
+     */
+    public NFDistribuicaoIntRetorno consultar(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu, final String ultNsu) throws Exception {
         try {
-            final OMElement ome = AXIOMUtil.stringToOM(this.gerarNFDistribuicaoInt(cnpj, uf, chaveAcesso, nsu).toString());
+            String xmlEnvio = this.gerarNFDistribuicaoInt(cnpj, uf, chaveAcesso, nsu, ultNsu).toString();
+
+            // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
+            XMLValidador.validaConsultaDfe(xmlEnvio);
+
+            final OMElement ome = AXIOMUtil.stringToOM(xmlEnvio);
 
             final NFeDistribuicaoDFeSoapStub.NFeDadosMsg_type0 dadosMsgType0 = new NFeDistribuicaoDFeSoapStub.NFeDadosMsg_type0();
             dadosMsgType0.setExtraElement(ome);
@@ -47,7 +57,6 @@ public class WSDistribuicaoDFe {
             final String resultadoConsulta = result.getNFeDistDFeInteresseResult().getExtraElement().toString();
 
             return new Persister(new DFRegistryMatcher()).read(NFDistribuicaoIntRetorno.class, resultadoConsulta);
-
         } catch (RemoteException | XMLStreamException e) {
             throw new Exception(e.getMessage());
         }
@@ -57,20 +66,21 @@ public class WSDistribuicaoDFe {
         if (conteudoEncode == null || conteudoEncode.length() == 0) {
             return "";
         }
-        final byte[] conteudo = Base64.getDecoder().decode(conteudoEncode);
+        //final byte[] conteudo = Base64.getDecoder().decode(conteudoEncode);//java 8
+        final byte[] conteudo = DatatypeConverter.parseBase64Binary(conteudoEncode);//java 7
         try (GZIPInputStream gis = new GZIPInputStream(new ByteArrayInputStream(conteudo))) {
             try (BufferedReader bf = new BufferedReader(new InputStreamReader(gis, "UTF-8"))) {
-                String outStr = "";
+                StringBuilder outStr = new StringBuilder();
                 String line;
                 while ((line = bf.readLine()) != null) {
-                    outStr += line;
+                    outStr.append(line);
                 }
-                return outStr;
+                return outStr.toString();
             }
         }
     }
 
-    private NFDistribuicaoInt gerarNFDistribuicaoInt(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu) {
+    private NFDistribuicaoInt gerarNFDistribuicaoInt(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu, final String ultNsu) {
         final NFDistribuicaoInt distDFeInt = new NFDistribuicaoInt();
         distDFeInt.setVersao("1.01");
         distDFeInt.setAmbiente(this.config.getAmbiente());
@@ -79,10 +89,11 @@ public class WSDistribuicaoDFe {
 
         if (StringUtils.isNotBlank(chaveAcesso)) {
             distDFeInt.setConsultaChaveAcesso(new NFDistribuicaoConsultaChaveAcesso().setChaveAcesso(chaveAcesso));
+        } else if (StringUtils.isNotBlank(ultNsu)) {
+            distDFeInt.setDistribuicaoNSU(new NFDistribuicaoNSU().setUltimoNSU(ultNsu));
         } else {
             distDFeInt.setConsultaNSU(new NFDistribuicaoConsultaNSU().setNsu(nsu));
         }
         return distDFeInt;
     }
-
 }

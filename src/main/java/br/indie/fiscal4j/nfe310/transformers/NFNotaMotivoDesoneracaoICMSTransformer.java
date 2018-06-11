@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFNotaMotivoDesoneracaoICMSTransformer implements Transform<NFNotaMotivoDesoneracaoICMS> {
 
     @Override
-    public NFNotaMotivoDesoneracaoICMS read(final String codigo) throws Exception {
+    public NFNotaMotivoDesoneracaoICMS read(final String codigo) {
         return NFNotaMotivoDesoneracaoICMS.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final NFNotaMotivoDesoneracaoICMS desoneracaoICMS) throws Exception {
+    public String write(final NFNotaMotivoDesoneracaoICMS desoneracaoICMS) {
         return desoneracaoICMS.getCodigo();
     }
 }

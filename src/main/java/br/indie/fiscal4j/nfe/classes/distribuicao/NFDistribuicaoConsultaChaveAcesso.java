@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.nfe.classes.distribuicao;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 public class NFDistribuicaoConsultaChaveAcesso extends DFBase {
     private static final long serialVersionUID = 5822101975600089554L;

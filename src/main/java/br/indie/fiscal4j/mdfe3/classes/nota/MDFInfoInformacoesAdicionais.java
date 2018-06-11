@@ -6,13 +6,14 @@ import org.simpleframework.xml.Element;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- * <p>
+ *
  * Informações do Percurso do MDF-e
+ *
  */
 public class MDFInfoInformacoesAdicionais extends DFBase {
 
     /**
-     * Informações adicionais de interesse do Fisco.
+     * 	Informações adicionais de interesse do Fisco.
      * Norma referenciada, informações complementares, etc
      */
     @Element(name = "infAdFisco", required = false)

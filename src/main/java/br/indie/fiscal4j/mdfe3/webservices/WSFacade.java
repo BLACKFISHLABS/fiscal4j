@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.webservices;
 
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.consultaRecibo.MDFeConsultaReciboRetorno;
 import br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados.MDFeConsultaNaoEncerradosRetorno;
@@ -11,7 +11,7 @@ import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
 import br.indie.fiscal4j.mdfe3.classes.nota.consulta.MDFeNotaConsultaRetorno;
 import br.indie.fiscal4j.mdfe3.classes.nota.evento.MDFeRetorno;
 import org.apache.commons.httpclient.protocol.Protocol;
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 
 import java.io.IOException;
 import java.security.KeyManagementException;
@@ -23,9 +23,9 @@ import java.security.cert.CertificateException;
 public class WSFacade {
 
 
-    private final WSStatusConsulta wsStatusConsulta;
-    private final WSRecepcaoLote wsRecepcaoLote;
-    private final WSNotaConsulta wsNotaConsulta;
+	private final WSStatusConsulta wsStatusConsulta;
+	private final WSRecepcaoLote wsRecepcaoLote;
+	private final WSNotaConsulta wsNotaConsulta;
     private final WSCancelamento wsCancelamento;
     private final WSEncerramento wsEncerramento;
     private final WSConsultaRecibo wsConsultaRecibo;
@@ -51,11 +51,11 @@ public class WSFacade {
      * @param mdfEnvioLote a ser eviado para a SEFAZ
      * @return dados do retorno do envio do lote e o xml assinado
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
-     */
+     * */
     public MDFEnvioLoteRetornoDados envioRecepcaoLote(MDFEnvioLote mdfEnvioLote) throws Exception {
         return this.wsRecepcaoLote.envioRecepcao(mdfEnvioLote);
     }
-
+    
     /**
      * Faz a consulta de status responsavel pela UF, no caso apenas o RS está disponível
      *
@@ -68,9 +68,9 @@ public class WSFacade {
     }
 
     /**
+     * @see #consultaStatus(DFUnidadeFederativa)
      * @return
      * @throws Exception
-     * @see #consultaStatus(DFUnidadeFederativa)
      */
     public MDFeConsStatServRet consultaStatus() throws Exception {
         return this.wsStatusConsulta.consultaStatus(DFUnidadeFederativa.RS);
@@ -90,7 +90,7 @@ public class WSFacade {
     /**
      * Faz o cancelamento do MDFe
      *
-     * @param chave           chave de acesso da nota
+     * @param chave     chave de acesso da nota
      * @param numeroProtocolo numero do protocolo da nota
      * @param motivo          motivo do cancelamento
      * @return dados do cancelamento da nota retornado pelo webservice
@@ -104,7 +104,7 @@ public class WSFacade {
      * Faz o cancelamento da nota com evento ja assinado
      * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
-     * @param chave             chave de acesso da nota
+     * @param chave       chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
      * @return dados do cancelamento da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz

@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
 
 @Root(name = "dup")
 public class CTInfoCobrancaDuplicata extends DFBase {

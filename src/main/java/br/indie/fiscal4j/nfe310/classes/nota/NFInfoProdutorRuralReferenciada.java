@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class NFInfoProdutorRuralReferenciada extends DFBase {
     private static final long serialVersionUID = -2718285687811273188L;
@@ -75,7 +76,6 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
 
     /**
      * Número do Documento Fiscal - 1 – 999999999
-     *
      * @param numeroDocumentoFiscal
      */
     public void setNumeroDocumentoFiscal(final Integer numeroDocumentoFiscal) {

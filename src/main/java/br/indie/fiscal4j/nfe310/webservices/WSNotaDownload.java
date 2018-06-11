@@ -62,7 +62,7 @@ class WSNotaDownload {
         return nfeDownloadNFResult.getExtraElement();
     }
 
-    private NFDownloadNFe gerarDadosDownloadNF(final String cnpj, final String chave) throws Exception {
+    private NFDownloadNFe gerarDadosDownloadNF(final String cnpj, final String chave) {
         final NFDownloadNFe nfDownloadNFe = new NFDownloadNFe();
         nfDownloadNFe.setVersao(WSNotaDownload.VERSAO_LEIAUTE.toPlainString());
         nfDownloadNFe.setAmbiente(this.config.getAmbiente());

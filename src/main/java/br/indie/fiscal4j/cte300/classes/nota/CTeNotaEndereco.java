@@ -1,8 +1,10 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
+import br.indie.fiscal4j.DFPais;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 /**
  * @author Caio
@@ -37,7 +39,7 @@ public class CTeNotaEndereco extends DFBase {
     private String siglaUF;
 
     @Element(name = "cPais", required = false)
-    private String codigoPais;
+    private DFPais codigoPais;
 
     @Element(name = "xPais", required = false)
     private String descricaoPais;
@@ -155,7 +157,7 @@ public class CTeNotaEndereco extends DFBase {
         this.siglaUF = siglaUf;
     }
 
-    public String getCodigoPais() {
+    public DFPais getCodigoPais() {
         return this.codigoPais;
     }
 
@@ -165,7 +167,7 @@ public class CTeNotaEndereco extends DFBase {
      */
     public void setCodigoPais(final String codigoPais) {
         StringValidador.tamanho4N(codigoPais, "Código do país");
-        this.codigoPais = codigoPais;
+        this.codigoPais = DFPais.valueOfCodigo(codigoPais);
     }
 
     public String getDescricaoPais() {

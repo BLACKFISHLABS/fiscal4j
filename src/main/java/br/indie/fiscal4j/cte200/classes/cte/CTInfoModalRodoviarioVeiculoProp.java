@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.simpleframework.xml.Element;
 
 public class CTInfoModalRodoviarioVeiculoProp extends DFBase {
     private static final long serialVersionUID = 1220447073284260488L;

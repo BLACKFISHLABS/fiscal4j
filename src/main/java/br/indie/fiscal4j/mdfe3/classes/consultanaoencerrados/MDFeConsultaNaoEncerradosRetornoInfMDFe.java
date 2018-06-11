@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
  * Created by Eldevan Nery Junior on 22/11/17.
  */
 @Root(name = "infMDFe")
-public class MDFeConsultaNaoEncerradosRetornoInfMDFe extends DFBase {
+public class MDFeConsultaNaoEncerradosRetornoInfMDFe extends DFBase{
 
     /**
      * Chaves de acesso do MDF-e não encerrado

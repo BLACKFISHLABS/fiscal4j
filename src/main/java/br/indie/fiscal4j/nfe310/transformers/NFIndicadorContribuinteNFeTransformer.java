@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFIndicadorContribuinteNFeTransformer implements Transform<NFIndicadorContribuinteNFe> {
 
     @Override
-    public NFIndicadorContribuinteNFe read(final String codigoIndicador) throws Exception {
+    public NFIndicadorContribuinteNFe read(final String codigoIndicador) {
         return NFIndicadorContribuinteNFe.valueOfCodigo(Integer.parseInt(codigoIndicador));
     }
 
     @Override
-    public String write(final NFIndicadorContribuinteNFe indicador) throws Exception {
+    public String write(final NFIndicadorContribuinteNFe indicador) {
         return String.valueOf(indicador.getCodigo());
     }
 }

@@ -4,8 +4,12 @@ import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe400.classes.NFProtocolo;
-import org.joda.time.LocalDateTime;
-import org.simpleframework.xml.*;
+import java.time.LocalDateTime;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
 import java.util.List;
 

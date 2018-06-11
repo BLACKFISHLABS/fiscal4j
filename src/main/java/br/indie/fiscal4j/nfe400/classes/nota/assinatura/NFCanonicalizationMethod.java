@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.nota.assinatura;
 
-import org.simpleframework.xml.Attribute;
-
 import java.io.Serializable;
+
+import org.simpleframework.xml.Attribute;
 
 public class NFCanonicalizationMethod implements Serializable {
     private static final long serialVersionUID = 8973536078416422021L;

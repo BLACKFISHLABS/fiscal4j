@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 10/11/17.
- * <p>
+ *
  * Tipo Resultado da Consulta do Status do Serviço MDFe.
  */
 @Root(name = "retConsStatServMdfe")

@@ -5,7 +5,11 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.MDFProtocolo;
 import br.indie.fiscal4j.mdfe3.classes.nota.evento.MDFeProtocoloEvento;
-import org.simpleframework.xml.*;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
 import java.util.List;
 

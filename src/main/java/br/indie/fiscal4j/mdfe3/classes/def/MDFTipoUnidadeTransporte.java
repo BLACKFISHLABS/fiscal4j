@@ -6,13 +6,13 @@ package br.indie.fiscal4j.mdfe3.classes.def;
 public enum MDFTipoUnidadeTransporte {
 
     /**
-     * 1 - Rodoviário Tração;
-     * 2 - Rodoviário Reboque;
-     * 3 - Navio;
-     * 4 - Balsa;
-     * 5 - Aeronave;
-     * 6 - Vagão;
-     * 7 - Outros
+     1 - Rodoviário Tração;
+     2 - Rodoviário Reboque;
+     3 - Navio;
+     4 - Balsa;
+     5 - Aeronave;
+     6 - Vagão;
+     7 - Outros
      */
     RODOVIARIO_TRACAO("1", "Rodoviário Tração"),
     RODOVIARIO_REBOQUE("2", "Rodoviário Reboque"),

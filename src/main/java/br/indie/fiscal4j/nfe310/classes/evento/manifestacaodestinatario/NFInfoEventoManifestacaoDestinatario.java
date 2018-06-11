@@ -6,11 +6,11 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.joda.time.DateTime;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
+import java.time.ZonedDateTime;
 
 public class NFInfoEventoManifestacaoDestinatario extends DFBase {
     private static final long serialVersionUID = 6263292490448480599L;
@@ -34,7 +34,7 @@ public class NFInfoEventoManifestacaoDestinatario extends DFBase {
     private String chave;
 
     @Element(name = "dhEvento", required = true)
-    private DateTime dataHoraEvento;
+    private ZonedDateTime dataHoraEvento;
 
     @Element(name = "tpEvento", required = true)
     private String codigoEvento;
@@ -106,11 +106,11 @@ public class NFInfoEventoManifestacaoDestinatario extends DFBase {
         this.chave = chave;
     }
 
-    public DateTime getDataHoraEvento() {
+    public ZonedDateTime getDataHoraEvento() {
         return this.dataHoraEvento;
     }
 
-    public void setDataHoraEvento(final DateTime dataHoraEvento) {
+    public void setDataHoraEvento(final ZonedDateTime dataHoraEvento) {
         this.dataHoraEvento = dataHoraEvento;
     }
 

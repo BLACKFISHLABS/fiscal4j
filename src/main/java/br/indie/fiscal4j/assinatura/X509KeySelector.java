@@ -4,7 +4,6 @@ import javax.xml.crypto.*;
 import javax.xml.crypto.dsig.SignatureMethod;
 import javax.xml.crypto.dsig.keyinfo.KeyInfo;
 import javax.xml.crypto.dsig.keyinfo.X509Data;
-import java.security.Key;
 import java.security.cert.X509Certificate;
 
 class X509KeySelector extends KeySelector {
@@ -19,12 +18,7 @@ class X509KeySelector extends KeySelector {
                     if (certificado instanceof X509Certificate) {
                         final X509Certificate x509Certificate = (X509Certificate) certificado;
                         if (this.algEquals(method.getAlgorithm(), x509Certificate.getPublicKey().getAlgorithm())) {
-                            return new KeySelectorResult() {
-                                @Override
-                                public Key getKey() {
-                                    return x509Certificate.getPublicKey();
-                                }
-                            };
+                            return x509Certificate::getPublicKey;
                         }
                     }
                 }

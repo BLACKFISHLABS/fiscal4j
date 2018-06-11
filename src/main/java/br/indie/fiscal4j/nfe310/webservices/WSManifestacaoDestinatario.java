@@ -11,11 +11,11 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.RecepcaoEventoStub;
 import br.indie.fiscal4j.persister.DFPersister;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
+import java.time.ZonedDateTime;
 import java.util.Collections;
 
 public class WSManifestacaoDestinatario {
@@ -67,8 +67,6 @@ public class WSManifestacaoDestinatario {
     }
 
     private NFEnviaEventoManifestacaoDestinatario gerarDadosManifestacaoDestinatario(final String chaveAcesso, final NFTipoEventoManifestacaoDestinatario tipoEvento, final String motivo, final String cnpj) {
-        // final NotaFiscalChaveParser chaveParser = new NotaFiscalChaveParser(chaveAcesso);
-
         final NFInfoManifestacaoDestinatario manifestacaoDestinatario = new NFInfoManifestacaoDestinatario();
         manifestacaoDestinatario.setDescricaoEvento(tipoEvento.getDescricao());
         manifestacaoDestinatario.setVersao(WSManifestacaoDestinatario.VERSAO_LEIAUTE);
@@ -78,7 +76,7 @@ public class WSManifestacaoDestinatario {
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
         infoEvento.setCnpj(cnpj);
-        infoEvento.setDataHoraEvento(DateTime.now());
+        infoEvento.setDataHoraEvento(ZonedDateTime.now(config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", tipoEvento.getCodigo(), chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);
         infoEvento.setOrgao(DFUnidadeFederativa.RFB);
@@ -92,9 +90,8 @@ public class WSManifestacaoDestinatario {
 
         final NFEnviaEventoManifestacaoDestinatario enviaEvento = new NFEnviaEventoManifestacaoDestinatario();
         enviaEvento.setEvento(Collections.singletonList(evento));
-        enviaEvento.setIdLote(Long.toString(DateTime.now().getMillis()));
+        enviaEvento.setIdLote(Long.toString(ZonedDateTime.now(this.config.getTimeZone().toZoneId()).toInstant().toEpochMilli()));
         enviaEvento.setVersao(WSManifestacaoDestinatario.VERSAO_LEIAUTE);
         return enviaEvento;
     }
-
 }

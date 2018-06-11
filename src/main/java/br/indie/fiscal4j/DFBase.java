@@ -1,10 +1,11 @@
 package br.indie.fiscal4j;
 
-import br.indie.fiscal4j.persister.DFPersister;
-import org.simpleframework.xml.core.Persister;
-
 import java.io.Serializable;
 import java.io.StringWriter;
+
+import org.simpleframework.xml.core.Persister;
+
+import br.indie.fiscal4j.persister.DFPersister;
 
 /**
  * Classe utilizada como base para objetos serializaveis.<br>

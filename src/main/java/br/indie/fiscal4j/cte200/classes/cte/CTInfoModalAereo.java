@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 public class CTInfoModalAereo extends DFBase {
     private static final long serialVersionUID = 8356136777226843376L;

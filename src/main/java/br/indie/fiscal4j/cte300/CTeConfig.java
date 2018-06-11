@@ -4,9 +4,8 @@ import br.indie.fiscal4j.DFConfig;
 import br.indie.fiscal4j.cte300.classes.CTTipoEmissao;
 
 /**
- * @author Caio
- * <p>
  * Configuracao basica CT-e.
+ * @author Caio
  */
 public abstract class CTeConfig extends DFConfig {
 

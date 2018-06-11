@@ -2,6 +2,7 @@ package br.indie.fiscal4j.transformers;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFModelo;
+import br.indie.fiscal4j.DFPais;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.cte200.classes.*;
 import br.indie.fiscal4j.cte200.transformers.*;
@@ -16,11 +17,12 @@ import br.indie.fiscal4j.nfe310.classes.cadastro.NFSituacaoContribuinte;
 import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteIndicadorProcessamento;
 import br.indie.fiscal4j.nfe310.classes.nota.*;
 import br.indie.fiscal4j.nfe310.transformers.*;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
 import org.simpleframework.xml.transform.RegistryMatcher;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 
 public class DFRegistryMatcher extends RegistryMatcher {
 
@@ -29,10 +31,11 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(DFAmbiente.class, new DFAmbienteTransformer());
         super.bind(LocalDate.class, new DFLocalDateTransformer());
         super.bind(LocalTime.class, new DFLocalTimeTransformer());
-        super.bind(DateTime.class, new DFDateTimeTransformer());
+        super.bind(ZonedDateTime.class, new DFDateTimeTransformer());
         super.bind(LocalDateTime.class, new DFLocalDateTimeTransformer());
         super.bind(DFUnidadeFederativa.class, new DFUnidadeFederativaTransformer());
         super.bind(NFTipoEmissao.class, new NFTipoEmissaoTransformer());
+        super.bind(DFPais.class, new DFPaisTransformer());
 
         // NFE 3.10
         super.bind(NFTipo.class, new NFTipoTransformer());
@@ -91,6 +94,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(br.indie.fiscal4j.nfe400.classes.NFRegimeTributario.class, new br.indie.fiscal4j.nfe400.transformers.NFRegimeTributarioTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoVeiculoCor.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoVeiculoCorTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.nota.NFFormaPagamentoMoeda.class, new br.indie.fiscal4j.nfe400.transformers.NFFormaPagamentoMoedaTransformer());
+        super.bind(br.indie.fiscal4j.nfe400.classes.NFIndicadorFormaPagamento.class, new br.indie.fiscal4j.nfe400.transformers.NFIndicadorFormaPagamentoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoTipoVeiculo.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoTipoVeiculoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.cadastro.NFSituacaoContribuinte.class, new br.indie.fiscal4j.nfe400.transformers.NFSituacaoContribuinteTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoEspecieVeiculo.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoEspecieVeiculoTransformer());

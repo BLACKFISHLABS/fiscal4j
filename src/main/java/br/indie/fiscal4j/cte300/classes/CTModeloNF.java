@@ -2,8 +2,8 @@ package br.indie.fiscal4j.cte300.classes;
 
 public enum CTModeloNF {
 
-    NF_Modelo_01_ou_1A_ou_Avulsa("01", "NF Modelo 01/1A e Avulsa"),
-    NF_DE_PRODUTOR("04", "NF de Produtor");
+	NF_Modelo_01_ou_1A_ou_Avulsa("01", "NF Modelo 01/1A e Avulsa"),
+	NF_DE_PRODUTOR("04", "NF de Produtor");
 
     private final String codigo;
     private final String descricao;

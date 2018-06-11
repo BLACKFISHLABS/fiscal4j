@@ -20,7 +20,7 @@ public class MDFInfoSeguroResponsavel extends DFBase {
     private static final String INFO = "Responsável pelo seguro da carga";
 
     @Element(name = "respSeg")
-    private MDFTipoResponsavelSeguro responsavelSeguro;
+    private MDFTipoResponsavelSeguro responsavelSeguro ;
 
     @Element(name = "CNPJ", required = false)
     private String cnpj;
@@ -53,7 +53,7 @@ public class MDFInfoSeguroResponsavel extends DFBase {
      */
     public void setCpf(final String cpf) {
         if (this.cnpj != null) {
-            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em " + INFO);
+            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em "+ INFO);
         }
         this.cpf = StringValidador.cpf(cpf, INFO);
     }
@@ -72,10 +72,10 @@ public class MDFInfoSeguroResponsavel extends DFBase {
     @Override
     public String toString() {
         //Valida regra : Obrigatório apenas se responsável pelo seguro for (2) responsável pela contratação do transporte.
-        if (StringUtils.isBlank(getCnpj()) && StringUtils.isBlank(getCpf()) && getResponsavelSeguro()
-                .equals(MDFTipoResponsavelSeguro.CONTRATANTE_MDFE)) {
+        if(StringUtils.isBlank(getCnpj()) && StringUtils.isBlank(getCpf()) && getResponsavelSeguro()
+                .equals(MDFTipoResponsavelSeguro.CONTRATANTE_MDFE)){
             throw new IllegalStateException("Obrigatório CPF ou CNPJ do responsável pelo seguro para (2) responsável pela contratação do transporte.");
         }
-        return super.toString();
+       return super.toString();
     }
 }

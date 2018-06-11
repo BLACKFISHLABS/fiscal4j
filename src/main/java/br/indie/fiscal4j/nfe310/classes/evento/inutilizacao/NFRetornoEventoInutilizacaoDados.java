@@ -1,11 +1,12 @@
 package br.indie.fiscal4j.nfe310.classes.evento.inutilizacao;
 
+import java.time.LocalDateTime;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.joda.time.LocalDateTime;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
 
 public class NFRetornoEventoInutilizacaoDados extends DFBase {
     private static final long serialVersionUID = -6732103693589079116L;

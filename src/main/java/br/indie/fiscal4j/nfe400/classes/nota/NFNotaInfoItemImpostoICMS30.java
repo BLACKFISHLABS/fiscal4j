@@ -94,7 +94,6 @@ public class NFNotaInfoItemImpostoICMS30 extends DFBase {
 
     public void setValorBCFundoCombatePobrezaST(final BigDecimal valorBCFundoCombatePobrezaST) {
         this.valorBCFundoCombatePobrezaST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCFundoCombatePobrezaST, "Base calculo fundo combate pobreza ST");
-        ;
     }
 
     public void setPercentualFundoCombatePobrezaST(final BigDecimal percentualFundoCombatePobrezaST) {

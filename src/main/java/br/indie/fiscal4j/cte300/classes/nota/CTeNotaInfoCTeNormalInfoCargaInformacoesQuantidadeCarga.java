@@ -1,23 +1,24 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte300.classes.CTUnidadeMedida;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.math.BigDecimal;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import java.math.BigDecimal;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte300.classes.CTUnidadeMedida;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 /**
  * @author Caio
  * @info Informações de quantidades da Carga do CT-e<br>
- * Para o Aéreo é obrigatório o preenchimento desse campo da seguinte forma.<br>
- * 1 - Peso Bruto, sempre em quilogramas (obrigatório);<br>
- * 2 - Peso Cubado; sempre em quilogramas;<br>
- * 3 - Quantidade de volumes, sempre em unidades (obrigatório);<br>
- * 4 - Cubagem, sempre em metros cúbicos (obrigatório apenas quando for impossível preencher as dimensões da(s) embalagem(ens) na tag xDime do leiaute do Aéreo).
+ *       Para o Aéreo é obrigatório o preenchimento desse campo da seguinte forma.<br>
+ *       1 - Peso Bruto, sempre em quilogramas (obrigatório);<br>
+ *       2 - Peso Cubado; sempre em quilogramas;<br>
+ *       3 - Quantidade de volumes, sempre em unidades (obrigatório);<br>
+ *       4 - Cubagem, sempre em metros cúbicos (obrigatório apenas quando for impossível preencher as dimensões da(s) embalagem(ens) na tag xDime do leiaute do Aéreo).
  */
 
 @Root(name = "infQ")

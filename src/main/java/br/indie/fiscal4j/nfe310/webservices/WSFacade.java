@@ -1,11 +1,20 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+
+import org.apache.commons.httpclient.protocol.Protocol;
+
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
-import br.indie.fiscal4j.nfe.webservices.distribuicao.WSDistribuicaoDFe;
+import br.indie.fiscal4j.nfe.webservices.distribuicao.WSDistribuicaoNFe;
 import br.indie.fiscal4j.nfe310.classes.cadastro.NFRetornoConsultaCadastro;
 import br.indie.fiscal4j.nfe310.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe310.classes.evento.downloadnf.NFDownloadNFeRetorno;
@@ -18,14 +27,6 @@ import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteEnvioRetornoDados;
 import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteIndicadorProcessamento;
 import br.indie.fiscal4j.nfe310.classes.nota.consulta.NFNotaConsultaRetorno;
 import br.indie.fiscal4j.nfe310.classes.statusservico.consulta.NFStatusServicoConsultaRetorno;
-import org.apache.commons.httpclient.protocol.Protocol;
-
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
 
 public class WSFacade {
 
@@ -39,7 +40,7 @@ public class WSFacade {
     private final WSInutilizacao wsInutilizacao;
     private final WSManifestacaoDestinatario wSManifestacaoDestinatario;
     private final WSNotaDownload wsNotaDownload;
-    private final WSDistribuicaoDFe wSDistribuicaoDFe;
+    private final WSDistribuicaoNFe wSDistribuicaoNFe;
 
     public WSFacade(final NFeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
@@ -55,12 +56,11 @@ public class WSFacade {
         this.wsInutilizacao = new WSInutilizacao(config);
         this.wSManifestacaoDestinatario = new WSManifestacaoDestinatario(config);
         this.wsNotaDownload = new WSNotaDownload(config);
-        this.wSDistribuicaoDFe = new WSDistribuicaoDFe(config);
+        this.wSDistribuicaoNFe = new WSDistribuicaoNFe(config);
     }
 
     /**
      * Faz o envio de lote para a Sefaz
-     *
      * @param lote o lote a ser enviado para a Sefaz
      * @return dados do lote retornado pelo webservice, alem do lote assinado
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -80,9 +80,8 @@ public class WSFacade {
 
     /**
      * Faz o envio assinado para a Sefaz de NF-e e NFC-e ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
-     *
      * @param loteAssinadoXml lote assinado no formato XML
-     * @param modelo          modelo da nota (NF-e ou NFC-e)
+     * @param modelo modelo da nota (NF-e ou NFC-e)
      * @return dados do lote retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -92,9 +91,8 @@ public class WSFacade {
 
     /**
      * Faz a consulta do lote na Sefaz (NF-e e NFC-e)
-     *
      * @param numeroRecibo numero do recibo do processamento
-     * @param modelo       modelo da nota (NF-e ou NFC-e)
+     * @param modelo modelo da nota (NF-e ou NFC-e)
      * @return dados de consulta de lote retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -104,8 +102,7 @@ public class WSFacade {
 
     /**
      * Faz a consulta de status responsavel pela UF
-     *
-     * @param uf     uf UF que deseja consultar o status do sefaz responsavel
+     * @param uf uf UF que deseja consultar o status do sefaz responsavel
      * @param modelo modelo da nota (NF-e ou NFC-e)
      * @return dados da consulta de status retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -116,7 +113,6 @@ public class WSFacade {
 
     /**
      * Faz a consulta da nota
-     *
      * @param chaveDeAcesso chave de acesso da nota
      * @return dados da consulta da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -127,9 +123,8 @@ public class WSFacade {
 
     /**
      * Faz a correcao da nota
-     *
-     * @param chaveDeAcesso          chave de acesso da nota
-     * @param textoCorrecao          texto de correcao
+     * @param chaveDeAcesso chave de acesso da nota
+     * @param textoCorrecao texto de correcao
      * @param numeroSequencialEvento numero sequencial de evento, esse numero nao pode ser repetido!
      * @return dados da correcao da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -140,8 +135,7 @@ public class WSFacade {
 
     /**
      * Faz a correcao da nota com o evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
-     *
-     * @param chave             chave de acesso da nota
+     * @param chave chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
      * @return dados da correcao da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -152,10 +146,9 @@ public class WSFacade {
 
     /**
      * Faz o cancelamento da nota
-     *
-     * @param chave           chave de acesso da nota
+     * @param chave chave de acesso da nota
      * @param numeroProtocolo numero do protocolo da nota
-     * @param motivo          motivo do cancelamento
+     * @param motivo motivo do cancelamento
      * @return dados do cancelamento da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -165,8 +158,7 @@ public class WSFacade {
 
     /**
      * Faz o cancelamento da nota com evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
-     *
-     * @param chave             chave de acesso da nota
+     * @param chave chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
      * @return dados do cancelamento da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -177,9 +169,8 @@ public class WSFacade {
 
     /**
      * Inutiliza a nota com o evento assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
-     *
      * @param eventoAssinadoXml evento assinado em XML
-     * @param modelo            modelo da nota (NF-e ou NFC-e)
+     * @param modelo modelo da nota (NF-e ou NFC-e)
      * @return dados da inutilizacao da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -189,14 +180,13 @@ public class WSFacade {
 
     /**
      * Inutiliza a nota
-     *
      * @param anoInutilizacaoNumeracao ano de inutilizacao
-     * @param cnpjEmitente             CNPJ emitente da nota
-     * @param serie                    serie da nota
-     * @param numeroInicial            numero inicial da nota
-     * @param numeroFinal              numero final da nota
-     * @param justificativa            justificativa da inutilizacao
-     * @param modelo                   modelo da nota (NF-e ou NFC-e)
+     * @param cnpjEmitente CNPJ emitente da nota
+     * @param serie serie da nota
+     * @param numeroInicial numero inicial da nota
+     * @param numeroFinal numero final da nota
+     * @param justificativa justificativa da inutilizacao
+     * @param modelo modelo da nota (NF-e ou NFC-e)
      * @return dados da inutilizacao da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -206,9 +196,8 @@ public class WSFacade {
 
     /**
      * Realiza a consulta de cadastro de pessoa juridica com inscricao estadual
-     *
      * @param cnpj CNPJ da pessoa juridica
-     * @param uf   UF da pessoa juridica
+     * @param uf UF da pessoa juridica
      * @return dados da consulta da pessoa juridica retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -218,11 +207,10 @@ public class WSFacade {
 
     /**
      * Faz a manifestação do destinatário da nota
-     *
-     * @param chave      chave de acesso da nota
+     * @param chave chave de acesso da nota
      * @param tipoEvento tipo do evento da manifestacao do destinatario
-     * @param motivo     motivo do cancelamento
-     * @param cnpj       cnpj do autor do evento
+     * @param motivo motivo do cancelamento
+     * @param cnpj cnpj do autor do evento
      * @return dados da manifestacao do destinatario da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
@@ -232,8 +220,7 @@ public class WSFacade {
 
     /**
      * Faz a manifestação do destinatário da nota com evento ja assinado ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
-     *
-     * @param chave             chave de acesso da nota
+     * @param chave chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
      * @return dados da manifestacao do destinatario da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -244,8 +231,7 @@ public class WSFacade {
 
     /**
      * Faz o download do xml da nota para um cnpj Informando até 10 chaves de acesso
-     *
-     * @param cnpj  para quem foi emitida a nota
+     * @param cnpj para quem foi emitida a nota
      * @param chave chave de acesso da nota
      * @return dados do download da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
@@ -256,15 +242,18 @@ public class WSFacade {
 
     /**
      * Faz consulta de distribuicao das notas fiscais. Pode ser feita pela chave de acesso ou utilizando o NSU (numero sequencial unico) da receita.
-     *
-     * @param cnpj  CNPJ da pessoa juridica a consultar
-     * @param uf    Unidade federativa da pessoa juridica a consultar
-     * @param chave Chave de acesso da nota
-     * @param nsu   Numero sequencial unico fornecido pela receita ao fazer a consulta. Enviar 0 para trazer os ultimos 3 meses
+     * @param cnpj CNPJ da pessoa juridica a consultar
+     * @param uf Unidade federativa da pessoa juridica a consultar
+     * @param nsu Número Sequencial Único. Geralmente esta consulta será utilizada quando identificado pelo interessado um NSU faltante.
+     *            O Web Service retornará o documento ou informará que o NSU não existe no Ambiente Nacional. Assim, esta
+     *            consulta fechará a lacuna do NSU identificado como faltante.
+     * @param ultNsu Último NSU recebido pelo ator. Caso seja informado com zero, ou com um NSU muito antigo, a consulta retornará unicamente as
+     *               informações resumidas e documentos fiscais eletrônicos que tenham sido recepcionados pelo
+     *               Ambiente Nacional nos últimos 3 meses.
      * @return dados da consulta retornado pelo webservice limitando um total de 50 registros
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public NFDistribuicaoIntRetorno consultarDistribuicaoDFe(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu) throws Exception {
-        return this.wSDistribuicaoDFe.consultar(cnpj, uf, chaveAcesso, nsu);
+    public NFDistribuicaoIntRetorno consultarDistribuicaoDFe(final String cnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu, final String ultNsu) throws Exception {
+        return this.wSDistribuicaoNFe.consultar(cnpj, uf, chaveAcesso, nsu, ultNsu);
     }
 }

@@ -4,15 +4,15 @@ import org.simpleframework.xml.Attribute;
 
 public class CTeSignatureMethod {
 
-    @Attribute(name = "Algorithm", required = false)
+	@Attribute(name = "Algorithm", required = false)
     private String algorithm;
 
-    public String getAlgorithm() {
-        return algorithm;
-    }
+	public String getAlgorithm() {
+		return algorithm;
+	}
 
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
-    }
-
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+	}
+	
 }

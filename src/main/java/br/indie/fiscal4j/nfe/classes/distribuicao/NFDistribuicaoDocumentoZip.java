@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe.classes.distribuicao;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
 import org.simpleframework.xml.Text;
+
+import br.indie.fiscal4j.DFBase;
 
 @Root(name = "docZip")
 public class NFDistribuicaoDocumentoZip extends DFBase {

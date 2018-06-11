@@ -3,14 +3,19 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.*;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
 import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 03/11/17.
- * <p>
+ *
  * Informações do MDF-e.
+ *
  */
 @Root(name = "infMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
@@ -71,7 +76,6 @@ public class MDFInfo extends DFBase {
 
     /**
      * Retorna a chave de acesso a partir do identificador.
-     *
      * @return Chave de acesso.
      */
     public String getChaveAcesso() {

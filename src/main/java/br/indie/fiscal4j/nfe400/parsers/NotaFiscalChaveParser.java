@@ -4,7 +4,8 @@ import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFTipoEmissao;
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.LocalDate;
+
+import java.time.LocalDate;
 
 public class NotaFiscalChaveParser {
 
@@ -26,7 +27,7 @@ public class NotaFiscalChaveParser {
     }
 
     public LocalDate getDataEmissao() {
-        return new LocalDate(this.getDataEmissaoAno(), this.getDataEmissaoMes(), 1);
+        return LocalDate.of(this.getDataEmissaoAno(), this.getDataEmissaoMes(), 1);
     }
 
     private int getDataEmissaoMes() {

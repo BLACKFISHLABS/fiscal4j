@@ -1,13 +1,14 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoSituacaoTributariaPIS;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
-import org.simpleframework.xml.Element;
-
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+
+import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe400.classes.NFNotaInfoSituacaoTributariaPIS;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 
 public class NFNotaInfoItemImpostoPISAliquota extends DFBase {
     private static final long serialVersionUID = 4109084296960847091L;

@@ -1,12 +1,13 @@
 package br.indie.fiscal4j.cte300.classes.nota.assinatura;
 
-import br.indie.fiscal4j.DFBase;
+import java.util.List;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Path;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
 
 public class CTeReference extends DFBase {
     private static final long serialVersionUID = -7596477743148930721L;

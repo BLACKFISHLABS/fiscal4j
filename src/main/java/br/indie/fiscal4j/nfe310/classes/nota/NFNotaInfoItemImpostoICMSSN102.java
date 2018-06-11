@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.NFNotaSituacaoOperacionalSimplesNacional;
 import br.indie.fiscal4j.nfe310.classes.NFOrigem;
-import org.simpleframework.xml.Element;
 
 public class NFNotaInfoItemImpostoICMSSN102 extends DFBase {
     private static final long serialVersionUID = 8991323254446222797L;

@@ -1,16 +1,17 @@
 package br.indie.fiscal4j.cte300.classes.evento.cancelamento;
 
+import java.math.BigDecimal;
+
+import java.time.ZonedDateTime;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.joda.time.DateTime;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-
-import java.math.BigDecimal;
 
 public class CTeInfoEventoCancelamento extends DFBase {
     private static final long serialVersionUID = -9071000192790378973L;
@@ -34,7 +35,7 @@ public class CTeInfoEventoCancelamento extends DFBase {
     private String chave;
 
     @Element(name = "dhEvento", required = true)
-    private DateTime dataHoraEvento;
+    private ZonedDateTime dataHoraEvento;
 
     @Element(name = "tpEvento", required = true)
     private String codigoEvento;
@@ -106,11 +107,11 @@ public class CTeInfoEventoCancelamento extends DFBase {
         this.chave = chave;
     }
 
-    public DateTime getDataHoraEvento() {
+    public ZonedDateTime getDataHoraEvento() {
         return this.dataHoraEvento;
     }
 
-    public void setDataHoraEvento(final DateTime dataHoraEvento) {
+    public void setDataHoraEvento(final ZonedDateTime dataHoraEvento) {
         this.dataHoraEvento = dataHoraEvento;
     }
 

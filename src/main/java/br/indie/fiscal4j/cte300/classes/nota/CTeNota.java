@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte300.classes.nota.assinatura.CTeSignature;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte300.classes.nota.assinatura.CTeSignature;
 
 /**
  * @author Caio

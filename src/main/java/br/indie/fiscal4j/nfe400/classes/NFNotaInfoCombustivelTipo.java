@@ -27,7 +27,7 @@ public enum NFNotaInfoCombustivelTipo {
     private final String descricao;
 
     NFNotaInfoCombustivelTipo(final String codigo, final String descricao) {
-        this.codigo = StringUtils.leftPad(codigo, 2, "0");
+        this.codigo = StringUtils.leftPad(codigo,2,"0");
         this.descricao = descricao;
     }
 
@@ -37,7 +37,7 @@ public enum NFNotaInfoCombustivelTipo {
 
     public static NFNotaInfoCombustivelTipo valueOfCodigo(final String codigo) {
         for (final NFNotaInfoCombustivelTipo tipo : NFNotaInfoCombustivelTipo.values()) {
-            if (tipo.getCodigo().equals(StringUtils.leftPad(codigo, 2, "0"))) {
+            if (tipo.getCodigo().equals(StringUtils.leftPad(codigo,2,"0"))) {
                 return tipo;
             }
         }

@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class NFNotaInfoLacre extends DFBase {
     private static final long serialVersionUID = -5184684979849337146L;

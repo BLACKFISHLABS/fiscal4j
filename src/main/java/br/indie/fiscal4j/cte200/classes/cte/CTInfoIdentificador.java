@@ -4,11 +4,19 @@ import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.cte200.classes.*;
-import org.joda.time.LocalDateTime;
+import br.indie.fiscal4j.cte200.classes.CTFormaPagamento;
+import br.indie.fiscal4j.cte200.classes.CTIdentificadorEmissor;
+import br.indie.fiscal4j.cte200.classes.CTModal;
+import br.indie.fiscal4j.cte200.classes.CTRetiraMercadoria;
+import br.indie.fiscal4j.cte200.classes.CTTipoCte;
+import br.indie.fiscal4j.cte200.classes.CTTipoEmissao;
+import br.indie.fiscal4j.cte200.classes.CTTipoImpressao;
+import br.indie.fiscal4j.cte200.classes.CTTipoServico;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
+
+import java.time.LocalDateTime;
 
 @Root(name = "ide")
 @Namespace(reference = "http://www.portalfiscal.inf.br/cte")

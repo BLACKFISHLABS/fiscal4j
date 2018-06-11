@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTTipoImpressaoTransformes implements Transform<CTTipoImpressao> {
 
-    @Override
-    public CTTipoImpressao read(String arg0) throws Exception {
-        // TODO Auto-generated method stub
-        return CTTipoImpressao.valueOfCodigo(arg0);
-    }
+	@Override
+    public CTTipoImpressao read(String arg0) {
+		// TODO Auto-generated method stub
+		return CTTipoImpressao.valueOfCodigo(arg0);
+	}
 
-    @Override
-    public String write(CTTipoImpressao arg0) throws Exception {
-        // TODO Auto-generated method stub
-        return arg0.getCodigo();
-    }
+	@Override
+    public String write(CTTipoImpressao arg0) {
+		// TODO Auto-generated method stub
+		return arg0.getCodigo();
+	}
 
 }

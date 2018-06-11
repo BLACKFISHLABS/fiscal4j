@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.webservices;
 
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.cte300.CTeConfig;
 import br.indie.fiscal4j.cte300.classes.consultastatusservico.CTeConsStatServRet;
 import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLote;
@@ -21,12 +21,12 @@ import java.security.cert.CertificateException;
 public class WSFacade {
 
 
-    private final WSStatusConsulta wsStatusConsulta;
-    private final WSRecepcaoLote wsRecepcaoLote;
-    private final WSNotaConsulta wsNotaConsulta;
+	private final WSStatusConsulta wsStatusConsulta;
+	private final WSRecepcaoLote wsRecepcaoLote;
+	private final WSNotaConsulta wsNotaConsulta;
     private final WSCancelamento wsCancelamento;
 
-    private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
+	private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
 
     public WSFacade(final CTeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
@@ -36,7 +36,7 @@ public class WSFacade {
         this.wsNotaConsulta = new WSNotaConsulta(config);
         this.wsCancelamento = new WSCancelamento(config);
     }
-
+    
     /**
      * Faz a consulta de status responsavel pela UF
      *
@@ -47,27 +47,27 @@ public class WSFacade {
     public CTeConsStatServRet consultaStatus(final DFUnidadeFederativa uf) throws Exception {
         return this.wsStatusConsulta.consultaStatus(uf);
     }
-
+    
     /**
      * Faz o envio do lote para a SEFAZ
-     *
+     * 
      * @param cteRecepcao a ser eviado para a SEFAZ
      * @return dados do retorno do envio do lote e o xml assinado
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
-     */
+     * */
     public CTeEnvioLoteRetornoDados envioRecepcaoLote(CTeEnvioLote cteRecepcao) throws Exception {
-        return this.wsRecepcaoLote.envioRecepcao(cteRecepcao);
+    	return this.wsRecepcaoLote.envioRecepcao(cteRecepcao);
     }
-
+    
     /**
      * Faz a consulta do processamento do lote na SEFAZ
-     *
+     * 
      * @param numRecibo do recebimento do lote
      * @return dados da consulta do processamento do lote
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
-     */
+     * */
     public CTeConsultaRecLoteRet consultaEnvioRecepcaoLote(String numRecibo) throws Exception {
-        return this.wsRecepcaoLoteRetorno.consultaLote(numRecibo);
+    	return this.wsRecepcaoLoteRetorno.consultaLote(numRecibo);
     }
 
     /**
@@ -84,7 +84,7 @@ public class WSFacade {
     /**
      * Faz o cancelamento do CTe
      *
-     * @param chave           chave de acesso da nota
+     * @param chave     chave de acesso da nota
      * @param numeroProtocolo numero do protocolo da nota
      * @param motivo          motivo do cancelamento
      * @return dados do cancelamento da nota retornado pelo webservice
@@ -98,7 +98,7 @@ public class WSFacade {
      * Faz o cancelamento da nota com evento ja assinado
      * ATENCAO: Esse metodo deve ser utilizado para assinaturas A3
      *
-     * @param chave             chave de acesso da nota
+     * @param chave       chave de acesso da nota
      * @param eventoAssinadoXml evento ja assinado em formato XML
      * @return dados do cancelamento da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz

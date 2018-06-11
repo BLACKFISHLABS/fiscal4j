@@ -10,8 +10,9 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 14/11/17.
- * <p>
+ *
  * Retorno do envio de Lote MDF-e .
+ *
  */
 @Root(name = "retEnviMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")

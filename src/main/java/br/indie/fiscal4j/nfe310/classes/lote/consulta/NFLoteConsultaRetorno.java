@@ -1,13 +1,14 @@
 package br.indie.fiscal4j.nfe310.classes.lote.consulta;
 
+import java.util.List;
+
+import java.time.LocalDateTime;
+import org.simpleframework.xml.*;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe310.classes.NFProtocolo;
-import org.joda.time.LocalDateTime;
-import org.simpleframework.xml.*;
-
-import java.util.List;
 
 @Root(name = "retConsReciNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

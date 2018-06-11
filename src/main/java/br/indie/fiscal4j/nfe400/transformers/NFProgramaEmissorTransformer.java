@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class NFProgramaEmissorTransformer implements Transform<NFProcessoEmissor> {
 
     @Override
-    public NFProcessoEmissor read(final String codigo) throws Exception {
+    public NFProcessoEmissor read(final String codigo) {
         return NFProcessoEmissor.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final NFProcessoEmissor tipo) throws Exception {
+    public String write(final NFProcessoEmissor tipo) {
         return tipo.getCodigo();
     }
 }

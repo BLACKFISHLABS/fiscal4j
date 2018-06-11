@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte200.classes.CTTomadorServico;
-import org.simpleframework.xml.Element;
 
 public class CTInfoTomadorServico3 extends DFBase {
     private static final long serialVersionUID = -8253978359700650423L;
@@ -10,7 +11,7 @@ public class CTInfoTomadorServico3 extends DFBase {
     @Element(name = "toma")
     private CTTomadorServico tomadorServico;
 
-    public CTInfoTomadorServico3() {
+    public CTInfoTomadorServico3(){
         super();
     }
 

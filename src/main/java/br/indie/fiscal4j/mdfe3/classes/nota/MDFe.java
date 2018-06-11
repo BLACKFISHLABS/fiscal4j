@@ -8,8 +8,9 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 03/11/17.
- * <p>
+ *
  * Tipo Manifesto de Documentos Fiscais Eletrônicos.
+ *
  */
 @Root(name = "MDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")

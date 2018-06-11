@@ -6,12 +6,12 @@ import org.simpleframework.xml.transform.Transform;
 public class CTTipoImpressaoTransformer implements Transform<CTTipoImpressao> {
 
     @Override
-    public CTTipoImpressao read(final String codigo) throws Exception {
+    public CTTipoImpressao read(final String codigo) {
         return CTTipoImpressao.valueOfCodigo(codigo);
     }
 
     @Override
-    public String write(final CTTipoImpressao tipo) throws Exception {
+    public String write(final CTTipoImpressao tipo) {
         return tipo.getCodigo();
     }
 }

@@ -2,8 +2,9 @@ package br.indie.fiscal4j.cte200.classes.cte;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte200.classes.CTTipoEntregaHorario;
-import org.joda.time.LocalTime;
 import org.simpleframework.xml.Element;
+
+import java.time.LocalTime;
 
 public class CTInfoEntregaNoInter extends DFBase {
     private static final long serialVersionUID = -4692215517978664073L;

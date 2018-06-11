@@ -3,7 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.joda.time.LocalDateTime;
+import java.time.LocalDateTime;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 

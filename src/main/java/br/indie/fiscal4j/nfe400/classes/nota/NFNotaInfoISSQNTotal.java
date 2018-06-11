@@ -1,11 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
-import org.joda.time.LocalDate;
+import java.math.BigDecimal;
+
+import java.time.LocalDate;
 import org.simpleframework.xml.Element;
 
-import java.math.BigDecimal;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 
 public class NFNotaInfoISSQNTotal extends DFBase {
     private static final long serialVersionUID = 5902409212301825888L;

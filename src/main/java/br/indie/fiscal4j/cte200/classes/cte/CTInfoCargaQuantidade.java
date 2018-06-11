@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte200.classes.CTUnidadeMedida;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte200.classes.CTUnidadeMedida;
 
 @Root(name = "infQ")
 public class CTInfoCargaQuantidade extends DFBase {

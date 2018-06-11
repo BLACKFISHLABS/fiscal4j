@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.cadastro;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 public class NFRetornoConsultaCadastroEndereco extends DFBase {
     private static final long serialVersionUID = -2380716124076759445L;

@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.cte300.classes.enviolote.consulta;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
+import java.util.List;
+
 import org.simpleframework.xml.*;
 
-import java.util.List;
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
 
 /**
  * @author Caio

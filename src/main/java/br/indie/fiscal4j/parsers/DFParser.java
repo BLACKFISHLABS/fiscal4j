@@ -1,8 +1,10 @@
 package br.indie.fiscal4j.parsers;
 
-import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLote;
 import br.indie.fiscal4j.cte300.classes.nota.CTeProcessado;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
+import org.simpleframework.xml.core.Persister;
+
+import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLote;
 import br.indie.fiscal4j.nfe310.classes.evento.cancelamento.NFEnviaEventoCancelamento;
 import br.indie.fiscal4j.nfe310.classes.evento.cartacorrecao.NFEnviaEventoCartaCorrecao;
 import br.indie.fiscal4j.nfe310.classes.evento.inutilizacao.NFEnviaEventoInutilizacao;
@@ -11,7 +13,6 @@ import br.indie.fiscal4j.nfe310.classes.nota.NFNota;
 import br.indie.fiscal4j.nfe310.classes.nota.NFNotaInfoItem;
 import br.indie.fiscal4j.nfe310.classes.nota.NFNotaProcessada;
 import br.indie.fiscal4j.persister.DFPersister;
-import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
 
@@ -127,15 +128,15 @@ public class DFParser {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
-
+    
     //CTe
-    public CTeEnvioLote cteRecepcaoParaObjeto(final String xml) {
+	public CTeEnvioLote cteRecepcaoParaObjeto(final String xml) {
         try {
             return this.persister.read(CTeEnvioLote.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
-    }
+	}
 
 
     public CTeProcessado cteProcessadoParaObjeto(final String xml) {

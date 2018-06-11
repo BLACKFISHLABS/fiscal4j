@@ -1,5 +1,9 @@
 package br.indie.fiscal4j.nfe400.parsers;
 
+import java.io.File;
+
+import org.simpleframework.xml.core.Persister;
+
 import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLote;
 import br.indie.fiscal4j.cte300.classes.nota.CTeProcessado;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
@@ -11,9 +15,6 @@ import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNotaInfoItem;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNotaProcessada;
 import br.indie.fiscal4j.persister.DFPersister;
-import org.simpleframework.xml.core.Persister;
-
-import java.io.File;
 
 public class DFParser {
 

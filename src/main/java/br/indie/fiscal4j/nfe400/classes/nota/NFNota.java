@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe400.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.nota.assinatura.NFSignature;
 
 @Root(name = "NFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
@@ -41,6 +40,7 @@ public class NFNota extends DFBase {
 
     /**
      * Utilizado para identificacao interna do sistema
+     *
      * @param identificadorLocal Identificador.
      */
     public void setIdentificadorLocal(final long identificadorLocal) {

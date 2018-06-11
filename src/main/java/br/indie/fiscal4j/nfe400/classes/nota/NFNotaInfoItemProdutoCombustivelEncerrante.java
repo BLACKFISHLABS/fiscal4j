@@ -1,12 +1,11 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import java.math.BigDecimal;
-
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
+
+import java.math.BigDecimal;
 
 /**
  * @Author Eldevan Nery Junior on 04/10/17. Informações do grupo de "encerrante"

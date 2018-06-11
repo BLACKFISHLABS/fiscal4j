@@ -1,14 +1,5 @@
 package br.indie.fiscal4j.nfe400.webservices;
 
-import java.math.BigDecimal;
-
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
@@ -18,6 +9,14 @@ import br.indie.fiscal4j.nfe400.parsers.NotaFiscalChaveParser;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeConsultaProtocolo4Stub;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeConsultaProtocolo4Stub.NfeConsultaNFResult;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.util.AXIOMUtil;
+import org.simpleframework.xml.core.Persister;
+import org.simpleframework.xml.stream.Format;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.math.BigDecimal;
 
 class WSNotaConsulta {
     private static final String NOME_SERVICO = "CONSULTAR";

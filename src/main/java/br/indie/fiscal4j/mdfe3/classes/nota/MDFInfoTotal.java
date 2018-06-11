@@ -10,43 +10,42 @@ import java.math.BigDecimal;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- *
+ * <p>
  * Totalizadores da carga transportada e seus documentos fiscais.
- *
  */
-public class MDFInfoTotal extends DFBase{
+public class MDFInfoTotal extends DFBase {
 
     /**
      * Quantidade total de CT-e relacionados no Manifesto.
      */
-    @Element(name = "qCTe", required=false)
+    @Element(name = "qCTe", required = false)
     private String qtdeCTe;
     /**
      * Quantidade total de NF-e relacionadas no Manifesto
      */
-    @Element(name = "qNFe", required=false)
+    @Element(name = "qNFe", required = false)
     private String qtdeNFe;
     /**
      * Quantidade total de MDF-e relacionados no Manifesto Aquaviário
      */
-    @Element(name = "qMDFe", required=false)
+    @Element(name = "qMDFe", required = false)
     private String qtdeMDFe;
     /**
      * Valor total da carga / mercadorias transportadas
      */
-    @Element(name="vCarga")
+    @Element(name = "vCarga")
     private String valorTotalCarga;
 
     /**
      * Unidade de medida do Peso Bruto da Carga / Mercadorias transportadas.
      */
-    @Element(name="cUnid")
+    @Element(name = "cUnid")
     private MDFUnidadeMedidaPesoBrutoCarga unidadeMedidaPesoBrutoCarga;
 
     /**
      * Peso Bruto Total da Carga / Mercadorias transportadas.
      */
-    @Element(name="qCarga")
+    @Element(name = "qCarga")
     private String pesoCarga;
 
     public String getQtdeCTe() {
@@ -55,7 +54,7 @@ public class MDFInfoTotal extends DFBase{
 
     public void setQtdeCTe(String qtdeCTe) {
         this.qtdeCTe = StringValidador.validador(qtdeCTe, "Total CT-e no MDF-e",
-                6,false, true);
+                6, false, true);
     }
 
     public String getQtdeNFe() {
@@ -64,7 +63,7 @@ public class MDFInfoTotal extends DFBase{
 
     public void setQtdeNFe(String qtdeNFe) {
         this.qtdeNFe = StringValidador.validador(qtdeNFe, "Total NF-e no MDF-e",
-                6,false, true);
+                6, false, true);
     }
 
     public String getQtdeMDFe() {
@@ -73,7 +72,7 @@ public class MDFInfoTotal extends DFBase{
 
     public void setQtdeMDFe(String qtdeMDFe) {
         this.qtdeMDFe = StringValidador.validador(qtdeMDFe, "Total MDF-e no MDF-e relacionados no Manifesto Aquaviário",
-                6,false, true);
+                6, false, true);
     }
 
     public String getValorTotalCarga() {
@@ -99,6 +98,6 @@ public class MDFInfoTotal extends DFBase{
 
     public void setPesoCarga(BigDecimal pesoCarga) {
         this.pesoCarga = BigDecimalParser.validaTamanho(pesoCarga,
-                "Peso Bruto da Carga", 11,4, true);
+                "Peso Bruto da Carga", 11, 4, true);
     }
 }

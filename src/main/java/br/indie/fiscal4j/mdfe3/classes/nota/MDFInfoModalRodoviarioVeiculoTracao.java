@@ -9,7 +9,7 @@ import org.simpleframework.xml.Order;
 
 import java.util.List;
 
-@Order(elements = { "cInt", "placa", "RENAVAM", "tara", "capKG", "capM3", "prop", "condutor", "tpRod", "tpCar", "UF"})
+@Order(elements = {"cInt", "placa", "RENAVAM", "tara", "capKG", "capM3", "prop", "condutor", "tpRod", "tpCar", "UF"})
 public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioVeiculo {
 
     @ElementList(entry = "condutor", inline = true)
@@ -18,7 +18,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     @Element(name = "tpRod")
     private MDFTipoRodado tipoRodado;
 
-    @Element(name = "capKG" , required = false)
+    @Element(name = "capKG", required = false)
     private String capacidadeKG;
 
     public void setCodigoInterno(String codigoInterno) {
@@ -32,11 +32,11 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setRenavam(String renavam) {
-        this.renavam = StringValidador.validaIntervalo(renavam, 9, 11 ,"Renavam do Veiculo tracao");
+        this.renavam = StringValidador.validaIntervalo(renavam, 9, 11, "Renavam do Veiculo tracao");
     }
 
     public void setTara(String tara) {
-        this.tara = StringValidador.capacidadeNDigitos(tara, "Tara em Veiculo tracao",5);
+        this.tara = StringValidador.capacidadeNDigitos(tara, "Tara em Veiculo tracao", 5);
     }
 
     public String getCapacidadeKG() {
@@ -44,7 +44,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setCapacidadeKG(String capacidadeKG) {
-        this.capacidadeKG = StringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG Veiculo tracao",5);
+        this.capacidadeKG = StringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG Veiculo tracao", 5);
     }
 
     public String getCapacidadeM3() {
@@ -52,7 +52,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setCapacidadeM3(String capacidadeM3) {
-        this.capacidadeM3 = StringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 Veiculo tracao",2);
+        this.capacidadeM3 = StringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 Veiculo tracao", 2);
     }
 
     public List<MDFInfoModalRodoviarioVeiculoCondutor> getCondutor() {
@@ -60,7 +60,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setCondutor(List<MDFInfoModalRodoviarioVeiculoCondutor> condutor) {
-        this.condutor =  ListValidador.validaListaObrigatoria( condutor, 10, "Condutor Veiculo tracao");
+        this.condutor = ListValidador.validaListaObrigatoria(condutor, 10, "Condutor Veiculo tracao");
     }
 
     public MDFTipoRodado getTipoRodado() {

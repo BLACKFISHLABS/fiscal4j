@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.evento.inutilizacao;
 
-import java.math.BigDecimal;
-
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import java.math.BigDecimal;
 
 @Root(name = "retInutNFe")
 public class NFRetornoEventoInutilizacao extends DFBase {

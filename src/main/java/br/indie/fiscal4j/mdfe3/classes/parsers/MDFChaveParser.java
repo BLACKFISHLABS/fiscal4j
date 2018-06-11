@@ -4,6 +4,7 @@ import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
 import org.apache.commons.lang3.StringUtils;
+
 import java.time.LocalDate;
 
 public class MDFChaveParser {

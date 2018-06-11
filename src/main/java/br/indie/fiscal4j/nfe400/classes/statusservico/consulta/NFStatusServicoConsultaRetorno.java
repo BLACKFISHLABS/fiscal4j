@@ -1,14 +1,14 @@
 package br.indie.fiscal4j.nfe400.classes.statusservico.consulta;
 
-import java.time.LocalDateTime;
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
+import java.time.LocalDateTime;
 
 @Root(name = "retConsStatServ")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

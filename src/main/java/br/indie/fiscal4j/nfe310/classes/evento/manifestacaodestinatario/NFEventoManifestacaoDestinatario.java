@@ -1,12 +1,11 @@
 package br.indie.fiscal4j.nfe310.classes.evento.manifestacaodestinatario;
 
-import java.math.BigDecimal;
-
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import java.math.BigDecimal;
 
 public class NFEventoManifestacaoDestinatario extends DFBase {
     private static final long serialVersionUID = 4608659349977367804L;

@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTClasseTarifaTransformer implements Transform<CTClasseTarifa> {
 
-	@Override
+    @Override
     public CTClasseTarifa read(String arg0) {
-		// TODO Auto-generated method stub
-		return CTClasseTarifa.valueOfCodigo(arg0);
-	}
+        // TODO Auto-generated method stub
+        return CTClasseTarifa.valueOfCodigo(arg0);
+    }
 
-	@Override
+    @Override
     public String write(CTClasseTarifa arg0) {
-		// TODO Auto-generated method stub
-		return arg0.getCodigo();
-	}
+        // TODO Auto-generated method stub
+        return arg0.getCodigo();
+    }
 
 }

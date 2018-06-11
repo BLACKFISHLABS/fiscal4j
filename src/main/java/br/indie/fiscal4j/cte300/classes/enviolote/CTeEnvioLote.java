@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.cte300.classes.enviolote;
 
-import java.util.List;
-
-import org.simpleframework.xml.*;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNota;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.*;
+
+import java.util.List;
 
 /**
  * @author Caio

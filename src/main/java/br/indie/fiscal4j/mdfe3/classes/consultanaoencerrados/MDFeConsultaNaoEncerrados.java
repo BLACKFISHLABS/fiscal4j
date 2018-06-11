@@ -13,9 +13,8 @@ import java.math.BigDecimal;
 
 /**
  * Created by Eldevan Nery Junior on 22/11/17.
- *
+ * <p>
  * Tipo Pedido de Consulta MDF-e Não Encerrados.
- *
  */
 @Root(name = "consMDFeNaoEnc")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
@@ -28,7 +27,7 @@ public class MDFeConsultaNaoEncerrados extends DFBase {
     private DFAmbiente ambiente;
 
     @Element(name = "xServ")
-    private String servico = "CONSULTAR NÃO ENCERRADOS" ;
+    private String servico = "CONSULTAR NÃO ENCERRADOS";
 
     /**
      * CNPJ do Emitente do MDF-e.

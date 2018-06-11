@@ -14,7 +14,7 @@ public class IntegerValidador {
     public static void tamanho7(final Integer valor, final String info) {
         IntegerValidador.limite(valor, 9999999, info);
     }
-    
+
     public static void tamanho9(final Integer valor, final String info) {
         IntegerValidador.limite(valor, 999999999, info);
     }
@@ -44,9 +44,9 @@ public class IntegerValidador {
     }
 
     public static void exatamente1(final Integer valor, final String info) {
-    	if(valor != null){
-    		IntegerValidador.limite(valor, 9, info);
-    	}
+        if (valor != null) {
+            IntegerValidador.limite(valor, 9, info);
+        }
     }
 
     public static void tamanho1a2(final int valor, final String info) {
@@ -59,7 +59,7 @@ public class IntegerValidador {
 
     private static void limite(final Integer valor, final int maximo, final String info) {
         if (valor > maximo) {
-            throw new NumberFormatException("Valor extrapolou o tamanho do campo "+info);
+            throw new NumberFormatException("Valor extrapolou o tamanho do campo " + info);
         }
     }
 

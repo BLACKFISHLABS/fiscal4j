@@ -1,11 +1,11 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import java.time.LocalDate;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte300.classes.CTTipoPrazoDataEntrega;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte300.classes.CTTipoPrazoDataEntrega;
+import java.time.LocalDate;
 
 /**
  * @author Caio

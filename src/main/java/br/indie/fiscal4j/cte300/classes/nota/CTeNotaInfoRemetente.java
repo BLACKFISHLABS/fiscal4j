@@ -1,16 +1,15 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
-
 /**
  * @author Caio
  * @info Informações do Remetente das mercadorias transportadas pelo CT-e<br>
- *       Poderá não ser informado para os CT-e de redespacho intermediário e serviço vinculado a multimodal. Nos demais casos deverá sempre ser informado.
+ * Poderá não ser informado para os CT-e de redespacho intermediário e serviço vinculado a multimodal. Nos demais casos deverá sempre ser informado.
  */
 
 @Root(name = "rem")

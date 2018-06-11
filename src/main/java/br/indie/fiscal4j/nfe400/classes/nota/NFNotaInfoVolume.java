@@ -1,16 +1,15 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.List;
-
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
 
 public class NFNotaInfoVolume extends DFBase {
     private static final long serialVersionUID = -7649649556872297786L;

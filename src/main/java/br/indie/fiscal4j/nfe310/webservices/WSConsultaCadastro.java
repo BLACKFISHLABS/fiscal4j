@@ -1,14 +1,5 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
-import java.rmi.RemoteException;
-
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
@@ -20,6 +11,14 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeC
 import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeCabecMsgE;
 import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeDadosMsg;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.util.AXIOMUtil;
+import org.simpleframework.xml.core.Persister;
+import org.simpleframework.xml.stream.Format;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.rmi.RemoteException;
 
 class WSConsultaCadastro {
     private static final Logger LOG = LoggerFactory.getLogger(WSConsultaCadastro.class);

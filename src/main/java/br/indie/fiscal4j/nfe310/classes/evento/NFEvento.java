@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.nfe310.classes.evento;
 
-import java.math.BigDecimal;
-
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+
+import java.math.BigDecimal;
 
 public class NFEvento extends DFBase {
     private static final long serialVersionUID = 8494204773888020693L;

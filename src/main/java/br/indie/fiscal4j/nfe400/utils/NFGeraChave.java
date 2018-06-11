@@ -25,7 +25,7 @@ public class NFGeraChave {
 
     public Integer getDV() {
         final char[] valores = this.geraChaveAcessoSemDV().toCharArray();
-        final int[] valoresInt = { 2, 3, 4, 5, 6, 7, 8, 9 };
+        final int[] valoresInt = {2, 3, 4, 5, 6, 7, 8, 9};
         int indice = 0;
         int soma = 0;
         int valorTemp;

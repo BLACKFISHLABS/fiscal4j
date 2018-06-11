@@ -2,13 +2,13 @@ package br.indie.fiscal4j.cte300.classes;
 
 public enum CTTipoUnidadeTransporte {
 
-	RODOVIARIO_TRACAO("1", "Rodoviário Tração"),
-	RODOVIARIO_REBOQUE("2", "Rodoviário Reboque"),
-	NAVIO("3", "Navio"),
-	BALSA("4", "Balsa"),
-	AERONAVE("5", "Aeronave"),
-	VAGAO("6", "Vagão"),
-	OUTROS("7", "Outros");
+    RODOVIARIO_TRACAO("1", "Rodoviário Tração"),
+    RODOVIARIO_REBOQUE("2", "Rodoviário Reboque"),
+    NAVIO("3", "Navio"),
+    BALSA("4", "Balsa"),
+    AERONAVE("5", "Aeronave"),
+    VAGAO("6", "Vagão"),
+    OUTROS("7", "Outros");
 
     private final String codigo;
     private final String descricao;

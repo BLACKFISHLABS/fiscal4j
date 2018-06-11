@@ -1,17 +1,16 @@
 package br.indie.fiscal4j.cte300.classes.enviolote.consulta;
 
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-
 /**
  * @author Caio
  * @info Tipo Protocolo de status resultado do processamento da CT-e<br>
- *       Dados do protocolo de status
+ * Dados do protocolo de status
  */
 
 @Root(name = "infProt")

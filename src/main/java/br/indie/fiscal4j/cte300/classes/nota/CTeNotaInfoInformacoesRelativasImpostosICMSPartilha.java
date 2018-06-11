@@ -1,18 +1,17 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import java.math.BigDecimal;
-
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.BigDecimalParser;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import java.math.BigDecimal;
 
 /**
  * @author Caio
  * @info Informações do ICMS de partilha com a UF de término do serviço de transporte na operação interestadual<br>
- *       Grupo a ser informado nas prestações interestaduais para consumidor final, não contribuinte do ICMS
+ * Grupo a ser informado nas prestações interestaduais para consumidor final, não contribuinte do ICMS
  */
 
 @Root(name = "ICMSUFFim")

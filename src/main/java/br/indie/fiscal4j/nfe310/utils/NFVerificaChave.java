@@ -5,9 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
 
 /**
- *
  * @Author Eldevan Nery Junior on 01/06/17.
- *
+ * <p>
  * Classe que verifica se uma chave passada como parâmetro é valida.
  * Pode ser chamada por new {@link #NFVerificaChave(String)} e depois {@link #isChaveValida()}
  * Ou por NFVerificaChave.{@link #isChaveValida(String)}, verifique a classe de testes NFVerificaChaveTest para mais
@@ -41,15 +40,15 @@ public class NFVerificaChave {
     }
 
     private String chaveAcessoSemDV() {
-        return StringUtils.substring(this.chave, 0,43);
+        return StringUtils.substring(this.chave, 0, 43);
     }
 
     private Integer getChaveAcessoDV() {
-        return Integer.valueOf(StringUtils.substring(this.chave, 43,45));
+        return Integer.valueOf(StringUtils.substring(this.chave, 43, 45));
     }
 
-    public boolean isChaveValida(){
-        if(StringUtils.length(this.chave)<44){
+    public boolean isChaveValida() {
+        if (StringUtils.length(this.chave) < 44) {
             return false;
         }
         return Objects.equals(getChaveAcessoDV(), calculaDV());
@@ -57,10 +56,11 @@ public class NFVerificaChave {
 
     /**
      * Metodo estatico para verificar se uma chave de acesso eh valida.
+     *
      * @param chave Chave a ser verificada.
      * @return Se chave valida ou nao.
      */
-    public static boolean isChaveValida(String chave){
+    public static boolean isChaveValida(String chave) {
         NFVerificaChave nfVerificaChave = new NFVerificaChave(chave);
         return nfVerificaChave.isChaveValida();
     }

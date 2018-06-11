@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 08/11/17.
- *
+ * <p>
  * Nota Fiscal Eletronica.
  */
 public class MDFInfoInformacoesNFe {
@@ -16,7 +16,7 @@ public class MDFInfoInformacoesNFe {
     /**
      * Nota Fiscal Eletronica - Chave de Acesso
      */
-    @Element(name = "chNFe" )
+    @Element(name = "chNFe")
     private String chaveNFe;
     /**
      * Segundo código de barras
@@ -63,7 +63,7 @@ public class MDFInfoInformacoesNFe {
     }
 
     public void setIndicadorReentrega(String indicadorReentrega) {
-        StringValidador.equals( "1", indicadorReentrega);
+        StringValidador.equals("1", indicadorReentrega);
         this.indicadorReentrega = indicadorReentrega;
     }
 

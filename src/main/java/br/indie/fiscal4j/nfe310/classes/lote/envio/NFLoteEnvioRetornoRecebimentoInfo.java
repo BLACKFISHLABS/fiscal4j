@@ -1,8 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.lote.envio;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
+import org.simpleframework.xml.Element;
 
 public class NFLoteEnvioRetornoRecebimentoInfo extends DFBase {
     private static final long serialVersionUID = -7792241080891283618L;

@@ -1,14 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoCombustivelTipo;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoEspecieVeiculo;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoCondicao;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoCondicaoChassi;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoRestricao;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoTipoOperacao;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoTipoVeiculo;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoVeiculoCor;
+import br.indie.fiscal4j.nfe400.classes.*;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;

@@ -12,10 +12,10 @@ import br.indie.fiscal4j.nfe400.classes.NFTipoImpressao;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
-import java.time.ZonedDateTime;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 public class NFNotaInfoIdentificacao extends DFBase {

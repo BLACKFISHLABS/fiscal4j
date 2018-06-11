@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import java.math.BigDecimal;
-
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
+import java.math.BigDecimal;
 
 @Root(name = "Comp")
 public class CTInfoComponentesValor extends DFBase {

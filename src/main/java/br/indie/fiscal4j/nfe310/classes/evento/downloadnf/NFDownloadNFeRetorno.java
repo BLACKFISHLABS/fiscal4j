@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.nfe310.classes.evento.downloadnf;
 
-import java.util.List;
-
-import org.simpleframework.xml.*;
-
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
+import org.simpleframework.xml.*;
+
+import java.util.List;
 
 @Root(name = "retDownloadNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

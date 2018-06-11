@@ -19,7 +19,7 @@ public abstract class MDFInfoModalRodoviarioVeiculo extends DFBase {
     @Element(name = "tara")
     protected String tara;
 
-    @Element(name = "capM3" ,required = false)
+    @Element(name = "capM3", required = false)
     protected String capacidadeM3;
 
     @Element(name = "prop", required = false)

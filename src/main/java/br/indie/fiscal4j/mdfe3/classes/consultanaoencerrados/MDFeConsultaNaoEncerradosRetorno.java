@@ -3,19 +3,14 @@ package br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Namespace;
-import org.simpleframework.xml.Root;
+import org.simpleframework.xml.*;
 
 import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 22/11/17.
- *
+ * <p>
  * Tipo Retorno de Pedido de Consulta MDF-e não Encerrados.
- *
  */
 @Root(name = "retConsMDFeNaoEnc", strict = false)
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")

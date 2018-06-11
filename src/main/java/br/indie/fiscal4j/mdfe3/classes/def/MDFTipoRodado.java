@@ -5,14 +5,13 @@ package br.indie.fiscal4j.mdfe3.classes.def;
  *
  * <h1>Tipo de Rodado.</h1>
  * <pre>Preencher com:
-         01 - Truck;
-         02 - Toco;
-         03 - Cavalo Mecânico;
-         04 - VAN;
-         05 - Utilitário;
-         06 - Outros.
-    </pre>
- *
+ * 01 - Truck;
+ * 02 - Toco;
+ * 03 - Cavalo Mecânico;
+ * 04 - VAN;
+ * 05 - Utilitário;
+ * 06 - Outros.
+ * </pre>
  */
 public enum MDFTipoRodado {
 

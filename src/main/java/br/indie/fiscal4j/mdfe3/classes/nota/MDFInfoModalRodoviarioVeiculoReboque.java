@@ -19,11 +19,11 @@ public class MDFInfoModalRodoviarioVeiculoReboque extends MDFInfoModalRodoviario
     }
 
     public void setRenavam(String renavam) {
-        this.renavam = StringValidador.validaIntervalo(renavam, 9, 11 ,"Renavam do reboque");
+        this.renavam = StringValidador.validaIntervalo(renavam, 9, 11, "Renavam do reboque");
     }
 
     public void setTara(String tara) {
-        this.tara = StringValidador.capacidadeNDigitos(tara, "Tara em reboque",5);
+        this.tara = StringValidador.capacidadeNDigitos(tara, "Tara em reboque", 5);
     }
 
     public String getCapacidadeKG() {
@@ -31,7 +31,7 @@ public class MDFInfoModalRodoviarioVeiculoReboque extends MDFInfoModalRodoviario
     }
 
     public void setCapacidadeKG(String capacidadeKG) {
-        this.capacidadeKG = StringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG reboque",5);
+        this.capacidadeKG = StringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG reboque", 5);
     }
 
     public String getCapacidadeM3() {
@@ -39,7 +39,7 @@ public class MDFInfoModalRodoviarioVeiculoReboque extends MDFInfoModalRodoviario
     }
 
     public void setCapacidadeM3(String capacidadeM3) {
-        this.capacidadeM3 = StringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 reboque",2);
+        this.capacidadeM3 = StringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 reboque", 2);
     }
 
 }

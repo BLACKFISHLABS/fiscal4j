@@ -13,7 +13,6 @@ import java.util.List;
  * Created by Eldevan Nery Junior on 01/11/17.
  *
  * <h1>Informações do modelo rodoviário do MDFe.</h1>
- *
  */
 @Root(name = "rodo")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
@@ -41,7 +40,7 @@ public class MDFInfoModalRodoviario extends DFBase {
     /**
      * <h1> Código de Agendamento no porto.</h1>
      */
-    @Element(name = "codAgPorto" , required = false)
+    @Element(name = "codAgPorto", required = false)
     private String codAgPorto;
 
     /**

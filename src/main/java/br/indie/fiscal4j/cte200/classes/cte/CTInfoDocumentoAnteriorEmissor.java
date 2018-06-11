@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import java.util.List;
-
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
+import java.util.List;
 
 @Root(name = "emiDocAnt")
 public class CTInfoDocumentoAnteriorEmissor extends DFBase {

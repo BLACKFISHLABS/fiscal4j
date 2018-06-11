@@ -1,15 +1,15 @@
 package br.indie.fiscal4j.nfe400.classes.lote.envio;
 
-import java.time.LocalDateTime;
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe400.classes.NFProtocoloInfo;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe400.classes.NFProtocoloInfo;
+import java.time.LocalDateTime;
 
 @Root(name = "retEnviNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

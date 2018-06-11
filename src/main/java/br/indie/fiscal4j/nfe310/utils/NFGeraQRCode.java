@@ -36,7 +36,7 @@ public class NFGeraQRCode {
 
         final ZonedDateTime dt = this.nota.getInfo().getIdentificacao().getDataHoraEmissao();
 
-        final String dtf =  DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX").format(dt);
+        final String dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX").format(dt);
 
         final String cpfj = this.nota.getInfo().getDestinatario() == null ? null : this.nota.getInfo().getDestinatario().getCpfj();
 

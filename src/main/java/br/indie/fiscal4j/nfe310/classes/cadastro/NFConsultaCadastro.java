@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.nfe310.classes.cadastro;
 
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
 
 @Root(name = "ConsCad")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

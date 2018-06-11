@@ -1613,7 +1613,7 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent) {
         //try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         //        } catch (final org.apache.axis2.databinding.ADBException e) {
         //            throw org.apache.axis2.AxisFault.makeFault(e);
         //        }
@@ -1621,7 +1621,7 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult param, final boolean optimizeContent) {
         //        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDownloadNFResult.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         //        } catch (final org.apache.axis2.databinding.ADBException e) {
         //            throw org.apache.axis2.AxisFault.makeFault(e);
         //        }
@@ -1629,7 +1629,7 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.om.OMElement toOM(final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE param, final boolean optimizeContent) {
         //        try {
-            return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        return param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeCabecMsgE.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
         //        } catch (final org.apache.axis2.databinding.ADBException e) {
         //            throw org.apache.axis2.AxisFault.makeFault(e);
         //        }
@@ -1637,9 +1637,9 @@ public class NfeDownloadNFStub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName methodQName) {
         //        try {
-            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
+        final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+        emptyEnvelope.getBody().addChild(param.getOMElement(br.indie.fiscal4j.nfe310.webservices.downloadnf.NfeDownloadNFStub.NfeDadosMsg.MY_QNAME, factory));
+        return emptyEnvelope;
         //        } catch (final org.apache.axis2.databinding.ADBException e) {
         //            throw org.apache.axis2.AxisFault.makeFault(e);
         //        }

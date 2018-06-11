@@ -11,7 +11,6 @@ import java.math.BigDecimal;
  * Created by Eldevan Nery Junior on 01/11/17.
  *
  * <p>Informações dos dispositivos do Vale Pedágio.</p>
- *
  */
 public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
 
@@ -42,7 +41,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
     private String numeroComprovante;
 
     /**
-     *<h1> Valor do Vale-Pedagio</h1>
+     * <h1> Valor do Vale-Pedagio</h1>
      */
     @Element(name = "vValePed")
     private String valor;

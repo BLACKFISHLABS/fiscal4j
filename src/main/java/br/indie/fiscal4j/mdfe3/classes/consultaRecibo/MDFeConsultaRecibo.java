@@ -10,9 +10,8 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 30/11/17.
- *
+ * <p>
  * Pedido de Consulta do Recibo do MDF-e.
- *
  */
 @Root(name = "consReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
@@ -43,7 +42,7 @@ public class MDFeConsultaRecibo extends DFBase {
     }
 
     public void setNumeroRecibo(String numeroRecibo) {
-        this.numeroRecibo = StringValidador.validaIntervalo(numeroRecibo, 0,15, "Numero Recibo Lote MDFe", true);
+        this.numeroRecibo = StringValidador.validaIntervalo(numeroRecibo, 0, 15, "Numero Recibo Lote MDFe", true);
     }
 
     public String getVersao() {

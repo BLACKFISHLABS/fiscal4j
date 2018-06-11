@@ -20,11 +20,11 @@ public class NFNotaInfoItemImpostoIPINaoTributado extends DFBase {
 //        49 - Outras entradas
 //        50-Saída tributada
 //        99-Outras saídas
-        if(situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.ENTRADA_RECUPERACAO_CREDITO)
+        if (situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.ENTRADA_RECUPERACAO_CREDITO)
                 || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_ENTRADAS)
                 || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.SAIDA_TRIBUTADA)
-                || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_SAIDAS)){
-            throw new IllegalStateException("Situacao tributaria: " + situacaoTributaria.getCodigo() +"  invalido no item IPI nao tributavel");
+                || situacaoTributaria.equals(NFNotaInfoSituacaoTributariaIPI.OUTRAS_SAIDAS)) {
+            throw new IllegalStateException("Situacao tributaria: " + situacaoTributaria.getCodigo() + "  invalido no item IPI nao tributavel");
         }
 
         this.situacaoTributaria = situacaoTributaria;

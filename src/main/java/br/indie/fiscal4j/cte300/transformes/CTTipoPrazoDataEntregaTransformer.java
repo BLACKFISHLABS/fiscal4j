@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTTipoPrazoDataEntregaTransformer implements Transform<CTTipoPrazoDataEntrega> {
 
-	@Override
+    @Override
     public CTTipoPrazoDataEntrega read(String arg0) {
-		// TODO Auto-generated method stub
-		return CTTipoPrazoDataEntrega.valueOfCodigo(arg0);
-	}
+        // TODO Auto-generated method stub
+        return CTTipoPrazoDataEntrega.valueOfCodigo(arg0);
+    }
 
-	@Override
+    @Override
     public String write(CTTipoPrazoDataEntrega arg0) {
-		// TODO Auto-generated method stub
-		return arg0.getCodigo();
-	}
+        // TODO Auto-generated method stub
+        return arg0.getCodigo();
+    }
 
 }

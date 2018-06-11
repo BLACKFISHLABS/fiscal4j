@@ -13,7 +13,7 @@ public class NFGeraChave {
     public NFGeraChave(final NFNota nota) {
         this.nota = nota;
     }
-    
+
     public String geraCodigoRandomico() {
         final Random random = new Random(this.nota.getInfo().getIdentificacao().getDataHoraEmissao().toInstant().toEpochMilli());
         return StringUtils.leftPad(String.valueOf(random.nextInt(100000000)), 8, "0");
@@ -44,7 +44,7 @@ public class NFGeraChave {
     }
 
     private String geraChaveAcessoSemDV() {
-    	if (StringUtils.isBlank(this.nota.getInfo().getIdentificacao().getCodigoRandomico())) {
+        if (StringUtils.isBlank(this.nota.getInfo().getIdentificacao().getCodigoRandomico())) {
             throw new IllegalStateException("Codigo randomico deve estar presente para gerar a chave de acesso");
         }
         return StringUtils.leftPad(this.nota.getInfo().getIdentificacao().getUf().getCodigoIbge(), 2, "0") +

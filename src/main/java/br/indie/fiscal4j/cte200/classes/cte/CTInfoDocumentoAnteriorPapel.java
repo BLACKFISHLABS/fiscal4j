@@ -1,11 +1,11 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import java.time.LocalDate;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte200.classes.CTTipoDocumentoTransporteAnterior;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte200.classes.CTTipoDocumentoTransporteAnterior;
+import java.time.LocalDate;
 
 @Root(name = "idDocAntPap")
 public class CTInfoDocumentoAnteriorPapel extends DFBase {

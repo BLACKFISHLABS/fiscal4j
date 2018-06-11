@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 
 @Root(name = "CTe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

@@ -8,67 +8,67 @@ import org.simpleframework.xml.Root;
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFDownloadNFeRetornoInfo {
 
-	@Element(name = "chNFe", required = true)
-	private String chave;
-	
-	@Element(name = "cStat", required = true)
-	private String status;
-	
-	@Element(name = "xMotivo", required = true)
-	private String motivo;
-	
-	@Element(name = "procNFeZip", required = false)
-	private String procNfeZip;
-	
-	@Element(name = "procNFe", required = false)
-	private NFDownloadNFeRetornoInfoProcNfe procNfe;
+    @Element(name = "chNFe", required = true)
+    private String chave;
 
-	public NFDownloadNFeRetornoInfo() {
-		this.chave = null;
-		this.status = null;
-		this.motivo = null;
-		this.procNfeZip = null;
-		this.procNfe = null;
-	}
+    @Element(name = "cStat", required = true)
+    private String status;
 
-	public String getChave() {
-		return chave;
-	}
+    @Element(name = "xMotivo", required = true)
+    private String motivo;
 
-	public void setChave(final String chave) {
-		this.chave = chave;
-	}
+    @Element(name = "procNFeZip", required = false)
+    private String procNfeZip;
 
-	public String getStatus() {
-		return status;
-	}
+    @Element(name = "procNFe", required = false)
+    private NFDownloadNFeRetornoInfoProcNfe procNfe;
 
-	public void setStatus(final String status) {
-		this.status = status;
-	}
+    public NFDownloadNFeRetornoInfo() {
+        this.chave = null;
+        this.status = null;
+        this.motivo = null;
+        this.procNfeZip = null;
+        this.procNfe = null;
+    }
 
-	public String getMotivo() {
-		return motivo;
-	}
+    public String getChave() {
+        return chave;
+    }
 
-	public void setMotivo(final String motivo) {
-		this.motivo = motivo;
-	}
+    public void setChave(final String chave) {
+        this.chave = chave;
+    }
 
-	public String getProcNfeZip() {
-		return procNfeZip;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setProcNfeZip(final String procNfeZip) {
-		this.procNfeZip = procNfeZip;
-	}
+    public void setStatus(final String status) {
+        this.status = status;
+    }
 
-	public NFDownloadNFeRetornoInfoProcNfe getProcNfe() {
-		return procNfe;
-	}
+    public String getMotivo() {
+        return motivo;
+    }
 
-	public void setProcNfe(final NFDownloadNFeRetornoInfoProcNfe procNfe) {
-		this.procNfe = procNfe;
-	}
-	
+    public void setMotivo(final String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getProcNfeZip() {
+        return procNfeZip;
+    }
+
+    public void setProcNfeZip(final String procNfeZip) {
+        this.procNfeZip = procNfeZip;
+    }
+
+    public NFDownloadNFeRetornoInfoProcNfe getProcNfe() {
+        return procNfe;
+    }
+
+    public void setProcNfe(final NFDownloadNFeRetornoInfoProcNfe procNfe) {
+        this.procNfe = procNfe;
+    }
+
 }

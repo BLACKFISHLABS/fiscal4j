@@ -14,7 +14,7 @@ class CTLocalDateTransformer implements Transform<LocalDate> {
         try {
             return LocalDate.parse(data, CTLocalDateTransformer.DATETIME_FORMATTER);
         } catch (final IllegalArgumentException e) {
-            return  LocalDate.from(CTLocalDateTransformer.SIMPLE_DATE_FORMATTER.parse(data));
+            return LocalDate.from(CTLocalDateTransformer.SIMPLE_DATE_FORMATTER.parse(data));
         }
     }
 

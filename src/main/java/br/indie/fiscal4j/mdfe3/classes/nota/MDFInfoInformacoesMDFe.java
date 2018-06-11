@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 08/11/17.
- *
+ * <p>
  * Manifesto Eletrônico de Documentos Fiscais. Somente para modal Aquaviário (vide regras MOC).
  */
 public class MDFInfoInformacoesMDFe {
@@ -16,7 +16,7 @@ public class MDFInfoInformacoesMDFe {
     /**
      * Nota Fiscal Eletronica - Chave de Acesso
      */
-    @Element(name = "chMDFe" )
+    @Element(name = "chMDFe")
     private String chaveMDFe;
     /**
      * Indicador de Reentrega
@@ -50,7 +50,7 @@ public class MDFInfoInformacoesMDFe {
     }
 
     public void setIndicadorReentrega(String indicadorReentrega) {
-        StringValidador.equals( "1", indicadorReentrega);
+        StringValidador.equals("1", indicadorReentrega);
         this.indicadorReentrega = indicadorReentrega;
     }
 

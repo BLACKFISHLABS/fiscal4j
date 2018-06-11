@@ -158,6 +158,6 @@ public class MDFInfoEmitenteEndereco extends DFBase {
     }
 
     public void setEmail(String email) {
-        this.email = StringValidador.email(email, INFO );
+        this.email = StringValidador.email(email, INFO);
     }
 }

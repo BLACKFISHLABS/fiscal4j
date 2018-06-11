@@ -5,9 +5,8 @@ import org.simpleframework.xml.transform.Transform;
 
 /**
  * Created by Eldevan Nery Junior on 07/05/18.
- *
+ * <p>
  * Define os Classe de tranformação para a classe br.indie.fiscal4j.DFPais.java em XML e vice-versa.
- *
  */
 public class DFPaisTransformer implements Transform<DFPais> {
 

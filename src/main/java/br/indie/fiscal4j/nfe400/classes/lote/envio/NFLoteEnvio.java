@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.lote.envio;
 
-import java.util.List;
-
-import org.simpleframework.xml.*;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.*;
+
+import java.util.List;
 
 @Root(name = "enviNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

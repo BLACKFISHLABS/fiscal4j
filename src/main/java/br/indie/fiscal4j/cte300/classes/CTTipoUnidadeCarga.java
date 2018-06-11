@@ -2,10 +2,10 @@ package br.indie.fiscal4j.cte300.classes;
 
 public enum CTTipoUnidadeCarga {
 
-	CONTAINER("1", "Container"),
-	ULD("2", "ULD"),
-	PALLET("3", "Pallet"),
-	OUTROS("4", "Outros");
+    CONTAINER("1", "Container"),
+    ULD("2", "ULD"),
+    PALLET("3", "Pallet"),
+    OUTROS("4", "Outros");
 
     private final String codigo;
     private final String descricao;

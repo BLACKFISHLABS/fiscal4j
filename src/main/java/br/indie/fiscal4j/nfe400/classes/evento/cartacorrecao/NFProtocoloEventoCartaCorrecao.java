@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.evento.cartacorrecao;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe400.classes.evento.NFEvento;
+import br.indie.fiscal4j.nfe400.classes.evento.NFEventoRetorno;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.evento.NFEvento;
-import br.indie.fiscal4j.nfe400.classes.evento.NFEventoRetorno;
 
 @Root(name = "procEventoNFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

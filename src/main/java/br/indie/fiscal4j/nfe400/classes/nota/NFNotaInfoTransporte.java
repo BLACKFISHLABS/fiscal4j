@@ -1,14 +1,13 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import java.util.List;
-
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFModalidadeFrete;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+
+import java.util.List;
 
 public class NFNotaInfoTransporte extends DFBase {
     private static final long serialVersionUID = 1172316192774549031L;

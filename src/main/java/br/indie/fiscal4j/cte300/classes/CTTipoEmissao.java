@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.cte300.classes;
+
 /**
  * @author Caio Teodoro
- * */
+ */
 public enum CTTipoEmissao {
 
     EMISSAO_NORMAL("1", "Normal"),

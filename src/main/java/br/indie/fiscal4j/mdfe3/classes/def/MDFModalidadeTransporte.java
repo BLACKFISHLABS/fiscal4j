@@ -11,7 +11,7 @@ public enum MDFModalidadeTransporte {
     RODOVIARIO("1", "Rodoviário"),
     AEREO("2", "Aéreo"),
     AQUAVIARIO("3", "Aquaviário"),
-    FERROVIARIO("4", "Ferroviário") ;
+    FERROVIARIO("4", "Ferroviário");
 
     private final String codigo;
     private final String descricao;

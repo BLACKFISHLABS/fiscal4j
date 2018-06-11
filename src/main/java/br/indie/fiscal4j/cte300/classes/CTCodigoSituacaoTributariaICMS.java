@@ -25,7 +25,7 @@ public enum CTCodigoSituacaoTributariaICMS {
     public String getCodigo() {
         return this.codigo;
     }
-    
+
     public String getDescricao() {
         return this.descricao;
     }

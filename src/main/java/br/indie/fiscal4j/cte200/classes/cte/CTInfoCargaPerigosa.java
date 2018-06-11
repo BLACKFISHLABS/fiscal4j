@@ -1,8 +1,7 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
+import org.simpleframework.xml.Element;
 
 public class CTInfoCargaPerigosa extends DFBase {
     private static final long serialVersionUID = 5328235036325178938L;

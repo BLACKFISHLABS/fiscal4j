@@ -1,4 +1,3 @@
-
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoUnidadeTransporte;
@@ -10,7 +9,7 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- *
+ * <p>
  * Informações das Unidades de Transporte (Carreta/Reboque/Vagão)
  * Deve ser preenchido com as informações das unidades de transporte utilizadas.
  */
@@ -22,7 +21,7 @@ public class MDFInfoInformacoesDFeTipoUnidadeTransporte {
     @Element(name = "tpUnidTransp")
     private MDFTipoUnidadeTransporte tipoUnidadeTransporte;
     /**
-     * 	Identificação da Unidade de Transporte
+     * Identificação da Unidade de Transporte
      * Informar a identificação conforme o tipo de unidade de transporte.
      * Por exemplo: para rodoviário tração ou reboque deverá preencher com a placa do veículo.
      */

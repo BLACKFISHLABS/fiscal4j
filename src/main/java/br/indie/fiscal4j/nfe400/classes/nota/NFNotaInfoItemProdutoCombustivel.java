@@ -16,7 +16,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
 
     /**
      * Descrição do Produto conforme ANP.
-     *  Utilizar a descrição de produtos do Sistema de Informações de Movimentação de Produtos
+     * Utilizar a descrição de produtos do Sistema de Informações de Movimentação de Produtos
      * - SIMP (http://www.anp.gov.br/simp/).
      */
     @Element(name = "descANP")

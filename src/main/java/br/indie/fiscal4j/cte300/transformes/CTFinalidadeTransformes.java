@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTFinalidadeTransformes implements Transform<CTFinalidade> {
 
-	@Override
+    @Override
     public CTFinalidade read(String arg0) {
-		// TODO Auto-generated method stub
-		return CTFinalidade.valueOfCodigo(arg0);
-	}
+        // TODO Auto-generated method stub
+        return CTFinalidade.valueOfCodigo(arg0);
+    }
 
-	@Override
+    @Override
     public String write(CTFinalidade arg0) {
-		// TODO Auto-generated method stub
-		return arg0.getCodigo();
-	}
+        // TODO Auto-generated method stub
+        return arg0.getCodigo();
+    }
 
 }

@@ -1,13 +1,5 @@
 package br.indie.fiscal4j.nfe400.webservices;
 
-import java.math.BigDecimal;
-
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.util.AXIOMUtil;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.assinatura.AssinaturaDigital;
 import br.indie.fiscal4j.nfe.NFeConfig;
@@ -18,6 +10,13 @@ import br.indie.fiscal4j.nfe400.classes.evento.inutilizacao.NFRetornoEventoInuti
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeInutilizacao4Stub;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeInutilizacao4Stub.NfeResultMsg;
 import br.indie.fiscal4j.persister.DFPersister;
+import org.apache.axiom.om.OMElement;
+import org.apache.axiom.om.util.AXIOMUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.math.BigDecimal;
 
 class WSInutilizacao {
 

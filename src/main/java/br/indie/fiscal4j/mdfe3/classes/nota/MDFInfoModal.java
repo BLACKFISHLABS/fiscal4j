@@ -19,7 +19,7 @@ public class MDFInfoModal extends DFBase {
     @Element(name = "rodo", required = false)
     private MDFInfoModalRodoviario rodoviario;
 
-   //TODO terminar as modalidades abaixo
+    //TODO terminar as modalidades abaixo
 //    @Element(name = "aereo", required = false)
 //    private MDFInfoModalModalAereo aereo;
 

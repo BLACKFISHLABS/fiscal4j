@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFPais;
+import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
 
 public class CTInfoEndereco extends DFBase {
     private static final long serialVersionUID = -3018557372923308651L;

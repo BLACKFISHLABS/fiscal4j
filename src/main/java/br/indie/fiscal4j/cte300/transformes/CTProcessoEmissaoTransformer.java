@@ -5,16 +5,16 @@ import org.simpleframework.xml.transform.Transform;
 
 public class CTProcessoEmissaoTransformer implements Transform<CTProcessoEmissao> {
 
-	@Override
+    @Override
     public CTProcessoEmissao read(String arg0) {
-		// TODO Auto-generated method stub
-		return CTProcessoEmissao.valueOfCodigo(arg0);
-	}
+        // TODO Auto-generated method stub
+        return CTProcessoEmissao.valueOfCodigo(arg0);
+    }
 
-	@Override
+    @Override
     public String write(CTProcessoEmissao arg0) {
-		// TODO Auto-generated method stub
-		return arg0.getCodigo();
-	}
+        // TODO Auto-generated method stub
+        return arg0.getCodigo();
+    }
 
 }

@@ -1,10 +1,9 @@
 package br.indie.fiscal4j.nfe310.classes;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
 
 public class NFEndereco extends DFBase {
     private static final long serialVersionUID = 417768837786948754L;

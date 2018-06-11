@@ -8,11 +8,10 @@ import org.simpleframework.xml.Element;
  * Created by Eldevan Nery Junior on 01/11/17.
  *
  * <h1>Informações do Condutor do veículo</h1>
- *
  */
-public class MDFInfoModalRodoviarioVeiculoCondutor extends DFBase{
+public class MDFInfoModalRodoviarioVeiculoCondutor extends DFBase {
 
-    @Element(name= "xNome")
+    @Element(name = "xNome")
     private String nomeCondutor;
 
     @Element(name = "CPF")

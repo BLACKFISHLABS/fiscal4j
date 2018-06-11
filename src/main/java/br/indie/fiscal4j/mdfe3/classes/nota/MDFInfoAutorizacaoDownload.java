@@ -53,7 +53,7 @@ public class MDFInfoAutorizacaoDownload extends DFBase {
      */
     public void setCpf(final String cpf) {
         if (this.cnpj != null) {
-            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em "+ INFO);
+            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em " + INFO);
         }
         this.cpf = StringValidador.cpf(cpf, INFO);
     }

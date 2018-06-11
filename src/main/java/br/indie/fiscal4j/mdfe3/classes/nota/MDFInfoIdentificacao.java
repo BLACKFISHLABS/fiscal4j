@@ -4,11 +4,7 @@ import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFModalidadeTransporte;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFProcessoEmissao;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmitente;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoTranportador;
+import br.indie.fiscal4j.mdfe3.classes.def.*;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
@@ -286,7 +282,7 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     public void setMunicipioCarregamentos(List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos) {
-        this.municipioCarregamentos = ListValidador.validaListaObrigatoria(municipioCarregamentos, 50, "Municípios carregamento MDF-e" );
+        this.municipioCarregamentos = ListValidador.validaListaObrigatoria(municipioCarregamentos, 50, "Municípios carregamento MDF-e");
     }
 
     public List<MDFInfoIdentificacaoUfPercurso> getIdentificacaoUfPercursos() {
@@ -311,7 +307,7 @@ public class MDFInfoIdentificacao extends DFBase {
 
     public void setIndicadorCanalVerde(String indicadorCanalVerde) {
         String[] enumeration = new String[]{"1"};
-        if(StringUtils.isNotBlank(indicadorCanalVerde) && !StringUtils.equalsAny(indicadorCanalVerde, enumeration )){
+        if (StringUtils.isNotBlank(indicadorCanalVerde) && !StringUtils.equalsAny(indicadorCanalVerde, enumeration)) {
             throw new IllegalStateException(String.format("Indicador canal verde \"%s\" deve possuir um dos seguintes:'%s' caracteres", indicadorCanalVerde, Arrays.toString(enumeration)));
         }
         this.indicadorCanalVerde = indicadorCanalVerde;

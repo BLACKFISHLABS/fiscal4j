@@ -14,7 +14,7 @@ public class DFLocalDateTransformer implements Transform<LocalDate> {
         try {
             return LocalDate.parse(data, DFLocalDateTransformer.DATETIME_FORMATTER);
         } catch (final Exception e) {
-            return  LocalDate.from(DFLocalDateTransformer.SIMPLE_DATE_FORMATTER.parse(data));
+            return LocalDate.from(DFLocalDateTransformer.SIMPLE_DATE_FORMATTER.parse(data));
         }
     }
 

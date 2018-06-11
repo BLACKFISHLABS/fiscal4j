@@ -2,11 +2,11 @@ package br.indie.fiscal4j.cte300.classes;
 
 public enum CTTipoDocumento {
 
-	DECLARACAO("00", "Declaração"),
-	DUTOVIARIO("10", "Dutoviário"),
-	CFeSAT("59", "CFe-SAT"),
-	NFCe("65", "NFC-e"),
-	OUTROS("99", "Outros");
+    DECLARACAO("00", "Declaração"),
+    DUTOVIARIO("10", "Dutoviário"),
+    CFeSAT("59", "CFe-SAT"),
+    NFCe("65", "NFC-e"),
+    OUTROS("99", "Outros");
 
     private final String codigo;
     private final String descricao;

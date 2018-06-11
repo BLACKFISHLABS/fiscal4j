@@ -20,7 +20,7 @@ public enum NFIndicadorPresencaComprador {
     public String getCodigo() {
         return this.codigo;
     }
-    
+
     public String getDescricao() {
         return this.descricao;
     }

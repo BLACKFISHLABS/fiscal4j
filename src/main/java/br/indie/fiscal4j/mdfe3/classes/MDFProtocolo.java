@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.mdfe3.classes;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
 
 /**
  * @Author Eldevan Nery Junior on 26/05/17.

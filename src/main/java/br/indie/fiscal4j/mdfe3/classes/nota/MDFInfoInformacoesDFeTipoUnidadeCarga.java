@@ -7,7 +7,7 @@ import org.simpleframework.xml.ElementList;
 import java.util.List;
 
 /**
- *  Created by Eldevan Nery Junior on 06/11/17.
+ * Created by Eldevan Nery Junior on 06/11/17.
  */
 public class MDFInfoInformacoesDFeTipoUnidadeCarga {
 

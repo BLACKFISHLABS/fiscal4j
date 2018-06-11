@@ -5,14 +5,13 @@ package br.indie.fiscal4j.mdfe3.classes.def;
  *
  * <h1>Tipo de Carroceria.</h1>
  * <pre>Preencher com:
-         00 - não aplicável;
-         01 - Aberta;
-         02 - Fechada/Baú;
-         03 - Granelera;
-         04 - Porta Container;
-         05 - Sider
-    </pre>
- *
+ * 00 - não aplicável;
+ * 01 - Aberta;
+ * 02 - Fechada/Baú;
+ * 03 - Granelera;
+ * 04 - Porta Container;
+ * 05 - Sider
+ * </pre>
  */
 public enum MDFTipoCarroceria {
 

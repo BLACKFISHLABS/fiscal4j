@@ -167,9 +167,9 @@ public class NFeRecepcaoEvento4Stub extends org.apache.axis2.client.Stub {
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(final org.apache.axiom.soap.SOAPFactory factory, final NfeDadosMsg param, final boolean optimizeContent, final javax.xml.namespace.QName elementQName) {
         //try {
-            final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(NfeDadosMsg.MY_QNAME, factory));
-            return emptyEnvelope;
+        final org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+        emptyEnvelope.getBody().addChild(param.getOMElement(NfeDadosMsg.MY_QNAME, factory));
+        return emptyEnvelope;
         //        } catch (final org.apache.axis2.databinding.ADBException e) {
         //            throw org.apache.axis2.AxisFault.makeFault(e);
         //        }

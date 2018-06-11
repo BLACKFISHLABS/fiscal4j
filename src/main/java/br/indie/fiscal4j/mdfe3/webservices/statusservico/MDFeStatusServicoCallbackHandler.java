@@ -8,8 +8,8 @@
 package br.indie.fiscal4j.mdfe3.webservices.statusservico;
 
 /**
- *  MDFeStatusServicoCallbackHandler Callback class, Users can extend this class and implement
- *  their own receiveResult and receiveError methods.
+ * MDFeStatusServicoCallbackHandler Callback class, Users can extend this class and implement
+ * their own receiveResult and receiveError methods.
  */
 public abstract class MDFeStatusServicoCallbackHandler {
 
@@ -18,8 +18,9 @@ public abstract class MDFeStatusServicoCallbackHandler {
     /**
      * User can pass in any object that needs to be accessed once the NonBlocking
      * Web service call is finished and appropriate method of this CallBack is called.
+     *
      * @param clientData Object mechanism by which the user can pass in user data
-     * that will be avilable at the time this callback is called.
+     *                   that will be avilable at the time this callback is called.
      */
     public MDFeStatusServicoCallbackHandler(Object clientData) {
         this.clientData = clientData;

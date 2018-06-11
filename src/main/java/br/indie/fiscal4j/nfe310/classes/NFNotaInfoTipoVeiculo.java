@@ -23,7 +23,7 @@ public enum NFNotaInfoTipoVeiculo {
     private final String descricao;
 
     NFNotaInfoTipoVeiculo(final String codigo, final String descricao) {
-        this.codigo = StringUtils.leftPad(codigo,2,"0");
+        this.codigo = StringUtils.leftPad(codigo, 2, "0");
         this.descricao = descricao;
     }
 
@@ -33,7 +33,7 @@ public enum NFNotaInfoTipoVeiculo {
 
     public static NFNotaInfoTipoVeiculo valueOfCodigo(final String codigo) {
         for (final NFNotaInfoTipoVeiculo tipoVeiculo : NFNotaInfoTipoVeiculo.values()) {
-            if (tipoVeiculo.getCodigo().equals(StringUtils.leftPad(codigo,2,"0"))) {
+            if (tipoVeiculo.getCodigo().equals(StringUtils.leftPad(codigo, 2, "0"))) {
                 return tipoVeiculo;
             }
         }

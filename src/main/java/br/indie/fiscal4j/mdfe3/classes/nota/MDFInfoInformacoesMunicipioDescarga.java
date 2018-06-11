@@ -9,12 +9,11 @@ import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
- *
+ * <p>
  * Informações dos Municípios de descarregamento.
- *
  */
 
-public  class MDFInfoInformacoesMunicipioDescarga {
+public class MDFInfoInformacoesMunicipioDescarga {
 
     /**
      * Município de Descarregamento.
@@ -24,7 +23,7 @@ public  class MDFInfoInformacoesMunicipioDescarga {
     /**
      * Nome do Município de Descarregamento
      */
-    @Element(name="xMunDescarga")
+    @Element(name = "xMunDescarga")
     private String xMunDescarga;
 
     /**
@@ -50,7 +49,7 @@ public  class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setMunicipioDescarga(String municipioDescarga) {
-        this.municipioDescarga = StringValidador.validaIntervalo(municipioDescarga, 7,7,"codigo municipio descarga", true);
+        this.municipioDescarga = StringValidador.validaIntervalo(municipioDescarga, 7, 7, "codigo municipio descarga", true);
     }
 
     public String getxMunDescarga() {
@@ -58,7 +57,7 @@ public  class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setxMunDescarga(String xMunDescarga) {
-        this.xMunDescarga = StringValidador.validaIntervalo(xMunDescarga, 2,60, "Nome do Município de Descarregamento");
+        this.xMunDescarga = StringValidador.validaIntervalo(xMunDescarga, 2, 60, "Nome do Município de Descarregamento");
     }
 
     public List<MDFInfoInformacoesCTe> getInfCTe() {

@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import java.math.BigDecimal;
-
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFNotaInfoImpostoTributacaoICMS;
 import br.indie.fiscal4j.nfe400.classes.NFOrigem;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
+import org.simpleframework.xml.Element;
+
+import java.math.BigDecimal;
 
 public class NFNotaInfoItemImpostoICMSST extends DFBase {
     private static final long serialVersionUID = -2354449482492846488L;

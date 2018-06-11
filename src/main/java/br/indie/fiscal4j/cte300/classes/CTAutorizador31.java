@@ -1,10 +1,10 @@
 package br.indie.fiscal4j.cte300.classes;
 
-import java.util.Arrays;
-
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.cte300.parsers.CTChaveParser;
+
+import java.util.Arrays;
 
 public enum CTAutorizador31 {
 
@@ -41,10 +41,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MT };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MT};
         }
     },
-    
+
     MS {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -78,10 +78,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MS };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MS};
         }
     },
-    
+
     MG {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -115,10 +115,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.MG };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.MG};
         }
     },
-    
+
     PR {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -152,10 +152,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.PR };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.PR};
         }
     },
-    
+
     RS {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -189,10 +189,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.RS };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.RS};
         }
-    }, 
-    
+    },
+
     SP {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -226,10 +226,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.SP };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.SP};
         }
-    }, 
-    
+    },
+
     SVRS {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -263,10 +263,10 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.AC, DFUnidadeFederativa.AL, DFUnidadeFederativa.AM, DFUnidadeFederativa.BA, DFUnidadeFederativa.CE, DFUnidadeFederativa.DF, DFUnidadeFederativa.ES, DFUnidadeFederativa.GO, DFUnidadeFederativa.MA, DFUnidadeFederativa.PA, DFUnidadeFederativa.PB, DFUnidadeFederativa.PI, DFUnidadeFederativa.RJ, DFUnidadeFederativa.RN, DFUnidadeFederativa.RO, DFUnidadeFederativa.SC, DFUnidadeFederativa.SE, DFUnidadeFederativa.TO };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.AC, DFUnidadeFederativa.AL, DFUnidadeFederativa.AM, DFUnidadeFederativa.BA, DFUnidadeFederativa.CE, DFUnidadeFederativa.DF, DFUnidadeFederativa.ES, DFUnidadeFederativa.GO, DFUnidadeFederativa.MA, DFUnidadeFederativa.PA, DFUnidadeFederativa.PB, DFUnidadeFederativa.PI, DFUnidadeFederativa.RJ, DFUnidadeFederativa.RN, DFUnidadeFederativa.RO, DFUnidadeFederativa.SC, DFUnidadeFederativa.SE, DFUnidadeFederativa.TO};
         }
     },
-    
+
     SVSP {
         @Override
         public String getCteRecepcao(final DFAmbiente ambiente) {
@@ -300,14 +300,14 @@ public enum CTAutorizador31 {
 
         @Override
         public DFUnidadeFederativa[] getUFs() {
-            return new DFUnidadeFederativa[] { DFUnidadeFederativa.AP, DFUnidadeFederativa.PE, DFUnidadeFederativa.RR };
+            return new DFUnidadeFederativa[]{DFUnidadeFederativa.AP, DFUnidadeFederativa.PE, DFUnidadeFederativa.RR};
         }
     };
 
     public abstract String getCteRecepcao(final DFAmbiente ambiente);
 
     public abstract String getCteRetRecepcao(final DFAmbiente ambiente);
-    
+
     public abstract String getCteInutilizacao(final DFAmbiente ambiente);
 
     public abstract String getCteConsultaProtocolo(final DFAmbiente ambiente);
@@ -318,7 +318,7 @@ public enum CTAutorizador31 {
 
     public abstract DFUnidadeFederativa[] getUFs();
 
-    
+
     public static CTAutorizador31 valueOfCodigoUF(final DFUnidadeFederativa uf) {
         for (final CTAutorizador31 autorizador : CTAutorizador31.values()) {
             if (Arrays.asList(autorizador.getUFs()).contains(uf)) {

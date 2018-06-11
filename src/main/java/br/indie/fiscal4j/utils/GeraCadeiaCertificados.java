@@ -91,7 +91,7 @@ public abstract class GeraCadeiaCertificados {
         final SavingTrustManager savingTrustManager = new SavingTrustManager(defaultTrustManager);
 
         final SSLContext sslContext = SSLContext.getInstance(GeraCadeiaCertificados.PROTOCOL);
-        sslContext.init(null, new TrustManager[] { savingTrustManager }, null);
+        sslContext.init(null, new TrustManager[]{savingTrustManager}, null);
 
         GeraCadeiaCertificados.LOGGER.info(String.format("Abrindo conexao para o servidor: %s:%s", host, GeraCadeiaCertificados.PORT));
         try (SSLSocket sslSocket = (SSLSocket) sslContext.getSocketFactory().createSocket(host, GeraCadeiaCertificados.PORT)) {

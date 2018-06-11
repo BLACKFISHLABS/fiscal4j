@@ -12,22 +12,22 @@ import br.indie.fiscal4j.nfe310.webservices.nota.consulta.NfeConsulta2Stub.NfeCo
 abstract class NfeConsulta2CallbackHandler {
 
     protected final Object clientData;
-	
-	public NfeConsulta2CallbackHandler(final Object clientData) {
-		this.clientData = clientData;
-	}
-	
-	public NfeConsulta2CallbackHandler() {
-		this.clientData = null;
-	}
-	
-	public Object getClientData() {
-		return this.clientData;
-	}
-	
-	public void receiveResultnfeConsultaNF2(final NfeConsultaNF2Result result) {
-	}
-	
-	public void receiveErrornfeConsultaNF2(final Exception e) {
-	}
+
+    public NfeConsulta2CallbackHandler(final Object clientData) {
+        this.clientData = clientData;
+    }
+
+    public NfeConsulta2CallbackHandler() {
+        this.clientData = null;
+    }
+
+    public Object getClientData() {
+        return this.clientData;
+    }
+
+    public void receiveResultnfeConsultaNF2(final NfeConsultaNF2Result result) {
+    }
+
+    public void receiveErrornfeConsultaNF2(final Exception e) {
+    }
 }

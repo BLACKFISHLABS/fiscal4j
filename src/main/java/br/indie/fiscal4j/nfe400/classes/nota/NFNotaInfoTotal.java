@@ -1,8 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
+import org.simpleframework.xml.Element;
 
 public class NFNotaInfoTotal extends DFBase {
     private static final long serialVersionUID = 4579495471129802055L;

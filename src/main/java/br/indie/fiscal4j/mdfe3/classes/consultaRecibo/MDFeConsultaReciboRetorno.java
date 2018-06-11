@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 30/11/17.
- *
+ * <p>
  * Retorno do Pedido de  Consulta do Recibo do MDF-e.
  */
 @Root(name = "retConsReciMDFe")

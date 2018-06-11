@@ -2,13 +2,13 @@ package br.indie.fiscal4j.cte300.classes;
 
 public enum CTTipoDocumentoTransporteAnterior {
 
-	ATRE("07", "Atre"),
-	DTA("08", "DTA (Despacho de Transito Aduaneiro"),
-	CONHECIMENTO_AEREO_INTERNACIONAL("09", "Conhecimento Aéreo Internacional"),
-	CONHECIMENTO_CARTA_DE_PORTE_INTERNACIONAL("10", "Conhecimento de Transporte Internacional"),
-	CONHECIMENTO_AVULSO("11", "Conhecimento Avulso"),
-	TIF("12", "TIF (Trasnporte Internacional Ferroviário)"),
-	BL("13", "BL (Bill of Loading)");
+    ATRE("07", "Atre"),
+    DTA("08", "DTA (Despacho de Transito Aduaneiro"),
+    CONHECIMENTO_AEREO_INTERNACIONAL("09", "Conhecimento Aéreo Internacional"),
+    CONHECIMENTO_CARTA_DE_PORTE_INTERNACIONAL("10", "Conhecimento de Transporte Internacional"),
+    CONHECIMENTO_AVULSO("11", "Conhecimento Avulso"),
+    TIF("12", "TIF (Trasnporte Internacional Ferroviário)"),
+    BL("13", "BL (Bill of Loading)");
 
     private final String codigo;
     private final String descricao;

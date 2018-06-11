@@ -91,6 +91,7 @@ class WSCartaCorrecao {
 
     /**
      * Retorna XML assinado para uso externo.
+     *
      * @param chaveAcesso
      * @param textoCorrecao
      * @param numeroSequencialEvento

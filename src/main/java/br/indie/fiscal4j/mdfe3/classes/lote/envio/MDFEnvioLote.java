@@ -10,9 +10,8 @@ import org.simpleframework.xml.Root;
 
 /**
  * Created by Eldevan Nery Junior on 08/11/17.
- *
+ * <p>
  * Envio de Lote MDF-e para concessão de autorização.
- *
  */
 @Root(name = "enviMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")

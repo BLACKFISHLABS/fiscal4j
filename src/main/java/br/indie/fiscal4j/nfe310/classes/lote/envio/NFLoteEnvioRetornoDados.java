@@ -4,18 +4,18 @@ public class NFLoteEnvioRetornoDados {
 
     private final NFLoteEnvioRetorno retorno;
     private final NFLoteEnvio loteAssinado;
-	
-	public NFLoteEnvioRetornoDados(NFLoteEnvioRetorno retorno, NFLoteEnvio loteAssinado) {
-		this.retorno = retorno;
-		this.loteAssinado = loteAssinado;
-	}
 
-	public NFLoteEnvioRetorno getRetorno() {
-		return retorno;
-	}
+    public NFLoteEnvioRetornoDados(NFLoteEnvioRetorno retorno, NFLoteEnvio loteAssinado) {
+        this.retorno = retorno;
+        this.loteAssinado = loteAssinado;
+    }
 
-	public NFLoteEnvio getLoteAssinado() {
-		return loteAssinado;
-	}
-	
+    public NFLoteEnvioRetorno getRetorno() {
+        return retorno;
+    }
+
+    public NFLoteEnvio getLoteAssinado() {
+        return loteAssinado;
+    }
+
 }

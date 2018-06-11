@@ -1,9 +1,8 @@
 package br.indie.fiscal4j.nfe310.classes.cadastro;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
 
 public class NFInfoConsultaCadastro extends DFBase {
     private static final long serialVersionUID = 2846137738770858117L;

@@ -1,17 +1,16 @@
 package br.indie.fiscal4j.nfe400.classes.evento;
 
-import java.util.List;
-
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.nfe400.converters.StringNullConverter;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 import org.simpleframework.xml.convert.Convert;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe400.converters.StringNullConverter;
+import java.util.List;
 
 @Root(name = "retEnvEvento")
 public class NFEnviaEventoRetorno extends DFBase {

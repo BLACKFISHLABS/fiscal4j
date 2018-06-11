@@ -12,12 +12,11 @@ import org.simpleframework.xml.transform.Transform;
  *
  * <p>
  * History:<br><br>
- *      - walter - May 3, 2018: Criação do Arquivo<br>
+ * - walter - May 3, 2018: Criação do Arquivo<br>
  * <p>
  *
  * @author walter
  * @since 1.0
- *
  */
 
 public class NFIndicadorFormaPagamentoTransformer implements Transform<NFIndicadorFormaPagamento> {

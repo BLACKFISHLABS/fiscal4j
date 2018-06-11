@@ -51,6 +51,7 @@ class WSLoteEnvio {
 
     /**
      * Retorna o Lote assinado.
+     *
      * @param lote
      * @return
      * @throws Exception

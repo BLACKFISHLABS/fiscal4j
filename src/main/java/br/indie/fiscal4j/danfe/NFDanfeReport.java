@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
 
@@ -103,6 +104,9 @@ public class NFDanfeReport {
             parameters.put("MOSTRAR_MSG_FINALIZACAO", mostrarMsgFinalizacao);
             parameters.put("URL_CONSULTA", homologacao ? nota.getNota().getInfo().getIdentificacao().getUf().getQrCodeHomologacao() :
                     nota.getNota().getInfo().getIdentificacao().getUf().getQrCodeProducao());
+
+            parameters.put("DATA_EMISSAO", DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").format(nota.getNota().getInfo().getIdentificacao().getDataHoraEmissao()));
+            parameters.put("DATA_RECEBIMENTO", nota.getProtocolo().getProtocoloInfo().getDataRecebimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
 
             return JasperFillManager.fillReport(in, parameters, new JRBeanArrayDataSource(new Object[]{nota}));
         }

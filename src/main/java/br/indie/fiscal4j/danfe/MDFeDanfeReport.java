@@ -13,6 +13,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +42,7 @@ public class MDFeDanfeReport {
 
             parameters.put("LOGO_EMPRESA", (logoEmpresa == null ? null : new ByteArrayInputStream(logoEmpresa)));
             parameters.put("RODAPE", rodape);
+            parameters.put("DATA_EMISSAO", mdFeProcessada.getMdFe().getInfo().getIdentificacao().getDataEmissao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
 
             return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(mdFeProcessada.toString()), "/mdfeProc"));
         }

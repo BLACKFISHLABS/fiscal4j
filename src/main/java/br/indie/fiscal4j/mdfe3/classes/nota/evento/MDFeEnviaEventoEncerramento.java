@@ -15,6 +15,7 @@ import java.time.LocalDate;
 @Root(name = "evEncMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeEnviaEventoEncerramento extends DFBase {
+    private static final long serialVersionUID = -6894944230355205786L;
 
     @Element(name = "descEvento")
     private String descricaoEvento = "Encerramento";
@@ -40,7 +41,6 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
     @Element(name = "cMun")
     private String codigoMunicipio;
 
-
     public void setProtocoloAutorizacao(final String protocoloAutorizacao) {
         StringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
         this.protocoloAutorizacao = protocoloAutorizacao;
@@ -51,7 +51,7 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {
-        String defaultValue = "Encerramento";
+        final String defaultValue = "Encerramento";
         StringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
@@ -61,26 +61,26 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
     }
 
     public DFUnidadeFederativa getUf() {
-        return uf;
+        return this.uf;
     }
 
-    public void setUf(DFUnidadeFederativa uf) {
+    public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf;
     }
 
     public String getCodigoMunicipio() {
-        return codigoMunicipio;
+        return this.codigoMunicipio;
     }
 
-    public void setCodigoMunicipio(String codigoMunicipio) {
+    public void setCodigoMunicipio(final String codigoMunicipio) {
         this.codigoMunicipio = codigoMunicipio;
     }
 
     public LocalDate getDataEncerramento() {
-        return dataEncerramento;
+        return this.dataEncerramento;
     }
 
-    public void setDataEncerramento(LocalDate dataEncerramento) {
+    public void setDataEncerramento(final LocalDate dataEncerramento) {
         this.dataEncerramento = dataEncerramento;
     }
 }

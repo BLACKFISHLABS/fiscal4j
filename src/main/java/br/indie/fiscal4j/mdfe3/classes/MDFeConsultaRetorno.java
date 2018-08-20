@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @Root(name = "retConsReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaRetorno extends DFBase {
+    private static final long serialVersionUID = -7216488190676193958L;
 
     @Attribute(name = "versao", required = true)
     private String versao;

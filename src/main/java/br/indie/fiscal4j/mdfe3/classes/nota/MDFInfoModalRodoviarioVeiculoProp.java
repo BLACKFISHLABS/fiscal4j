@@ -6,6 +6,7 @@ import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoProprietario;
 import org.simpleframework.xml.Element;
 
 public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
+    private static final long serialVersionUID = 6851210038399361723L;
 
     @Element(name = "CPF", required = false)
     private String cpf;
@@ -27,6 +28,10 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
 
     @Element(name = "tpProp", required = false)
     private MDFTipoProprietario tipoProprietario;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public String getCpf() {
         return cpf;

@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * Created by Eldevan Nery Junior on 03/11/17.
  * <h1>Identificação do MDF-e</h1>
@@ -26,6 +25,7 @@ import java.util.List;
 @Root(name = "ide")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoIdentificacao extends DFBase {
+    private static final long serialVersionUID = -106178398166932545L;
 
     @Element(name = "cUF")
     private DFUnidadeFederativa codigoUF;
@@ -91,12 +91,10 @@ public class MDFInfoIdentificacao extends DFBase {
     private List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos;
 
     /**
-     * Sigla das Unidades da Federação do percurso do veículo.
-     * Não é necessário repetir as UF de Início e Fim
+     * Sigla das Unidades da Federação do percurso do veículo. Não é necessário repetir as UF de Início e Fim
      */
     @ElementList(entry = "infPercurso", inline = true, required = false)
     private List<MDFInfoIdentificacaoUfPercurso> identificacaoUfPercursos;
-
 
     /**
      * Data e hora previstos de inicio da viagem.
@@ -104,13 +102,11 @@ public class MDFInfoIdentificacao extends DFBase {
     @Element(name = "dhIniViagem", required = false)
     private LocalDateTime dataHoraDoInicioViagem;
 
-
     /**
      * Indicador de participação do Canal Verde.
      */
     @Element(name = "indCanalVerde", required = false)
     private String indicadorCanalVerde;
-
 
     public DFUnidadeFederativa getCodigoUF() {
         return this.codigoUF;
@@ -141,8 +137,7 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     /**
-     * Série do Manifesto.
-     * Informar a série do documento fiscal (informar zero se inexistente).
+     * Série do Manifesto. Informar a série do documento fiscal (informar zero se inexistente).
      */
     public void setSerie(final Integer serie) {
         IntegerValidador.tamanho3(serie, "Série");
@@ -190,8 +185,7 @@ public class MDFInfoIdentificacao extends DFBase {
 
     /**
      * Digito Verificador da chave de acesso do MDF-e<br>
-     * Informar o dígito de controle da chave de acesso do MDF-e,
-     * que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.
+     * Informar o dígito de controle da chave de acesso do MDF-e, que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.
      */
     public void setDigitoVerificador(final Integer digitoVerificador) {
         IntegerValidador.exatamente1(digitoVerificador, "Digito verificador MDF-e");
@@ -236,7 +230,6 @@ public class MDFInfoIdentificacao extends DFBase {
         this.versaoProcessoEmissao = versaoProcessoEmissao;
     }
 
-
     public MDFModalidadeTransporte getModalidadeFrete() {
         return this.modalidadeFrete;
     }
@@ -246,67 +239,67 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     public MDFTipoEmitente getTipoEmitente() {
-        return tipoEmitente;
+        return this.tipoEmitente;
     }
 
-    public void setTipoEmitente(MDFTipoEmitente tipoEmitente) {
+    public void setTipoEmitente(final MDFTipoEmitente tipoEmitente) {
         this.tipoEmitente = tipoEmitente;
     }
 
     public MDFTipoTranportador getTipoTranportador() {
-        return tipoTranportador;
+        return this.tipoTranportador;
     }
 
-    public void setTipoTranportador(MDFTipoTranportador tipoTranportador) {
+    public void setTipoTranportador(final MDFTipoTranportador tipoTranportador) {
         this.tipoTranportador = tipoTranportador;
     }
 
     public String getUnidadeFederativaInicio() {
-        return unidadeFederativaInicio;
+        return this.unidadeFederativaInicio;
     }
 
-    public void setUnidadeFederativaInicio(DFUnidadeFederativa unidadeFederativaInicio) {
+    public void setUnidadeFederativaInicio(final DFUnidadeFederativa unidadeFederativaInicio) {
         this.unidadeFederativaInicio = unidadeFederativaInicio.getCodigo();
     }
 
     public String getUnidadeFederativaFim() {
-        return unidadeFederativaFim;
+        return this.unidadeFederativaFim;
     }
 
-    public void setUnidadeFederativaFim(DFUnidadeFederativa unidadeFederativaFim) {
+    public void setUnidadeFederativaFim(final DFUnidadeFederativa unidadeFederativaFim) {
         this.unidadeFederativaFim = unidadeFederativaFim.getCodigo();
     }
 
     public List<MDFInfoIdentificacaoMunicipioCarregamento> getMunicipioCarregamentos() {
-        return municipioCarregamentos;
+        return this.municipioCarregamentos;
     }
 
-    public void setMunicipioCarregamentos(List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos) {
+    public void setMunicipioCarregamentos(final List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos) {
         this.municipioCarregamentos = ListValidador.validaListaObrigatoria(municipioCarregamentos, 50, "Municípios carregamento MDF-e");
     }
 
     public List<MDFInfoIdentificacaoUfPercurso> getIdentificacaoUfPercursos() {
-        return identificacaoUfPercursos;
+        return this.identificacaoUfPercursos;
     }
 
-    public void setIdentificacaoUfPercursos(List<MDFInfoIdentificacaoUfPercurso> identificacaoUfPercursos) {
+    public void setIdentificacaoUfPercursos(final List<MDFInfoIdentificacaoUfPercurso> identificacaoUfPercursos) {
         this.identificacaoUfPercursos = ListValidador.validaListaNaoObrigatoria(identificacaoUfPercursos, 25, "UF percurso MDF-e");
     }
 
     public LocalDateTime getDataHoraDoInicioViagem() {
-        return dataHoraDoInicioViagem;
+        return this.dataHoraDoInicioViagem;
     }
 
-    public void setDataHoraDoInicioViagem(LocalDateTime dataHoraDoInicioViagem) {
+    public void setDataHoraDoInicioViagem(final LocalDateTime dataHoraDoInicioViagem) {
         this.dataHoraDoInicioViagem = dataHoraDoInicioViagem;
     }
 
     public String getIndicadorCanalVerde() {
-        return indicadorCanalVerde;
+        return this.indicadorCanalVerde;
     }
 
-    public void setIndicadorCanalVerde(String indicadorCanalVerde) {
-        String[] enumeration = new String[]{"1"};
+    public void setIndicadorCanalVerde(final String indicadorCanalVerde) {
+        final String[] enumeration = new String[]{"1"};
         if (StringUtils.isNotBlank(indicadorCanalVerde) && !StringUtils.equalsAny(indicadorCanalVerde, enumeration)) {
             throw new IllegalStateException(String.format("Indicador canal verde \"%s\" deve possuir um dos seguintes:'%s' caracteres", indicadorCanalVerde, Arrays.toString(enumeration)));
         }

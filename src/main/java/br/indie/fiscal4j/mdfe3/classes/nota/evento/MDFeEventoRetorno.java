@@ -9,6 +9,7 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 public class MDFeEventoRetorno extends DFBase {
+    private static final long serialVersionUID = 8963520421150918484L;
 
     @Attribute(name = "versao")
     private String versao;
@@ -28,10 +29,10 @@ public class MDFeEventoRetorno extends DFBase {
     }
 
     public MDFeInfoEventoRetorno getInfoEventoRetorno() {
-        return infoEventoRetorno;
+        return this.infoEventoRetorno;
     }
 
-    public void setInfoEventoRetorno(MDFeInfoEventoRetorno infoEventoRetorno) {
+    public void setInfoEventoRetorno(final MDFeInfoEventoRetorno infoEventoRetorno) {
         this.infoEventoRetorno = infoEventoRetorno;
     }
 

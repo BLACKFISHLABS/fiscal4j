@@ -4,6 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFEndereco;
 import br.indie.fiscal4j.nfe400.classes.NFRegimeTributario;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoEmitente extends DFBase {
@@ -99,6 +100,21 @@ public class NFNotaInfoEmitente extends DFBase {
 
     public String getCpf() {
         return this.cpf;
+    }
+
+    /**
+     * @return CPF ou CNPJ do Emitente
+     */
+    public String getCpfj() {
+
+        String cpfj = StringUtils.EMPTY;
+
+        if (StringUtils.isNotBlank(cpf)) {
+            cpfj = cpf;
+        } else if (StringUtils.isNotBlank(cnpj)) {
+            cpfj = cnpj;
+        }
+        return cpfj;
     }
 
     public String getRazaoSocial() {

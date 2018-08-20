@@ -35,6 +35,18 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
     @Element(name = "vFCPSTRet", required = false)
     private String valorFundoCombatePobrezaRetidoST;
 
+    @Element(name = "pRedBCEfet", required = false)
+    private String percentualReducaoBCEfetiva;
+
+    @Element(name = "vBCEfet", required = false)
+    private String valorBCEfetiva;
+
+    @Element(name = "pICMSEfet", required = false)
+    private String percentualAliquotaICMSEfetiva;
+
+    @Element(name = "vICMSEfet", required = false)
+    private String valorICMSEfetivo;
+
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
     }
@@ -48,7 +60,7 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
     }
 
     public void setPercentualICMSSTRetido(final BigDecimal percentualICMSSTRetido) {
-        this.percentualICMSSTRetido = BigDecimalParser.tamanho15Com2CasasDecimais(percentualICMSSTRetido, "Percentual ICMS ST Retido ICMSSN500");
+        this.percentualICMSSTRetido = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualICMSSTRetido, "Percentual ICMS ST Retido ICMSSN500");
     }
 
     public void setValorICMSSTRetido(final BigDecimal valorICMSSTRetido) {
@@ -68,6 +80,22 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
 
     public void setValorFundoCombatePobrezaRetidoST(final BigDecimal valorFundoCombatePobrezaRetidoST) {
         this.valorFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho15Com2CasasDecimais(valorFundoCombatePobrezaRetidoST, "Valor fundo combate pobreza retido ST");
+    }
+
+    public void setPercentualReducaoBCEfetiva(final BigDecimal percentualReducaoBCEfetiva) {
+        this.percentualReducaoBCEfetiva = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCEfetiva, "Percentual reducao BC efetiva");
+    }
+
+    public void setValorBCEfetiva(final BigDecimal valorBCEfetiva) {
+        this.valorBCEfetiva = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCEfetiva, "Valor BC efetiva");
+    }
+
+    public void setPercentualAliquotaICMSEfetiva(final BigDecimal percentualAliquotaICMSEfetiva) {
+        this.percentualAliquotaICMSEfetiva = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaICMSEfetiva, "Percentual aliquota ICMS efetiva");
+    }
+
+    public void setValorICMSEfetivo(final BigDecimal valorICMSEfetivo) {
+        this.valorICMSEfetivo = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSEfetivo, "Valor ICMS efetivo");
     }
 
     public NFOrigem getOrigem() {
@@ -100,5 +128,21 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
 
     public String getValorFundoCombatePobrezaRetidoST() {
         return this.valorFundoCombatePobrezaRetidoST;
+    }
+
+    public String getPercentualReducaoBCEfetiva() {
+        return this.percentualReducaoBCEfetiva;
+    }
+
+    public String getValorBCEfetiva() {
+        return this.valorBCEfetiva;
+    }
+
+    public String getPercentualAliquotaICMSEfetiva() {
+        return this.percentualAliquotaICMSEfetiva;
+    }
+
+    public String getValorICMSEfetivo() {
+        return this.valorICMSEfetivo;
     }
 }

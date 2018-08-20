@@ -8,13 +8,12 @@ import org.simpleframework.xml.*;
 import java.util.List;
 
 /**
- * Created by Eldevan Nery Junior on 22/11/17.
- * <p>
- * Tipo Retorno de Pedido de Consulta MDF-e não Encerrados.
+ * Created by Eldevan Nery Junior on 22/11/17. Tipo Retorno de Pedido de Consulta MDF-e não Encerrados.
  */
 @Root(name = "retConsMDFeNaoEnc", strict = false)
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaNaoEncerradosRetorno extends DFBase {
+    private static final long serialVersionUID = -4939494708012007271L;
 
     @Attribute(name = "versao")
     private String versao;
@@ -86,10 +85,10 @@ public class MDFeConsultaNaoEncerradosRetorno extends DFBase {
     }
 
     public List<MDFeConsultaNaoEncerradosRetornoInfMDFe> getInfMDFe() {
-        return infMDFe;
+        return this.infMDFe;
     }
 
-    public void setInfMDFe(List<MDFeConsultaNaoEncerradosRetornoInfMDFe> infMDFe) {
+    public void setInfMDFe(final List<MDFeConsultaNaoEncerradosRetornoInfMDFe> infMDFe) {
         this.infMDFe = infMDFe;
     }
 }

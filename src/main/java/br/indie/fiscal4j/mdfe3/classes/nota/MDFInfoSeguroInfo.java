@@ -7,14 +7,13 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * Created by Eldevan Nery Junior on 07/12/17.
- * <p>
- * Informações da seguradora.
+ * Created by Eldevan Nery Junior on 07/12/17. Informações da seguradora.
  */
 
 @Root(name = "infSeg")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoSeguroInfo extends DFBase {
+    private static final long serialVersionUID = 4018991399177455416L;
 
     @Element(name = "xSeg", required = true)
     private String seguradora;
@@ -44,8 +43,7 @@ public class MDFInfoSeguroInfo extends DFBase {
     }
 
     /**
-     * Número do CNPJ da seguradora.
-     * Obrigatório apenas se responsável pelo seguro for (2) responsável pela contratação do transporte - pessoa jurídica.
+     * Número do CNPJ da seguradora. Obrigatório apenas se responsável pelo seguro for (2) responsável pela contratação do transporte - pessoa jurídica.
      */
     public void setCnpj(final String cnpj) {
         StringValidador.cnpj(cnpj);

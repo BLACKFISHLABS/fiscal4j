@@ -11,6 +11,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "protMDFe")
 public class MDFProtocolo extends DFBase {
+    private static final long serialVersionUID = 7056704602846442462L;
 
     @Attribute(name = "versao", required = true)
     private String versao;

@@ -10,13 +10,12 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * Created by Eldevan Nery Junior on 30/11/17.
- * <p>
- * Retorno do Pedido de  Consulta do Recibo do MDF-e.
+ * Created by Eldevan Nery Junior on 30/11/17. Retorno do Pedido de Consulta do Recibo do MDF-e.
  */
 @Root(name = "retConsReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaReciboRetorno extends DFBase {
+    private static final long serialVersionUID = 3479315998827557369L;
 
     @Attribute(name = "versao", required = false)
     private String versao;
@@ -135,18 +134,18 @@ public class MDFeConsultaReciboRetorno extends DFBase {
     }
 
     public String getNumeroRecibo() {
-        return numeroRecibo;
+        return this.numeroRecibo;
     }
 
-    public void setNumeroRecibo(String numeroRecibo) {
+    public void setNumeroRecibo(final String numeroRecibo) {
         this.numeroRecibo = numeroRecibo;
     }
 
     public MDFProtocolo getMdfProtocolo() {
-        return mdfProtocolo;
+        return this.mdfProtocolo;
     }
 
-    public void setMdfProtocolo(MDFProtocolo mdfProtocolo) {
+    public void setMdfProtocolo(final MDFProtocolo mdfProtocolo) {
         this.mdfProtocolo = mdfProtocolo;
     }
 }

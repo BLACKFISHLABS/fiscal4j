@@ -14,7 +14,7 @@ public class NFNotaInfoFormaPagamento extends DFBase {
     private NFIndicadorFormaPagamento indicadorFormaPagamento;
 
     @Element(name = "tPag")
-    private NFFormaPagamentoMoeda formaPagamentoMoeda;
+    private NFMeioPagamento meioPagamento;
 
     @Element(name = "vPag")
     private String valorPagamento;
@@ -34,8 +34,8 @@ public class NFNotaInfoFormaPagamento extends DFBase {
         this.indicadorFormaPagamento = indicadorFormaPagamento;
     }
 
-    public void setFormaPagamentoMoeda(final NFFormaPagamentoMoeda formaPagamentoMoeda) {
-        this.formaPagamentoMoeda = formaPagamentoMoeda;
+    public void setMeioPagamento(final NFMeioPagamento meioPagamento) {
+        this.meioPagamento = meioPagamento;
     }
 
     public void setValorPagamento(final BigDecimal valorPagamento) {
@@ -43,11 +43,11 @@ public class NFNotaInfoFormaPagamento extends DFBase {
     }
 
     public NFIndicadorFormaPagamento getIndicadorFormaPagamento() {
-        return indicadorFormaPagamento;
+        return this.indicadorFormaPagamento;
     }
 
-    public NFFormaPagamentoMoeda getFormaPagamentoMoeda() {
-        return this.formaPagamentoMoeda;
+    public NFMeioPagamento getMeioPagamento() {
+        return this.meioPagamento;
     }
 
     public String getValorPagamento() {

@@ -13,6 +13,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "emit")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoEmitente extends DFBase {
+    private static final long serialVersionUID = 6209368588212530094L;
 
     private static final String INFO = "Emitente do Manifesto";
 
@@ -40,7 +41,7 @@ public class MDFInfoEmitente extends DFBase {
      * Informar zeros não significativos
      */
     public void setCnpj(final String cnpj) {
-        this.cnpj = StringValidador.cnpj(cnpj, INFO);
+        this.cnpj = StringValidador.cnpj(cnpj, MDFInfoEmitente.INFO);
     }
 
     public String getInscricaoEstadual() {
@@ -51,7 +52,7 @@ public class MDFInfoEmitente extends DFBase {
      * Inscrição Estadual do Emitente
      */
     public void setInscricaoEstadual(final String inscricaoEstadual) {
-        this.inscricaoEstadual = StringValidador.inscricaoEstadualSemIsencao(inscricaoEstadual, INFO);
+        this.inscricaoEstadual = StringValidador.inscricaoEstadualSemIsencao(inscricaoEstadual, MDFInfoEmitente.INFO);
     }
 
     public String getRazaoSocial() {
@@ -62,7 +63,7 @@ public class MDFInfoEmitente extends DFBase {
      * Razão social ou Nome do emitente
      */
     public void setRazaoSocial(final String xNome) {
-        StringValidador.tamanho2ate60(xNome, "Razão social ou Nome em " + INFO);
+        StringValidador.tamanho2ate60(xNome, "Razão social ou Nome em " + MDFInfoEmitente.INFO);
         this.razaoSocial = xNome;
     }
 
@@ -74,7 +75,7 @@ public class MDFInfoEmitente extends DFBase {
      * Nome fantasia
      */
     public void setNomeFantasia(final String xFant) {
-        StringValidador.tamanho2ate60(xFant, "Nome fantasia em " + INFO);
+        StringValidador.tamanho2ate60(xFant, "Nome fantasia em " + MDFInfoEmitente.INFO);
         this.nomeFantasia = xFant;
     }
 
@@ -82,10 +83,10 @@ public class MDFInfoEmitente extends DFBase {
      * Endereço do emitente
      */
     public MDFInfoEmitenteEndereco getEndereco() {
-        return endereco;
+        return this.endereco;
     }
 
-    public void setEndereco(MDFInfoEmitenteEndereco endereco) {
+    public void setEndereco(final MDFInfoEmitenteEndereco endereco) {
         this.endereco = endereco;
     }
 

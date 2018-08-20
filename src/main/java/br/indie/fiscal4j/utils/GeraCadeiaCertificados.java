@@ -1,7 +1,6 @@
 package br.indie.fiscal4j.utils;
 
 import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.cte300.classes.CTAutorizador31;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import org.apache.commons.lang3.StringUtils;
@@ -68,23 +67,6 @@ public abstract class GeraCadeiaCertificados {
                 final String urlMDFeP = aut.getMDFeStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlMDFeP)) {
                     final String host = new URI(urlMDFeP).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-            }
-
-            // CTe
-            for (final CTAutorizador31 aut : CTAutorizador31.values()) {
-                final String urlCTeH = aut.getCteStatusServico(DFAmbiente.HOMOLOGACAO);
-                if (StringUtils.isNotBlank(urlCTeH)) {
-                    final String host = new URI(urlCTeH).getHost();
-                    GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
-                }
-            }
-
-            for (final CTAutorizador31 aut : CTAutorizador31.values()) {
-                final String urlCTeP = aut.getCteStatusServico(DFAmbiente.PRODUCAO);
-                if (StringUtils.isNotBlank(urlCTeP)) {
-                    final String host = new URI(urlCTeP).getHost();
                     GeraCadeiaCertificados.get(keyStore, host, GeraCadeiaCertificados.PORT);
                 }
             }

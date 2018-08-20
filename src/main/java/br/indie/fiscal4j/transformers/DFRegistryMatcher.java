@@ -4,8 +4,6 @@ import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFPais;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.cte200.classes.*;
-import br.indie.fiscal4j.cte200.transformers.*;
 import br.indie.fiscal4j.mdfe3.classes.def.*;
 import br.indie.fiscal4j.mdfe3.transformers.*;
 import br.indie.fiscal4j.nfe.NFTipoEmissao;
@@ -30,6 +28,8 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(NFTipoEmissao.class, new NFTipoEmissaoTransformer());
         super.bind(DFPais.class, new DFPaisTransformer());
 
+        // NFE 3.10
+
         // NFE 4.00
         super.bind(br.indie.fiscal4j.nfe400.classes.NFTipo.class, new br.indie.fiscal4j.nfe400.transformers.NFTipoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFOrigem.class, new br.indie.fiscal4j.nfe400.transformers.NFOrigemTransformer());
@@ -41,7 +41,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(br.indie.fiscal4j.nfe400.classes.NFModalidadeFrete.class, new br.indie.fiscal4j.nfe400.transformers.NFModalidadeFreteTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFRegimeTributario.class, new br.indie.fiscal4j.nfe400.transformers.NFRegimeTributarioTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoVeiculoCor.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoVeiculoCorTransformer());
-        super.bind(br.indie.fiscal4j.nfe400.classes.nota.NFFormaPagamentoMoeda.class, new br.indie.fiscal4j.nfe400.transformers.NFFormaPagamentoMoedaTransformer());
+        super.bind(br.indie.fiscal4j.nfe400.classes.nota.NFMeioPagamento.class, new br.indie.fiscal4j.nfe400.transformers.NFMeioPagamentoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFIndicadorFormaPagamento.class, new br.indie.fiscal4j.nfe400.transformers.NFIndicadorFormaPagamentoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoTipoVeiculo.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoTipoVeiculoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.cadastro.NFSituacaoContribuinte.class, new br.indie.fiscal4j.nfe400.transformers.NFSituacaoContribuinteTransformer());
@@ -75,52 +75,6 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoTipoOperacao.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemProdutoVeiculoTipoOperacaoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoCondicaoChassi.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemProdutoVeiculoCondicaoChassiTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemModalidadeBCICMS.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemModalidadeBCICMSTransformer());
-
-        // CTe
-        super.bind(CTModal.class, new CTModalTransformer());
-        super.bind(CTTipoCte.class, new CTTipoCteTransformer());
-        super.bind(CTTipoServico.class, new CTTipoServicoTransformer());
-        super.bind(CTTipoEmissao.class, new CTTipoEmissaoTransformer());
-        super.bind(CTUnidadeMedida.class, new CTUnidadeMedidaTransformer());
-        super.bind(CTTipoImpressao.class, new CTTipoImpressaoTransformer());
-        super.bind(CTFormaPagamento.class, new CTFormaPagamentoTransformer());
-        super.bind(CTTomadorServico.class, new CTTomadorServicoTransformer());
-        super.bind(CTTipoEntregaData.class, new CTTipoEntregaDataTransformer());
-        super.bind(CTRetiraMercadoria.class, new CTRetiraMercadoriaTransformer());
-        super.bind(CTTipoUnidadeCarga.class, new CTTipoUnidadeCargaTransformer());
-        super.bind(CTResponsavelSeguro.class, new CTResponsavelSeguroTransformer());
-        super.bind(CTTipoDocumentoOutro.class, new CTTipoDocumentoOutroTransformer());
-        super.bind(CTTipoEntregaHorario.class, new CTTipoEntregaHorarioTransformer());
-        super.bind(CTIdentificadorEmissor.class, new CTIdentificadorEmissorTransformer());
-        super.bind(CTTipoUnidadeTransporte.class, new CTTipoUnidadeTransporteTransformer());
-        super.bind(CTTipoDocumentoTransporteAnterior.class, new CTTipoDocumentoTransporteAnteriorTransformer());
-
-        // CTe 300
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoEmissao.class, new br.indie.fiscal4j.cte300.transformes.CTTipoEmissaoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTFinalidade.class, new br.indie.fiscal4j.cte300.transformes.CTFinalidadeTransformes());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTProcessoEmissao.class, new br.indie.fiscal4j.cte300.transformes.CTProcessoEmissaoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTModal.class, new br.indie.fiscal4j.cte300.transformes.CTModalTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoServico.class, new br.indie.fiscal4j.cte300.transformes.CTTipoServicoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTRetirada.class, new br.indie.fiscal4j.cte300.transformes.CTRetiradaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTIndicadorTomador.class, new br.indie.fiscal4j.cte300.transformes.CTIndicadorTomadorTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoImpressao.class, new br.indie.fiscal4j.cte300.transformes.CTTipoImpressaoTransformes());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTomadorServico.class, new br.indie.fiscal4j.cte300.transformes.CTTomadorServicoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoPrazoDataEntrega.class, new br.indie.fiscal4j.cte300.transformes.CTTipoPrazoDataEntregaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoPrazoHoraEntrega.class, new br.indie.fiscal4j.cte300.transformes.CTTipoPrazoHoraEntregaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTUnidadeMedida.class, new br.indie.fiscal4j.cte300.transformes.CTUnidadeMedidaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTModeloNF.class, new br.indie.fiscal4j.cte300.transformes.CTModeloNFTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoUnidadeCarga.class, new br.indie.fiscal4j.cte300.transformes.CTTipoUnidadeCargaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoUnidadeTransporte.class, new br.indie.fiscal4j.cte300.transformes.CTTipoUnidadeTransporteTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoDocumento.class, new br.indie.fiscal4j.cte300.transformes.CTTipoDocumentoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoDocumentoTransporteAnterior.class, new br.indie.fiscal4j.cte300.transformes.CTTipoDocumentoTransporteAnteriorTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTCodigoSituacaoTributariaICMS.class, new br.indie.fiscal4j.cte300.transformes.CTCodigoSituacaoTributariaICMSTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTInformacoesManuseio.class, new br.indie.fiscal4j.cte300.transformes.CTInformacoesManuseioTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTClasseTarifa.class, new br.indie.fiscal4j.cte300.transformes.CTClasseTarifaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTUnidadeMedidaProdPerigosos.class, new br.indie.fiscal4j.cte300.transformes.CTUnidadeMedidaProdPerigososTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoDirecao.class, new br.indie.fiscal4j.cte300.transformes.CTTipoDirecaoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoTrafego.class, new br.indie.fiscal4j.cte300.transformes.CTTipoTrafegoTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoFerrovia.class, new br.indie.fiscal4j.cte300.transformes.CTTipoFerroviaTransformer());
-        super.bind(br.indie.fiscal4j.cte300.classes.CTIndicadoNegociavel.class, new br.indie.fiscal4j.cte300.transformes.CTIndicadoNegociavelTransformer());
 
         // MDF-e
         super.bind(MDFModalidadeTransporte.class, new MDFModalidadeTransporteTransformer());

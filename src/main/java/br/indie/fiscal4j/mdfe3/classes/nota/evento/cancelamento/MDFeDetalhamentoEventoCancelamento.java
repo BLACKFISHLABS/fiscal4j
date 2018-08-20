@@ -8,6 +8,7 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 public class MDFeDetalhamentoEventoCancelamento extends DFBase {
+    private static final long serialVersionUID = 3638398807163771387L;
 
     @Attribute(name = "versaoEvento", required = false)
     private String versaoEvento;
@@ -15,20 +16,19 @@ public class MDFeDetalhamentoEventoCancelamento extends DFBase {
     @Element(name = "evCancMDFe")
     private MDFeEnviaEventoCancelamento eventoCancelamento;
 
-
     public void setVersaoEvento(final BigDecimal versaoEvento) {
         this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
     }
 
     public String getVersaoEvento() {
-        return versaoEvento;
+        return this.versaoEvento;
     }
 
     public MDFeEnviaEventoCancelamento getEventoCancelamento() {
-        return eventoCancelamento;
+        return this.eventoCancelamento;
     }
 
-    public void setEventoCancelamento(MDFeEnviaEventoCancelamento eventoCancelamento) {
+    public void setEventoCancelamento(final MDFeEnviaEventoCancelamento eventoCancelamento) {
         this.eventoCancelamento = eventoCancelamento;
     }
 }

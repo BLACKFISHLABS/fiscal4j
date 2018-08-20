@@ -1,5 +1,6 @@
 package br.indie.fiscal4j.nfe400.classes.cadastro;
 
+import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -11,6 +12,9 @@ public class NFRetornoConsultaCadastro extends DFBase {
 
     @Attribute(name = "versao")
     private String versao;
+
+    @Element(name = "tpAmb", required = false)
+    private DFAmbiente ambiente;
 
     @Element(name = "infCons")
     private NFRetornoConsultaCadastroDados dados;
@@ -29,5 +33,13 @@ public class NFRetornoConsultaCadastro extends DFBase {
 
     public void setVersao(final String versao) {
         this.versao = versao;
+    }
+
+    public DFAmbiente getAmbiente() {
+        return this.ambiente;
+    }
+
+    public void setAmbiente(final DFAmbiente ambiente) {
+        this.ambiente = ambiente;
     }
 }

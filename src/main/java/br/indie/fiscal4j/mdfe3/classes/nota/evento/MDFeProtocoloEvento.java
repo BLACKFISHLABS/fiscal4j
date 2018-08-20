@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Root(name = "eventoMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeProtocoloEvento extends DFBase {
+    private static final long serialVersionUID = 8849959763700133248L;
 
     @Attribute(name = "versao")
     private String versao;
@@ -31,10 +32,10 @@ public class MDFeProtocoloEvento extends DFBase {
     }
 
     public MDFeEvento getEvento() {
-        return evento;
+        return this.evento;
     }
 
-    public void setEvento(MDFeEvento evento) {
+    public void setEvento(final MDFeEvento evento) {
         this.evento = evento;
     }
 
@@ -43,6 +44,6 @@ public class MDFeProtocoloEvento extends DFBase {
     }
 
     public MDFeEventoRetorno getEventoRetorno() {
-        return eventoRetorno;
+        return this.eventoRetorno;
     }
 }

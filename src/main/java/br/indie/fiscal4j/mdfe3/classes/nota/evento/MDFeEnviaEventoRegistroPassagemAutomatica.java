@@ -7,6 +7,7 @@ import org.simpleframework.xml.Element;
  * Created by Eldevan Nery Junior on 17/11/17.
  */
 public class MDFeEnviaEventoRegistroPassagemAutomatica extends DFBase {
+    private static final long serialVersionUID = 1116018734443127135L;
 
     @Element(name = "descEvento")
     private String descricaoEvento;
@@ -18,26 +19,26 @@ public class MDFeEnviaEventoRegistroPassagemAutomatica extends DFBase {
     private MDFeEnviaEventoRegistroPassagemAutomaticaInfPass infPass;
 
     public String getDescricaoEvento() {
-        return descricaoEvento;
+        return this.descricaoEvento;
     }
 
-    public void setDescricaoEvento(String descricaoEvento) {
+    public void setDescricaoEvento(final String descricaoEvento) {
         this.descricaoEvento = descricaoEvento;
     }
 
     public String getTpTransm() {
-        return tpTransm;
+        return this.tpTransm;
     }
 
-    public void setTpTransm(String tpTransm) {
+    public void setTpTransm(final String tpTransm) {
         this.tpTransm = tpTransm;
     }
 
     public MDFeEnviaEventoRegistroPassagemAutomaticaInfPass getInfPass() {
-        return infPass;
+        return this.infPass;
     }
 
-    public void setInfPass(MDFeEnviaEventoRegistroPassagemAutomaticaInfPass infPass) {
+    public void setInfPass(final MDFeEnviaEventoRegistroPassagemAutomaticaInfPass infPass) {
         this.infPass = infPass;
     }
 }

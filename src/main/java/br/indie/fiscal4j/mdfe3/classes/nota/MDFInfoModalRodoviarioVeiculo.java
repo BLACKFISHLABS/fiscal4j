@@ -6,6 +6,7 @@ import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoCarroceria;
 import org.simpleframework.xml.Element;
 
 public abstract class MDFInfoModalRodoviarioVeiculo extends DFBase {
+    private static final long serialVersionUID = 3584628986749380582L;
 
     @Element(name = "cInt", required = false)
     protected String codigoInterno;
@@ -34,60 +35,60 @@ public abstract class MDFInfoModalRodoviarioVeiculo extends DFBase {
     protected String unidadeFederativa;
 
     public String getCodigoInterno() {
-        return codigoInterno;
+        return this.codigoInterno;
     }
 
     protected abstract void setCodigoInterno(String codigoInterno);
 
     public String getPlaca() {
-        return placa;
+        return this.placa;
     }
 
     protected abstract void setPlaca(String placa);
 
     public String getRenavam() {
-        return renavam;
+        return this.renavam;
     }
 
     protected abstract void setRenavam(String renavam);
 
     public String getTara() {
-        return tara;
+        return this.tara;
     }
 
     protected abstract void setTara(String tara);
 
     public String getCapacidadeM3() {
-        return capacidadeM3;
+        return this.capacidadeM3;
     }
 
     protected abstract void setCapacidadeM3(String capacidadeM3);
 
     public MDFInfoModalRodoviarioVeiculoProp getProprietario() {
-        return proprietario;
+        return this.proprietario;
     }
 
-    public void setProprietario(MDFInfoModalRodoviarioVeiculoProp proprietario) {
+    public void setProprietario(final MDFInfoModalRodoviarioVeiculoProp proprietario) {
         this.proprietario = proprietario;
     }
 
     public MDFTipoCarroceria getTipoCarroceria() {
-        return tipoCarroceria;
+        return this.tipoCarroceria;
     }
 
-    public void setTipoCarroceria(MDFTipoCarroceria tipoCarroceria) {
+    public void setTipoCarroceria(final MDFTipoCarroceria tipoCarroceria) {
         this.tipoCarroceria = tipoCarroceria;
     }
 
     public String getUnidadeFederativa() {
-        return unidadeFederativa;
+        return this.unidadeFederativa;
     }
 
-    public void setUnidadeFederativa(String unidadeFederativa) {
+    public void setUnidadeFederativa(final String unidadeFederativa) {
         this.unidadeFederativa = unidadeFederativa;
     }
 
-    public void setUnidadeFederativa(DFUnidadeFederativa unidadeFederativa) {
+    public void setUnidadeFederativa(final DFUnidadeFederativa unidadeFederativa) {
         this.unidadeFederativa = unidadeFederativa.getCodigo();
     }
 }

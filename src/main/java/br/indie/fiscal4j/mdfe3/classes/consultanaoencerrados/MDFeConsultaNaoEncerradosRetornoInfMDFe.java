@@ -9,6 +9,7 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "infMDFe")
 public class MDFeConsultaNaoEncerradosRetornoInfMDFe extends DFBase {
+    private static final long serialVersionUID = 1971335524222923251L;
 
     /**
      * Chaves de acesso do MDF-e não encerrado
@@ -23,18 +24,18 @@ public class MDFeConsultaNaoEncerradosRetornoInfMDFe extends DFBase {
     private String numeroProtocolo;
 
     public String getChave() {
-        return chave;
+        return this.chave;
     }
 
-    public void setChave(String chave) {
+    public void setChave(final String chave) {
         this.chave = chave;
     }
 
     public String getNumeroProtocolo() {
-        return numeroProtocolo;
+        return this.numeroProtocolo;
     }
 
-    public void setNumeroProtocolo(String numeroProtocolo) {
+    public void setNumeroProtocolo(final String numeroProtocolo) {
         this.numeroProtocolo = numeroProtocolo;
     }
 }

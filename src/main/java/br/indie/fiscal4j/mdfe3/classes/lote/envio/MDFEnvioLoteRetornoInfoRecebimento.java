@@ -16,6 +16,7 @@ import java.math.BigInteger;
 @Root(name = "infRec")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFEnvioLoteRetornoInfoRecebimento extends DFBase {
+    private static final long serialVersionUID = 3335333639059116239L;
 
     @Element(name = "nRec", required = false)
     private String numeroRecibo;

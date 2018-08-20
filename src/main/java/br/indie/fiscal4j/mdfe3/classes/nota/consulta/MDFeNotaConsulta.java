@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 @Root(name = "consSitMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeNotaConsulta extends DFBase {
+    private static final long serialVersionUID = -6782722764188583523L;
 
     @Attribute(name = "versao")
     private String versao;

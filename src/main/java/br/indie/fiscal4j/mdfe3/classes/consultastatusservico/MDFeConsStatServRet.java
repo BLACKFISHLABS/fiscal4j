@@ -9,13 +9,12 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * Created by Eldevan Nery Junior on 10/11/17.
- * <p>
- * Tipo Resultado da Consulta do Status do Serviço MDFe.
+ * Created by Eldevan Nery Junior on 10/11/17. Tipo Resultado da Consulta do Status do Serviço MDFe.
  */
 @Root(name = "retConsStatServMdfe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsStatServRet extends DFBase {
+    private static final long serialVersionUID = 3641601774421019676L;
 
     @Element(name = "tpAmb", required = false)
     private DFAmbiente ambiente;

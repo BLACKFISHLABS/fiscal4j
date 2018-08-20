@@ -9,13 +9,12 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * Created by Eldevan Nery Junior on 14/11/17.
- * <p>
- * Retorno do envio de Lote MDF-e .
+ * Created by Eldevan Nery Junior on 14/11/17. Retorno do envio de Lote MDF-e .
  */
 @Root(name = "retEnviMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFEnvioLoteRetorno extends DFBase {
+    private static final long serialVersionUID = -1891312937948557486L;
 
     @Element(name = "tpAmb", required = false)
     private DFAmbiente ambiente;

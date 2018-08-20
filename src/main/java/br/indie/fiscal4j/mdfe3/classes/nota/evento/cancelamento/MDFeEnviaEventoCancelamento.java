@@ -9,6 +9,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "evCancMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeEnviaEventoCancelamento extends DFBase {
+    private static final long serialVersionUID = -9148111307434911961L;
 
     @Element(name = "descEvento")
     private String descricaoEvento = "Cancelamento";
@@ -18,7 +19,6 @@ public class MDFeEnviaEventoCancelamento extends DFBase {
 
     @Element(name = "xJust")
     private String justificativa;
-
 
     public void setJustificativa(final String justificativa) {
         StringValidador.tamanho15a256(justificativa, "Justificativa");
@@ -39,7 +39,7 @@ public class MDFeEnviaEventoCancelamento extends DFBase {
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {
-        String defaultValue = "Cancelamento";
+        final String defaultValue = "Cancelamento";
         StringValidador.tamanho12(descricaoEvento, defaultValue);
         StringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;

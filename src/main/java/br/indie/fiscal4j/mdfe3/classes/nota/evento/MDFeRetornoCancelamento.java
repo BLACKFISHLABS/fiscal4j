@@ -7,5 +7,6 @@ import org.simpleframework.xml.Root;
  */
 @Root(name = "retCancMDFe")
 public class MDFeRetornoCancelamento extends MDFeRetorno {
+    private static final long serialVersionUID = 1272173159722337888L;
 
 }

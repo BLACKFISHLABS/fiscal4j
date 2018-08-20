@@ -4,6 +4,8 @@ import br.indie.fiscal4j.DFBase;
 
 public class NFLoteEnvioRetornoDados extends DFBase {
 
+    private static final long serialVersionUID = 2276661581444740391L;
+
     private final NFLoteEnvioRetorno retorno;
     private final NFLoteEnvio loteAssinado;
 

@@ -9,10 +9,10 @@ import org.simpleframework.xml.*;
 
 import java.util.List;
 
-
 @Root(name = "retConsSitMDFe", strict = false)
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeNotaConsultaRetorno extends DFBase {
+    private static final long serialVersionUID = -3063292755609244217L;
 
     @Attribute(name = "versao", required = true)
     private String versao;
@@ -87,18 +87,18 @@ public class MDFeNotaConsultaRetorno extends DFBase {
     }
 
     public MDFProtocolo getProtocolo() {
-        return protocolo;
+        return this.protocolo;
     }
 
-    public void setProtocolo(MDFProtocolo protocolo) {
+    public void setProtocolo(final MDFProtocolo protocolo) {
         this.protocolo = protocolo;
     }
 
     public List<MDFeProtocoloEvento> getProtocoloEvento() {
-        return protocoloEvento;
+        return this.protocoloEvento;
     }
 
-    public void setProtocoloEvento(List<MDFeProtocoloEvento> protocoloEvento) {
+    public void setProtocoloEvento(final List<MDFeProtocoloEvento> protocoloEvento) {
         this.protocoloEvento = protocoloEvento;
     }
 }

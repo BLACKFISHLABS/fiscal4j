@@ -37,8 +37,7 @@ class WSEncerramento {
         return new DFPersister().read(MDFeRetorno.class, omElementResult.toString());
     }
 
-    MDFeRetorno encerraMdfe(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
+    MDFeRetorno encerraMdfe(final String chaveAcesso, final String numeroProtocolo, final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         final String encerramentoNotaXML = this.gerarDadosEncerramento(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa).toString();
         final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(encerramentoNotaXML);
         final OMElement omElementResult = this.efetuaEncerramento(xmlAssinado, chaveAcesso);
@@ -49,7 +48,7 @@ class WSEncerramento {
         final MDFChaveParser mdfChaveParser = new MDFChaveParser(chaveAcesso);
         final MDFeRecepcaoEventoStub.MdfeCabecMsg cabec = new MDFeRecepcaoEventoStub.MdfeCabecMsg();
         cabec.setCUF(mdfChaveParser.getNFUnidadeFederativa().getCodigoIbge());
-        cabec.setVersaoDados(BigDecimalParser.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
+        cabec.setVersaoDados(BigDecimalParser.tamanho5Com2CasasDecimais(WSEncerramento.VERSAO_LEIAUTE, "Versao do Evento"));
 
         final MDFeRecepcaoEventoStub.MdfeCabecMsgE cabecE = new MDFeRecepcaoEventoStub.MdfeCabecMsgE();
         cabecE.setMdfeCabecMsg(cabec);
@@ -64,17 +63,15 @@ class WSEncerramento {
         final MDFAutorizador3 autorizador = MDFAutorizador3.valueOfCodigoUF(mdfChaveParser.getNFUnidadeFederativa());
         final String urlWebService = autorizador.getMDFeRecepcaoEvento(this.config.getAmbiente());
         if (urlWebService == null) {
-            throw new IllegalArgumentException("Nao foi possivel encontrar URL para RecepcaoEvento "
-                    + mdfChaveParser.getModelo().name() + ", autorizador " + autorizador.name());
+            throw new IllegalArgumentException("Nao foi possivel encontrar URL para RecepcaoEvento " + mdfChaveParser.getModelo().name() + ", autorizador " + autorizador.name());
         }
-        MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult mdfeRecepcaoEventoResult = new MDFeRecepcaoEventoStub(urlWebService).mdfeRecepcaoEvento(dados, cabecE);
+        final MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult mdfeRecepcaoEventoResult = new MDFeRecepcaoEventoStub(urlWebService).mdfeRecepcaoEvento(dados, cabecE);
         final OMElement omElementResult = mdfeRecepcaoEventoResult.getExtraElement();
         WSEncerramento.LOGGER.debug(omElementResult.toString());
         return omElementResult;
     }
 
-    private MDFeEvento gerarDadosEncerramento(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) {
+    private MDFeEvento gerarDadosEncerramento(final String chaveAcesso, final String numeroProtocolo, final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) {
 
         final MDFChaveParser chaveParser = new MDFChaveParser(chaveAcesso);
 

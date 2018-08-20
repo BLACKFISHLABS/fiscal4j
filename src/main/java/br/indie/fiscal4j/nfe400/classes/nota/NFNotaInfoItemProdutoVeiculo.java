@@ -131,7 +131,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setNumeroMotor(final String numeroMotor) {
-        StringValidador.exatamente21(numeroMotor, "Numero Motor Veiculo");
+        StringValidador.validaIntervalo(numeroMotor, 1, 21, "Numero Motor Veiculo");
         this.numeroMotor = numeroMotor;
     }
 

@@ -9,13 +9,12 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * Created by Eldevan Nery Junior on 30/11/17.
- * <p>
- * Pedido de Consulta do Recibo do MDF-e.
+ * Created by Eldevan Nery Junior on 30/11/17. Pedido de Consulta do Recibo do MDF-e.
  */
 @Root(name = "consReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeConsultaRecibo extends DFBase {
+    private static final long serialVersionUID = 6718245060599595093L;
 
     @Element(name = "tpAmb", required = false)
     private DFAmbiente ambiente;
@@ -38,10 +37,10 @@ public class MDFeConsultaRecibo extends DFBase {
     }
 
     public String getNumeroRecibo() {
-        return numeroRecibo;
+        return this.numeroRecibo;
     }
 
-    public void setNumeroRecibo(String numeroRecibo) {
+    public void setNumeroRecibo(final String numeroRecibo) {
         this.numeroRecibo = StringValidador.validaIntervalo(numeroRecibo, 0, 15, "Numero Recibo Lote MDFe", true);
     }
 

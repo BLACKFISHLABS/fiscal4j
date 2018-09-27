@@ -10,7 +10,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 /**
- * @Author Eldevan Nery Junior on 26/05/17.
+ * @author Jeferson Cruz
  */
 public class MDFProtocoloInfo extends DFBase {
     private static final long serialVersionUID = 256148266644230771L;

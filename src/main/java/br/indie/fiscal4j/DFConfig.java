@@ -5,7 +5,7 @@ import java.security.KeyStoreException;
 import java.util.TimeZone;
 
 /**
- * @author Caio Configuracao basica do sistema de documentos fiscais.
+ * @author Jeferson Cruz Configuracao basica do sistema de documentos fiscais.
  */
 public abstract class DFConfig {
 

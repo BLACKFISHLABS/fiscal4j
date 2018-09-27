@@ -15,7 +15,7 @@ import org.simpleframework.xml.transform.Transform;
  * - walter - May 3, 2018: Criação do Arquivo<br>
  * <p>
  *
- * @author walter
+ * @author Jeferson Cruz
  * @since 1.0
  */
 

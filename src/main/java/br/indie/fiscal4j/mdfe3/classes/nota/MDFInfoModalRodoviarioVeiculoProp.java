@@ -3,6 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoProprietario;
+import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
 public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
@@ -29,15 +30,15 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     @Element(name = "tpProp", required = false)
     private MDFTipoProprietario tipoProprietario;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
+        if (this.cnpj != null) {
+            throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em proprietario do Veículo ");
+        }
+        this.cpf = StringValidador.cpf(cpf, "proprietario do Veículo");
         this.cpf = cpf;
     }
 
@@ -46,7 +47,10 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+        if (this.cpf != null) {
+            throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado em proprietario do Veículo");
+        }
+        this.cnpj = StringValidador.cnpj(cnpj, "proprietario do Veículo");
     }
 
     public String getRegistroNacionalTransportes() {
@@ -54,6 +58,7 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     }
 
     public void setRegistroNacionalTransportes(String registroNacionalTransportes) {
+        StringValidador.validador(registroNacionalTransportes, "Registro Nacional de Transportadores Rodoviários de Carga(RNTRC) ", 8, true, true);
         this.registroNacionalTransportes = registroNacionalTransportes;
     }
 
@@ -70,11 +75,16 @@ public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     }
 
     public void setInscricaoEstadual(String inscricaoEstadual) {
+        StringValidador.inscricaoEstadual(inscricaoEstadual);
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
     public String getUnidadeFederativa() {
         return unidadeFederativa;
+    }
+
+    public void setUnidadeFederativa(String unidadeFederativa) {
+        this.unidadeFederativa = unidadeFederativa;
     }
 
     public void setUnidadeFederativa(DFUnidadeFederativa unidadeFederativa) {

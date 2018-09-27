@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe.webservices.distribuicao;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.*;
-import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
+import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import br.indie.fiscal4j.validadores.xsd.XMLValidador;
 import org.apache.axiom.om.OMElement;
@@ -52,7 +52,7 @@ public class WSDistribuicaoNFe {
             final NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresse distDFeInteresse = new NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresse();
             distDFeInteresse.setNFeDadosMsg(dadosMsgType0);
 
-            final NFeDistribuicaoDFeSoapStub stub = new NFeDistribuicaoDFeSoapStub(NFAutorizador400.AN.getNFeDistribuicaoDFe(this.config.getAmbiente()));
+            final NFeDistribuicaoDFeSoapStub stub = new NFeDistribuicaoDFeSoapStub(NFAutorizador31.AN.getNFeDistribuicaoDFe(this.config.getAmbiente()));
             final NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresseResponse result = stub.nfeDistDFeInteresse(distDFeInteresse);
             final String resultadoConsulta = result.getNFeDistDFeInteresseResult().getExtraElement().toString();
 

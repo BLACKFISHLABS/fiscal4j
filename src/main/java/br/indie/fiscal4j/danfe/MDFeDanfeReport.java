@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.danfe;
 
-import br.indie.fiscal4j.mdfe3.classes.nota.MDFeProcessada;
+import br.indie.fiscal4j.mdfe3.classes.nota.MDFProcessado;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
 import org.w3c.dom.Document;
@@ -19,11 +19,11 @@ import java.util.Map;
 
 public class MDFeDanfeReport {
 
-    private final MDFeProcessada mdFeProcessada;
+    private final MDFProcessado processado;
     private Map<String, Object> parameters;
 
-    public MDFeDanfeReport(MDFeProcessada mdFeProcessada) {
-        this.mdFeProcessada = mdFeProcessada;
+    public MDFeDanfeReport(MDFProcessado processado) {
+        this.processado = processado;
         this.parameters = new HashMap<>();
     }
 
@@ -42,9 +42,9 @@ public class MDFeDanfeReport {
 
             parameters.put("LOGO_EMPRESA", (logoEmpresa == null ? null : new ByteArrayInputStream(logoEmpresa)));
             parameters.put("RODAPE", rodape);
-            parameters.put("DATA_EMISSAO", mdFeProcessada.getMdFe().getInfo().getIdentificacao().getDataEmissao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+            parameters.put("DATA_EMISSAO", processado.getMdfe().getInfo().getIdentificacao().getDataEmissao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
 
-            return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(mdFeProcessada.toString()), "/mdfeProc"));
+            return JasperFillManager.fillReport(in, parameters, new JRXmlDataSource(convertStringXMl2DOM(processado.toString()), "/mdfeProc"));
         }
     }
 

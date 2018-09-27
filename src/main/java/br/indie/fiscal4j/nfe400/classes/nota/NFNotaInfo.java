@@ -55,7 +55,7 @@ public class NFNotaInfo extends DFBase {
     @Element(name = "cobr", required = false)
     private NFNotaInfoCobranca cobranca;
 
-    @ElementList(entry = "pag", inline = true, required = true)
+    @ElementList(entry = "pag", inline = true)
     private List<NFNotaInfoPagamento> pagamentos;
 
     @Element(name = "infAdic", required = false)

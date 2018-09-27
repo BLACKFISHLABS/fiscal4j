@@ -2,12 +2,15 @@ package br.indie.fiscal4j.nfe400.webservices;
 
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub;
+import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeCabecMsg;
+import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeCabecMsgE;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import br.indie.fiscal4j.nfe400.classes.cadastro.NFConsultaCadastro;
 import br.indie.fiscal4j.nfe400.classes.cadastro.NFInfoConsultaCadastro;
 import br.indie.fiscal4j.nfe400.classes.cadastro.NFRetornoConsultaCadastro;
-import br.indie.fiscal4j.nfe400.webservices.consultacadastro.svrs.CadConsultaCadastro4Stub;
-import br.indie.fiscal4j.nfe400.webservices.consultacadastro.svrs.CadConsultaCadastro4Stub.ConsultaCadastro;
+import br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub;
+import br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg;
 import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
@@ -50,31 +53,24 @@ class WSConsultaCadastro {
         final String url = autorizador.getConsultaCadastro(this.config.getAmbiente());
         WSConsultaCadastro.LOG.debug(String.format("Endpoint: %s", url));
 
-        if (Arrays.asList(DFUnidadeFederativa.AC, DFUnidadeFederativa.PB, DFUnidadeFederativa.RN, DFUnidadeFederativa.RS, DFUnidadeFederativa.SC, DFUnidadeFederativa.MT).contains(uf)) {
-            final CadConsultaCadastro4Stub.NfeDadosMsg_type0 nfeDadosMsg_type0 = new CadConsultaCadastro4Stub.NfeDadosMsg_type0();
-            nfeDadosMsg_type0.setExtraElement(omElementConsulta);
+        // estados que ainda nao possuem versao 4
+        if (Arrays.asList(DFUnidadeFederativa.AM, DFUnidadeFederativa.MG, DFUnidadeFederativa.PE).contains(uf)) {
+            final CadConsultaCadastro2Stub.NfeCabecMsg cabec = new NfeCabecMsg();
+            cabec.setCUF(uf.getCodigoIbge());
+            cabec.setVersaoDados(WSConsultaCadastro.VERSAO_SERVICO);
 
-            final ConsultaCadastro consultaCadastro = new ConsultaCadastro();
-            consultaCadastro.setNfeDadosMsg(nfeDadosMsg_type0);
-            return new CadConsultaCadastro4Stub(url).consultaCadastro(consultaCadastro).getConsultaCadastroResult().getExtraElement();
-//        } else if (DFUnidadeFederativa.PE.equals(uf)) {
-//
-//            final CadConsultaCadastro2Stub.NfeCabecMsg cabec = new NfeCabecMsg();
-//            cabec.setCUF(uf.getCodigoIbge());
-//            cabec.setVersaoDados(WSConsultaCadastro.VERSAO_SERVICO);
-//
-//            final NfeCabecMsgE cabecE = new NfeCabecMsgE();
-//            cabecE.setNfeCabecMsg(cabec);
-//
-//            final NfeDadosMsg nfeDadosMsg = new NfeDadosMsg();
-//            nfeDadosMsg.setExtraElement(omElementConsulta);
-//            return new CadConsultaCadastro2Stub(url).consultaCadastro2(nfeDadosMsg, cabecE).getExtraElement();
-//
+            final NfeCabecMsgE cabecE = new NfeCabecMsgE();
+            cabecE.setNfeCabecMsg(cabec);
+
+            final br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeDadosMsg nfeDadosMsg = new br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeDadosMsg();
+            nfeDadosMsg.setExtraElement(omElementConsulta);
+            return new CadConsultaCadastro2Stub(url).consultaCadastro2(nfeDadosMsg, cabecE).getExtraElement();
         } else {
-            final br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg nfeDadosMsg_type0 = new br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub.NfeDadosMsg();
+            final NfeDadosMsg nfeDadosMsg_type0 = new NfeDadosMsg();
             nfeDadosMsg_type0.setExtraElement(omElementConsulta);
-            return new br.indie.fiscal4j.nfe400.webservices.consultacadastro.CadConsultaCadastro4Stub(url).consultaCadastro(nfeDadosMsg_type0).getExtraElement();
+            return new CadConsultaCadastro4Stub(url).consultaCadastro(nfeDadosMsg_type0).getExtraElement();
         }
+
     }
 
     private NFConsultaCadastro getDadosConsulta(final String cnpj, final DFUnidadeFederativa uf) {

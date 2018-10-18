@@ -8,7 +8,7 @@ import org.simpleframework.xml.Element;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz Informações do grupo de "encerrante"
+ * @Author Eldevan Nery Junior on 04/10/17. Informações do grupo de "encerrante"
  */
 public class NFNotaInfoItemProdutoCombustivelEncerrante extends DFBase {
     private static final long serialVersionUID = 7349316876219960529L;

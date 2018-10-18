@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
 
 /**
- * @author Jeferson Cruz
+ * @Author Eldevan Nery Junior on 01/06/17.
  * <p>
  * Classe que verifica se uma chave passada como parâmetro é valida.
  * Pode ser chamada por new {@link #NFVerificaChave(String)} e depois {@link #isChaveValida()}

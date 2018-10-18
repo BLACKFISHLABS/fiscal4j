@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações relativas aos Impostos
  */
 

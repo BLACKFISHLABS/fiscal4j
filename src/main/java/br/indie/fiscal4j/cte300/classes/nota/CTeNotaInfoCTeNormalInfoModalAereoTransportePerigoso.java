@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Preenchido quando for transporte de produtos classificados pela ONU como perigosos.<br>
  * O preenchimento desses campos não desobriga a empresa aérea de emitir os demais documentos que constam na legislação vigente.
  */

@@ -10,6 +10,7 @@ import br.indie.fiscal4j.nfe400.classes.cadastro.NFRetornoConsultaCadastro;
 import br.indie.fiscal4j.nfe400.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe400.classes.evento.cartacorrecao.NFProtocoloEventoCartaCorrecao;
 import br.indie.fiscal4j.nfe400.classes.evento.inutilizacao.NFRetornoEventoInutilizacao;
+import br.indie.fiscal4j.nfe400.classes.evento.manifestacaodestinatario.NFProtocoloEventoManifestacaoDestinatario;
 import br.indie.fiscal4j.nfe400.classes.evento.manifestacaodestinatario.NFTipoEventoManifestacaoDestinatario;
 import br.indie.fiscal4j.nfe400.classes.lote.consulta.NFLoteConsultaRetorno;
 import br.indie.fiscal4j.nfe400.classes.lote.envio.NFLoteEnvio;
@@ -250,6 +251,10 @@ public class WSFacade {
      */
     public NFEnviaEventoRetorno manifestaDestinatarioNota(final String chave, final NFTipoEventoManifestacaoDestinatario tipoEvento, final String motivo, final String cnpj) throws Exception {
         return this.wSManifestacaoDestinatario.manifestaDestinatarioNota(chave, tipoEvento, motivo, cnpj);
+    }
+
+    public NFProtocoloEventoManifestacaoDestinatario manifestaDestinatarioNotaProtocolo(final String chave, final NFTipoEventoManifestacaoDestinatario tipoEvento, final String motivo, final String cnpj) throws Exception {
+        return this.wSManifestacaoDestinatario.manifestaDestinatarioNotaProtocolo(chave, tipoEvento, motivo, cnpj);
     }
 
     /**

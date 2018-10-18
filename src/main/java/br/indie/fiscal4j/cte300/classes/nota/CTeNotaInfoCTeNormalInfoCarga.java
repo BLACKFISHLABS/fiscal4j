@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações da Carga do CT-e
  */
 

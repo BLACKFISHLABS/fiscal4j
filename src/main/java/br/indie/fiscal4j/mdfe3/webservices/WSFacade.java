@@ -22,7 +22,6 @@ import java.time.LocalDate;
 
 public class WSFacade {
 
-
     private final WSStatusConsulta wsStatusConsulta;
     private final WSRecepcaoLote wsRecepcaoLote;
     private final WSNotaConsulta wsNotaConsulta;
@@ -30,9 +29,9 @@ public class WSFacade {
     private final WSEncerramento wsEncerramento;
     private final WSConsultaRecibo wsConsultaRecibo;
     private final WSConsultaNaoEncerrados wsConsultaNaoEncerrados;
+    private final WSIncluirCondutor wsIncluirCondutor;
 
-//	private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
-
+    //	private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
     public WSFacade(final MDFeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
         this.wsStatusConsulta = new WSStatusConsulta(config);
@@ -43,6 +42,7 @@ public class WSFacade {
         this.wsEncerramento = new WSEncerramento(config);
         this.wsConsultaRecibo = new WSConsultaRecibo(config);
         this.wsConsultaNaoEncerrados = new WSConsultaNaoEncerrados(config);
+        this.wsIncluirCondutor = new WSIncluirCondutor(config);
     }
 
     /**
@@ -116,13 +116,16 @@ public class WSFacade {
     /**
      * Faz o cancelamento do MDFe
      *
-     * @param chaveAcesso     chave de acesso da nota
-     * @param numeroProtocolo numero do protocolo da nota
+     * @param chaveAcesso       chave de acesso da nota
+     * @param numeroProtocolo   numero do protocolo da nota
+     * @param codigoMunicipio   Informar o código do município do encerramento do manifesto
+     * @param dataEncerramento  Data em que o manifesto foi encerrado.
+     * @param unidadeFederativa Informar a UF de encerramento do manifesto
      * @return dados do encerramento da nota retornado pelo webservice
      * @throws Exception caso nao consiga gerar o xml ou problema de conexao com o sefaz
      */
-    public MDFeRetorno encerramento(final String chaveAcesso, final String numeroProtocolo
-            , final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
+    public MDFeRetorno encerramento(final String chaveAcesso, final String numeroProtocolo,
+                                    final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         return this.wsEncerramento.encerraMdfe(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa);
     }
 
@@ -146,6 +149,19 @@ public class WSFacade {
      */
     public MDFeConsultaNaoEncerradosRetorno consultaNaoEncerrados(final String cnpj) throws Exception {
         return this.wsConsultaNaoEncerrados.consultaNaoEncerrados(cnpj);
+    }
+
+    /**
+     * Faz a inclusão de condutor do veículo de MDF-e Rodoviário.
+     *
+     * @param chaveAcesso
+     * @param nomeCondutor
+     * @param cpfCondutor
+     * @return
+     * @throws Exception
+     */
+    public MDFeRetorno incluirCondutor(final String chaveAcesso, final String nomeCondutor, final String cpfCondutor) throws Exception {
+        return this.wsIncluirCondutor.incluirCondutor(chaveAcesso, nomeCondutor, cpfCondutor);
     }
 
 }

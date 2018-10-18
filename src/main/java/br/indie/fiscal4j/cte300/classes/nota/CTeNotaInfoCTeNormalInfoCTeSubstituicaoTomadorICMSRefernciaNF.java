@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informação da NF ou CT emitido pelo Tomador
  */
 

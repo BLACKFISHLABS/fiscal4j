@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Detalhamento de informações para o tráfego mútuo
  */
 

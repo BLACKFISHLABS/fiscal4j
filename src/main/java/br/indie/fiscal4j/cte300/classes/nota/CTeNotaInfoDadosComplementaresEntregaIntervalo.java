@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 import java.time.LocalTime;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Entrega no intervalo de horário definido
  */
 

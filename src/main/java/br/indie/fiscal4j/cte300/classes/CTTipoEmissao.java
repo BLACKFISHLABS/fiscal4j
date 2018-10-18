@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio Teodoro
  */
 public enum CTTipoEmissao {
 

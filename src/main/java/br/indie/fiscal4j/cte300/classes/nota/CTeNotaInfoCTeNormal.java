@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Grupo de informações do CT-e Normal e Substituto
  */
 

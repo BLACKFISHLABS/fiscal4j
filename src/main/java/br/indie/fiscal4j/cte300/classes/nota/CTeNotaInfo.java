@@ -8,7 +8,7 @@ import org.simpleframework.xml.*;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações do CT-e
  */
 

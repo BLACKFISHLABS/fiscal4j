@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações de identificação dos documentos de Transporte Anterior
  */
 

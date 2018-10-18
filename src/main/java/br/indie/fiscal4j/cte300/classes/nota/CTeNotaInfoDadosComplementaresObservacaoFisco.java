@@ -7,7 +7,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Campo de uso livre do contribuinte
  */
 

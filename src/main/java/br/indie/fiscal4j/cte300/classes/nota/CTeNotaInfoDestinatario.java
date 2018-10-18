@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações do Destinatário do CT-e<br>
  * Só pode ser omitido em caso de redespacho intermediário
  */

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.def;
 
 /**
- * @author Jeferson Cruz
+ * @Author Eldevan Nery Junior on 30/05/17.
  */
 public enum MDFTipoEmitente {
 

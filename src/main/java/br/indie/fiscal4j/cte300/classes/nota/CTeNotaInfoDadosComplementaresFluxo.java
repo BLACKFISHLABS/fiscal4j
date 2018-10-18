@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Previsão do fluxo da carga<br>
  * Preenchimento obrigatório para o modal aéreo.
  */

@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações do ICMS de partilha com a UF de término do serviço de transporte na operação interestadual<br>
  * Grupo a ser informado nas prestações interestaduais para consumidor final, não contribuinte do ICMS
  */

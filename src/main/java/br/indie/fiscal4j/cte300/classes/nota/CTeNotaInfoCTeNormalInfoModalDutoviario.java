@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações do modal Dutoviário
  */
 

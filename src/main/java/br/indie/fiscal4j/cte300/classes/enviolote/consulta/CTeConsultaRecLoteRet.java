@@ -7,7 +7,7 @@ import org.simpleframework.xml.*;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tipo Retorno do Pedido de Consulta do Recibo do Lote de CT-e
  */
 

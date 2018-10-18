@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Dados da cobrança do CT-e
  */
 

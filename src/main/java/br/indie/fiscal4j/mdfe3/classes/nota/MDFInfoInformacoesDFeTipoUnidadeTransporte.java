@@ -6,7 +6,6 @@ import org.simpleframework.xml.ElementList;
 
 import java.util.List;
 
-
 /**
  * Created by Eldevan Nery Junior on 06/11/17.
  * <p>
@@ -41,5 +40,45 @@ public class MDFInfoInformacoesDFeTipoUnidadeTransporte {
 
     @Element(name = "qtdRat")
     private String qtdRateada;
+
+    public MDFTipoUnidadeTransporte getTipoUnidadeTransporte() {
+        return tipoUnidadeTransporte;
+    }
+
+    public void setTipoUnidadeTransporte(MDFTipoUnidadeTransporte tipoUnidadeTransporte) {
+        this.tipoUnidadeTransporte = tipoUnidadeTransporte;
+    }
+
+    public String getIdUnidTransp() {
+        return idUnidTransp;
+    }
+
+    public void setIdUnidTransp(String idUnidTransp) {
+        this.idUnidTransp = idUnidTransp;
+    }
+
+    public List<MDFInfoLacre1A20> getLacUnidTransp() {
+        return lacUnidTransp;
+    }
+
+    public void setLacUnidTransp(List<MDFInfoLacre1A20> lacUnidTransp) {
+        this.lacUnidTransp = lacUnidTransp;
+    }
+
+    public List<MDFInfoInformacoesDFeTipoUnidadeCarga> getInfUnidCarga() {
+        return infUnidCarga;
+    }
+
+    public void setInfUnidCarga(List<MDFInfoInformacoesDFeTipoUnidadeCarga> infUnidCarga) {
+        this.infUnidCarga = infUnidCarga;
+    }
+
+    public String getQtdRateada() {
+        return qtdRateada;
+    }
+
+    public void setQtdRateada(String qtdRateada) {
+        this.qtdRateada = qtdRateada;
+    }
 
 }

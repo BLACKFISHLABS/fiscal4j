@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações do Remetente das mercadorias transportadas pelo CT-e<br>
  * Poderá não ser informado para os CT-e de redespacho intermediário e serviço vinculado a multimodal. Nos demais casos deverá sempre ser informado.
  */

@@ -8,7 +8,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Conjunto de CT-es processados, só existe nos casos em que o lote consultado se encontra processado
  */
 

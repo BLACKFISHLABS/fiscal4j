@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
 import java.time.LocalDateTime;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Identificação do CT-e
  */
 

@@ -8,7 +8,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tipo Pedido de Consulta do Recibo do Lote de CT-e
  */
 

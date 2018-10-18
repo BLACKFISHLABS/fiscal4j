@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tomador é contribuinte do ICMS, mas não é emitente de documento fiscal eletrônico
  */
 

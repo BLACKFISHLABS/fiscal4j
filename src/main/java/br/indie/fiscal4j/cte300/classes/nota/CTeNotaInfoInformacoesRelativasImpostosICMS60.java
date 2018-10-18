@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tributação pelo ICMS60 - ICMS cobrado por substituição tributária. Responsabilidade do recolhimento do ICMS atribuído ao tomador ou 3º por ST
  */
 

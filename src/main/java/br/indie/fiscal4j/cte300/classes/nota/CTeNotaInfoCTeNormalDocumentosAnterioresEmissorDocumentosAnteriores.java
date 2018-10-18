@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Emissor do documento anterior
  */
 

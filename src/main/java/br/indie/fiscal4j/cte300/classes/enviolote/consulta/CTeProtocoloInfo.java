@@ -8,7 +8,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tipo Protocolo de status resultado do processamento da CT-e<br>
  * Dados do protocolo de status
  */

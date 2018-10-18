@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 import java.time.LocalDate;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Detalhamento do CT-e do tipo Anulação
  */
 

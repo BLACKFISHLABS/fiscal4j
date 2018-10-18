@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Prestação sujeito à tributação com redução de BC do ICMS
  */
 

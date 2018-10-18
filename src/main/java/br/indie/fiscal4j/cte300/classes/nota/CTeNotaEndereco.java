@@ -6,7 +6,7 @@ import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Dados do endereço
  */
 

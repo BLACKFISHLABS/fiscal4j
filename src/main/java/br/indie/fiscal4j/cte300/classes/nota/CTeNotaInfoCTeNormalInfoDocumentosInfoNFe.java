@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @Info Informações das NF-e
  */
 

@@ -8,5 +8,7 @@
 * NF-e
 * NFC-e
 * MDF-e
+* CC-e
+* CT-e
 
 Este projeto visa permitir emissão simples e rápida de documentos fiscais eletrônicos em Java

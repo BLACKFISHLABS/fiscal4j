@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações dos documentos transportados pelo CT-e Opcional para Redespacho Intermediario e Serviço vinculado a multimodal.<br>
  * Poderá não ser informado para os CT-e de redespacho intermediário. Nos demais casos deverá sempre ser informado.
  */

@@ -9,7 +9,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tipo Retorno do Pedido de Concessão de Autorização da CT-e
  */
 

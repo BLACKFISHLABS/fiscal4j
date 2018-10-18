@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações das Unidades de Transporte (Carreta/Reboque/Vagão)<br>
  * Deve ser preenchido com as informações das unidades de transporte utilizadas.
  */

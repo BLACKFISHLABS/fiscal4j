@@ -6,7 +6,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Entrega sem data definida<br>
  * Esta opção é proibida para o modal aéreo.
  */

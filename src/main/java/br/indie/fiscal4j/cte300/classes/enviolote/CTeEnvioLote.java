@@ -9,7 +9,7 @@ import org.simpleframework.xml.*;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Tipo Pedido de Concessão de Autorização da CT-e
  */
 

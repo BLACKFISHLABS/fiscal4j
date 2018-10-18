@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Autorizados para download do XML do DF-e<br>
  * Informar CNPJ ou CPF. Preencher os zeros não significativos.
  */

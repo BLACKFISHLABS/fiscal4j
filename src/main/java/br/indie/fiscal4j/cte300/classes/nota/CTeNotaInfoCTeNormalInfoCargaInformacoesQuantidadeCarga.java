@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações de quantidades da Carga do CT-e<br>
  * Para o Aéreo é obrigatório o preenchimento desse campo da seguinte forma.<br>
  * 1 - Peso Bruto, sempre em quilogramas (obrigatório);<br>

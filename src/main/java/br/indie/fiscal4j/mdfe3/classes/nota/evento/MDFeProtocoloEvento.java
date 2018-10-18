@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
 
 import java.math.BigDecimal;
 
-@Root(name = "eventoMDFe")
+@Root(name = "procEventoMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFeProtocoloEvento extends DFBase {
     private static final long serialVersionUID = 8849959763700133248L;

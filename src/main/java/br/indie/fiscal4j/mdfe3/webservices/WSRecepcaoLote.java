@@ -6,8 +6,8 @@ import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetorno;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
+import br.indie.fiscal4j.mdfe3.classes.parsers.MDFeParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub;
-import br.indie.fiscal4j.parsers.DFParser;
 import br.indie.fiscal4j.persister.DFPersister;
 import br.indie.fiscal4j.validadores.xsd.XMLValidador;
 import org.apache.axiom.om.OMElement;
@@ -34,7 +34,7 @@ class WSRecepcaoLote {
     public MDFEnvioLoteRetornoDados envioRecepcao(MDFEnvioLote mdfeRecepcaoLote) throws Exception {
         //assina o lote
         final String documentoAssinado = new AssinaturaDigital(this.config).assinarDocumento(mdfeRecepcaoLote.toString(), "infMDFe");
-        final MDFEnvioLote loteAssinado = new DFParser().mdfeRecepcaoParaObjeto(documentoAssinado);
+        final MDFEnvioLote loteAssinado = new MDFeParser().mdfeRecepcaoParaObjeto(documentoAssinado);
 
         //comunica o lote
         final MDFEnvioLoteRetorno retorno = comunicaLote(documentoAssinado);

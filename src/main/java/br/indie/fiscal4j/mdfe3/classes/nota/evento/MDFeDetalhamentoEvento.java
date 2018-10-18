@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * Created by Eldevan Nery Junior on 17/11/17.
  */
 public class MDFeDetalhamentoEvento extends DFBase {
+
     private static final long serialVersionUID = 4567286592593410285L;
 
     @Attribute(name = "versaoEvento")
@@ -28,6 +29,9 @@ public class MDFeDetalhamentoEvento extends DFBase {
 
     @Element(name = "evEncMDFe", required = false)
     private MDFeEnviaEventoEncerramento enviaEventoEncerramento;
+
+    @Element(name = "evIncCondutorMDFe", required = false)
+    private MDFeEnviaEventoIncluirCondutor enviaEventoIncluirCondutor;
 
     public String getVersaoEvento() {
         return this.versaoEvento;
@@ -68,4 +72,13 @@ public class MDFeDetalhamentoEvento extends DFBase {
     public void setEnviaEventoEncerramento(final MDFeEnviaEventoEncerramento enviaEventoEncerramento) {
         this.enviaEventoEncerramento = enviaEventoEncerramento;
     }
+
+    public MDFeEnviaEventoIncluirCondutor getEnviaEventoIncluirCondutor() {
+        return enviaEventoIncluirCondutor;
+    }
+
+    public void setEnviaEventoIncluirCondutor(MDFeEnviaEventoIncluirCondutor enviaEventoIncluirCondutor) {
+        this.enviaEventoIncluirCondutor = enviaEventoIncluirCondutor;
+    }
+
 }

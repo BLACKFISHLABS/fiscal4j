@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigInteger;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Dados do Recibo do Lote
  */
 

@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * @author Jeferson Cruz
+ * @author Caio
  * @info Informações das NF<br>
  * Este grupo deve ser informado quando o documento originário for NF
  */

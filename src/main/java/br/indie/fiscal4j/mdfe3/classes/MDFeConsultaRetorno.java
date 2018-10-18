@@ -13,7 +13,7 @@ import org.simpleframework.xml.Root;
 import java.time.LocalDateTime;
 
 /**
- * @author Jeferson Cruz
+ * @Author Eldevan Nery Junior on 26/05/17.
  */
 @Root(name = "retConsReciMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")

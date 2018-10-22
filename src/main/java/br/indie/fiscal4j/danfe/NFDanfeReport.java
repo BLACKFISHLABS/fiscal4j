@@ -106,7 +106,7 @@ public class NFDanfeReport {
                     nota.getNota().getInfo().getIdentificacao().getUf().getQrCodeProducao());
 
             parameters.put("DATA_EMISSAO", DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").format(nota.getNota().getInfo().getIdentificacao().getDataHoraEmissao()));
-            parameters.put("DATA_RECEBIMENTO", nota.getProtocolo().getProtocoloInfo().getDataRecebimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+            parameters.put("DATA_RECEBIMENTO", DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").format(nota.getProtocolo().getProtocoloInfo().getDataRecebimento()));
 
             return JasperFillManager.fillReport(in, parameters, new JRBeanArrayDataSource(new Object[]{nota}));
         }

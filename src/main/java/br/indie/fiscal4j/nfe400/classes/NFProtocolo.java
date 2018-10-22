@@ -12,7 +12,7 @@ public class NFProtocolo extends DFBase {
     @Attribute(name = "versao", required = true)
     private String versao;
 
-    @Element(name = "infProt", required = true)
+    @Element(name = "infProt", required = false)
     private NFProtocoloInfo protocoloInfo;
 
     public void setVersao(final String versao) {

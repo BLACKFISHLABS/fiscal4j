@@ -5,7 +5,7 @@
 
 ## Projeto para emissão de documentos fiscais eletrônicos, visando geração, assinatura e transmissão de documentos ###
 
-| Documtno Fiscal     | Status         |
+| Documento Fiscal    | Status         |
 | ------------------- | :------------: |
 | NF-e                | OK             |
 | NFC-e               | OK             |

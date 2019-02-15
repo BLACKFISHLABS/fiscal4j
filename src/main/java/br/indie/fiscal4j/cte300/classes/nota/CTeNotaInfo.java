@@ -19,16 +19,19 @@ public class CTeNotaInfo extends DFBase {
 
     public static final String IDENT = "CTe";
 
-    @Attribute(name = "Id", required = true)
+    @Attribute(name = "Id")
     private String identificador;
 
-    @Element(name = "ide", required = true)
+    @Attribute(name = "versao")
+    private String versao;
+
+    @Element(name = "ide")
     private CTeNotaInfoIdentificacao identificacao;
 
     @Element(name = "compl", required = false)
     private CTeNotaInfoDadosComplementares dadosComplementares;
 
-    @Element(name = "emit", required = true)
+    @Element(name = "emit")
     private CTeNotaInfoEmitente emitente;
 
     @Element(name = "rem", required = false)
@@ -43,10 +46,10 @@ public class CTeNotaInfo extends DFBase {
     @Element(name = "dest", required = false)
     private CTeNotaInfoDestinatario destinatario;
 
-    @Element(name = "vPrest", required = true)
+    @Element(name = "vPrest")
     private CTeNotaInfoValorPrestacaoServico valorPrestacaoServico;
 
-    @Element(name = "imp", required = true)
+    @Element(name = "imp")
     private CTeNotaInfoInformacoesRelativasImpostos informacoesRelativasImpostos;
 
     @Element(name = "infCTeNorm", required = false)
@@ -61,8 +64,8 @@ public class CTeNotaInfo extends DFBase {
     @ElementList(name = "autXML", inline = true, required = false)
     private List<CTeNotaInfoAutorizacaoDownload> autorizacaoDownload;
 
-    @Attribute(name = "versao", required = true)
-    private String versao;
+    @Element(name = "infRespTec", required = false)
+    private CTeNotaInfoResponsavelTecnico informacaoResposavelTecnico;
 
     public CTeNotaInfo() {
         this.identificacao = null;
@@ -262,4 +265,12 @@ public class CTeNotaInfo extends DFBase {
         this.versao = versao;
     }
 
+    public CTeNotaInfoResponsavelTecnico getInformacaoResposavelTecnico() {
+        return informacaoResposavelTecnico;
+    }
+
+    public CTeNotaInfo setInformacaoResposavelTecnico(CTeNotaInfoResponsavelTecnico informacaoResposavelTecnico) {
+        this.informacaoResposavelTecnico = informacaoResposavelTecnico;
+        return this;
+    }
 }

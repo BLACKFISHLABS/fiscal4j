@@ -62,7 +62,7 @@ public class CTeConsultaRecLote extends DFBase {
 
     /**
      *
-     * */
+     */
     public void setVersao(final String versao) {
         this.versao = versao;
     }

@@ -153,7 +153,7 @@ public class CTeProtocoloInfo extends DFBase {
 
     /**
      *
-     * */
+     */
     public void setId(final String id) {
         this.id = id;
     }

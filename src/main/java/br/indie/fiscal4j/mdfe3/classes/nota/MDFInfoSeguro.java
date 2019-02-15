@@ -7,15 +7,12 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 07/12/17. Informações de Seguro da Carga.
  */
 @Root(name = "seg")
-@XmlAccessorType(XmlAccessType.FIELD)
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoSeguro extends DFBase {
 

@@ -136,7 +136,7 @@ public class CTeConsultaRecLoteRet extends DFBase {
 
     /**
      *
-     * */
+     */
     public void setVersao(final String versao) {
         this.versao = versao;
     }

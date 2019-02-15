@@ -79,7 +79,7 @@ public class CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadas extend
 
     /**
      *
-     * */
+     */
     public void setOrdemColetaAssociadasEmi(final CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadasEmi ordemColetaAssociadasEmi) {
         this.ordemColetaAssociadasEmi = ordemColetaAssociadasEmi;
     }

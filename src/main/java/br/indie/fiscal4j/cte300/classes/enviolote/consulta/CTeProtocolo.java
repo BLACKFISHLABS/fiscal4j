@@ -49,7 +49,7 @@ public class CTeProtocolo extends DFBase {
 
     /**
      *
-     * */
+     */
     public void setSignature(final CTeSignature signature) {
         this.signature = signature;
     }
@@ -60,7 +60,7 @@ public class CTeProtocolo extends DFBase {
 
     /**
      *
-     * */
+     */
     public void setVersao(final String versao) {
         this.versao = versao;
     }

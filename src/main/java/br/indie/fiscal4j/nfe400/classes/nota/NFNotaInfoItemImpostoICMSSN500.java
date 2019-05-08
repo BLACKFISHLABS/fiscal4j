@@ -47,6 +47,9 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
     @Element(name = "vICMSEfet", required = false)
     private String valorICMSEfetivo;
 
+    @Element(name = "vICMSSubstituto", required = false)
+    private String valorICMSSubstituto;
+
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
     }
@@ -98,6 +101,10 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
         this.valorICMSEfetivo = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSEfetivo, "Valor ICMS efetivo");
     }
 
+    public void setValorICMSSubstituto(BigDecimal valorICMSSubstituto) {
+        this.valorICMSSubstituto = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSSubstituto, "Valor ICMS substituto");
+    }
+
     public NFOrigem getOrigem() {
         return this.origem;
     }
@@ -144,5 +151,9 @@ public class NFNotaInfoItemImpostoICMSSN500 extends DFBase {
 
     public String getValorICMSEfetivo() {
         return this.valorICMSEfetivo;
+    }
+
+    public String getValorICMSSubstituto() {
+        return valorICMSSubstituto;
     }
 }

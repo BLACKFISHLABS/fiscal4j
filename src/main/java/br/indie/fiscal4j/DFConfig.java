@@ -97,4 +97,17 @@ public abstract class DFConfig {
     public TimeZone getTimeZone() {
         return TimeZone.getDefault();
     }
+
+    /**
+     * Código de Segurança do Responsável Técnico - CSRT(NT 2018.005)
+     *
+     * @return
+     * @see <a href="http://www.nfe.fazenda.gov.br/portal/informe.aspx?ehCTG=false&Informe=hDS5co/qWOc="> Informativo(acessado em 10/04/19 às 11:30)</a>
+     * <a href="http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=j/im9zMlcIE=">  Baixar PDF(acessado em 10/04/19 às 11:30) </a>
+     */
+    public String getCSRT() {
+        return "";
+    }
+
+    ;
 }

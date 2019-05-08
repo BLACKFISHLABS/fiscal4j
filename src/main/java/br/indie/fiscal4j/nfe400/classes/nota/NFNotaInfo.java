@@ -70,6 +70,9 @@ public class NFNotaInfo extends DFBase {
     @Element(name = "cana", required = false)
     private NFNotaInfoCana cana;
 
+    @Element(name = "infRespTec", required = false)
+    private NFNotaInfoResponsavelTecnico informacaoResposavelTecnico;
+
     /**
      * Pega a chave de acesso a partir do identificador.
      *
@@ -167,6 +170,11 @@ public class NFNotaInfo extends DFBase {
         this.pagamentos = pagamentos;
     }
 
+    public NFNotaInfo setInformacaoResposavelTecnico(NFNotaInfoResponsavelTecnico informacaoResposavelTecnico) {
+        this.informacaoResposavelTecnico = informacaoResposavelTecnico;
+        return this;
+    }
+
     public String getVersao() {
         return this.versao;
     }
@@ -225,5 +233,9 @@ public class NFNotaInfo extends DFBase {
 
     public NFNotaInfoCana getCana() {
         return this.cana;
+    }
+
+    public NFNotaInfoResponsavelTecnico getInformacaoResposavelTecnico() {
+        return this.informacaoResposavelTecnico;
     }
 }

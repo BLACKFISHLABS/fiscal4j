@@ -7,9 +7,8 @@ import br.indie.fiscal4j.DFConfig;
  */
 public abstract class NFeConfig extends DFConfig {
 
-    public static final String VERSAO = "4.00";
-
     public static final String NAMESPACE = "http://www.portalfiscal.inf.br/nfe";
+    public static final String VERSAO = "4.00";
 
     /**
      * ID de contribuinte, somente para NFCe.

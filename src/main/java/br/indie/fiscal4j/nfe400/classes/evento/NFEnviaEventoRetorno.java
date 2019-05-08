@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.evento;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.nfe400.converters.StringNullConverter;
+import br.indie.fiscal4j.nfe400.converters.NFStringNullToEmptyConverter;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -21,7 +21,7 @@ public class NFEnviaEventoRetorno extends DFBase {
 
     // O Converter StringNullConverter esta sendo utilizado para resolver um problema da autorizadora SVAN, que esta retornandoo atributo idLote vazio.
     @Element(name = "idLote", required = true)
-    @Convert(StringNullConverter.class)
+    @Convert(NFStringNullToEmptyConverter.class)
     private String idLote;
 
     @Element(name = "tpAmb", required = true)
@@ -39,7 +39,7 @@ public class NFEnviaEventoRetorno extends DFBase {
     @Element(name = "xMotivo", required = true)
     private String motivo;
 
-    @ElementList(entry = "retEvento", inline = true, required = true)
+    @ElementList(entry = "retEvento", inline = true, required = false)
     private List<NFEventoRetorno> eventoRetorno;
 
     public String getVersao() {

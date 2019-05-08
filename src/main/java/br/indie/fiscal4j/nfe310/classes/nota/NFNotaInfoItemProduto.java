@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.NFProdutoCompoeValorNota;
-import br.indie.fiscal4j.nfe310.converters.StringNullConverter;
+import br.indie.fiscal4j.nfe310.converters.NFStringNullToEmptyConverter;
 import br.indie.fiscal4j.validadores.BigDecimalParser;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
@@ -22,7 +22,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     private String codigo;
 
     @Element(name = "cEAN", required = false)
-    @Convert(StringNullConverter.class)
+    @Convert(NFStringNullToEmptyConverter.class)
     private String codigoDeBarras;
 
     @Element(name = "xProd", required = true)
@@ -56,7 +56,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     private String valorTotalBruto;
 
     @Element(name = "cEANTrib", required = false)
-    @Convert(StringNullConverter.class)
+    @Convert(NFStringNullToEmptyConverter.class)
     private String codigoDeBarrasTributavel;
 
     @Element(name = "uTrib", required = true)

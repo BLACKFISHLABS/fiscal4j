@@ -1,5 +1,6 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
@@ -11,21 +12,16 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.NfeConsulta2Stub;
 import br.indie.fiscal4j.nfe310.webservices.gerado.NfeConsulta2Stub.NfeConsultaNF2Result;
 import br.indie.fiscal4j.nfe310.webservices.nota.consulta.NfeConsultaStub;
 import br.indie.fiscal4j.nfe310.webservices.nota.consulta.NfeConsultaStub.NfeConsultaNFResult;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 
-class WSNotaConsulta {
+class WSNotaConsulta implements DFLog {
+
     private static final String NOME_SERVICO = "CONSULTAR";
     private static final String VERSAO_SERVICO = "3.10";
-    private final static Logger LOGGER = LoggerFactory.getLogger(WSNotaConsulta.class);
     private final NFeConfig config;
 
     WSNotaConsulta(final NFeConfig config) {
@@ -34,11 +30,12 @@ class WSNotaConsulta {
 
     NFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(chaveDeAcesso).toString());
-        WSNotaConsulta.LOGGER.debug(omElementConsulta.toString());
+        this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementRetorno = this.efetuaConsulta(omElementConsulta, chaveDeAcesso);
-        WSNotaConsulta.LOGGER.debug(omElementRetorno.toString());
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(NFNotaConsultaRetorno.class, omElementRetorno.toString());
+        this.getLogger().debug(omElementRetorno.toString());
+
+        return this.config.getPersister().read(NFNotaConsultaRetorno.class, omElementRetorno.toString());
     }
 
     private OMElement efetuaConsulta(final OMElement omElementConsulta, final String chaveDeAcesso) throws Exception {
@@ -50,7 +47,6 @@ class WSNotaConsulta {
         } else {
             return this.efetuaConsultaSVRS(omElementConsulta, chaveDeAcesso);
         }
-
     }
 
     private OMElement efetuaConsultaSVRS(final OMElement omElementConsulta, final String chaveDeAcesso) throws RemoteException {

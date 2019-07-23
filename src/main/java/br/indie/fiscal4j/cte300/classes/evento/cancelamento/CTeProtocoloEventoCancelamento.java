@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.evento.CTeEventoRetorno;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -15,10 +15,10 @@ import java.math.BigDecimal;
 public class CTeProtocoloEventoCancelamento extends DFBase {
     private static final long serialVersionUID = -5921322695285609605L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "eventoCTe", required = true)
+    @Element(name = "eventoCTe")
     private CTeEventoCancelamento evento;
 
     @Element(name = "retEventoCTe", required = false)
@@ -29,7 +29,7 @@ public class CTeProtocoloEventoCancelamento extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public CTeEventoCancelamento getEvento() {

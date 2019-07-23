@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.BigIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -12,13 +12,13 @@ import java.math.BigInteger;
 public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     private static final long serialVersionUID = 2911935204123851926L;
 
-    @Element(name = "nRE", required = true)
+    @Element(name = "nRE")
     private BigInteger numeroRegistroExportacao;
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chaveAcessoNFe;
 
-    @Element(name = "qExport", required = true)
+    @Element(name = "qExport")
     private String quantidadeItemEfetivamenteExportado;
 
     public void setChaveAcessoNFe(final String chaveAcessoNFe) {
@@ -32,7 +32,7 @@ public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     }
 
     public void setQuantidadeItemEfetivamenteExportado(final BigDecimal quantidadeItemEfetivamenteExportado) {
-        this.quantidadeItemEfetivamenteExportado = BigDecimalParser.tamanho15comAte4CasasDecimais(quantidadeItemEfetivamenteExportado, "Quantidade Item Evetivamente Exportado");
+        this.quantidadeItemEfetivamenteExportado = BigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeItemEfetivamenteExportado, "Quantidade Item Evetivamente Exportado");
     }
 
     public String getChaveAcessoNFe() {

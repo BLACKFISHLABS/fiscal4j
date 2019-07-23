@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -11,19 +11,19 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemImpostoISSQN extends DFBase {
     private static final long serialVersionUID = 5303195667632685433L;
 
-    @Element(name = "vBC", required = true)
+    @Element(name = "vBC")
     private String valorBaseCalculo;
 
-    @Element(name = "vAliq", required = true)
+    @Element(name = "vAliq")
     private String valorAliquota;
 
-    @Element(name = "vISSQN", required = true)
+    @Element(name = "vISSQN")
     private String valor;
 
-    @Element(name = "cMunFG", required = true)
+    @Element(name = "cMunFG")
     private Integer codigoMunicipio;
 
-    @Element(name = "cListServ", required = true)
+    @Element(name = "cListServ")
     private String itemListaServicos;
 
     @Element(name = "vDeducao", required = false)
@@ -41,7 +41,7 @@ public class NFNotaInfoItemImpostoISSQN extends DFBase {
     @Element(name = "vISSRet", required = false)
     private String valorRetencaoISS;
 
-    @Element(name = "indISS", required = true)
+    @Element(name = "indISS")
     private NFNotaInfoItemIndicadorExigibilidadeISS indicadorExigibilidadeISS;
 
     @Element(name = "cServico", required = false)
@@ -56,19 +56,19 @@ public class NFNotaInfoItemImpostoISSQN extends DFBase {
     @Element(name = "nProcesso", required = false)
     private String numeroProcesso;
 
-    @Element(name = "indIncentivo", required = true)
+    @Element(name = "indIncentivo")
     private NFNotaInfoItemIndicadorIncentivoFiscal indicadorIncentivoFiscal;
 
     public void setValorBaseCalculo(final BigDecimal valorBaseCalculo) {
-        this.valorBaseCalculo = BigDecimalParser.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC ISSQN Item");
+        this.valorBaseCalculo = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBaseCalculo, "Valor BC ISSQN Item");
     }
 
     public void setValorAliquota(final BigDecimal valorAliquota) {
-        this.valorAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(valorAliquota, "Valor Aliquota ISSQN Item");
+        this.valorAliquota = BigDecimalValidador.tamanho7ComAte4CasasDecimais(valorAliquota, "Valor Aliquota ISSQN Item");
     }
 
     public void setValor(final BigDecimal valor) {
-        this.valor = BigDecimalParser.tamanho15Com2CasasDecimais(valor, "Valor ISSQN Item");
+        this.valor = BigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor ISSQN Item");
     }
 
     public void setCodigoMunicipio(final Integer codigoMunicipio) {
@@ -110,23 +110,23 @@ public class NFNotaInfoItemImpostoISSQN extends DFBase {
     }
 
     public void setValorDeducao(final BigDecimal valorDeducao) {
-        this.valorDeducao = BigDecimalParser.tamanho15Com2CasasDecimais(valorDeducao, "Valor Deducao ISSQN Item");
+        this.valorDeducao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDeducao, "Valor Deducao ISSQN Item");
     }
 
     public void setValorDescontoCondicionado(final BigDecimal valorDescontoCondicionado) {
-        this.valorDescontoCondicionado = BigDecimalParser.tamanho15Com2CasasDecimais(valorDescontoCondicionado, "Valor Desconto Condicionado ISSQN Item");
+        this.valorDescontoCondicionado = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDescontoCondicionado, "Valor Desconto Condicionado ISSQN Item");
     }
 
     public void setValorDescontoIncondicionado(final BigDecimal valorDescontoIncondicionado) {
-        this.valorDescontoIncondicionado = BigDecimalParser.tamanho15Com2CasasDecimais(valorDescontoIncondicionado, "Valor Desconto Incondicionado ISSQN Item");
+        this.valorDescontoIncondicionado = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDescontoIncondicionado, "Valor Desconto Incondicionado ISSQN Item");
     }
 
     public void setValorOutro(final BigDecimal valorOutro) {
-        this.valorOutro = BigDecimalParser.tamanho15Com2CasasDecimais(valorOutro, "Valor Outro ISSQN Item");
+        this.valorOutro = BigDecimalValidador.tamanho15Com2CasasDecimais(valorOutro, "Valor Outro ISSQN Item");
     }
 
     public void setValorRetencaoISS(final BigDecimal valorRetencaoISS) {
-        this.valorRetencaoISS = BigDecimalParser.tamanho15Com2CasasDecimais(valorRetencaoISS, "Valor Retencao ISS ISSQN Item");
+        this.valorRetencaoISS = BigDecimalValidador.tamanho15Com2CasasDecimais(valorRetencaoISS, "Valor Retencao ISS ISSQN Item");
     }
 
     public String getValorBaseCalculo() {

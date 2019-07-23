@@ -5,9 +5,7 @@ import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import java.time.ZonedDateTime;
 
 public class NFProtocoloInfo extends DFBase {
     private static final long serialVersionUID = -7256753142051587115L;
@@ -15,17 +13,17 @@ public class NFProtocoloInfo extends DFBase {
     @Attribute(name = "Id", required = false)
     private String identificador;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chave;
 
-    @Element(name = "dhRecbto", required = true)
-    private String dataRecebimento;
+    @Element(name = "dhRecbto")
+    private ZonedDateTime dataRecebimento;
 
     @Element(name = "nProt", required = false)
     private String numeroProtocolo;
@@ -33,10 +31,10 @@ public class NFProtocoloInfo extends DFBase {
     @Element(name = "digVal", required = false)
     private String validador;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String status;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
     public void setAmbiente(final DFAmbiente ambiente) {
@@ -51,7 +49,7 @@ public class NFProtocoloInfo extends DFBase {
         this.chave = chave;
     }
 
-    public void setDataRecebimento(final String dataRecebimento) {
+    public void setDataRecebimento(final ZonedDateTime dataRecebimento) {
         this.dataRecebimento = dataRecebimento;
     }
 
@@ -83,14 +81,8 @@ public class NFProtocoloInfo extends DFBase {
         return this.chave;
     }
 
-    public LocalDateTime getDataRecebimento() {
-        try {
-            return LocalDateTime.parse(this.dataRecebimento, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
-        } catch (final Exception e) {
-            return LocalDateTime.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX")
-                    .parse(this.dataRecebimento))
-                    .atZone(ZoneId.systemDefault()).toLocalDateTime();
-        }
+    public ZonedDateTime getDataRecebimento() {
+        return this.dataRecebimento;
     }
 
     public String getNumeroProtocolo() {

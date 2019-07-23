@@ -9,7 +9,7 @@ import java.util.List;
 public class CTInfoCarga extends DFBase {
     private static final long serialVersionUID = -3650773992643903547L;
 
-    @Element(name = "vCarga", required = true)
+    @Element(name = "vCarga")
     private String valorTotalCarga;
 
     @Element(name = "proPred")

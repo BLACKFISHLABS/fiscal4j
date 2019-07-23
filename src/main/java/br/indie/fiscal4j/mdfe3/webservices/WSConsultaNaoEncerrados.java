@@ -1,29 +1,23 @@
 package br.indie.fiscal4j.mdfe3.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
 import br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados.MDFeConsultaNaoEncerrados;
 import br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados.MDFeConsultaNaoEncerradosRetorno;
 import br.indie.fiscal4j.mdfe3.webservices.consultanaoencerrado.MDFeConsNaoEncStub;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
 /**
  * Created by Eldevan Nery Junior on 22/11/17.
- * <p>
- * Classe para envio do pedido de Consulta  do Serviço de  MDF-e's não encerrados.
+ * Classe para envio do pedido de Consulta  do Servico de  MDF-e's nao encerrados.
  */
-class WSConsultaNaoEncerrados {
+class WSConsultaNaoEncerrados implements DFLog {
 
     private static final String NOME_SERVICO = "CONSULTAR NÃO ENCERRADOS";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSConsultaNaoEncerrados.class);
     private final MDFeConfig config;
 
     WSConsultaNaoEncerrados(final MDFeConfig config) {
@@ -32,12 +26,12 @@ class WSConsultaNaoEncerrados {
 
     MDFeConsultaNaoEncerradosRetorno consultaNaoEncerrados(final String cnpj) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(cnpj).toString());
-        WSConsultaNaoEncerrados.LOGGER.info(omElementConsulta.toString());
+        this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementResult = this.efetuaConsultaStatus(omElementConsulta);
-        WSConsultaNaoEncerrados.LOGGER.info(omElementResult.toString());
+        this.getLogger().debug(omElementResult.toString());
 
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(MDFeConsultaNaoEncerradosRetorno.class, omElementResult.toString());
+        return this.config.getPersister().read(MDFeConsultaNaoEncerradosRetorno.class, omElementResult.toString());
     }
 
     private MDFeConsultaNaoEncerrados gerarDadosConsulta(final String cnpj) {
@@ -63,9 +57,9 @@ class WSConsultaNaoEncerrados {
         final MDFAutorizador3 autorizador = MDFAutorizador3.valueOfCodigoUF(this.config.getCUF());
         final String endpoint = autorizador.getMDFeConsNaoEnc(this.config.getAmbiente());
         if (endpoint == null) {
-            throw new IllegalArgumentException("Nao foi possivel encontrar URL para CONSULTAR NÃO ENCERRADOS, autorizador " + autorizador.name() + ", UF " + this.config.getCUF().name());
+            throw new IllegalArgumentException("Nao foi possivel encontrar URL para CONSULTAR NAO ENCERRADOS, autorizador " + autorizador.name() + ", UF " + this.config.getCUF().name());
         }
-        WSConsultaNaoEncerrados.LOGGER.info(endpoint);
+        this.getLogger().debug(endpoint);
         final MDFeConsNaoEncStub.MdfeConsNaoEncResult result = new MDFeConsNaoEncStub(endpoint).mdfeConsNaoEnc(dados, cabecEnv);
         return result.getExtraElement();
     }

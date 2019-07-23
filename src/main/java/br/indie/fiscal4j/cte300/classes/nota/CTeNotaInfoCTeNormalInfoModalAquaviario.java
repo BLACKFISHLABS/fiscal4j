@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoDirecao;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -23,13 +23,13 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
     private static final long serialVersionUID = 7558858837552378617L;
 
-    @Element(name = "vPrest", required = true)
+    @Element(name = "vPrest")
     private String valorPrestacao;
 
-    @Element(name = "vAFRMM", required = true)
+    @Element(name = "vAFRMM")
     private String valorAdicionalFrete;
 
-    @Element(name = "xNavio", required = true)
+    @Element(name = "xNavio")
     private String identificacaoNavio;
 
     @ElementList(name = "balsa", inline = true, required = false)
@@ -38,10 +38,10 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
     @Element(name = "nViag", required = false)
     private String numeroViagem;
 
-    @Element(name = "direc", required = true)
+    @Element(name = "direc")
     private CTTipoDirecao direcao;
 
-    @Element(name = "irin", required = true)
+    @Element(name = "irin")
     private String irin;
 
     @ElementList(name = "detCont", inline = true, required = false)
@@ -66,7 +66,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Valor da Prestação Base de Cálculo do AFRMM
      */
     public void setValorPrestacao(final BigDecimal valorPrestacao) {
-        this.valorPrestacao = BigDecimalParser.tamanho15Com2CasasDecimais(valorPrestacao, "Valor da Prestação Base de Cálculo do AFRMM");
+        this.valorPrestacao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorPrestacao, "Valor da Prestação Base de Cálculo do AFRMM");
     }
 
     public String getValorAdicionalFrete() {
@@ -77,7 +77,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * AFRMM (Adicional de Frete para Renovação da Marinha Mercante)
      */
     public void setValorAdicionalFrete(final BigDecimal valorAdicionalFrete) {
-        this.valorAdicionalFrete = BigDecimalParser.tamanho15Com2CasasDecimais(valorAdicionalFrete, "AFRMM (Adicional de Frete para Renovação da Marinha Mercante)");
+        this.valorAdicionalFrete = BigDecimalValidador.tamanho15Com2CasasDecimais(valorAdicionalFrete, "AFRMM (Adicional de Frete para Renovação da Marinha Mercante)");
     }
 
     public String getIdentificacaoNavio() {

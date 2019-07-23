@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.consulta;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -29,7 +29,7 @@ public class MDFeNotaConsulta extends DFBase {
     private String chave;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
     }
 
     public void setAmbiente(final DFAmbiente ambiente) {

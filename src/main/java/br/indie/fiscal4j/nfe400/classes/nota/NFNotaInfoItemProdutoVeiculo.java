@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.*;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -114,11 +114,11 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setPesoLiquido(final BigDecimal pesoLiquido) {
-        this.pesoLiquido = BigDecimalParser.tamanho9Com4CasasDecimais(pesoLiquido, "Peso Liquido Veiculo");
+        this.pesoLiquido = BigDecimalValidador.tamanho9Com4CasasDecimais(pesoLiquido, "Peso Liquido Veiculo");
     }
 
     public void setPesoBruto(final BigDecimal pesoBruto) {
-        this.pesoBruto = BigDecimalParser.tamanho9Com4CasasDecimais(pesoBruto, "Peso Bruto Veiculo");
+        this.pesoBruto = BigDecimalValidador.tamanho9Com4CasasDecimais(pesoBruto, "Peso Bruto Veiculo");
     }
 
     public void setNumeroSerie(final String numeroSerie) {
@@ -136,7 +136,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setCapacidadeMaximaTracao(final BigDecimal capacidadeMaximaTracao) {
-        this.capacidadeMaximaTracao = BigDecimalParser.tamanho9Com4CasasDecimais(capacidadeMaximaTracao, "Capacidade Maxima Tracao Veiculo");
+        this.capacidadeMaximaTracao = BigDecimalValidador.tamanho9Com4CasasDecimais(capacidadeMaximaTracao, "Capacidade Maxima Tracao Veiculo");
     }
 
     public void setDistanciaEntreEixos(final String distanciaEntreEixos) {

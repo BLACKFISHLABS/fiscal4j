@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -55,11 +55,11 @@ public class NFNotaInfoVolume extends DFBase {
     }
 
     public void setPesoLiquido(final BigDecimal pesoLiquido) {
-        this.pesoLiquido = BigDecimalParser.tamanho15Com3CasasDecimais(pesoLiquido, "Peso Liquido Volume");
+        this.pesoLiquido = BigDecimalValidador.tamanho15Com3CasasDecimais(pesoLiquido, "Peso Liquido Volume");
     }
 
     public void setPesoBruto(final BigDecimal pesoBruto) {
-        this.pesoBruto = BigDecimalParser.tamanho15Com3CasasDecimais(pesoBruto, "Peso Bruto Volume");
+        this.pesoBruto = BigDecimalValidador.tamanho15Com3CasasDecimais(pesoBruto, "Peso Bruto Volume");
     }
 
     public void setLacres(final List<NFNotaInfoLacre> lacres) {

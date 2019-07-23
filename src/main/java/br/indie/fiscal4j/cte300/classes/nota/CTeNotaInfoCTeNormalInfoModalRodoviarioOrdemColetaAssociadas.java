@@ -21,13 +21,13 @@ public class CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadas extend
     @Element(name = "serie", required = false)
     private String serie;
 
-    @Element(name = "nOcc", required = true)
+    @Element(name = "nOcc")
     private String numeroOrdemColeta;
 
-    @Element(name = "dEmi", required = true)
+    @Element(name = "dEmi")
     private LocalDate dataEmissao;
 
-    @Element(name = "emiOcc", required = true)
+    @Element(name = "emiOcc")
     private CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadasEmi ordemColetaAssociadasEmi;
 
     public CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadas() {

@@ -22,7 +22,7 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
     @Element(name = "qSelo", required = false)
     private BigInteger quantidadeSelo;
 
-    @Element(name = "cEnq", required = true)
+    @Element(name = "cEnq")
     private String codigoEnquadramento;
 
     @Element(name = "IPITrib", required = false)

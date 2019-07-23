@@ -1,30 +1,24 @@
 package br.indie.fiscal4j.mdfe3.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
 import br.indie.fiscal4j.mdfe3.classes.consultastatusservico.MDFeConsStatServ;
 import br.indie.fiscal4j.mdfe3.classes.consultastatusservico.MDFeConsStatServRet;
 import br.indie.fiscal4j.mdfe3.webservices.statusservico.MDFeStatusServicoStub;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
 /**
  * Created by Eldevan Nery Junior on 10/11/17.
- * <p>
- * Classe para envio do pedido de Consulta do Status do Serviço MDF-e.
+ * Classe para envio do pedido de Consulta do Status do Servico MDF-e.
  */
-class WSStatusConsulta {
+class WSStatusConsulta implements DFLog {
 
     private static final String NOME_SERVICO = "STATUS";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSStatusConsulta.class);
     private final MDFeConfig config;
 
     WSStatusConsulta(final MDFeConfig config) {
@@ -32,18 +26,18 @@ class WSStatusConsulta {
     }
 
     MDFeConsStatServRet consultaStatus(final DFUnidadeFederativa uf) throws Exception {
-        final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(uf).toString());
-        WSStatusConsulta.LOGGER.info(omElementConsulta.toString());
+        final OMElement omElementConsulta = AXIOMUtil.stringToOM(gerarDadosConsulta(this.config).toString());
+        this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementResult = this.efetuaConsultaStatus(omElementConsulta, uf);
-        WSStatusConsulta.LOGGER.info(omElementResult.toString());
+        this.getLogger().debug(omElementResult.toString());
 
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(MDFeConsStatServRet.class, omElementResult.toString());
+        return this.config.getPersister().read(MDFeConsStatServRet.class, omElementResult.toString());
     }
 
-    private MDFeConsStatServ gerarDadosConsulta(final DFUnidadeFederativa unidadeFederativa) {
+    private static MDFeConsStatServ gerarDadosConsulta(final MDFeConfig config) {
         final MDFeConsStatServ consStatServ = new MDFeConsStatServ();
-        consStatServ.setAmbiente(this.config.getAmbiente());
+        consStatServ.setAmbiente(config.getAmbiente());
         consStatServ.setVersao(MDFeConfig.VERSAO);
         consStatServ.setServico(WSStatusConsulta.NOME_SERVICO);
         return consStatServ;
@@ -65,7 +59,6 @@ class WSStatusConsulta {
         if (endpoint == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para StatusServico, autorizador " + autorizador.name() + ", UF " + unidadeFederativa.name());
         }
-        WSStatusConsulta.LOGGER.info(endpoint);
         final MDFeStatusServicoStub.MdfeStatusServicoMDFResult result = new MDFeStatusServicoStub(endpoint).mdfeStatusServicoMDF(dados, cabecEnv);
         return result.getExtraElement();
     }

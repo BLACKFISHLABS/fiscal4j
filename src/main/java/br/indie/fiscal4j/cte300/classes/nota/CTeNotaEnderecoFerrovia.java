@@ -16,28 +16,28 @@ import org.simpleframework.xml.Root;
 public class CTeNotaEnderecoFerrovia extends DFBase {
     private static final long serialVersionUID = -3577887454042477166L;
 
-    @Element(name = "xLgr", required = true)
+    @Element(name = "xLgr")
     private String logradouro;
 
-    @Element(name = "nro", required = true)
+    @Element(name = "nro")
     private String numero;
 
     @Element(name = "xCpl", required = false)
     private String complemento;
 
-    @Element(name = "xBairro", required = true)
+    @Element(name = "xBairro")
     private String bairro;
 
-    @Element(name = "cMun", required = true)
+    @Element(name = "cMun")
     private String codigoMunicipio;
 
-    @Element(name = "xMun", required = true)
+    @Element(name = "xMun")
     private String descricaoMunicipio;
 
     @Element(name = "CEP", required = false)
     private String cep;
 
-    @Element(name = "UF", required = true)
+    @Element(name = "UF")
     private String siglaUF;
 
     public CTeNotaEnderecoFerrovia() {

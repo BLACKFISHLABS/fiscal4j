@@ -13,10 +13,10 @@ import org.simpleframework.xml.Root;
 public class MDFProtocolo extends DFBase {
     private static final long serialVersionUID = 7056704602846442462L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infProt", required = true)
+    @Element(name = "infProt")
     private MDFProtocoloInfo protocoloInfo;
 
     @Element(name = "Signature", required = false)

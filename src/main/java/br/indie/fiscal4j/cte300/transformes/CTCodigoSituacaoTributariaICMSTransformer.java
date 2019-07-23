@@ -7,14 +7,11 @@ public class CTCodigoSituacaoTributariaICMSTransformer implements Transform<CTCo
 
     @Override
     public CTCodigoSituacaoTributariaICMS read(String arg0) {
-        // TODO Auto-generated method stub
         return CTCodigoSituacaoTributariaICMS.valueOfCodigo(arg0);
     }
 
     @Override
     public String write(CTCodigoSituacaoTributariaICMS arg0) {
-        // TODO Auto-generated method stub
         return arg0.getCodigo();
     }
-
 }

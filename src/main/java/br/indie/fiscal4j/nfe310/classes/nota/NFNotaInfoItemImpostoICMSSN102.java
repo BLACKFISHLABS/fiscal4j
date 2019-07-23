@@ -8,10 +8,10 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoItemImpostoICMSSN102 extends DFBase {
     private static final long serialVersionUID = 8991323254446222797L;
 
-    @Element(name = "orig", required = true)
+    @Element(name = "orig")
     private NFOrigem origem;
 
-    @Element(name = "CSOSN", required = true)
+    @Element(name = "CSOSN")
     private NFNotaSituacaoOperacionalSimplesNacional situacaoOperacaoSN;
 
     public void setOrigem(final NFOrigem origem) {

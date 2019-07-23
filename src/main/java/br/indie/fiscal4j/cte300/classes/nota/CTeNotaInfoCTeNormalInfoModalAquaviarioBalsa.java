@@ -16,7 +16,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoModalAquaviarioBalsa extends DFBase {
     private static final long serialVersionUID = -1451896642980692340L;
 
-    @Element(name = "xBalsa", required = true)
+    @Element(name = "xBalsa")
     private String descricao;
 
     public CTeNotaInfoCTeNormalInfoModalAquaviarioBalsa() {

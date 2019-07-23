@@ -14,7 +14,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoDadosComplementaresEntregaSemHoraDefinida extends DFBase {
     private static final long serialVersionUID = 8715534516011562469L;
 
-    @Element(name = "tpHor", required = true)
+    @Element(name = "tpHor")
     private CTTipoPrazoHoraEntrega tipoPrazoHoraEntrega;
 
     public CTeNotaInfoDadosComplementaresEntregaSemHoraDefinida() {

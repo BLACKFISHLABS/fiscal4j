@@ -16,13 +16,13 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoModalMultiModalSeguro extends DFBase {
     private static final long serialVersionUID = -866058288053801394L;
 
-    @Element(name = "infSeg", required = true)
+    @Element(name = "infSeg")
     private CTeNotaInfoCTeNormalInfoModalMultiModalSeguroInfo info;
 
-    @Element(name = "nApol", required = true)
+    @Element(name = "nApol")
     private String apolice;
 
-    @Element(name = "nAver", required = true)
+    @Element(name = "nAver")
     private String averbacao;
 
     public CTeNotaInfoCTeNormalInfoModalMultiModalSeguro() {

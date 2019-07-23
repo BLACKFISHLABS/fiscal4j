@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 public class CTe extends DFBase {
     private static final long serialVersionUID = 3664459758546162479L;
 
-    @Element(name = "infCte", required = true)
+    @Element(name = "infCte")
     private CTInfo infCte;
 
     @Element(name = "Signature", required = false)

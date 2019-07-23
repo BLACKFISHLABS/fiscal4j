@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -33,6 +33,6 @@ public class NFNotaInfoPagamento extends DFBase {
     }
 
     public void setValorTroco(final BigDecimal valorTroco) {
-        this.valorTroco = BigDecimalParser.tamanho15Com2CasasDecimais(valorTroco, "Valor troco");
+        this.valorTroco = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTroco, "Valor troco");
     }
 }

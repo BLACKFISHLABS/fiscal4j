@@ -23,7 +23,7 @@ public class CTeProtocolo extends DFBase {
     @Element(name = "Signature", required = false)
     private CTeSignature signature;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
     public CTeProtocolo() {

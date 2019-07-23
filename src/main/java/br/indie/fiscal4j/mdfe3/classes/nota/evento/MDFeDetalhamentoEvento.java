@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.nota.evento.cancelamento.MDFeEnviaEventoCancelamento;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -38,7 +38,7 @@ public class MDFeDetalhamentoEvento extends DFBase {
     }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "versao do Evento");
+        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "versao do Evento");
     }
 
     public MDFeEnviaEventoCancelamento getMdFeEnviaEventoCancelamento() {

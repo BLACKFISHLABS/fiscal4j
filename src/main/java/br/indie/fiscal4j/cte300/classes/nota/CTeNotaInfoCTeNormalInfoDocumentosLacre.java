@@ -16,7 +16,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoDocumentosLacre extends DFBase {
     private static final long serialVersionUID = 4668372748009297086L;
 
-    @Element(name = "nLacre", required = true)
+    @Element(name = "nLacre")
     private String numeroLacre;
 
     public CTeNotaInfoCTeNormalInfoDocumentosLacre() {

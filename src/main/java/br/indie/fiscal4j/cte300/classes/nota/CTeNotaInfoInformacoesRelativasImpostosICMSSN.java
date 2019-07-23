@@ -16,10 +16,10 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoInformacoesRelativasImpostosICMSSN extends DFBase {
     private static final long serialVersionUID = 1210311076425869818L;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private CTCodigoSituacaoTributariaICMS codigoSituacaoTributaria;
 
-    @Element(name = "indSN", required = true)
+    @Element(name = "indSN")
     private String indicadorSN;
 
     public CTeNotaInfoInformacoesRelativasImpostosICMSSN() {

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -25,7 +25,7 @@ public class NFNotaInfoISSQNTotal extends DFBase {
     @Element(name = "vCOFINS", required = false)
     private String valorCOFINSsobreServicos;
 
-    @Element(name = "dCompet", required = true)
+    @Element(name = "dCompet")
     private LocalDate dataPrestacaoServico;
 
     @Element(name = "vDeducao", required = false)
@@ -47,23 +47,23 @@ public class NFNotaInfoISSQNTotal extends DFBase {
     private NFNotaInfoRegimeEspecialTributacao tributacao;
 
     public void setValorTotalServicosSobNaoIncidenciaNaoTributadosICMS(final BigDecimal valorTotalServicosSobNaoIncidenciaNaoTributadosICMS) {
-        this.valorTotalServicosSobNaoIncidenciaNaoTributadosICMS = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalServicosSobNaoIncidenciaNaoTributadosICMS, "Valor Total Servicos Sob Nao Incidencia Nao Tributados ICMS");
+        this.valorTotalServicosSobNaoIncidenciaNaoTributadosICMS = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalServicosSobNaoIncidenciaNaoTributadosICMS, "Valor Total Servicos Sob Nao Incidencia Nao Tributados ICMS");
     }
 
     public void setBaseCalculoISS(final BigDecimal baseCalculoISS) {
-        this.baseCalculoISS = BigDecimalParser.tamanho15Com2CasasDecimais(baseCalculoISS, "Base de Calculo ISS Total");
+        this.baseCalculoISS = BigDecimalValidador.tamanho15Com2CasasDecimais(baseCalculoISS, "Base de Calculo ISS Total");
     }
 
     public void setValorTotalISS(final BigDecimal valorTotalISS) {
-        this.valorTotalISS = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalISS, "Valor Total ISS");
+        this.valorTotalISS = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalISS, "Valor Total ISS");
     }
 
     public void setValorPISsobreServicos(final BigDecimal valorPISsobreServicos) {
-        this.valorPISsobreServicos = BigDecimalParser.tamanho15Com2CasasDecimais(valorPISsobreServicos, "Valor Total PIS Sobre Servicos");
+        this.valorPISsobreServicos = BigDecimalValidador.tamanho15Com2CasasDecimais(valorPISsobreServicos, "Valor Total PIS Sobre Servicos");
     }
 
     public void setValorCOFINSsobreServicos(final BigDecimal valorCOFINSsobreServicos) {
-        this.valorCOFINSsobreServicos = BigDecimalParser.tamanho15Com2CasasDecimais(valorCOFINSsobreServicos, "Valor Total COFINS Sobre Servicos");
+        this.valorCOFINSsobreServicos = BigDecimalValidador.tamanho15Com2CasasDecimais(valorCOFINSsobreServicos, "Valor Total COFINS Sobre Servicos");
     }
 
     public void setDataPrestacaoServico(final LocalDate dataPrestacaoServico) {
@@ -71,7 +71,7 @@ public class NFNotaInfoISSQNTotal extends DFBase {
     }
 
     public void setValorDeducao(final BigDecimal valorDeducao) {
-        this.valorDeducao = BigDecimalParser.tamanho15Com2CasasDecimais(valorDeducao, "Valor Total Deducao");
+        this.valorDeducao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDeducao, "Valor Total Deducao");
     }
 
     public void setTributacao(final NFNotaInfoRegimeEspecialTributacao tributacao) {
@@ -79,19 +79,19 @@ public class NFNotaInfoISSQNTotal extends DFBase {
     }
 
     public void setValorOutros(final BigDecimal valorOutros) {
-        this.valorOutros = BigDecimalParser.tamanho15Com2CasasDecimais(valorOutros, "Valor Total Outros");
+        this.valorOutros = BigDecimalValidador.tamanho15Com2CasasDecimais(valorOutros, "Valor Total Outros");
     }
 
     public void setValorTotalDescontoCondicionado(final BigDecimal valorTotalDescontoCondicionado) {
-        this.valorTotalDescontoCondicionado = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalDescontoCondicionado, "Valor Total Desconto Condicionado");
+        this.valorTotalDescontoCondicionado = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalDescontoCondicionado, "Valor Total Desconto Condicionado");
     }
 
     public void setValorTotalDescontoIncondicionado(final BigDecimal valorTotalDescontoIncondicionado) {
-        this.valorTotalDescontoIncondicionado = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalDescontoIncondicionado, "Valor Total Desconto Incondicionado");
+        this.valorTotalDescontoIncondicionado = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalDescontoIncondicionado, "Valor Total Desconto Incondicionado");
     }
 
     public void setValorTotalRetencaoISS(final BigDecimal valorTotalRetencaoISS) {
-        this.valorTotalRetencaoISS = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalRetencaoISS, "Valor Total Retencao ISS");
+        this.valorTotalRetencaoISS = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalRetencaoISS, "Valor Total Retencao ISS");
     }
 
     public String getValorTotalServicosSobNaoIncidenciaNaoTributadosICMS() {

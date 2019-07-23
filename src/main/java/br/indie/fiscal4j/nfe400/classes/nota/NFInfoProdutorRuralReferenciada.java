@@ -9,10 +9,10 @@ import org.simpleframework.xml.Element;
 public class NFInfoProdutorRuralReferenciada extends DFBase {
     private static final long serialVersionUID = -2718285687811273188L;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa ufEmitente;
 
-    @Element(name = "AAMM", required = true)
+    @Element(name = "AAMM")
     private String anoMesEmissao;
 
     @Element(name = "CNPJ", required = false)
@@ -21,16 +21,16 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
     @Element(name = "CPF", required = false)
     private String cpfEmitente;
 
-    @Element(name = "IE", required = true)
+    @Element(name = "IE")
     private String ieEmitente;
 
-    @Element(name = "mod", required = true)
+    @Element(name = "mod")
     private String modeloDocumentoFiscal;
 
-    @Element(name = "serie", required = true)
+    @Element(name = "serie")
     private Integer serieDocumentoFiscal;
 
-    @Element(name = "nNF", required = true)
+    @Element(name = "nNF")
     private Integer numeroDocumentoFiscal;
 
     public void setUfEmitente(final DFUnidadeFederativa ufEmitente) {

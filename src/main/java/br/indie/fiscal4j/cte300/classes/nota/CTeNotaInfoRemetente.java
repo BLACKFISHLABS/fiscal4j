@@ -26,7 +26,7 @@ public class CTeNotaInfoRemetente extends DFBase {
     @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
     @Element(name = "xFant", required = false)
@@ -35,7 +35,7 @@ public class CTeNotaInfoRemetente extends DFBase {
     @Element(name = "fone", required = false)
     private String telefone;
 
-    @Element(name = "enderReme", required = true)
+    @Element(name = "enderReme")
     private CTeNotaEndereco endereco;
 
     @Element(name = "email", required = false)

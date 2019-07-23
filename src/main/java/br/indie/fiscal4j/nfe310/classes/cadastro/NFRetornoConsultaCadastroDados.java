@@ -5,23 +5,20 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 public class NFRetornoConsultaCadastroDados extends DFBase {
+
     private static final long serialVersionUID = -7130690235919558202L;
 
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String statusResposta;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
     @Element(name = "UF", required = false)
@@ -37,9 +34,9 @@ public class NFRetornoConsultaCadastroDados extends DFBase {
     private String cpf;
 
     @Element(name = "dhCons", required = false)
-    private String dataHoraProcessamento;
+    private ZonedDateTime dataHoraProcessamento;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa ufAutorizadora;
 
     @ElementList(inline = true, entry = "infCad", required = false)
@@ -101,18 +98,12 @@ public class NFRetornoConsultaCadastroDados extends DFBase {
         this.cpf = cpf;
     }
 
-    public LocalDateTime getDataHoraProcessamento() {
-        try {
-            return LocalDateTime.parse(this.dataHoraProcessamento, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
-        } catch (final Exception e) {
-            return LocalDateTime.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX")
-                    .parse(this.dataHoraProcessamento))
-                    .atZone(ZoneId.systemDefault()).toLocalDateTime();
-        }
+    public ZonedDateTime getDataHoraProcessamento() {
+        return this.dataHoraProcessamento;
     }
 
-    public void setDataHoraProcessamento(final LocalDateTime dataHoraProcessamento) {
-        this.dataHoraProcessamento = NFRetornoConsultaCadastroDados.DATE_FORMATTER.format(dataHoraProcessamento);
+    public void setDataHoraProcessamento(final ZonedDateTime dataHoraProcessamento) {
+        this.dataHoraProcessamento = dataHoraProcessamento;
     }
 
     public DFUnidadeFederativa getUfAutorizadora() {

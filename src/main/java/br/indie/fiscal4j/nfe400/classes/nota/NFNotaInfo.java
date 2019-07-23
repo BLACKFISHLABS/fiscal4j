@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.nfe400.classes.NFTipo;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
@@ -16,16 +17,16 @@ public class NFNotaInfo extends DFBase {
 
     public static final String IDENT = "NFe";
 
-    @Attribute(name = "Id", required = true)
+    @Attribute(name = "Id")
     private String identificador;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "ide", required = true)
+    @Element(name = "ide")
     private NFNotaInfoIdentificacao identificacao;
 
-    @Element(name = "emit", required = true)
+    @Element(name = "emit")
     private NFNotaInfoEmitente emitente;
 
     @Element(name = "avulsa", required = false)
@@ -43,13 +44,13 @@ public class NFNotaInfo extends DFBase {
     @ElementList(entry = "autXML", inline = true, required = false)
     private List<NFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe;
 
-    @ElementList(entry = "det", inline = true, required = true)
+    @ElementList(entry = "det", inline = true)
     private List<NFNotaInfoItem> itens;
 
-    @Element(name = "total", required = true)
+    @Element(name = "total")
     private NFNotaInfoTotal total;
 
-    @Element(name = "transp", required = true)
+    @Element(name = "transp")
     private NFNotaInfoTransporte transporte;
 
     @Element(name = "cobr", required = false)
@@ -92,7 +93,7 @@ public class NFNotaInfo extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public NFNotaInfoIdentificacao getIdentificacao() {
@@ -237,5 +238,13 @@ public class NFNotaInfo extends DFBase {
 
     public NFNotaInfoResponsavelTecnico getInformacaoResposavelTecnico() {
         return this.informacaoResposavelTecnico;
+    }
+
+    @Override
+    public String toString() {
+        if (this.getDestinatario() != null && this.getIdentificacao() != null && this.getDestinatario().getIndicadorIEDestinatario().equals(NFIndicadorIEDestinatario.NAO_CONTRIBUINTE) && this.getIdentificacao().getOperacaoConsumidorFinal().equals(NFOperacaoConsumidorFinal.NAO) && this.getIdentificacao().getTipo().equals(NFTipo.SAIDA) && !this.getIdentificacao().getIdentificadorLocalDestinoOperacao().equals(NFIdentificadorLocalDestinoOperacao.OPERACAO_COM_EXTERIOR)) {
+            throw new IllegalStateException("Opera\u00E7\u00E3o com n\u00E3o contribuinte deve indicar opera\u00E7\u00E3o com consumidor final");
+        }
+        return super.toString();
     }
 }

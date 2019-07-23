@@ -12,7 +12,7 @@ import java.util.List;
 public class NFNotaInfoTransporte extends DFBase {
     private static final long serialVersionUID = 1172316192774549031L;
 
-    @Element(name = "modFrete", required = true)
+    @Element(name = "modFrete")
     private NFModalidadeFrete modalidadeFrete;
 
     @Element(name = "transporta", required = false)

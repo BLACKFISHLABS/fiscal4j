@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
@@ -14,17 +14,17 @@ import java.util.List;
 public class NFEnviaEventoCancelamento extends DFBase {
     private static final long serialVersionUID = 2370103749912669480L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "idLote", required = true)
+    @Element(name = "idLote")
     private String idLote;
 
-    @ElementList(entry = "evento", inline = true, required = true)
+    @ElementList(entry = "evento", inline = true)
     private List<NFEventoCancelamento> evento;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public String getVersao() {

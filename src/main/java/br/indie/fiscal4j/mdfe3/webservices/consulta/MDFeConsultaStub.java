@@ -32,7 +32,7 @@ public class MDFeConsultaStub extends org.apache.axis2.client.Stub {
             MDFeConsultaStub.counter = 0;
         }
         MDFeConsultaStub.counter = MDFeConsultaStub.counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + MDFeConsultaStub.counter;
+        return System.currentTimeMillis() + "_" + MDFeConsultaStub.counter;
     }
 
     private void populateAxisService() {
@@ -1688,9 +1688,6 @@ public class MDFeConsultaStub extends org.apache.axis2.client.Stub {
             }
             if (br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeConsultaMDFResult.class.equals(type)) {
                 return br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeConsultaMDFResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-            }
-            if (br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeCabecMsgE.class.equals(type)) {
-                return br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
             if (br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeCabecMsgE.class.equals(type)) {
                 return br.indie.fiscal4j.mdfe3.webservices.consulta.MDFeConsultaStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());

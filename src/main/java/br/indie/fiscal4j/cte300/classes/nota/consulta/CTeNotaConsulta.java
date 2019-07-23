@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota.consulta;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -16,20 +16,20 @@ import java.math.BigDecimal;
 public class CTeNotaConsulta extends DFBase {
     private static final long serialVersionUID = 402162498360517770L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "xServ", required = true)
+    @Element(name = "xServ")
     private String servico;
 
-    @Element(name = "chCTe", required = true)
+    @Element(name = "chCTe")
     private String chave;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
     }
 
     public void setAmbiente(final DFAmbiente ambiente) {

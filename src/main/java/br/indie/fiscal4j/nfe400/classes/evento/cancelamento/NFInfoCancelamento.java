@@ -7,10 +7,10 @@ import org.simpleframework.xml.Element;
 public class NFInfoCancelamento extends NFTipoEvento {
     private static final long serialVersionUID = 7427073073940993756L;
 
-    @Element(name = "nProt", required = true)
+    @Element(name = "nProt")
     private String protocoloAutorizacao;
 
-    @Element(name = "xJust", required = true)
+    @Element(name = "xJust")
     private String justificativa;
 
     public void setJustificativa(final String justificativa) {

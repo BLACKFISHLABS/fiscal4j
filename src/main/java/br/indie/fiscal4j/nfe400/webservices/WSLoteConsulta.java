@@ -1,5 +1,6 @@
 package br.indie.fiscal4j.nfe400.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
@@ -7,20 +8,14 @@ import br.indie.fiscal4j.nfe400.classes.lote.consulta.NFLoteConsulta;
 import br.indie.fiscal4j.nfe400.classes.lote.consulta.NFLoteConsultaRetorno;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeRetAutorizacao4Stub;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeRetAutorizacao4Stub.NfeResultMsg;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 
-class WSLoteConsulta {
+class WSLoteConsulta implements DFLog {
 
-    final private static Logger LOGGER = LoggerFactory.getLogger(WSLoteConsulta.class);
     private final NFeConfig config;
 
     WSLoteConsulta(final NFeConfig config) {
@@ -29,12 +24,12 @@ class WSLoteConsulta {
 
     NFLoteConsultaRetorno consultaLote(final String numeroRecibo, final DFModelo modelo) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(numeroRecibo).toString());
-        WSLoteConsulta.LOGGER.debug(omElementConsulta.toString());
+        this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementResult = this.efetuaConsulta(omElementConsulta, modelo);
-        WSLoteConsulta.LOGGER.debug(omElementResult.toString());
+        this.getLogger().debug(omElementResult.toString());
 
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(NFLoteConsultaRetorno.class, omElementResult.toString());
+        return this.config.getPersister().read(NFLoteConsultaRetorno.class, omElementResult.toString());
     }
 
     private OMElement efetuaConsulta(final OMElement omElement, final DFModelo modelo) throws RemoteException {

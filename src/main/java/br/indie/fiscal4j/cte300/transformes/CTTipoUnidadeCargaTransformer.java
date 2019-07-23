@@ -7,14 +7,11 @@ public class CTTipoUnidadeCargaTransformer implements Transform<CTTipoUnidadeCar
 
     @Override
     public CTTipoUnidadeCarga read(String arg0) {
-        // TODO Auto-generated method stub
         return CTTipoUnidadeCarga.valueOfCodigo(arg0);
     }
 
     @Override
     public String write(CTTipoUnidadeCarga arg0) {
-        // TODO Auto-generated method stub
         return arg0.getCodigo();
     }
-
 }

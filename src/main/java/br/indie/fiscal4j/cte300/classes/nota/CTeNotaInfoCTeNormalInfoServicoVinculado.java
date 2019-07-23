@@ -17,7 +17,7 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoServicoVinculado extends DFBase {
     private static final long serialVersionUID = -2130925317280973601L;
 
-    @ElementList(name = "infCTeMultimodal", inline = true, required = true)
+    @ElementList(name = "infCTeMultimodal", inline = true)
     private List<CTeNotaInfoCTeNormalInfoServicoVinculadoInfoCTeMultiModal> infoCTeMultiModal;
 
     public CTeNotaInfoCTeNormalInfoServicoVinculado() {

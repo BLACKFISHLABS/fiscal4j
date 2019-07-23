@@ -12,22 +12,22 @@ import java.time.LocalDateTime;
 public class NFRetornoInfoCancelamento extends DFBase {
     private static final long serialVersionUID = -6506326636846776612L;
 
-    @Attribute(name = "ID", required = false)
+    @Attribute(name = "Id", required = false)
     private String identificador;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String codigoStatus;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa uf;
 
     @Element(name = "chNFe", required = false)

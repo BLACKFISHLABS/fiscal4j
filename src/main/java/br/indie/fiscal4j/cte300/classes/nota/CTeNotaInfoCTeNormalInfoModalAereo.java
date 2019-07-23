@@ -26,13 +26,13 @@ public class CTeNotaInfoCTeNormalInfoModalAereo extends DFBase {
     @Element(name = "nOCA", required = false)
     private String numOperConhecimentoaereo;
 
-    @Element(name = "dPrevAereo", required = true)
+    @Element(name = "dPrevAereo")
     private LocalDate dataEntrega;
 
-    @Element(name = "natCarga", required = true)
+    @Element(name = "natCarga")
     private CTeNotaInfoCTeNormalInfoModalAereoNaturezaCarga naturezaCarga;
 
-    @Element(name = "tarifa", required = true)
+    @Element(name = "tarifa")
     private CTeNotaInfoCTeNormalInfoModalAereoTarifa tarifa;
 
     @ElementList(name = "peri", inline = true, required = false)

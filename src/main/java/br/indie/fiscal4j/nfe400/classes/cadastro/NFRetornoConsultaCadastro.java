@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 public class NFRetornoConsultaCadastro extends DFBase {
     private static final long serialVersionUID = 3536099917870161262L;
 
-    @Attribute(name = "versao")
+    @Attribute(name = "versao", required = false)
     private String versao;
 
     @Element(name = "tpAmb", required = false)

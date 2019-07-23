@@ -7,7 +7,7 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoItemImpostoCOFINSNaoTributavel extends DFBase {
     private static final long serialVersionUID = -478795766582725560L;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private NFNotaInfoSituacaoTributariaCOFINS situacaoTributaria;
 
     public NFNotaInfoItemImpostoCOFINSNaoTributavel() {

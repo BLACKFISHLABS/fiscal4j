@@ -1,5 +1,6 @@
 package br.indie.fiscal4j.nfe400.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
@@ -7,20 +8,14 @@ import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import br.indie.fiscal4j.nfe400.classes.statusservico.consulta.NFStatusServicoConsulta;
 import br.indie.fiscal4j.nfe400.classes.statusservico.consulta.NFStatusServicoConsultaRetorno;
 import br.indie.fiscal4j.nfe400.webservices.statusservico.consulta.NfeStatusServico4Stub;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
-class WSStatusConsulta {
+class WSStatusConsulta implements DFLog {
 
     private static final String NOME_SERVICO = "STATUS";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSStatusConsulta.class);
     private final NFeConfig config;
 
     WSStatusConsulta(final NFeConfig config) {
@@ -29,12 +24,12 @@ class WSStatusConsulta {
 
     NFStatusServicoConsultaRetorno consultaStatus(final DFUnidadeFederativa uf, final DFModelo modelo) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(uf).toString());
-        WSStatusConsulta.LOGGER.debug(omElementConsulta.toString());
+        this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementResult = this.efetuaConsultaStatus(omElementConsulta, uf, modelo);
-        WSStatusConsulta.LOGGER.debug(omElementResult.toString());
+        this.getLogger().debug(omElementResult.toString());
 
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(NFStatusServicoConsultaRetorno.class, omElementResult.toString());
+        return this.config.getPersister().read(NFStatusServicoConsultaRetorno.class, omElementResult.toString());
     }
 
     private NFStatusServicoConsulta gerarDadosConsulta(final DFUnidadeFederativa unidadeFederativa) {

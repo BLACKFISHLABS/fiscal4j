@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -19,10 +19,10 @@ import java.math.BigDecimal;
 public class CTeNotaInfoValorPrestacaoServicoComponentesValorPrestacao extends DFBase {
     private static final long serialVersionUID = -8330894109802841158L;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String nomeComponente;
 
-    @Element(name = "vComp", required = true)
+    @Element(name = "vComp")
     private String valorComponente;
 
     public CTeNotaInfoValorPrestacaoServicoComponentesValorPrestacao() {
@@ -51,6 +51,6 @@ public class CTeNotaInfoValorPrestacaoServicoComponentesValorPrestacao extends D
      * Valor do componente
      */
     public void setValorComponente(final BigDecimal valorComponente) {
-        this.valorComponente = BigDecimalParser.tamanho15Com2CasasDecimais(valorComponente, "Valor do componente");
+        this.valorComponente = BigDecimalValidador.tamanho15Com2CasasDecimais(valorComponente, "Valor do componente");
     }
 }

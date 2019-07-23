@@ -4,12 +4,10 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.*;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
-import br.indie.fiscal4j.validadores.xsd.XMLValidador;
+import br.indie.fiscal4j.validadores.XMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.simpleframework.xml.core.Persister;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.BufferedReader;
@@ -55,9 +53,8 @@ public class WSDistribuicaoNFe {
 
             final NFeDistribuicaoDFeSoapStub stub = new NFeDistribuicaoDFeSoapStub(NFAutorizador31.AN.getNFeDistribuicaoDFe(this.config.getAmbiente()));
             final NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresseResponse result = stub.nfeDistDFeInteresse(distDFeInteresse);
-            final String resultadoConsulta = result.getNFeDistDFeInteresseResult().getExtraElement().toString();
 
-            return new Persister(new DFRegistryMatcher()).read(NFDistribuicaoIntRetorno.class, resultadoConsulta);
+            return this.config.getPersister().read(NFDistribuicaoIntRetorno.class, result.getNFeDistDFeInteresseResult().getExtraElement().toString());
         } catch (RemoteException | XMLStreamException e) {
             throw new Exception(e.getMessage());
         }

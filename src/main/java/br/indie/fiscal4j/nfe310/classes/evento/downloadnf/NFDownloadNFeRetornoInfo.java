@@ -8,13 +8,13 @@ import org.simpleframework.xml.Root;
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
 public class NFDownloadNFeRetornoInfo {
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chave;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String status;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
     @Element(name = "procNFeZip", required = false)

@@ -8,10 +8,10 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoVeiculo extends DFBase {
     private static final long serialVersionUID = 6774439413962070444L;
 
-    @Element(name = "placa", required = true)
+    @Element(name = "placa")
     private String placaVeiculo;
 
-    @Element(name = "UF", required = true)
+    @Element(name = "UF")
     private String uf;
 
     @Element(name = "RNTC", required = false)

@@ -8,10 +8,10 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoProcessoReferenciado extends DFBase {
     private static final long serialVersionUID = -5213086059996742347L;
 
-    @Element(name = "nProc", required = true)
+    @Element(name = "nProc")
     private String identificadorProcessoOuAtoConcessorio;
 
-    @Element(name = "indProc", required = true)
+    @Element(name = "indProc")
     private NFOrigemProcesso indicadorOrigemProcesso;
 
     public void setIdentificadorProcessoOuAtoConcessorio(final String identificadorProcessoOuAtoConcessorio) {

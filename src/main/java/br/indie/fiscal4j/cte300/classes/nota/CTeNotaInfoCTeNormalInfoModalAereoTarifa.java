@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTClasseTarifa;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -20,13 +20,13 @@ import java.math.BigDecimal;
 public class CTeNotaInfoCTeNormalInfoModalAereoTarifa extends DFBase {
     private static final long serialVersionUID = 4117608894098820892L;
 
-    @Element(name = "CL", required = true)
+    @Element(name = "CL")
     private CTClasseTarifa classe;
 
     @Element(name = "cTar", required = false)
     private String codigo;
 
-    @Element(name = "vTar", required = true)
+    @Element(name = "vTar")
     private String valor;
 
     public CTeNotaInfoCTeNormalInfoModalAereoTarifa() {
@@ -71,6 +71,6 @@ public class CTeNotaInfoCTeNormalInfoModalAereoTarifa extends DFBase {
      * Valor da tarifa por kg quando for o caso.
      */
     public void setValor(final BigDecimal valor) {
-        this.valor = BigDecimalParser.tamanho15Com2CasasDecimais(valor, "Valor da Tarifa");
+        this.valor = BigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor da Tarifa");
     }
 }

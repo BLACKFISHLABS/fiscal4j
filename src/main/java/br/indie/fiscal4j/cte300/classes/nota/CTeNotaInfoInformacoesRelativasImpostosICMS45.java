@@ -16,7 +16,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoInformacoesRelativasImpostosICMS45 extends DFBase {
     private static final long serialVersionUID = 7637372648460225698L;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private CTCodigoSituacaoTributariaICMS codigoSituacaoTributaria;
 
     public CTeNotaInfoInformacoesRelativasImpostosICMS45() {

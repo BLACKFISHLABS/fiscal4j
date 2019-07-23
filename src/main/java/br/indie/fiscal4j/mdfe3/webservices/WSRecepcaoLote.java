@@ -1,19 +1,16 @@
 package br.indie.fiscal4j.mdfe3.webservices;
 
-import br.indie.fiscal4j.assinatura.AssinaturaDigital;
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetorno;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
-import br.indie.fiscal4j.mdfe3.classes.parsers.MDFeParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub;
-import br.indie.fiscal4j.persister.DFPersister;
-import br.indie.fiscal4j.validadores.xsd.XMLValidador;
+import br.indie.fiscal4j.utils.DFAssinaturaDigital;
+import br.indie.fiscal4j.validadores.XMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.impl.builder.StAXOMBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -21,10 +18,9 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
 import java.util.Iterator;
 
-class WSRecepcaoLote {
+class WSRecepcaoLote implements DFLog {
 
     private static final String MDFE_ELEMENTO = "MDFe";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSRecepcaoLote.class);
     private final MDFeConfig config;
 
     WSRecepcaoLote(final MDFeConfig config) {
@@ -33,8 +29,8 @@ class WSRecepcaoLote {
 
     public MDFEnvioLoteRetornoDados envioRecepcao(MDFEnvioLote mdfeRecepcaoLote) throws Exception {
         //assina o lote
-        final String documentoAssinado = new AssinaturaDigital(this.config).assinarDocumento(mdfeRecepcaoLote.toString(), "infMDFe");
-        final MDFEnvioLote loteAssinado = new MDFeParser().mdfeRecepcaoParaObjeto(documentoAssinado);
+        final String documentoAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(mdfeRecepcaoLote.toString(), "infMDFe");
+        final MDFEnvioLote loteAssinado = this.config.getPersister().read(MDFEnvioLote.class, documentoAssinado);
 
         //comunica o lote
         final MDFEnvioLoteRetorno retorno = comunicaLote(documentoAssinado);
@@ -42,7 +38,7 @@ class WSRecepcaoLote {
     }
 
     private MDFEnvioLoteRetorno comunicaLote(final String loteAssinadoXml) throws Exception {
-        //devido a limitação padrao de 5000 da jdk
+        //devido a limitacao padrao de 5000 da jdk
         //veja em https://docs.oracle.com/javase/7/docs/api/javax/xml/XMLConstants.html#FEATURE_SECURE_PROCESSING
         System.setProperty("jdk.xml.maxOccurLimit", "10000");
         //valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
@@ -55,18 +51,16 @@ class WSRecepcaoLote {
         dados.setExtraElement(omElement);
 
         final MDFeRecepcaoStub.MdfeCabecMsgE cabecalhoSOAP = this.getCabecalhoSOAP();
-        WSRecepcaoLote.LOGGER.info(omElement.toString());
+        this.getLogger().debug(omElement.toString());
 
         final MDFAutorizador3 autorizador = MDFAutorizador3.valueOfCodigoUF(this.config.getCUF());
         final String endpoint = autorizador.getMDFeRecepcao(this.config.getAmbiente());
         if (endpoint == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para Recepcao do MDFe, autorizador " + autorizador.name() + ", UF " + this.config.getCUF().name());
         }
-        WSRecepcaoLote.LOGGER.info(endpoint);
         final MDFeRecepcaoStub.MdfeRecepcaoLoteResult autorizacaoLoteResult = new MDFeRecepcaoStub(endpoint).mdfeRecepcaoLote(dados, cabecalhoSOAP);
-        final MDFEnvioLoteRetorno retorno = new DFPersister().read(MDFEnvioLoteRetorno.class,
-                autorizacaoLoteResult.getExtraElement().toString());
-        WSRecepcaoLote.LOGGER.info(retorno.toString());
+        final MDFEnvioLoteRetorno retorno = this.config.getPersister().read(MDFEnvioLoteRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
+        this.getLogger().debug(retorno.toString());
         return retorno;
     }
 

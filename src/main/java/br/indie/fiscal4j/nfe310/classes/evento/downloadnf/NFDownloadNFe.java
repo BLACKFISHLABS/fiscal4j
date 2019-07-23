@@ -13,19 +13,19 @@ import org.simpleframework.xml.Root;
 public class NFDownloadNFe extends DFBase {
     private static final long serialVersionUID = 5595066759407095694L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "xServ", required = true)
+    @Element(name = "xServ")
     private String servico;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chave;
 
     public NFDownloadNFe() {

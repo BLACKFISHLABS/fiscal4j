@@ -17,10 +17,10 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentos extends DFBase {
     private static final long serialVersionUID = 8869859558328512575L;
 
-    @ElementList(name = "infNF", inline = true, required = true)
+    @ElementList(name = "infNF", inline = true)
     private List<CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNF> infoDocumentosNF;
 
-    @ElementList(name = "infNFe", inline = true, required = true)
+    @ElementList(name = "infNFe", inline = true)
     private List<CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNFe> infoDocumentosNFe;
 
     public CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentos() {

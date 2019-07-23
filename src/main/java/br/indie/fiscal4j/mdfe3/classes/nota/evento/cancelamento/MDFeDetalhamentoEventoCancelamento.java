@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento.cancelamento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -17,7 +17,7 @@ public class MDFeDetalhamentoEventoCancelamento extends DFBase {
     private MDFeEnviaEventoCancelamento eventoCancelamento;
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
     }
 
     public String getVersaoEvento() {

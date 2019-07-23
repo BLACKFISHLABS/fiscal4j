@@ -14,7 +14,7 @@ public class NFDownloadNFeRetornoInfoProcNfe extends DFBase {
     @Attribute(name = "schema", required = false)
     private String schema;
 
-    @Element(name = "nfeProc", required = true) // ver coma var ser tratado esse elemento
+    @Element(name = "nfeProc") // ver coma var ser tratado esse elemento
     private Any any;
 
     @Element(name = "procNFeGrupoZip", required = false)

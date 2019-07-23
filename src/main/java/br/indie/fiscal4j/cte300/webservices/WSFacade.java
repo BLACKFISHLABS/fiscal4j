@@ -1,6 +1,5 @@
 package br.indie.fiscal4j.cte300.webservices;
 
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.cte300.CTeConfig;
 import br.indie.fiscal4j.cte300.classes.consultastatusservico.CTeConsStatServRet;
@@ -9,17 +8,15 @@ import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLoteRetornoDados;
 import br.indie.fiscal4j.cte300.classes.enviolote.consulta.CTeConsultaRecLoteRet;
 import br.indie.fiscal4j.cte300.classes.evento.cancelamento.CTeRetornoCancelamento;
 import br.indie.fiscal4j.cte300.classes.nota.consulta.CTeNotaConsultaRetorno;
+import br.indie.fiscal4j.utils.DFSocketFactory;
 import org.apache.commons.httpclient.protocol.Protocol;
 
-import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
 
 public class WSFacade {
-
 
     private final WSStatusConsulta wsStatusConsulta;
     private final WSRecepcaoLote wsRecepcaoLote;
@@ -28,7 +25,7 @@ public class WSFacade {
 
     private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
 
-    public WSFacade(final CTeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
+    public WSFacade(final CTeConfig config) throws KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
         this.wsStatusConsulta = new WSStatusConsulta(config);
         this.wsRecepcaoLote = new WSRecepcaoLote(config);

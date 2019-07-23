@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNFe extends DFBase {
     private static final long serialVersionUID = -2556091825989274041L;
 
-    @Element(name = "chave", required = true)
+    @Element(name = "chave")
     private String chave;
 
     @Element(name = "unidRat", required = false)
@@ -50,6 +50,6 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNFe e
      * Unidade de medida rateada (Peso,Volume)
      */
     public void setUnidadeRateada(final BigDecimal unidadeRateada) {
-        this.unidadeRateada = BigDecimalParser.tamanho5Com2CasasDecimais(unidadeRateada, "Unidade de medida rateada (Peso,Volume)");
+        this.unidadeRateada = BigDecimalValidador.tamanho5Com2CasasDecimais(unidadeRateada, "Unidade de medida rateada (Peso,Volume)");
     }
 }

@@ -12,6 +12,7 @@ import br.indie.fiscal4j.nfe400.classes.NFTipoImpressao;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -96,6 +97,10 @@ public class NFNotaInfoIdentificacao extends DFBase {
 
     public void setCodigoRandomico(final String codigoRandomico) {
         StringValidador.exatamente8(codigoRandomico, "Codigo Randomico");
+        StringValidador.validaCodigoRandomico(codigoRandomico, "Codigo Randomico");
+        if (StringUtils.isNotBlank(numeroNota) && StringUtils.equals(numeroNota.substring(1), codigoRandomico)) {
+            throw new IllegalStateException(String.format("N\u00FAmero da nota(%s) e c\u00F3digo(%s) n\u00E3o podem ser iguais", numeroNota.substring(1), codigoRandomico));
+        }
         this.codigoRandomico = codigoRandomico;
     }
 
@@ -115,6 +120,9 @@ public class NFNotaInfoIdentificacao extends DFBase {
 
     public void setNumeroNota(final String numeroNota) {
         StringValidador.tamanho9(numeroNota, "Numero da Nota");
+        if (StringUtils.isNotBlank(codigoRandomico) && StringUtils.equals(numeroNota.substring(1), codigoRandomico)) {
+            throw new IllegalStateException(String.format("N\u00FAmero da nota(%s) e c\u00F3digo(%s) n\u00E3o podem ser iguais", numeroNota.substring(1), codigoRandomico));
+        }
         this.numeroNota = numeroNota;
     }
 

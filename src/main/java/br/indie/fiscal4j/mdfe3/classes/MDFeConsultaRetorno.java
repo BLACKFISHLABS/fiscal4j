@@ -10,7 +10,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 /**
  * @Author Eldevan Nery Junior on 26/05/17.
@@ -20,29 +20,29 @@ import java.time.LocalDateTime;
 public class MDFeConsultaRetorno extends DFBase {
     private static final long serialVersionUID = -7216488190676193958L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String status;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
-    @Element(name = "nRec", required = true)
+    @Element(name = "nRec")
     private String reciboConsultado;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa uf;
 
-    @Element(name = "dhRecbto", required = true)
-    private LocalDateTime dataRecebimento;
+    @Element(name = "dhRecbto")
+    private ZonedDateTime dataRecebimento;
 
     @Element(name = "infRec", required = false)
     private NFLoteEnvioRetornoRecebimentoInfo infoRecebimento;
@@ -77,7 +77,7 @@ public class MDFeConsultaRetorno extends DFBase {
         this.uf = uf;
     }
 
-    public void setDataRecebimento(final LocalDateTime dataRecebimento) {
+    public void setDataRecebimento(final ZonedDateTime dataRecebimento) {
         this.dataRecebimento = dataRecebimento;
     }
 
@@ -113,7 +113,7 @@ public class MDFeConsultaRetorno extends DFBase {
         return this.uf;
     }
 
-    public LocalDateTime getDataRecebimento() {
+    public ZonedDateTime getDataRecebimento() {
         return this.dataRecebimento;
     }
 

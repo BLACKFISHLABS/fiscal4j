@@ -11,10 +11,10 @@ import org.simpleframework.xml.Root;
 public class NFConsultaCadastro extends DFBase {
     private static final long serialVersionUID = 2326624765798718455L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infCons", required = true)
+    @Element(name = "infCons")
     private NFInfoConsultaCadastro consultaCadastro;
 
     public NFInfoConsultaCadastro getConsultaCadastro() {

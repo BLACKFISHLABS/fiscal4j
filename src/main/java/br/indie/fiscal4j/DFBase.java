@@ -13,6 +13,12 @@ import java.io.StringWriter;
 public abstract class DFBase implements Serializable {
     private static final long serialVersionUID = 6887612399839814676L;
 
+    /**
+     * Metodo que serializa o objeto para String.
+     * Por padrao, usara o {@link DFPersister}.
+     *
+     * @return String serializada do objeto.
+     */
     @Override
     public String toString() {
         final Persister persister = new DFPersister();

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.evento.manifestacaodestinatario;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -10,17 +10,17 @@ import java.math.BigDecimal;
 public class NFEventoManifestacaoDestinatario extends DFBase {
     private static final long serialVersionUID = 4608659349977367804L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infEvento", required = true)
+    @Element(name = "infEvento")
     private NFInfoEventoManifestacaoDestinatario infoEvento;
 
     @Element(name = "Signature", required = false)
     private String assinatura;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public NFInfoEventoManifestacaoDestinatario getInfoEvento() {

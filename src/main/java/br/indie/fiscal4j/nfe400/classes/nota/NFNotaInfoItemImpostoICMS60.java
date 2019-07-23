@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFNotaInfoImpostoTributacaoICMS;
 import br.indie.fiscal4j.nfe400.classes.NFOrigem;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemImpostoICMS60 extends DFBase {
     private static final long serialVersionUID = 1325261415800285939L;
 
-    @Element(name = "orig", required = true)
+    @Element(name = "orig")
     private NFOrigem origem;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private NFNotaInfoImpostoTributacaoICMS situacaoTributaria;
 
     @Element(name = "vBCSTRet", required = false)
@@ -22,6 +22,9 @@ public class NFNotaInfoItemImpostoICMS60 extends DFBase {
 
     @Element(name = "pST", required = false)
     private String percentualAliquotaICMSSTConsumidorFinal;
+
+    @Element(name = "vICMSSubstituto", required = false)
+    private String valorICMSSubstituto;
 
     @Element(name = "vICMSSTRet", required = false)
     private String valorICMSSTRetido;
@@ -56,46 +59,50 @@ public class NFNotaInfoItemImpostoICMS60 extends DFBase {
     }
 
     public void setValorBCICMSSTRetido(final BigDecimal valorBCICMSSTRetido) {
-        this.valorBCICMSSTRetido = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCICMSSTRetido, "Valor BC ICMS ST Retido ICMS60 Item");
+        this.valorBCICMSSTRetido = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBCICMSSTRetido, "Valor BC ICMS ST Retido ICMS60 Item");
     }
 
     public void setValorICMSSTRetido(final BigDecimal valorICMSSTRetido) {
-        this.valorICMSSTRetido = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSSTRetido, "Valor ICMS ST Retido ICMS60 Item");
+        this.valorICMSSTRetido = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSSTRetido, "Valor ICMS ST Retido ICMS60 Item");
     }
 
     public void setPercentualAliquotaICMSSTConsumidorFinal(final BigDecimal percentualAliquotaICMSST) {
-        this.percentualAliquotaICMSSTConsumidorFinal = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaICMSST, "Valor Aliquota suportada pelo Consumidor Final");
+        this.percentualAliquotaICMSSTConsumidorFinal = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualAliquotaICMSST, "Valor Aliquota suportada pelo Consumidor Final");
+    }
+
+    public void setValorICMSSubstituto(final BigDecimal valorICMSSubstituto) {
+        this.valorICMSSubstituto = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSSubstituto, "Valor ICMS Substituto ICMS60 Item");
     }
 
     public void setValorBCFundoCombatePobrezaRetidoST(final BigDecimal valorBCFundoCombatePobrezaRetidoST) {
-        this.valorBCFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCFundoCombatePobrezaRetidoST, "Valor base calculo fundo combate pobreza retido ST");
+        this.valorBCFundoCombatePobrezaRetidoST = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBCFundoCombatePobrezaRetidoST, "Valor base calculo fundo combate pobreza retido ST");
     }
 
     public void setPercentualFundoCombatePobrezaRetidoST(final BigDecimal percentualFundoCombatePobrezaRetidoST) {
         if (percentualFundoCombatePobrezaRetidoST.signum() < 0) {
             throw new IllegalStateException("Percentual fundo de combate a pobreza precisa ser maior que zero!");
         }
-        this.percentualFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualFundoCombatePobrezaRetidoST, "Percentual fundo combate pobreza retido ST");
+        this.percentualFundoCombatePobrezaRetidoST = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualFundoCombatePobrezaRetidoST, "Percentual fundo combate pobreza retido ST");
     }
 
     public void setValorFundoCombatePobrezaRetidoST(final BigDecimal valorFundoCombatePobrezaRetidoST) {
-        this.valorFundoCombatePobrezaRetidoST = BigDecimalParser.tamanho15Com2CasasDecimais(valorFundoCombatePobrezaRetidoST, "Valor fundo combate pobreza retido ST");
+        this.valorFundoCombatePobrezaRetidoST = BigDecimalValidador.tamanho15Com2CasasDecimais(valorFundoCombatePobrezaRetidoST, "Valor fundo combate pobreza retido ST");
     }
 
     public void setPercentualReducaoBCEfetiva(final BigDecimal percentualReducaoBCEfetiva) {
-        this.percentualReducaoBCEfetiva = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCEfetiva, "Percentual reducao BC efetiva");
+        this.percentualReducaoBCEfetiva = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualReducaoBCEfetiva, "Percentual reducao BC efetiva");
     }
 
     public void setValorBCEfetiva(final BigDecimal valorBCEfetiva) {
-        this.valorBCEfetiva = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCEfetiva, "Valor BC efetiva");
+        this.valorBCEfetiva = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBCEfetiva, "Valor BC efetiva");
     }
 
     public void setPercentualAliquotaICMSEfetiva(final BigDecimal percentualAliquotaICMSEfetiva) {
-        this.percentualAliquotaICMSEfetiva = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualAliquotaICMSEfetiva, "Percentual aliquota ICMS efetiva");
+        this.percentualAliquotaICMSEfetiva = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualAliquotaICMSEfetiva, "Percentual aliquota ICMS efetiva");
     }
 
     public void setValorICMSEfetivo(final BigDecimal valorICMSEfetivo) {
-        this.valorICMSEfetivo = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSEfetivo, "Valor ICMS efetivo");
+        this.valorICMSEfetivo = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSEfetivo, "Valor ICMS efetivo");
     }
 
     public NFOrigem getOrigem() {
@@ -116,6 +123,10 @@ public class NFNotaInfoItemImpostoICMS60 extends DFBase {
 
     public String getPercentualAliquotaICMSSTSuportadaConsumidorFinal() {
         return this.percentualAliquotaICMSSTConsumidorFinal;
+    }
+
+    public String getValorICMSSubstituto() {
+        return this.valorICMSSubstituto;
     }
 
     public String getValorBCFundoCombatePobrezaRetidoST() {

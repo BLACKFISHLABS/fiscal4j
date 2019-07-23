@@ -1,5 +1,6 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
@@ -10,18 +11,13 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub;
 import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeCabecMsg;
 import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeCabecMsgE;
 import br.indie.fiscal4j.nfe310.webservices.gerado.CadConsultaCadastro2Stub.NfeDadosMsg;
-import br.indie.fiscal4j.transformers.DFRegistryMatcher;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.simpleframework.xml.core.Persister;
-import org.simpleframework.xml.stream.Format;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
-class WSConsultaCadastro {
-    private static final Logger LOG = LoggerFactory.getLogger(WSConsultaCadastro.class);
+class WSConsultaCadastro implements DFLog {
+
     private static final String NOME_SERVICO = "CONS-CAD";
     private static final String VERSAO_SERVICO = "2.00";
     private final NFeConfig config;
@@ -33,14 +29,13 @@ class WSConsultaCadastro {
     NFRetornoConsultaCadastro consultaCadastro(final String cnpj, final DFUnidadeFederativa uf) throws Exception {
         final NFConsultaCadastro dadosConsulta = this.getDadosConsulta(cnpj, uf);
         final String xmlConsulta = dadosConsulta.toString();
-        WSConsultaCadastro.LOG.debug(xmlConsulta);
+        this.getLogger().debug(xmlConsulta);
 
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(xmlConsulta);
         final OMElement resultado = this.efetuaConsulta(uf, omElementConsulta);
+        this.getLogger().debug(resultado.toString());
 
-        final String retornoConsulta = resultado.toString();
-        WSConsultaCadastro.LOG.debug(retornoConsulta);
-        return new Persister(new DFRegistryMatcher(), new Format(0)).read(NFRetornoConsultaCadastro.class, retornoConsulta);
+        return this.config.getPersister().read(NFRetornoConsultaCadastro.class, resultado.toString());
     }
 
     private OMElement efetuaConsulta(final DFUnidadeFederativa uf, final OMElement omElementConsulta) throws RemoteException {
@@ -57,9 +52,7 @@ class WSConsultaCadastro {
         if (autorizador == null) {
             throw new IllegalStateException(String.format("UF %s nao possui autorizador para este servico", uf.getDescricao()));
         }
-        final String url = autorizador.getConsultaCadastro(this.config.getAmbiente());
-        WSConsultaCadastro.LOG.debug(String.format("Endpoint: %s", url));
-        return new CadConsultaCadastro2Stub(url).consultaCadastro2(nfeDadosMsg, cabecE).getExtraElement();
+        return new CadConsultaCadastro2Stub(autorizador.getConsultaCadastro(this.config.getAmbiente())).consultaCadastro2(nfeDadosMsg, cabecE).getExtraElement();
     }
 
     private NFConsultaCadastro getDadosConsulta(final String cnpj, final DFUnidadeFederativa uf) {

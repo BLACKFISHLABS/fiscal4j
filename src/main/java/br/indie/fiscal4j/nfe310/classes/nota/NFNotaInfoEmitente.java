@@ -15,16 +15,16 @@ public class NFNotaInfoEmitente extends DFBase {
     @Element(name = "CPF", required = false)
     private String cpf;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
     @Element(name = "xFant", required = false)
     private String nomeFantasia;
 
-    @Element(name = "enderEmit", required = true)
+    @Element(name = "enderEmit")
     private NFEndereco endereco;
 
-    @Element(name = "IE", required = true)
+    @Element(name = "IE")
     private String inscricaoEstadual;
 
     @Element(name = "IEST", required = false)
@@ -36,7 +36,7 @@ public class NFNotaInfoEmitente extends DFBase {
     @Element(name = "CNAE", required = false)
     private String classificacaoNacionalAtividadesEconomicas;
 
-    @Element(name = "CRT", required = true)
+    @Element(name = "CRT")
     private NFRegimeTributario regimeTributario;
 
     public void setCnpj(final String cnpj) {

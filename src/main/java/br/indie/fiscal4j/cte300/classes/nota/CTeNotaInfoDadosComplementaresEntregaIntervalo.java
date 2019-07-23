@@ -16,13 +16,13 @@ import java.time.LocalTime;
 public class CTeNotaInfoDadosComplementaresEntregaIntervalo extends DFBase {
     private static final long serialVersionUID = 733372678080043594L;
 
-    @Element(name = "tpHor", required = true)
+    @Element(name = "tpHor")
     private CTTipoPrazoHoraEntrega tipoPrazoHoraEntrega;
 
-    @Element(name = "hIni", required = true)
+    @Element(name = "hIni")
     private LocalTime horaInicio;
 
-    @Element(name = "hFim", required = true)
+    @Element(name = "hFim")
     private LocalTime horaFim;
 
     public CTeNotaInfoDadosComplementaresEntregaIntervalo() {

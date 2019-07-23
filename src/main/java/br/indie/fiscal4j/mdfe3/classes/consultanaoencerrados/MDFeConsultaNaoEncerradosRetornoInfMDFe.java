@@ -14,7 +14,7 @@ public class MDFeConsultaNaoEncerradosRetornoInfMDFe extends DFBase {
     /**
      * Chaves de acesso do MDF-e não encerrado
      */
-    @Element(name = "chMDFe", required = true)
+    @Element(name = "chMDFe")
     private String chave;
 
     /**

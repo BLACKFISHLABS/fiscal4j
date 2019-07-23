@@ -24,7 +24,7 @@ public class NFNotaInfoDestinatario extends DFBase {
     @Element(name = "enderDest", required = false)
     private NFEndereco endereco;
 
-    @Element(name = "indIEDest", required = true)
+    @Element(name = "indIEDest")
     private NFIndicadorIEDestinatario indicadorIEDestinatario;
 
     @Element(name = "IE", required = false)

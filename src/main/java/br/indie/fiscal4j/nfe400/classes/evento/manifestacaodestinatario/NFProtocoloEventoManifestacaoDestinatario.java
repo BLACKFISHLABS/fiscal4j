@@ -12,13 +12,13 @@ import org.simpleframework.xml.Root;
 public class NFProtocoloEventoManifestacaoDestinatario extends DFBase {
     private static final long serialVersionUID = 8058424887014735846L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "evento", required = true)
+    @Element(name = "evento")
     private NFEventoManifestacaoDestinatario evento;
 
-    @Element(name = "retEvento", required = true)
+    @Element(name = "retEvento")
     private NFEventoRetorno eventoRetorno;
 
     public NFEventoManifestacaoDestinatario getEvento() {

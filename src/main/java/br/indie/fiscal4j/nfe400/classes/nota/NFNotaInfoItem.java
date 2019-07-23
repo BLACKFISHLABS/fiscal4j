@@ -9,13 +9,13 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoItem extends DFBase {
     private static final long serialVersionUID = 362646693945373643L;
 
-    @Attribute(name = "nItem", required = true)
+    @Attribute(name = "nItem")
     private Integer numeroItem;
 
-    @Element(name = "prod", required = true)
+    @Element(name = "prod")
     private NFNotaInfoItemProduto produto;
 
-    @Element(name = "imposto", required = true)
+    @Element(name = "imposto")
     private NFNotaInfoItemImposto imposto;
 
     @Element(name = "impostoDevol", required = false)

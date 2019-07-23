@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoUnidadeTransporte;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -22,10 +22,10 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoDocumentosInfoUnidadeTransporte extends DFBase {
     private static final long serialVersionUID = -5873044131536025528L;
 
-    @Element(name = "tpUnidTransp", required = true)
+    @Element(name = "tpUnidTransp")
     private CTTipoUnidadeTransporte tpUnidTransp;
 
-    @Element(name = "idUnidTransp", required = true)
+    @Element(name = "idUnidTransp")
     private String identificacaoTransporte;
 
     @Element(name = "lacUnidTransp", required = false)
@@ -107,6 +107,6 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoUnidadeTransporte extends DFB
      * Quantidade rateada (Peso,Volume)
      */
     public void setQuantidadeRateada(final BigDecimal quantidadeRateada) {
-        this.quantidadeRateada = BigDecimalParser.tamanho5Com2CasasDecimais(quantidadeRateada, "Quantidade rateada (Peso,Volume)");
+        this.quantidadeRateada = BigDecimalValidador.tamanho5Com2CasasDecimais(quantidadeRateada, "Quantidade rateada (Peso,Volume)");
     }
 }

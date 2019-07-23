@@ -1,6 +1,5 @@
 package br.indie.fiscal4j.mdfe3.webservices;
 
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.consultaRecibo.MDFeConsultaReciboRetorno;
@@ -10,6 +9,7 @@ import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
 import br.indie.fiscal4j.mdfe3.classes.nota.consulta.MDFeNotaConsultaRetorno;
 import br.indie.fiscal4j.mdfe3.classes.nota.evento.MDFeRetorno;
+import br.indie.fiscal4j.utils.DFSocketFactory;
 import org.apache.commons.httpclient.protocol.Protocol;
 
 import java.io.IOException;

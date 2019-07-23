@@ -15,7 +15,7 @@ import org.simpleframework.xml.Root;
 @Namespace(reference = "http://www.portalfiscal.inf.br/cte")
 public class CTeNotaInfoCTeComplementar extends DFBase {
     private static final long serialVersionUID = -5820790322163765078L;
-    @Element(name = "chCTe", required = true)
+    @Element(name = "chCTe")
     private String chave;
 
     public CTeNotaInfoCTeComplementar() {

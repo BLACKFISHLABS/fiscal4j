@@ -15,10 +15,10 @@ import org.simpleframework.xml.Root;
 public class MDFInfoSeguroInfo extends DFBase {
     private static final long serialVersionUID = 4018991399177455416L;
 
-    @Element(name = "xSeg", required = true)
+    @Element(name = "xSeg")
     private String seguradora;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
     public MDFInfoSeguroInfo() {

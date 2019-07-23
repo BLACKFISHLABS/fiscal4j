@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.*;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemImpostoICMS90 extends DFBase {
     private static final long serialVersionUID = 5614463736855881160L;
 
-    @Element(name = "orig", required = true)
+    @Element(name = "orig")
     private NFOrigem origem;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private NFNotaInfoImpostoTributacaoICMS situacaoTributaria;
 
     @Element(name = "modBC", required = false)
@@ -68,19 +68,19 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
     }
 
     public void setValorBC(final BigDecimal valorBC) {
-        this.valorBC = BigDecimalParser.tamanho15Com2CasasDecimais(valorBC, "Valor BC ICMS90 Item");
+        this.valorBC = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBC, "Valor BC ICMS90 Item");
     }
 
     public void setPercentualReducaoBC(final BigDecimal percentualReducaoBC) {
-        this.percentualReducaoBC = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBC, "Percentual Reducao BC ICMS90 Item");
+        this.percentualReducaoBC = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualReducaoBC, "Percentual Reducao BC ICMS90 Item");
     }
 
     public void setPercentualAliquota(final BigDecimal aliquota) {
-        this.percentualAliquota = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota ICMS90 Item");
+        this.percentualAliquota = BigDecimalValidador.tamanho7ComAte4CasasDecimais(aliquota, "Aliquota ICMS90 Item");
     }
 
     public void setValorTributo(final BigDecimal valorTributo) {
-        this.valorTributo = BigDecimalParser.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo ICMS90 Item");
+        this.valorTributo = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTributo, "Valor Tributo ICMS90 Item");
     }
 
     public void setModalidadeBCICMSST(final NFNotaInfoItemModalidadeBCICMSST modalidadeBCICMSST) {
@@ -88,23 +88,23 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
     }
 
     public void setPercentualMargemValorAdicionadoICMSST(final BigDecimal percentualMargemValorAdicionadoICMSST) {
-        this.percentualMargemValorAdicionadoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualMargemValorAdicionadoICMSST, "Percentual Margem Valor Adicionado ICMS ST ICMS90 Item");
+        this.percentualMargemValorAdicionadoICMSST = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualMargemValorAdicionadoICMSST, "Percentual Margem Valor Adicionado ICMS ST ICMS90 Item");
     }
 
     public void setPercentualReducaoBCICMSST(final BigDecimal percentualReducaoBCICMSST) {
-        this.percentualReducaoBCICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(percentualReducaoBCICMSST, "Percentual Reducao BC ICMS ST ICMS90 Item");
+        this.percentualReducaoBCICMSST = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualReducaoBCICMSST, "Percentual Reducao BC ICMS ST ICMS90 Item");
     }
 
     public void setValorBCST(final BigDecimal valorBCST) {
-        this.valorBCST = BigDecimalParser.tamanho15Com2CasasDecimais(valorBCST, "Valor BC ST ICMS90 Item");
+        this.valorBCST = BigDecimalValidador.tamanho15Com2CasasDecimais(valorBCST, "Valor BC ST ICMS90 Item");
     }
 
     public void setPercentualAliquotaImpostoICMSST(final BigDecimal aliquotaImpostoICMSST) {
-        this.percentualAliquotaImpostoICMSST = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquotaImpostoICMSST, "Aliquota Imposto ICMS ST ICMS90 Item");
+        this.percentualAliquotaImpostoICMSST = BigDecimalValidador.tamanho7ComAte4CasasDecimais(aliquotaImpostoICMSST, "Aliquota Imposto ICMS ST ICMS90 Item");
     }
 
     public void setValorICMSST(final BigDecimal valorICMSST) {
-        this.valorICMSST = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSST, "Valor ICMS ST ICMS90 Item");
+        this.valorICMSST = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSST, "Valor ICMS ST ICMS90 Item");
     }
 
     public void setDesoneracao(final NFNotaMotivoDesoneracaoICMS desoneracao) {
@@ -112,7 +112,7 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
     }
 
     public void setValorICMSDesoneracao(final BigDecimal valorICMSDesoneracao) {
-        this.valorICMSDesoneracao = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS90 Item");
+        this.valorICMSDesoneracao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS90 Item");
     }
 
     public NFOrigem getOrigem() {

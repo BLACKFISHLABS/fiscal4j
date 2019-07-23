@@ -17,7 +17,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoIdentificacaoTomadorServico4 extends DFBase {
     private static final long serialVersionUID = -7014772748798643095L;
 
-    @Element(name = "toma", required = true)
+    @Element(name = "toma")
     private CTTomadorServico tomadorServico;
 
     @Element(name = "CNPJ", required = false)
@@ -29,7 +29,7 @@ public class CTeNotaInfoIdentificacaoTomadorServico4 extends DFBase {
     @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
     @Element(name = "xFant", required = false)
@@ -38,7 +38,7 @@ public class CTeNotaInfoIdentificacaoTomadorServico4 extends DFBase {
     @Element(name = "fone", required = false)
     private String telefone;
 
-    @Element(name = "enderToma", required = true)
+    @Element(name = "enderToma")
     private CTeNotaEndereco enderTomadorServico;
 
     @Element(name = "email", required = false)

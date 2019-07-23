@@ -25,13 +25,13 @@ public class CTeNotaInfoRecebedorCarga extends DFBase {
     @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
     @Element(name = "fone", required = false)
     private String telefone;
 
-    @Element(name = "enderReceb", required = true)
+    @Element(name = "enderReceb")
     private CTeNotaEndereco endereco;
 
     @Element(name = "email", required = false)

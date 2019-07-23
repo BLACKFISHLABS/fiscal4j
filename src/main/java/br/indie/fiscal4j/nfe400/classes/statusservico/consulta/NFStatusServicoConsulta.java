@@ -13,16 +13,16 @@ import org.simpleframework.xml.Root;
 public class NFStatusServicoConsulta extends DFBase {
     private static final long serialVersionUID = 1406428397598529093L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa uf;
 
-    @Element(name = "xServ", required = true)
+    @Element(name = "xServ")
     private String servico;
 
     public NFStatusServicoConsulta() {

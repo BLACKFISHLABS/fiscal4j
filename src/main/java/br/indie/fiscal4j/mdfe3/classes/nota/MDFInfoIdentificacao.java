@@ -14,7 +14,7 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -61,7 +61,7 @@ public class MDFInfoIdentificacao extends DFBase {
     private MDFModalidadeTransporte modalidadeFrete;
 
     @Element(name = "dhEmi")
-    private LocalDateTime dataEmissao;
+    private ZonedDateTime dataEmissao;
 
     @Element(name = "tpEmis")
     private MDFTipoEmissao tipoEmissao;
@@ -100,7 +100,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * Data e hora previstos de inicio da viagem.
      */
     @Element(name = "dhIniViagem", required = false)
-    private LocalDateTime dataHoraDoInicioViagem;
+    private ZonedDateTime dataHoraDoInicioViagem;
 
     /**
      * Indicador de participação do Canal Verde.
@@ -156,7 +156,7 @@ public class MDFInfoIdentificacao extends DFBase {
         this.numero = numero;
     }
 
-    public LocalDateTime getDataEmissao() {
+    public ZonedDateTime getDataEmissao() {
         return this.dataEmissao;
     }
 
@@ -164,7 +164,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * Data e hora de emissão do MDF-e<br>
      * Formato AAAA-MM-DDTHH:MM:DD TZD
      */
-    public void setDataEmissao(final LocalDateTime dataEmissao) {
+    public void setDataEmissao(final ZonedDateTime dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 
@@ -286,11 +286,11 @@ public class MDFInfoIdentificacao extends DFBase {
         this.identificacaoUfPercursos = ListValidador.validaListaNaoObrigatoria(identificacaoUfPercursos, 25, "UF percurso MDF-e");
     }
 
-    public LocalDateTime getDataHoraDoInicioViagem() {
+    public ZonedDateTime getDataHoraDoInicioViagem() {
         return this.dataHoraDoInicioViagem;
     }
 
-    public void setDataHoraDoInicioViagem(final LocalDateTime dataHoraDoInicioViagem) {
+    public void setDataHoraDoInicioViagem(final ZonedDateTime dataHoraDoInicioViagem) {
         this.dataHoraDoInicioViagem = dataHoraDoInicioViagem;
     }
 

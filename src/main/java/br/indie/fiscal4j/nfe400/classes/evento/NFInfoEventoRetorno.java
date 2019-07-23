@@ -6,7 +6,7 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 public class NFInfoEventoRetorno extends DFBase {
     private static final long serialVersionUID = 3251078839113682275L;
@@ -14,19 +14,19 @@ public class NFInfoEventoRetorno extends DFBase {
     @Attribute(name = "Id", required = false)
     private String id;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicativo;
 
-    @Element(name = "cOrgao", required = true)
+    @Element(name = "cOrgao")
     private DFUnidadeFederativa orgao;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private Integer codigoStatus;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
     @Element(name = "chNFe", required = false)
@@ -50,8 +50,8 @@ public class NFInfoEventoRetorno extends DFBase {
     @Element(name = "emailDest", required = false)
     private String email;
 
-    @Element(name = "dhRegEvento", required = true)
-    private LocalDateTime dataHoraRegistro;
+    @Element(name = "dhRegEvento")
+    private ZonedDateTime dataHoraRegistro;
 
     @Element(name = "nProt", required = false)
     private String numeroProtocolo;
@@ -108,7 +108,7 @@ public class NFInfoEventoRetorno extends DFBase {
         return this.email;
     }
 
-    public LocalDateTime getDataHoraRegistro() {
+    public ZonedDateTime getDataHoraRegistro() {
         return this.dataHoraRegistro;
     }
 
@@ -168,7 +168,7 @@ public class NFInfoEventoRetorno extends DFBase {
         this.email = email;
     }
 
-    public void setDataHoraRegistro(final LocalDateTime dataHoraRegistro) {
+    public void setDataHoraRegistro(final ZonedDateTime dataHoraRegistro) {
         this.dataHoraRegistro = dataHoraRegistro;
     }
 

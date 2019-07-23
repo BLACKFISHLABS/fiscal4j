@@ -32,7 +32,7 @@ public class MDFeRecepcaoStub extends org.apache.axis2.client.Stub {
             MDFeRecepcaoStub.counter = 0;
         }
         MDFeRecepcaoStub.counter = MDFeRecepcaoStub.counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + MDFeRecepcaoStub.counter;
+        return System.currentTimeMillis() + "_" + MDFeRecepcaoStub.counter;
     }
 
     private void populateAxisService() {
@@ -1694,9 +1694,6 @@ public class MDFeRecepcaoStub extends org.apache.axis2.client.Stub {
             }
             if (br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeRecepcaoLoteResult.class.equals(type)) {
                 return br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeRecepcaoLoteResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-            }
-            if (br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeCabecMsgE.class.equals(type)) {
-                return br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
             if (br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeCabecMsgE.class.equals(type)) {
                 return br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub.MdfeCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());

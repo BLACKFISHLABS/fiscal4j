@@ -1,9 +1,12 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.DFLog;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
 public class NFNotaInfoItemImposto extends DFBase {
@@ -42,6 +45,15 @@ public class NFNotaInfoItemImposto extends DFBase {
     public void setIcms(final NFNotaInfoItemImpostoICMS icms) {
         if (this.issqn != null) {
             throw new IllegalStateException("ICMS, IPI e II sao mutuamente exclusivo com ISSQN");
+        }
+        try {
+            StringValidador.validaPreenchimentoDeMargemValorAgregado(icms);
+        } catch (IllegalAccessException e) {
+            DFLog.getLogger(NFNotaInfoItemImposto.class)
+                    .error("Erro ao validar preenchimento de Margem de Valor agregado", e);
+        } catch (InvocationTargetException e) {
+            DFLog.getLogger(NFNotaInfoItemImposto.class)
+                    .error("Erro ao validar preenchimento de Margem de Valor agregado", e);
         }
         this.icms = icms;
     }
@@ -84,7 +96,7 @@ public class NFNotaInfoItemImposto extends DFBase {
     }
 
     public void setValorTotalTributos(final BigDecimal valorTotalTributos) {
-        this.valorTotalTributos = BigDecimalParser.tamanho15Com2CasasDecimais(valorTotalTributos, "Valor Total Tributos");
+        this.valorTotalTributos = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalTributos, "Valor Total Tributos");
     }
 
     public String getValorTotalTributos() {
@@ -130,4 +142,5 @@ public class NFNotaInfoItemImposto extends DFBase {
     public void setIcmsUfDestino(final NFNotaInfoItemImpostoICMSUFDestino icmsUfDestino) {
         this.icmsUfDestino = icmsUfDestino;
     }
+
 }

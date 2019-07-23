@@ -16,10 +16,10 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoModalMultiModalSeguroInfo extends DFBase {
     private static final long serialVersionUID = 1853696818718851264L;
 
-    @Element(name = "xSeg", required = true)
+    @Element(name = "xSeg")
     private String seguradora;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
     public CTeNotaInfoCTeNormalInfoModalMultiModalSeguroInfo() {

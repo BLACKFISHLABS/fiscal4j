@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.classes.evento.inutilizacao;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -15,10 +15,10 @@ import java.math.BigDecimal;
 public class NFEnviaEventoInutilizacao extends DFBase {
     private static final long serialVersionUID = -2140741787724000417L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infInut", required = true)
+    @Element(name = "infInut")
     private NFEventoInutilizacaoDados dados;
 
     @Element(name = "Signature", required = false)
@@ -29,7 +29,7 @@ public class NFEnviaEventoInutilizacao extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public NFEventoInutilizacaoDados getDados() {

@@ -15,28 +15,28 @@ import java.util.List;
 public class NFNotaConsultaRetorno extends DFBase {
     private static final long serialVersionUID = -5747228973124291025L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String status;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa uf;
 
-    @Element(name = "dhRecbto", required = true)
+    @Element(name = "dhRecbto")
     private LocalDateTime dataHoraRecibo;
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chave;
 
     @Element(name = "protNFe", required = false)

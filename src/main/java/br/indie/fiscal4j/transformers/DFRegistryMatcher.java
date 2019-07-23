@@ -33,6 +33,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(LocalTime.class, new DFLocalTimeTransformer());
         super.bind(ZonedDateTime.class, new DFDateTimeTransformer());
         super.bind(LocalDateTime.class, new DFLocalDateTimeTransformer());
+        super.bind(ZonedDateTime.class, new DFZonedDateTimeTransformer());
         super.bind(DFUnidadeFederativa.class, new DFUnidadeFederativaTransformer());
         super.bind(NFTipoEmissao.class, new NFTipoEmissaoTransformer());
         super.bind(DFPais.class, new DFPaisTransformer());
@@ -85,6 +86,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         // NFE 4.00
         super.bind(br.indie.fiscal4j.nfe400.classes.NFTipo.class, new br.indie.fiscal4j.nfe400.transformers.NFTipoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFOrigem.class, new br.indie.fiscal4j.nfe400.transformers.NFOrigemTransformer());
+        super.bind(br.indie.fiscal4j.nfe400.classes.NFSituacao.class, new br.indie.fiscal4j.nfe400.transformers.NFSituacaoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFFinalidade.class, new br.indie.fiscal4j.nfe400.transformers.NFFinalidadeTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFTipoImpressao.class, new br.indie.fiscal4j.nfe400.transformers.NFTipoImpressaoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFOrigemProcesso.class, new br.indie.fiscal4j.nfe400.transformers.NFOrigemProcessoTransformer());
@@ -187,6 +189,5 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(MDFTipoUnidadeTransporte.class, new MDFTipoUnidadeTransporteTransformer());
         super.bind(MDFUnidadeMedidaPesoBrutoCarga.class, new MDFUnidadeMedidaPesoBrutoCargaTransformer());
         super.bind(MDFTipoResponsavelSeguro.class, new MDFTipoResponsavelSeguroTransformer());
-
     }
 }

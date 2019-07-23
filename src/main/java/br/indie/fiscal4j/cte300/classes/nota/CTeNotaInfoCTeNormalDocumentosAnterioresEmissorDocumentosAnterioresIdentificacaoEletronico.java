@@ -16,7 +16,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnterioresIdentificacaoEletronico extends DFBase {
     private static final long serialVersionUID = 2213593985843451157L;
 
-    @Element(name = "chCTe", required = true)
+    @Element(name = "chCTe")
     private String chaveCTe;
 
     public CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnterioresIdentificacaoEletronico() {

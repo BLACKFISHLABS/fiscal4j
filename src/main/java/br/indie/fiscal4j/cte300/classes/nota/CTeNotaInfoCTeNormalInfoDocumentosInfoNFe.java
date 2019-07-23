@@ -20,7 +20,7 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoDocumentosInfoNFe extends DFBase {
     private static final long serialVersionUID = 6424661920899043977L;
 
-    @Element(name = "chave", required = true)
+    @Element(name = "chave")
     private String chave;
 
     @Element(name = "PIN", required = false)

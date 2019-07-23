@@ -16,28 +16,28 @@ import java.util.List;
 public class CTeConsultaRecLoteRet extends DFBase {
     private static final long serialVersionUID = 1224302136932120984L;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
-    @Element(name = "verAplic", required = true)
+    @Element(name = "verAplic")
     private String versaoAplicacao;
 
-    @Element(name = "nRec", required = true)
+    @Element(name = "nRec")
     private String numeroRecebimento;
 
-    @Element(name = "cStat", required = true)
+    @Element(name = "cStat")
     private String status;
 
-    @Element(name = "xMotivo", required = true)
+    @Element(name = "xMotivo")
     private String motivo;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private String siglaUF;
 
     @ElementList(name = "protCTe", inline = true, required = false)
     private List<CTeProtocolo> protocolo;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
     public CTeConsultaRecLoteRet() {

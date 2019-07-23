@@ -6,7 +6,7 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoTotal extends DFBase {
     private static final long serialVersionUID = 4579495471129802055L;
 
-    @Element(name = "ICMSTot", required = true)
+    @Element(name = "ICMSTot")
     private NFNotaInfoICMSTotal icmsTotal;
 
     @Element(name = "ISSQNtot", required = false)

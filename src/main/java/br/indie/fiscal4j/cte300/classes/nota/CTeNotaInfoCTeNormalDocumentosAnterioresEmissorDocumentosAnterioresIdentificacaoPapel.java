@@ -19,19 +19,19 @@ import java.time.LocalDate;
 public class CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnterioresIdentificacaoPapel extends DFBase {
     private static final long serialVersionUID = 85388615678199370L;
 
-    @Element(name = "tpDoc", required = true)
+    @Element(name = "tpDoc")
     private CTTipoDocumentoTransporteAnterior tipoDocumentoAnterior;
 
-    @Element(name = "serie", required = true)
+    @Element(name = "serie")
     private String serie;
 
     @Element(name = "subser", required = false)
     private String subSerie;
 
-    @Element(name = "nDoc", required = true)
+    @Element(name = "nDoc")
     private String numeroDocumento;
 
-    @Element(name = "dEmi", required = true)
+    @Element(name = "dEmi")
     private LocalDate dataEmissao;
 
     public CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnterioresIdentificacaoPapel() {

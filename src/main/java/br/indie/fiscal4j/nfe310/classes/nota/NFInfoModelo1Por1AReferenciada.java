@@ -9,19 +9,19 @@ import org.simpleframework.xml.Element;
 public class NFInfoModelo1Por1AReferenciada extends DFBase {
     private static final long serialVersionUID = 4441065943167631316L;
 
-    @Element(name = "cUF", required = true)
+    @Element(name = "cUF")
     private DFUnidadeFederativa uf;
 
-    @Element(name = "AAMM", required = true)
+    @Element(name = "AAMM")
     private String anoMesEmissaoNFe;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
-    @Element(name = "mod", required = true)
+    @Element(name = "mod")
     private String modeloDocumentoFiscal;
 
-    @Element(name = "serie", required = true)
+    @Element(name = "serie")
     private Integer serie;
 
     @Element(name = "nNF", required = false)

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFModelo;
-import br.indie.fiscal4j.assinatura.AssinaturaDigital;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteEnvio;
@@ -16,14 +16,11 @@ import br.indie.fiscal4j.nfe310.webservices.gerado.NfeAutorizacaoStub.NfeAutoriz
 import br.indie.fiscal4j.nfe310.webservices.gerado.NfeAutorizacaoStub.NfeCabecMsg;
 import br.indie.fiscal4j.nfe310.webservices.gerado.NfeAutorizacaoStub.NfeCabecMsgE;
 import br.indie.fiscal4j.nfe310.webservices.gerado.NfeAutorizacaoStub.NfeDadosMsg;
-import br.indie.fiscal4j.parsers.DFParser;
-import br.indie.fiscal4j.persister.DFPersister;
-import br.indie.fiscal4j.validadores.xsd.XMLValidador;
+import br.indie.fiscal4j.utils.DFAssinaturaDigital;
+import br.indie.fiscal4j.validadores.XMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.impl.builder.StAXOMBuilder;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -31,10 +28,9 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
 import java.util.Iterator;
 
-class WSLoteEnvio {
+class WSLoteEnvio implements DFLog {
 
     private static final String NFE_ELEMENTO = "NFe";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSLoteEnvio.class);
     private final NFeConfig config;
 
     WSLoteEnvio(final NFeConfig config) {
@@ -54,10 +50,6 @@ class WSLoteEnvio {
 
     /**
      * Retorna o Lote assinado.
-     *
-     * @param lote
-     * @return
-     * @throws Exception
      */
     NFLoteEnvio getLoteAssinado(final NFLoteEnvio lote) throws Exception {
         // adiciona a chave e o dv antes de assinar
@@ -68,8 +60,9 @@ class WSLoteEnvio {
             nota.getInfo().setIdentificador(geraChave.getChaveAcesso());
         }
         // assina o lote
-        final String documentoAssinado = new AssinaturaDigital(this.config).assinarDocumento(lote.toString());
-        final NFLoteEnvio loteAssinado = new DFParser().loteParaObjeto(documentoAssinado);
+        final String documentoAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(lote.toString());
+        //final NFLoteEnvio loteAssinado = new DFParser().loteParaObjeto(documentoAssinado);
+        final NFLoteEnvio loteAssinado = this.config.getPersister().read(NFLoteEnvio.class, documentoAssinado);
 
         // verifica se nao tem NFCe junto com NFe no lote e gera qrcode (apos assinar mesmo, eh assim)
         int qtdNF = 0, qtdNFC = 0;
@@ -106,7 +99,7 @@ class WSLoteEnvio {
         dados.setExtraElement(omElement);
 
         final NfeCabecMsgE cabecalhoSOAP = this.getCabecalhoSOAP();
-        WSLoteEnvio.LOGGER.debug(omElement.toString());
+        this.getLogger().debug(omElement.toString());
 
         // define o tipo de emissao
         final NFAutorizador31 autorizador = NFAutorizador31.valueOfTipoEmissao(this.config.getTipoEmissao(), this.config.getCUF());
@@ -117,8 +110,8 @@ class WSLoteEnvio {
         }
 
         final NfeAutorizacaoLoteResult autorizacaoLoteResult = new NfeAutorizacaoStub(endpoint).nfeAutorizacaoLote(dados, cabecalhoSOAP);
-        final NFLoteEnvioRetorno loteEnvioRetorno = new DFPersister().read(NFLoteEnvioRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
-        WSLoteEnvio.LOGGER.info(loteEnvioRetorno.toString());
+        final NFLoteEnvioRetorno loteEnvioRetorno = this.config.getPersister().read(NFLoteEnvioRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
+        this.getLogger().debug(loteEnvioRetorno.toString());
         return loteEnvioRetorno;
     }
 

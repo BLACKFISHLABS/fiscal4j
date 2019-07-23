@@ -18,10 +18,10 @@ import java.time.LocalDate;
 public class CTeNotaInfoCTeAnulacao extends DFBase {
     private static final long serialVersionUID = -8393627804759742007L;
 
-    @Element(name = "chCte", required = true)
+    @Element(name = "chCte")
     private String chave;
 
-    @Element(name = "dEmi", required = true)
+    @Element(name = "dEmi")
     private LocalDate dataEmissao;
 
     public CTeNotaInfoCTeAnulacao() {

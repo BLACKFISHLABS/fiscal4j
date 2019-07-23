@@ -16,22 +16,22 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoEmitente extends DFBase {
     private static final long serialVersionUID = -316869143177543788L;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
-    @Element(name = "IE", required = true)
+    @Element(name = "IE")
     private String inscricaoEstadual;
 
     @Element(name = "IEST", required = false)
     private String inscricaoEstadualST;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
     @Element(name = "xFant", required = false)
     private String nomeFantasia;
 
-    @Element(name = "enderEmit", required = true)
+    @Element(name = "enderEmit")
     private CTeNotaEnderecoEmitente endereco;
 
     public CTeNotaInfoEmitente() {

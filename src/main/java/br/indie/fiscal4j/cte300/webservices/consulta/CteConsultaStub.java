@@ -25,7 +25,7 @@ public class CteConsultaStub extends org.apache.axis2.client.Stub {
             CteConsultaStub.counter = 0;
         }
         CteConsultaStub.counter = CteConsultaStub.counter + 1;
-        return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + CteConsultaStub.counter;
+        return System.currentTimeMillis() + "_" + CteConsultaStub.counter;
     }
 
     private void populateAxisService() {
@@ -1657,9 +1657,6 @@ public class CteConsultaStub extends org.apache.axis2.client.Stub {
             }
             if (br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteConsultaCTResult.class.equals(type)) {
                 return br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteConsultaCTResult.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-            }
-            if (br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteCabecMsgE.class.equals(type)) {
-                return br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
             }
             if (br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteCabecMsgE.class.equals(type)) {
                 return br.indie.fiscal4j.cte300.webservices.consulta.CteConsultaStub.CteCabecMsgE.Factory.parse(param.getXMLStreamReaderWithoutCaching());

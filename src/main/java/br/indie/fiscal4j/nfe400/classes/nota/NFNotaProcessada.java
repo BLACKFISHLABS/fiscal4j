@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFProtocolo;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -48,7 +48,7 @@ public class NFNotaProcessada extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao Nota Processada");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao Nota Processada");
     }
 
     public String getSchemaLocation() {

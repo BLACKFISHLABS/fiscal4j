@@ -3,7 +3,8 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
@@ -24,7 +25,7 @@ public class MDFeEnviaEventoRegistroPassagem extends DFBase {
     private String descricaoUnidadeFiscal;
 
     @Element(name = "dhPass")
-    private LocalDateTime dataHoraPassagem;
+    private ZonedDateTime dataHoraPassagem;
 
     @Element(name = "CPFFunc")
     private String cpfFuncionario;
@@ -76,11 +77,11 @@ public class MDFeEnviaEventoRegistroPassagem extends DFBase {
         this.descricaoUnidadeFiscal = descricaoUnidadeFiscal;
     }
 
-    public LocalDateTime getDataHoraPassagem() {
+    public ZonedDateTime getDataHoraPassagem() {
         return this.dataHoraPassagem;
     }
 
-    public void setDataHoraPassagem(final LocalDateTime dataHoraPassagem) {
+    public void setDataHoraPassagem(final ZonedDateTime dataHoraPassagem) {
         this.dataHoraPassagem = dataHoraPassagem;
     }
 

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -84,7 +84,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
     }
 
     public void setValor(final BigDecimal valor) {
-        this.valor = BigDecimalParser.tamanho13Com2CasasDecimais(valor, "Valor do pedagio");
+        this.valor = BigDecimalValidador.tamanho13Com2CasasDecimais(valor, "Valor do pedagio");
     }
 
     public String getCpfPagadora() {

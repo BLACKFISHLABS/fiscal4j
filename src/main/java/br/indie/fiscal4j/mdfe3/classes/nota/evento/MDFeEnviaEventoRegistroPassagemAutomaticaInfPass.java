@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import org.simpleframework.xml.Element;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
@@ -31,7 +31,7 @@ public class MDFeEnviaEventoRegistroPassagemAutomaticaInfPass extends DFBase {
     private String tipoSentido;
 
     @Element(name = "dhPass")
-    private LocalDateTime dataHoraPassagem;
+    private ZonedDateTime dataHoraPassagem;
 
     @Element(name = "latitude")
     private String latitude;
@@ -90,11 +90,11 @@ public class MDFeEnviaEventoRegistroPassagemAutomaticaInfPass extends DFBase {
         this.tipoSentido = tipoSentido;
     }
 
-    public LocalDateTime getDataHoraPassagem() {
+    public ZonedDateTime getDataHoraPassagem() {
         return this.dataHoraPassagem;
     }
 
-    public void setDataHoraPassagem(final LocalDateTime dataHoraPassagem) {
+    public void setDataHoraPassagem(final ZonedDateTime dataHoraPassagem) {
         this.dataHoraPassagem = dataHoraPassagem;
     }
 

@@ -15,10 +15,10 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoDadosComplementaresObservacaoContribuinte extends DFBase {
     private static final long serialVersionUID = -7797475815166947317L;
 
-    @Attribute(name = "xCampo", required = true)
+    @Attribute(name = "xCampo")
     private String campo;
 
-    @Element(name = "xTexto", required = true)
+    @Element(name = "xTexto")
     private String texto;
 
     public CTeNotaInfoDadosComplementaresObservacaoContribuinte() {

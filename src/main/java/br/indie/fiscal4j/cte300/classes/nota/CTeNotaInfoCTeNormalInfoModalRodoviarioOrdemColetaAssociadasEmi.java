@@ -16,16 +16,16 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadasEmi extends DFBase {
     private static final long serialVersionUID = -6636308547258454315L;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
     @Element(name = "cInt", required = false)
     private String codigoInterno;
 
-    @Element(name = "IE", required = true)
+    @Element(name = "IE")
     private String inscricaoEstadual;
 
-    @Element(name = "UF", required = true)
+    @Element(name = "UF")
     private String siglaUF;
 
     @Element(name = "fone", required = false)

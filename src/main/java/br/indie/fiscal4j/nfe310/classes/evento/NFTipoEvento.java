@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -13,10 +13,10 @@ import java.math.BigDecimal;
 public class NFTipoEvento extends DFBase {
     private static final long serialVersionUID = 172979194017130488L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "descEvento", required = true)
+    @Element(name = "descEvento")
     private String descricaoEvento;
 
     // Carta correcao
@@ -27,7 +27,7 @@ public class NFTipoEvento extends DFBase {
     private String condicaoUso;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {

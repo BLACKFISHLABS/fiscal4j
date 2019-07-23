@@ -8,7 +8,7 @@ public class NFNotaInfoItemImpostoPISNaoTributado extends DFBase {
 
     private static final long serialVersionUID = -961225710108754016L;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private NFNotaInfoSituacaoTributariaPIS situacaoTributaria;
 
     public NFNotaInfoItemImpostoPISNaoTributado() {

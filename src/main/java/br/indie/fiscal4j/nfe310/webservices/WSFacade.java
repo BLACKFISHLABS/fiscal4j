@@ -1,7 +1,6 @@
 package br.indie.fiscal4j.nfe310.webservices;
 
 import br.indie.fiscal4j.DFModelo;
-import br.indie.fiscal4j.DFSocketFactory;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
@@ -18,6 +17,7 @@ import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteEnvioRetornoDados;
 import br.indie.fiscal4j.nfe310.classes.lote.envio.NFLoteIndicadorProcessamento;
 import br.indie.fiscal4j.nfe310.classes.nota.consulta.NFNotaConsultaRetorno;
 import br.indie.fiscal4j.nfe310.classes.statusservico.consulta.NFStatusServicoConsultaRetorno;
+import br.indie.fiscal4j.utils.DFSocketFactory;
 import org.apache.commons.httpclient.protocol.Protocol;
 
 import java.io.IOException;

@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.evento.cancelamento;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
@@ -21,7 +21,7 @@ public class CTeInfoEventoCancelamento extends DFBase {
     @Element(name = "cOrgao", required = false)
     private DFUnidadeFederativa orgao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
     @Element(name = "CNPJ", required = false)
@@ -30,16 +30,16 @@ public class CTeInfoEventoCancelamento extends DFBase {
     @Element(name = "CPF", required = false)
     private String cpf;
 
-    @Element(name = "chCTe", required = true)
+    @Element(name = "chCTe")
     private String chave;
 
-    @Element(name = "dhEvento", required = true)
+    @Element(name = "dhEvento")
     private ZonedDateTime dataHoraEvento;
 
-    @Element(name = "tpEvento", required = true)
+    @Element(name = "tpEvento")
     private String codigoEvento;
 
-    @Element(name = "nSeqEvento", required = true)
+    @Element(name = "nSeqEvento")
     private Integer numeroSequencialEvento;
 
     @Element(name = "verEvento", required = false)
@@ -53,7 +53,7 @@ public class CTeInfoEventoCancelamento extends DFBase {
     }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
     }
 
     public String getId() {

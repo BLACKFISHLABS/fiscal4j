@@ -16,10 +16,10 @@ import java.time.LocalDate;
 public class CTeNotaInfoDadosComplementaresEntregaComDataDefinida extends DFBase {
     private static final long serialVersionUID = -2993904878236899549L;
 
-    @Element(name = "tpPer", required = true)
+    @Element(name = "tpPer")
     private CTTipoPrazoDataEntrega tipoPrazoDataEntrega;
 
-    @Element(name = "dProg", required = true)
+    @Element(name = "dProg")
     private LocalDate dataProgramada;
 
     public CTeNotaInfoDadosComplementaresEntregaComDataDefinida() {

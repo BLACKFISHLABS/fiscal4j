@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -28,7 +28,7 @@ public class MDFeProtocoloEvento extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public MDFeEvento getEvento() {

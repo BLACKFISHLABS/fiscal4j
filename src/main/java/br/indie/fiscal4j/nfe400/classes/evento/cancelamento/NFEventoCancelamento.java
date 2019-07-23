@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.nota.assinatura.NFSignature;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -13,17 +13,17 @@ import java.math.BigDecimal;
 public class NFEventoCancelamento extends DFBase {
     private static final long serialVersionUID = -8466800561585040324L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infEvento", required = true)
+    @Element(name = "infEvento")
     private NFInfoEventoCancelamento infoEvento;
 
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public NFInfoEventoCancelamento getInfoEvento() {

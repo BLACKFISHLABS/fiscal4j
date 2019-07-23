@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFNotaInfoImpostoTributacaoICMS;
 import br.indie.fiscal4j.nfe400.classes.NFNotaMotivoDesoneracaoICMS;
 import br.indie.fiscal4j.nfe400.classes.NFOrigem;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -12,10 +12,10 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemImpostoICMS40 extends DFBase {
     private static final long serialVersionUID = -366528394939416671L;
 
-    @Element(name = "orig", required = true)
+    @Element(name = "orig")
     private NFOrigem origem;
 
-    @Element(name = "CST", required = true)
+    @Element(name = "CST")
     private NFNotaInfoImpostoTributacaoICMS situacaoTributaria;
 
     @Element(name = "vICMSDeson", required = false)
@@ -33,7 +33,7 @@ public class NFNotaInfoItemImpostoICMS40 extends DFBase {
     }
 
     public void setValorICMSDesoneracao(final BigDecimal valorICMSDesoneracao) {
-        this.valorICMSDesoneracao = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS40 Item");
+        this.valorICMSDesoneracao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSDesoneracao, "Valor ICMS Desoneracao ICMS40 Item");
     }
 
     public void setMotivoDesoneracaoICMS(final NFNotaMotivoDesoneracaoICMS motivoDesoneracaoICMS) {

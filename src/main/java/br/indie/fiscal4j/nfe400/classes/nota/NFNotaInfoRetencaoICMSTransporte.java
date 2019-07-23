@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
@@ -11,38 +11,38 @@ import java.math.BigDecimal;
 public class NFNotaInfoRetencaoICMSTransporte extends DFBase {
     private static final long serialVersionUID = -5222569391852128441L;
 
-    @Element(name = "vServ", required = true)
+    @Element(name = "vServ")
     private String valorServico;
 
-    @Element(name = "vBCRet", required = true)
+    @Element(name = "vBCRet")
     private String bcRetencaoICMS;
 
-    @Element(name = "pICMSRet", required = true)
+    @Element(name = "pICMSRet")
     private String aliquotaRetencao;
 
-    @Element(name = "vICMSRet", required = true)
+    @Element(name = "vICMSRet")
     private String valorICMSRetido;
 
-    @Element(name = "CFOP", required = true)
+    @Element(name = "CFOP")
     private Integer cfop;
 
-    @Element(name = "cMunFG", required = true)
+    @Element(name = "cMunFG")
     private String codigoMunicipioOcorrenciaFatoGeradorICMSTransporte;
 
     public void setValorServico(final BigDecimal valorServico) {
-        this.valorServico = BigDecimalParser.tamanho15Com2CasasDecimais(valorServico, "Valor Servico Retencao ICMS Transporte");
+        this.valorServico = BigDecimalValidador.tamanho15Com2CasasDecimais(valorServico, "Valor Servico Retencao ICMS Transporte");
     }
 
     public void setBcRetencaoICMS(final BigDecimal bcRetencaoICMS) {
-        this.bcRetencaoICMS = BigDecimalParser.tamanho15Com2CasasDecimais(bcRetencaoICMS, "BC Retencao ICMS Transporte");
+        this.bcRetencaoICMS = BigDecimalValidador.tamanho15Com2CasasDecimais(bcRetencaoICMS, "BC Retencao ICMS Transporte");
     }
 
     public void setAliquotaRetencao(final BigDecimal aliquotaRetencao) {
-        this.aliquotaRetencao = BigDecimalParser.tamanho7ComAte4CasasDecimais(aliquotaRetencao, "Aliquota Retencao ICMS Transporte");
+        this.aliquotaRetencao = BigDecimalValidador.tamanho7ComAte4CasasDecimais(aliquotaRetencao, "Aliquota Retencao ICMS Transporte");
     }
 
     public void setValorICMSRetido(final BigDecimal valorICMSRetido) {
-        this.valorICMSRetido = BigDecimalParser.tamanho15Com2CasasDecimais(valorICMSRetido, "Valor ICMS Retido Transporte");
+        this.valorICMSRetido = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSRetido, "Valor ICMS Retido Transporte");
     }
 
     public void setCfop(final Integer cfop) {

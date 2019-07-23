@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe310.classes.evento;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
@@ -15,13 +15,13 @@ import java.time.ZonedDateTime;
 public class NFInfoEvento extends DFBase {
     private static final long serialVersionUID = 8878652860997939767L;
 
-    @Attribute(name = "Id", required = true)
+    @Attribute(name = "Id")
     private String id;
 
-    @Element(name = "cOrgao", required = true)
+    @Element(name = "cOrgao")
     private DFUnidadeFederativa orgao;
 
-    @Element(name = "tpAmb", required = true)
+    @Element(name = "tpAmb")
     private DFAmbiente ambiente;
 
     @Element(name = "CNPJ", required = false)
@@ -30,22 +30,22 @@ public class NFInfoEvento extends DFBase {
     @Element(name = "CPF", required = false)
     private String cpf;
 
-    @Element(name = "chNFe", required = true)
+    @Element(name = "chNFe")
     private String chave;
 
-    @Element(name = "dhEvento", required = true)
+    @Element(name = "dhEvento")
     private ZonedDateTime dataHoraEvento;
 
-    @Element(name = "tpEvento", required = true)
+    @Element(name = "tpEvento")
     private String codigoEvento;
 
-    @Element(name = "nSeqEvento", required = true)
+    @Element(name = "nSeqEvento")
     private Integer numeroSequencialEvento;
 
-    @Element(name = "verEvento", required = true)
+    @Element(name = "verEvento")
     private String versaoEvento;
 
-    @Element(name = "detEvento", required = true)
+    @Element(name = "detEvento")
     private NFTipoEvento dadosEvento;
 
     public void setOrgao(final DFUnidadeFederativa orgao) {
@@ -53,7 +53,7 @@ public class NFInfoEvento extends DFBase {
     }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalParser.tamanho5Com2CasasDecimais(versaoEvento, "Info Evento Versao");
+        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Info Evento Versao");
     }
 
     public String getId() {

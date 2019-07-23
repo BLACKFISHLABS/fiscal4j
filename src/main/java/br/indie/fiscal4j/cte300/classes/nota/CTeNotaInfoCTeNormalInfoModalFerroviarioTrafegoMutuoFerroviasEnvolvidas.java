@@ -16,7 +16,7 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoCTeNormalInfoModalFerroviarioTrafegoMutuoFerroviasEnvolvidas extends DFBase {
     private static final long serialVersionUID = -7408236804856205178L;
 
-    @Element(name = "CNPJ", required = true)
+    @Element(name = "CNPJ")
     private String cnpj;
 
     @Element(name = "cInt", required = false)
@@ -25,10 +25,10 @@ public class CTeNotaInfoCTeNormalInfoModalFerroviarioTrafegoMutuoFerroviasEnvolv
     @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
-    @Element(name = "xNome", required = true)
+    @Element(name = "xNome")
     private String razaoSocial;
 
-    @Element(name = "enderFerro", required = true)
+    @Element(name = "enderFerro")
     private CTeNotaEnderecoFerrovia endereco;
 
     public CTeNotaInfoCTeNormalInfoModalFerroviarioTrafegoMutuoFerroviasEnvolvidas() {

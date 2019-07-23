@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.evento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 public class CTeEventoRetorno extends DFBase {
     private static final long serialVersionUID = -8952520263707135185L;
 
-    @Attribute(name = "versao", required = true)
+    @Attribute(name = "versao")
     private String versao;
 
-    @Element(name = "infEvento", required = true)
+    @Element(name = "infEvento")
     private CTeInfoEventoRetorno infoEventoRetorno;
 
     @Element(name = "Signature", required = false)
@@ -33,7 +33,7 @@ public class CTeEventoRetorno extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalParser.tamanho4Com2CasasDecimais(versao, "Versao");
+        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public NFSignature getAssinatura() {

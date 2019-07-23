@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -17,7 +17,7 @@ public class NFNotaInfoDuplicata extends DFBase {
     @Element(name = "dVenc", required = false)
     private LocalDate dataVencimento;
 
-    @Element(name = "vDup", required = true)
+    @Element(name = "vDup")
     private String valorDuplicata;
 
     public void setNumeroDuplicata(final String numeroDuplicata) {
@@ -30,7 +30,7 @@ public class NFNotaInfoDuplicata extends DFBase {
     }
 
     public void setValorDuplicata(final BigDecimal valorDuplicata) {
-        this.valorDuplicata = BigDecimalParser.tamanho15Com2CasasDecimais(valorDuplicata, "Valor Duplicata");
+        this.valorDuplicata = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDuplicata, "Valor Duplicata");
     }
 
     public String getValorDuplicata() {

@@ -1,32 +1,30 @@
 package br.indie.fiscal4j.nfe400.webservices;
 
+import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.DFModelo;
-import br.indie.fiscal4j.assinatura.AssinaturaDigital;
 import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe400.NotaFiscalChaveParser;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import br.indie.fiscal4j.nfe400.classes.evento.NFEnviaEventoRetorno;
 import br.indie.fiscal4j.nfe400.classes.evento.cancelamento.NFEnviaEventoCancelamento;
 import br.indie.fiscal4j.nfe400.classes.evento.cancelamento.NFEventoCancelamento;
 import br.indie.fiscal4j.nfe400.classes.evento.cancelamento.NFInfoCancelamento;
 import br.indie.fiscal4j.nfe400.classes.evento.cancelamento.NFInfoEventoCancelamento;
-import br.indie.fiscal4j.nfe400.parsers.NotaFiscalChaveParser;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeRecepcaoEvento4Stub;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeRecepcaoEvento4Stub.NfeResultMsg;
-import br.indie.fiscal4j.persister.DFPersister;
+import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.Collections;
 
-class WSCancelamento {
+class WSCancelamento implements DFLog {
+
     private static final String DESCRICAO_EVENTO = "Cancelamento";
     private static final BigDecimal VERSAO_LEIAUTE = new BigDecimal("1.00");
     private static final String EVENTO_CANCELAMENTO = "110111";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WSCancelamento.class);
     private final NFeConfig config;
 
     WSCancelamento(final NFeConfig config) {
@@ -35,20 +33,20 @@ class WSCancelamento {
 
     NFEnviaEventoRetorno cancelaNotaAssinada(final String chaveAcesso, final String eventoAssinadoXml) throws Exception {
         final OMElement omElementResult = this.efetuaCancelamento(eventoAssinadoXml, chaveAcesso);
-        return new DFPersister().read(NFEnviaEventoRetorno.class, omElementResult.toString());
+        return this.config.getPersister().read(NFEnviaEventoRetorno.class, omElementResult.toString());
     }
 
     NFEnviaEventoRetorno cancelaNota(final String chaveAcesso, final String numeroProtocolo, final String motivo) throws Exception {
         final String cancelamentoNotaXML = this.gerarDadosCancelamento(chaveAcesso, numeroProtocolo, motivo).toString();
-        final String xmlAssinado = new AssinaturaDigital(this.config).assinarDocumento(cancelamentoNotaXML);
+        final String xmlAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(cancelamentoNotaXML);
         final OMElement omElementResult = this.efetuaCancelamento(xmlAssinado, chaveAcesso);
-        return new DFPersister().read(NFEnviaEventoRetorno.class, omElementResult.toString());
+        return this.config.getPersister().read(NFEnviaEventoRetorno.class, omElementResult.toString());
     }
 
     private OMElement efetuaCancelamento(final String xmlAssinado, final String chaveAcesso) throws Exception {
         final NFeRecepcaoEvento4Stub.NfeDadosMsg dados = new NFeRecepcaoEvento4Stub.NfeDadosMsg();
         final OMElement omElementXML = AXIOMUtil.stringToOM(xmlAssinado);
-        WSCancelamento.LOGGER.debug(omElementXML.toString());
+        this.getLogger().debug(omElementXML.toString());
         dados.setExtraElement(omElementXML);
 
         final NotaFiscalChaveParser parser = new NotaFiscalChaveParser(chaveAcesso);
@@ -60,7 +58,7 @@ class WSCancelamento {
 
         final NfeResultMsg nfeRecepcaoEvento = new NFeRecepcaoEvento4Stub(urlWebService).nfeRecepcaoEvento(dados);
         final OMElement omElementResult = nfeRecepcaoEvento.getExtraElement();
-        WSCancelamento.LOGGER.debug(omElementResult.toString());
+        this.getLogger().debug(omElementResult.toString());
         return omElementResult;
     }
 

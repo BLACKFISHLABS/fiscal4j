@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe310.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalParser;
+import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     private static final long serialVersionUID = -2899516480924530882L;
 
-    @Element(name = "cProdANP", required = true)
+    @Element(name = "cProdANP")
     private String codigoProdutoANP;
 
     @Element(name = "pMixGN", required = false)
@@ -23,7 +23,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     @Element(name = "qTemp", required = false)
     private String quantidade;
 
-    @Element(name = "UFCons", required = true)
+    @Element(name = "UFCons")
     private String uf;
 
     @Element(name = "CIDE", required = false)
@@ -52,7 +52,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setQuantidade(final BigDecimal quantidade) {
-        this.quantidade = BigDecimalParser.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
+        this.quantidade = BigDecimalValidador.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
     }
 
     public void setUf(final DFUnidadeFederativa uf) {
@@ -64,7 +64,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setPercentualGasNatural(final BigDecimal percentualGasNatural) {
-        this.percentualGasNatural = BigDecimalParser.tamanho5Com2CasasDecimais(percentualGasNatural, "Percentual Gas Natural Combustivel");
+        this.percentualGasNatural = BigDecimalValidador.tamanho5Com2CasasDecimais(percentualGasNatural, "Percentual Gas Natural Combustivel");
     }
 
     public void setEncerrante(final NFNotaInfoItemProdutoCombustivelEncerrante encerrante) {

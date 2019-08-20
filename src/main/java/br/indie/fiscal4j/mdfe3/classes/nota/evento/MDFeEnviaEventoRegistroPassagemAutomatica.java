@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
-import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.DFBase;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.

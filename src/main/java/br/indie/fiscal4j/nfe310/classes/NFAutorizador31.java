@@ -1,11 +1,11 @@
 package br.indie.fiscal4j.nfe310.classes;
 
+import java.util.Arrays;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFTipoEmissao;
 import br.indie.fiscal4j.nfe310.parsers.NotaFiscalChaveParser;
-
-import java.util.Arrays;
 
 /**
  * <h1>URLs dos serviços</h1><br>

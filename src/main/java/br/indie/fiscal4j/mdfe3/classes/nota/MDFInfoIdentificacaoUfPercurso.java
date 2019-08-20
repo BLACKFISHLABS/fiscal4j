@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import org.simpleframework.xml.Element;
 
 /**
  * Created by Eldevan Nery Junior on 06/11/17. Informações do Percurso do MDF-e

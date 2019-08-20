@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.nfe310.classes.evento.manifestacaodestinatario;
 
-import br.indie.fiscal4j.nfe310.classes.evento.NFTipoEvento;
 import org.simpleframework.xml.Element;
+
+import br.indie.fiscal4j.nfe310.classes.evento.NFTipoEvento;
 
 public class NFInfoManifestacaoDestinatario extends NFTipoEvento {
     private static final long serialVersionUID = 8512309132142299111L;

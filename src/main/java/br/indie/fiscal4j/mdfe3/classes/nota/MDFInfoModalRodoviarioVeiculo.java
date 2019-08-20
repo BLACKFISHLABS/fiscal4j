@@ -1,9 +1,10 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoCarroceria;
-import org.simpleframework.xml.Element;
 
 public abstract class MDFInfoModalRodoviarioVeiculo extends DFBase {
     private static final long serialVersionUID = 3584628986749380582L;

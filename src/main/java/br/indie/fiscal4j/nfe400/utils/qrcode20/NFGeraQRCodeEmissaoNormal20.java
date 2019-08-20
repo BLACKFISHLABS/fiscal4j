@@ -1,9 +1,9 @@
 package br.indie.fiscal4j.nfe400.utils.qrcode20;
 
+import java.security.NoSuchAlgorithmException;
+
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
-
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Implementação geração qrcode emissão normal (1).

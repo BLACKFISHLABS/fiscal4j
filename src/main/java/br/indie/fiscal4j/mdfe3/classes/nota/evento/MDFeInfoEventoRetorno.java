@@ -1,12 +1,13 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.DFUnidadeFederativa;
+import java.time.ZonedDateTime;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
-import java.time.ZonedDateTime;
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.DFUnidadeFederativa;
 
 public class MDFeInfoEventoRetorno extends DFBase {
     private static final long serialVersionUID = -2115809978508728897L;

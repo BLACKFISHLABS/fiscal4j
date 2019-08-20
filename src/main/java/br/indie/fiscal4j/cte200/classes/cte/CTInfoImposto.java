@@ -1,8 +1,9 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNotaInfoInformacoesRelativasImpostosICMSPartilha;
-import org.simpleframework.xml.Element;
 
 public class CTInfoImposto extends DFBase {
     private static final long serialVersionUID = -8185617317777830794L;

@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte300.classes.enviolote.consulta.CTeProtocolo;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
+
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte300.classes.enviolote.consulta.CTeProtocolo;
 
 /**
  * Created by Eldevan Nery Junior on 09/10/17.

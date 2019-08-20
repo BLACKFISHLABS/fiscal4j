@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.nota.assinatura;
 
-import org.simpleframework.xml.Attribute;
-
 import java.io.Serializable;
+
+import org.simpleframework.xml.Attribute;
 
 public class NFSignatureMethod implements Serializable {
     private static final long serialVersionUID = 4525403507445216913L;

@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte200.classes.CTTipoEntregaData;
+import java.time.LocalDate;
+
 import org.simpleframework.xml.Element;
 
-import java.time.LocalDate;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte200.classes.CTTipoEntregaData;
 
 public class CTInfoEntregaComData extends DFBase {
     private static final long serialVersionUID = 7236218662791375431L;

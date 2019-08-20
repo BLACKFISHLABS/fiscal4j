@@ -1,12 +1,13 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.util.List;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
-import java.util.List;
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 /**
  * Created by Eldevan Nery Junior on 01/11/17.

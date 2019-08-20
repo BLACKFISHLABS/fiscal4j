@@ -5,6 +5,7 @@ import br.indie.fiscal4j.cte300.classes.CTTipoUnidadeCarga;
 import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
@@ -28,7 +29,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoUnidadeCarga extends DFBase {
     @Element(name = "idUnidCarga")
     private String identificacaoCarga;
 
-    @Element(name = "lacUnidCarga", required = false)
+    @ElementList(name = "lacUnidCarga", inline = true, required = false)
     private List<CTeNotaInfoCTeNormalInfoDocumentosLacre> lacre;
 
     @Element(name = "qtdRat", required = false)

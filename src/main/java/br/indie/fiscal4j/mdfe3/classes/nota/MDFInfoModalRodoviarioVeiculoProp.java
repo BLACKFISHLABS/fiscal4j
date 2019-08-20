@@ -1,10 +1,11 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
+import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
+
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoProprietario;
-import br.indie.fiscal4j.validadores.StringValidador;
-import org.simpleframework.xml.Element;
 
 public class MDFInfoModalRodoviarioVeiculoProp extends DFBase {
     private static final long serialVersionUID = 6851210038399361723L;

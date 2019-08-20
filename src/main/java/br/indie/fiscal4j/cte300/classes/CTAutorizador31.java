@@ -1,10 +1,10 @@
 package br.indie.fiscal4j.cte300.classes;
 
+import java.util.Arrays;
+
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.cte300.parsers.CTChaveParser;
-
-import java.util.Arrays;
 
 public enum CTAutorizador31 {
 

@@ -1,13 +1,14 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoRodado;
-import br.indie.fiscal4j.validadores.ListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import java.util.List;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Order;
 
-import java.util.List;
+import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoRodado;
+import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.StringValidador;
 
 @Order(elements = {"cInt", "placa", "RENAVAM", "tara", "capKG", "capM3", "prop", "condutor", "tpRod", "tpCar", "UF"})
 public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioVeiculo {

@@ -10,7 +10,9 @@ deploy:
   overwrite: true
   provider: releases
   skip_cleanup: true
-jdk: oraclejdk8
+jdk: oraclejdk11
+before_script:
+  - export TZ=America/Sao_Paulo
 language: java
 script:
   - "mvn clean install"

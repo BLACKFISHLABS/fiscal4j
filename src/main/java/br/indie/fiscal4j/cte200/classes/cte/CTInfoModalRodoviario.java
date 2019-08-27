@@ -1,13 +1,11 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import java.util.List;
-
-import java.time.LocalDate;
-
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
-import br.indie.fiscal4j.DFBase;
+import java.time.LocalDate;
+import java.util.List;
 
 public class CTInfoModalRodoviario extends DFBase {
     private static final long serialVersionUID = 3232064596106386289L;

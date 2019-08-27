@@ -1,15 +1,14 @@
 package br.indie.fiscal4j.nfe400.utils.qrcode20;
 
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
+import org.apache.commons.lang3.StringUtils;
+
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import org.apache.commons.lang3.StringUtils;
-
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.nfe.NFeConfig;
-import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 
 /**
  * Classe abstrata para a implementação da geração do QRCode 2.0.

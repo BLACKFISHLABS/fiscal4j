@@ -1,11 +1,11 @@
 package br.indie.fiscal4j.nfe400.utils.qrcode20;
 
+import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
+
 import java.security.NoSuchAlgorithmException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-
-import br.indie.fiscal4j.nfe.NFeConfig;
-import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 
 /**
  * Implementação QRCode contingência offline (9) 2.0.

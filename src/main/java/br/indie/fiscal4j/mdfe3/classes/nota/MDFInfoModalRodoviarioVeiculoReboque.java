@@ -1,8 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.simpleframework.xml.Element;
 
 public class MDFInfoModalRodoviarioVeiculoReboque extends MDFInfoModalRodoviarioVeiculo {
     private static final long serialVersionUID = -2787982058485353668L;

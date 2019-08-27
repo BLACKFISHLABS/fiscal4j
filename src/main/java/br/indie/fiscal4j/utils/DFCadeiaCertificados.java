@@ -4,7 +4,6 @@ import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.cte300.classes.CTAutorizador31;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
-import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
 import org.apache.commons.lang3.StringUtils;
 

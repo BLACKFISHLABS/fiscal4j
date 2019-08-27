@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.cte300.classes.evento.cancelamento;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.cte300.classes.evento.CTeInfoEventoRetorno;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.cte300.classes.evento.CTeInfoEventoRetorno;
 
 @Root(name = "retCancCTe")
 public class CTeRetornoCancelamento extends DFBase {

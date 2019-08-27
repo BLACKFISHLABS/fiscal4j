@@ -1,13 +1,12 @@
 package br.indie.fiscal4j.mdfe3.classes.lote.envio;
 
+import br.indie.fiscal4j.DFBase;
+import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
+import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
-import br.indie.fiscal4j.validadores.StringValidador;
 
 /**
  * Created by Eldevan Nery Junior on 08/11/17. Envio de Lote MDF-e para concessão de autorização.

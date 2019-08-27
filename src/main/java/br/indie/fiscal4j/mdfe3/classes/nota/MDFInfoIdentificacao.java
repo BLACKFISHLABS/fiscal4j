@@ -1,14 +1,5 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import java.util.Arrays;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Namespace;
-import org.simpleframework.xml.Root;
-
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFModelo;
@@ -17,8 +8,15 @@ import br.indie.fiscal4j.mdfe3.classes.def.*;
 import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.ListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
+import org.apache.commons.lang3.StringUtils;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
 import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 03/11/17.

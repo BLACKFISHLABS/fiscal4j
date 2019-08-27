@@ -1,12 +1,11 @@
 package br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados;
 
-import java.util.List;
-
-import org.simpleframework.xml.*;
-
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import org.simpleframework.xml.*;
+
+import java.util.List;
 
 /**
  * Created by Eldevan Nery Junior on 22/11/17. Tipo Retorno de Pedido de Consulta MDF-e não Encerrados.

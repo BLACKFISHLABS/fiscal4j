@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe310.classes.nota.assinatura;
 
-import java.io.Serializable;
-
 import org.simpleframework.xml.Attribute;
+
+import java.io.Serializable;
 
 public class NFDigestMethod implements Serializable {
     private static final long serialVersionUID = -2713703913431592721L;

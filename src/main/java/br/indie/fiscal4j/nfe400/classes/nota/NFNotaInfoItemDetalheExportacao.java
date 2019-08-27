@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
-import java.math.BigInteger;
-
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.BigIntegerValidador;
+import org.simpleframework.xml.Element;
+
+import java.math.BigInteger;
 
 public class NFNotaInfoItemDetalheExportacao extends DFBase {
     private static final long serialVersionUID = 8265188954413940773L;

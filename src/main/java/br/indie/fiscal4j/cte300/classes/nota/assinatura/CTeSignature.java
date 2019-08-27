@@ -1,9 +1,8 @@
 package br.indie.fiscal4j.cte300.classes.nota.assinatura;
 
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
-
-import br.indie.fiscal4j.DFBase;
 
 @Namespace(reference = "http://www.w3.org/2000/09/xmldsig#")
 public class CTeSignature extends DFBase {

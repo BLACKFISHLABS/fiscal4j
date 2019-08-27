@@ -1,9 +1,8 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte200.classes.CTTipoEntregaData;
+import org.simpleframework.xml.Element;
 
 public class CTInfoEntregaSemData extends DFBase {
     private static final long serialVersionUID = 4799720133563113665L;

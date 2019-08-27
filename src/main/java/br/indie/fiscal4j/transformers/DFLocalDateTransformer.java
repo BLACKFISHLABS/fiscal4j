@@ -1,9 +1,9 @@
 package br.indie.fiscal4j.transformers;
 
+import org.simpleframework.xml.transform.Transform;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-import org.simpleframework.xml.transform.Transform;
 
 public class DFLocalDateTransformer implements Transform<LocalDate> {
 

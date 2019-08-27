@@ -1,12 +1,11 @@
 package br.indie.fiscal4j.nfe.classes.distribuicao;
 
+import br.indie.fiscal4j.DFAmbiente;
+import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
-
-import br.indie.fiscal4j.DFAmbiente;
-import br.indie.fiscal4j.DFBase;
 
 @Root(name = "retDistDFeInt")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")

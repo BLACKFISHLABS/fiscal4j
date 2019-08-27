@@ -1,11 +1,10 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
-import java.time.ZonedDateTime;
-
-import org.simpleframework.xml.Element;
-
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
+import org.simpleframework.xml.Element;
+
+import java.time.ZonedDateTime;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.

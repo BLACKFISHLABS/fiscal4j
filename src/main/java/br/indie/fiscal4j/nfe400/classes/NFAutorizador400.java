@@ -10,10 +10,13 @@ import java.util.List;
 
 /**
  * <h1>URLs dos serviços</h1><br>
- * <a href="http://hom.nfe.fazenda.gov.br/portal/webServices.aspx?tipoConteudo=Wak0FwB7dKs=">NFE Homologação</a><br>
- * <a href="http://www.nfe.fazenda.gov.br/portal/webServices.aspx?tipoConteudo=Wak0FwB7dKs=">NFE Produção</a><br>
+ * <a href="http://hom.nfe.fazenda.gov.br/portal/webServices.aspx?tipoConteudo=Wak0FwB7dKs=">NFE
+ * Homologação</a><br>
+ * <a href="http://www.nfe.fazenda.gov.br/portal/webServices.aspx?tipoConteudo=Wak0FwB7dKs=">NFE
+ * Produção</a><br>
  * <br>
- * <a href="http://nfce.encat.org/desenvolvedor/webservices-h">NFCE Homologação</a><br>
+ * <a href="http://nfce.encat.org/desenvolvedor/webservices-h">NFCE
+ * Homologação</a><br>
  * <a href="http://nfce.encat.org/desenvolvedor/webservices-p">NFCE Produção</a>
  */
 public enum NFAutorizador400 {
@@ -191,7 +194,8 @@ public enum NFAutorizador400 {
         }
     },
     /**
-     * Links NFC-e segundo site: https://ciranda.me/tsdn/blog-da-tecnospeed/post/como-emitir-nfc-e-na-bahia
+     * Links NFC-e segundo site:
+     * https://ciranda.me/tsdn/blog-da-tecnospeed/post/como-emitir-nfc-e-na-bahia
      */
     BA {
         @Override
@@ -798,37 +802,37 @@ public enum NFAutorizador400 {
     PA {
         @Override
         public String getNfeAutorizacao(final DFAmbiente ambiente) {
-            return SVAN.getNfeAutorizacao(ambiente);
+            return SVRS.getNfeAutorizacao(ambiente);
         }
 
         @Override
         public String getNfeRetAutorizacao(final DFAmbiente ambiente) {
-            return SVAN.getNfeRetAutorizacao(ambiente);
+            return SVRS.getNfeRetAutorizacao(ambiente);
         }
 
         @Override
         public String getNfeConsultaProtocolo(final DFAmbiente ambiente) {
-            return SVAN.getNfeConsultaProtocolo(ambiente);
+            return SVRS.getNfeConsultaProtocolo(ambiente);
         }
 
         @Override
         public String getNfeStatusServico(final DFAmbiente ambiente) {
-            return SVAN.getNfeStatusServico(ambiente);
+            return SVRS.getNfeStatusServico(ambiente);
         }
 
         @Override
         public String getRecepcaoEvento(final DFAmbiente ambiente) {
-            return SVAN.getRecepcaoEvento(ambiente);
+            return SVRS.getRecepcaoEvento(ambiente);
         }
 
         @Override
         public String getConsultaCadastro(final DFAmbiente ambiente) {
-            return SVAN.getConsultaCadastro(ambiente);
+            return SVRS.getConsultaCadastro(ambiente);
         }
 
         @Override
         public String getNfeInutilizacao(final DFAmbiente ambiente) {
-            return SVAN.getNfeInutilizacao(ambiente);
+            return SVRS.getNfeInutilizacao(ambiente);
         }
 
         @Override
@@ -1498,17 +1502,17 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfeAutorizacao(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ?
-                    "https://hom.nfe.fazenda.gov.br/SCERecepcaoRFB/SCERecepcaoRFB.asmx" :
-                    "https://www.nfe.fazenda.gov.br/SCERecepcaoRFB/SCERecepcaoRFB.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente)
+                    ? "https://hom.nfe.fazenda.gov.br/SCERecepcaoRFB/SCERecepcaoRFB.asmx"
+                    : "https://www.nfe.fazenda.gov.br/SCERecepcaoRFB/SCERecepcaoRFB.asmx";
 
         }
 
         @Override
         public String getNfeRetAutorizacao(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ?
-                    "https://hom.nfe.fazenda.gov.br/SCEConsultaRFB/SCEConsultaRFB.asmx" :
-                    "https://www.nfe.fazenda.gov.br/SCEConsultaRFB/SCEConsultaRFB.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente)
+                    ? "https://hom.nfe.fazenda.gov.br/SCEConsultaRFB/SCEConsultaRFB.asmx"
+                    : "https://www.nfe.fazenda.gov.br/SCEConsultaRFB/SCEConsultaRFB.asmx";
         }
 
         @Override
@@ -1743,7 +1747,7 @@ public enum NFAutorizador400 {
     }
 
     public static List<DFUnidadeFederativa> getUfsPossuemServicoConsultaCadastro() {
-        return Arrays.asList(DFUnidadeFederativa.AC, DFUnidadeFederativa.PB, DFUnidadeFederativa.RN, DFUnidadeFederativa.SC, //SVRS
+        return Arrays.asList(DFUnidadeFederativa.AC, DFUnidadeFederativa.PA, DFUnidadeFederativa.PB, DFUnidadeFederativa.RN, DFUnidadeFederativa.SC, //SVRS
                 DFUnidadeFederativa.AM, DFUnidadeFederativa.BA, DFUnidadeFederativa.CE, DFUnidadeFederativa.GO, DFUnidadeFederativa.MG, DFUnidadeFederativa.MS, DFUnidadeFederativa.MT, DFUnidadeFederativa.PE,
                 DFUnidadeFederativa.PR, DFUnidadeFederativa.RS, DFUnidadeFederativa.SP);
     }

@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 public class DFLocalDateTransformer implements Transform<LocalDate> {
 
     private static final DateTimeFormatter DATATIME_FORMATTER_YYYYMMDDXXX = DateTimeFormatter.ofPattern("yyyy-MM-ddXXX");
+    private static final DateTimeFormatter DATATIME_FORMATTER_YYYYMMDDHHMMSSXXXX = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXXXX");
     private static final DateTimeFormatter DATETIME_FORMATTER_YYYYMMDD = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static final DateTimeFormatter DATETIME_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final DateTimeFormatter DATETIME_FORMATTER_DDMMYYYHHMMSS = DateTimeFormatter.ofPattern("dd/MM/yyyy' 'HH:mm:ss");
@@ -23,7 +24,11 @@ public class DFLocalDateTransformer implements Transform<LocalDate> {
                 try {
                     return LocalDate.from(DFLocalDateTransformer.DATETIME_FORMATTER_DDMMYYYY.parse(data));
                 } catch (final Exception e3) {
-                    return LocalDate.from(DFLocalDateTransformer.DATETIME_FORMATTER_DDMMYYYHHMMSS.parse(data));
+                    try {
+                        return LocalDate.from(DFLocalDateTransformer.DATETIME_FORMATTER_DDMMYYYHHMMSS.parse(data));
+                    } catch (final Exception e4) {
+                        return LocalDate.from(DFLocalDateTransformer.DATATIME_FORMATTER_YYYYMMDDHHMMSSXXXX.parse(data));
+                    }
                 }
             }
         }

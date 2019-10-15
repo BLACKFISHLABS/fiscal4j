@@ -19,6 +19,9 @@ public class MDFe extends DFBase {
     @Element(name = "infMDFe")
     private MDFInfo info;
 
+    @Element(name = "infMDFeSupl", required = false)
+    private MDFInfoSuplementar mdfInfoSuplementar;
+
     @Element(name = "Signature", required = false)
     private NFSignature assinatura;
 
@@ -28,6 +31,14 @@ public class MDFe extends DFBase {
 
     public void setInfo(final MDFInfo info) {
         this.info = info;
+    }
+
+    public MDFInfoSuplementar getMdfInfoSuplementar() {
+        return mdfInfoSuplementar;
+    }
+
+    public void setMdfInfoSuplementar(MDFInfoSuplementar mdfInfoSuplementar) {
+        this.mdfInfoSuplementar = mdfInfoSuplementar;
     }
 
     public NFSignature getAssinatura() {

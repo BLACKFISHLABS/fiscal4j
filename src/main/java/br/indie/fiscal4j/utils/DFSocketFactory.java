@@ -9,9 +9,10 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.security.*;
-import java.security.cert.X509Certificate;
-import java.util.Enumeration;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
 
 public class DFSocketFactory implements ProtocolSocketFactory {
 
@@ -42,7 +43,7 @@ public class DFSocketFactory implements ProtocolSocketFactory {
         return this.sslContext.getSocketFactory().createSocket(host, port);
     }
 
-    private SSLContext createSSLContext(final DFConfig config) throws UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
+    private SSLContext createSSLContext(final DFConfig config) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException, UnrecoverableKeyException {
         final KeyManager[] keyManagers = this.createKeyManagers(config);
         final TrustManager[] trustManagers = this.createTrustManagers(config);
         final SSLContext sslContext = SSLContext.getInstance(config.getSSLProtocolos()[0]);
@@ -51,10 +52,7 @@ public class DFSocketFactory implements ProtocolSocketFactory {
     }
 
     private KeyManager[] createKeyManagers(final DFConfig config) throws UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException {
-        final String alias = DFSocketFactory.getAlias(config.getCertificadoKeyStore());
-        final X509Certificate certificate = (X509Certificate) config.getCertificadoKeyStore().getCertificate(alias);
-        final PrivateKey privateKey = (PrivateKey) config.getCertificadoKeyStore().getKey(alias, config.getCertificadoSenha().toCharArray());
-        return new KeyManager[]{new DFKeyManager(certificate, privateKey)};
+        return new KeyManager[]{new br.indie.fiscal4j.utils.DFKeyManager(config)};
     }
 
     private TrustManager[] createTrustManagers(final DFConfig config) throws KeyStoreException, NoSuchAlgorithmException {
@@ -63,55 +61,4 @@ public class DFSocketFactory implements ProtocolSocketFactory {
         return trustManagerFactory.getTrustManagers();
     }
 
-    private static String getAlias(final KeyStore ks) throws KeyStoreException {
-        final Enumeration<String> aliasesEnum = ks.aliases();
-        while (aliasesEnum.hasMoreElements()) {
-            final String alias = aliasesEnum.nextElement();
-            if (ks.isKeyEntry(alias)) {
-                return alias;
-            }
-        }
-        throw new KeyStoreException("Nenhum alias encontrado no certificado");
-    }
-
-    static class DFKeyManager implements X509KeyManager {
-
-        private final X509Certificate certificate;
-        private final PrivateKey privateKey;
-
-        DFKeyManager(final X509Certificate certificate, final PrivateKey privateKey) {
-            this.certificate = certificate;
-            this.privateKey = privateKey;
-        }
-
-        @Override
-        public String chooseClientAlias(final String[] arg0, final Principal[] arg1, final Socket arg2) {
-            return this.certificate.getIssuerDN().getName();
-        }
-
-        @Override
-        public String chooseServerAlias(final String arg0, final Principal[] arg1, final Socket arg2) {
-            return null;
-        }
-
-        @Override
-        public X509Certificate[] getCertificateChain(final String arg0) {
-            return new X509Certificate[]{this.certificate};
-        }
-
-        @Override
-        public String[] getClientAliases(final String arg0, final Principal[] arg1) {
-            return new String[]{this.certificate.getIssuerDN().getName()};
-        }
-
-        @Override
-        public PrivateKey getPrivateKey(final String arg0) {
-            return this.privateKey;
-        }
-
-        @Override
-        public String[] getServerAliases(final String arg0, final Principal[] arg1) {
-            return null;
-        }
-    }
 }

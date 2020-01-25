@@ -19,7 +19,8 @@ import java.security.cert.X509Certificate;
 public abstract class DFCadeiaCertificados implements DFLog {
 
     private static final int PORT = 443;
-    private static final String PROTOCOL = "TLSv1.2";
+    private static final String PROTOCOL = "TLS";
+    private static final int TIMEOUT_WS = 30;
 
     public static byte[] geraCadeiaCertificados(final String senha) throws Exception {
         final KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
@@ -133,7 +134,7 @@ public abstract class DFCadeiaCertificados implements DFLog {
 
         DFLog.getLogger(DFCadeiaCertificados.class).debug("Abrindo conexao para o servidor: {}:{}", host, DFCadeiaCertificados.PORT);
         try (SSLSocket sslSocket = (SSLSocket) sslContext.getSocketFactory().createSocket(host, DFCadeiaCertificados.PORT)) {
-            sslSocket.setSoTimeout(10000);
+            sslSocket.setSoTimeout(TIMEOUT_WS * 1000);
             sslSocket.startHandshake();
         } catch (final Exception e) {
             DFLog.getLogger(DFCadeiaCertificados.class).error(String.format("[%s] %s", host, e.toString()));

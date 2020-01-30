@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
@@ -61,6 +61,9 @@
     </field>
     <field name="EmitCNPJ" class="java.lang.String">
         <fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/CNPJ]]></fieldDescription>
+    </field>
+    <field name="EmitCPF" class="java.lang.String">
+        <fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/CPF]]></fieldDescription>
     </field>
     <field name="EmitIEST" class="java.lang.String">
         <fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/IEST]]></fieldDescription>
@@ -1430,7 +1433,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                 </textElement>
                 <text><![CDATA[IDENTIFICACAO E ASSINATURA DO RECEBEDOR]]></text>
             </staticText>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement x="4" y="1" width="442" height="7" uuid="3e9ee521-836e-4ce4-bd4b-df6f94ed1524"/>
                 <textElement>
                     <font fontName="Times New Roman" size="5"/>
@@ -1644,7 +1647,7 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
                 <textElement>
                     <font fontName="Times New Roman" size="5" isBold="false"/>
                 </textElement>
-                <text><![CDATA[CNPJ]]></text>
+                <text><![CDATA[CNPJ/CPF]]></text>
             </staticText>
             <textField>
                 <reportElement x="2" y="170" width="172" height="10" uuid="4e2b67b2-c97c-4eec-b129-0e3cb8d342ca"/>
@@ -1658,8 +1661,11 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
                 <textElement>
                     <font fontName="Times New Roman" size="8"/>
                 </textElement>
-                <textFieldExpression>
-                    <![CDATA[( $F{EmitCNPJ}.length() == 14 ? ($F{EmitCNPJ}.substring(0, 2) + "." + $F{EmitCNPJ}.substring(2, 5) + "." + $F{EmitCNPJ}.substring(5, 8) + "/" + $F{EmitCNPJ}.substring(8, 12) + "-" + $F{EmitCNPJ}.substring(12, 14)) : ($F{EmitCNPJ}.substring(0, 3) + "." + $F{EmitCNPJ}.substring(3, 6) + "." + $F{EmitCNPJ}.substring(6, 9) + "-" + $F{EmitCNPJ}.substring(9, 11)) )]]></textFieldExpression>
+                <textFieldExpression><![CDATA[(
+	($F{EmitCNPJ} != null ) ? 
+	($F{EmitCNPJ}.substring(0, 2) + "." + $F{EmitCNPJ}.substring(2, 5) + "." + $F{EmitCNPJ}.substring(5, 8) + "/" + $F{EmitCNPJ}.substring(8, 12) + "-" + $F{EmitCNPJ}.substring(12, 14)) : 
+	($F{EmitCPF}.substring(0, 3) + "." + $F{EmitCPF}.substring(3, 6) + "." + $F{EmitCPF}.substring(6, 9) + "-" + $F{EmitCPF}.substring(9, 11))
+)]]></textFieldExpression>
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement x="188" y="170" width="172" height="10" uuid="858bceb0-2c1f-4f28-bc16-6ab1e6cf0ddc"/>

@@ -17,10 +17,10 @@ public class MDFInfoEmitente extends DFBase {
 
     private static final String INFO = "Emitente do Manifesto";
 
-    @Element(name = "CNPJ")
+    @Element(name = "CNPJ", required = false)
     private String cnpj;
 
-    @Element(name = "CPF")
+    @Element(name = "CPF", required = false)
     private String cpf;
 
     @Element(name = "IE")
@@ -35,6 +35,14 @@ public class MDFInfoEmitente extends DFBase {
     @Element(name = "enderEmit")
     private MDFInfoEmitenteEndereco endereco;
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = StringValidador.cpf(cpf, MDFInfoEmitente.INFO);
+    }
+
     public String getCnpj() {
         return this.cnpj;
     }
@@ -45,14 +53,6 @@ public class MDFInfoEmitente extends DFBase {
      */
     public void setCnpj(final String cnpj) {
         this.cnpj = StringValidador.cnpj(cnpj, MDFInfoEmitente.INFO);
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = StringValidador.cpf(cpf, MDFInfoEmitente.INFO);
     }
 
     public String getInscricaoEstadual() {

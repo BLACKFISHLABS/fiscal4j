@@ -25,6 +25,7 @@ import java.util.List;
 @Root(name = "ide")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
 public class MDFInfoIdentificacao extends DFBase {
+
     private static final long serialVersionUID = -106178398166932545L;
 
     @Element(name = "cUF")
@@ -91,7 +92,8 @@ public class MDFInfoIdentificacao extends DFBase {
     private List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos;
 
     /**
-     * Sigla das Unidades da Federação do percurso do veículo. Não é necessário repetir as UF de Início e Fim
+     * Sigla das Unidades da Federação do percurso do veículo. Não é necessário
+     * repetir as UF de Início e Fim
      */
     @ElementList(entry = "infPercurso", inline = true, required = false)
     private List<MDFInfoIdentificacaoUfPercurso> identificacaoUfPercursos;
@@ -107,6 +109,13 @@ public class MDFInfoIdentificacao extends DFBase {
      */
     @Element(name = "indCanalVerde", required = false)
     private String indicadorCanalVerde;
+
+    /**
+     * Indicador de MDF-e com inclusão da Carga posterior a emissão por evento
+     * de inclusão de DF-e
+     */
+    @Element(name = "indCarregaPosterior", required = false)
+    private String indicadorCarregaPosterior;
 
     public DFUnidadeFederativa getCodigoUF() {
         return this.codigoUF;
@@ -125,7 +134,8 @@ public class MDFInfoIdentificacao extends DFBase {
 
     /**
      * Código numérico que compõe a Chave de Acesso.<br>
-     * Número aleatório gerado pelo emitente para cada MDF-e, com o objetivo de evitar acessos indevidos ao documento.
+     * Número aleatório gerado pelo emitente para cada MDF-e, com o objetivo de
+     * evitar acessos indevidos ao documento.
      */
     public void setCodigoNumerico(final String codigoNumerico) {
         StringValidador.exatamente8N(codigoNumerico, "Código Numérico");
@@ -137,7 +147,8 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     /**
-     * Série do Manifesto. Informar a série do documento fiscal (informar zero se inexistente).
+     * Série do Manifesto. Informar a série do documento fiscal (informar zero
+     * se inexistente).
      */
     public void setSerie(final Integer serie) {
         IntegerValidador.tamanho3(serie, "Série");
@@ -185,7 +196,9 @@ public class MDFInfoIdentificacao extends DFBase {
 
     /**
      * Digito Verificador da chave de acesso do MDF-e<br>
-     * Informar o dígito de controle da chave de acesso do MDF-e, que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.
+     * Informar o dígito de controle da chave de acesso do MDF-e, que deve ser
+     * calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de
+     * acesso.
      */
     public void setDigitoVerificador(final Integer digitoVerificador) {
         IntegerValidador.exatamente1(digitoVerificador, "Digito verificador MDF-e");
@@ -305,4 +318,13 @@ public class MDFInfoIdentificacao extends DFBase {
         }
         this.indicadorCanalVerde = indicadorCanalVerde;
     }
+
+    public String getIndicadorCarregaPosterior() {
+        return indicadorCarregaPosterior;
+    }
+
+    public void setIndicadorCarregaPosterior(String indicadorCarregaPosterior) {
+        this.indicadorCarregaPosterior = indicadorCarregaPosterior;
+    }
+
 }

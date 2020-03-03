@@ -22,6 +22,10 @@ public class MDFeDanfeReport {
     private final MDFProcessado processado;
     private Map<String, Object> parameters;
 
+    public MDFeDanfeReport(String xml) {
+        this(new DFParser().mdfProcessadaParaObjeto(xml));
+    }
+
     public MDFeDanfeReport(MDFProcessado processado) {
         this.processado = processado;
         this.parameters = new HashMap<>();

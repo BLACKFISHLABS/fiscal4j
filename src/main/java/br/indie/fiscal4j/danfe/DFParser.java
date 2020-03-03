@@ -3,6 +3,7 @@ package br.indie.fiscal4j.danfe;
 import br.indie.fiscal4j.cte300.classes.enviolote.CTeEnvioLote;
 import br.indie.fiscal4j.cte300.classes.nota.CTeProcessado;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
+import br.indie.fiscal4j.mdfe3.classes.nota.MDFProcessado;
 import br.indie.fiscal4j.nfe400.classes.evento.cancelamento.NFEnviaEventoCancelamento;
 import br.indie.fiscal4j.nfe400.classes.evento.cartacorrecao.NFEnviaEventoCartaCorrecao;
 import br.indie.fiscal4j.nfe400.classes.evento.inutilizacao.NFEnviaEventoInutilizacao;
@@ -151,6 +152,14 @@ public class DFParser {
             return this.persister.read(MDFEnvioLote.class, xml);
         } catch (final Exception e) {
             throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml do Lote MDFe: %s", e.getMessage()));
+        }
+    }
+
+    public MDFProcessado mdfProcessadaParaObjeto(final String xml) {
+        try {
+            return this.persister.read(MDFProcessado.class, xml);
+        } catch (final Exception e) {
+            throw new IllegalArgumentException(String.format("Nao foi possivel parsear o xml: %s", e.getMessage()));
         }
     }
 

@@ -3,9 +3,13 @@ package br.indie.fiscal4j.mdfe3.webservices;
 import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
+import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetorno;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
+import br.indie.fiscal4j.mdfe3.classes.nota.MDFInfoSuplementar;
+import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
+import br.indie.fiscal4j.mdfe3.utils.MDFGeraQRCode;
 import br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 import br.indie.fiscal4j.validadores.XMLValidador;
@@ -32,9 +36,22 @@ class WSRecepcaoLote implements DFLog {
         final String documentoAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(mdfeRecepcaoLote.toString(), "infMDFe");
         final MDFEnvioLote loteAssinado = this.config.getPersister().read(MDFEnvioLote.class, documentoAssinado);
 
+        MDFe mdfe = loteAssinado.getMdfe();
+        MDFGeraQRCode geraQRCode = getMDFEGeraQRCode(mdfe);
+        mdfe.setMdfInfoSuplementar(new MDFInfoSuplementar());
+        mdfe.getMdfInfoSuplementar().setQrCodMDFe(geraQRCode.getQRCode());
+        loteAssinado.setMdfe(mdfe);
         //comunica o lote
-        final MDFEnvioLoteRetorno retorno = comunicaLote(documentoAssinado);
+        final MDFEnvioLoteRetorno retorno = comunicaLote(loteAssinado.toString());
         return new MDFEnvioLoteRetornoDados(retorno, loteAssinado);
+    }
+
+    private MDFGeraQRCode getMDFEGeraQRCode(MDFe mdFe) {
+        if (MDFTipoEmissao.NORMAL.equals(mdFe.getInfo().getIdentificacao().getTipoEmissao())) {
+            return new MDFGeraQRCode(mdFe, this.config);
+        } else {
+            throw new IllegalArgumentException("QRCode 2.0 Tipo Emissao nao implementado: " + mdFe.getInfo().getIdentificacao().getTipoEmissao().getDescricao());
+        }
     }
 
     private MDFEnvioLoteRetorno comunicaLote(final String loteAssinadoXml) throws Exception {

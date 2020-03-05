@@ -9,6 +9,7 @@ import br.indie.fiscal4j.mdfe3.classes.parsers.MDFChaveParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.StringValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 
@@ -85,7 +86,12 @@ class WSEncerramento implements DFLog {
         final MDFeInfoEvento infoEvento = new MDFeInfoEvento();
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
-        infoEvento.setCnpj(chaveParser.getCnpjEmitente());
+        try {
+            StringValidador.cnpj(chaveParser.getCnpjEmitente());
+            infoEvento.setCnpj(chaveParser.getCnpjEmitente());
+        } catch (Exception e) {
+            infoEvento.setCpf(chaveParser.getCpfEmitente());
+        }
         infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", WSEncerramento.EVENTO_ENCERRAMENTO, chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);

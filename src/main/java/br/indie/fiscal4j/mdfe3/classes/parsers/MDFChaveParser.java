@@ -42,6 +42,10 @@ public class MDFChaveParser {
         return this.chave.substring(6, 20);
     }
 
+    public String getCpfEmitente() {
+        return this.chave.substring(9, 20);
+    }
+
     public DFModelo getModelo() {
         return DFModelo.valueOfCodigo(this.chave.substring(20, 22));
     }

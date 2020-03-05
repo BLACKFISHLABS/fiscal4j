@@ -29,6 +29,9 @@ public class MDFeInfoEvento extends DFBase {
     @Element(name = "CNPJ", required = false)
     private String cnpj;
 
+    @Element(name = "CPF", required = false)
+    private String cpf;
+
     @Element(name = "chMDFe")
     private String chave;
 
@@ -73,6 +76,15 @@ public class MDFeInfoEvento extends DFBase {
 
     public void setAmbiente(final DFAmbiente ambiente) {
         this.ambiente = ambiente;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        StringValidador.cpf(cpf);
+        this.cpf = cpf;
     }
 
     public String getCnpj() {

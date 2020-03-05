@@ -9,13 +9,14 @@ import br.indie.fiscal4j.mdfe3.classes.parsers.MDFChaveParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+
+import static br.indie.fiscal4j.validadores.CNPJValidador.isValidCNPJ;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
@@ -86,10 +87,9 @@ class WSEncerramento implements DFLog {
         final MDFeInfoEvento infoEvento = new MDFeInfoEvento();
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
-        try {
-            StringValidador.cnpj(chaveParser.getCnpjEmitente());
+        if (isValidCNPJ(chaveParser.getCnpjEmitente())) {
             infoEvento.setCnpj(chaveParser.getCnpjEmitente());
-        } catch (Exception e) {
+        } else {
             infoEvento.setCpf(chaveParser.getCpfEmitente());
         }
         infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));

@@ -18,6 +18,8 @@ import org.apache.axiom.om.util.AXIOMUtil;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
+import static br.indie.fiscal4j.validadores.CNPJValidador.isValidCNPJ;
+
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
  */
@@ -84,7 +86,11 @@ class WSCancelamento implements DFLog {
         final MDFeInfoEvento infoEvento = new MDFeInfoEvento();
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
-        infoEvento.setCnpj(chaveParser.getCnpjEmitente());
+        if (isValidCNPJ(chaveParser.getCnpjEmitente())) {
+            infoEvento.setCnpj(chaveParser.getCnpjEmitente());
+        } else {
+            infoEvento.setCpf(chaveParser.getCpfEmitente());
+        }
         infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", WSCancelamento.EVENTO_CANCELAMENTO, chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);

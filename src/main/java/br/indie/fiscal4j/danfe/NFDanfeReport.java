@@ -125,17 +125,17 @@ public class NFDanfeReport {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix byteMatrix = qrCodeWriter.encode(nota.getNota().getInfoSuplementar().getQrCode(),
                 BarcodeFormat.QR_CODE, size, size, hintMap);
-        int crunchifyWidth = byteMatrix.getWidth();
-        BufferedImage image = new BufferedImage(crunchifyWidth, crunchifyWidth, BufferedImage.TYPE_INT_RGB);
+        int byteMatrixWidth = byteMatrix.getWidth();
+        BufferedImage image = new BufferedImage(byteMatrixWidth, byteMatrixWidth, BufferedImage.TYPE_INT_RGB);
         image.createGraphics();
 
         Graphics2D graphics = (Graphics2D) image.getGraphics();
         graphics.setColor(Color.WHITE);
-        graphics.fillRect(0, 0, crunchifyWidth, crunchifyWidth);
+        graphics.fillRect(0, 0, byteMatrixWidth, byteMatrixWidth);
         graphics.setColor(Color.BLACK);
 
-        for (int i = 0; i < crunchifyWidth; i++) {
-            for (int j = 0; j < crunchifyWidth; j++) {
+        for (int i = 0; i < byteMatrixWidth; i++) {
+            for (int j = 0; j < byteMatrixWidth; j++) {
                 if (byteMatrix.get(i, j)) {
                     graphics.fillRect(i, j, 1, 1);
                 }

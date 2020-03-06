@@ -1374,14 +1374,14 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                 <text><![CDATA[SEM VALOR FISCAL]]></text>
             </staticText>
             <staticText>
-                <reportElement positionType="Float" x="0" y="660" width="555" height="66"
+                <reportElement positionType="Float" x="0" y="600" width="555" height="126"
                                forecolor="rgba(0, 0, 0, 0.19607843)" uuid="94898472-01c0-40a0-9ead-7ce2a319986a">
                     <printWhenExpression><![CDATA[$F{NFETpAmb}.equals("2")]]></printWhenExpression>
                 </reportElement>
                 <textElement textAlignment="Center">
                     <font fontName="SansSerif" size="32"/>
                 </textElement>
-                <text><![CDATA[AMBIENTE DE HOMOLOGAÇÃO]]></text>
+                <text><![CDATA[SEM VALOR FISCAL - AMBIENTE DE HOMOLOGAÇÃO]]></text>
             </staticText>
         </band>
     </background>
@@ -1526,12 +1526,12 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                 <text><![CDATA[SÉRIE:]]></text>
             </staticText>
             <staticText>
-                <reportElement x="197" y="127" width="30" height="12" isPrintWhenDetailOverflows="true"
+                <reportElement x="197" y="127" width="15" height="12" isPrintWhenDetailOverflows="true"
                                uuid="759005c6-8199-422e-80d1-ef1dd6127ad0"/>
                 <textElement>
                     <font fontName="SansSerif" size="10" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Folha]]></text>
+                <text><![CDATA[FL]]></text>
             </staticText>
             <line>
                 <reportElement x="290" y="96" width="265" height="1" uuid="d2300035-ed74-4735-a9bb-387af76b495d"/>
@@ -1721,14 +1721,14 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
                     <![CDATA[(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse($F{NFEdhRecebto}))]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="225" y="127" width="13" height="12" uuid="7f28f8a3-83ce-4152-b266-ab8c1b4ec6fa"/>
+                <reportElement x="216" y="127" width="21" height="12" uuid="7f28f8a3-83ce-4152-b266-ab8c1b4ec6fa"/>
                 <textElement textAlignment="Center" verticalAlignment="Top">
                     <font fontName="SansSerif" size="10"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="237" y="127" width="12" height="12" isPrintWhenDetailOverflows="true"
+                <reportElement x="240" y="127" width="17" height="12" isPrintWhenDetailOverflows="true"
                                uuid="2b04376b-d9cf-4a83-b17d-e98bd8edec36"/>
                 <textElement textAlignment="Center">
                     <font fontName="SansSerif" size="10" isBold="false"/>
@@ -1736,7 +1736,7 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
                 <text><![CDATA[de]]></text>
             </staticText>
             <textField evaluationTime="Report">
-                <reportElement x="248" y="127" width="13" height="12" uuid="d980e43b-1ea0-418e-acfd-1e80003ebc54"/>
+                <reportElement x="260" y="127" width="23" height="12" uuid="d980e43b-1ea0-418e-acfd-1e80003ebc54"/>
                 <textElement textAlignment="Center" verticalAlignment="Top">
                     <font fontName="SansSerif" size="10"/>
                 </textElement>

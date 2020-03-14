@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFTipoEmissao;
-import br.indie.fiscal4j.nfe310.parsers.NotaFiscalChaveParser;
+import br.indie.fiscal4j.nfe400.NotaFiscalChaveParser;
 
 import java.util.Arrays;
 import java.util.List;

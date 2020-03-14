@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
@@ -57,43 +58,43 @@
     </pageHeader>
     <detail>
         <band height="12" splitType="Stretch">
-            <textField isStretchWithOverflow="true" pattern="#,##0.00">
+            <textField textAdjust="StretchHeight" pattern="#,##0.00">
                 <reportElement key="textField" positionType="Float" x="174" y="1" width="32" height="11"
                                uuid="2a55baeb-2468-465c-8dec-9fdf0960ee76"/>
                 <textElement textAlignment="Right" verticalAlignment="Top" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA[new BigDecimal($F{produto.valorTotalBruto})]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement key="textField" positionType="Float" x="0" y="1" width="25" height="11"
                                uuid="c4fb7590-7e95-4064-b7b4-df0970be1413"/>
                 <textElement verticalAlignment="Top" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{produto.codigo}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement key="textField" positionType="Float" x="25" y="1" width="89" height="11"
                                uuid="7af8d86f-7841-4d88-930e-8908bddcea5d"/>
                 <textElement verticalAlignment="Top" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{produto.descricao}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true" pattern="#,##0.00">
+            <textField textAdjust="StretchHeight" pattern="#,##0.00">
                 <reportElement key="textField" positionType="Float" x="114" y="1" width="32" height="11"
                                uuid="c1294612-1d8a-48c6-939d-744c233fbdc4"/>
                 <textElement textAlignment="Right" verticalAlignment="Top" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA[new BigDecimal($F{produto.valorUnitario})]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true" pattern="">
+            <textField textAdjust="StretchHeight" pattern="">
                 <reportElement key="textField" positionType="Float" x="146" y="1" width="28" height="11"
                                uuid="cb95160d-70b9-4bda-bf6d-8d8c35ac482d"/>
                 <textElement textAlignment="Right" verticalAlignment="Top" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <textFieldExpression>
                     <![CDATA[$F{produto.quantidadeComercial}+$F{produto.unidadeComercial}]]></textFieldExpression>

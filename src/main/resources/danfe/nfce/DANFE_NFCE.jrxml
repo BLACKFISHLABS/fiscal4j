@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
@@ -79,11 +79,11 @@
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement textAlignment="Center" verticalAlignment="Top">
-                    <font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{nota.info.emitente.nomeFantasia}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
                 <reportElement key="textField" positionType="Float" x="1" y="29" width="207" height="13"
                                uuid="dde92dc5-96ba-434f-abea-45dd508d25d7"/>
                 <box>
@@ -93,7 +93,7 @@
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement textAlignment="Left" verticalAlignment="Top">
-                    <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{nota.info.emitente.endereco.logradouro}+", "+
 $F{nota.info.emitente.endereco.numero}+", "+
@@ -115,7 +115,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement verticalAlignment="Top">
-                    <font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA["IE: "+$F{nota.info.emitente.inscricaoEstadual}]]></textFieldExpression>
             </textField>
@@ -129,7 +129,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement verticalAlignment="Top">
-                    <font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA["CNPJ: "+$F{nota.info.emitente.cnpj}]]></textFieldExpression>
             </textField>
@@ -137,7 +137,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
                 <reportElement key="textField" positionType="Float" x="1" y="46" width="207" height="20"
                                uuid="7af0d1e3-44e3-4fb9-ad16-bfae99d32a75"/>
                 <textElement textAlignment="Center" markup="none">
-                    <font size="7" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font size="7" isBold="true"/>
                 </textElement>
                 <text><![CDATA[DANFE NFC-e DOCUMENTO AUXILIAR DE NOTA FISCAL DE CONSUMIDOR ELETRÔNICA]]></text>
             </staticText>
@@ -145,7 +145,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
                 <reportElement key="textField" positionType="Float" x="1" y="66" width="207" height="13"
                                uuid="ebc835b8-d4a2-446f-8767-ed390f439b18"/>
                 <textElement textAlignment="Center" markup="none">
-                    <font size="7" pdfFontName="Helvetica-Bold"/>
+                    <font size="7"/>
                 </textElement>
                 <text><![CDATA[NÃO PERMITE APROVEITAMENTO DE CRÉDITO ICMS]]></text>
             </staticText>
@@ -167,7 +167,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
     </pageHeader>
     <detail>
         <band height="191" splitType="Prevent">
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="0" y="177" width="207" height="10" isRemoveLineWhenBlank="true"
                                uuid="da7be1da-2b42-4688-b6f8-767df1760f45"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
@@ -180,7 +180,7 @@ $F{nota.info.emitente.endereco.telefone})]]></textFieldExpression>
 $F{nota.info.destinatario.razaoSocial} != null ?
 $F{nota.info.destinatario.razaoSocial} : ""]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="0" y="167" width="207" height="10"
                                uuid="ee5e7ec5-c7c7-431d-8767-31861870d7be"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
@@ -209,7 +209,7 @@ $F{nota.info.destinatario.razaoSocial} : ""]]></textFieldExpression>
                     <pen lineWidth="1.0" lineStyle="Dotted"/>
                 </graphicElement>
             </line>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="0" y="121" width="207" height="10"
                                uuid="24e3e04f-3277-4682-99e3-1858346f2d67"/>
                 <textElement textAlignment="Center">
@@ -218,7 +218,7 @@ $F{nota.info.destinatario.razaoSocial} : ""]]></textFieldExpression>
                 <textFieldExpression>
                     <![CDATA["Consulte pela Chave de Acesso em\n"+$P{URL_CONSULTA}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="0" y="153" width="207" height="10"
                                uuid="2db8c8a1-5e54-43e5-a53f-f44be5014d38"/>
                 <textElement textAlignment="Center">
@@ -240,11 +240,11 @@ $P{DATA_RECEBIMENTO}
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
-                    <font size="7" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font size="7" isBold="true"/>
                 </textElement>
                 <text><![CDATA[CHAVE DE ACESSO]]></text>
             </staticText>
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
                 <reportElement positionType="Float" x="0" y="111" width="207" height="10"
                                uuid="5819cffc-e82c-4bbf-bba9-5f6b5034f19f"/>
                 <textElement textAlignment="Center">
@@ -252,7 +252,7 @@ $P{DATA_RECEBIMENTO}
                 </textElement>
                 <textFieldExpression><![CDATA["Emissão "+ $P{DATA_EMISSAO}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+            <textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
                 <reportElement positionType="Float" x="0" y="90" width="207" height="11" isRemoveLineWhenBlank="true"
                                uuid="fd6c261c-361c-4c75-bc8f-cca70f2415f3"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
@@ -261,7 +261,7 @@ $P{DATA_RECEBIMENTO}
                 <textFieldExpression>
                     <![CDATA[$F{nota.info.informacoesAdicionais.informacoesAdicionaisInteresseFisco}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="42" y="143" width="126" height="9"
                                uuid="2ad81d22-19eb-4742-89f8-a6fbe97ac6c2"/>
                 <textElement textAlignment="Center">
@@ -269,7 +269,7 @@ $P{DATA_RECEBIMENTO}
                 </textElement>
                 <textFieldExpression><![CDATA[$P{CHAVE_ACESSO_FORMATADA}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true">
+            <textField textAdjust="StretchHeight">
                 <reportElement positionType="Float" x="0" y="101" width="207" height="10"
                                uuid="ce1b0369-cf99-40e5-aaea-f297f7385144"/>
                 <textElement textAlignment="Center">
@@ -325,7 +325,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <reportElement key="textField" positionType="Float" x="111" y="50" width="97" height="12"
                                uuid="82212bfc-f443-4c12-af2f-f7d77821dfce"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
-                    <font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="true"/>
                 </textElement>
                 <text><![CDATA[VALOR PAGO]]></text>
             </staticText>
@@ -333,7 +333,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <reportElement key="textField" positionType="Float" x="111" y="38" width="97" height="12"
                                uuid="52a05c6a-73e3-438d-aefb-38413c998dae"/>
                 <textElement textAlignment="Right" markup="none">
-                    <font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
                 </textElement>
                 <textFieldExpression>
                     <![CDATA[new BigDecimal($F{nota.info.total.icmsTotal.valorTotalNFe})]]></textFieldExpression>
@@ -352,7 +352,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <reportElement key="textField" positionType="Float" x="1" y="18" width="110" height="10"
                                uuid="c7129f1b-3655-410c-95fb-0e4bb0a94fdb"/>
                 <textElement markup="none">
-                    <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7"/>
                 </textElement>
                 <text><![CDATA[QTDE TOTAL DE ITENS:]]></text>
             </staticText>
@@ -360,7 +360,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <reportElement key="textField" positionType="Float" x="111" y="18" width="97" height="10"
                                uuid="3ab24ac5-b9a8-4cfc-abc3-c7a8b84c9cc8"/>
                 <textElement textAlignment="Right" markup="none">
-                    <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$F{nota.info.itens}.size()]]></textFieldExpression>
             </textField>
@@ -368,7 +368,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                 <reportElement key="textField" positionType="Float" x="1" y="38" width="110" height="12"
                                uuid="c9f98b94-3d4c-4dae-a139-6c97e1bb8c50"/>
                 <textElement markup="none">
-                    <font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
                 </textElement>
                 <text><![CDATA[VALOR TOTAL (R$):]]></text>
             </staticText>
@@ -378,7 +378,7 @@ $F{nota.info.total.icmsTotal.valorTotalTributos}+
                     <printWhenExpression><![CDATA[$V{ACRESCIMOS}.signum() != 0]]></printWhenExpression>
                 </reportElement>
                 <textElement markup="none">
-                    <font fontName="SansSerif" size="7" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$V{ACRESCIMOS}.signum() == 0 ? null :
 $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpression>
@@ -387,7 +387,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                 <reportElement key="textField" positionType="Float" x="1" y="50" width="110" height="12"
                                uuid="23700bda-ea5c-44bb-8d22-a7712a653434"/>
                 <textElement verticalAlignment="Middle" markup="none">
-                    <font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="true"/>
                 </textElement>
                 <text><![CDATA[FORMA DE PAGAMENTO]]></text>
             </staticText>
@@ -406,7 +406,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                 <reportElement key="textField" positionType="Float" x="1" y="2" width="207" height="10"
                                uuid="ce22f796-aa76-41c5-a134-7d3b27e23e8e"/>
                 <textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
-                    <font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="true"/>
                 </textElement>
                 <text><![CDATA[Consulta via leitor de QR Code]]></text>
             </staticText>
@@ -416,7 +416,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                                uuid="4e2dc02b-2c45-4b9b-80b2-1e8872c134d6"/>
                 <imageExpression><![CDATA[$P{QR_CODE}]]></imageExpression>
             </image>
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
                 <reportElement positionType="Float" x="1" y="104" width="207" height="10" isRemoveLineWhenBlank="true"
                                uuid="deca74d1-703e-4aab-8af6-6844947960e6"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
@@ -425,7 +425,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                 <textFieldExpression>
                     <![CDATA[$F{nota.info.informacoesAdicionais.informacoesComplementaresInteresseContribuinte}]]></textFieldExpression>
             </textField>
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
                 <reportElement positionType="Float" x="1" y="115" width="207" height="10" isRemoveLineWhenBlank="true"
                                uuid="cf88b2f1-4a43-466b-9779-c2635dfac35f"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
@@ -457,7 +457,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                     <printWhenExpression><![CDATA[$P{MOSTRAR_MSG_FINALIZACAO}]]></printWhenExpression>
                 </reportElement>
                 <textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-                    <font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="6" isBold="false"/>
                 </textElement>
                 <text><![CDATA[Fim da DANF-e]]></text>
             </staticText>
@@ -467,7 +467,7 @@ $V{ACRESCIMOS}.signum() < 0 ? "DESCONTO:" : "ACRÉSCIMOS:"]]></textFieldExpressi
                     <printWhenExpression><![CDATA[$P{MOSTRAR_MSG_FINALIZACAO}]]></printWhenExpression>
                 </reportElement>
                 <textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-                    <font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold"/>
+                    <font fontName="SansSerif" size="7" isBold="false"/>
                 </textElement>
                 <textFieldExpression><![CDATA[".\n.\n."]]></textFieldExpression>
             </textField>

@@ -261,7 +261,7 @@
                         <![CDATA[$F{logradouroEmitente} + ", " + $F{numeroLogradouroEmitente} + ($F{complementoEmitente} == null ? "" : ", " + $F{complementoEmitente}) + "\n" + ($F{bairroEmitente} == null ? "" : $F{bairroEmitente} + " - ") + $F{municipioEmitente} + " - " + $F{ufEmitente} + " - CEP: " + $F{cepEmitente}]]></textFieldExpression>
                 </textField>
                 <textField isBlankWhenNull="true">
-                    <reportElement key="textField-149" x="10" y="230" width="232" height="12"
+                    <reportElement key="textField-149" x="10" y="230" width="100" height="12"
                                    uuid="da13bc21-ddb7-4f13-b3ca-04ee0f1bd61b"/>
                     <box>
                         <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1244,7 +1244,7 @@
                     <imageExpression><![CDATA[$P{QR_CODE}]]></imageExpression>
                 </image>
                 <textField isBlankWhenNull="true">
-                    <reportElement key="textField-149" x="10" y="243" width="232" height="12"
+                    <reportElement key="textField-149" x="110" y="230" width="132" height="12"
                                    uuid="a6d8a7c5-02ef-4bf0-b974-5bd46f09edb0"/>
                     <box>
                         <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1324,8 +1324,7 @@
                 <textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
                     <font fontName="Arial" size="6" isBold="false" isUnderline="false"/>
                 </textElement>
-                <text>
-                    <![CDATA[Emitido pelo sistema Econt DF-e (www.app.econt.com.br) fornecido pela Econt Sistemas (www.econt.com.br)]]></text>
+                <text><![CDATA[...]]></text>
             </staticText>
         </band>
     </background>

@@ -884,6 +884,17 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     </textElement>
                     <text><![CDATA[CÁLCULO DO IMPOSTO]]></text>
                 </staticText>
+                <staticText>
+                    <reportElement positionType="Float" mode="Transparent" x="51" y="-54" width="453" height="75"
+                                   forecolor="#FA9A98" uuid="347b3ab6-5c6c-4d2f-9ac5-daf4c31172e4">
+                        <printWhenExpression>
+                            <![CDATA[$F{NFENumProtocolo}.equals("PRÉ-VISUALIZAÇÃO")]]></printWhenExpression>
+                    </reportElement>
+                    <textElement textAlignment="Center" verticalAlignment="Top">
+                        <font fontName="SansSerif" size="26" isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[PRÉ-VISUALIZAÇÃO DA DANFE SEM VALOR FISCAL]]></text>
+                </staticText>
             </band>
         </groupHeader>
     </group>
@@ -1361,7 +1372,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
         </groupHeader>
     </group>
     <background>
-        <band height="728" splitType="Stretch">
+        <band height="731" splitType="Stretch">
             <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
             <staticText>
                 <reportElement positionType="Float" x="0" y="600" width="554" height="58"
@@ -1929,7 +1940,7 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
         </band>
     </detail>
     <lastPageFooter>
-        <band height="90">
+        <band height="125">
             <property name="com.jaspersoft.studio.unit.height" value="cm"/>
             <rectangle>
                 <reportElement x="0" y="9" width="555" height="20" uuid="4d323bc7-97c8-466b-bfb4-9ef776c19dc8"/>

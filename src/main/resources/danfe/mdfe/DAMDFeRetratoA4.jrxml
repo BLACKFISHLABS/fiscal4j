@@ -306,7 +306,7 @@
                     <imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
                 </image>
                 <textField isBlankWhenNull="true">
-                    <reportElement key="textField-177" x="75" y="56" width="116" height="12"
+                    <reportElement key="textField-177" x="75" y="56" width="150" height="12"
                                    uuid="90f6fe86-9809-4452-aeba-d9f62ca8c39e">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     </reportElement>
@@ -319,8 +319,8 @@
                     <textElement verticalAlignment="Middle" markup="styled">
                         <font fontName="SansSerif" size="10" isBold="false"/>
                     </textElement>
-                    <textFieldExpression>
-                        <![CDATA["<style isBold='true'>CPF/CNPJ: </style>" + $F{cpfEmitente} + $F{cnpjEmitente}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA["<style isBold='true'>CPF/CNPJ: </style>" +  ( $F{cnpjEmitente} != null ? ($F{cnpjEmitente}.substring(0, 2) + "." + $F{cnpjEmitente}.substring(2, 5) + "." + $F{cnpjEmitente}.substring(5, 8) + "/" + $F{cnpjEmitente}.substring(8, 12) + "-" +$F{cnpjEmitente}.substring(12, 14))
+: ($F{cpfEmitente}.substring(0, 3) + "." + $F{cpfEmitente}.substring(3, 6) + "." + $F{cpfEmitente}.substring(6, 9) + "-" + $F{cpfEmitente}.substring(9, 11)))]]></textFieldExpression>
                 </textField>
                 <textField pattern="" isBlankWhenNull="false">
                     <reportElement key="textField-156" x="75" y="10" width="348" height="19"
@@ -347,9 +347,11 @@
                     </jr:barbecue>
                 </componentElement>
                 <textField isBlankWhenNull="true">
-                    <reportElement key="textField-177" x="191" y="56" width="116" height="12"
+                    <reportElement key="textField-177" x="230" y="56" width="99" height="12"
                                    uuid="18be15d4-dc66-4f4d-869f-694facf91725">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                        <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                        <property name="com.jaspersoft.studio.unit.y" value="px"/>
                     </reportElement>
                     <box>
                         <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -364,9 +366,10 @@
                         <![CDATA["<style isBold='true'>IE: </style>" + $F{inscricaoEstadualEmitente}]]></textFieldExpression>
                 </textField>
                 <textField isBlankWhenNull="true">
-                    <reportElement key="textField-177" x="307" y="56" width="116" height="12"
+                    <reportElement key="textField-177" x="349" y="56" width="75" height="12"
                                    uuid="01c8de5e-20c1-4c40-a5fc-8baf01db8f05">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                        <property name="com.jaspersoft.studio.unit.height" value="px"/>
                         <printWhenExpression><![CDATA[$F{rntrc} != null]]></printWhenExpression>
                     </reportElement>
                     <box>
@@ -1051,7 +1054,8 @@
                                     <font fontName="SansSerif" isBold="true"/>
                                     <paragraph leftIndent="10"/>
                                 </textElement>
-                                <textFieldExpression><![CDATA[($F{CPF})]]></textFieldExpression>
+                                <textFieldExpression>
+                                    <![CDATA[($F{CPF}.substring(0, 3) + "." + $F{CPF}.substring(3, 6) + "." + $F{CPF}.substring(6, 9) + "-" + $F{CPF}.substring(9, 11))]]></textFieldExpression>
                             </textField>
                             <textField>
                                 <reportElement x="100" y="0" width="208" height="12"

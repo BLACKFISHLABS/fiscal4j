@@ -936,7 +936,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <reportElement x="234" y="31" width="1" height="19" uuid="617c164d-b4ec-414c-8c00-2949c0a8d78e"/>
                 </line>
                 <line>
-                    <reportElement x="216" y="10" width="1" height="20" uuid="2351fd5d-fb1f-442f-8ffc-8962cef7d244"/>
+                    <reportElement x="203" y="10" width="1" height="20" uuid="2351fd5d-fb1f-442f-8ffc-8962cef7d244"/>
                 </line>
                 <line>
                     <reportElement x="279" y="10" width="1" height="20" uuid="4d703e17-e563-4f1c-838f-0dc9a5714cc7"/>
@@ -955,7 +955,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <text><![CDATA[RAZÃO SOCIAL]]></text>
                 </staticText>
                 <staticText>
-                    <reportElement x="219" y="12" width="55" height="7" uuid="0bd2d055-66b6-44f5-a0de-30367dcf68d7"/>
+                    <reportElement x="206" y="12" width="55" height="7" uuid="0bd2d055-66b6-44f5-a0de-30367dcf68d7"/>
                     <textElement>
                         <font fontName="SansSerif" size="5" isBold="false"/>
                     </textElement>
@@ -1060,7 +1060,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <text><![CDATA[INSCRIÇÃO ESTADUAL]]></text>
                 </staticText>
                 <textField isBlankWhenNull="true">
-                    <reportElement x="2" y="19" width="210" height="10" uuid="583f8213-aeaf-4de2-a421-d47f31a79c06"/>
+                    <reportElement x="2" y="19" width="194" height="10" uuid="583f8213-aeaf-4de2-a421-d47f31a79c06"/>
                     <textElement>
                         <font fontName="SansSerif" size="8"/>
                     </textElement>
@@ -1138,7 +1138,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <textFieldExpression><![CDATA[Double.parseDouble($F{TranspPesoLiq})]]></textFieldExpression>
                 </textField>
                 <textField isBlankWhenNull="true">
-                    <reportElement x="219" y="19" width="55" height="10" uuid="9d0a1a41-31b3-4d62-aed2-f3a91c897f1d"/>
+                    <reportElement x="206" y="19" width="70" height="10" uuid="9d0a1a41-31b3-4d62-aed2-f3a91c897f1d"/>
                     <textElement>
                         <font fontName="SansSerif" size="8"/>
                     </textElement>

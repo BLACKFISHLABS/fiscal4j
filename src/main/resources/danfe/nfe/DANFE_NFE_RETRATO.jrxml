@@ -1442,8 +1442,8 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
 			<rectangle>
 				<reportElement x="0" y="52" width="194" height="89" uuid="ba7a01b3-d679-4742-b375-fa1b4b29723a"/>
 			</rectangle>
-			<textField>
-				<reportElement x="3" y="109" width="185" height="30" uuid="4b863789-9b25-44b1-a6c5-f34bc79dd7c0"/>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="3" y="109" width="191" height="30" uuid="4b863789-9b25-44b1-a6c5-f34bc79dd7c0"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="8" isBold="true"/>
 				</textElement>

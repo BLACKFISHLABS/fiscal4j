@@ -53,6 +53,9 @@ public class NFNotaInfoItemImpostoICMS extends DFBase {
     @Element(name = "ICMSSN202", required = false)
     private NFNotaInfoItemImpostoICMSSN202 icmssn202;
 
+    @Element(name = "ICMSSN400", required = false)
+    private NFNotaInfoItemImpostoICMSSN400 icmssn400;
+
     @Element(name = "ICMSSN500", required = false)
     private NFNotaInfoItemImpostoICMSSN500 icmssn500;
 
@@ -134,6 +137,11 @@ public class NFNotaInfoItemImpostoICMS extends DFBase {
         this.icmssn202 = icmssn202;
     }
 
+    public void setIcmssn400(final NFNotaInfoItemImpostoICMSSN400 icmssn400) {
+        this.validaApenasUmSelecionado();
+        this.icmssn400 = icmssn400;
+    }
+
     public void setIcmssn500(final NFNotaInfoItemImpostoICMSSN500 icmssn500) {
         this.validaApenasUmSelecionado();
         this.icmssn500 = icmssn500;
@@ -213,6 +221,10 @@ public class NFNotaInfoItemImpostoICMS extends DFBase {
 
     public NFNotaInfoItemImpostoICMSSN202 getIcmssn202() {
         return this.icmssn202;
+    }
+
+    public NFNotaInfoItemImpostoICMSSN400 getIcmssn400() {
+        return this.icmssn400;
     }
 
     public NFNotaInfoItemImpostoICMSSN500 getIcmssn500() {

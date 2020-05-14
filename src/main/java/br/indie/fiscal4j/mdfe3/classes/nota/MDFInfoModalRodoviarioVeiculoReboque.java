@@ -2,7 +2,9 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Order;
 
+@Order(elements = {"cInt", "placa", "RENAVAM", "tara", "capKG", "capM3", "prop", "tpCar", "UF"})
 public class MDFInfoModalRodoviarioVeiculoReboque extends MDFInfoModalRodoviarioVeiculo {
     private static final long serialVersionUID = -2787982058485353668L;
     @Element(name = "capKG")

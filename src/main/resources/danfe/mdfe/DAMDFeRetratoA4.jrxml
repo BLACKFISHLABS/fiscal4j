@@ -305,8 +305,8 @@
                     </box>
                     <imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
                 </image>
-                <textField isBlankWhenNull="true">
-                    <reportElement key="textField-177" x="75" y="56" width="150" height="12"
+                <textField textAdjust="ScaleFont" isBlankWhenNull="true">
+                    <reportElement key="textField-177" x="75" y="56" width="169" height="12"
                                    uuid="90f6fe86-9809-4452-aeba-d9f62ca8c39e">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     </reportElement>
@@ -346,8 +346,8 @@
                         <jr:codeExpression><![CDATA[$F{chaveAcesso}.replace ("MDFe", "")]]></jr:codeExpression>
                     </jr:barbecue>
                 </componentElement>
-                <textField isBlankWhenNull="true">
-                    <reportElement key="textField-177" x="230" y="56" width="99" height="12"
+                <textField textAdjust="ScaleFont" isBlankWhenNull="true">
+                    <reportElement key="textField-177" x="246" y="56" width="99" height="12"
                                    uuid="18be15d4-dc66-4f4d-869f-694facf91725">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
                         <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -365,7 +365,7 @@
                     <textFieldExpression>
                         <![CDATA["<style isBold='true'>IE: </style>" + $F{inscricaoEstadualEmitente}]]></textFieldExpression>
                 </textField>
-                <textField isBlankWhenNull="true">
+                <textField textAdjust="ScaleFont" isBlankWhenNull="true">
                     <reportElement key="textField-177" x="349" y="56" width="75" height="12"
                                    uuid="01c8de5e-20c1-4c40-a5fc-8baf01db8f05">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>

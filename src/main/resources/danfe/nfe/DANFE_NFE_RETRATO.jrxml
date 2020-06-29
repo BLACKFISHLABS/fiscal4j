@@ -886,12 +886,12 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                 </staticText>
                 <staticText>
                     <reportElement positionType="Float" mode="Transparent" x="51" y="-54" width="453" height="75"
-                                   forecolor="#FA9A98" uuid="347b3ab6-5c6c-4d2f-9ac5-daf4c31172e4">
+                                   forecolor="#000000" uuid="347b3ab6-5c6c-4d2f-9ac5-daf4c31172e4">
                         <printWhenExpression>
                             <![CDATA[$F{NFENumProtocolo}.equals("PRÉ-VISUALIZAÇÃO")]]></printWhenExpression>
                     </reportElement>
                     <textElement textAlignment="Center" verticalAlignment="Top">
-                        <font fontName="SansSerif" size="26" isBold="false"/>
+                        <font fontName="SansSerif" size="26" isBold="true"/>
                     </textElement>
                     <text><![CDATA[PRÉ-VISUALIZAÇÃO DA DANFE SEM VALOR FISCAL]]></text>
                 </staticText>
@@ -1224,9 +1224,9 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <reportElement x="210" y="10" width="1" height="12" uuid="452c2765-5ac0-4f4c-aeff-eb9ba267534d"/>
                 </line>
                 <staticText>
-                    <reportElement x="211" y="13" width="17" height="7" uuid="65748e30-8ee8-4fe7-8ef1-e6792ef22106"/>
-                    <textElement textAlignment="Center">
-                        <font fontName="SansSerif" size="6" isBold="false"/>
+                    <reportElement x="211" y="10" width="17" height="6" uuid="65748e30-8ee8-4fe7-8ef1-e6792ef22106"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="SansSerif" size="4" isBold="false"/>
                     </textElement>
                     <text><![CDATA[CST]]></text>
                 </staticText>
@@ -1244,7 +1244,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <reportElement x="250" y="10" width="1" height="12" uuid="6cd3defc-4411-41b3-85ca-15a8adf0640b"/>
                 </line>
                 <staticText>
-                    <reportElement x="251" y="13" width="21" height="7" uuid="2189332e-7c6c-4cfb-a5bc-f2bbb153312b"/>
+                    <reportElement x="251" y="13" width="23" height="7" uuid="2189332e-7c6c-4cfb-a5bc-f2bbb153312b"/>
                     <textElement textAlignment="Center">
                         <font fontName="SansSerif" size="6" isBold="false"/>
                     </textElement>
@@ -1290,16 +1290,16 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                     <reportElement x="516" y="15" width="39" height="1" uuid="81a6a907-bd7a-439f-a7bd-d97e3bd8db0a"/>
                 </line>
                 <staticText>
-                    <reportElement x="515" y="15" width="21" height="7" uuid="3d4bfbdb-7515-4e72-b9b4-f9cf0dda5a4f"/>
+                    <reportElement x="515" y="16" width="21" height="6" uuid="3d4bfbdb-7515-4e72-b9b4-f9cf0dda5a4f"/>
                     <textElement textAlignment="Center" verticalAlignment="Top">
-                        <font fontName="SansSerif" size="6" isBold="false"/>
+                        <font fontName="SansSerif" size="5" isBold="false"/>
                     </textElement>
                     <text><![CDATA[ICMS]]></text>
                 </staticText>
                 <staticText>
-                    <reportElement x="536" y="15" width="19" height="7" uuid="3943e50b-5ad3-4a1a-91a4-a624fd4d6845"/>
+                    <reportElement x="536" y="16" width="19" height="6" uuid="3943e50b-5ad3-4a1a-91a4-a624fd4d6845"/>
                     <textElement textAlignment="Center" verticalAlignment="Top">
-                        <font fontName="SansSerif" size="6" isBold="false"/>
+                        <font fontName="SansSerif" size="5" isBold="false"/>
                     </textElement>
                     <text><![CDATA[IPI]]></text>
                 </staticText>
@@ -1367,6 +1367,13 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
                         <font fontName="SansSerif" size="5" isBold="false"/>
                     </textElement>
                     <text><![CDATA[PRODUTO]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="211" y="16" width="17" height="6" uuid="a4308c80-b14e-42e3-bdfd-ce7cc3e84e78"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="SansSerif" size="4" isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[CSOSN]]></text>
                 </staticText>
             </band>
         </groupHeader>

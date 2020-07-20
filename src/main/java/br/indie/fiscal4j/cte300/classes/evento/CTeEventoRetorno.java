@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe310.classes.nota.assinatura.NFSignature;
+import br.indie.fiscal4j.nfe400.classes.nota.assinatura.NFSignature;
 import br.indie.fiscal4j.validadores.BigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;

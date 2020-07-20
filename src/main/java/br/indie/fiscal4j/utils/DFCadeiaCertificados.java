@@ -24,43 +24,64 @@ public abstract class DFCadeiaCertificados implements DFLog {
         final KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
         keyStore.load(null, senha.toCharArray());
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+
             for (final NFAutorizador400 aut : NFAutorizador400.values()) {
                 // Para NFe...
-                String urlNF = aut.getNfeStatusServico(DFAmbiente.HOMOLOGACAO);
+                String urlNF = aut.getNfeStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlNF)) {
                     final String host = new URI(urlNF).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
                 }
 
-                urlNF = aut.getNfeStatusServico(DFAmbiente.PRODUCAO);
+                // Para NFe...
+                urlNF = aut.getNfeStatusServico(DFAmbiente.HOMOLOGACAO);
                 if (StringUtils.isNotBlank(urlNF)) {
                     final String host = new URI(urlNF).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
                 }
 
                 // Para NFCe...
-                String urlNFC = aut.getNfceStatusServico(DFAmbiente.HOMOLOGACAO);
+                String urlNFC = aut.getNfceStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlNFC)) {
                     final String host = new URI(urlNFC).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
                 }
 
-                urlNFC = aut.getNfceStatusServico(DFAmbiente.PRODUCAO);
+                // Para NFCe...
+                urlNFC = aut.getNfceStatusServico(DFAmbiente.HOMOLOGACAO);
                 if (StringUtils.isNotBlank(urlNFC)) {
                     final String host = new URI(urlNFC).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
                 }
             }
 
+            //URLs especificas do AN (www.fazenda.gov.br e www1.fazenda.gov.br)
+            String urlNF1 = NFAutorizador400.AN.getRecepcaoEventoAN(DFAmbiente.PRODUCAO);
+            if (StringUtils.isNotBlank(urlNF1)) {
+                final String host = new URI(urlNF1).getHost();
+                DFCadeiaCertificados.get(keyStore, host);
+            }
+            String urlNF2 = NFAutorizador400.AN.getNFeDistribuicaoDFe(DFAmbiente.PRODUCAO);
+            if (StringUtils.isNotBlank(urlNF2)) {
+                final String host = new URI(urlNF2).getHost();
+                DFCadeiaCertificados.get(keyStore, host);
+            }
+
+            //URLs especificas do AN (www.fazenda.gov.br e www1.fazenda.gov.br)
+            urlNF1 = NFAutorizador400.AN.getRecepcaoEventoAN(DFAmbiente.HOMOLOGACAO);
+            if (StringUtils.isNotBlank(urlNF1)) {
+                final String host = new URI(urlNF1).getHost();
+                DFCadeiaCertificados.get(keyStore, host);
+            }
+            urlNF2 = NFAutorizador400.AN.getNFeDistribuicaoDFe(DFAmbiente.HOMOLOGACAO);
+            if (StringUtils.isNotBlank(urlNF2)) {
+                final String host = new URI(urlNF2).getHost();
+                DFCadeiaCertificados.get(keyStore, host);
+            }
+
             // MDFE
             for (final MDFAutorizador3 aut : MDFAutorizador3.values()) {
-                String urlMDFe = aut.getMDFeStatusServico(DFAmbiente.HOMOLOGACAO);
-                if (StringUtils.isNotBlank(urlMDFe)) {
-                    final String host = new URI(urlMDFe).getHost();
-                    DFCadeiaCertificados.get(keyStore, host);
-                }
-
-                urlMDFe = aut.getMDFeStatusServico(DFAmbiente.PRODUCAO);
+                final String urlMDFe = aut.getMDFeStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlMDFe)) {
                     final String host = new URI(urlMDFe).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
@@ -69,13 +90,25 @@ public abstract class DFCadeiaCertificados implements DFLog {
 
             // CTe
             for (final CTAutorizador31 aut : CTAutorizador31.values()) {
-                String urlCTe = aut.getCteStatusServico(DFAmbiente.HOMOLOGACAO);
+                final String urlCTe = aut.getCteStatusServico(DFAmbiente.PRODUCAO);
                 if (StringUtils.isNotBlank(urlCTe)) {
                     final String host = new URI(urlCTe).getHost();
                     DFCadeiaCertificados.get(keyStore, host);
                 }
+            }
 
-                urlCTe = aut.getCteStatusServico(DFAmbiente.PRODUCAO);
+            // MDFE
+            for (final MDFAutorizador3 aut : MDFAutorizador3.values()) {
+                final String urlMDFe = aut.getMDFeStatusServico(DFAmbiente.HOMOLOGACAO);
+                if (StringUtils.isNotBlank(urlMDFe)) {
+                    final String host = new URI(urlMDFe).getHost();
+                    DFCadeiaCertificados.get(keyStore, host);
+                }
+            }
+
+            // CTe
+            for (final CTAutorizador31 aut : CTAutorizador31.values()) {
+                final String urlCTe = aut.getCteStatusServico(DFAmbiente.HOMOLOGACAO);
                 if (StringUtils.isNotBlank(urlCTe)) {
                     final String host = new URI(urlCTe).getHost();
                     DFCadeiaCertificados.get(keyStore, host);

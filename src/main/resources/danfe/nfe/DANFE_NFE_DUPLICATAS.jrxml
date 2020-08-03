@@ -45,14 +45,14 @@
 	<columnHeader>
 		<band height="9" splitType="Stretch">
 			<staticText>
-				<reportElement x="2" y="0" width="43" height="9" uuid="682c7b79-733b-4884-bf6b-ad45de6ee6c8"/>
+				<reportElement x="2" y="0" width="28" height="9" uuid="682c7b79-733b-4884-bf6b-ad45de6ee6c8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="5"/>
 				</textElement>
 				<text><![CDATA[DUPLICATA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="45" y="0" width="40" height="9" uuid="0d6d7232-d043-4002-a48f-749157c70013"/>
+				<reportElement x="30" y="0" width="54" height="9" uuid="0d6d7232-d043-4002-a48f-749157c70013"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="5"/>
 				</textElement>
@@ -68,25 +68,25 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="10" splitType="Stretch">
+		<band height="16" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement x="2" y="0" width="43" height="10" uuid="8576e389-88d4-4761-b60a-49acbc658415"/>
-				<textElement>
-					<font fontName="SansSerif" size="8"/>
+				<reportElement x="2" y="0" width="28" height="16" uuid="8576e389-88d4-4761-b60a-49acbc658415"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nDup}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement x="45" y="0" width="40" height="10" uuid="919aea49-9ddb-4326-a9bb-4b42c9f3d7c5"/>
-				<textElement textAlignment="Right">
-					<font fontName="SansSerif" size="8"/>
+				<reportElement x="30" y="0" width="54" height="16" uuid="919aea49-9ddb-4326-a9bb-4b42c9f3d7c5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new SimpleDateFormat("yyyy-MM-dd").parse($F{dVenc}))]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="85" y="0" width="46" height="10" uuid="bd77ca16-b81b-4e81-b937-491f048a803b"/>
-				<textElement textAlignment="Right">
-					<font fontName="SansSerif" size="8"/>
+				<reportElement x="85" y="0" width="46" height="16" uuid="bd77ca16-b81b-4e81-b937-491f048a803b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[Double.parseDouble($F{vDup})]]></textFieldExpression>
 			</textField>

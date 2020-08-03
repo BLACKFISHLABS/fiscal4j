@@ -45,90 +45,48 @@
 	<columnHeader>
 		<band height="9" splitType="Stretch">
 			<staticText>
-				<reportElement style="table_TD" mode="Opaque" x="1" y="0" width="44" height="9" uuid="682c7b79-733b-4884-bf6b-ad45de6ee6c8"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
+				<reportElement x="2" y="0" width="43" height="9" uuid="682c7b79-733b-4884-bf6b-ad45de6ee6c8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="5"/>
 				</textElement>
-				<text><![CDATA[ DUPLICATA]]></text>
+				<text><![CDATA[DUPLICATA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TD" mode="Opaque" x="45" y="0" width="40" height="9" uuid="0d6d7232-d043-4002-a48f-749157c70013"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
-					<font fontName="SansSerif" size="5"/>
-				</textElement>
-				<text><![CDATA[VENC. ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table_TD" mode="Opaque" x="85" y="0" width="50" height="9" uuid="95c63db5-9603-4348-ad05-3cab16614b8c"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
+				<reportElement x="45" y="0" width="40" height="9" uuid="0d6d7232-d043-4002-a48f-749157c70013"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="5"/>
 				</textElement>
-				<text><![CDATA[VALOR ]]></text>
+				<text><![CDATA[VENCIMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="46" height="9" uuid="95c63db5-9603-4348-ad05-3cab16614b8c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="5"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="10" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement x="1" y="0" width="44" height="10" uuid="8576e389-88d4-4761-b60a-49acbc658415"/>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
+				<reportElement x="2" y="0" width="43" height="10" uuid="8576e389-88d4-4761-b60a-49acbc658415"/>
 				<textElement>
-					<font fontName="SansSerif" size="7"/>
+					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nDup}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement x="45" y="0" width="40" height="10" uuid="919aea49-9ddb-4326-a9bb-4b42c9f3d7c5"/>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
 				<textElement textAlignment="Right">
-					<font fontName="SansSerif" size="7"/>
+					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(new SimpleDateFormat("yyyy-MM-dd").parse($F{dVenc}))]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="true">
-				<reportElement x="85" y="0" width="50" height="10" uuid="bd77ca16-b81b-4e81-b937-491f048a803b"/>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Dotted"/>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
+				<reportElement x="85" y="0" width="46" height="10" uuid="bd77ca16-b81b-4e81-b937-491f048a803b"/>
 				<textElement textAlignment="Right">
-					<font fontName="SansSerif" size="7"/>
+					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[Double.parseDouble($F{vDup})]]></textFieldExpression>
 			</textField>

@@ -49,7 +49,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="5"/>
 				</textElement>
-				<text><![CDATA[DUPLICATA]]></text>
+				<text><![CDATA[PARCELA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="30" y="0" width="54" height="9" uuid="0d6d7232-d043-4002-a48f-749157c70013"/>

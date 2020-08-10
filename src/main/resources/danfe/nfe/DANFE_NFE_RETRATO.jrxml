@@ -543,7 +543,7 @@
 				<textField>
 					<reportElement x="2" y="17" width="352" height="14" uuid="52744283-9cf9-4cba-901f-dfd33cc59c7a"/>
 					<textElement>
-						<font fontName="SansSerif" size="10"/>
+						<font fontName="SansSerif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DestNomeRazao}]]></textFieldExpression>
 				</textField>

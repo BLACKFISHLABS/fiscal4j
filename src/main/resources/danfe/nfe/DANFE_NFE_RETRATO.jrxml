@@ -1451,7 +1451,7 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
 			</rectangle>
 			<textField textAdjust="ScaleFont">
 				<reportElement x="3" y="109" width="191" height="30" uuid="4b863789-9b25-44b1-a6c5-f34bc79dd7c0"/>
-				<textElement verticalAlignment="Top">
+				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="SansSerif" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{EmitLogradouro}+", "+$F{EmitNum}+ " - "+$F{EmitBairro}+", "+$F{EmitMunicipio}+", "+$F{EmitUF}+" - CEP: "+$F{EmitCEP}+" Fone: "+
@@ -1465,8 +1465,8 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
 			</image>
 			<textField>
 				<reportElement x="57" y="60" width="131" height="46" uuid="d8a357f1-c744-44d7-8e9f-1d44f0b18b33"/>
-				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="12" isBold="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{EmitenteNFe}]]></textFieldExpression>
 			</textField>
@@ -1993,11 +1993,11 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
 			<textField isBlankWhenNull="true">
 				<reportElement x="2" y="41" width="393" height="44" uuid="d790d68b-1342-481f-bb5d-87fa2cb3c287"/>
 				<textElement>
-					<font fontName="SansSerif" size="7"/>
+					<font fontName="SansSerif" size="7" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{NFeInfAdicionais} == null ? "" : $F{NFeInfAdicionais}) + "\n" +
 ($F{NFeInfAdFisco} == null ? "" : $F{NFeInfAdFisco}) + "\n" +
-($F{ImpTotalTrib} == null ? "" : ("Valor Aproximado dos Tributos: R$ " + new DecimalFormat ("#,##0.00").format(Double.parseDouble($F{ImpTotalTrib}))))]]></textFieldExpression>
+($F{ImpTotalTrib} == null ? "" : ("VALOR APROXIMADO DOS TRIBUTOS: R$ " + new DecimalFormat ("#,##0.00").format(Double.parseDouble($F{ImpTotalTrib}))))]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>

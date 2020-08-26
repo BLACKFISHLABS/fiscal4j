@@ -82,7 +82,7 @@ public class WSManifestacaoDestinatario implements DFLog {
         final NFInfoManifestacaoDestinatario manifestacaoDestinatario = new NFInfoManifestacaoDestinatario();
         manifestacaoDestinatario.setDescricaoEvento(tipoEvento.getDescricao());
         manifestacaoDestinatario.setVersao(WSManifestacaoDestinatario.VERSAO_LEIAUTE);
-        manifestacaoDestinatario.setJustificativa(motivo);
+        // manifestacaoDestinatario.setJustificativa(motivo);
 
         final NFInfoEventoManifestacaoDestinatario infoEvento = new NFInfoEventoManifestacaoDestinatario();
         infoEvento.setAmbiente(this.config.getAmbiente());

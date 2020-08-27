@@ -227,7 +227,7 @@
         <fieldDescription><![CDATA[null]]></fieldDescription>
     </field>
     <field name="observacoes" class="java.lang.String">
-        <fieldDescription><![CDATA[/mdfeProc/MDFe/infMDFe/infAdic/infAdFisco]]></fieldDescription>
+        <fieldDescription><![CDATA[/mdfeProc/MDFe/infMDFe/infAdic/infCpl]]></fieldDescription>
     </field>
     <field name="ufCarregamento" class="java.lang.String">
         <fieldDescription><![CDATA[/mdfeProc/MDFe/infMDFe/ide/UFIni]]></fieldDescription>
@@ -322,7 +322,7 @@
                     <textFieldExpression><![CDATA["<style isBold='true'>CPF/CNPJ: </style>" +  ( $F{cnpjEmitente} != null ? ($F{cnpjEmitente}.substring(0, 2) + "." + $F{cnpjEmitente}.substring(2, 5) + "." + $F{cnpjEmitente}.substring(5, 8) + "/" + $F{cnpjEmitente}.substring(8, 12) + "-" +$F{cnpjEmitente}.substring(12, 14))
 : ($F{cpfEmitente}.substring(0, 3) + "." + $F{cpfEmitente}.substring(3, 6) + "." + $F{cpfEmitente}.substring(6, 9) + "-" + $F{cpfEmitente}.substring(9, 11)))]]></textFieldExpression>
                 </textField>
-                <textField pattern="" isBlankWhenNull="false">
+                <textField textAdjust="ScaleFont" pattern="" isBlankWhenNull="false">
                     <reportElement key="textField-156" x="75" y="10" width="348" height="19"
                                    uuid="5d8fa0c7-c9af-411c-9bfb-5d6a9a425b0b">
                         <property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -334,7 +334,7 @@
                         <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     </box>
                     <textElement textAlignment="Left" verticalAlignment="Top">
-                        <font fontName="SansSerif" size="16" isBold="true"/>
+                        <font fontName="SansSerif" size="14" isBold="true"/>
                     </textElement>
                     <textFieldExpression><![CDATA[$F{nomeEmpresa}]]></textFieldExpression>
                 </textField>
@@ -1284,8 +1284,8 @@
     <background>
         <band height="791" splitType="Stretch">
             <staticText>
-                <reportElement key="staticText-1" x="236" y="172" width="60" height="560" forecolor="#CCCCCC"
-                               uuid="539879a8-dcfd-43d4-b461-1257e38fedf2">
+                <reportElement key="staticText-1" x="5" y="323" width="557" height="80"
+                               forecolor="rgba(0, 0, 0, 0.19607843)" uuid="539879a8-dcfd-43d4-b461-1257e38fedf2">
                     <printWhenExpression>
                         <![CDATA[( ("2".equals ($F{homologacao})) ? Boolean.TRUE : Boolean.FALSE )]]></printWhenExpression>
                 </reportElement>
@@ -1295,22 +1295,22 @@
                     <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
-                <textElement textAlignment="Center" rotation="Left">
-                    <font fontName="Times New Roman" size="48" isBold="true"/>
+                <textElement textAlignment="Right" rotation="None">
+                    <font fontName="SansSerif" size="32" isBold="true"/>
                 </textElement>
-                <text><![CDATA[SEM VALOR FISCAL]]></text>
+                <text><![CDATA[SEM VALOR FISCAL - AMBIENTE DE HOMOLOGAÇÃO]]></text>
             </staticText>
             <textField isBlankWhenNull="true">
-                <reportElement key="textField-175" x="126" y="172" width="99" height="560" forecolor="#FFCCCC"
-                               uuid="67e47273-5fcf-48c7-9afe-21322497a7d9"/>
+                <reportElement key="textField-175" x="5" y="410" width="557" height="46"
+                               forecolor="rgba(0, 0, 0, 0.19607843)" uuid="67e47273-5fcf-48c7-9afe-21322497a7d9"/>
                 <box>
                     <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                     <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
                 </box>
-                <textElement textAlignment="Center" rotation="Left">
-                    <font fontName="Times New Roman" size="40" isBold="true"/>
+                <textElement textAlignment="Right" rotation="None">
+                    <font fontName="SansSerif" size="32" isBold="true"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$P{msgPrevisualizacao}]]></textFieldExpression>
             </textField>

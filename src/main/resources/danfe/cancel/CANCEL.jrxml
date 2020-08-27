@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="CCe" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="5d6ac538-abb5-4429-a287-e528e487a0f9">
+    <property name="ireport.zoom" value="2.357947691000002"/>
+    <property name="ireport.x" value="474"/>
+    <property name="ireport.y" value="0"/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <queryString language="xPath">
+        <![CDATA[/]]>
+    </queryString>
+    <field name="Id" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/@Id]]></fieldDescription>
+    </field>
+    <field name="cOrgao" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/cOrgao]]></fieldDescription>
+    </field>
+    <field name="tpAmb" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/tpAmb]]></fieldDescription>
+    </field>
+    <field name="CNPJ" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/CNPJ]]></fieldDescription>
+    </field>
+    <field name="chNFe" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/chNFe]]></fieldDescription>
+    </field>
+    <field name="dhEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/dhEvento]]></fieldDescription>
+    </field>
+    <field name="tpEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/tpEvento]]></fieldDescription>
+    </field>
+    <field name="nSeqEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/nSeqEvento]]></fieldDescription>
+    </field>
+    <field name="verEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/verEvento]]></fieldDescription>
+    </field>
+    <field name="descEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/detEvento/descEvento]]></fieldDescription>
+    </field>
+    <field name="xCorrecao" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/detEvento/xCorrecao]]></fieldDescription>
+    </field>
+    <field name="xCondUso" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/evento/infEvento/detEvento/xCondUso]]></fieldDescription>
+    </field>
+    <field name="dhRegEvento" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/retEvento/infEvento/dhRegEvento]]></fieldDescription>
+    </field>
+    <field name="nProt" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/retEvento/infEvento/nProt]]></fieldDescription>
+    </field>
+    <field name="cStat" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/retEvento/infEvento/cStat]]></fieldDescription>
+    </field>
+    <field name="xMotivo" class="java.lang.String">
+        <fieldDescription><![CDATA[/procEventoNFe/retEvento/infEvento/xMotivo]]></fieldDescription>
+    </field>
+    <background>
+        <band/>
+    </background>
+    <title>
+        <band height="33">
+            <frame>
+                <reportElement mode="Opaque" x="-20" y="-20" width="595" height="53" backcolor="#565656"
+                               uuid="5a325464-353c-413e-b58f-dee57dd15229"/>
+                <staticText>
+                    <reportElement x="21" y="0" width="552" height="53" forecolor="#FFFFFF"
+                                   uuid="65d45478-9c27-48b7-8df8-4410c447809a"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="SansSerif" size="24" isBold="false" isUnderline="false"/>
+                    </textElement>
+                    <text><![CDATA[CANCELADA]]></text>
+                </staticText>
+            </frame>
+        </band>
+    </title>
+    <pageHeader>
+        <band/>
+    </pageHeader>
+    <columnHeader>
+        <band height="101">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="175" height="20" forecolor="#000000" backcolor="#E6E6E6"
+                               uuid="4313bbed-e980-414a-8302-a4cb4e20142c"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Chave de Acesso:  ]]></text>
+            </staticText>
+            <line>
+                <reportElement x="-20" y="20" width="595" height="1" forecolor="#666666"
+                               uuid="07721c57-9413-44a4-995c-22e4792e51dd"/>
+            </line>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="21" width="175" height="20" forecolor="#000000"
+                               backcolor="#E6E6E6" uuid="8fa0ef55-6a01-4e7a-a3a9-fbf6e08d60a6"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Número do Evento:  ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="41" width="175" height="20" forecolor="#000000"
+                               backcolor="#E6E6E6" uuid="0d3fb378-d9b0-46e3-b4b9-f26cd8593d2d"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Protocolo:  ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="61" width="175" height="20" forecolor="#000000"
+                               backcolor="#E6E6E6" uuid="44ae73ea-f765-4ded-9c0e-bf5291ca8522"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Data de Registro:  ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="81" width="175" height="20" forecolor="#000000"
+                               backcolor="#E6E6E6" uuid="f7fac842-fa02-4761-a9e9-06e2e2964dbb"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Mensagem da SEFAZ:  ]]></text>
+            </staticText>
+            <line>
+                <reportElement x="-20" y="40" width="595" height="1" forecolor="#666666"
+                               uuid="ded8c9af-0ab2-498c-961f-93f74499c9bf"/>
+            </line>
+            <line>
+                <reportElement x="-20" y="60" width="595" height="1" forecolor="#666666"
+                               uuid="1a2ebbb5-c9e2-4917-be29-f293e9638bc0"/>
+            </line>
+            <line>
+                <reportElement x="-20" y="80" width="595" height="1" forecolor="#666666"
+                               uuid="3cd50b3f-cefd-411d-9988-11424ef1e010"/>
+            </line>
+            <line>
+                <reportElement x="-20" y="100" width="595" height="1" forecolor="#666666"
+                               uuid="6de407c9-bf0b-4832-9848-9d0668e39bb7"/>
+            </line>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="176" y="0" width="377" height="20" uuid="b3f065af-e7a1-4073-97c5-395aa0b5ed7e"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{chNFe}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="176" y="20" width="377" height="20" uuid="34e382ce-9f57-4781-8323-4443a378263b"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nSeqEvento}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="176" y="40" width="377" height="20" uuid="90aa6a89-70b2-4616-a814-d3794fc4b986"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nProt}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" pattern="dd/MM/yyyy HH:mm">
+                <reportElement x="176" y="60" width="377" height="20" uuid="5cf3c910-0d34-46b1-84e7-a4ac82aa7aad"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression>
+                    <![CDATA[(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse($F{dhEvento}))]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="176" y="80" width="377" height="20" uuid="4959e823-9efa-4592-9d57-734dc53062b4"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{xMotivo}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="612">
+            <textField isBlankWhenNull="true">
+                <reportElement x="543" y="0" width="12" height="612" forecolor="#000000"
+                               uuid="5752926f-5dcd-4f12-84aa-95b990cf9f7e"/>
+                <textElement verticalAlignment="Middle" rotation="Left">
+                    <font fontName="SansSerif" size="8" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[""]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="142" y="239" width="270" height="34" uuid="858ae7f9-dbbd-4aff-a7f2-adaab4a2266f"/>
+                <textElement>
+                    <font size="26"/>
+                </textElement>
+                <text><![CDATA[SEM VALOR FISCAL]]></text>
+            </staticText>
+        </band>
+    </detail>
+    <columnFooter>
+        <band/>
+    </columnFooter>
+    <pageFooter>
+        <band height="17">
+            <textField>
+                <reportElement mode="Opaque" x="400" y="3" width="96" height="13" backcolor="#E6E6E6"
+                               uuid="17d9ebbf-6a37-49ae-bae6-d71c5c5dea77"/>
+                <textElement textAlignment="Left" verticalAlignment="Justified">
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement mode="Opaque" x="497" y="3" width="55" height="13" backcolor="#E6E6E6"
+                               uuid="3ef16cf6-f025-497b-a079-7fb7e66176d0"/>
+                <textElement textAlignment="Left" verticalAlignment="Justified">
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement mode="Opaque" x="1" y="3" width="398" height="13" backcolor="#E6E6E6"
+                               uuid="a93b6f55-c034-4366-9b42-a0e4b70145d6"/>
+                <textElement textAlignment="Left" verticalAlignment="Justified">
+                    <font fontName="SansSerif"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band/>
+    </summary>
+</jasperReport>

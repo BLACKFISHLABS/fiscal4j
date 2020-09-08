@@ -45,7 +45,8 @@ public final class XMLValidador {
     }
 
     private static boolean validaMDF(final String xml, final String xsd) throws IOException, SAXException, URISyntaxException {
-        final URL xsdPath = XMLValidador.class.getClassLoader().getResource(String.format("schemas/PL_MDFe_300a15072019/%s", xsd));
+        System.setProperty("jdk.xml.maxOccurLimit", "10000");
+        final URL xsdPath = XMLValidador.class.getClassLoader().getResource(String.format("schemas/PL_MDFe_300a_NT02020_NFF/%s", xsd));
         final SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         final Schema schema = schemaFactory.newSchema(new StreamSource(xsdPath.toURI().toString()));
         schema.newValidator().validate(new StreamSource(new StringReader(xml)));
@@ -56,8 +57,20 @@ public final class XMLValidador {
         return XMLValidador.validaMDF(arquivoXML, "enviMDFe_v3.00.xsd");
     }
 
-    public static boolean validaMDFe(final String arquivoXML) throws Exception {
-        return XMLValidador.validaMDF(arquivoXML, "mdfe_v3.00.xsd");
+    public static boolean validaMDFe(final String xml) throws Exception {
+        return XMLValidador.validaMDF(xml, "mdfe_v3.00.xsd");
+    }
+
+    public static boolean validaMDFeProcessado(final String xml) throws Exception {
+        return XMLValidador.validaMDF(xml, "procMDFe_v3.00.xsd");
+    }
+
+    public static boolean validaEventoMDFe(final String xml) throws Exception {
+        return XMLValidador.validaMDF(xml, "eventoMDFe_v3.00.xsd");
+    }
+
+    public static boolean validaEventoPagamentoOperacaoMDFe(final String xml) throws Exception {
+        return XMLValidador.validaMDF(xml, "evPagtoOperMDFe_v3.00.xsd");
     }
 
     private static boolean validaCTe(final String xml, final String xsd) throws IOException, SAXException, URISyntaxException {

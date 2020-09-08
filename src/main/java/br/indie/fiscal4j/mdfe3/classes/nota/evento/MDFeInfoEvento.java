@@ -7,6 +7,7 @@ import br.indie.fiscal4j.validadores.IntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -14,6 +15,7 @@ import java.time.ZonedDateTime;
 /**
  * Tipo Evento
  */
+@Root(name = "infEvento")
 public class MDFeInfoEvento extends DFBase {
     private static final long serialVersionUID = -9002694768514200146L;
 

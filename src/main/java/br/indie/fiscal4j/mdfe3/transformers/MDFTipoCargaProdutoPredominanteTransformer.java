@@ -1,0 +1,17 @@
+package br.indie.fiscal4j.mdfe3.transformers;
+
+import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoCargaProdutoPredominante;
+import org.simpleframework.xml.transform.Transform;
+
+public class MDFTipoCargaProdutoPredominanteTransformer implements Transform<MDFTipoCargaProdutoPredominante> {
+
+    @Override
+    public MDFTipoCargaProdutoPredominante read(String value) {
+        return MDFTipoCargaProdutoPredominante.valueOfCodigo(value);
+    }
+
+    @Override
+    public String write(MDFTipoCargaProdutoPredominante value) {
+        return value.getCodigo();
+    }
+}

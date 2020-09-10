@@ -19,6 +19,9 @@
 	<field name="EmitenteNFe" class="java.lang.String">
 		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/xNome]]></fieldDescription>
 	</field>
+	<field name="EmitenteFantNFe" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/xFant]]></fieldDescription>
+	</field>
 	<field name="Destinatario" class="java.lang.String">
 		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/xNome]]></fieldDescription>
 	</field>
@@ -1465,7 +1468,7 @@ $F{EmitBairro}+", "+
 $F{EmitMunicipio}+", "+
 $F{EmitUF}+
 " - CEP: "+$F{EmitCEP}+
-" Fone: "+
+" - Fone: "+
 (
 $F{EmitFone} == null ?  "" : 
 $F{EmitFone}.length() == 10 ?
@@ -1478,9 +1481,9 @@ $F{EmitFone}.length() == 10 ?
 				<imageExpression><![CDATA[$P{LOGO_EMPRESA}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="54" y="60" width="137" height="46" uuid="d8a357f1-c744-44d7-8e9f-1d44f0b18b33"/>
-				<textElement textAlignment="Left">
-					<font fontName="SansSerif" size="10" isBold="true"/>
+				<reportElement x="54" y="82" width="137" height="24" uuid="d8a357f1-c744-44d7-8e9f-1d44f0b18b33"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{EmitenteNFe}]]></textFieldExpression>
 			</textField>
@@ -1743,6 +1746,13 @@ $F{ChaveNFe}.substring(3, $F{ChaveNFe}.length()).substring(40, 44)]]></textField
 					<font fontName="SansSerif" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="57" width="137" height="24" uuid="9352ae7d-d27e-455a-9a9e-c5415fe0ab3d"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EmitenteFantNFe}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

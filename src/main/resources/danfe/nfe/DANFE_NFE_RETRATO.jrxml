@@ -1136,6 +1136,8 @@ $P{REPORT_DATA_SOURCE}).dataSource("/nfeProc/NFe/infNFe/cobr/dup")]]></dataSourc
 					<textFieldExpression><![CDATA[($F{TranspModFrete}.equals("0")) ? "0 - Emitente" :
 ($F{TranspModFrete}.equals("1")) ? "1 - Destinatário" :
 ($F{TranspModFrete}.equals("2")) ? "2 - Terceiros" :
+($F{TranspModFrete}.equals("3")) ? "3 - Prop. Rem." :
+($F{TranspModFrete}.equals("4")) ? "4 - Prop. Dest." :
 ($F{TranspModFrete}.equals("9")) ? "9 - Sem frete" : ""]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">

@@ -78,7 +78,7 @@ public class WSManifestacaoDestinatario implements DFLog {
         return omElementResult;
     }
 
-    private NFEnviaEventoManifestacaoDestinatario gerarDadosManifestacaoDestinatario(final String chaveAcesso, final NFTipoEventoManifestacaoDestinatario tipoEvento, final String motivo, final String cnpj) {
+    private NFEnviaEventoManifestacaoDestinatario gerarDadosManifestacaoDestinatario(final String chaveAcesso, final NFTipoEventoManifestacaoDestinatario tipoEvento, final String motivo, final String document) {
         final NFInfoManifestacaoDestinatario manifestacaoDestinatario = new NFInfoManifestacaoDestinatario();
         manifestacaoDestinatario.setDescricaoEvento(tipoEvento.getDescricao());
         manifestacaoDestinatario.setVersao(WSManifestacaoDestinatario.VERSAO_LEIAUTE);
@@ -87,7 +87,11 @@ public class WSManifestacaoDestinatario implements DFLog {
         final NFInfoEventoManifestacaoDestinatario infoEvento = new NFInfoEventoManifestacaoDestinatario();
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
-        infoEvento.setCnpj(cnpj);
+        if (document.length() > 11) {
+            infoEvento.setCnpj(document);
+        } else {
+            infoEvento.setCpf(document);
+        }
         infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", tipoEvento.getCodigo(), chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);

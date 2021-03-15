@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -47,7 +47,7 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
     }
 
     public void setSerie(final Integer serie) {
-        IntegerValidador.tamanho3(serie, "Serie");
+        DFIntegerValidador.tamanho3(serie, "Serie");
         this.serie = serie;
     }
 

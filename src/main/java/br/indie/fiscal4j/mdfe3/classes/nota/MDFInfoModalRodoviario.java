@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -69,7 +69,7 @@ public class MDFInfoModalRodoviario extends DFBase {
     }
 
     public void setVeiculoReboques(final List<MDFInfoModalRodoviarioVeiculoReboque> veiculoReboques) {
-        this.veiculoReboques = ListValidador.validaListaNaoObrigatoria(veiculoReboques, 3, "Lista de reboques");
+        this.veiculoReboques = DFListValidador.validaListaNaoObrigatoria(veiculoReboques, 3, "Lista de reboques");
     }
 
     public String getCodAgPorto() {

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -39,7 +39,7 @@ public class NFNotaInfoItemProdutoMedicamento extends DFBase {
     }
 
     public NFNotaInfoItemProdutoMedicamento setPrecoMaximoConsumidor(final BigDecimal precoMaximoConsumidor) {
-        this.precoMaximoConsumidor = BigDecimalValidador.tamanho15Com2CasasDecimais(precoMaximoConsumidor, "Pre\u00e7o m\u00e1ximo consumidor");
+        this.precoMaximoConsumidor = DFBigDecimalValidador.tamanho15Com2CasasDecimais(precoMaximoConsumidor, "Pre\u00e7o m\u00e1ximo consumidor");
         return this;
     }
 

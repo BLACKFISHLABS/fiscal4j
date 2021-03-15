@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -17,7 +17,7 @@ public class NFInformacaoImpostoDevolvido extends DFBase {
     }
 
     public void setValorIPIDevolvido(final BigDecimal valorIPIDevolvido) {
-        this.valorIPIDevolvido = BigDecimalValidador.tamanho15Com2CasasDecimais(valorIPIDevolvido, "Valor IPI Devolvido");
+        this.valorIPIDevolvido = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorIPIDevolvido, "Valor IPI Devolvido");
     }
 
 }

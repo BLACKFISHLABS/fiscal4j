@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -52,7 +52,7 @@ public class CTeNotaInfoCTeNormalInfoModalRodoviario extends DFBase {
      * Ordens de Coleta associados
      */
     public void setOrdemColetaAssociadas(final List<CTeNotaInfoCTeNormalInfoModalRodoviarioOrdemColetaAssociadas> ordemColetaAssociadas) {
-        ListValidador.tamanho10(ordemColetaAssociadas, "Ordens de Coleta associados");
+        DFListValidador.tamanho10(ordemColetaAssociadas, "Ordens de Coleta associados");
         this.ordemColetaAssociadas = ordemColetaAssociadas;
     }
 }

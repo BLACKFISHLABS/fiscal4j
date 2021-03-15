@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.enviolote;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNota;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -55,7 +55,7 @@ public class CTeEnvioLote extends DFBase {
     }
 
     public void setNota(final List<CTeNota> nota) {
-        ListValidador.tamanho50(nota, "Notas");
+        DFListValidador.tamanho50(nota, "Notas");
         this.nota = nota;
     }
 }

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -27,7 +27,7 @@ public class NFTipoEvento extends DFBase {
     private String condicaoUso;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = DFBigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {

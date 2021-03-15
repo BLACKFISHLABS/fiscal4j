@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.lote.envio;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -35,7 +35,7 @@ public class NFLoteEnvio extends DFBase {
     }
 
     public void setNotas(final List<NFNota> notas) {
-        ListValidador.tamanho50(notas, "Notas");
+        DFListValidador.tamanho50(notas, "Notas");
         this.notas = notas;
     }
 

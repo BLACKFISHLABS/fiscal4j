@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -20,7 +20,7 @@ public class NFImpostoDevolvido extends DFBase {
     }
 
     public void setPercentualDevolucao(final BigDecimal percentualDevolucao) {
-        this.percentualDevolucao = BigDecimalValidador.tamanho5Com2CasasDecimais(percentualDevolucao, "Percentual Devolucao");
+        this.percentualDevolucao = DFBigDecimalValidador.tamanho5Com2CasasDecimais(percentualDevolucao, "Percentual Devolucao");
     }
 
     public NFInformacaoImpostoDevolvido getInformacaoIPIDevolvido() {

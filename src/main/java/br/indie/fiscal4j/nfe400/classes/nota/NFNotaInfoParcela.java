@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -32,7 +32,7 @@ public class NFNotaInfoParcela extends DFBase {
     }
 
     public void setValorParcela(final BigDecimal valorParcela) {
-        this.valorParcela = BigDecimalValidador.tamanho15Com2CasasDecimais(valorParcela, "Valor Parcela");
+        this.valorParcela = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorParcela, "Valor Parcela");
     }
 
     public String getValorParcela() {

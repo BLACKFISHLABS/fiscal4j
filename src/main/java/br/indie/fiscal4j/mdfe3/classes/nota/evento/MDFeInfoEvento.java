@@ -2,8 +2,8 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -60,7 +60,7 @@ public class MDFeInfoEvento extends DFBase {
     }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+        this.versaoEvento = DFBigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
     }
 
     public String getId() {
@@ -129,7 +129,7 @@ public class MDFeInfoEvento extends DFBase {
     }
 
     public void setNumeroSequencialEvento(final int numeroSequencialEvento) {
-        IntegerValidador.tamanho1a2(numeroSequencialEvento, "Numero Sequencial Evento");
+        DFIntegerValidador.tamanho1a2(numeroSequencialEvento, "Numero Sequencial Evento");
         this.numeroSequencialEvento = numeroSequencialEvento;
     }
 

@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.evento.manifestacaodestinatario;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -24,7 +24,7 @@ public class NFEnviaEventoManifestacaoDestinatario extends DFBase {
     private List<NFEventoManifestacaoDestinatario> evento;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = DFBigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public String getVersao() {
@@ -45,7 +45,7 @@ public class NFEnviaEventoManifestacaoDestinatario extends DFBase {
     }
 
     public void setEvento(final List<NFEventoManifestacaoDestinatario> evento) {
-        ListValidador.tamanho20(evento, "Evento de Manifesta\u00e7\u00e3o do Destinat\u00e1rio");
+        DFListValidador.tamanho20(evento, "Evento de Manifesta\u00e7\u00e3o do Destinat\u00e1rio");
         this.evento = evento;
     }
 }

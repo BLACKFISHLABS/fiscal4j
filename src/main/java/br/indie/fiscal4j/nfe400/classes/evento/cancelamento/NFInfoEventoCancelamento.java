@@ -3,8 +3,8 @@ package br.indie.fiscal4j.nfe400.classes.evento.cancelamento;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -53,7 +53,7 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setVersaoEvento(final BigDecimal versaoEvento) {
-        this.versaoEvento = BigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
+        this.versaoEvento = DFBigDecimalValidador.tamanho5Com2CasasDecimais(versaoEvento, "Versao do Evento");
     }
 
     public String getId() {
@@ -128,7 +128,7 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setNumeroSequencialEvento(final int numeroSequencialEvento) {
-        IntegerValidador.tamanho1a2(numeroSequencialEvento, "Numero Sequencial Evento");
+        DFIntegerValidador.tamanho1a2(numeroSequencialEvento, "Numero Sequencial Evento");
         this.numeroSequencialEvento = numeroSequencialEvento;
     }
 

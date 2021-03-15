@@ -17,7 +17,7 @@ import br.indie.fiscal4j.nfe400.utils.qrcode20.NFGeraQRCodeEmissaoNormal20;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeAutorizacao4Stub;
 import br.indie.fiscal4j.nfe400.webservices.gerado.NFeAutorizacao4Stub.NfeResultMsg;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.XMLValidador;
+import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.impl.builder.StAXOMBuilder;
 import org.apache.commons.lang3.StringUtils;
@@ -100,7 +100,7 @@ class WSLoteEnvio implements DFLog {
 
     private NFLoteEnvioRetorno comunicaLote(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
         // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
-        XMLValidador.validaLote400(loteAssinadoXml);
+        DFXMLValidador.validaLote400(loteAssinadoXml);
 
         // envia o lote para a sefaz
         final OMElement omElement = this.nfeToOMElement(loteAssinadoXml);

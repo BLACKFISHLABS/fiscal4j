@@ -9,8 +9,8 @@ import br.indie.fiscal4j.nfe400.classes.NFFinalidade;
 import br.indie.fiscal4j.nfe400.classes.NFProcessoEmissor;
 import br.indie.fiscal4j.nfe400.classes.NFTipo;
 import br.indie.fiscal4j.nfe400.classes.NFTipoImpressao;
-import br.indie.fiscal4j.validadores.IntegerValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
@@ -75,6 +75,9 @@ public class NFNotaInfoIdentificacao extends DFBase {
 
     @Element(name = "indPres")
     private NFIndicadorPresencaComprador indicadorPresencaComprador;
+
+    @Element(name = "indIntermed", required = false)
+    private NFIndicadorIntermediador indIntermed;
 
     @Element(name = "procEmi")
     private NFProcessoEmissor programaEmissor;
@@ -144,7 +147,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setReferenciadas(final List<NFInfoReferenciada> referenciadas) {
-        ListValidador.tamanho500(referenciadas, "Referenciadas");
+        DFListValidador.tamanho500(referenciadas, "Referenciadas");
         this.referenciadas = referenciadas;
     }
 
@@ -157,7 +160,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setDigitoVerificador(final Integer digitoVerificador) {
-        IntegerValidador.exatamente1(digitoVerificador, "DV");
+        DFIntegerValidador.exatamente1(digitoVerificador, "DV");
         this.digitoVerificador = digitoVerificador;
     }
 
@@ -197,6 +200,10 @@ public class NFNotaInfoIdentificacao extends DFBase {
 
     public void setIndicadorPresencaComprador(final NFIndicadorPresencaComprador indicadorPresencaComprador) {
         this.indicadorPresencaComprador = indicadorPresencaComprador;
+    }
+
+    public void setIndIntermed(NFIndicadorIntermediador indIntermed) {
+        this.indIntermed = indIntermed;
     }
 
     public DFUnidadeFederativa getUf() {
@@ -269,6 +276,10 @@ public class NFNotaInfoIdentificacao extends DFBase {
 
     public NFIndicadorPresencaComprador getIndicadorPresencaComprador() {
         return this.indicadorPresencaComprador;
+    }
+
+    public NFIndicadorIntermediador getIndIntermed() {
+        return indIntermed;
     }
 
     public NFProcessoEmissor getProgramaEmissor() {

@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.BigIntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -27,12 +27,12 @@ public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     }
 
     public void setNumeroRegistroExportacao(final BigInteger numeroRegistroExportacao) {
-        BigIntegerValidador.tamanho12(numeroRegistroExportacao, "Numero Registro Exportacao");
+        DFBigIntegerValidador.tamanho12(numeroRegistroExportacao, "Numero Registro Exportacao");
         this.numeroRegistroExportacao = numeroRegistroExportacao;
     }
 
     public void setQuantidadeItemEfetivamenteExportado(final BigDecimal quantidadeItemEfetivamenteExportado) {
-        this.quantidadeItemEfetivamenteExportado = BigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeItemEfetivamenteExportado, "Quantidade Item Evetivamente Exportado");
+        this.quantidadeItemEfetivamenteExportado = DFBigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeItemEfetivamenteExportado, "Quantidade Item Evetivamente Exportado");
     }
 
     public String getChaveAcessoNFe() {

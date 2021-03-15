@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -84,7 +84,7 @@ public class NFNotaInfoAvulsa extends DFBase {
     }
 
     public void setValorTotalConstanteDocumentoArrecadacaoReceita(final BigDecimal valorTotalConstanteDocumentoArrecadacaoReceita) {
-        this.valorTotalConstanteDocumentoArrecadacaoReceita = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalConstanteDocumentoArrecadacaoReceita, "Valor Total Constante Documento Arrecadacao Receita");
+        this.valorTotalConstanteDocumentoArrecadacaoReceita = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalConstanteDocumentoArrecadacaoReceita, "Valor Total Constante Documento Arrecadacao Receita");
     }
 
     public void setReparticaoFiscalEmitente(final String reparticaoFiscalEmitente) {

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -28,17 +28,17 @@ public class NFNotaInfoFatura extends DFBase {
     }
 
     public void setValorOriginalFatura(final BigDecimal valorOriginalFatura) {
-        this.valorOriginalFatura = BigDecimalValidador.tamanho15Com2CasasDecimais(valorOriginalFatura, "Valor Original Fatura");
+        this.valorOriginalFatura = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorOriginalFatura, "Valor Original Fatura");
     }
 
     public void setValorDesconto(final BigDecimal valorDesconto) {
         //this.valorDesconto = BigDecimalParser.tamanho15Com2CasasDecimais(valorDesconto, "Valor Desconto Fatura");
-        this.valorDesconto = BigDecimalValidador.tamanho13Com2CasasDecimais(valorDesconto, "Valor Desconto Fatura");
+        this.valorDesconto = DFBigDecimalValidador.tamanho13Com2CasasDecimais(valorDesconto, "Valor Desconto Fatura");
     }
 
 
     public void setValorLiquidoFatura(final BigDecimal valorLiquidoFatura) {
-        this.valorLiquidoFatura = BigDecimalValidador.tamanho15Com2CasasDecimais(valorLiquidoFatura, "Valor Liquido Fatura");
+        this.valorLiquidoFatura = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorLiquidoFatura, "Valor Liquido Fatura");
     }
 
     public String getValorOriginalFatura() {

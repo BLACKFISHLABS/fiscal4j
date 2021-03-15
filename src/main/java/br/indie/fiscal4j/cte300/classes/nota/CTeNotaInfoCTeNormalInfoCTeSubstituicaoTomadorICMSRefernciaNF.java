@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -137,7 +137,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Valor do documento fiscal.
      */
     public void setValor(final BigDecimal valor) {
-        this.valor = BigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor do documento fiscal");
+        this.valor = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor do documento fiscal");
     }
 
     public LocalDate getDataEmissao() {

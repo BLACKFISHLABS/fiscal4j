@@ -5,8 +5,8 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.*;
-import br.indie.fiscal4j.validadores.IntegerValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
@@ -151,7 +151,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * se inexistente).
      */
     public void setSerie(final Integer serie) {
-        IntegerValidador.tamanho3(serie, "Série");
+        DFIntegerValidador.tamanho3(serie, "Série");
         this.serie = serie;
     }
 
@@ -163,7 +163,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * Número do MDF-e
      */
     public void setNumero(final Integer numero) {
-        IntegerValidador.tamanho9(numero, "Número");
+        DFIntegerValidador.tamanho9(numero, "Número");
         this.numero = numero;
     }
 
@@ -201,7 +201,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * acesso.
      */
     public void setDigitoVerificador(final Integer digitoVerificador) {
-        IntegerValidador.exatamente1(digitoVerificador, "Digito verificador MDF-e");
+        DFIntegerValidador.exatamente1(digitoVerificador, "Digito verificador MDF-e");
         this.digitoVerificador = digitoVerificador;
     }
 
@@ -288,7 +288,7 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     public void setMunicipioCarregamentos(final List<MDFInfoIdentificacaoMunicipioCarregamento> municipioCarregamentos) {
-        this.municipioCarregamentos = ListValidador.validaListaObrigatoria(municipioCarregamentos, 50, "Municípios carregamento MDF-e");
+        this.municipioCarregamentos = DFListValidador.validaListaObrigatoria(municipioCarregamentos, 50, "Municípios carregamento MDF-e");
     }
 
     public List<MDFInfoIdentificacaoUfPercurso> getIdentificacaoUfPercursos() {
@@ -296,7 +296,7 @@ public class MDFInfoIdentificacao extends DFBase {
     }
 
     public void setIdentificacaoUfPercursos(final List<MDFInfoIdentificacaoUfPercurso> identificacaoUfPercursos) {
-        this.identificacaoUfPercursos = ListValidador.validaListaNaoObrigatoria(identificacaoUfPercursos, 25, "UF percurso MDF-e");
+        this.identificacaoUfPercursos = DFListValidador.validaListaNaoObrigatoria(identificacaoUfPercursos, 25, "UF percurso MDF-e");
     }
 
     public ZonedDateTime getDataHoraDoInicioViagem() {

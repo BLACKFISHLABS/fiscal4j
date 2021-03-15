@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -118,7 +118,7 @@ public class CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnteriores
      * Informações de identificação dos documentos de Transporte Anterior
      */
     public void setIdentificacaoDocumentosAnteriores(final List<CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnterioresIdentificacao> identificacaoDocumentosAnteriores) {
-        ListValidador.tamanho2(identificacaoDocumentosAnteriores, "Informações de identificação dos documentos de Transporte Anterior");
+        DFListValidador.tamanho2(identificacaoDocumentosAnteriores, "Informações de identificação dos documentos de Transporte Anterior");
         this.identificacaoDocumentosAnteriores = identificacaoDocumentosAnteriores;
     }
 }

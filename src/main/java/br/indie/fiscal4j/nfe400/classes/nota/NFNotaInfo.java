@@ -2,8 +2,8 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFTipo;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -93,7 +93,7 @@ public class NFNotaInfo extends DFBase {
     }
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
+        this.versao = DFBigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao");
     }
 
     public NFNotaInfoIdentificacao getIdentificacao() {
@@ -121,7 +121,7 @@ public class NFNotaInfo extends DFBase {
     }
 
     public void setItens(final List<NFNotaInfoItem> itens) {
-        ListValidador.tamanho990(itens, "Itens da Nota");
+        DFListValidador.tamanho990(itens, "Itens da Nota");
         this.itens = itens;
     }
 
@@ -162,12 +162,12 @@ public class NFNotaInfo extends DFBase {
     }
 
     public void setPessoasAutorizadasDownloadNFe(final List<NFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe) {
-        ListValidador.tamanho10(pessoasAutorizadasDownloadNFe, "Pessoas Autorizadas Download NFe");
+        DFListValidador.tamanho10(pessoasAutorizadasDownloadNFe, "Pessoas Autorizadas Download NFe");
         this.pessoasAutorizadasDownloadNFe = pessoasAutorizadasDownloadNFe;
     }
 
     public void setPagamentos(final List<NFNotaInfoPagamento> pagamentos) {
-        ListValidador.tamanho100(pagamentos, "Pagamentos");
+        DFListValidador.tamanho100(pagamentos, "Pagamentos");
         this.pagamentos = pagamentos;
     }
 

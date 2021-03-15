@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigIntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigInteger;
@@ -16,7 +16,7 @@ public class NFNotaInfoItemDetalheExportacao extends DFBase {
     private NFNotaInfoItemExportacaoIndireta exportacaoIndireta;
 
     public void setNumeroAtoConcessorioDrawback(final BigInteger numeroAtoConcessorioDrawback) {
-        BigIntegerValidador.tamanho11(numeroAtoConcessorioDrawback, "Numero Ato Concessorio");
+        DFBigIntegerValidador.tamanho11(numeroAtoConcessorioDrawback, "Numero Ato Concessorio");
         this.atoConcessorioDrawback = numeroAtoConcessorioDrawback;
     }
 

@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.*;
 import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
-import br.indie.fiscal4j.validadores.XMLValidador;
+import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -41,7 +41,7 @@ public class WSDistribuicaoNFe {
             String xmlEnvio = this.gerarNFDistribuicaoInt(cpfOuCnpj, uf, chaveAcesso, nsu, ultNsu).toString();
 
             // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
-            XMLValidador.validaConsultaDfe(xmlEnvio);
+            DFXMLValidador.validaConsultaDfe(xmlEnvio);
 
             final OMElement ome = AXIOMUtil.stringToOM(xmlEnvio);
 

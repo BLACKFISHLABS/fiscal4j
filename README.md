@@ -14,11 +14,14 @@
 | CT-e                | OK             |
 
 ## Requisitos
+
 JDK >= 1.8<br>
 Maven >= 3.x
 
 ## Sobre
+
 Este projeto visa permitir emissão simples e rápida de documentos fiscais eletrônicos em Java
 
 ## Webhook
+
 Jenkins

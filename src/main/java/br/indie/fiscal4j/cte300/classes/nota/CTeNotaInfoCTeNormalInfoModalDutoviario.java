@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -42,7 +42,7 @@ public class CTeNotaInfoCTeNormalInfoModalDutoviario extends DFBase {
      * Valor da tarifa
      */
     public void setValorTarifa(final BigDecimal valorTarifa) {
-        this.valorTarifa = BigDecimalValidador.tamanho15comAte6CasasDecimais(valorTarifa, "Valor da tarifa");
+        this.valorTarifa = DFBigDecimalValidador.tamanho15comAte6CasasDecimais(valorTarifa, "Valor da tarifa");
     }
 
     public LocalDate getDataInicioServico() {

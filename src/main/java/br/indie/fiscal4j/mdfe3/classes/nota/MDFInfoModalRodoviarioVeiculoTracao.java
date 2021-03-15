@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoRodado;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -66,7 +66,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setCondutor(final List<MDFInfoModalRodoviarioVeiculoCondutor> condutor) {
-        this.condutor = ListValidador.validaListaObrigatoria(condutor, 10, "Condutor Veiculo tracao");
+        this.condutor = DFListValidador.validaListaObrigatoria(condutor, 10, "Condutor Veiculo tracao");
     }
 
     public MDFTipoRodado getTipoRodado() {

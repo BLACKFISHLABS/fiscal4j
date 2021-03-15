@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.evento.inutilizacao;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -87,7 +87,7 @@ public class NFEventoInutilizacaoDados extends DFBase {
     }
 
     public void setAno(final Integer ano) {
-        IntegerValidador.exatamente2(ano, "Ano");
+        DFIntegerValidador.exatamente2(ano, "Ano");
         this.ano = ano;
     }
 

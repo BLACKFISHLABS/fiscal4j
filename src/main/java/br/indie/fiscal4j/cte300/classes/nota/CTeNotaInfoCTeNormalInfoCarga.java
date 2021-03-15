@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -53,7 +53,7 @@ public class CTeNotaInfoCTeNormalInfoCarga extends DFBase {
      * Dever ser informado para todos os modais, com exceção para o Dutoviário.
      */
     public void setValorTotalCarga(final BigDecimal valorTotalCarga) {
-        this.valorTotalCarga = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalCarga, "Valor total da carga");
+        this.valorTotalCarga = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalCarga, "Valor total da carga");
     }
 
     public String getDescricaoProdutoPredominante() {
@@ -107,6 +107,6 @@ public class CTeNotaInfoCTeNormalInfoCarga extends DFBase {
      * Normalmente igual ao valor declarado da mercadoria, diferente por exemplo, quando a mercadoria transportada é isenta de tributos nacionais para exportação, onde é preciso averbar um valor maior, pois no caso de indenização, o valor a ser pago será maior
      */
     public void setValorAverbacao(final BigDecimal valorAverbacao) {
-        this.valorAverbacao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorAverbacao, "Valor da Carga para efeito de averbação");
+        this.valorAverbacao = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorAverbacao, "Valor da Carga para efeito de averbação");
     }
 }

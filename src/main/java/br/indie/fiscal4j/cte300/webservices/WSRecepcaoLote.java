@@ -12,7 +12,7 @@ import br.indie.fiscal4j.cte300.webservices.recepcao.CteRecepcaoStub.CteCabecMsg
 import br.indie.fiscal4j.cte300.webservices.recepcao.CteRecepcaoStub.CteDadosMsg;
 import br.indie.fiscal4j.cte300.webservices.recepcao.CteRecepcaoStub.CteRecepcaoLoteResult;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.XMLValidador;
+import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.impl.builder.StAXOMBuilder;
 
@@ -43,7 +43,7 @@ class WSRecepcaoLote implements DFLog {
 
     private CTeEnvioLoteRetorno comunicaLote(final String loteAssinadoXml) throws Exception {
         //valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
-        XMLValidador.validaLoteCTe(loteAssinadoXml);
+        DFXMLValidador.validaLoteCTe(loteAssinadoXml);
 
         //envia o lote para a sefaz
         final OMElement omElement = this.cteToOMElement(loteAssinadoXml);

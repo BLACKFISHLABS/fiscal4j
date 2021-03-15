@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -57,7 +57,7 @@ public class CTeNotaInfoInformacoesRelativasImpostos extends DFBase {
      * Valor Total dos Tributos
      */
     public void setValorTotalTributos(final BigDecimal valorTotalTributos) {
-        this.valorTotalTributos = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalTributos, "Valor Total dos Tributos");
+        this.valorTotalTributos = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalTributos, "Valor Total dos Tributos");
     }
 
     public String getInformacoesAdicionaisFisco() {

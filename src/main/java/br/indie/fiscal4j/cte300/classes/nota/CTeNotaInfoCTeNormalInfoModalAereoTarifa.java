@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTClasseTarifa;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -71,6 +71,6 @@ public class CTeNotaInfoCTeNormalInfoModalAereoTarifa extends DFBase {
      * Valor da tarifa por kg quando for o caso.
      */
     public void setValor(final BigDecimal valor) {
-        this.valor = BigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor da Tarifa");
+        this.valor = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valor, "Valor da Tarifa");
     }
 }

@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoDocumento;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -119,7 +119,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoOutros extends DFBase {
      * Valor do documento
      */
     public void setValorDocumentoFiscal(final BigDecimal valorDocumentoFiscal) {
-        this.valorDocumentoFiscal = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDocumentoFiscal, "Valor do documento");
+        this.valorDocumentoFiscal = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorDocumentoFiscal, "Valor do documento");
     }
 
     public LocalDate getDataPrevisaoEntrega() {

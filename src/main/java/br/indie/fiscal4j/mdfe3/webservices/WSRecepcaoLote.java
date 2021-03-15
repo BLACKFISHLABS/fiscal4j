@@ -12,7 +12,7 @@ import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
 import br.indie.fiscal4j.mdfe3.utils.MDFGeraQRCode;
 import br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.XMLValidador;
+import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.impl.builder.StAXOMBuilder;
 
@@ -59,7 +59,7 @@ class WSRecepcaoLote implements DFLog {
         //veja em https://docs.oracle.com/javase/7/docs/api/javax/xml/XMLConstants.html#FEATURE_SECURE_PROCESSING
         System.setProperty("jdk.xml.maxOccurLimit", "10000");
         //valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
-        XMLValidador.validaLoteMDFe(loteAssinadoXml);
+        DFXMLValidador.validaLoteMDFe(loteAssinadoXml);
 
         //envia o lote para a sefaz
         final OMElement omElement = this.mdfeToOMElement(loteAssinadoXml);

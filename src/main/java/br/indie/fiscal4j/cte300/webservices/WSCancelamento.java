@@ -7,7 +7,7 @@ import br.indie.fiscal4j.cte300.classes.evento.cancelamento.*;
 import br.indie.fiscal4j.cte300.parsers.CTChaveParser;
 import br.indie.fiscal4j.cte300.webservices.recepcaoevento.RecepcaoEventoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 
@@ -41,7 +41,7 @@ class WSCancelamento implements DFLog {
         final CTChaveParser ctChaveParser = new CTChaveParser(chaveAcesso);
         final RecepcaoEventoStub.CteCabecMsg cabec = new RecepcaoEventoStub.CteCabecMsg();
         cabec.setCUF(ctChaveParser.getNFUnidadeFederativa().getCodigoIbge());
-        cabec.setVersaoDados(BigDecimalValidador.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
+        cabec.setVersaoDados(DFBigDecimalValidador.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
 
         final RecepcaoEventoStub.CteCabecMsgE cabecE = new RecepcaoEventoStub.CteCabecMsgE();
         cabecE.setCteCabecMsg(cabec);

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -21,7 +21,7 @@ public class NFNotaInfoCobranca extends DFBase {
     }
 
     public void setParcelas(final List<NFNotaInfoParcela> parcelas) {
-        ListValidador.tamanho120(parcelas, "Parcelas");
+        DFListValidador.tamanho120(parcelas, "Parcelas");
         this.parcelas = parcelas;
     }
 

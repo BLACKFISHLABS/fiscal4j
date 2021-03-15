@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
@@ -28,6 +28,6 @@ public class MDFInfoModalRodoviarioPedagio extends DFBase {
     }
 
     public void setDispositivos(final List<MDFInfoModalRodoviarioPedagioDisp> dispositivos) {
-        this.dispositivos = ListValidador.validaListaObrigatoria(dispositivos, "Dispositivos do Vale Pedagio");
+        this.dispositivos = DFListValidador.validaListaObrigatoria(dispositivos, "Dispositivos do Vale Pedagio");
     }
 }

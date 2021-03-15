@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -114,7 +114,7 @@ public class MDFInfo extends DFBase {
      * Informar CNPJ ou CPF. Preencher os zeros não significativos.
      */
     public void setAutorizacaoDownload(final List<MDFInfoAutorizacaoDownload> autorizacaoDownload) {
-        ListValidador.tamanho10(autorizacaoDownload, "Autorizados para download do XML do DF-e");
+        DFListValidador.tamanho10(autorizacaoDownload, "Autorizados para download do XML do DF-e");
         this.autorizacaoDownload = autorizacaoDownload;
     }
 

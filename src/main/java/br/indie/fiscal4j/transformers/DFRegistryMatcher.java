@@ -75,6 +75,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoTipoOperacao.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemProdutoVeiculoTipoOperacaoTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemProdutoVeiculoCondicaoChassi.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemProdutoVeiculoCondicaoChassiTransformer());
         super.bind(br.indie.fiscal4j.nfe400.classes.NFNotaInfoItemModalidadeBCICMS.class, new br.indie.fiscal4j.nfe400.transformers.NFNotaInfoItemModalidadeBCICMSTransformer());
+        super.bind(br.indie.fiscal4j.nfe400.classes.nota.NFIndicadorIntermediador.class, new br.indie.fiscal4j.nfe400.transformers.NFIndicadorIntermediadorTransformer());
 
         // CTe 300
         super.bind(br.indie.fiscal4j.cte300.classes.CTTipoEmissao.class, new br.indie.fiscal4j.cte300.transformes.CTTipoEmissaoTransformer());

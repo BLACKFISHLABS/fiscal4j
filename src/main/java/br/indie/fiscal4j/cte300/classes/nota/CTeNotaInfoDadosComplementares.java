@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -168,7 +168,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Campo de uso livre do contribuinte
      */
     public void setObservacaoContribuinte(final List<CTeNotaInfoDadosComplementaresObservacaoContribuinte> observacaoContribuinte) {
-        ListValidador.tamanho10(observacaoContribuinte, "Observação de interesse do contribuinte");
+        DFListValidador.tamanho10(observacaoContribuinte, "Observação de interesse do contribuinte");
         this.observacaoContribuinte = observacaoContribuinte;
     }
 
@@ -180,7 +180,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Campo de uso livre do contribuinte
      */
     public void setObservacaoFisco(final List<CTeNotaInfoDadosComplementaresObservacaoFisco> observacaoFisco) {
-        ListValidador.tamanho10(observacaoFisco, "Observação de interesse do fisco");
+        DFListValidador.tamanho10(observacaoFisco, "Observação de interesse do fisco");
         this.observacaoFisco = observacaoFisco;
     }
 

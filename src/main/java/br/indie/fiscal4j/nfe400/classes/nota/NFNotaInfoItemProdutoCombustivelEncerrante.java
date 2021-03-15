@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -82,11 +82,11 @@ public class NFNotaInfoItemProdutoCombustivelEncerrante extends DFBase {
     }
 
     public void setValorEncerramentoInicial(final BigDecimal valorEncerramentoInicial) {
-        this.valorEncerramentoInicial = BigDecimalValidador.tamanho11Com3CasasDecimais(valorEncerramentoInicial, "Valor do Encerrante no inicio do abastecimento");
+        this.valorEncerramentoInicial = DFBigDecimalValidador.tamanho11Com3CasasDecimais(valorEncerramentoInicial, "Valor do Encerrante no inicio do abastecimento");
     }
 
     public void setValorEncerramentoFinal(final BigDecimal valorEncerramentoFinal) {
-        this.valorEncerramentoFinal = BigDecimalValidador.tamanho11Com3CasasDecimais(valorEncerramentoFinal, "Valor do Encerrante no final do abastecimento");
+        this.valorEncerramentoFinal = DFBigDecimalValidador.tamanho11Com3CasasDecimais(valorEncerramentoFinal, "Valor do Encerrante no final do abastecimento");
     }
 
 }

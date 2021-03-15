@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -250,7 +250,7 @@ public class CTeNotaInfo extends DFBase {
      * Informar CNPJ ou CPF. Preencher os zeros não significativos.
      */
     public void setAutorizacaoDownload(final List<CTeNotaInfoAutorizacaoDownload> autorizacaoDownload) {
-        ListValidador.tamanho10(autorizacaoDownload, "Autorizados para download do XML do DF-e");
+        DFListValidador.tamanho10(autorizacaoDownload, "Autorizados para download do XML do DF-e");
         this.autorizacaoDownload = autorizacaoDownload;
     }
 

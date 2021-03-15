@@ -5,7 +5,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFModelo;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.cte300.classes.*;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -232,7 +232,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
      * Preencher com "0" no caso de serie unica
      */
     public void setSerie(final Integer serie) {
-        IntegerValidador.tamanho3(serie, "Serie");
+        DFIntegerValidador.tamanho3(serie, "Serie");
         this.serie = serie;
     }
 
@@ -244,7 +244,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
      * Numero do CT-e
      */
     public void setNumero(final Integer numero) {
-        IntegerValidador.tamanho9(numero, "Numero");
+        DFIntegerValidador.tamanho9(numero, "Numero");
         this.numero = numero;
     }
 
@@ -297,7 +297,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
      * Informar o digito de controle da chave de acesso do CT-e, que deve ser calculado com a aplicacao do algoritmo modulo 11 (base 2,9) da chave de acesso.
      */
     public void setDigitoVerificador(final Integer digitoVerificador) {
-        IntegerValidador.exatamente1(digitoVerificador, "DV");
+        DFIntegerValidador.exatamente1(digitoVerificador, "DV");
         this.digitoVerificador = digitoVerificador;
     }
 
@@ -367,7 +367,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
      * Informar valor 1 quando for Globalizado e nao informar a tag quando nao tratar de CT-e Globalizado
      */
     public void setIndicadorGlobalizado(final Integer indicadorGlobalizado) {
-        IntegerValidador.exatamente1(indicadorGlobalizado, "Indicador de CT-e Globalizado");
+        DFIntegerValidador.exatamente1(indicadorGlobalizado, "Indicador de CT-e Globalizado");
         this.indicadorGlobalizado = indicadorGlobalizado;
     }
 

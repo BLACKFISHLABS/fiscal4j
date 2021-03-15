@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFModalidadeFrete;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -53,12 +53,12 @@ public class NFNotaInfoTransporte extends DFBase {
     }
 
     public void setReboques(final List<NFNotaInfoReboque> reboques) {
-        ListValidador.tamanho5(reboques, "Reboques");
+        DFListValidador.tamanho5(reboques, "Reboques");
         this.reboques = reboques;
     }
 
     public void setVolumes(final List<NFNotaInfoVolume> volumes) {
-        ListValidador.tamanho5000(volumes, "Volumes");
+        DFListValidador.tamanho5000(volumes, "Volumes");
         this.volumes = volumes;
     }
 

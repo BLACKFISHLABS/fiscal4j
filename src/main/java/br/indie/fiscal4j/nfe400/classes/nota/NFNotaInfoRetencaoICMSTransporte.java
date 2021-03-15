@@ -1,8 +1,8 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -30,23 +30,23 @@ public class NFNotaInfoRetencaoICMSTransporte extends DFBase {
     private String codigoMunicipioOcorrenciaFatoGeradorICMSTransporte;
 
     public void setValorServico(final BigDecimal valorServico) {
-        this.valorServico = BigDecimalValidador.tamanho15Com2CasasDecimais(valorServico, "Valor Servico Retencao ICMS Transporte");
+        this.valorServico = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorServico, "Valor Servico Retencao ICMS Transporte");
     }
 
     public void setBcRetencaoICMS(final BigDecimal bcRetencaoICMS) {
-        this.bcRetencaoICMS = BigDecimalValidador.tamanho15Com2CasasDecimais(bcRetencaoICMS, "BC Retencao ICMS Transporte");
+        this.bcRetencaoICMS = DFBigDecimalValidador.tamanho15Com2CasasDecimais(bcRetencaoICMS, "BC Retencao ICMS Transporte");
     }
 
     public void setAliquotaRetencao(final BigDecimal aliquotaRetencao) {
-        this.aliquotaRetencao = BigDecimalValidador.tamanho7ComAte4CasasDecimais(aliquotaRetencao, "Aliquota Retencao ICMS Transporte");
+        this.aliquotaRetencao = DFBigDecimalValidador.tamanho7ComAte4CasasDecimais(aliquotaRetencao, "Aliquota Retencao ICMS Transporte");
     }
 
     public void setValorICMSRetido(final BigDecimal valorICMSRetido) {
-        this.valorICMSRetido = BigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSRetido, "Valor ICMS Retido Transporte");
+        this.valorICMSRetido = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorICMSRetido, "Valor ICMS Retido Transporte");
     }
 
     public void setCfop(final Integer cfop) {
-        IntegerValidador.tamanho4(cfop, "CFOP Retencao ICMS Transporte");
+        DFIntegerValidador.tamanho4(cfop, "CFOP Retencao ICMS Transporte");
         this.cfop = cfop;
     }
 

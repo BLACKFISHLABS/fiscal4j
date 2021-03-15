@@ -11,14 +11,14 @@ import br.indie.fiscal4j.mdfe3.classes.nota.evento.cancelamento.MDFeEnviaEventoC
 import br.indie.fiscal4j.mdfe3.classes.parsers.MDFChaveParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
-import static br.indie.fiscal4j.validadores.CNPJValidador.isValidCNPJ;
+import static br.indie.fiscal4j.validadores.DFCNPJValidador.isValidCNPJ;
 
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
@@ -50,7 +50,7 @@ class WSCancelamento implements DFLog {
         final MDFChaveParser mdfChaveParser = new MDFChaveParser(chaveAcesso);
         final MDFeRecepcaoEventoStub.MdfeCabecMsg cabec = new MDFeRecepcaoEventoStub.MdfeCabecMsg();
         cabec.setCUF(mdfChaveParser.getNFUnidadeFederativa().getCodigoIbge());
-        cabec.setVersaoDados(BigDecimalValidador.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
+        cabec.setVersaoDados(DFBigDecimalValidador.tamanho5Com2CasasDecimais(VERSAO_LEIAUTE, "Versao do Evento"));
 
         final MDFeRecepcaoEventoStub.MdfeCabecMsgE cabecE = new MDFeRecepcaoEventoStub.MdfeCabecMsgE();
         cabecE.setMdfeCabecMsg(cabec);

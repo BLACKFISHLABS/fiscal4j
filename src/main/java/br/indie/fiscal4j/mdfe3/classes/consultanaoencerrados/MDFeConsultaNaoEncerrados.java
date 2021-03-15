@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -35,7 +35,7 @@ public class MDFeConsultaNaoEncerrados extends DFBase {
     private String cnpj;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
+        this.versao = DFBigDecimalValidador.tamanho4Com2CasasDecimais(versao, "Versao Nota Consulta");
     }
 
     public void setVersao(final String versao) {

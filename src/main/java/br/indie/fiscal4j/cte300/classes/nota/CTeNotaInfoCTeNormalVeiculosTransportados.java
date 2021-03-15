@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -104,7 +104,7 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Valor Unitário do Veículo
      */
     public void setValorUnitario(final BigDecimal valorUnitario) {
-        this.valorUnitario = BigDecimalValidador.tamanho15Com2CasasDecimais(valorUnitario, "Valor Unitário do Veículo");
+        this.valorUnitario = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorUnitario, "Valor Unitário do Veículo");
     }
 
     public String getValorFrete() {
@@ -115,6 +115,6 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Frete Unitário
      */
     public void setValorFrete(final BigDecimal valorFrete) {
-        this.valorFrete = BigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Frete Unitário");
+        this.valorFrete = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Frete Unitário");
     }
 }

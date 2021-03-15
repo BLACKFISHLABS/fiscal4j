@@ -8,7 +8,7 @@ import br.indie.fiscal4j.mdfe3.classes.nota.evento.*;
 import br.indie.fiscal4j.mdfe3.classes.parsers.MDFChaveParser;
 import br.indie.fiscal4j.mdfe3.webservices.recepcaoevento.MDFeRecepcaoEventoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 
@@ -45,7 +45,7 @@ class WSIncluirCondutor implements DFLog {
         final MDFChaveParser mdfChaveParser = new MDFChaveParser(chaveAcesso);
         final MDFeRecepcaoEventoStub.MdfeCabecMsg cabec = new MDFeRecepcaoEventoStub.MdfeCabecMsg();
         cabec.setCUF(mdfChaveParser.getNFUnidadeFederativa().getCodigoIbge());
-        cabec.setVersaoDados(BigDecimalValidador.tamanho5Com2CasasDecimais(WSIncluirCondutor.VERSAO_LEIAUTE, "Versao do Evento"));
+        cabec.setVersaoDados(DFBigDecimalValidador.tamanho5Com2CasasDecimais(WSIncluirCondutor.VERSAO_LEIAUTE, "Versao do Evento"));
 
         final MDFeRecepcaoEventoStub.MdfeCabecMsgE cabecE = new MDFeRecepcaoEventoStub.MdfeCabecMsgE();
         cabecE.setMdfeCabecMsg(cabec);

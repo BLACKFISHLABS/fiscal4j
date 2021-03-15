@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -69,19 +69,19 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setPercentualGLPDerivadoPetroleo(final BigDecimal percentualGLPDerivadoPetroleo) {
-        this.percentualGLPDerivadoPetroleo = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGLPDerivadoPetroleo, "Percentual GLP derivado petr\u00f3leo");
+        this.percentualGLPDerivadoPetroleo = DFBigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGLPDerivadoPetroleo, "Percentual GLP derivado petr\u00f3leo");
     }
 
     public void setPercentualGasNaturalImportado(final BigDecimal percentualGasNaturalImportado) {
-        this.percentualGasNaturalImportado = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGasNaturalImportado, "Percentual gas natural importado");
+        this.percentualGasNaturalImportado = DFBigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGasNaturalImportado, "Percentual gas natural importado");
     }
 
     public void setPercentualGasNaturalNacional(final BigDecimal percentualGasNaturalNacional) {
-        this.percentualGasNaturalNacional = BigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGasNaturalNacional, "Percentual gas natural nacional");
+        this.percentualGasNaturalNacional = DFBigDecimalValidador.tamanho7ComAte4CasasDecimais(percentualGasNaturalNacional, "Percentual gas natural nacional");
     }
 
     public void setValorPartida(final BigDecimal valorPartida) {
-        this.valorPartida = BigDecimalValidador.tamanho13Com2CasasDecimais(valorPartida, "Valor de partida");
+        this.valorPartida = DFBigDecimalValidador.tamanho13Com2CasasDecimais(valorPartida, "Valor de partida");
     }
 
     public void setCodigoAutorizacaoCODIF(final String codigoAutorizacaoCODIF) {
@@ -90,7 +90,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setQuantidade(final BigDecimal quantidade) {
-        this.quantidade = BigDecimalValidador.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
+        this.quantidade = DFBigDecimalValidador.tamanho16Com4CasasDecimais(quantidade, "Quantidade Combustivel");
     }
 
     public void setUf(final DFUnidadeFederativa uf) {

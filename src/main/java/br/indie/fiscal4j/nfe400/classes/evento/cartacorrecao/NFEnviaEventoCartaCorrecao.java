@@ -2,8 +2,8 @@ package br.indie.fiscal4j.nfe400.classes.evento.cartacorrecao;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.evento.NFEvento;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.*;
 
@@ -25,7 +25,7 @@ public class NFEnviaEventoCartaCorrecao extends DFBase {
     private List<NFEvento> evento;
 
     public void setVersao(final BigDecimal versao) {
-        this.versao = BigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
+        this.versao = DFBigDecimalValidador.tamanho5Com2CasasDecimais(versao, "Versao");
     }
 
     public String getVersao() {
@@ -46,7 +46,7 @@ public class NFEnviaEventoCartaCorrecao extends DFBase {
     }
 
     public void setEvento(final List<NFEvento> evento) {
-        ListValidador.tamanho20(evento, "Eventos");
+        DFListValidador.tamanho20(evento, "Eventos");
         this.evento = evento;
     }
 }

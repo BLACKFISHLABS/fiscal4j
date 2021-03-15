@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -69,7 +69,7 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
     }
 
     public void setSerieDocumentoFiscal(final Integer serieDocumentoFiscal) {
-        IntegerValidador.tamanho3(serieDocumentoFiscal, "Serie Documento Fiscal");
+        DFIntegerValidador.tamanho3(serieDocumentoFiscal, "Serie Documento Fiscal");
         this.serieDocumentoFiscal = serieDocumentoFiscal;
     }
 
@@ -79,7 +79,7 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
      * @param numeroDocumentoFiscal
      */
     public void setNumeroDocumentoFiscal(final Integer numeroDocumentoFiscal) {
-        IntegerValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
+        DFIntegerValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
         this.numeroDocumentoFiscal = numeroDocumentoFiscal;
     }
 

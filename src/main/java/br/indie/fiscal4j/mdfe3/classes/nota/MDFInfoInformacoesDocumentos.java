@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import org.simpleframework.xml.ElementList;
 
 import java.util.List;
@@ -23,6 +23,6 @@ public class MDFInfoInformacoesDocumentos {
     }
 
     public void setInformacoesMunicipioDescargas(List<MDFInfoInformacoesMunicipioDescarga> informacoesMunicipioDescargas) {
-        this.informacoesMunicipioDescargas = ListValidador.validaListaObrigatoria(informacoesMunicipioDescargas, 1000, "Lista de Municípios de descarregamento");
+        this.informacoesMunicipioDescargas = DFListValidador.validaListaObrigatoria(informacoesMunicipioDescargas, 1000, "Lista de Municípios de descarregamento");
     }
 }

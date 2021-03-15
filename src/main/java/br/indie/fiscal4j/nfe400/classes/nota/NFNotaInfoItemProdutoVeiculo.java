@@ -2,8 +2,8 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.*;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -114,11 +114,11 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setPesoLiquido(final BigDecimal pesoLiquido) {
-        this.pesoLiquido = BigDecimalValidador.tamanho9Com4CasasDecimais(pesoLiquido, "Peso Liquido Veiculo");
+        this.pesoLiquido = DFBigDecimalValidador.tamanho9Com4CasasDecimais(pesoLiquido, "Peso Liquido Veiculo");
     }
 
     public void setPesoBruto(final BigDecimal pesoBruto) {
-        this.pesoBruto = BigDecimalValidador.tamanho9Com4CasasDecimais(pesoBruto, "Peso Bruto Veiculo");
+        this.pesoBruto = DFBigDecimalValidador.tamanho9Com4CasasDecimais(pesoBruto, "Peso Bruto Veiculo");
     }
 
     public void setNumeroSerie(final String numeroSerie) {
@@ -136,7 +136,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setCapacidadeMaximaTracao(final BigDecimal capacidadeMaximaTracao) {
-        this.capacidadeMaximaTracao = BigDecimalValidador.tamanho9Com4CasasDecimais(capacidadeMaximaTracao, "Capacidade Maxima Tracao Veiculo");
+        this.capacidadeMaximaTracao = DFBigDecimalValidador.tamanho9Com4CasasDecimais(capacidadeMaximaTracao, "Capacidade Maxima Tracao Veiculo");
     }
 
     public void setDistanciaEntreEixos(final String distanciaEntreEixos) {
@@ -145,12 +145,12 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setAnoModeloFabricacao(final int anoModeloFabricacao) {
-        IntegerValidador.exatamente4(anoModeloFabricacao, "Ano Modelo Fabricacao Veiculo");
+        DFIntegerValidador.exatamente4(anoModeloFabricacao, "Ano Modelo Fabricacao Veiculo");
         this.anoModeloFabricacao = anoModeloFabricacao;
     }
 
     public void setAnoFabricacao(final int anoFabricacao) {
-        IntegerValidador.exatamente4(anoFabricacao, "Ano Fabricacao Veiculo");
+        DFIntegerValidador.exatamente4(anoFabricacao, "Ano Fabricacao Veiculo");
         this.anoFabricacao = anoFabricacao;
     }
 
@@ -185,7 +185,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setLotacao(final int lotacao) {
-        IntegerValidador.tamanho3(lotacao, "Lotacao Veiculo");
+        DFIntegerValidador.tamanho3(lotacao, "Lotacao Veiculo");
         this.lotacao = lotacao;
     }
 

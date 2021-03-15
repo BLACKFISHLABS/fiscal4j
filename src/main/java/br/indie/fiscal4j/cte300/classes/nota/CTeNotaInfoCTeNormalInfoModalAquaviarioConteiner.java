@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -55,7 +55,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteiner extends DFBase {
      * Grupo de informações dos lacres dos cointainers da qtde da carga
      */
     public void setLacre(final List<CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerLacre> lacre) {
-        ListValidador.tamanho3(lacre, "Grupo de informações dos lacres dos cointainers da qtde da carga");
+        DFListValidador.tamanho3(lacre, "Grupo de informações dos lacres dos cointainers da qtde da carga");
         this.lacre = lacre;
     }
 

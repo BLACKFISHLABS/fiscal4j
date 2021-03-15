@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -32,7 +32,7 @@ public class NFNotaInfoItemProdutoRastreabilidade extends DFBase {
     }
 
     public void setQuantidadeLote(final BigDecimal quantidadeLote) {
-        this.quantidadeLote = BigDecimalValidador.tamanho11Com3CasasDecimais(quantidadeLote, "Quantidade lote rastreio produto");
+        this.quantidadeLote = DFBigDecimalValidador.tamanho11Com3CasasDecimais(quantidadeLote, "Quantidade lote rastreio produto");
     }
 
     public void setDataFabricacao(final LocalDate dataFabricacao) {

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -25,7 +25,7 @@ public class NFNotaInfoItem extends DFBase {
     private String informacoesAdicionais;
 
     public void setNumeroItem(final Integer numeroItem) {
-        IntegerValidador.tamanho3maximo990(numeroItem, "Numero do Item");
+        DFIntegerValidador.tamanho3maximo990(numeroItem, "Numero do Item");
         this.numeroItem = numeroItem;
     }
 

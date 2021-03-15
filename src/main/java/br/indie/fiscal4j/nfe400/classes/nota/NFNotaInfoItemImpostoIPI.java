@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigIntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -48,7 +48,7 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
     }
 
     public void setQuantidadeSelo(final BigInteger quantidadeSelo) {
-        BigIntegerValidador.tamanho12(quantidadeSelo, "Quantidade Selo IPI Item");
+        DFBigIntegerValidador.tamanho12(quantidadeSelo, "Quantidade Selo IPI Item");
         this.quantidadeSelo = quantidadeSelo;
     }
 

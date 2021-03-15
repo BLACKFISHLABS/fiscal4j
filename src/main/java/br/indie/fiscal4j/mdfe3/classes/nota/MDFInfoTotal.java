@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFUnidadeMedidaPesoBrutoCarga;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -75,7 +75,7 @@ public class MDFInfoTotal extends DFBase {
     }
 
     public void setValorTotalCarga(final BigDecimal valorTotalCarga) {
-        this.valorTotalCarga = BigDecimalValidador.tamanho13Com2CasasDecimais(valorTotalCarga, "Valor total da carga ");
+        this.valorTotalCarga = DFBigDecimalValidador.tamanho13Com2CasasDecimais(valorTotalCarga, "Valor total da carga ");
     }
 
     public MDFUnidadeMedidaPesoBrutoCarga getUnidadeMedidaPesoBrutoCarga() {
@@ -91,6 +91,6 @@ public class MDFInfoTotal extends DFBase {
     }
 
     public void setPesoCarga(final BigDecimal pesoCarga) {
-        this.pesoCarga = BigDecimalValidador.validaTamanho(pesoCarga, "Peso Bruto da Carga", 11, 4, true);
+        this.pesoCarga = DFBigDecimalValidador.validaTamanho(pesoCarga, "Peso Bruto da Carga", 11, 4, true);
     }
 }

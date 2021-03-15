@@ -3,9 +3,9 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFProdutoCompoeValorNota;
 import br.indie.fiscal4j.nfe400.converters.NFStringNullToEmptyConverter;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -160,15 +160,15 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setQuantidadeComercial(final BigDecimal quantidadeComercial) {
-        this.quantidadeComercial = BigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeComercial, "Qtde Comercial Produto");
+        this.quantidadeComercial = DFBigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeComercial, "Qtde Comercial Produto");
     }
 
     public void setValorUnitario(final BigDecimal valorUnitario) {
-        this.valorUnitario = BigDecimalValidador.tamanho21ComAte10CasasDecimais(valorUnitario, "Valor Unitario Produto");
+        this.valorUnitario = DFBigDecimalValidador.tamanho21ComAte10CasasDecimais(valorUnitario, "Valor Unitario Produto");
     }
 
     public void setValorTotalBruto(final BigDecimal valorTotalBruto) {
-        this.valorTotalBruto = BigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalBruto, "Valor Total Bruto Produto");
+        this.valorTotalBruto = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalBruto, "Valor Total Bruto Produto");
     }
 
     public void setCodigoDeBarrasTributavel(final String codigoDeBarrasTributavel) {
@@ -182,27 +182,27 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setQuantidadeTributavel(final BigDecimal quantidadeTributavel) {
-        this.quantidadeTributavel = BigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeTributavel, "Qtde Tributavel Produto");
+        this.quantidadeTributavel = DFBigDecimalValidador.tamanho15comAte4CasasDecimais(quantidadeTributavel, "Qtde Tributavel Produto");
     }
 
     public void setValorUnitarioTributavel(final BigDecimal valorUnitarioTributavel) {
-        this.valorUnitarioTributavel = BigDecimalValidador.tamanho21ComAte10CasasDecimais(valorUnitarioTributavel, "Valor Unitario Tributavel Produto");
+        this.valorUnitarioTributavel = DFBigDecimalValidador.tamanho21ComAte10CasasDecimais(valorUnitarioTributavel, "Valor Unitario Tributavel Produto");
     }
 
     public void setValorFrete(final BigDecimal valorFrete) {
-        this.valorFrete = BigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Valor Frete Produto");
+        this.valorFrete = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Valor Frete Produto");
     }
 
     public void setValorSeguro(final BigDecimal valorSeguro) {
-        this.valorSeguro = BigDecimalValidador.tamanho15Com2CasasDecimais(valorSeguro, "Valor Seguro Produto");
+        this.valorSeguro = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorSeguro, "Valor Seguro Produto");
     }
 
     public void setValorDesconto(final BigDecimal valorDesconto) {
-        this.valorDesconto = BigDecimalValidador.tamanho15Com2CasasDecimais(valorDesconto, "Valor Desconto Produto");
+        this.valorDesconto = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorDesconto, "Valor Desconto Produto");
     }
 
     public void setValorOutrasDespesasAcessorias(final BigDecimal valorOutrasDespesasAcessorias) {
-        this.valorOutrasDespesasAcessorias = BigDecimalValidador.tamanho15Com2CasasDecimais(valorOutrasDespesasAcessorias, "Valor Outras Despesas Acessorias Produto");
+        this.valorOutrasDespesasAcessorias = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorOutrasDespesasAcessorias, "Valor Outras Despesas Acessorias Produto");
     }
 
     public void setCompoeValorNota(final NFProdutoCompoeValorNota compoeValorNota) {
@@ -219,7 +219,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setNumeroPedidoItemCliente(final Integer numeroPedidoItemCliente) {
-        IntegerValidador.tamanho6(numeroPedidoItemCliente, "Numero Pedido Item Cliente Produto");
+        DFIntegerValidador.tamanho6(numeroPedidoItemCliente, "Numero Pedido Item Cliente Produto");
         this.numeroPedidoItemCliente = numeroPedidoItemCliente;
     }
 
@@ -246,7 +246,7 @@ public class NFNotaInfoItemProduto extends DFBase {
         if (this.medicamento != null || this.veiculo != null || this.combustivel != null || this.numeroRECOPI != null) {
             throw new IllegalStateException("veiculos, medicamentos, armamentos, RECOPI e combustivel sao mutuamente exclusivos");
         }
-        ListValidador.tamanho500(armamentos, "Armamentos Produto");
+        DFListValidador.tamanho500(armamentos, "Armamentos Produto");
         this.armamentos = armamentos;
     }
 
@@ -270,7 +270,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setDetalhesExportacao(final List<NFNotaInfoItemDetalheExportacao> detalhesExportacao) {
-        ListValidador.tamanho500(detalhesExportacao, "Detalhes Exportacao Produto");
+        DFListValidador.tamanho500(detalhesExportacao, "Detalhes Exportacao Produto");
         this.detalhesExportacao = detalhesExportacao;
     }
 
@@ -283,7 +283,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setRastros(final List<NFNotaInfoItemProdutoRastreabilidade> rastros) {
-        ListValidador.tamanho500(rastros, "Rastreios do produto");
+        DFListValidador.tamanho500(rastros, "Rastreios do produto");
         this.rastros = rastros;
     }
 

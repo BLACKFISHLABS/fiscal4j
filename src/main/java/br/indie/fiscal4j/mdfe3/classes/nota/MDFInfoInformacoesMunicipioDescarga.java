@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -65,7 +65,7 @@ public class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setInfCTe(List<MDFInfoInformacoesCTe> infCTe) {
-        this.infCTe = ListValidador.validaListaNaoObrigatoria(infCTe, 10000, "Conhecimentos de Tranporte em MDF-e");
+        this.infCTe = DFListValidador.validaListaNaoObrigatoria(infCTe, 10000, "Conhecimentos de Tranporte em MDF-e");
     }
 
     public List<MDFInfoInformacoesNFe> getInfNFe() {
@@ -73,7 +73,7 @@ public class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setInfNFe(List<MDFInfoInformacoesNFe> infNFe) {
-        this.infNFe = ListValidador.validaListaNaoObrigatoria(infNFe, 10000, "Notas fiscais em MDF-e");
+        this.infNFe = DFListValidador.validaListaNaoObrigatoria(infNFe, 10000, "Notas fiscais em MDF-e");
     }
 
     public List<MDFInfoInformacoesMDFe> getInfMDFeTransp() {
@@ -81,6 +81,6 @@ public class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setInfMDFeTransp(List<MDFInfoInformacoesMDFe> infMDFeTransp) {
-        this.infMDFeTransp = ListValidador.validaListaNaoObrigatoria(infMDFeTransp, 10000, "Manifesto Eletrônico de Documentos Fiscais em MDF-e");
+        this.infMDFeTransp = DFListValidador.validaListaNaoObrigatoria(infMDFeTransp, 10000, "Manifesto Eletrônico de Documentos Fiscais em MDF-e");
     }
 }

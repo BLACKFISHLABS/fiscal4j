@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -24,7 +24,7 @@ public class NFNotaInfoCanaFornecimentoDiario extends DFBase {
     }
 
     public void setQuantidade(final BigDecimal quantidade) {
-        this.quantidade = BigDecimalValidador.tamanho21ComAte10CasasDecimais(quantidade, "Quantidade");
+        this.quantidade = DFBigDecimalValidador.tamanho21ComAte10CasasDecimais(quantidade, "Quantidade");
     }
 
     public int getDia() {

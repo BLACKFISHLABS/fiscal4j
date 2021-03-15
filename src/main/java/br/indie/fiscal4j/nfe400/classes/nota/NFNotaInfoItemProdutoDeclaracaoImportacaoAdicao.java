@@ -1,9 +1,9 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.BigIntegerValidador;
-import br.indie.fiscal4j.validadores.IntegerValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
+import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 
@@ -29,12 +29,12 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao extends DFBase {
     private BigInteger numeroAtoConcessorioDrawback;
 
     public void setNumero(final Integer numero) {
-        IntegerValidador.tamanho3(numero, "Numero Declaracao Importacao Adicao");
+        DFIntegerValidador.tamanho3(numero, "Numero Declaracao Importacao Adicao");
         this.numero = numero;
     }
 
     public void setSequencial(final Integer sequencial) {
-        IntegerValidador.tamanho3(sequencial, "Sequencial Declaracao Importacao Adicao");
+        DFIntegerValidador.tamanho3(sequencial, "Sequencial Declaracao Importacao Adicao");
         this.sequencial = sequencial;
     }
 
@@ -44,11 +44,11 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao extends DFBase {
     }
 
     public void setDesconto(final BigDecimal desconto) {
-        this.desconto = BigDecimalValidador.tamanho15Com2CasasDecimais(desconto, "Desconto Declaracao Importacao Adicao");
+        this.desconto = DFBigDecimalValidador.tamanho15Com2CasasDecimais(desconto, "Desconto Declaracao Importacao Adicao");
     }
 
     public void setNumeroAtoConcessorioDrawback(final BigInteger numeroAtoConcessorioDrawback) {
-        BigIntegerValidador.tamanho11(numeroAtoConcessorioDrawback, "Numero Ato Concessorio Declaracao Importacao Adicao");
+        DFBigIntegerValidador.tamanho11(numeroAtoConcessorioDrawback, "Numero Ato Concessorio Declaracao Importacao Adicao");
         this.numeroAtoConcessorioDrawback = numeroAtoConcessorioDrawback;
     }
 

@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoFerrovia;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -80,7 +80,7 @@ public class CTeNotaInfoCTeNormalInfoModalFerroviarioTrafegoMutuo extends DFBase
      * Valor do Frete do Tráfego Mútuo
      */
     public void setValorFrete(final BigDecimal valorFrete) {
-        this.valorFrete = BigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Valor do Frete do Tráfego Mútuo");
+        this.valorFrete = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorFrete, "Valor do Frete do Tráfego Mútuo");
     }
 
     public String getChaveCTeFerroviaOrigem() {

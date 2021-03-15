@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -37,17 +37,17 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
     }
 
     public void setObservacoesContribuinte(final List<NFNotaInfoObservacao> observacoesContribuinte) {
-        ListValidador.tamanho10(observacoesContribuinte, "Observacoes Contribuinte");
+        DFListValidador.tamanho10(observacoesContribuinte, "Observacoes Contribuinte");
         this.observacoesContribuinte = observacoesContribuinte;
     }
 
     public void setObservacoesFisco(final List<NFNotaInfoObservacao> observacoesFisco) {
-        ListValidador.tamanho10(observacoesFisco, "Observacoes Fisco");
+        DFListValidador.tamanho10(observacoesFisco, "Observacoes Fisco");
         this.observacoesFisco = observacoesFisco;
     }
 
     public void setProcessosRefenciado(final List<NFNotaInfoProcessoReferenciado> processosRefenciado) {
-        ListValidador.tamanho100(processosRefenciado, "Processos Referenciados");
+        DFListValidador.tamanho100(processosRefenciado, "Processos Referenciados");
         this.processosRefenciado = processosRefenciado;
     }
 

@@ -2,8 +2,8 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoDirecao;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
-import br.indie.fiscal4j.validadores.ListValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFListValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -66,7 +66,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Valor da Prestação Base de Cálculo do AFRMM
      */
     public void setValorPrestacao(final BigDecimal valorPrestacao) {
-        this.valorPrestacao = BigDecimalValidador.tamanho15Com2CasasDecimais(valorPrestacao, "Valor da Prestação Base de Cálculo do AFRMM");
+        this.valorPrestacao = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorPrestacao, "Valor da Prestação Base de Cálculo do AFRMM");
     }
 
     public String getValorAdicionalFrete() {
@@ -77,7 +77,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * AFRMM (Adicional de Frete para Renovação da Marinha Mercante)
      */
     public void setValorAdicionalFrete(final BigDecimal valorAdicionalFrete) {
-        this.valorAdicionalFrete = BigDecimalValidador.tamanho15Com2CasasDecimais(valorAdicionalFrete, "AFRMM (Adicional de Frete para Renovação da Marinha Mercante)");
+        this.valorAdicionalFrete = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorAdicionalFrete, "AFRMM (Adicional de Frete para Renovação da Marinha Mercante)");
     }
 
     public String getIdentificacaoNavio() {
@@ -100,7 +100,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Grupo de informações das balsas
      */
     public void setBalsa(final List<CTeNotaInfoCTeNormalInfoModalAquaviarioBalsa> balsa) {
-        ListValidador.tamanho3(balsa, "");
+        DFListValidador.tamanho3(balsa, "");
         this.balsa = balsa;
     }
 

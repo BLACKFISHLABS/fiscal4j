@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.BigDecimalValidador;
+import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.StringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -86,7 +86,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     }
 
     public void setValorAFRMM(final BigDecimal valorAFRMM) {
-        this.valorAFRMM = BigDecimalValidador.tamanho15Com2CasasDecimais(valorAFRMM, "Valor AFRMM Declaracao Importacao");
+        this.valorAFRMM = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorAFRMM, "Valor AFRMM Declaracao Importacao");
     }
 
     public void setFormaImportacaoIntermediacao(final NFFormaImportacaoIntermediacao formaImportacaoIntermediacao) {

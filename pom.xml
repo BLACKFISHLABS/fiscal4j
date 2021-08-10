@@ -23,11 +23,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>8</java.version>
-        <joda.version>2.9.3</joda.version>
+        <joda.version>2.10.10</joda.version>
         <axis2.version>1.6.4</axis2.version>
-        <slf4j.version>1.7.25</slf4j.version>
-        <junit.version>4.13.1</junit.version>
-        <commons-lang3.version>3.7</commons-lang3.version>
+        <slf4j.version>1.7.32</slf4j.version>
+        <junit.version>4.13.2</junit.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
         <simple-xml.version>2.7.1</simple-xml.version>
     </properties>
 
@@ -35,7 +35,7 @@
         <developer>
             <id>JefersonOC</id>
             <name>Jeferson Cruz</name>
-            <url>https://github.com/JefersonOC</url>
+            <url>https://blackfishlabs.com.br</url>
         </developer>
     </developers>
 
@@ -93,13 +93,13 @@
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.1</version>
         </dependency>
 
         <dependency>
@@ -111,13 +111,13 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.11.0</version>
+            <version>6.17.0</version>
         </dependency>
 
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
-            <version>6.11.0</version>
+            <version>6.17.0</version>
         </dependency>
 
         <dependency>
@@ -187,6 +187,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>

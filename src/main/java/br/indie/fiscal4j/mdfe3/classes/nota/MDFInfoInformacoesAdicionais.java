@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -20,12 +20,12 @@ public class MDFInfoInformacoesAdicionais extends DFBase {
     private String informacoesComplementaresInteresseContribuinte;
 
     public void setInformacoesAdicionaisInteresseFisco(final String informacoesAdicionaisInteresseFisco) {
-        StringValidador.tamanho2000(informacoesAdicionaisInteresseFisco, "Informacoes Adicionais Interesse Fisco");
+        DFStringValidador.tamanho2000(informacoesAdicionaisInteresseFisco, "Informacoes Adicionais Interesse Fisco");
         this.informacoesAdicionaisInteresseFisco = informacoesAdicionaisInteresseFisco;
     }
 
     public void setInformacoesComplementaresInteresseContribuinte(final String informacoesComplementaresInteresseContribuinte) {
-        StringValidador.tamanho5000(informacoesComplementaresInteresseContribuinte, "Informacoes Adicionais Interesse Contribuinte");
+        DFStringValidador.tamanho5000(informacoesComplementaresInteresseContribuinte, "Informacoes Adicionais Interesse Contribuinte");
         this.informacoesComplementaresInteresseContribuinte = informacoesComplementaresInteresseContribuinte;
     }
 

@@ -1,6 +1,7 @@
 package br.indie.fiscal4j;
 
-import br.indie.fiscal4j.persister.DFPersister;
+import br.indie.fiscal4j.utils.DFPersister;
+import br.indie.fiscal4j.utils.DFSocketFactory;
 import org.simpleframework.xml.core.Persister;
 
 import java.security.KeyStore;
@@ -93,6 +94,26 @@ public abstract class DFConfig {
      */
     public String[] getSSLProtocolos() {
         return new String[]{"TLSv1.2"};
+    }
+
+    /**
+     * Timeout a ser utilizado em cada requisição feita ao SEFAZ de origem.
+     * Deve ser maior que zero, se não, será utilizado {@link DFSocketFactory#TIMEOUT_PADRAO_EM_MILLIS}
+     *
+     * @return timeout da requisição em millisegundos
+     */
+    public int getTimeoutRequisicaoEmMillis() {
+        return DFSocketFactory.TIMEOUT_PADRAO_EM_MILLIS;
+    }
+
+    /**
+     * Timeout do socket
+     * Deve ser zero ou maior, se não, será utilizado {@link DFSocketFactory#SO_TIMEOUT_PADRAO_EM_MILLIS}
+     *
+     * @return timeout da requisição em millisegundos
+     */
+    public int getSoTimeoutEmMillis() {
+        return DFSocketFactory.SO_TIMEOUT_PADRAO_EM_MILLIS;
     }
 
     /**

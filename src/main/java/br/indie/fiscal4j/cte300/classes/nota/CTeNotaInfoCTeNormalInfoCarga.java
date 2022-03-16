@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -65,7 +65,7 @@ public class CTeNotaInfoCTeNormalInfoCarga extends DFBase {
      * Informar a descrição do produto predominante
      */
     public void setDescricaoProdutoPredominante(final String descricaoProdutoPredominante) {
-        StringValidador.tamanho60(descricaoProdutoPredominante, "Produto predominante");
+        DFStringValidador.tamanho60(descricaoProdutoPredominante, "Produto predominante");
         this.descricaoProdutoPredominante = descricaoProdutoPredominante;
     }
 
@@ -78,7 +78,7 @@ public class CTeNotaInfoCTeNormalInfoCarga extends DFBase {
      * "FRIA", "GRANEL", "REFRIGERADA", "Medidas: 12X12X12"
      */
     public void setDescricaoOutrasCaracteristicas(final String descricaoOutrasCaracteristicas) {
-        StringValidador.tamanho30(descricaoOutrasCaracteristicas, "Outras características da carga");
+        DFStringValidador.tamanho30(descricaoOutrasCaracteristicas, "Outras características da carga");
         this.descricaoOutrasCaracteristicas = descricaoOutrasCaracteristicas;
     }
 

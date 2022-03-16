@@ -7,6 +7,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Grupo de informações do Produto predominante da carga do MDF-e </h1>
  */
 @Root(name = "prodPred")

@@ -11,7 +11,7 @@ import br.indie.fiscal4j.nfe400.classes.NFTipo;
 import br.indie.fiscal4j.nfe400.classes.NFTipoImpressao;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -94,13 +94,14 @@ public class NFNotaInfoIdentificacao extends DFBase {
     @ElementList(entry = "NFref", inline = true, required = false)
     private List<NFInfoReferenciada> referenciadas;
 
+
     public void setUf(final DFUnidadeFederativa uf) {
         this.uf = uf;
     }
 
     public void setCodigoRandomico(final String codigoRandomico) {
-        StringValidador.exatamente8(codigoRandomico, "Codigo Randomico");
-        StringValidador.validaCodigoRandomico(codigoRandomico, "Codigo Randomico");
+        DFStringValidador.exatamente8(codigoRandomico, "Codigo Randomico");
+        DFStringValidador.validaCodigoRandomico(codigoRandomico, "Codigo Randomico");
         if (StringUtils.isNotBlank(numeroNota) && StringUtils.equals(numeroNota.substring(1), codigoRandomico)) {
             throw new IllegalStateException(String.format("N\u00FAmero da nota(%s) e c\u00F3digo(%s) n\u00E3o podem ser iguais", numeroNota.substring(1), codigoRandomico));
         }
@@ -108,7 +109,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setNaturezaOperacao(final String naturezaOperacao) {
-        StringValidador.tamanho60(naturezaOperacao, "Natureza da Operacao");
+        DFStringValidador.tamanho60(naturezaOperacao, "Natureza da Operacao");
         this.naturezaOperacao = naturezaOperacao;
     }
 
@@ -117,12 +118,12 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setSerie(final String serie) {
-        StringValidador.validador(serie, "Serie", 3, false, true);
+        DFStringValidador.validador(serie, "Serie", 3, false, true);
         this.serie = serie;
     }
 
     public void setNumeroNota(final String numeroNota) {
-        StringValidador.tamanho9(numeroNota, "Numero da Nota");
+        DFStringValidador.tamanho9(numeroNota, "Numero da Nota");
         if (StringUtils.isNotBlank(codigoRandomico) && StringUtils.equals(numeroNota.substring(1), codigoRandomico)) {
             throw new IllegalStateException(String.format("N\u00FAmero da nota(%s) e c\u00F3digo(%s) n\u00E3o podem ser iguais", numeroNota.substring(1), codigoRandomico));
         }
@@ -142,7 +143,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setCodigoMunicipio(final String codigoMunicipio) {
-        StringValidador.exatamente7N(codigoMunicipio, "Codigo Municipio");
+        DFStringValidador.exatamente7N(codigoMunicipio, "Codigo Municipio");
         this.codigoMunicipio = codigoMunicipio;
     }
 
@@ -177,7 +178,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setVersaoEmissor(final String versaoEmissor) {
-        StringValidador.tamanho20(versaoEmissor, "Versao Emissor");
+        DFStringValidador.tamanho20(versaoEmissor, "Versao Emissor");
         this.versaoEmissor = versaoEmissor;
     }
 
@@ -186,7 +187,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     }
 
     public void setJustificativaEntradaContingencia(final String justificativaEntradaContingencia) {
-        StringValidador.tamanho15a256(justificativaEntradaContingencia, "Justificativa Entrada Contingencia");
+        DFStringValidador.tamanho15a256(justificativaEntradaContingencia, "Justificativa Entrada Contingencia");
         this.justificativaEntradaContingencia = justificativaEntradaContingencia;
     }
 
@@ -202,7 +203,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
         this.indicadorPresencaComprador = indicadorPresencaComprador;
     }
 
-    public void setIndIntermed(NFIndicadorIntermediador indIntermed) {
+    public void setIndIntermed(final NFIndicadorIntermediador indIntermed) {
         this.indIntermed = indIntermed;
     }
 
@@ -301,4 +302,5 @@ public class NFNotaInfoIdentificacao extends DFBase {
     public List<NFInfoReferenciada> getReferenciadas() {
         return this.referenciadas;
     }
+
 }

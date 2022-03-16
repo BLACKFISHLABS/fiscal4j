@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -31,7 +31,7 @@ public class CTeNotaInfoCTeNormalDocumentosAnterioresEmissorDocumentosAnteriores
      * Chave de acesso do CT-e
      */
     public void setChaveCTe(final String chaveCTe) {
-        StringValidador.exatamente44N(chaveCTe, "Chave de acesso do CT-e");
+        DFStringValidador.exatamente44N(chaveCTe, "Chave de acesso do CT-e");
         this.chaveCTe = chaveCTe;
     }
 }

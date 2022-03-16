@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.evento.cancelamento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -21,12 +21,12 @@ public class CTeEnviaEventoCancelamento extends DFBase {
     private String justificativa;
 
     public void setJustificativa(final String justificativa) {
-        StringValidador.tamanho15a256(justificativa, "Justificativa");
+        DFStringValidador.tamanho15a256(justificativa, "Justificativa");
         this.justificativa = justificativa;
     }
 
     public void setProtocoloAutorizacao(final String protocoloAutorizacao) {
-        StringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
+        DFStringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
         this.protocoloAutorizacao = protocoloAutorizacao;
     }
 
@@ -40,8 +40,8 @@ public class CTeEnviaEventoCancelamento extends DFBase {
 
     public void setDescricaoEvento(final String descricaoEvento) {
         final String defaultValue = "Cancelamento";
-        StringValidador.tamanho12(descricaoEvento, defaultValue);
-        StringValidador.equals(defaultValue, descricaoEvento);
+        DFStringValidador.tamanho12(descricaoEvento, defaultValue);
+        DFStringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
 

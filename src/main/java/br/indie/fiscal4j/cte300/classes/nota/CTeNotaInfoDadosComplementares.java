@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -72,7 +72,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Texto livre: REENTREGA; DEVOLUÇÃO; REFATURAMENTO; etc
      */
     public void setCaracteristicasTransporte(final String caracteristicasTransporte) {
-        StringValidador.tamanho15(caracteristicasTransporte, "Característica adicional do transporte");
+        DFStringValidador.tamanho15(caracteristicasTransporte, "Característica adicional do transporte");
         this.caracteristicasTransporte = caracteristicasTransporte;
     }
 
@@ -85,7 +85,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Texto livre: ENTREGA EXPRESSA; LOGÍSTICA REVERSA; CONVENCIONAL; EMERGENCIAL; etc
      */
     public void setCaracteristicasServico(final String caracteristicasServico) {
-        StringValidador.tamanho30(caracteristicasServico, "Característica adicional do serviço");
+        DFStringValidador.tamanho30(caracteristicasServico, "Característica adicional do serviço");
         this.caracteristicasServico = caracteristicasServico;
     }
 
@@ -97,7 +97,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Funcionário emissor do CTe
      */
     public void setFuncionarioEmissor(final String funcionarioEmissor) {
-        StringValidador.tamanho20(funcionarioEmissor, "Funcionário emissor do CTe");
+        DFStringValidador.tamanho20(funcionarioEmissor, "Funcionário emissor do CTe");
         this.funcionarioEmissor = funcionarioEmissor;
     }
 
@@ -132,7 +132,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Município de origem para efeito de cálculo do frete
      */
     public void setMunicipioOrigem(final String municipioOrigem) {
-        StringValidador.tamanho2ate40(municipioOrigem, "Município de origem para efeito de cálculo do frete");
+        DFStringValidador.tamanho2ate40(municipioOrigem, "Município de origem para efeito de cálculo do frete");
         this.municipioOrigem = municipioOrigem;
     }
 
@@ -144,7 +144,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Município de destino para efeito de cálculo do frete
      */
     public void setMunicipioDestino(final String municipioDestino) {
-        StringValidador.tamanho2ate40(municipioDestino, "Município de destino para efeito de cálculo do frete");
+        DFStringValidador.tamanho2ate40(municipioDestino, "Município de destino para efeito de cálculo do frete");
         this.municipioDestino = municipioDestino;
     }
 
@@ -156,7 +156,7 @@ public class CTeNotaInfoDadosComplementares extends DFBase {
      * Observações Gerais
      */
     public void setObservacaoGeral(final String observacaoGeral) {
-        StringValidador.tamanho2000(observacaoGeral, "Observações Gerais");
+        DFStringValidador.tamanho2000(observacaoGeral, "Observações Gerais");
         this.observacaoGeral = observacaoGeral;
     }
 

@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -40,17 +40,17 @@ public class NFNotaInfoVolume extends DFBase {
     }
 
     public void setNumeracaoVolumesTransportados(final String numeracaoVolumesTransportados) {
-        StringValidador.tamanho60(numeracaoVolumesTransportados, "Numeracao Volumes Transportados");
+        DFStringValidador.tamanho60(numeracaoVolumesTransportados, "Numeracao Volumes Transportados");
         this.numeracaoVolumesTransportados = numeracaoVolumesTransportados;
     }
 
     public void setEspecieVolumesTransportados(final String especieVolumesTransportados) {
-        StringValidador.tamanho60(especieVolumesTransportados, "Especie Volumes Transportados");
+        DFStringValidador.tamanho60(especieVolumesTransportados, "Especie Volumes Transportados");
         this.especieVolumesTransportados = especieVolumesTransportados;
     }
 
     public void setMarca(final String marca) {
-        StringValidador.tamanho60(marca, "Marca Volume");
+        DFStringValidador.tamanho60(marca, "Marca Volume");
         this.marca = marca;
     }
 

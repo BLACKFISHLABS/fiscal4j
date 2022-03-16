@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -77,22 +77,22 @@ public class NFNotaInfoItemImpostoISSQN extends DFBase {
     }
 
     public void setItemListaServicos(final String itemListaServicos) {
-        StringValidador.itemListaServico(itemListaServicos);
+        DFStringValidador.itemListaServico(itemListaServicos);
         this.itemListaServicos = itemListaServicos;
     }
 
     public void setCodigoMunicipioIncidenciaImposto(final String codigoMunicipioIncidenciaImposto) {
-        StringValidador.exatamente7N(codigoMunicipioIncidenciaImposto, "Codigo Municipio Incidencia Imposto ISSQN Item");
+        DFStringValidador.exatamente7N(codigoMunicipioIncidenciaImposto, "Codigo Municipio Incidencia Imposto ISSQN Item");
         this.codigoMunicipioIncidenciaImposto = codigoMunicipioIncidenciaImposto;
     }
 
     public void setCodigoPais(final String codigoPais) {
-        StringValidador.exatamente4N(codigoPais, "Codigo Pais ISSQN Item");
+        DFStringValidador.exatamente4N(codigoPais, "Codigo Pais ISSQN Item");
         this.codigoPais = codigoPais;
     }
 
     public void setCodigoServico(final String codigoServico) {
-        StringValidador.tamanho20(codigoServico, "Codigo Servico ISSQN Item");
+        DFStringValidador.tamanho20(codigoServico, "Codigo Servico ISSQN Item");
         this.codigoServico = codigoServico;
     }
 
@@ -105,7 +105,7 @@ public class NFNotaInfoItemImpostoISSQN extends DFBase {
     }
 
     public void setNumeroProcesso(final String numeroProcesso) {
-        StringValidador.tamanho30(numeroProcesso, "Numero Processo ISSQN Item");
+        DFStringValidador.tamanho30(numeroProcesso, "Numero Processo ISSQN Item");
         this.numeroProcesso = numeroProcesso;
     }
 

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -35,7 +35,7 @@ public class CTeNotaInfoCTeNormalInfoModalMultiModalSeguroInfo extends DFBase {
      * Nome da Seguradora
      */
     public void setSeguradora(final String seguradora) {
-        StringValidador.tamanho30(seguradora, "Nome da Seguradora");
+        DFStringValidador.tamanho30(seguradora, "Nome da Seguradora");
         this.seguradora = seguradora;
     }
 
@@ -48,7 +48,7 @@ public class CTeNotaInfoCTeNormalInfoModalMultiModalSeguroInfo extends DFBase {
      * Obrigatório apenas se responsável pelo seguro for (2) responsável pela contratação do transporte - pessoa jurídica
      */
     public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 }

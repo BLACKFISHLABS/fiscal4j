@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTUnidadeMedida;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -67,7 +67,7 @@ public class CTeNotaInfoCTeNormalInfoCargaInformacoesQuantidadeCarga extends DFB
      * Exemplos:PESO BRUTO, PESO DECLARADO, PESO CUBADO, PESO AFORADO, PESO AFERIDO, PESO BASE DE CÁLCULO, LITRAGEM, CAIXAS e etc
      */
     public void setTipoMedia(final String tipoMedia) {
-        StringValidador.tamanho20(tipoMedia, "Tipo da Medida");
+        DFStringValidador.tamanho20(tipoMedia, "Tipo da Medida");
         this.tipoMedia = tipoMedia;
     }
 

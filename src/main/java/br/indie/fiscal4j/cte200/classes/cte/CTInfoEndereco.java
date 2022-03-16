@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte200.classes.cte;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFPais;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class CTInfoEndereco extends DFBase {
@@ -108,7 +108,7 @@ public class CTInfoEndereco extends DFBase {
     }
 
     public void setCodigoPais(final String codigoPais) {
-        StringValidador.tamanho2a4(codigoPais, "Codigo do pais");
+        DFStringValidador.tamanho2a4(codigoPais, "Codigo do pais");
         this.codigoPais = DFPais.valueOfCodigo(codigoPais);
     }
 

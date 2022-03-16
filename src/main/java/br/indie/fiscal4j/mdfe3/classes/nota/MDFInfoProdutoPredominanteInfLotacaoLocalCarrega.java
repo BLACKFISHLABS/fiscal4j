@@ -6,6 +6,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Informações da localização do carregamento do MDF-e de carga lotação</h1>
  */
 @Root(name = "infLocalCarrega")
@@ -45,5 +46,6 @@ public class MDFInfoProdutoPredominanteInfLotacaoLocalCarrega extends DFBase {
     public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
+
 
 }

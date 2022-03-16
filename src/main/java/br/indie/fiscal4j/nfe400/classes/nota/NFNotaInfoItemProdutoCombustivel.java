@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -59,12 +59,12 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setCodigoProdutoANP(final String codigoProdutoANP) {
-        StringValidador.exatamente9(codigoProdutoANP, "Codigo Produto ANP Combustivel");
+        DFStringValidador.exatamente9(codigoProdutoANP, "Codigo Produto ANP Combustivel");
         this.codigoProdutoANP = codigoProdutoANP;
     }
 
     public void setDescricaoProdutoANP(final String descricaoProdutoANP) {
-        StringValidador.tamanho2a95(descricaoProdutoANP, "Descricao Produto ANP Combustivel");
+        DFStringValidador.tamanho2a95(descricaoProdutoANP, "Descricao Produto ANP Combustivel");
         this.descricaoProdutoANP = descricaoProdutoANP;
     }
 
@@ -85,7 +85,7 @@ public class NFNotaInfoItemProdutoCombustivel extends DFBase {
     }
 
     public void setCodigoAutorizacaoCODIF(final String codigoAutorizacaoCODIF) {
-        StringValidador.tamanho21(codigoAutorizacaoCODIF, "Codigo Autorizacao CODIF Combustivel");
+        DFStringValidador.tamanho21(codigoAutorizacaoCODIF, "Codigo Autorizacao CODIF Combustivel");
         this.codigoAutorizacaoCOFIF = codigoAutorizacaoCODIF;
     }
 

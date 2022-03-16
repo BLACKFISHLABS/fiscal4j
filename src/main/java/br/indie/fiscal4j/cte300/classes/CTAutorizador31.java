@@ -78,7 +78,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getCteQrCode(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "http://www.dfe.ms.gov.br/cte/qrcode" : "http://www.dfe.ms.gov.br/cte/qrcode";
+            return "http://www.dfe.ms.gov.br/cte/qrcode";
         }
 
         @Override
@@ -162,7 +162,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getCteQrCode(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "http://www.fazenda.pr.gov.br/cte/qrcode" : "http://www.fazenda.pr.gov.br/cte/qrcode";
+            return "http://www.fazenda.pr.gov.br/cte/qrcode";
         }
 
         @Override
@@ -204,7 +204,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getCteQrCode(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://dfe-portal.svrs.rs.gov.br/cte/qrCode" : "https://dfe-portal.svrs.rs.gov.br/cte/qrCode";
+            return "https://dfe-portal.svrs.rs.gov.br/cte/qrCode";
         }
 
         @Override
@@ -288,7 +288,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getCteQrCode(DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://dfe-portal.svrs.rs.gov.br/cte/qrCode" : "https://dfe-portal.svrs.rs.gov.br/cte/qrCode";
+            return "https://dfe-portal.svrs.rs.gov.br/cte/qrCode";
         }
 
         @Override
@@ -315,7 +315,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getCteInutilizacao(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
+            return null;
         }
 
         @Override
@@ -335,7 +335,7 @@ public enum CTAutorizador31 {
 
         @Override
         public String getRecepcaoEvento(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
+            return null;
         }
 
         @Override

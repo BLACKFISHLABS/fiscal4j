@@ -1,12 +1,19 @@
 package br.indie.fiscal4j.cte.webservices.distribuicao;
 
+import br.indie.fiscal4j.DFUnidadeFederativa;
+import br.indie.fiscal4j.cte.classes.distribuicao.CTDistribuicaoConsultaNSU;
 import br.indie.fiscal4j.cte.classes.distribuicao.CTDistribuicaoInt;
+import br.indie.fiscal4j.cte.classes.distribuicao.CTDistribuicaoNSU;
 import br.indie.fiscal4j.cte200.classes.CTAutorizador;
+import br.indie.fiscal4j.cte300.CTeConfig;
 import br.indie.fiscal4j.nfe.NFeConfig;
+import br.indie.fiscal4j.nfe.classes.distribuicao.NFDistribuicaoIntRetorno;
 import br.indie.fiscal4j.utils.DFSocketFactory;
+import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
 import org.apache.commons.httpclient.protocol.Protocol;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.BufferedReader;
@@ -19,11 +26,18 @@ import java.util.zip.GZIPInputStream;
 
 public class WSDistribuicaoCTe {
 
+    private final CTeConfig config;
+
+    public WSDistribuicaoCTe(final CTeConfig config) {
+        this.config = config;
+    }
+
     /**
      * Metodo para consultar os conhecimentos de transporte e retorna uma String<br>
      * E importante salvar esta String para nao perder nenhuma informacao<br>
      * A receita nao disponibiliza o conhecimento varias vezes para consultar, retorna rejeicao: Consumo indevido
      */
+    @Deprecated
     public static String consultar(final CTDistribuicaoInt distDFeInt, final NFeConfig config) throws Exception {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
         try {
@@ -35,13 +49,55 @@ public class WSDistribuicaoCTe {
             final CTeDistribuicaoDFeSoapStub.CteDistDFeInteresse distDFeInteresse = new CTeDistribuicaoDFeSoapStub.CteDistDFeInteresse();
             distDFeInteresse.setCteDadosMsg(dadosMsgType0);
 
-            final CTeDistribuicaoDFeSoapStub stub = new CTeDistribuicaoDFeSoapStub(CTAutorizador.AN.getDistribuicaoDFe(config.getAmbiente()));
+            final CTeDistribuicaoDFeSoapStub stub = new CTeDistribuicaoDFeSoapStub(CTAutorizador.AN.getDistribuicaoDFe(config.getAmbiente()), config);
             final CTeDistribuicaoDFeSoapStub.CteDistDFeInteresseResponse result = stub.cteDistDFeInteresse(distDFeInteresse);
 
             return result.getCteDistDFeInteresseResult().getExtraElement().toString();
         } catch (RemoteException | XMLStreamException e) {
             throw new Exception(e.getMessage());
         }
+    }
+
+    public NFDistribuicaoIntRetorno consultar(final String cpfOuCnpj, final DFUnidadeFederativa uf, final String nsu, final String ultNsu) throws Exception {
+        try {
+            String xmlEnvio = this.gerarCTeDistribuicaoInt(cpfOuCnpj, uf, nsu, ultNsu).toString();
+
+            DFXMLValidador.validaDistribuicaoCTe(xmlEnvio);
+
+            final OMElement ome = AXIOMUtil.stringToOM(xmlEnvio);
+
+            final CTeDistribuicaoDFeSoapStub.CteDadosMsg_type0 dadosMsgType0 = new CTeDistribuicaoDFeSoapStub.CteDadosMsg_type0();
+            dadosMsgType0.setExtraElement(ome);
+
+            final CTeDistribuicaoDFeSoapStub.CteDistDFeInteresse distDFeInteresse = new CTeDistribuicaoDFeSoapStub.CteDistDFeInteresse();
+            distDFeInteresse.setCteDadosMsg(dadosMsgType0);
+
+            final CTeDistribuicaoDFeSoapStub stub = new CTeDistribuicaoDFeSoapStub(CTAutorizador.AN.getDistribuicaoDFe(config.getAmbiente()), config);
+            final CTeDistribuicaoDFeSoapStub.CteDistDFeInteresseResponse result = stub.cteDistDFeInteresse(distDFeInteresse);
+            return this.config.getPersister().read(NFDistribuicaoIntRetorno.class, result.getCteDistDFeInteresseResult().getExtraElement().toString());
+        } catch (RemoteException | XMLStreamException e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    private CTDistribuicaoInt gerarCTeDistribuicaoInt(final String cpfOuCnpj, final DFUnidadeFederativa uf, final String nsu, final String ultNsu) {
+        final CTDistribuicaoInt distDFeInt = new CTDistribuicaoInt();
+        distDFeInt.setVersao("1.00");
+        distDFeInt.setAmbiente(this.config.getAmbiente());
+        distDFeInt.setUnidadeFederativaAutor(uf);
+
+        if (cpfOuCnpj.length() == 11) {
+            distDFeInt.setCpf(cpfOuCnpj);
+        } else {
+            distDFeInt.setCnpj(cpfOuCnpj);
+        }
+
+        if (StringUtils.isNotBlank(ultNsu)) {
+            distDFeInt.setDistribuicao(new CTDistribuicaoNSU().setUltimoNSU(ultNsu));
+        } else {
+            distDFeInt.setConsulta(new CTDistribuicaoConsultaNSU().setNsu(nsu));
+        }
+        return distDFeInt;
     }
 
     public static String decodeGZipToXml(final String conteudoEncode) throws Exception {
@@ -61,9 +117,4 @@ public class WSDistribuicaoCTe {
             }
         }
     }
-
-    //    Nao reviver este metodo. Usar o oficial:  this.config.getPersister().read(classe, xml)
-    //    public static <T> T xmlToObject(final String xml, final Class<T> classe) throws Exception {
-    //        return new Persister(new DFRegistryMatcher(TimeZone.getDefault()), new Format(0)).read(classe, xml);
-    //    }
 }

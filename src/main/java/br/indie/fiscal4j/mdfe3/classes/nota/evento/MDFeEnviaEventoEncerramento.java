@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -42,7 +42,7 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
     private String codigoMunicipio;
 
     public void setProtocoloAutorizacao(final String protocoloAutorizacao) {
-        StringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
+        DFStringValidador.exatamente15N(protocoloAutorizacao, "Protocolo de Autorizacao");
         this.protocoloAutorizacao = protocoloAutorizacao;
     }
 
@@ -52,7 +52,7 @@ public class MDFeEnviaEventoEncerramento extends DFBase {
 
     public void setDescricaoEvento(final String descricaoEvento) {
         final String defaultValue = "Encerramento";
-        StringValidador.equals(defaultValue, descricaoEvento);
+        DFStringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
 

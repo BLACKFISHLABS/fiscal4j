@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -40,7 +40,7 @@ public class MDFInfoAutorizacaoDownload extends DFBase {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado em " + MDFInfoAutorizacaoDownload.INFO);
         }
-        this.cnpj = StringValidador.cnpj(cnpj, MDFInfoAutorizacaoDownload.INFO);
+        this.cnpj = DFStringValidador.cnpj(cnpj, MDFInfoAutorizacaoDownload.INFO);
     }
 
     public String getCpf() {
@@ -55,6 +55,6 @@ public class MDFInfoAutorizacaoDownload extends DFBase {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em " + MDFInfoAutorizacaoDownload.INFO);
         }
-        this.cpf = StringValidador.cpf(cpf, MDFInfoAutorizacaoDownload.INFO);
+        this.cpf = DFStringValidador.cpf(cpf, MDFInfoAutorizacaoDownload.INFO);
     }
 }

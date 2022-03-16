@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -27,7 +27,7 @@ public class MDFInfoIdentificacaoMunicipioCarregamento extends DFBase {
     }
 
     public void setCodigoMunicipioCarregamento(final String codigoMunicipioCarregamento) {
-        this.codigoMunicipioCarregamento = StringValidador.validador(codigoMunicipioCarregamento, "Codigo municipio carregamento", 7, true, true);
+        this.codigoMunicipioCarregamento = DFStringValidador.validador(codigoMunicipioCarregamento, "Codigo municipio carregamento", 7, true, true);
     }
 
     public String getNomeMunicipioCarregamento() {
@@ -35,7 +35,7 @@ public class MDFInfoIdentificacaoMunicipioCarregamento extends DFBase {
     }
 
     public void setNomeMunicipioCarregamento(final String nomeMunicipioCarregamento) {
-        StringValidador.tamanho2ate60(nomeMunicipioCarregamento, "Nome municipio carregamento");
+        DFStringValidador.tamanho2ate60(nomeMunicipioCarregamento, "Nome municipio carregamento");
         this.nomeMunicipioCarregamento = nomeMunicipioCarregamento;
     }
 }

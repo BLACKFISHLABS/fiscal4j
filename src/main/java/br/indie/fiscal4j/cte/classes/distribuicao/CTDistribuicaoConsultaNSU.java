@@ -4,6 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import org.simpleframework.xml.Element;
 
 public class CTDistribuicaoConsultaNSU extends DFBase {
+
     private static final long serialVersionUID = -582191692175285331L;
 
     @Element(name = "NSU")
@@ -13,8 +14,9 @@ public class CTDistribuicaoConsultaNSU extends DFBase {
         return this.nsu;
     }
 
-    public void setNsu(final String nsu) {
+    public CTDistribuicaoConsultaNSU setNsu(final String nsu) {
         this.nsu = nsu;
+        return this;
     }
 
 }

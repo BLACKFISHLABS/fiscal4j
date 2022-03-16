@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -54,7 +54,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
     }
 
     public void setCnpjFornecedora(final String cnpjFornecedora) {
-        StringValidador.cnpj(cnpjFornecedora);
+        DFStringValidador.cnpj(cnpjFornecedora);
         this.cnpjFornecedora = cnpjFornecedora;
     }
 
@@ -63,7 +63,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
     }
 
     public void setNumeroComprovante(final String numeroComprovante) {
-        StringValidador.tamanho20N(numeroComprovante, "Numero do comprovante de compra");
+        DFStringValidador.tamanho20N(numeroComprovante, "Numero do comprovante de compra");
         this.numeroComprovante = numeroComprovante;
     }
 
@@ -75,7 +75,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
         if (this.cpfPagadora != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado em PedagioDisp ");
         }
-        StringValidador.cnpj(cnpjPagadora);
+        DFStringValidador.cnpj(cnpjPagadora);
         this.cnpjPagadora = cnpjPagadora;
     }
 
@@ -95,7 +95,7 @@ public class MDFInfoModalRodoviarioPedagioDisp extends DFBase {
         if (this.cnpjPagadora != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em PedagioDisp ");
         }
-        StringValidador.cpf(cpfPagadora);
+        DFStringValidador.cpf(cpfPagadora);
         this.cpfPagadora = cpfPagadora;
     }
 }

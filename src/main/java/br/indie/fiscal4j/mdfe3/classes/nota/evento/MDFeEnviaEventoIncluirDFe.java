@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -41,7 +41,7 @@ public class MDFeEnviaEventoIncluirDFe extends DFBase {
 
     public void setDescricaoEvento(final String descricaoEvento) {
         final String defaultValue = "Inclusao DF-e";
-        StringValidador.equals(defaultValue, descricaoEvento);
+        DFStringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
 
@@ -62,7 +62,7 @@ public class MDFeEnviaEventoIncluirDFe extends DFBase {
     }
 
     public void setCodigoMunicipioCarregamento(final String codigoMunicipioCarregamento) {
-        this.codigoMunicipioCarregamento = StringValidador.validador(codigoMunicipioCarregamento, "Codigo municipio carregamento", 7, true, true);
+        this.codigoMunicipioCarregamento = DFStringValidador.validador(codigoMunicipioCarregamento, "Codigo municipio carregamento", 7, true, true);
     }
 
     public String getNomeMunicipioCarregamento() {
@@ -70,7 +70,7 @@ public class MDFeEnviaEventoIncluirDFe extends DFBase {
     }
 
     public void setNomeMunicipioCarregamento(final String nomeMunicipioCarregamento) {
-        StringValidador.tamanho2ate60(nomeMunicipioCarregamento, "Nome municipio carregamento");
+        DFStringValidador.tamanho2ate60(nomeMunicipioCarregamento, "Nome municipio carregamento");
         this.nomeMunicipioCarregamento = nomeMunicipioCarregamento;
     }
 

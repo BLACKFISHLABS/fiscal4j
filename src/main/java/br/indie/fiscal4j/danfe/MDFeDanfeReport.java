@@ -28,7 +28,7 @@ import java.util.Map;
 public class MDFeDanfeReport {
 
     private final MDFProcessado processado;
-    private Map<String, Object> parameters;
+    private final Map<String, Object> parameters;
 
     public MDFeDanfeReport(String xml) {
         this(new DFParser().mdfProcessadaParaObjeto(xml));

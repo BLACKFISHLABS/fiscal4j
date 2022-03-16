@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -34,9 +34,9 @@ public class MDFInfoModalRodoviarioInfContratante {
 
     public void setCpf(String cpf) {
         if (this.cnpj != null || this.idEstrangeiro != null) {
-            throw new IllegalStateException("Nao deve setar CPF se CNPJ ou IdEstrangeiro esteja setado");
+            throw new IllegalStateException("Nao deve setar CPF se CNPJ/IdEstrangeiro esteja setado");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
@@ -46,9 +46,9 @@ public class MDFInfoModalRodoviarioInfContratante {
 
     public void setCnpj(String cnpj) {
         if (this.cpf != null || this.idEstrangeiro != null) {
-            throw new IllegalStateException("Nao deve setar CNPJ se CPF ou IdEstrangeiro esteja setado");
+            throw new IllegalStateException("Nao deve setar CNPJ se CPF/IdEstrangeiro esteja setado");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 

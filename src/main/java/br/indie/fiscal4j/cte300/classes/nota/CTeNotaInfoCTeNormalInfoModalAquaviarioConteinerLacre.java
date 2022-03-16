@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -31,7 +31,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerLacre extends DFBas
      * Lacre
      */
     public void setNumeroLacre(final String numeroLacre) {
-        StringValidador.tamanho20(numeroLacre, "Lacre");
+        DFStringValidador.tamanho20(numeroLacre, "Lacre");
         this.numeroLacre = numeroLacre;
     }
 }

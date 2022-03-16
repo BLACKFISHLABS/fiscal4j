@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTClasseTarifa;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -58,7 +58,7 @@ public class CTeNotaInfoCTeNormalInfoModalAereoTarifa extends DFBase {
      * Deverão ser incluídos os códigos de três dígitos, correspondentes à tarifa.
      */
     public void setCodigo(final String codigo) {
-        StringValidador.tamanho4(codigo, "Código da Tarifa");
+        DFStringValidador.tamanho4(codigo, "Código da Tarifa");
         this.codigo = codigo;
     }
 

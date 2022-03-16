@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -22,7 +22,7 @@ public class MDFInfoModalRodoviarioVeiculoCondutor extends DFBase {
     }
 
     public void setNomeCondutor(final String nomeCondutor) {
-        StringValidador.tamanho2ate60(nomeCondutor, "Nome do Condutor");
+        DFStringValidador.tamanho2ate60(nomeCondutor, "Nome do Condutor");
         this.nomeCondutor = nomeCondutor;
     }
 
@@ -31,6 +31,6 @@ public class MDFInfoModalRodoviarioVeiculoCondutor extends DFBase {
     }
 
     public void setCpf(final String cpf) {
-        this.cpf = StringValidador.cpf(cpf, "Condutor veiculo");
+        this.cpf = DFStringValidador.cpf(cpf, "Condutor veiculo");
     }
 }

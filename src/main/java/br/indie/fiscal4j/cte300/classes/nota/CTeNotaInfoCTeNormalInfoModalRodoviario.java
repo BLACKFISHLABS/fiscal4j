@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -40,7 +40,7 @@ public class CTeNotaInfoCTeNormalInfoModalRodoviario extends DFBase {
      * Registro obrigatório do emitente do CT-e junto à ANTT para exercer a atividade de transportador rodoviário de cargas por conta de terceiros e mediante remuneração.
      */
     public void setRntrc(final String rntrc) {
-        StringValidador.exatamente8(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga");
+        DFStringValidador.exatamente8(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga");
         this.rntrc = rntrc;
     }
 

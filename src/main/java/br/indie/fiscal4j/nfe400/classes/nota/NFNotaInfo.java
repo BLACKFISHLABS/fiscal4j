@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFTipo;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.*;
 
 import java.math.BigDecimal;
@@ -56,8 +56,11 @@ public class NFNotaInfo extends DFBase {
     @Element(name = "cobr", required = false)
     private NFNotaInfoCobranca cobranca;
 
-    @ElementList(entry = "pag", inline = true)
-    private List<NFNotaInfoPagamento> pagamentos;
+    @Element(name = "pag")
+    private NFNotaInfoPagamento pagamento;
+
+    @Element(name = "infIntermed", required = false)
+    private NFInformacaoIntermediador infIntermed;
 
     @Element(name = "infAdic", required = false)
     private NFNotaInfoInformacoesAdicionais informacoesAdicionais;
@@ -74,6 +77,9 @@ public class NFNotaInfo extends DFBase {
     @Element(name = "infRespTec", required = false)
     private NFNotaInfoResponsavelTecnico informacaoResposavelTecnico;
 
+    @Element(name = "infSolicNFF", required = false)
+    private NFInfoSolicitacaoNFF informacaoSolicitacaoNFF;
+
     /**
      * Pega a chave de acesso a partir do identificador.
      *
@@ -84,7 +90,7 @@ public class NFNotaInfo extends DFBase {
     }
 
     public void setIdentificador(final String identificador) {
-        StringValidador.exatamente44N(identificador, "Identificador");
+        DFStringValidador.exatamente44N(identificador, "Identificador");
         this.identificador = NFNotaInfo.IDENT + identificador;
     }
 
@@ -166,14 +172,21 @@ public class NFNotaInfo extends DFBase {
         this.pessoasAutorizadasDownloadNFe = pessoasAutorizadasDownloadNFe;
     }
 
-    public void setPagamentos(final List<NFNotaInfoPagamento> pagamentos) {
-        DFListValidador.tamanho100(pagamentos, "Pagamentos");
-        this.pagamentos = pagamentos;
+    public void setPagamento(final NFNotaInfoPagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+
+    public void setInfIntermed(final NFInformacaoIntermediador infIntermed) {
+        this.infIntermed = infIntermed;
     }
 
     public NFNotaInfo setInformacaoResposavelTecnico(NFNotaInfoResponsavelTecnico informacaoResposavelTecnico) {
         this.informacaoResposavelTecnico = informacaoResposavelTecnico;
         return this;
+    }
+
+    public void setInformacaoSolicitacaoNFF(NFInfoSolicitacaoNFF informacaoSolicitacaoNFF) {
+        this.informacaoSolicitacaoNFF = informacaoSolicitacaoNFF;
     }
 
     public String getVersao() {
@@ -216,8 +229,12 @@ public class NFNotaInfo extends DFBase {
         return this.cobranca;
     }
 
-    public List<NFNotaInfoPagamento> getPagamentos() {
-        return this.pagamentos;
+    public NFNotaInfoPagamento getPagamento() {
+        return this.pagamento;
+    }
+
+    public NFInformacaoIntermediador getInfIntermed() {
+        return infIntermed;
     }
 
     public NFNotaInfoInformacoesAdicionais getInformacoesAdicionais() {
@@ -240,6 +257,10 @@ public class NFNotaInfo extends DFBase {
         return this.informacaoResposavelTecnico;
     }
 
+    public NFInfoSolicitacaoNFF getInformacaoSolicitacaoNFF() {
+        return informacaoSolicitacaoNFF;
+    }
+
     @Override
     public String toString() {
         if (this.getDestinatario() != null && this.getIdentificacao() != null && this.getDestinatario().getIndicadorIEDestinatario().equals(NFIndicadorIEDestinatario.NAO_CONTRIBUINTE) && this.getIdentificacao().getOperacaoConsumidorFinal().equals(NFOperacaoConsumidorFinal.NAO) && this.getIdentificacao().getTipo().equals(NFTipo.SAIDA) && !this.getIdentificacao().getIdentificadorLocalDestinoOperacao().equals(NFIdentificadorLocalDestinoOperacao.OPERACAO_COM_EXTERIOR)) {
@@ -247,4 +268,5 @@ public class NFNotaInfo extends DFBase {
         }
         return super.toString();
     }
+
 }

@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.nota.MDFInfoModalRodoviarioVeiculoCondutor;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -24,7 +24,7 @@ public class MDFeEnviaEventoIncluirCondutor extends DFBase {
 
     public void setDescricaoEvento(final String descricaoEvento) {
         final String defaultValue = "Inclusao Condutor";
-        StringValidador.equals(defaultValue, descricaoEvento);
+        DFStringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
 

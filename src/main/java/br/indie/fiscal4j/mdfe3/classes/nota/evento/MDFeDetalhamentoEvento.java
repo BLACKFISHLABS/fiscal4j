@@ -102,5 +102,4 @@ public class MDFeDetalhamentoEvento extends DFBase {
     public void setEnviaEventoPagamento(MDFeEnviaEventoPagamento enviaEventoPagamento) {
         this.enviaEventoPagamento = enviaEventoPagamento;
     }
-
 }

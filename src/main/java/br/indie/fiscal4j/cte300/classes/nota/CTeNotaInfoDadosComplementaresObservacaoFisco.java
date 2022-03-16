@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -34,7 +34,7 @@ public class CTeNotaInfoDadosComplementaresObservacaoFisco extends DFBase {
      * Identificação do campo
      */
     public void setCampo(final String campo) {
-        StringValidador.tamanho20(campo, "Identificação do campo");
+        DFStringValidador.tamanho20(campo, "Identificação do campo");
         this.campo = campo;
     }
 
@@ -46,7 +46,7 @@ public class CTeNotaInfoDadosComplementaresObservacaoFisco extends DFBase {
      * Identificação do texto
      */
     public void setTexto(final String texto) {
-        StringValidador.tamanho60(texto, "Identificação do texto");
+        DFStringValidador.tamanho60(texto, "Identificação do texto");
         this.texto = texto;
     }
 }

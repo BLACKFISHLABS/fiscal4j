@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Informações do pagamento a prazo. Obs: Informar somente se indPag for à
  * Prazo</h1>
  */
@@ -60,4 +61,3 @@ public class MDFInfoModalRodoviarioInfPagPrazo extends DFBase {
     }
 
 }
-

@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.*;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -89,27 +89,27 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setChassi(final String chassi) {
-        StringValidador.exatamente17(chassi, "Chassi Veiculo");
+        DFStringValidador.exatamente17(chassi, "Chassi Veiculo");
         this.chassi = chassi;
     }
 
     public void setCodigoCor(final String codigoCor) {
-        StringValidador.exatamente4(codigoCor, "Codigo Cor Veiculo");
+        DFStringValidador.exatamente4(codigoCor, "Codigo Cor Veiculo");
         this.codigoCor = codigoCor;
     }
 
     public void setDescricaoCor(final String descricaoCor) {
-        StringValidador.tamanho40(descricaoCor, "Descricao Cor Veiculo");
+        DFStringValidador.tamanho40(descricaoCor, "Descricao Cor Veiculo");
         this.descricaoCor = descricaoCor;
     }
 
     public void setPotencia(final String potencia) {
-        StringValidador.exatamente4(potencia, "Potencia Veiculo");
+        DFStringValidador.exatamente4(potencia, "Potencia Veiculo");
         this.potencia = potencia;
     }
 
     public void setCilindrada(final String cilindrada) {
-        StringValidador.exatamente4(cilindrada, "Cilindrada Veiculo");
+        DFStringValidador.exatamente4(cilindrada, "Cilindrada Veiculo");
         this.cilindrada = cilindrada;
     }
 
@@ -122,7 +122,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setNumeroSerie(final String numeroSerie) {
-        StringValidador.exatamente9(numeroSerie, "Numero Serie Veiculo");
+        DFStringValidador.exatamente9(numeroSerie, "Numero Serie Veiculo");
         this.numeroSerie = numeroSerie;
     }
 
@@ -131,7 +131,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setNumeroMotor(final String numeroMotor) {
-        StringValidador.validaIntervalo(numeroMotor, 1, 21, "Numero Motor Veiculo");
+        DFStringValidador.validaIntervalo(numeroMotor, 1, 21, "Numero Motor Veiculo");
         this.numeroMotor = numeroMotor;
     }
 
@@ -140,7 +140,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setDistanciaEntreEixos(final String distanciaEntreEixos) {
-        StringValidador.exatamente4(distanciaEntreEixos, "Distancia Entre Eixos Veiculo");
+        DFStringValidador.exatamente4(distanciaEntreEixos, "Distancia Entre Eixos Veiculo");
         this.distanciaEntreEixos = distanciaEntreEixos;
     }
 
@@ -155,7 +155,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setTipoPintura(final String tipoPintura) {
-        StringValidador.exatamente1(tipoPintura, "Tipo Pintura Veiculo");
+        DFStringValidador.exatamente1(tipoPintura, "Tipo Pintura Veiculo");
         this.tipoPintura = tipoPintura;
     }
 
@@ -176,7 +176,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setCodigoMarcaModelo(final String codigoMarcaModelo) {
-        StringValidador.exatamente6N(codigoMarcaModelo, "Codigo Marca Modelo Veiculo");
+        DFStringValidador.exatamente6N(codigoMarcaModelo, "Codigo Marca Modelo Veiculo");
         this.codigoMarcaModelo = codigoMarcaModelo;
     }
 

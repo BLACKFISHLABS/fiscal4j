@@ -11,7 +11,7 @@ import br.indie.fiscal4j.nfe400.classes.lote.envio.NFLoteEnvio;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNota;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNotaInfoItem;
 import br.indie.fiscal4j.nfe400.classes.nota.NFNotaProcessada;
-import br.indie.fiscal4j.persister.DFPersister;
+import br.indie.fiscal4j.utils.DFPersister;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;

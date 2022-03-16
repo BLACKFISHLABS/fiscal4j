@@ -1,7 +1,8 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
+import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -35,14 +36,6 @@ public class MDFInfoEmitente extends DFBase {
     @Element(name = "enderEmit")
     private MDFInfoEmitenteEndereco endereco;
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = StringValidador.cpf(cpf, MDFInfoEmitente.INFO);
-    }
-
     public String getCnpj() {
         return this.cnpj;
     }
@@ -52,7 +45,35 @@ public class MDFInfoEmitente extends DFBase {
      * Informar zeros não significativos
      */
     public void setCnpj(final String cnpj) {
-        this.cnpj = StringValidador.cnpj(cnpj, MDFInfoEmitente.INFO);
+        if (this.cpf != null && cnpj != null) {
+            throw new IllegalStateException("Nao pode setar CNPJ caso CPF esteja setado");
+        }
+        DFStringValidador.cnpj(cnpj);
+        this.cnpj = cnpj;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(final String cpf) {
+        if (this.cnpj != null && cpf != null) {
+            throw new IllegalStateException("Nao pode setar CPF caso CNPJ esteja setado");
+        }
+        DFStringValidador.cpf(cpf);
+        this.cpf = cpf;
+    }
+
+    public String getCpfj() {
+
+        String cpfj = StringUtils.EMPTY;
+
+        if (StringUtils.isNotBlank(cpf)) {
+            cpfj = cpf;
+        } else if (StringUtils.isNotBlank(cnpj)) {
+            cpfj = cnpj;
+        }
+        return cpfj;
     }
 
     public String getInscricaoEstadual() {
@@ -63,7 +84,7 @@ public class MDFInfoEmitente extends DFBase {
      * Inscrição Estadual do Emitente
      */
     public void setInscricaoEstadual(final String inscricaoEstadual) {
-        this.inscricaoEstadual = StringValidador.inscricaoEstadualSemIsencao(inscricaoEstadual, MDFInfoEmitente.INFO);
+        this.inscricaoEstadual = DFStringValidador.inscricaoEstadualSemIsencao(inscricaoEstadual, MDFInfoEmitente.INFO);
     }
 
     public String getRazaoSocial() {
@@ -74,7 +95,7 @@ public class MDFInfoEmitente extends DFBase {
      * Razão social ou Nome do emitente
      */
     public void setRazaoSocial(final String xNome) {
-        StringValidador.tamanho2ate60(xNome, "Razão social ou Nome em " + MDFInfoEmitente.INFO);
+        DFStringValidador.tamanho2ate60(xNome, "Razão social ou Nome em " + MDFInfoEmitente.INFO);
         this.razaoSocial = xNome;
     }
 
@@ -86,7 +107,7 @@ public class MDFInfoEmitente extends DFBase {
      * Nome fantasia
      */
     public void setNomeFantasia(final String xFant) {
-        StringValidador.tamanho2ate60(xFant, "Nome fantasia em " + MDFInfoEmitente.INFO);
+        DFStringValidador.tamanho2ate60(xFant, "Nome fantasia em " + MDFInfoEmitente.INFO);
         this.nomeFantasia = xFant;
     }
 

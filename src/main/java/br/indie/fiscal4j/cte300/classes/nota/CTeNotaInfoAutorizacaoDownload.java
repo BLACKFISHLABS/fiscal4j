@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -37,7 +37,7 @@ public class CTeNotaInfoAutorizacaoDownload extends DFBase {
      * Informar zeros não significativos
      */
     public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -50,7 +50,7 @@ public class CTeNotaInfoAutorizacaoDownload extends DFBase {
      * Informar zeros não significativos
      */
     public void setCpf(final String cpf) {
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 }

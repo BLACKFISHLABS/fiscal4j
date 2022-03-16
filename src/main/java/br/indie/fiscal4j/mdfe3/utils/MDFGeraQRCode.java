@@ -10,7 +10,7 @@ public class MDFGeraQRCode {
     private final MDFe mdf;
     private final MDFeConfig config;
 
-    private static String qrCodeUrl = "https://dfe-portal.svrs.rs.gov.br/mdfe/qrCode";
+    private static final String qrCodeUrl = "https://dfe-portal.svrs.rs.gov.br/mdfe/qrCode";
 
     public MDFGeraQRCode(final MDFe nota, final MDFeConfig config) {
         this.mdf = nota;
@@ -36,7 +36,7 @@ public class MDFGeraQRCode {
         }
 
         // retorna a url do qrcode
-        return url + "?" + parametros.toString();
+        return url + "?" + parametros;
     }
 
     public String urlConsultaChaveAcesso() {

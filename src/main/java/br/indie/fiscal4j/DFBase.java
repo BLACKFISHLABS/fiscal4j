@@ -1,6 +1,6 @@
 package br.indie.fiscal4j;
 
-import br.indie.fiscal4j.persister.DFPersister;
+import br.indie.fiscal4j.utils.DFPersister;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.Serializable;

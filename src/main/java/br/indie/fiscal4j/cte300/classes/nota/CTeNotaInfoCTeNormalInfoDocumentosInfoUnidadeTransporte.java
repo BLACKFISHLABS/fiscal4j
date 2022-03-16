@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoUnidadeTransporte;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -73,7 +73,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoUnidadeTransporte extends DFB
      * Informar a identificação conforme o tipo de unidade de transporte. Por exemplo: para rodoviário tração ou reboque deverá preencher com a placa do veículo.
      */
     public void setIdentificacaoTransporte(final String identificacaoTransporte) {
-        StringValidador.tamanho20(identificacaoTransporte, "Identificação da Unidade de Transporte");
+        DFStringValidador.tamanho20(identificacaoTransporte, "Identificação da Unidade de Transporte");
         this.identificacaoTransporte = identificacaoTransporte;
     }
 

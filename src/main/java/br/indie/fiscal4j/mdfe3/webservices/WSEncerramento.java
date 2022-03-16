@@ -16,8 +16,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
-import static br.indie.fiscal4j.validadores.DFCNPJValidador.isValidCNPJ;
-
 /**
  * Created by Eldevan Nery Junior on 17/11/17.
  */
@@ -64,7 +62,7 @@ class WSEncerramento implements DFLog {
         if (urlWebService == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para RecepcaoEvento " + mdfChaveParser.getModelo().name() + ", autorizador " + autorizador.name());
         }
-        final MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult mdfeRecepcaoEventoResult = new MDFeRecepcaoEventoStub(urlWebService).mdfeRecepcaoEvento(dados, cabecE);
+        final MDFeRecepcaoEventoStub.MdfeRecepcaoEventoResult mdfeRecepcaoEventoResult = new MDFeRecepcaoEventoStub(urlWebService, config).mdfeRecepcaoEvento(dados, cabecE);
         final OMElement omElementResult = mdfeRecepcaoEventoResult.getExtraElement();
         this.getLogger().debug(omElementResult.toString());
         return omElementResult;
@@ -87,11 +85,7 @@ class WSEncerramento implements DFLog {
         final MDFeInfoEvento infoEvento = new MDFeInfoEvento();
         infoEvento.setAmbiente(this.config.getAmbiente());
         infoEvento.setChave(chaveAcesso);
-        if (isValidCNPJ(chaveParser.getCnpjEmitente())) {
-            infoEvento.setCnpj(chaveParser.getCnpjEmitente());
-        } else {
-            infoEvento.setCpf(chaveParser.getCpfEmitente());
-        }
+        infoEvento.setCnpj(chaveParser.getCnpjEmitente());
         infoEvento.setDataHoraEvento(ZonedDateTime.now(this.config.getTimeZone().toZoneId()));
         infoEvento.setId(String.format("ID%s%s0%s", WSEncerramento.EVENTO_ENCERRAMENTO, chaveAcesso, "1"));
         infoEvento.setNumeroSequencialEvento(1);

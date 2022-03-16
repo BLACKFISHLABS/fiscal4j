@@ -1,7 +1,11 @@
 package br.indie.fiscal4j.mdfe3.classes.def;
 
+/**
+ * @Author Edivaldo Merlo Stens on 29/06/20.
+ */
 public enum MDFTipoInfPag {
-    A_VISTA("0", "Pagamento à Vista"),
+
+    A_VISTA("0", "Pagamento \u00e0 Vista"),
     A_PRAZO("1", "Pagamento a Prazo");
 
     private final String codigo;

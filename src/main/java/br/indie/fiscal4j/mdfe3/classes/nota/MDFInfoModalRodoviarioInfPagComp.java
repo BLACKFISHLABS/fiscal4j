@@ -8,6 +8,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Componentes do Pagamento do Frete.</h1>
  */
 @Root(name = "Comp")

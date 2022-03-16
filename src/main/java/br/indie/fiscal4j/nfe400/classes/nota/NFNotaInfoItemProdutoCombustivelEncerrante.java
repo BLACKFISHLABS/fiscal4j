@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -67,17 +67,17 @@ public class NFNotaInfoItemProdutoCombustivelEncerrante extends DFBase {
     }
 
     public void setNumeroBomba(final String numeroBomba) {
-        StringValidador.tamanho3N(numeroBomba, "Numero de identificação da bomba ");
+        DFStringValidador.tamanho3N(numeroBomba, "Numero de identificação da bomba ");
         this.numeroBomba = numeroBomba;
     }
 
     public void setNumeroBico(final String numeroBico) {
-        StringValidador.tamanho3N(numeroBico, "Numero de identificação do Bico ");
+        DFStringValidador.tamanho3N(numeroBico, "Numero de identificação do Bico ");
         this.numeroBico = numeroBico;
     }
 
     public void setNumeroTanque(final String numeroTanque) {
-        StringValidador.tamanho3N(numeroTanque, "Numero de identificação do Tanque ");
+        DFStringValidador.tamanho3N(numeroTanque, "Numero de identificação do Tanque ");
         this.numeroTanque = numeroTanque;
     }
 

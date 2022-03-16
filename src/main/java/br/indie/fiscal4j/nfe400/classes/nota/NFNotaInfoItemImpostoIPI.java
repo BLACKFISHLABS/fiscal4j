@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigInteger;
@@ -38,12 +38,12 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
     }
 
     public void setCnpjProdutor(final String cnpjProdutor) {
-        StringValidador.cnpj(cnpjProdutor);
+        DFStringValidador.cnpj(cnpjProdutor);
         this.cnpjProdutor = cnpjProdutor;
     }
 
     public void setCodigoSelo(final String codigoSelo) {
-        StringValidador.tamanho60(codigoSelo, "Codigo Selo IPI Item");
+        DFStringValidador.tamanho60(codigoSelo, "Codigo Selo IPI Item");
         this.codigoSelo = codigoSelo;
     }
 
@@ -53,7 +53,7 @@ public class NFNotaInfoItemImpostoIPI extends DFBase {
     }
 
     public void setCodigoEnquadramento(final String codigoEnquadramento) {
-        StringValidador.exatamente3(codigoEnquadramento, "Codigo Enquadramento IPI Item");
+        DFStringValidador.exatamente3(codigoEnquadramento, "Codigo Enquadramento IPI Item");
         this.codigoEnquadramento = codigoEnquadramento;
     }
 

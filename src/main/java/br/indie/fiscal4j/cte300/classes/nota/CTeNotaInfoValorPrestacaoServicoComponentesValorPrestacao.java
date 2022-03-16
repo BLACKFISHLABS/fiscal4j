@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -39,7 +39,7 @@ public class CTeNotaInfoValorPrestacaoServicoComponentesValorPrestacao extends D
      * Exemplos: FRETE PESO, FRETE VALOR, SEC/CAT, ADEME, AGENDAMENTO, etc
      */
     public void setNomeComponente(final String nomeComponente) {
-        StringValidador.tamanho15(nomeComponente, "Nome do componente");
+        DFStringValidador.tamanho15(nomeComponente, "Nome do componente");
         this.nomeComponente = nomeComponente;
     }
 

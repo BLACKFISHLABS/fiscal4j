@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte200.classes.cte;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.nfe400.classes.NFNotaInfoImpostoTributacaoICMS;
+import br.indie.fiscal4j.nfe310.classes.NFNotaInfoImpostoTributacaoICMS;
 import org.simpleframework.xml.Element;
 
 public class CTInfoImpostoICMS00 extends DFBase {

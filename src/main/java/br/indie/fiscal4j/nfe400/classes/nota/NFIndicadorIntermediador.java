@@ -36,4 +36,3 @@ public enum NFIndicadorIntermediador {
         return this.codigo + " - " + this.descricao;
     }
 }
-

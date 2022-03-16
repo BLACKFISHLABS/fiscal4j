@@ -7,7 +7,7 @@ import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.mdfe3.classes.def.*;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -138,7 +138,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * evitar acessos indevidos ao documento.
      */
     public void setCodigoNumerico(final String codigoNumerico) {
-        StringValidador.exatamente8N(codigoNumerico, "Código Numérico");
+        DFStringValidador.exatamente8N(codigoNumerico, "Código Numérico");
         this.codigoNumerico = codigoNumerico;
     }
 
@@ -239,7 +239,7 @@ public class MDFInfoIdentificacao extends DFBase {
      * Iinformar a versão do aplicativo emissor de MDF-e.
      */
     public void setVersaoProcessoEmissao(final String versaoProcessoEmissao) {
-        StringValidador.tamanho20(versaoProcessoEmissao, "Versão Aplicativo Emissor");
+        DFStringValidador.tamanho20(versaoProcessoEmissao, "Versão Aplicativo Emissor");
         this.versaoProcessoEmissao = versaoProcessoEmissao;
     }
 

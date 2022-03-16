@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoInfPag;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -9,9 +9,12 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
+ *
  * <h1>Grupo de informações pagamento do transporte</h1>
  */
 public class MDFInfoModalRodoviarioInfPag {
+
     /**
      * <p>Nome do responsável pelo pgto.</p>
      */
@@ -83,7 +86,7 @@ public class MDFInfoModalRodoviarioInfPag {
         if (this.cnpj != null || this.idEstrangeiro != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ/IdEstrangeiro esteja setado");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
@@ -95,7 +98,7 @@ public class MDFInfoModalRodoviarioInfPag {
         if (this.cpf != null || this.idEstrangeiro != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF/IdEstrangeiro esteja setado");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -149,4 +152,5 @@ public class MDFInfoModalRodoviarioInfPag {
     public void setInfBanc(MDFInfoModalRodoviarioInfPagBanco infBanc) {
         this.infBanc = infBanc;
     }
+
 }

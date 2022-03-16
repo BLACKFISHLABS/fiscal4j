@@ -3,7 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFUnidadeMedidaPesoBrutoCarga;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -51,7 +51,7 @@ public class MDFInfoTotal extends DFBase {
     }
 
     public void setQtdeCTe(final String qtdeCTe) {
-        this.qtdeCTe = StringValidador.validador(qtdeCTe, "Total CT-e no MDF-e", 6, false, true);
+        this.qtdeCTe = DFStringValidador.validador(qtdeCTe, "Total CT-e no MDF-e", 6, false, true);
     }
 
     public String getQtdeNFe() {
@@ -59,7 +59,7 @@ public class MDFInfoTotal extends DFBase {
     }
 
     public void setQtdeNFe(final String qtdeNFe) {
-        this.qtdeNFe = StringValidador.validador(qtdeNFe, "Total NF-e no MDF-e", 6, false, true);
+        this.qtdeNFe = DFStringValidador.validador(qtdeNFe, "Total NF-e no MDF-e", 6, false, true);
     }
 
     public String getQtdeMDFe() {
@@ -67,7 +67,7 @@ public class MDFInfoTotal extends DFBase {
     }
 
     public void setQtdeMDFe(final String qtdeMDFe) {
-        this.qtdeMDFe = StringValidador.validador(qtdeMDFe, "Total MDF-e no MDF-e relacionados no Manifesto Aquaviário", 6, false, true);
+        this.qtdeMDFe = DFStringValidador.validador(qtdeMDFe, "Total MDF-e no MDF-e relacionados no Manifesto Aquaviário", 6, false, true);
     }
 
     public String getValorTotalCarga() {

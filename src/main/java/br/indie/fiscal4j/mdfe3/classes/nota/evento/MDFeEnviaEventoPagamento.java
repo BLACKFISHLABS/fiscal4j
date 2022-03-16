@@ -3,7 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.nota.MDFInfoModalRodoviarioInfPag;
 import br.indie.fiscal4j.mdfe3.classes.nota.MDFInfoModalRodoviarioInfViagens;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * No manual o nome da tag root é evPagtoMDFe, mas no xsd está evPagtoOperMDFe.
  * Verificar se vai haver uma correção no futuro.
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  */
 @Root(name = "evPagtoOperMDFe")
 @Namespace(reference = "http://www.portalfiscal.inf.br/mdfe")
@@ -35,7 +36,7 @@ public class MDFeEnviaEventoPagamento extends DFBase {
 
     public void setDescricaoEvento(final String descricaoEvento) {
         final String defaultValue = "Pagamento Operação MDF-e";
-        StringValidador.equals(defaultValue, descricaoEvento);
+        DFStringValidador.equals(defaultValue, descricaoEvento);
         this.descricaoEvento = descricaoEvento;
     }
 

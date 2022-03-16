@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -26,8 +26,14 @@ public class NFNotaInfoItemProdutoRastreabilidade extends DFBase {
     @Element(name = "cAgreg", required = false)
     private String codigoAgregacao;
 
+    @Element(name = "infProdNFF", required = false)
+    private NFNotaInfoItemProdutoDetalhamento informacoesProduto;
+
+    @Element(name = "infProdEmb", required = false)
+    private NFNotaInfoItemProdutoDetalhamentoEmbalagem informacoesProdutoEmbalagem;
+
     public void setNumeroLote(final String numeroLote) {
-        StringValidador.tamanho20(numeroLote, "N\u00famero do lote do rastreio do produto");
+        DFStringValidador.tamanho20(numeroLote, "N\u00famero do lote do rastreio do produto");
         this.numeroLote = numeroLote;
     }
 
@@ -44,8 +50,16 @@ public class NFNotaInfoItemProdutoRastreabilidade extends DFBase {
     }
 
     public void setCodigoAgregacao(final String codigoAgregacao) {
-        StringValidador.tamanho20(codigoAgregacao, "C\u00f3digo agrega\u00e7\u00e3o rastreio produto");
+        DFStringValidador.tamanho20(codigoAgregacao, "C\u00f3digo agrega\u00e7\u00e3o rastreio produto");
         this.codigoAgregacao = codigoAgregacao;
+    }
+
+    public void setInformacoesProduto(NFNotaInfoItemProdutoDetalhamento informacoesProduto) {
+        this.informacoesProduto = informacoesProduto;
+    }
+
+    public void setInformacoesProdutoEmbalagem(NFNotaInfoItemProdutoDetalhamentoEmbalagem informacoesProdutoEmbalagem) {
+        this.informacoesProdutoEmbalagem = informacoesProdutoEmbalagem;
     }
 
     public String getNumeroLote() {
@@ -66,5 +80,13 @@ public class NFNotaInfoItemProdutoRastreabilidade extends DFBase {
 
     public String getCodigoAgregacao() {
         return this.codigoAgregacao;
+    }
+
+    public NFNotaInfoItemProdutoDetalhamento getInformacoesProduto() {
+        return informacoesProduto;
+    }
+
+    public NFNotaInfoItemProdutoDetalhamentoEmbalagem getInformacoesProdutoEmbalagem() {
+        return informacoesProdutoEmbalagem;
     }
 }

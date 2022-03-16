@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoCompra extends DFBase {
@@ -17,17 +17,17 @@ public class NFNotaInfoCompra extends DFBase {
     private String contrato;
 
     public void setNotaDeEmpenho(final String notaDeEmpenho) {
-        StringValidador.tamanho22(notaDeEmpenho, "Nota de Empenho");
+        DFStringValidador.tamanho22(notaDeEmpenho, "Nota de Empenho");
         this.notaDeEmpenho = notaDeEmpenho;
     }
 
     public void setPedido(final String pedido) {
-        StringValidador.tamanho60(pedido, "Pedido");
+        DFStringValidador.tamanho60(pedido, "Pedido");
         this.pedido = pedido;
     }
 
     public void setContrato(final String contrato) {
-        StringValidador.tamanho60(contrato, "Contrato");
+        DFStringValidador.tamanho60(contrato, "Contrato");
         this.contrato = contrato;
     }
 

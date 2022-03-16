@@ -3,13 +3,9 @@ package br.indie.fiscal4j.mdfe3.webservices;
 import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.mdfe3.MDFeConfig;
 import br.indie.fiscal4j.mdfe3.classes.MDFAutorizador3;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLote;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetorno;
 import br.indie.fiscal4j.mdfe3.classes.lote.envio.MDFEnvioLoteRetornoDados;
-import br.indie.fiscal4j.mdfe3.classes.nota.MDFInfoSuplementar;
-import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
-import br.indie.fiscal4j.mdfe3.utils.MDFGeraQRCode;
 import br.indie.fiscal4j.mdfe3.webservices.recepcao.MDFeRecepcaoStub;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 import br.indie.fiscal4j.validadores.DFXMLValidador;
@@ -36,22 +32,9 @@ class WSRecepcaoLote implements DFLog {
         final String documentoAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(mdfeRecepcaoLote.toString(), "infMDFe");
         final MDFEnvioLote loteAssinado = this.config.getPersister().read(MDFEnvioLote.class, documentoAssinado);
 
-        MDFe mdfe = loteAssinado.getMdfe();
-        MDFGeraQRCode geraQRCode = getMDFEGeraQRCode(mdfe);
-        mdfe.setMdfInfoSuplementar(new MDFInfoSuplementar());
-        mdfe.getMdfInfoSuplementar().setQrCodMDFe(geraQRCode.getQRCode());
-        loteAssinado.setMdfe(mdfe);
         //comunica o lote
-        final MDFEnvioLoteRetorno retorno = comunicaLote(loteAssinado.toString());
+        final MDFEnvioLoteRetorno retorno = comunicaLote(documentoAssinado);
         return new MDFEnvioLoteRetornoDados(retorno, loteAssinado);
-    }
-
-    private MDFGeraQRCode getMDFEGeraQRCode(MDFe mdFe) {
-        if (MDFTipoEmissao.NORMAL.equals(mdFe.getInfo().getIdentificacao().getTipoEmissao())) {
-            return new MDFGeraQRCode(mdFe, this.config);
-        } else {
-            throw new IllegalArgumentException("QRCode 2.0 Tipo Emissao nao implementado: " + mdFe.getInfo().getIdentificacao().getTipoEmissao().getDescricao());
-        }
     }
 
     private MDFEnvioLoteRetorno comunicaLote(final String loteAssinadoXml) throws Exception {
@@ -75,7 +58,7 @@ class WSRecepcaoLote implements DFLog {
         if (endpoint == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para Recepcao do MDFe, autorizador " + autorizador.name() + ", UF " + this.config.getCUF().name());
         }
-        final MDFeRecepcaoStub.MdfeRecepcaoLoteResult autorizacaoLoteResult = new MDFeRecepcaoStub(endpoint).mdfeRecepcaoLote(dados, cabecalhoSOAP);
+        final MDFeRecepcaoStub.MdfeRecepcaoLoteResult autorizacaoLoteResult = new MDFeRecepcaoStub(endpoint, config).mdfeRecepcaoLote(dados, cabecalhoSOAP);
         final MDFEnvioLoteRetorno retorno = this.config.getPersister().read(MDFEnvioLoteRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
         this.getLogger().debug(retorno.toString());
         return retorno;

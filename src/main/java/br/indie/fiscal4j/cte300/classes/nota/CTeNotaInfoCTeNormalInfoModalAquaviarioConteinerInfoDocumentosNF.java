@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -42,7 +42,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNF ex
      * Série
      */
     public void setSerie(final String serie) {
-        StringValidador.tamanho3(serie, "Série");
+        DFStringValidador.tamanho3(serie, "Série");
         this.serie = serie;
     }
 
@@ -54,7 +54,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNF ex
      * Número
      */
     public void setNumero(final String numero) {
-        StringValidador.tamanho20(numero, "Número");
+        DFStringValidador.tamanho20(numero, "Número");
         this.numero = numero;
     }
 

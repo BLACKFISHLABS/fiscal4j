@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -26,13 +26,16 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
     @ElementList(entry = "procRef", inline = true, required = false)
     private List<NFNotaInfoProcessoReferenciado> processosRefenciado;
 
+    @Element(name = "tpAto", required = false)
+    private NFTipoAtoConcessorio tipoAtoConcessorio;
+
     public void setInformacoesAdicionaisInteresseFisco(final String informacoesAdicionaisInteresseFisco) {
-        StringValidador.tamanho2000(informacoesAdicionaisInteresseFisco, "Informacoes Adicionais Interesse Fisco");
+        DFStringValidador.tamanho2000(informacoesAdicionaisInteresseFisco, "Informacoes Adicionais Interesse Fisco");
         this.informacoesAdicionaisInteresseFisco = informacoesAdicionaisInteresseFisco;
     }
 
     public void setInformacoesComplementaresInteresseContribuinte(final String informacoesComplementaresInteresseContribuinte) {
-        StringValidador.tamanho5000(informacoesComplementaresInteresseContribuinte, "Informacoes Adicionais Interesse Contribuinte");
+        DFStringValidador.tamanho5000(informacoesComplementaresInteresseContribuinte, "Informacoes Adicionais Interesse Contribuinte");
         this.informacoesComplementaresInteresseContribuinte = informacoesComplementaresInteresseContribuinte;
     }
 
@@ -49,6 +52,10 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
     public void setProcessosRefenciado(final List<NFNotaInfoProcessoReferenciado> processosRefenciado) {
         DFListValidador.tamanho100(processosRefenciado, "Processos Referenciados");
         this.processosRefenciado = processosRefenciado;
+    }
+
+    public void setTipoAtoConcessorio(NFTipoAtoConcessorio tipoAtoConcessorio) {
+        this.tipoAtoConcessorio = tipoAtoConcessorio;
     }
 
     public String getInformacoesAdicionaisInteresseFisco() {
@@ -69,5 +76,9 @@ public class NFNotaInfoInformacoesAdicionais extends DFBase {
 
     public List<NFNotaInfoProcessoReferenciado> getProcessosRefenciado() {
         return this.processosRefenciado;
+    }
+
+    public NFTipoAtoConcessorio getTipoAtoConcessorio() {
+        return tipoAtoConcessorio;
     }
 }

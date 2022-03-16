@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.evento;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -31,7 +31,7 @@ public class CTeTipoEvento extends DFBase {
     }
 
     public void setDescricaoEvento(final String descricaoEvento) {
-        StringValidador.tamanho5a60(descricaoEvento, "Descricao do Evento");
+        DFStringValidador.tamanho5a60(descricaoEvento, "Descricao do Evento");
         this.descricaoEvento = descricaoEvento;
     }
 

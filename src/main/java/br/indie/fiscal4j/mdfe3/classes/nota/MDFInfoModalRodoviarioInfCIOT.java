@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -40,7 +40,7 @@ public class MDFInfoModalRodoviarioInfCIOT extends DFBase {
     }
 
     public void setCiot(final String ciot) {
-        this.ciot = StringValidador.validador(ciot, "CIOT", 12, true, true);
+        this.ciot = DFStringValidador.validador(ciot, "CIOT", 12, true, true);
     }
 
     public String getCpf() {
@@ -51,7 +51,7 @@ public class MDFInfoModalRodoviarioInfCIOT extends DFBase {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em infCIOT");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
@@ -63,7 +63,7 @@ public class MDFInfoModalRodoviarioInfCIOT extends DFBase {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado em infCIOT");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 }

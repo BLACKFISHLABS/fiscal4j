@@ -6,7 +6,7 @@ import br.indie.fiscal4j.nfe400.converters.NFStringNullToEmptyConverter;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.convert.Convert;
@@ -22,7 +22,10 @@ public class NFNotaInfoItemProduto extends DFBase {
 
     @Element(name = "cEAN", required = false)
     @Convert(NFStringNullToEmptyConverter.class)
-    private String codigoDeBarras;
+    private String codigoDeBarrasGtin;
+
+    @Element(name = "cBarra", required = false)
+    private String codigoDeBarrasDiferenteGtin;
 
     @Element(name = "xProd")
     private String descricao;
@@ -65,7 +68,10 @@ public class NFNotaInfoItemProduto extends DFBase {
 
     @Element(name = "cEANTrib", required = false)
     @Convert(NFStringNullToEmptyConverter.class)
-    private String codigoDeBarrasTributavel;
+    private String codigoDeBarrasGtinTributavel;
+
+    @Element(name = "cBarraTrib", required = false)
+    private String codigoDeBarrasDiferenteGtinTributavel;
 
     @Element(name = "uTrib")
     private String unidadeTributavel;
@@ -125,37 +131,49 @@ public class NFNotaInfoItemProduto extends DFBase {
     private String numeroRECOPI;
 
     public void setCodigo(final String codigo) {
-        StringValidador.tamanho60(codigo, "Codigo Produto");
+        DFStringValidador.tamanho60(codigo, "Codigo Produto");
         this.codigo = codigo;
     }
 
+    /**
+     * @deprecated substituido por {@link #setCodigoDeBarrasGtin()}
+     */
+    @Deprecated
     public void setCodigoDeBarras(final String codigoDeBarras) {
-        StringValidador.codigoDeBarras(codigoDeBarras);
-        this.codigoDeBarras = codigoDeBarras;
+        this.setCodigoDeBarrasGtin(codigoDeBarras);
+    }
+
+    public void setCodigoDeBarrasGtin(final String codigoDeBarrasGtin) {
+        DFStringValidador.codigoDeBarras(codigoDeBarrasGtin);
+        this.codigoDeBarrasGtin = codigoDeBarrasGtin;
+    }
+
+    public void setCodigoDeBarrasDiferenteGtin(String codigoDeBarrasDiferenteGtin) {
+        this.codigoDeBarrasDiferenteGtin = codigoDeBarrasDiferenteGtin;
     }
 
     public void setDescricao(final String descricao) {
-        StringValidador.tamanho120(descricao, "Descricao Produto");
+        DFStringValidador.tamanho120(descricao, "Descricao Produto");
         this.descricao = descricao;
     }
 
     public void setNcm(final String ncm) {
-        StringValidador.ncm(ncm);
+        DFStringValidador.ncm(ncm);
         this.ncm = ncm;
     }
 
     public void setExtipi(final String extipi) {
-        StringValidador.tamanho2ou3N(extipi, "EX TIPI Produto");
+        DFStringValidador.tamanho2ou3N(extipi, "EX TIPI Produto");
         this.extipi = extipi;
     }
 
     public void setCfop(final String cfop) {
-        StringValidador.exatamente4N(cfop, "CFOP Produto");
+        DFStringValidador.exatamente4N(cfop, "CFOP Produto");
         this.cfop = cfop;
     }
 
     public void setUnidadeComercial(final String unidadeComercial) {
-        StringValidador.tamanho6(unidadeComercial, "Unidade Comercial Produto");
+        DFStringValidador.tamanho6(unidadeComercial, "Unidade Comercial Produto");
         this.unidadeComercial = unidadeComercial;
     }
 
@@ -171,13 +189,25 @@ public class NFNotaInfoItemProduto extends DFBase {
         this.valorTotalBruto = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTotalBruto, "Valor Total Bruto Produto");
     }
 
-    public void setCodigoDeBarrasTributavel(final String codigoDeBarrasTributavel) {
-        StringValidador.codigoDeBarras(codigoDeBarrasTributavel);
-        this.codigoDeBarrasTributavel = codigoDeBarrasTributavel;
+    /**
+     * @deprecated substituido por {@link #setCodigoDeBarrasGtinTributavel()}
+     */
+    @Deprecated
+    public void setCodigoDeBarrasTributavel(final String codigoDeBarras) {
+        this.setCodigoDeBarrasGtinTributavel(codigoDeBarras);
+    }
+
+    public void setCodigoDeBarrasGtinTributavel(final String codigoDeBarrasGtinTributavel) {
+        DFStringValidador.codigoDeBarras(codigoDeBarrasGtinTributavel);
+        this.codigoDeBarrasGtinTributavel = codigoDeBarrasGtinTributavel;
+    }
+
+    public void setCodigoDeBarrasDiferenteGtinTributavel(String codigoDeBarrasDiferenteGtinTributavel) {
+        this.codigoDeBarrasDiferenteGtinTributavel = codigoDeBarrasDiferenteGtinTributavel;
     }
 
     public void setUnidadeTributavel(final String unidadeTributavel) {
-        StringValidador.tamanho6(unidadeTributavel, "Unidade Tributavel Produto");
+        DFStringValidador.tamanho6(unidadeTributavel, "Unidade Tributavel Produto");
         this.unidadeTributavel = unidadeTributavel;
     }
 
@@ -214,7 +244,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setNumeroPedidoCliente(final String numeroPedidoCliente) {
-        StringValidador.tamanho15(numeroPedidoCliente, "Numero Pedido Cliente Produto");
+        DFStringValidador.tamanho15(numeroPedidoCliente, "Numero Pedido Cliente Produto");
         this.numeroPedidoCliente = numeroPedidoCliente;
     }
 
@@ -224,7 +254,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setNumeroControleFCI(final String numeroControleFCI) {
-        StringValidador.fci(numeroControleFCI);
+        DFStringValidador.fci(numeroControleFCI);
         this.numeroControleFCI = numeroControleFCI;
     }
 
@@ -259,13 +289,13 @@ public class NFNotaInfoItemProduto extends DFBase {
 
     public void setNomeclaturaValorAduaneiroEstatistica(final List<String> nomeclaturaValorAduaneiroEstatistica) {
         for (final String nomeclatra : nomeclaturaValorAduaneiroEstatistica) {
-            StringValidador.nve(nomeclatra);
+            DFStringValidador.nve(nomeclatra);
         }
         this.nomeclaturaValorAduaneiroEstatistica = nomeclaturaValorAduaneiroEstatistica;
     }
 
     public void setCodigoEspecificadorSituacaoTributaria(final String codigoEspecificadorSituacaoTributaria) {
-        StringValidador.exatamente7N(codigoEspecificadorSituacaoTributaria, "CEST Produto");
+        DFStringValidador.exatamente7N(codigoEspecificadorSituacaoTributaria, "CEST Produto");
         this.codigoEspecificadorSituacaoTributaria = codigoEspecificadorSituacaoTributaria;
     }
 
@@ -278,7 +308,7 @@ public class NFNotaInfoItemProduto extends DFBase {
         if (this.medicamento != null || this.armamentos != null || this.veiculo != null || this.combustivel != null) {
             throw new IllegalStateException("veiculos, medicamentos, armamentos, RECOPI e combustivel sao mutuamente exclusivos");
         }
-        StringValidador.exatamente20N(numeroRECOPI, "Numero RECOPI Produto");
+        DFStringValidador.exatamente20N(numeroRECOPI, "Numero RECOPI Produto");
         this.numeroRECOPI = numeroRECOPI;
     }
 
@@ -296,15 +326,27 @@ public class NFNotaInfoItemProduto extends DFBase {
     }
 
     public void setCodigoBeneficioFiscalUF(final String codigoBeneficioFiscalUF) {
-        this.codigoBeneficioFiscalUF = StringValidador.validador(codigoBeneficioFiscalUF, "Codigo Beneficio Fiscal da UF", 10, false, false);
+        this.codigoBeneficioFiscalUF = DFStringValidador.validador(codigoBeneficioFiscalUF, "Codigo Beneficio Fiscal da UF", 10, false, false);
     }
 
     public String getCodigo() {
         return this.codigo;
     }
 
+    public String getCodigoDeBarrasGtin() {
+        return this.codigoDeBarrasGtin == null ? "SEM GTIN" : this.codigoDeBarrasGtin;
+    }
+
+    /**
+     * @deprecated substituido por {@link #getCodigoDeBarrasGtin()}
+     */
+    @Deprecated
     public String getCodigoDeBarras() {
-        return this.codigoDeBarras == null ? "SEM GTIN" : this.codigoDeBarras;
+        return this.getCodigoDeBarrasGtin();
+    }
+
+    public String getCodigoDeBarrasDiferenteGtin() {
+        return codigoDeBarrasDiferenteGtin;
     }
 
     public String getDescricao() {
@@ -347,8 +389,20 @@ public class NFNotaInfoItemProduto extends DFBase {
         return this.valorTotalBruto;
     }
 
+    /**
+     * @deprecated substituido por {@link #getCodigoDeBarrasGtinTributavel()}
+     */
+    @Deprecated
     public String getCodigoDeBarrasTributavel() {
-        return this.codigoDeBarrasTributavel == null ? "SEM GTIN" : this.codigoDeBarrasTributavel;
+        return this.getCodigoDeBarrasGtinTributavel();
+    }
+
+    public String getCodigoDeBarrasGtinTributavel() {
+        return this.codigoDeBarrasGtinTributavel == null ? "SEM GTIN" : this.codigoDeBarrasGtinTributavel;
+    }
+
+    public String getCodigoDeBarrasDiferenteGtinTributavel() {
+        return codigoDeBarrasDiferenteGtinTributavel;
     }
 
     public String getUnidadeTributavel() {

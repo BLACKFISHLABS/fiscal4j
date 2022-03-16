@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -23,7 +23,7 @@ public class NFNotaInfoFatura extends DFBase {
     private String valorLiquidoFatura;
 
     public void setNumeroFatura(final String numeroFatura) {
-        StringValidador.tamanho60(numeroFatura, "Numero Fatura");
+        DFStringValidador.tamanho60(numeroFatura, "Numero Fatura");
         this.numeroFatura = numeroFatura;
     }
 

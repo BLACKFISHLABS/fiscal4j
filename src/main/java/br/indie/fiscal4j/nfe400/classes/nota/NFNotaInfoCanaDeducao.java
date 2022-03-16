@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -17,7 +17,7 @@ public class NFNotaInfoCanaDeducao extends DFBase {
     private String valorDeducao;
 
     public void setDescricaoDeducao(final String descricaoDeducao) {
-        StringValidador.tamanho60(descricaoDeducao, "Descricao Deducao");
+        DFStringValidador.tamanho60(descricaoDeducao, "Descricao Deducao");
         this.descricaoDeducao = descricaoDeducao;
     }
 

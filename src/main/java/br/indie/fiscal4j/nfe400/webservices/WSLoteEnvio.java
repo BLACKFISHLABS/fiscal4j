@@ -41,10 +41,15 @@ class WSLoteEnvio implements DFLog {
         return this.comunicaLote(loteAssinadoXml, modelo);
     }
 
-    NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote) throws Exception {
+    NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote, boolean validarXML) throws Exception {
         final NFLoteEnvio loteAssinado = this.getLoteAssinado(lote);
-        final NFLoteEnvioRetorno loteEnvioRetorno = this.comunicaLote(loteAssinado.toString(), loteAssinado.getNotas().get(0).getInfo().getIdentificacao().getModelo());
+        final NFLoteEnvioRetorno loteEnvioRetorno = this.comunicaLote(loteAssinado.toString(),
+                loteAssinado.getNotas().get(0).getInfo().getIdentificacao().getModelo(), validarXML);
         return new NFLoteEnvioRetornoDados(loteEnvioRetorno, loteAssinado);
+    }
+
+    NFLoteEnvioRetornoDados enviaLote(final NFLoteEnvio lote) throws Exception {
+        return this.enviaLote(lote, true);
     }
 
     /**
@@ -54,7 +59,8 @@ class WSLoteEnvio implements DFLog {
         // adiciona a chave e o dv antes de assinar
         for (final NFNota nota : lote.getNotas()) {
             final NFGeraChave geraChave = new NFGeraChave(nota);
-            nota.getInfo().getIdentificacao().setCodigoRandomico(StringUtils.defaultIfBlank(nota.getInfo().getIdentificacao().getCodigoRandomico(), geraChave.geraCodigoRandomico()));
+            nota.getInfo().getIdentificacao().setCodigoRandomico(StringUtils.defaultIfBlank(
+                    nota.getInfo().getIdentificacao().getCodigoRandomico(), geraChave.geraCodigoRandomico()));
             nota.getInfo().getIdentificacao().setDigitoVerificador(geraChave.getDV());
             nota.getInfo().setIdentificador(geraChave.getChaveAcesso());
         }
@@ -62,7 +68,8 @@ class WSLoteEnvio implements DFLog {
         final String documentoAssinado = new DFAssinaturaDigital(this.config).assinarDocumento(lote.toString());
         final NFLoteEnvio loteAssinado = this.config.getPersister().read(NFLoteEnvio.class, documentoAssinado);
 
-        // verifica se nao tem NFCe junto com NFe no lote e gera qrcode (apos assinar mesmo, eh assim)
+        // verifica se nao tem NFCe junto com NFe no lote e gera qrcode (apos assinar
+        // mesmo, eh assim)
         int qtdNF = 0, qtdNFC = 0;
         for (final NFNota nota : loteAssinado.getNotas()) {
             switch (nota.getInfo().getIdentificacao().getModelo()) {
@@ -78,7 +85,8 @@ class WSLoteEnvio implements DFLog {
                     qtdNFC++;
                     break;
                 default:
-                    throw new IllegalArgumentException(String.format("Modelo de nota desconhecida: %s", nota.getInfo().getIdentificacao().getModelo()));
+                    throw new IllegalArgumentException(String.format("Modelo de nota desconhecida: %s",
+                            nota.getInfo().getIdentificacao().getModelo()));
             }
         }
         // verifica se todas as notas do lote sao do mesmo modelo
@@ -94,32 +102,51 @@ class WSLoteEnvio implements DFLog {
         } else if (NFTipoEmissao.CONTIGENCIA_OFFLINE.equals(nota.getInfo().getIdentificacao().getTipoEmissao())) {
             return new NFGeraQRCodeContingenciaOffline20(nota, this.config);
         } else {
-            throw new IllegalArgumentException("QRCode 2.0 Tipo Emissao nao implementado: " + nota.getInfo().getIdentificacao().getTipoEmissao().getDescricao());
+            throw new IllegalArgumentException("QRCode 2.0 Tipo Emissao nao implementado: "
+                    + nota.getInfo().getIdentificacao().getTipoEmissao().getDescricao());
         }
     }
 
+    private NFLoteEnvioRetorno comunicaLote(final String loteAssinadoXml, final DFModelo modelo, boolean validarXML)
+            throws Exception {
+        final NfeResultMsg autorizacaoLoteResult = comunicaLoteRaw(loteAssinadoXml, modelo, validarXML);
+        final NFLoteEnvioRetorno loteEnvioRetorno = this.config.getPersister().read(NFLoteEnvioRetorno.class,
+                autorizacaoLoteResult.getExtraElement().toString());
+        this.getLogger().debug(loteEnvioRetorno.toString());
+        return loteEnvioRetorno;
+    }
+
     private NFLoteEnvioRetorno comunicaLote(final String loteAssinadoXml, final DFModelo modelo) throws Exception {
-        // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
-        DFXMLValidador.validaLote400(loteAssinadoXml);
+        return this.comunicaLote(loteAssinadoXml, modelo, true);
+    }
+
+    NfeResultMsg comunicaLoteRaw(final String loteAssinadoXml, final DFModelo modelo, boolean validarXML)
+            throws Exception {
+
+        if (validarXML) {
+            // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de
+            // comunicar com a sefaz
+            DFXMLValidador.validaLote400(loteAssinadoXml);
+        }
 
         // envia o lote para a sefaz
         final OMElement omElement = this.nfeToOMElement(loteAssinadoXml);
 
-        final br.indie.fiscal4j.nfe400.webservices.gerado.NFeAutorizacao4Stub.NfeDadosMsg dados = new br.indie.fiscal4j.nfe400.webservices.gerado.NFeAutorizacao4Stub.NfeDadosMsg();
+        final NFeAutorizacao4Stub.NfeDadosMsg dados = new NFeAutorizacao4Stub.NfeDadosMsg();
         dados.setExtraElement(omElement);
 
         // define o tipo de emissao
-        final NFAutorizador400 autorizador = NFAutorizador400.valueOfTipoEmissao(this.config.getTipoEmissao(), this.config.getCUF());
+        final NFAutorizador400 autorizador = NFAutorizador400.valueOfTipoEmissao(this.config.getTipoEmissao(),
+                this.config.getCUF());
 
-        final String endpoint = DFModelo.NFE.equals(modelo) ? autorizador.getNfeAutorizacao(this.config.getAmbiente()) : autorizador.getNfceAutorizacao(this.config.getAmbiente());
+        final String endpoint = DFModelo.NFE.equals(modelo) ? autorizador.getNfeAutorizacao(this.config.getAmbiente())
+                : autorizador.getNfceAutorizacao(this.config.getAmbiente());
         if (endpoint == null) {
-            throw new IllegalArgumentException("Nao foi possivel encontrar URL para Autorizacao " + modelo.name() + ", autorizador " + autorizador.name());
+            throw new IllegalArgumentException("Nao foi possivel encontrar URL para Autorizacao " + modelo.name()
+                    + ", autorizador " + autorizador.name());
         }
 
-        final NfeResultMsg autorizacaoLoteResult = new NFeAutorizacao4Stub(endpoint).nfeAutorizacaoLote(dados);
-        final NFLoteEnvioRetorno loteEnvioRetorno = this.config.getPersister().read(NFLoteEnvioRetorno.class, autorizacaoLoteResult.getExtraElement().toString());
-        this.getLogger().debug(loteEnvioRetorno.toString());
-        return loteEnvioRetorno;
+        return new NFeAutorizacao4Stub(endpoint, config).nfeAutorizacaoLote(dados);
     }
 
     private OMElement nfeToOMElement(final String documento) throws XMLStreamException {

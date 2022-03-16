@@ -2,8 +2,8 @@ package br.indie.fiscal4j.cte300.utils;
 
 import br.indie.fiscal4j.cte300.CTeConfig;
 import br.indie.fiscal4j.cte300.classes.CTAutorizador31;
+import br.indie.fiscal4j.cte300.classes.CTTipoEmissao;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNota;
-import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoEmissao;
 import br.indie.fiscal4j.utils.DFAssinaturaDigital;
 
 public class CTeGeraQRCode {
@@ -20,11 +20,11 @@ public class CTeGeraQRCode {
         final StringBuilder parametros = new StringBuilder();
         parametros.append("chCTe=").append(chaveAcesso).append("&");
         parametros.append("tpAmb=").append(this.config.getAmbiente().getCodigo());
-        if (this.config.getTipoEmissao().equals(MDFTipoEmissao.CONTINGENCIA)) {
+        if (this.config.getTipoEmissao().equals(CTTipoEmissao.CONTINGENCIA_EPEC)) {
             parametros.append("&sign=").append(new DFAssinaturaDigital(this.config).assinarString(chaveAcesso));
         }
         // retorna a url do qrcode
-        return url + "?" + parametros.toString();
+        return url + "?" + parametros;
     }
 
 }

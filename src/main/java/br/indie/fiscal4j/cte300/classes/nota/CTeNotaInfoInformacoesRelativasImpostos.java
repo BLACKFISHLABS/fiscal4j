@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -69,7 +69,7 @@ public class CTeNotaInfoInformacoesRelativasImpostos extends DFBase {
      * Norma referenciada, informações complementares, etc
      */
     public void setInformacoesAdicionaisFisco(final String informacoesAdicionaisFisco) {
-        StringValidador.tamanho2000(informacoesAdicionaisFisco, "Informações adicionais de interesse do Fisco");
+        DFStringValidador.tamanho2000(informacoesAdicionaisFisco, "Informações adicionais de interesse do Fisco");
         this.informacoesAdicionaisFisco = informacoesAdicionaisFisco;
     }
 

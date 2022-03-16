@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.*;
 
 import java.util.List;
@@ -94,7 +94,7 @@ public class CTeNotaInfo extends DFBase {
      * Informar a chave de acesso do CT-e e precedida do literal "CTe"
      */
     public void setIdentificador(final String identificador) {
-        StringValidador.exatamente44N(identificador, "Identificador");
+        DFStringValidador.exatamente44N(identificador, "Identificador");
         this.identificador = CTeNotaInfo.IDENT + identificador;
     }
 

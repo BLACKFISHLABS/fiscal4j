@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoExportacao extends DFBase {
@@ -22,12 +22,12 @@ public class NFNotaInfoExportacao extends DFBase {
     }
 
     public void setLocalEmbarqueProdutos(final String localEmbarqueProdutos) {
-        StringValidador.tamanho60(localEmbarqueProdutos, "Local Embarque Produtos");
+        DFStringValidador.tamanho60(localEmbarqueProdutos, "Local Embarque Produtos");
         this.localEmbarqueProdutos = localEmbarqueProdutos;
     }
 
     public void setLocalDespachoProdutos(final String localDespachoProdutos) {
-        StringValidador.tamanho60(localDespachoProdutos, "Local Despacho Produtos");
+        DFStringValidador.tamanho60(localDespachoProdutos, "Local Despacho Produtos");
         this.localDespachoProdutos = localDespachoProdutos;
     }
 

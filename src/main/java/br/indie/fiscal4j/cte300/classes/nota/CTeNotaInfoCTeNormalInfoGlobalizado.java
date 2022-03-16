@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -31,7 +31,7 @@ public class CTeNotaInfoCTeNormalInfoGlobalizado extends DFBase {
      * Preencher com informações adicionais, legislação do regime especial, etc
      */
     public void setObservacao(final String observacao) {
-        StringValidador.tamanho15a256(observacao, "Preencher com informações adicionais, legislação do regime especial, etc");
+        DFStringValidador.tamanho15a256(observacao, "Preencher com informações adicionais, legislação do regime especial, etc");
         this.Observacao = observacao;
     }
 }

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -49,7 +49,7 @@ public class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setMunicipioDescarga(String municipioDescarga) {
-        this.municipioDescarga = StringValidador.validaIntervalo(municipioDescarga, 7, 7, "codigo municipio descarga", true);
+        this.municipioDescarga = DFStringValidador.validaIntervalo(municipioDescarga, 7, 7, "codigo municipio descarga", true);
     }
 
     public String getxMunDescarga() {
@@ -57,7 +57,7 @@ public class MDFInfoInformacoesMunicipioDescarga {
     }
 
     public void setxMunDescarga(String xMunDescarga) {
-        this.xMunDescarga = StringValidador.validaIntervalo(xMunDescarga, 2, 60, "Nome do Município de Descarregamento");
+        this.xMunDescarga = DFStringValidador.validaIntervalo(xMunDescarga, 2, 60, "Nome do Município de Descarregamento");
     }
 
     public List<MDFInfoInformacoesCTe> getInfCTe() {

@@ -1,5 +1,7 @@
 package br.indie.fiscal4j.nfe400.webservices.gerado;
 
+import br.indie.fiscal4j.DFConfig;
+import br.indie.fiscal4j.utils.MessageContextFactory;
 import org.apache.axis2.client.Stub;
 
 import javax.xml.namespace.QName;
@@ -20,18 +22,19 @@ public class NFeRetAutorizacao4Stub extends org.apache.axis2.client.Stub {
     @SuppressWarnings("rawtypes")
     private final java.util.HashMap faultMessageMap = new java.util.HashMap();
     private final javax.xml.namespace.QName[] opNameArray = null;
+    private final DFConfig config;
 
     /**
      * Constructor that takes in a configContext
      */
-    public NFeRetAutorizacao4Stub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
-        this(configurationContext, targetEndpoint, false);
+    public NFeRetAutorizacao4Stub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, DFConfig config) throws org.apache.axis2.AxisFault {
+        this(configurationContext, targetEndpoint, false, config);
     }
 
     /**
      * Constructor that takes in a configContext and useseperate listner
      */
-    public NFeRetAutorizacao4Stub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, final boolean useSeparateListener) throws org.apache.axis2.AxisFault {
+    public NFeRetAutorizacao4Stub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, final boolean useSeparateListener, DFConfig config) throws org.apache.axis2.AxisFault {
         // To populate AxisService
         this.populateAxisService();
         this.populateFaults();
@@ -40,13 +43,14 @@ public class NFeRetAutorizacao4Stub extends org.apache.axis2.client.Stub {
         this._serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
         // Set the soap version
         this._serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP12Constants.SOAP_ENVELOPE_NAMESPACE_URI);
+        this.config = config;
     }
 
     /**
      * Constructor taking the target endpoint
      */
-    public NFeRetAutorizacao4Stub(final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
-        this(null, targetEndpoint);
+    public NFeRetAutorizacao4Stub(final java.lang.String targetEndpoint, DFConfig config) throws org.apache.axis2.AxisFault {
+        this(null, targetEndpoint, config);
     }
 
     private static synchronized java.lang.String getUniqueSuffix() {
@@ -89,7 +93,7 @@ public class NFeRetAutorizacao4Stub extends org.apache.axis2.client.Stub {
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
             this.addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
             // create a message context
-            _messageContext = new org.apache.axis2.context.MessageContext();
+            _messageContext = MessageContextFactory.INSTANCE.create(config);
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env;
             env = this.toEnvelope(Stub.getFactory(_operationClient.getOptions().getSoapVersionURI()), nfeDadosMsg0, this.optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NFeRetAutorizacao4", "nfeRetAutorizacaoLote")), new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NFeRetAutorizacao4", "nfeDadosMsg"));
@@ -313,7 +317,7 @@ public class NFeRetAutorizacao4Stub extends org.apache.axis2.client.Stub {
          */
         public static class Factory {
             @SuppressWarnings("unused")
-            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object Precondition: If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable If this object is not an element, it is a complex type and the reader is at the event just after the outer start element Postcondition: If this object is an element, the reader is positioned at its end element If this object is a complex type, the reader is positioned at the end element of its outer element
@@ -518,7 +522,7 @@ public class NFeRetAutorizacao4Stub extends org.apache.axis2.client.Stub {
          */
         public static class Factory {
             @SuppressWarnings("unused")
-            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object Precondition: If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable If this object is not an element, it is a complex type and the reader is at the event just after the outer start element Postcondition: If this object is an element, the reader is positioned at its end element If this object is a complex type, the reader is positioned at the end element of its outer element

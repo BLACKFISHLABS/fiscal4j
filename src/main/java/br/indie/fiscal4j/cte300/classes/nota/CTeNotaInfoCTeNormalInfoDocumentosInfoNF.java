@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTModeloNF;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -106,7 +106,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * Número do Romaneio da NF
      */
     public void setNumeroRomaneio(final String numeroRomaneio) {
-        StringValidador.tamanho20(numeroRomaneio, "Número do Romaneio da NF");
+        DFStringValidador.tamanho20(numeroRomaneio, "Número do Romaneio da NF");
         this.numeroRomaneio = numeroRomaneio;
     }
 
@@ -118,7 +118,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * Número do Pedido da NF
      */
     public void setNumeroPedidoNF(final String numeroPedidoNF) {
-        StringValidador.tamanho20(numeroPedidoNF, "Número do Pedido da NF");
+        DFStringValidador.tamanho20(numeroPedidoNF, "Número do Pedido da NF");
         this.numeroPedidoNF = numeroPedidoNF;
     }
 
@@ -144,7 +144,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * Série
      */
     public void setSerie(final String serie) {
-        StringValidador.tamanho3(serie, "Série");
+        DFStringValidador.tamanho3(serie, "Série");
         this.serie = serie;
     }
 
@@ -156,7 +156,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * Número
      */
     public void setNumeroDocumento(final String numeroDocumento) {
-        StringValidador.tamanho20(numeroDocumento, "Número");
+        DFStringValidador.tamanho20(numeroDocumento, "Número");
         this.numeroDocumento = numeroDocumento;
     }
 
@@ -247,7 +247,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * CFOP da NF ou, na existência de mais de um, predominância pelo critério de valor econômico.
      */
     public void setCFOP(final String cFOP) {
-        StringValidador.exatamente4N(cFOP, "CFOP");
+        DFStringValidador.exatamente4N(cFOP, "CFOP");
         this.CFOP = cFOP;
     }
 
@@ -271,7 +271,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoNF extends DFBase {
      * PIN atribuído pela SUFRAMA para a operação.
      */
     public void setPinSUFRAMA(final String pinSUFRAMA) {
-        StringValidador.tamanho2a9N(pinSUFRAMA, "PIN SUFRAMA");
+        DFStringValidador.tamanho2a9N(pinSUFRAMA, "PIN SUFRAMA");
         this.pinSUFRAMA = pinSUFRAMA;
     }
 

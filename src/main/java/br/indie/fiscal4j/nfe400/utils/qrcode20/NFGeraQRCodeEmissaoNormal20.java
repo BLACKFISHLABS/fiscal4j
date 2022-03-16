@@ -23,7 +23,7 @@ public class NFGeraQRCodeEmissaoNormal20 extends NFGeraQRCode20 {
         parametros.append(config.getAmbiente().getCodigo()).append("|");   // Tipo de Ambiente Homolog / Producao
         parametros.append(config.getCodigoSegurancaContribuinteID());      // Identificador do CSC – Codigo de Seguranca do Contribuinte no Banco de Dados da SEFAZ
 
-        return url + "?p=" + parametros.toString() + "|" + createHash(parametros.toString(), this.config.getCodigoSegurancaContribuinte());
+        return url + "?p=" + parametros + "|" + createHash(parametros.toString(), this.config.getCodigoSegurancaContribuinte());
     }
 
 }

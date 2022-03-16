@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
+ *
  * <h1>Informações do total de viagens acobertadas pelo Evento “pagamento do frete”</h1>
  */
 public class MDFInfoModalRodoviarioInfViagens {
@@ -36,4 +38,6 @@ public class MDFInfoModalRodoviarioInfViagens {
     public void setNroViagem(String nroViagem) {
         this.nroViagem = nroViagem != null ? StringUtils.leftPad(nroViagem, 5, "0") : null;
     }
+
+
 }

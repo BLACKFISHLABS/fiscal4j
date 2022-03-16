@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -39,7 +39,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMS extends DFBase {
      * Chave de acesso da NF-e emitida pelo Tomador
      */
     public void setReferenciaNFe(final String referenciaNFe) {
-        StringValidador.exatamente44N(referenciaNFe, "Chave de acesso da NF-e emitida pelo Tomador");
+        DFStringValidador.exatamente44N(referenciaNFe, "Chave de acesso da NF-e emitida pelo Tomador");
         this.referenciaNFe = referenciaNFe;
     }
 
@@ -62,7 +62,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMS extends DFBase {
      * Chave de acesso do CT-e emitido pelo Tomador
      */
     public void setReferenciaCte(final String referenciaCte) {
-        StringValidador.exatamente44N(referenciaCte, "Chave de acesso do CT-e emitido pelo Tomador");
+        DFStringValidador.exatamente44N(referenciaCte, "Chave de acesso do CT-e emitido pelo Tomador");
         this.referenciaCte = referenciaCte;
     }
 }

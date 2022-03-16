@@ -1,6 +1,6 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 /**
@@ -23,7 +23,7 @@ public class MDFInfoLacre1A60 {
     }
 
     public void setNumeroDoLacre(String numeroDoLacre) {
-        StringValidador.validaIntervalo(numeroDoLacre, 1, 60, "numero do lacre modal");
+        DFStringValidador.validaIntervalo(numeroDoLacre, 1, 60, "numero do lacre modal");
         this.numeroDoLacre = numeroDoLacre;
     }
 }

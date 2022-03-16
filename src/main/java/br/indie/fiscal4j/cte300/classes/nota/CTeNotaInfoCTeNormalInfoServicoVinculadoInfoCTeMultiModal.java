@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -31,7 +31,7 @@ public class CTeNotaInfoCTeNormalInfoServicoVinculadoInfoCTeMultiModal extends D
      * Chave de acesso do CT-e Multimodal
      */
     public void setChaveCTeMultiModal(final String chaveCTeMultiModal) {
-        StringValidador.exatamente44N(chaveCTeMultiModal, "Chave de acesso do CT-e Multimodal");
+        DFStringValidador.exatamente44N(chaveCTeMultiModal, "Chave de acesso do CT-e Multimodal");
         this.chaveCTeMultiModal = chaveCTeMultiModal;
     }
 }

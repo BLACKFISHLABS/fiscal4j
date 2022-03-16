@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.evento.manifestacaodestinatario;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.*;
 
 import java.math.BigDecimal;
@@ -36,7 +36,7 @@ public class NFEnviaEventoManifestacaoDestinatario extends DFBase {
     }
 
     public void setIdLote(final String idLote) {
-        StringValidador.tamanho15N(idLote, "ID do Lote");
+        DFStringValidador.tamanho15N(idLote, "ID do Lote");
         this.idLote = idLote;
     }
 

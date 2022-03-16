@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -57,12 +58,12 @@ public abstract class NFGeraQRCode20 {
     }
 
     public static String toHex(final String arg) {
-        return String.format("%040x", new BigInteger(1, arg.getBytes(Charset.forName("UTF-8"))));
+        return String.format("%040x", new BigInteger(1, arg.getBytes(StandardCharsets.UTF_8)));
     }
 
     public static String sha1(final String input) throws NoSuchAlgorithmException {
         final StringBuilder sb = new StringBuilder();
-        for (final byte element : MessageDigest.getInstance("SHA1").digest(input.getBytes(Charset.forName("UTF-8")))) {
+        for (final byte element : MessageDigest.getInstance("SHA1").digest(input.getBytes(StandardCharsets.UTF_8))) {
             sb.append(Integer.toString((element & 0xff) + 0x100, 16).substring(1));
         }
         return sb.toString().toUpperCase();

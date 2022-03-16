@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFOrigemProcesso;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoProcessoReferenciado extends DFBase {
@@ -15,7 +15,7 @@ public class NFNotaInfoProcessoReferenciado extends DFBase {
     private NFOrigemProcesso indicadorOrigemProcesso;
 
     public void setIdentificadorProcessoOuAtoConcessorio(final String identificadorProcessoOuAtoConcessorio) {
-        StringValidador.tamanho60(identificadorProcessoOuAtoConcessorio, "Identificador Processo Ou Ato Concessorio Processo Referenciado");
+        DFStringValidador.tamanho60(identificadorProcessoOuAtoConcessorio, "Identificador Processo Ou Ato Concessorio Processo Referenciado");
         this.identificadorProcessoOuAtoConcessorio = identificadorProcessoOuAtoConcessorio;
     }
 

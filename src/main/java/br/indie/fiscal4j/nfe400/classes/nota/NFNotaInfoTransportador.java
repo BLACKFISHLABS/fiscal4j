@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoTransportador extends DFBase {
@@ -37,7 +37,7 @@ public class NFNotaInfoTransportador extends DFBase {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao pode ter CPF e CNPJ ao mesmo tempo");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -45,22 +45,22 @@ public class NFNotaInfoTransportador extends DFBase {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao pode ter CPF e CNPJ ao mesmo tempo");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
     public void setRazaoSocial(final String razaoSocial) {
-        StringValidador.tamanho60(razaoSocial, "Razao Social Transportador");
+        DFStringValidador.tamanho60(razaoSocial, "Razao Social Transportador");
         this.razaoSocial = razaoSocial;
     }
 
     public void setInscricaoEstadual(final String inscricaoEstadual) {
-        StringValidador.inscricaoEstadual(inscricaoEstadual);
+        DFStringValidador.inscricaoEstadual(inscricaoEstadual);
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
     public void setNomeMunicipio(final String nomeMunicipio) {
-        StringValidador.tamanho60(nomeMunicipio, "Nome Municipio Transportador");
+        DFStringValidador.tamanho60(nomeMunicipio, "Nome Municipio Transportador");
         this.nomeMunicipio = nomeMunicipio;
     }
 

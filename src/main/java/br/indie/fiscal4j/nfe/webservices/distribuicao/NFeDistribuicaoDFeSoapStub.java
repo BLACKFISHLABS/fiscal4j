@@ -1,5 +1,7 @@
 package br.indie.fiscal4j.nfe.webservices.distribuicao;
 
+import br.indie.fiscal4j.DFConfig;
+import br.indie.fiscal4j.utils.MessageContextFactory;
 import org.apache.axis2.client.Stub;
 
 import javax.xml.namespace.QName;
@@ -12,6 +14,9 @@ public class NFeDistribuicaoDFeSoapStub extends org.apache.axis2.client.Stub {
     private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
     private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
     private final java.util.HashMap faultMessageMap = new java.util.HashMap();
+
+    private final javax.xml.namespace.QName[] opNameArray = null;
+    private final DFConfig config;
 
     private static int counter = 0;
 
@@ -40,29 +45,22 @@ public class NFeDistribuicaoDFeSoapStub extends org.apache.axis2.client.Stub {
     private void populateFaults() {
     }
 
-    public NFeDistribuicaoDFeSoapStub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
-        this(configurationContext, targetEndpoint, false);
+    public NFeDistribuicaoDFeSoapStub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, DFConfig config) throws org.apache.axis2.AxisFault {
+        this(configurationContext, targetEndpoint, false, config);
     }
 
-    public NFeDistribuicaoDFeSoapStub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, final boolean useSeparateListener) throws org.apache.axis2.AxisFault {
+    public NFeDistribuicaoDFeSoapStub(final org.apache.axis2.context.ConfigurationContext configurationContext, final java.lang.String targetEndpoint, final boolean useSeparateListener, DFConfig config) throws org.apache.axis2.AxisFault {
         // To populate AxisService
         this.populateAxisService();
         this.populateFaults();
         this._serviceClient = new org.apache.axis2.client.ServiceClient(configurationContext, this._service);
         this._serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(targetEndpoint));
         this._serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
+        this.config = config;
     }
 
-    public NFeDistribuicaoDFeSoapStub(final org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
-        this(configurationContext, "https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx");
-    }
-
-    public NFeDistribuicaoDFeSoapStub() throws org.apache.axis2.AxisFault {
-        this("https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx");
-    }
-
-    public NFeDistribuicaoDFeSoapStub(final java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
-        this(null, targetEndpoint);
+    public NFeDistribuicaoDFeSoapStub(final java.lang.String targetEndpoint, DFConfig config) throws org.apache.axis2.AxisFault {
+        this(null, targetEndpoint, config);
     }
 
     public NFeDistDFeInteresseResponse nfeDistDFeInteresse(final NFeDistDFeInteresse nfeDistDFeInteresse) throws java.rmi.RemoteException {
@@ -73,7 +71,7 @@ public class NFeDistribuicaoDFeSoapStub extends org.apache.axis2.client.Stub {
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
             this.addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
             // create a message context
-            _messageContext = new org.apache.axis2.context.MessageContext();
+            _messageContext = MessageContextFactory.INSTANCE.create(config);
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env;
             env = this.toEnvelope(Stub.getFactory(_operationClient.getOptions().getSoapVersionURI()), nfeDistDFeInteresse, this.optimizeContent(new javax.xml.namespace.QName("http://www.portalfiscal.inf.br/nfe/wsdl/NFeDistribuicaoDFe", "nfeDistDFeInteresse")));
@@ -134,8 +132,6 @@ public class NFeDistribuicaoDFeSoapStub extends org.apache.axis2.client.Stub {
         }
         return returnMap;
     }
-
-    private final javax.xml.namespace.QName[] opNameArray = null;
 
     private boolean optimizeContent(final javax.xml.namespace.QName opName) {
         if (this.opNameArray == null) {

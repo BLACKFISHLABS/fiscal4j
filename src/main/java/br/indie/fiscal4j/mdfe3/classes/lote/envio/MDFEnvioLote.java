@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.lote.envio;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.nota.MDFe;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -36,7 +36,7 @@ public class MDFEnvioLote extends DFBase {
     }
 
     public void setIdLote(final String idLote) {
-        StringValidador.tamanho15N(idLote, "ID do Lote do MDFe");
+        DFStringValidador.tamanho15N(idLote, "ID do Lote do MDFe");
         this.idLote = idLote;
     }
 
@@ -45,7 +45,7 @@ public class MDFEnvioLote extends DFBase {
     }
 
     public void setVersao(final String versao) {
-        StringValidador.equals(MDFe.VERSAO, versao);
+        DFStringValidador.equals(MDFe.VERSAO, versao);
         this.versao = versao;
     }
 

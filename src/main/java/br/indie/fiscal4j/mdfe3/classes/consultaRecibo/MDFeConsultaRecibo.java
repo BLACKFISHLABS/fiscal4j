@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.consultaRecibo;
 
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -41,7 +41,7 @@ public class MDFeConsultaRecibo extends DFBase {
     }
 
     public void setNumeroRecibo(final String numeroRecibo) {
-        this.numeroRecibo = StringValidador.validaIntervalo(numeroRecibo, 0, 15, "Numero Recibo Lote MDFe", true);
+        this.numeroRecibo = DFStringValidador.validaIntervalo(numeroRecibo, 0, 15, "Numero Recibo Lote MDFe", true);
     }
 
     public String getVersao() {

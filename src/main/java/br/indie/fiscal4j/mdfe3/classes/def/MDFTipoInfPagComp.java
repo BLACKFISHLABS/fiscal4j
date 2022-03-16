@@ -1,9 +1,13 @@
 package br.indie.fiscal4j.mdfe3.classes.def;
 
+/**
+ * @Author Edivaldo Merlo Stens on 29/06/20.
+ */
 public enum MDFTipoInfPagComp {
-    VALE_PEDAGIO("01", "Vale Pedágio"),
-    IMPOSTO_TAXAS_CONTRIBUICOES("02", "Impostos, taxas e contribuições"),
-    DESPESAS_MEIOS_PAGTO("03", "Despesas (bancárias, meios de pagamento, outras)"),
+
+    VALE_PEDAGIO("01", "Vale Ped\u00e1gio"),
+    IMPOSTO_TAXAS_CONTRIBUICOES("02", "Impostos, taxas e contribui\u00e7\u00f5es"),
+    DESPESAS_MEIOS_PAGTO("03", "Despesas (banc\u00e1rias, meios de pagamento, outras)"),
     OUTROS("99", "Outros");
 
     private final String codigo;

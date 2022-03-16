@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -55,7 +55,7 @@ public class NFNotaInfoCana extends DFBase {
     }
 
     public void setReferencia(final String referencia) {
-        StringValidador.mmaaaa(referencia);
+        DFStringValidador.mmaaaa(referencia);
         this.referencia = referencia;
     }
 

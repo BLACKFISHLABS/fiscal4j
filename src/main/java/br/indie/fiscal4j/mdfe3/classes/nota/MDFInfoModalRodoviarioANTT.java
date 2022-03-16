@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
@@ -45,7 +45,7 @@ public class MDFInfoModalRodoviarioANTT extends DFBase {
     }
 
     public void setRntrc(final String rntrc) {
-        StringValidador.validador(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga(RNTRC) ", 8, true, true);
+        DFStringValidador.validador(rntrc, "Registro Nacional de Transportadores Rodoviários de Carga(RNTRC) ", 8, true, true);
         this.rntrc = rntrc;
     }
 
@@ -80,4 +80,5 @@ public class MDFInfoModalRodoviarioANTT extends DFBase {
     public void setInfPag(List<MDFInfoModalRodoviarioInfPag> infPag) {
         this.infPag = infPag;
     }
+
 }

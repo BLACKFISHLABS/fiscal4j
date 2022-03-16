@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -22,7 +22,7 @@ public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     private String quantidadeItemEfetivamenteExportado;
 
     public void setChaveAcessoNFe(final String chaveAcessoNFe) {
-        StringValidador.exatamente44N(chaveAcessoNFe, "Chave de Acesso NFe");
+        DFStringValidador.exatamente44N(chaveAcessoNFe, "Chave de Acesso NFe");
         this.chaveAcessoNFe = chaveAcessoNFe;
     }
 

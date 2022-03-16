@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFPessoaAutorizadaDownloadNFe extends DFBase {
@@ -17,7 +17,7 @@ public class NFPessoaAutorizadaDownloadNFe extends DFBase {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -25,7 +25,7 @@ public class NFPessoaAutorizadaDownloadNFe extends DFBase {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 }

@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -51,7 +51,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     private List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> adicoes;
 
     public void setNumeroRegistro(final String numeroRegistro) {
-        StringValidador.tamanho12(numeroRegistro, "Numero Registro Declaracao Importacao");
+        DFStringValidador.tamanho12(numeroRegistro, "Numero Registro Declaracao Importacao");
         this.numeroRegistro = numeroRegistro;
     }
 
@@ -60,7 +60,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     }
 
     public void setLocalDesembaraco(final String localDesembaraco) {
-        StringValidador.tamanho60(localDesembaraco, "Desembaraco Declaracao Importacao");
+        DFStringValidador.tamanho60(localDesembaraco, "Desembaraco Declaracao Importacao");
         this.localDesembaraco = localDesembaraco;
     }
 
@@ -73,7 +73,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     }
 
     public void setCodigoExportador(final String codigoExportador) {
-        StringValidador.tamanho60(codigoExportador, "Codigo Exportador Declaracao Importacao");
+        DFStringValidador.tamanho60(codigoExportador, "Codigo Exportador Declaracao Importacao");
         this.codigoExportador = codigoExportador;
     }
 
@@ -94,7 +94,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
     }
 
     public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 

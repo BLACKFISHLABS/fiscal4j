@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoRodado;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Order;
@@ -24,23 +24,23 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
 
     @Override
     public void setCodigoInterno(final String codigoInterno) {
-        super.codigoInterno = StringValidador.validador(codigoInterno, "Codigo interno Veiculo Veiculo tracao", 10, false, false);
+        super.codigoInterno = DFStringValidador.validador(codigoInterno, "Codigo interno Veiculo Veiculo tracao", 10, false, false);
     }
 
     @Override
     public void setPlaca(final String placa) {
-        StringValidador.placaDeVeiculo(placa, "Placa do Veiculo tracao");
+        DFStringValidador.placaDeVeiculo(placa, "Placa do Veiculo tracao");
         this.placa = placa;
     }
 
     @Override
     public void setRenavam(final String renavam) {
-        this.renavam = StringValidador.validaIntervalo(renavam, 9, 11, "Renavam do Veiculo tracao");
+        this.renavam = DFStringValidador.validaIntervalo(renavam, 9, 11, "Renavam do Veiculo tracao");
     }
 
     @Override
     public void setTara(final String tara) {
-        this.tara = StringValidador.capacidadeNDigitos(tara, "Tara em Veiculo tracao", 5);
+        this.tara = DFStringValidador.capacidadeNDigitos(tara, "Tara em Veiculo tracao", 5);
     }
 
     public String getCapacidadeKG() {
@@ -48,7 +48,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
     }
 
     public void setCapacidadeKG(final String capacidadeKG) {
-        this.capacidadeKG = StringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG Veiculo tracao", 5);
+        this.capacidadeKG = DFStringValidador.capacidadeNDigitos(capacidadeKG, "Capacidade em KG Veiculo tracao", 5);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class MDFInfoModalRodoviarioVeiculoTracao extends MDFInfoModalRodoviarioV
 
     @Override
     public void setCapacidadeM3(final String capacidadeM3) {
-        this.capacidadeM3 = StringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 Veiculo tracao", 2);
+        this.capacidadeM3 = DFStringValidador.capacidadeNDigitos(capacidadeM3, "Capacidade em M3 Veiculo tracao", 2);
     }
 
     public List<MDFInfoModalRodoviarioVeiculoCondutor> getCondutor() {

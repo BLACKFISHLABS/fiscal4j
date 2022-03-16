@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.mdfe3.classes.def.MDFTipoResponsavelSeguro;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -40,7 +40,7 @@ public class MDFInfoSeguroResponsavel extends DFBase {
         if (this.cpf != null) {
             throw new IllegalStateException("Nao deve setar CNPJ se CPF esteja setado em " + MDFInfoSeguroResponsavel.INFO);
         }
-        this.cnpj = StringValidador.cnpj(cnpj, MDFInfoSeguroResponsavel.INFO);
+        this.cnpj = DFStringValidador.cnpj(cnpj, MDFInfoSeguroResponsavel.INFO);
     }
 
     public String getCpf() {
@@ -55,7 +55,7 @@ public class MDFInfoSeguroResponsavel extends DFBase {
         if (this.cnpj != null) {
             throw new IllegalStateException("Nao deve setar CPF se CNPJ esteja setado em " + MDFInfoSeguroResponsavel.INFO);
         }
-        this.cpf = StringValidador.cpf(cpf, MDFInfoSeguroResponsavel.INFO);
+        this.cpf = DFStringValidador.cpf(cpf, MDFInfoSeguroResponsavel.INFO);
     }
 
     public MDFTipoResponsavelSeguro getResponsavelSeguro() {

@@ -24,13 +24,16 @@ class WSNotaConsulta implements DFLog {
     }
 
     NFNotaConsultaRetorno consultaNota(final String chaveDeAcesso) throws Exception {
+        return this.config.getPersister().read(NFNotaConsultaRetorno.class, consultaNotaAsString(chaveDeAcesso));
+    }
+
+    public String consultaNotaAsString(String chaveDeAcesso) throws Exception {
         final OMElement omElementConsulta = AXIOMUtil.stringToOM(this.gerarDadosConsulta(chaveDeAcesso).toString());
         this.getLogger().debug(omElementConsulta.toString());
 
         final OMElement omElementRetorno = this.efetuaConsulta(omElementConsulta, chaveDeAcesso);
         this.getLogger().debug(omElementRetorno.toString());
-
-        return this.config.getPersister().read(NFNotaConsultaRetorno.class, omElementRetorno.toString());
+        return omElementRetorno.toString();
     }
 
     private OMElement efetuaConsulta(final OMElement omElementConsulta, final String chaveDeAcesso) throws Exception {
@@ -44,7 +47,7 @@ class WSNotaConsulta implements DFLog {
         if (endpoint == null) {
             throw new IllegalArgumentException("Nao foi possivel encontrar URL para ConsultaProtocolo " + notaFiscalChaveParser.getModelo().name() + ", autorizador " + autorizador.name());
         }
-        final NfeConsultaNFResult consultaNFResult = new NFeConsultaProtocolo4Stub(endpoint).nfeConsultaNF(dados);
+        final NfeConsultaNFResult consultaNFResult = new NFeConsultaProtocolo4Stub(endpoint, config).nfeConsultaNF(dados);
         return consultaNFResult.getExtraElement();
     }
 

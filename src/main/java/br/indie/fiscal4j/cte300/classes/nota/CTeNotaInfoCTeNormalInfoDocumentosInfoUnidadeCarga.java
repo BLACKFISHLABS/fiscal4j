@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoUnidadeCarga;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -66,7 +66,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoUnidadeCarga extends DFBase {
      * Informar a identificação da unidade de carga, por exemplo: número do container.
      */
     public void setIdentificacaoCarga(final String identificacaoCarga) {
-        StringValidador.tamanho20(identificacaoCarga, "Identificação da Unidade de Carga");
+        DFStringValidador.tamanho20(identificacaoCarga, "Identificação da Unidade de Carga");
         this.identificacaoCarga = identificacaoCarga;
     }
 

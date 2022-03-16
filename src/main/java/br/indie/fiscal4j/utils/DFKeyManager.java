@@ -18,9 +18,9 @@ import java.util.Enumeration;
  */
 public class DFKeyManager implements X509KeyManager, DFLog {
 
-    private KeyStore ks;
-    private String alias;
-    private String password;
+    private final KeyStore ks;
+    private final String alias;
+    private final String password;
 
     public DFKeyManager(DFConfig config) throws KeyStoreException {
         this.ks = config.getCertificadoKeyStore();

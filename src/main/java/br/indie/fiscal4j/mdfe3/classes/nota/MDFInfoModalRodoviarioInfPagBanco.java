@@ -6,6 +6,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Informações bancárias</h1>
  */
 @Root(name = "infBanc")
@@ -55,4 +56,5 @@ public class MDFInfoModalRodoviarioInfPagBanco extends DFBase {
     public void setCNPJIPEF(String CNPJIPEF) {
         this.CNPJIPEF = CNPJIPEF != null ? StringUtils.leftPad(CNPJIPEF, 14, "0") : null;
     }
+
 }

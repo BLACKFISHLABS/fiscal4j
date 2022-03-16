@@ -241,8 +241,7 @@ public class WSFacade {
      * @return
      * @throws Exception
      */
-    public MDFeRetorno pagamentoTransporte(final String chaveAcesso, final String nProt,
-                                           final List<MDFInfoModalRodoviarioInfPag> infPag, final List<MDFInfoModalRodoviarioInfViagens> infViagens) throws Exception {
+    public MDFeRetorno pagamentoTransporte(final String chaveAcesso, final String nProt, final List<MDFInfoModalRodoviarioInfPag> infPag, final List<MDFInfoModalRodoviarioInfViagens> infViagens) throws Exception {
         return this.wsPagamentoTransporte.pagamento(chaveAcesso, nProt, infPag, infViagens);
     }
 

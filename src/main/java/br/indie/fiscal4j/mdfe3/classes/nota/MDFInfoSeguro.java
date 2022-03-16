@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -27,7 +27,7 @@ public class MDFInfoSeguro extends DFBase {
     @Element(name = "nApol", required = false)
     private String apolice;
 
-    @ElementList(name = "nAver", inline = true, entry = "nAver", required = false)
+    @ElementList(name = "nAver", inline = true, entry = "nAver")
     private List<String> averbacao;
 
     public MDFInfoSeguroInfo getInfo() {
@@ -61,7 +61,7 @@ public class MDFInfoSeguro extends DFBase {
      * Obrigatório pela lei 11.442/07 (RCTRC)
      */
     public void setApolice(final String apolice) {
-        StringValidador.tamanho20(apolice, "Número da Apólice");
+        DFStringValidador.tamanho20(apolice, "Número da Apólice");
         this.apolice = apolice;
     }
 

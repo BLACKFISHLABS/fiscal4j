@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFLog;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.lang.reflect.InvocationTargetException;
@@ -47,7 +47,7 @@ public class NFNotaInfoItemImposto extends DFBase {
             throw new IllegalStateException("ICMS, IPI e II sao mutuamente exclusivo com ISSQN");
         }
         try {
-            StringValidador.validaPreenchimentoDeMargemValorAgregado(icms);
+            DFStringValidador.validaPreenchimentoDeMargemValorAgregado(icms);
         } catch (IllegalAccessException e) {
             DFLog.getLogger(NFNotaInfoItemImposto.class)
                     .error("Erro ao validar preenchimento de Margem de Valor agregado", e);

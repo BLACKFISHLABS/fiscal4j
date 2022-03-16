@@ -2,7 +2,7 @@ package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.*;
 
 import java.util.List;
@@ -77,7 +77,7 @@ public class MDFInfo extends DFBase {
      * Informar a chave de acesso do MDF-e e precedida do literal "MDFe"
      */
     public void setIdentificador(final String identificador) {
-        StringValidador.exatamente44N(identificador, "Identificador");
+        DFStringValidador.exatamente44N(identificador, "Identificador");
         this.identificador = MDFInfo.IDENT + identificador;
     }
 
@@ -126,7 +126,7 @@ public class MDFInfo extends DFBase {
      * Versão do leiaute
      */
     public void setVersao(final String versao) {
-        StringValidador.equals(MDFe.VERSAO, versao);
+        DFStringValidador.equals(MDFe.VERSAO, versao);
         this.versao = versao;
     }
 

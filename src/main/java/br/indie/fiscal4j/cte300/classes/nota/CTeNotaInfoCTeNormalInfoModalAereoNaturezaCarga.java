@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTInformacoesManuseio;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -40,7 +40,7 @@ public class CTeNotaInfoCTeNormalInfoModalAereoNaturezaCarga extends DFBase {
      * Formato:1234X1234X1234 (cm). Esse campo deve sempre que possível ser preenchido. Entretanto, quando for impossível o preenchimento das dimensões, fica obrigatório o preenchimento da cubagem em metro cúbico do leiaute do CT-e da estrutura genérica (infQ).
      */
     public void setDimensao(final String dimensao) {
-        StringValidador.tamanho5a14(dimensao, "Dimensão");
+        DFStringValidador.tamanho5a14(dimensao, "Dimensão");
         this.dimensao = dimensao;
     }
 

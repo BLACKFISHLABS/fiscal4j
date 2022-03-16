@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -29,7 +29,7 @@ public class NFNotaInfoItemProdutoMedicamento extends DFBase {
     }
 
     public NFNotaInfoItemProdutoMedicamento setCodigoProdutoAnvisa(final String codigoProdutoAnvisa) {
-        StringValidador.exatamente13(codigoProdutoAnvisa, "C\u00f3digo produto anvisa");
+        DFStringValidador.exatamente13(codigoProdutoAnvisa, "C\u00f3digo produto anvisa");
         this.codigoProdutoAnvisa = codigoProdutoAnvisa;
         return this;
     }
@@ -48,7 +48,7 @@ public class NFNotaInfoItemProdutoMedicamento extends DFBase {
     }
 
     public NFNotaInfoItemProdutoMedicamento setMotivoIsencao(String motivoIsencao) {
-        StringValidador.validaTamanhoMaximo(motivoIsencao, 255, "Motivo da isen\u00e7\u00e3o da ANVISA");
+        DFStringValidador.validaTamanhoMaximo(motivoIsencao, 255, "Motivo da isen\u00e7\u00e3o da ANVISA");
         this.motivoIsencao = motivoIsencao;
         return this;
     }

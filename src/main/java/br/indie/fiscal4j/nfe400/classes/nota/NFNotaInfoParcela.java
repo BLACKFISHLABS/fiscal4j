@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -23,7 +23,7 @@ public class NFNotaInfoParcela extends DFBase {
     private String valorParcela;
 
     public void setNumeroParcela(final String numeroParcela) {
-        StringValidador.tamanho60(numeroParcela, "Numero da Parcela");
+        DFStringValidador.tamanho60(numeroParcela, "Numero da Parcela");
         this.numeroParcela = numeroParcela;
     }
 

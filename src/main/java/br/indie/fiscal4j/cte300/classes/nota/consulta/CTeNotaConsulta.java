@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota.consulta;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -41,7 +41,7 @@ public class CTeNotaConsulta extends DFBase {
     }
 
     public void setChave(final String chave) {
-        StringValidador.exatamente44N(chave, "Chave de Acesso Nota Consulta");
+        DFStringValidador.exatamente44N(chave, "Chave de Acesso Nota Consulta");
         this.chave = chave;
     }
 

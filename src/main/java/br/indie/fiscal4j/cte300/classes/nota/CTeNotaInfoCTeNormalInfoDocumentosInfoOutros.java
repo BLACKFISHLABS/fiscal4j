@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoDocumento;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -83,7 +83,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoOutros extends DFBase {
      * Descrição do documento
      */
     public void setDescricao(final String descricao) {
-        StringValidador.tamanho100(descricao, "Descrição do documento");
+        DFStringValidador.tamanho100(descricao, "Descrição do documento");
         this.descricao = descricao;
     }
 
@@ -95,7 +95,7 @@ public class CTeNotaInfoCTeNormalInfoDocumentosInfoOutros extends DFBase {
      * Número
      */
     public void setNumero(final String numero) {
-        StringValidador.tamanho20(numero, "Número documento");
+        DFStringValidador.tamanho20(numero, "Número documento");
         this.numero = numero;
     }
 

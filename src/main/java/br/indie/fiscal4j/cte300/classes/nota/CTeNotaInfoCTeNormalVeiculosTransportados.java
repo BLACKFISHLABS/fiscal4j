@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -54,7 +54,7 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Chassi do veículo
      */
     public void setChassi(final String chassi) {
-        StringValidador.exatamente17(chassi, "Chassi do veículo");
+        DFStringValidador.exatamente17(chassi, "Chassi do veículo");
         this.chassi = chassi;
     }
 
@@ -67,7 +67,7 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Código de cada montadora
      */
     public void setCodigoCor(final String codigoCor) {
-        StringValidador.tamanho4(codigoCor, "Cor do veículo");
+        DFStringValidador.tamanho4(codigoCor, "Cor do veículo");
         this.codigoCor = codigoCor;
     }
 
@@ -79,7 +79,7 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Descrição da cor
      */
     public void setDescricaoCor(final String descricaoCor) {
-        StringValidador.tamanho40(descricaoCor, "Descrição da cor");
+        DFStringValidador.tamanho40(descricaoCor, "Descrição da cor");
         this.descricaoCor = descricaoCor;
     }
 
@@ -92,7 +92,7 @@ public class CTeNotaInfoCTeNormalVeiculosTransportados extends DFBase {
      * Utilizar tabela RENAVAM
      */
     public void setCodigoMarcaModelo(final String codigoMarcaModelo) {
-        StringValidador.tamanho6(codigoMarcaModelo, "Código Marca Modelo");
+        DFStringValidador.tamanho6(codigoMarcaModelo, "Código Marca Modelo");
         this.codigoMarcaModelo = codigoMarcaModelo;
     }
 

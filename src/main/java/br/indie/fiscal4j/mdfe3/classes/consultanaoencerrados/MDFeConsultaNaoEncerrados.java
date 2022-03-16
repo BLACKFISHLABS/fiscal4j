@@ -3,7 +3,7 @@ package br.indie.fiscal4j.mdfe3.classes.consultanaoencerrados;
 import br.indie.fiscal4j.DFAmbiente;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
@@ -47,7 +47,7 @@ public class MDFeConsultaNaoEncerrados extends DFBase {
     }
 
     public void setServico(final String servico) {
-        StringValidador.equals("CONSULTAR NÃO ENCERRADOS", servico);
+        DFStringValidador.equals("CONSULTAR NÃO ENCERRADOS", servico);
         this.servico = servico;
     }
 
@@ -68,6 +68,6 @@ public class MDFeConsultaNaoEncerrados extends DFBase {
     }
 
     public void setCnpj(final String cnpj) {
-        this.cnpj = StringValidador.cnpj(cnpj, "CNPJ do emitente");
+        this.cnpj = DFStringValidador.cnpj(cnpj, "CNPJ do emitente");
     }
 }

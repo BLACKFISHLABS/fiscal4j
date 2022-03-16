@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -38,7 +38,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteinerInfoDocumentosNFe e
      * Chave de acesso da NF-e
      */
     public void setChave(final String chave) {
-        StringValidador.exatamente44N(chave, "Chave de acesso da NF-e");
+        DFStringValidador.exatamente44N(chave, "Chave de acesso da NF-e");
         this.chave = chave;
     }
 

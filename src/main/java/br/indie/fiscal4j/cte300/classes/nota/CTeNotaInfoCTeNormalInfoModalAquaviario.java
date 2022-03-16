@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTTipoDirecao;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -88,7 +88,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Identificação do Navio
      */
     public void setIdentificacaoNavio(final String identificacaoNavio) {
-        StringValidador.tamanho60(identificacaoNavio, "Identificação do Navio");
+        DFStringValidador.tamanho60(identificacaoNavio, "Identificação do Navio");
         this.identificacaoNavio = identificacaoNavio;
     }
 
@@ -112,7 +112,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Número da Viagem
      */
     public void setNumeroViagem(final String numeroViagem) {
-        StringValidador.tamanho10(numeroViagem, "Número da Viagem");
+        DFStringValidador.tamanho10(numeroViagem, "Número da Viagem");
         this.numeroViagem = numeroViagem;
     }
 
@@ -136,7 +136,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviario extends DFBase {
      * Irin do navio sempre deverá ser informado
      */
     public void setIrin(final String irin) {
-        StringValidador.tamanho10(irin, "Irin do navio");
+        DFStringValidador.tamanho10(irin, "Irin do navio");
         this.irin = irin;
     }
 

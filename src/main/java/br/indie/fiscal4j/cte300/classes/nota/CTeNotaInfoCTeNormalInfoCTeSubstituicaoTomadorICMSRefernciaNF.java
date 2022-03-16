@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -64,7 +64,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Informar o CNPJ do emitente do Documento Fiscal
      */
     public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -77,7 +77,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Informar o CPF do emitente do documento fiscal
      */
     public void setCpf(final String cpf) {
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
@@ -89,7 +89,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Modelo do Documento Fiscal
      */
     public void setModelo(final String modelo) {
-        StringValidador.exatamente2(modelo, "Modelo do Documento Fiscal");
+        DFStringValidador.exatamente2(modelo, "Modelo do Documento Fiscal");
         this.modelo = modelo;
     }
 
@@ -101,7 +101,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Serie do documento fiscal
      */
     public void setSerie(final String serie) {
-        StringValidador.tamanho3N(serie, "Serie do documento fiscal");
+        DFStringValidador.tamanho3N(serie, "Serie do documento fiscal");
         this.serie = serie;
     }
 
@@ -113,7 +113,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Subserie do documento fiscal
      */
     public void setSubserie(final String subserie) {
-        StringValidador.tamanho3N(this.serie, "Subserie do documento fiscal");
+        DFStringValidador.tamanho3N(this.serie, "Subserie do documento fiscal");
         this.subserie = subserie;
     }
 
@@ -125,7 +125,7 @@ public class CTeNotaInfoCTeNormalInfoCTeSubstituicaoTomadorICMSRefernciaNF exten
      * Número do documento fiscal
      */
     public void setNumeroDocumento(final String numeroDocumento) {
-        StringValidador.tamanho6N(numeroDocumento, "Número do documento fiscal");
+        DFStringValidador.tamanho6N(numeroDocumento, "Número do documento fiscal");
         this.numeroDocumento = numeroDocumento;
     }
 

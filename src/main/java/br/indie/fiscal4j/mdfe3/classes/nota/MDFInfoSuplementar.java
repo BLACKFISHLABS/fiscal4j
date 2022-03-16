@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -19,7 +19,7 @@ public class MDFInfoSuplementar extends DFBase {
 
 
     public void setQrCodMDFe(final String qrCode) {
-        StringValidador.validaIntervalo(qrCode, 50, 1000, "MDF-e QR Code");
+        DFStringValidador.validaIntervalo(qrCode, 50, 1000, "MDF-e QR Code");
         this.qrCodMDFe = qrCode;
     }
 

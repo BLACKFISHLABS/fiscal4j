@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.nfe400.classes.NFModalidadeFrete;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -63,12 +63,12 @@ public class NFNotaInfoTransporte extends DFBase {
     }
 
     public void setVagao(final String vagao) {
-        StringValidador.tamanho20(vagao, "Vagao");
+        DFStringValidador.tamanho20(vagao, "Vagao");
         this.vagao = vagao;
     }
 
     public void setBalsa(final String balsa) {
-        StringValidador.tamanho20(balsa, "Balsa");
+        DFStringValidador.tamanho20(balsa, "Balsa");
         this.balsa = balsa;
     }
 

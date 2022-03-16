@@ -5,7 +5,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
@@ -61,7 +61,7 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setId(final String id) {
-        StringValidador.exatamente54(id, "Info Evento Cancelamento ID");
+        DFStringValidador.exatamente54(id, "Info Evento Cancelamento ID");
         this.id = id;
     }
 
@@ -78,10 +78,10 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setCnpj(final String cnpj) {
-        if (this.cpf != null) {
+        if (this.cpf != null && cnpj != null) {
             throw new IllegalStateException("CPF ja foi setado");
         }
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -90,10 +90,10 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setCpf(final String cpf) {
-        if (this.cnpj != null) {
+        if (this.cnpj != null && cpf != null) {
             throw new IllegalStateException("CNPJ ja foi setado");
         }
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 
@@ -102,7 +102,7 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setChave(final String chave) {
-        StringValidador.exatamente44N(chave, "Info Evento Cancelamento Chave");
+        DFStringValidador.exatamente44N(chave, "Info Evento Cancelamento Chave");
         this.chave = chave;
     }
 
@@ -119,7 +119,7 @@ public class NFInfoEventoCancelamento extends DFBase {
     }
 
     public void setCodigoEvento(final String codigoEvento) {
-        StringValidador.exatamente6N(codigoEvento, "Info Evento Cancelamento Codigo");
+        DFStringValidador.exatamente6N(codigoEvento, "Info Evento Cancelamento Codigo");
         this.codigoEvento = codigoEvento;
     }
 

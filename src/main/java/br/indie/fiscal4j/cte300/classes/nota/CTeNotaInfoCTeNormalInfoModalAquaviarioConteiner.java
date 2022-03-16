@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
@@ -43,7 +43,7 @@ public class CTeNotaInfoCTeNormalInfoModalAquaviarioConteiner extends DFBase {
      * Identificação do Container
      */
     public void setIdentificacao(final String identificacao) {
-        StringValidador.tamanho20(identificacao, "Identificação do Containe");
+        DFStringValidador.tamanho20(identificacao, "Identificação do Containe");
         this.identificacao = identificacao;
     }
 

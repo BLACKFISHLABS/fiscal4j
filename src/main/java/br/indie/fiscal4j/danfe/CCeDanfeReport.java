@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class CCeDanfeReport {
 
-    private NFProtocoloEvento evento;
+    private final NFProtocoloEvento evento;
 
     public CCeDanfeReport(NFProtocoloEvento evento) {
         this.evento = evento;

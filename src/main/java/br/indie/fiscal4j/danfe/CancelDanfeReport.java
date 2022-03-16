@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class CancelDanfeReport {
 
-    private NFProtocoloEvento evento;
+    private final NFProtocoloEvento evento;
 
     public CancelDanfeReport(NFProtocoloEvento evento) {
         this.evento = evento;

@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.nfe400.classes.cadastro;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFInfoConsultaCadastro extends DFBase {
@@ -55,7 +55,7 @@ public class NFInfoConsultaCadastro extends DFBase {
             throw new IllegalStateException("Nao pode setar CPF pois CNPJ ja esta setado");
         }
 
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
@@ -68,7 +68,7 @@ public class NFInfoConsultaCadastro extends DFBase {
             throw new IllegalStateException("Nao pode setar CPF pois CNPJ ja esta setado");
         }
 
-        StringValidador.cpf(cpf);
+        DFStringValidador.cpf(cpf);
         this.cpf = cpf;
     }
 }

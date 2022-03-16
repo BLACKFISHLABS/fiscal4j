@@ -1,7 +1,7 @@
 package br.indie.fiscal4j.mdfe3.classes.nota.evento;
 
 import br.indie.fiscal4j.DFBase;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -32,7 +32,7 @@ public class MDFeEnviaEventoIncluirDFeInfDoc extends DFBase {
     }
 
     public void setCodigoMunicipioDescarga(String codigoMunicipioDescarga) {
-        this.codigoMunicipioDescarga = StringValidador.validaIntervalo(codigoMunicipioDescarga, 7, 7, "codigo municipio descarga", true);
+        this.codigoMunicipioDescarga = DFStringValidador.validaIntervalo(codigoMunicipioDescarga, 7, 7, "codigo municipio descarga", true);
     }
 
     public String getNomeMunicipioDescarga() {
@@ -40,7 +40,7 @@ public class MDFeEnviaEventoIncluirDFeInfDoc extends DFBase {
     }
 
     public void setNomeMunicipioDescarga(String nomeMunicipioDescarga) {
-        this.nomeMunicipioDescarga = StringValidador.validaIntervalo(nomeMunicipioDescarga, 2, 60, "Nome do Município de Descarregamento");
+        this.nomeMunicipioDescarga = DFStringValidador.validaIntervalo(nomeMunicipioDescarga, 2, 60, "Nome do Município de Descarregamento");
     }
 
     public String getChNFe() {
@@ -48,7 +48,7 @@ public class MDFeEnviaEventoIncluirDFeInfDoc extends DFBase {
     }
 
     public void setChNFe(String chNFe) {
-        StringValidador.exatamente44N(chNFe, "Chave NF-e informações");
+        DFStringValidador.exatamente44N(chNFe, "Chave NF-e informações");
         this.chNFe = chNFe;
     }
 

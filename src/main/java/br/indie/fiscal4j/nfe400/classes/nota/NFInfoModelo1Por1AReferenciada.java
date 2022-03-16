@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFInfoModelo1Por1AReferenciada extends DFBase {
@@ -32,17 +32,17 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
     }
 
     public void setAnoMesEmissaoNFe(final String anoMesEmissaoNFe) {
-        StringValidador.aamm(anoMesEmissaoNFe);
+        DFStringValidador.aamm(anoMesEmissaoNFe);
         this.anoMesEmissaoNFe = anoMesEmissaoNFe;
     }
 
     public void setCnpj(final String cnpj) {
-        StringValidador.cnpj(cnpj);
+        DFStringValidador.cnpj(cnpj);
         this.cnpj = cnpj;
     }
 
     public void setModeloDocumentoFiscal(final String modeloDocumentoFiscal) {
-        StringValidador.exatamente2(modeloDocumentoFiscal, "Modelo Documento Fiscal");
+        DFStringValidador.exatamente2(modeloDocumentoFiscal, "Modelo Documento Fiscal");
         this.modeloDocumentoFiscal = modeloDocumentoFiscal;
     }
 
@@ -52,7 +52,7 @@ public class NFInfoModelo1Por1AReferenciada extends DFBase {
     }
 
     public void setNumeroDocumentoFiscal(final String numeroDocumentoFiscal) {
-        StringValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
+        DFStringValidador.tamanho9(numeroDocumentoFiscal, "Numero Documento Fiscal");
         this.numeroDocumentoFiscal = numeroDocumentoFiscal;
     }
 

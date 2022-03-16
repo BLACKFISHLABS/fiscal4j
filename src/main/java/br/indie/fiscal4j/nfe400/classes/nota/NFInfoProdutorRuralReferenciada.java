@@ -3,7 +3,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFInfoProdutorRuralReferenciada extends DFBase {
@@ -38,7 +38,7 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
     }
 
     public void setAnoMesEmissao(final String anoMesEmissao) {
-        StringValidador.aamm(anoMesEmissao);
+        DFStringValidador.aamm(anoMesEmissao);
         this.anoMesEmissao = anoMesEmissao;
     }
 
@@ -46,7 +46,7 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
         if (this.cpfEmitente != null) {
             throw new IllegalStateException("Nao pode setar CNPJ pois CPF ja esta setado");
         }
-        StringValidador.cnpj(cnpjEmitente);
+        DFStringValidador.cnpj(cnpjEmitente);
         this.cnpjEmitente = cnpjEmitente;
     }
 
@@ -54,17 +54,17 @@ public class NFInfoProdutorRuralReferenciada extends DFBase {
         if (this.cnpjEmitente != null) {
             throw new IllegalStateException("Nao pode setar CPF pois CNPJ ja esta setado");
         }
-        StringValidador.cpf(cpfEmitente);
+        DFStringValidador.cpf(cpfEmitente);
         this.cpfEmitente = cpfEmitente;
     }
 
     public void setIeEmitente(final String ieEmitente) {
-        StringValidador.inscricaoEstadual(ieEmitente);
+        DFStringValidador.inscricaoEstadual(ieEmitente);
         this.ieEmitente = ieEmitente;
     }
 
     public void setModeloDocumentoFiscal(final String modeloDocumentoFiscal) {
-        StringValidador.exatamente2(modeloDocumentoFiscal, "Modelo Documento Fiscal");
+        DFStringValidador.exatamente2(modeloDocumentoFiscal, "Modelo Documento Fiscal");
         this.modeloDocumentoFiscal = modeloDocumentoFiscal;
     }
 

@@ -6,6 +6,7 @@ import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
 /**
+ * Created by Edivaldo Merlo Stens on 29/06/20.
  * <h1>Informações da carga lotação. Informar somente quando MDF-e for de carga lotação</h1>
  */
 @Root(name = "infLotacao")

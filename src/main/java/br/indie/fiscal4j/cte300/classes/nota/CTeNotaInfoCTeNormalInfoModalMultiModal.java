@@ -2,7 +2,7 @@ package br.indie.fiscal4j.cte300.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.CTIndicadoNegociavel;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
@@ -40,7 +40,7 @@ public class CTeNotaInfoCTeNormalInfoModalMultiModal extends DFBase {
      * Número do Certificado do Operador de Transporte Multimodal
      */
     public void setNumeroCertificado(final String numeroCertificado) {
-        StringValidador.tamanho20(numeroCertificado, "Número do Certificado do Operador de Transporte Multimodal");
+        DFStringValidador.tamanho20(numeroCertificado, "Número do Certificado do Operador de Transporte Multimodal");
         this.numeroCertificado = numeroCertificado;
     }
 

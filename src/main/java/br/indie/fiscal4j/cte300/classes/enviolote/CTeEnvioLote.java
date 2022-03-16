@@ -3,7 +3,7 @@ package br.indie.fiscal4j.cte300.classes.enviolote;
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.cte300.classes.nota.CTeNota;
 import br.indie.fiscal4j.validadores.DFListValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.*;
 
 import java.util.List;
@@ -46,7 +46,7 @@ public class CTeEnvioLote extends DFBase {
     }
 
     public void setIdLote(final String idLote) {
-        StringValidador.tamanho15N(idLote, "ID do Lote");
+        DFStringValidador.tamanho15N(idLote, "ID do Lote");
         this.idLote = idLote;
     }
 

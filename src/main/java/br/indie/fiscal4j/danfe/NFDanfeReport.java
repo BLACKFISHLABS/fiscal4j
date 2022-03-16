@@ -32,7 +32,7 @@ import java.util.*;
 
 public class NFDanfeReport {
 
-    private NFNotaProcessada nota;
+    private final NFNotaProcessada nota;
 
     public NFDanfeReport(String xml) {
         this(new DFParser().notaProcessadaParaObjeto(xml));

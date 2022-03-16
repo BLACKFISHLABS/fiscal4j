@@ -4,7 +4,7 @@ import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.validadores.DFBigDecimalValidador;
 import br.indie.fiscal4j.validadores.DFBigIntegerValidador;
 import br.indie.fiscal4j.validadores.DFIntegerValidador;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
@@ -39,7 +39,7 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao extends DFBase {
     }
 
     public void setCodigoFabricante(final String codigoFabricante) {
-        StringValidador.tamanho60(codigoFabricante, "Codigo Fabricante Declaracao Importacao Adicao");
+        DFStringValidador.tamanho60(codigoFabricante, "Codigo Fabricante Declaracao Importacao Adicao");
         this.codigoFabricante = codigoFabricante;
     }
 

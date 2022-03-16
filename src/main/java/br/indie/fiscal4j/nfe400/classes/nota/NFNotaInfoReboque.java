@@ -2,7 +2,7 @@ package br.indie.fiscal4j.nfe400.classes.nota;
 
 import br.indie.fiscal4j.DFBase;
 import br.indie.fiscal4j.DFUnidadeFederativa;
-import br.indie.fiscal4j.validadores.StringValidador;
+import br.indie.fiscal4j.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 public class NFNotaInfoReboque extends DFBase {
@@ -18,7 +18,7 @@ public class NFNotaInfoReboque extends DFBase {
     private String registroNacionalTransportadorCarga;
 
     public void setPlacaVeiculo(final String placaVeiculo) {
-        StringValidador.placaDeVeiculo(placaVeiculo);
+        DFStringValidador.placaDeVeiculo(placaVeiculo);
         this.placaVeiculo = placaVeiculo;
     }
 
@@ -27,7 +27,7 @@ public class NFNotaInfoReboque extends DFBase {
     }
 
     public void setRegistroNacionalTransportadorCarga(final String registroNacionalTransportadorCarga) {
-        StringValidador.tamanho20(registroNacionalTransportadorCarga, "Registro Nacional Transportador Carga Reboque");
+        DFStringValidador.tamanho20(registroNacionalTransportadorCarga, "Registro Nacional Transportador Carga Reboque");
         this.registroNacionalTransportadorCarga = registroNacionalTransportadorCarga;
     }
 

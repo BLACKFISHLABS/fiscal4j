@@ -4,6 +4,7 @@
 [![Apache 2.0 License](https://img.shields.io/badge/license-apache%202.0-green.svg) ](https://github.com/BLACKFISHLABS/fiscal4j/blob/master/LICENSE)
 
 ## Desenvolvedor
+
 Jeferson Cruz
 
 ## Projeto para emissão de documentos fiscais eletrônicos, visando geração, assinatura e transmissão de documentos
@@ -17,6 +18,9 @@ Jeferson Cruz
 | CT-e                | OK             |
 
 ## Tecnologia
+
 Java
+
 ## Sobre
+
 Este projeto visa permitir emissão simples e rápida de documentos fiscais eletrônicos em Java

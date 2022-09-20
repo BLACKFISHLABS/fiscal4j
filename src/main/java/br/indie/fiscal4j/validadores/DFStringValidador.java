@@ -626,9 +626,9 @@ public abstract class DFStringValidador {
      * @param tamanho       tamanho para validacao da {@code String} , pode ser
      *                      {@code null} :
      * @param exatamente    <pre>
-     *                      se false {@code null} a {@code String}
-     *                                        nao precisa ter o tamanho exato do parametro anterior.
-     *                      </pre>
+     *                                           se false {@code null} a {@code String}
+     *                                                             nao precisa ter o tamanho exato do parametro anterior.
+     *                                           </pre>
      * @param numerico      se true {@code null} a {@code String} precisa ser
      *                      numerica[0-9].
      * @param paraValidar}.

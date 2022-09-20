@@ -131,7 +131,9 @@ public class CteConsultaStub extends org.apache.axis2.client.Stub {
                         final java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
                         m.invoke(ex, messageObject);
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    } catch (final ClassCastException | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                    } catch (final ClassCastException | InstantiationException | IllegalAccessException |
+                                   java.lang.reflect.InvocationTargetException | NoSuchMethodException |
+                                   ClassNotFoundException e) {
                         // we cannot intantiate the class - throw the original Axis fault
                         throw f;
                     }
@@ -207,7 +209,9 @@ public class CteConsultaStub extends org.apache.axis2.client.Stub {
                                 final java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
                                 m.invoke(ex, messageObject);
                                 callback.receiveErrorcteConsultaCT(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            } catch (final ClassCastException | org.apache.axis2.AxisFault | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                            } catch (final ClassCastException | org.apache.axis2.AxisFault | InstantiationException |
+                                           IllegalAccessException | java.lang.reflect.InvocationTargetException |
+                                           NoSuchMethodException | ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the original Axis fault
                                 callback.receiveErrorcteConsultaCT(f);
                             }

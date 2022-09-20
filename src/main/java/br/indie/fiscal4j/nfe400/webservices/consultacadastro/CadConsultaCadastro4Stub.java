@@ -154,7 +154,8 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                         m.invoke(ex, messageObject);
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    } catch (final ClassCastException | InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                    } catch (final ClassCastException | InstantiationException | IllegalAccessException |
+                                   InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
                         // we cannot intantiate the class - throw the original Axis fault
                         throw f;
                     }
@@ -233,7 +234,9 @@ public class CadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                                 m.invoke(ex, messageObject);
 
                                 callback.receiveErrorconsultaCadastro(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            } catch (final ClassCastException | AxisFault | InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                            } catch (final ClassCastException | AxisFault | InstantiationException |
+                                           IllegalAccessException | InvocationTargetException | NoSuchMethodException |
+                                           ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the original Axis fault
                                 callback.receiveErrorconsultaCadastro(f);
                             }

@@ -103,7 +103,9 @@ public class NfeStatusServico2Stub extends org.apache.axis2.client.Stub {
                         final java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
                         m.invoke(ex, messageObject);
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    } catch (final ClassCastException | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                    } catch (final ClassCastException | InstantiationException | IllegalAccessException |
+                                   java.lang.reflect.InvocationTargetException | NoSuchMethodException |
+                                   ClassNotFoundException e) {
                         // we cannot intantiate the class - throw the original Axis fault
                         throw f;
                     }
@@ -173,7 +175,9 @@ public class NfeStatusServico2Stub extends org.apache.axis2.client.Stub {
                                 final java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", messageClass);
                                 m.invoke(ex, messageObject);
                                 callback.receiveErrornfeStatusServicoNF2(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            } catch (final ClassCastException | org.apache.axis2.AxisFault | InstantiationException | IllegalAccessException | java.lang.reflect.InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
+                            } catch (final ClassCastException | org.apache.axis2.AxisFault | InstantiationException |
+                                           IllegalAccessException | java.lang.reflect.InvocationTargetException |
+                                           NoSuchMethodException | ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the original Axis fault
                                 callback.receiveErrornfeStatusServicoNF2(f);
                             }

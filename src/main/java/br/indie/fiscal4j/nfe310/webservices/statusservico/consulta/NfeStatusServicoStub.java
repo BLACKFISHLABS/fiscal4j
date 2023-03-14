@@ -12,12 +12,12 @@ public class NfeStatusServicoStub extends org.apache.axis2.client.Stub {
     protected org.apache.axis2.description.AxisOperation[] _operations;
 
     //hashmaps to keep the fault mapping
-    private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
-    private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
-    private final java.util.HashMap faultMessageMap = new java.util.HashMap();
-    private final javax.xml.namespace.QName[] opNameArray = null;
+    private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
+    private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
+    private java.util.HashMap faultMessageMap = new java.util.HashMap();
+    private javax.xml.namespace.QName[] opNameArray = null;
 
-    private final DFConfig config;
+    private DFConfig config;
 
     /**
      * Constructor that takes in a configContext
@@ -558,7 +558,7 @@ public class NfeStatusServicoStub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -879,7 +879,7 @@ public class NfeStatusServicoStub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -1143,7 +1143,7 @@ public class NfeStatusServicoStub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -1437,7 +1437,7 @@ public class NfeStatusServicoStub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object

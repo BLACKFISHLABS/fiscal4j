@@ -1167,7 +1167,7 @@ public enum NFAutorizador31 {
 
         @Override
         public String getConsultaCadastro(final DFAmbiente ambiente) {
-            return "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx" : "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx";
         }
 
         @Override
@@ -1339,7 +1339,7 @@ public enum NFAutorizador31 {
 
         @Override
         public String getConsultaCadastro(final DFAmbiente ambiente) {
-            return "https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx" : "https://cad.svrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro2.asmx";
         }
 
         @Override

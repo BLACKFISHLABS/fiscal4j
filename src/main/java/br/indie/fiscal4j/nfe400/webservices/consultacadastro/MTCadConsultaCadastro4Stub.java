@@ -9,10 +9,10 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
     protected org.apache.axis2.description.AxisOperation[] _operations;
 
     //hashmaps to keep the fault mapping
-    private final java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
-    private final java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
-    private final java.util.HashMap faultMessageMap = new java.util.HashMap();
-    private final javax.xml.namespace.QName[] opNameArray = null;
+    private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
+    private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
+    private java.util.HashMap faultMessageMap = new java.util.HashMap();
+    private javax.xml.namespace.QName[] opNameArray = null;
 
     /**
      * Constructor that takes in a configContext
@@ -50,7 +50,7 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         counter = counter + 1;
 
-        return System.currentTimeMillis() +
+        return Long.toString(System.currentTimeMillis()) +
                 "_" + counter;
     }
 
@@ -137,8 +137,8 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
                         Object messageObject = fromOM(faultElt,
                                 messageClass);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                messageClass);
-                        m.invoke(ex, messageObject);
+                                new Class[]{messageClass});
+                        m.invoke(ex, new Object[]{messageObject});
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
                     } catch (ClassCastException e) {
@@ -477,13 +477,15 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             serialize(parentQName, xmlWriter, false);
         }
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             String prefix = null;
             String namespace = null;
 
@@ -733,7 +735,7 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -877,13 +879,15 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             serialize(parentQName, xmlWriter, false);
         }
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             String prefix = null;
             String namespace = null;
 
@@ -1129,7 +1133,7 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -1281,13 +1285,15 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             serialize(parentQName, xmlWriter, false);
         }
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             String prefix = null;
             String namespace = null;
 
@@ -1533,7 +1539,7 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object
@@ -1673,13 +1679,15 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             serialize(parentQName, xmlWriter, false);
         }
 
         public void serialize(final javax.xml.namespace.QName parentQName,
                               javax.xml.stream.XMLStreamWriter xmlWriter, boolean serializeType)
-                throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException,
+                org.apache.axis2.databinding.ADBException {
             String prefix = null;
             String namespace = null;
 
@@ -1929,7 +1937,7 @@ public class MTCadConsultaCadastro4Stub extends org.apache.axis2.client.Stub {
          * Factory class that keeps the parse method
          */
         public static class Factory {
-            private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
+            private static org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(Factory.class);
 
             /**
              * static method to create the object

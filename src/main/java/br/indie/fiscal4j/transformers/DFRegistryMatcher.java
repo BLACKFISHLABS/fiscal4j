@@ -180,6 +180,7 @@ public class DFRegistryMatcher extends RegistryMatcher {
         super.bind(br.indie.fiscal4j.cte300.classes.CTTipoTrafego.class, new br.indie.fiscal4j.cte300.transformes.CTTipoTrafegoTransformer());
         super.bind(br.indie.fiscal4j.cte300.classes.CTTipoFerrovia.class, new br.indie.fiscal4j.cte300.transformes.CTTipoFerroviaTransformer());
         super.bind(br.indie.fiscal4j.cte300.classes.CTIndicadoNegociavel.class, new br.indie.fiscal4j.cte300.transformes.CTIndicadoNegociavelTransformer());
+        super.bind(br.indie.fiscal4j.cte300.classes.CTTipoRegimeTributario.class, new br.indie.fiscal4j.cte300.transformes.CTTipoRegimeTributarioTransformer());
 
         // MDF-e
         super.bind(MDFModalidadeTransporte.class, new MDFModalidadeTransporteTransformer());

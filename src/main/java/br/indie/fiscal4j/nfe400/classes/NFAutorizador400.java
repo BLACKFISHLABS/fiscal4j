@@ -69,12 +69,12 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
         public String getNfceConsultaProtocolo(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeConsulta2";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://homnfe.sefaz.am.gov.br/services2/services/NfeConsulta4" : "https://nfce.sefaz.am.gov.br/nfce-services/services/NfeConsulta2";
         }
 
         @Override
@@ -110,7 +110,7 @@ public enum NFAutorizador400 {
     AN {
         @Override
         public String getRecepcaoEvento(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx" : "https://www.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom1.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx" : "https://www.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx";
         }
 
         @Override
@@ -155,7 +155,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -180,12 +180,12 @@ public enum NFAutorizador400 {
 
         @Override
         public String getRecepcaoEventoAN(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx" : "https://www.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom1.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx" : "https://www.nfe.fazenda.gov.br/NFeRecepcaoEvento4/NFeRecepcaoEvento4.asmx";
         }
 
         @Override
         public String getNFeDistribuicaoDFe(final DFAmbiente ambiente) {
-            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx" : "https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://hom1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx" : "https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx";
         }
 
         @Override
@@ -245,7 +245,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -503,7 +503,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -589,7 +589,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -675,7 +675,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -761,7 +761,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -848,7 +848,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -1000,7 +1000,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getConsultaCadastro(final DFAmbiente ambiente) {
-            return "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx";
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx" : "https://cad.sefazrs.rs.gov.br/ws/cadconsultacadastro/cadconsultacadastro4.asmx";
         }
 
         @Override
@@ -1020,7 +1020,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -1192,7 +1192,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -1278,7 +1278,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override
@@ -1466,7 +1466,7 @@ public enum NFAutorizador400 {
 
         @Override
         public String getNfceConsultaCadastro(final DFAmbiente ambiente) {
-            return null;
+            return DFAmbiente.HOMOLOGACAO.equals(ambiente) ? null : null;
         }
 
         @Override

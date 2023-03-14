@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 clear
-mvn clean install
+mvn clean install -U

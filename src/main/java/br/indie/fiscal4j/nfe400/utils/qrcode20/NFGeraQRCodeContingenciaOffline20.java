@@ -32,7 +32,7 @@ public class NFGeraQRCodeContingenciaOffline20 extends NFGeraQRCode20 {
         parametros.append(toHex(nota.getAssinatura().getSignedInfo().getReference().getDigestValue())).append("|");// Digest Value da NFC-e
         parametros.append(config.getCodigoSegurancaContribuinteID());                   // Identificador do CSC – Codigo de Seguranca do Contribuinte no Banco de Dados da SEFAZ
 
-        return url + "?p=" + parametros + "|" + createHash(parametros.toString(), config.getCodigoSegurancaContribuinte());
+        return url + "?p=" + parametros.toString() + "|" + createHash(parametros.toString(), config.getCodigoSegurancaContribuinte());
     }
 
 }

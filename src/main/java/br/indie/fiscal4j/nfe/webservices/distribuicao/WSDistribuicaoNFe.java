@@ -3,10 +3,12 @@ package br.indie.fiscal4j.nfe.webservices.distribuicao;
 import br.indie.fiscal4j.DFUnidadeFederativa;
 import br.indie.fiscal4j.nfe.NFeConfig;
 import br.indie.fiscal4j.nfe.classes.distribuicao.*;
-import br.indie.fiscal4j.nfe310.classes.NFAutorizador31;
+import br.indie.fiscal4j.nfe400.classes.NFAutorizador400;
+import br.indie.fiscal4j.utils.DFSocketFactory;
 import br.indie.fiscal4j.validadores.DFXMLValidador;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
+import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.xml.stream.XMLStreamException;
@@ -38,6 +40,7 @@ public class WSDistribuicaoNFe {
      */
     public NFDistribuicaoIntRetorno consultar(final String cpfOuCnpj, final DFUnidadeFederativa uf, final String chaveAcesso, final String nsu, final String ultNsu) throws Exception {
         try {
+            Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
             String xmlEnvio = this.gerarNFDistribuicaoInt(cpfOuCnpj, uf, chaveAcesso, nsu, ultNsu).toString();
 
             // valida o lote assinado, para verificar se o xsd foi satisfeito, antes de comunicar com a sefaz
@@ -51,7 +54,7 @@ public class WSDistribuicaoNFe {
             final NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresse distDFeInteresse = new NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresse();
             distDFeInteresse.setNFeDadosMsg(dadosMsgType0);
 
-            final NFeDistribuicaoDFeSoapStub stub = new NFeDistribuicaoDFeSoapStub(NFAutorizador31.AN.getNFeDistribuicaoDFe(this.config.getAmbiente()), config);
+            final NFeDistribuicaoDFeSoapStub stub = new NFeDistribuicaoDFeSoapStub(NFAutorizador400.AN.getNFeDistribuicaoDFe(this.config.getAmbiente()), config);
             final NFeDistribuicaoDFeSoapStub.NFeDistDFeInteresseResponse result = stub.nfeDistDFeInteresse(distDFeInteresse);
 
             return this.config.getPersister().read(NFDistribuicaoIntRetorno.class, result.getNFeDistDFeInteresseResult().getExtraElement().toString());

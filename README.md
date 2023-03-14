@@ -9,13 +9,13 @@ Jeferson Cruz
 
 ## Projeto para emissão de documentos fiscais eletrônicos, visando geração, assinatura e transmissão de documentos
 
-| Documento Fiscal    | Status         |
-| ------------------- | :------------: |
-| NF-e                | OK             |
-| NFC-e               | OK             |
-| MDF-e               | OK             |
-| CC-e                | OK             |
-| CT-e                | OK             |
+| Documento Fiscal | Status |
+|------------------|:------:|
+| NF-e             |   OK   |
+| NFC-e            |   OK   |
+| MDF-e            |   OK   |
+| CC-e             |   OK   |
+| CT-e             |   OK   |
 
 ## Tecnologia
 

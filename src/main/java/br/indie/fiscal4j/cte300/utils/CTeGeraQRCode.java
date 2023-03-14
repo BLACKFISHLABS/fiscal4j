@@ -24,7 +24,7 @@ public class CTeGeraQRCode {
             parametros.append("&sign=").append(new DFAssinaturaDigital(this.config).assinarString(chaveAcesso));
         }
         // retorna a url do qrcode
-        return url + "?" + parametros;
+        return url + "?" + parametros.toString();
     }
 
 }

@@ -1,14 +1,10 @@
 # Projeto Fiscal4j
-
-[![Build Status](https://travis-ci.org/BLACKFISHLABS/fiscal4j.svg?branch=master)](https://travis-ci.org/BLACKFISHLABS/fiscal4j)
 [![Apache 2.0 License](https://img.shields.io/badge/license-apache%202.0-green.svg) ](https://github.com/BLACKFISHLABS/fiscal4j/blob/master/LICENSE)
 
 ## Desenvolvedor
-
 Jeferson Cruz
 
 ## Projeto para emissão de documentos fiscais eletrônicos, visando geração, assinatura e transmissão de documentos
-
 | Documento Fiscal | Status |
 |------------------|:------:|
 | NF-e             |   OK   |
@@ -18,9 +14,7 @@ Jeferson Cruz
 | CT-e             |   OK   |
 
 ## Tecnologia
-
-Java
+Java 8
 
 ## Sobre
-
 Este projeto visa permitir emissão simples e rápida de documentos fiscais eletrônicos em Java

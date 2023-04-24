@@ -27,7 +27,7 @@ public class MDFInfoSeguro extends DFBase {
     @Element(name = "nApol", required = false)
     private String apolice;
 
-    @ElementList(name = "nAver", inline = true, entry = "nAver")
+    @ElementList(name = "nAver", inline = true, entry = "nAver", required = false)
     private List<String> averbacao;
 
     public MDFInfoSeguroInfo getInfo() {
